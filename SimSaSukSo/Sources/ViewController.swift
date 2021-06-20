@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//???????
 class ViewController : UIViewController {
     
     @IBOutlet weak var viewforTab: UIView!
@@ -15,6 +15,16 @@ class ViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
+//            self.forhome()
+//        }
+        DispatchQueue.main.async {
+            self.forhome()
+        }
+        //forhome()
+    }
+    
+    func forhome(){
         let Home = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeViewController")
         contentView.addSubview(Home.view)
         Home.didMove(toParent: self)

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A2CA9533B5E0277602759E4 /* Pods_EduTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E49E64A394E284203635128 /* Pods_EduTemplate.framework */; };
+		A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */; };
+		A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
 		A711E020267B5D4C006A1F0B /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */; };
@@ -19,6 +21,7 @@
 		A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E031267B5E94006A1F0B /* UploadViewController.swift */; };
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
+		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -38,7 +41,6 @@
 		BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD4394A6252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf */; };
 		BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4394AB252E2AED0055F2E6 /* UIFont.swift */; };
 		BD4394F8252E37580055F2E6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4394F7252E37580055F2E6 /* Constant.swift */; };
-		BD8BD75325E497E400346266 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8BD75225E497E400346266 /* SplashStoryboard.storyboard */; };
 		BD8BD75625E497EB00346266 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8BD75525E497EB00346266 /* MainStoryboard.storyboard */; };
 		BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8BD76925E4B58C00346266 /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		1E49E64A394E284203635128 /* Pods_EduTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.release.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNoticeViewController.swift; sourceTree = "<group>"; };
+		A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 		A711E031267B5E94006A1F0B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +84,6 @@
 		BD4394A6252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		BD4394AB252E2AED0055F2E6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		BD4394F7252E37580055F2E6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		BD8BD75225E497E400346266 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		BD8BD75525E497EB00346266 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BD8BD76925E4B58C00346266 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +158,8 @@
 			children = (
 				A711E028267B5E03006A1F0B /* SettingStoryboard.storyboard */,
 				A711E037267B5EAE006A1F0B /* SettingViewController.swift */,
+				A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */,
+				A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -263,8 +269,8 @@
 		BD747B622531C3DE00674697 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				BD8BD75225E497E400346266 /* SplashStoryboard.storyboard */,
 				BD8BD76925E4B58C00346266 /* SplashViewController.swift */,
+				A766CB18267F502900565095 /* SplashStoryboard.storyboard */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -347,13 +353,13 @@
 				BD43940D252E13F30055F2E6 /* LaunchScreen.storyboard in Resources */,
 				A711E020267B5D4C006A1F0B /* SearchStoryboard.storyboard in Resources */,
 				A711E026267B5DF5006A1F0B /* FavoritesStoryboard.storyboard in Resources */,
-				BD8BD75325E497E400346266 /* SplashStoryboard.storyboard in Resources */,
 				A711E029267B5E03006A1F0B /* SettingStoryboard.storyboard in Resources */,
 				BD43940A252E13F30055F2E6 /* Assets.xcassets in Resources */,
 				A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */,
 				BD4394A8252E2AE40055F2E6 /* NotoSansCJKkr-Regular.otf in Resources */,
 				BD8BD75625E497EB00346266 /* MainStoryboard.storyboard in Resources */,
 				BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */,
+				A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */,
 				BD4394A7252E2AE40055F2E6 /* NotoSansCJKkr-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,9 +424,11 @@
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
+				A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
+				A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
