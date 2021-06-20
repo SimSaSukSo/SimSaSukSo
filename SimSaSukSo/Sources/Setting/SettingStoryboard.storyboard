@@ -34,27 +34,46 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tue-5v-DT2">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <state key="normal" title="내 피드보기"/>
+                                        <state key="normal" title="내 피드보기">
+                                            <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="myFeedButton:" destination="t1T-CJ-cwE" eventType="touchUpInside" id="W0q-Ss-ESY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nij-9U-OYc">
                                         <rect key="frame" x="0.0" y="50" width="52" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <state key="normal" title="알림설정"/>
+                                        <state key="normal" title="알림설정">
+                                            <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="setNoticeButton:" destination="t1T-CJ-cwE" eventType="touchUpInside" id="jYN-sC-yGN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wg5-Jg-g5B">
                                         <rect key="frame" x="0.0" y="100" width="98" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <state key="normal" title="프로필 사진 변경"/>
+                                        <state key="normal" title="프로필 사진 변경">
+                                            <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="profileChangeButton:" destination="t1T-CJ-cwE" eventType="touchUpInside" id="BTS-fF-X13"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXx-Te-Aef">
                                         <rect key="frame" x="0.0" y="150" width="52" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <state key="normal" title="로그아웃"/>
+                                        <state key="normal" title="로그아웃">
+                                            <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htr-i2-vrx">
                                         <rect key="frame" x="0.0" y="200" width="52" height="33"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <state key="normal" title="회원탈퇴"/>
+                                        <state key="normal" title="회원탈퇴">
+                                            <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="tintColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
@@ -69,6 +88,9 @@
                             <constraint firstItem="kt5-8r-t2k" firstAttribute="leading" secondItem="Gak-Zk-oAS" secondAttribute="leading" constant="16" id="mmN-oq-LhM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingStackView" destination="ucK-dB-9MW" id="grM-cx-qad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lyo-43-xbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +236,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="IxF-SN-kmc" eventType="touchUpInside" id="Itm-OO-TfN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY5-Iz-PG1">
                                 <rect key="frame" x="366" y="83" width="32" height="38"/>
@@ -221,6 +246,9 @@
                                 <state key="normal" title="완료">
                                     <color key="titleColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="IxF-SN-kmc" eventType="touchUpInside" id="Ydb-WK-UvR"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYs-Hh-dQC">
                                 <rect key="frame" x="16" y="133" width="115" height="97"/>
@@ -254,6 +282,11 @@
                                             <constraint firstAttribute="height" constant="22" id="8Q3-sa-F8F"/>
                                             <constraint firstAttribute="width" constant="40" id="zfy-vE-hYB"/>
                                         </constraints>
+                                        <color key="onTintColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="pushNoticeSwitchAction:" destination="IxF-SN-kmc" eventType="valueChanged" id="6mg-AB-bf2"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTt-qH-qGb">
                                         <rect key="frame" x="0.0" y="38" width="42" height="22"/>
@@ -261,6 +294,11 @@
                                             <constraint firstAttribute="height" constant="22" id="Heo-AZ-bLu"/>
                                             <constraint firstAttribute="width" constant="40" id="sHr-Eo-gbq"/>
                                         </constraints>
+                                        <color key="onTintColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="allNoticeSwitchAction:" destination="IxF-SN-kmc" eventType="valueChanged" id="eMN-8R-0OL"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0e-gM-fVu">
                                         <rect key="frame" x="0.0" y="76" width="42" height="22"/>
@@ -268,6 +306,11 @@
                                             <constraint firstAttribute="width" constant="40" id="h3o-qb-LOz"/>
                                             <constraint firstAttribute="height" constant="22" id="o8v-zG-uVK"/>
                                         </constraints>
+                                        <color key="onTintColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="commentNoticeSwitchAction:" destination="IxF-SN-kmc" eventType="valueChanged" id="og8-vu-5Ph"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -287,6 +330,11 @@
                             <constraint firstItem="VTG-eg-e1c" firstAttribute="leading" secondItem="1pK-4f-qIm" secondAttribute="leading" constant="21" id="rMI-5i-PPp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4bI-wD-Y4m"/>
+                    <connections>
+                        <outlet property="noticeSwitch" destination="PE1-5u-E3p" id="TMt-pZ-Ans"/>
+                        <outlet property="saveButton" destination="bY5-Iz-PG1" id="FmW-yH-0yE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jec-K2-mJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

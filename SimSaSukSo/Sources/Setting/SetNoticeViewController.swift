@@ -9,21 +9,43 @@ import UIKit
 
 class SetNoticeViewController: UIViewController {
 
+    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var noticeSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        if noticeSwitch.isEnabled == true {
+            print("저장노노?")
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
-    */
-
+    
+    @IBAction func saveButtonAction(_ sender: UIButton) {
+        print("저장")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func pushNoticeSwitchAction(_ sender: UISwitch) {
+        if (sender.isOn) {
+            print("On")
+        } else {
+            print("Off")
+        }
+        
+        saveButton.titleLabel?.textColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+    }
+    
+    @IBAction func allNoticeSwitchAction(_ sender: UISwitch) {
+    }
+    
+    
+    
+    @IBAction func commentNoticeSwitchAction(_ sender: UISwitch) {
+    }
 }
