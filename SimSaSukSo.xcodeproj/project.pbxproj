@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A2CA9533B5E0277602759E4 /* Pods_EduTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E49E64A394E284203635128 /* Pods_EduTemplate.framework */; };
+		A54956242680B79500F1AE44 /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956232680B79500F1AE44 /* MyFeedViewController.swift */; };
+		A54956272680BD5900F1AE44 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956262680BD5900F1AE44 /* MyFeedCollectionViewCell.swift */; };
 		A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */; };
 		A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		1E49E64A394E284203635128 /* Pods_EduTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.release.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		A54956232680B79500F1AE44 /* MyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewController.swift; sourceTree = "<group>"; };
+		A54956262680BD5900F1AE44 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNoticeViewController.swift; sourceTree = "<group>"; };
 		A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				A711E037267B5EAE006A1F0B /* SettingViewController.swift */,
 				A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */,
 				A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */,
+				A54956232680B79500F1AE44 /* MyFeedViewController.swift */,
+				A54956262680BD5900F1AE44 /* MyFeedCollectionViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
+				A54956272680BD5900F1AE44 /* MyFeedCollectionViewCell.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */,
@@ -435,6 +442,7 @@
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
+				A54956242680B79500F1AE44 /* MyFeedViewController.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

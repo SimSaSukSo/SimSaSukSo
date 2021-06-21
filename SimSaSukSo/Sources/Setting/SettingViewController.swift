@@ -21,6 +21,9 @@ class SettingViewController : UIViewController {
     
     
     @IBAction func myFeedButton(_ sender: UIButton) {
+        let myFeedVC = self.storyboard?.instantiateViewController(withIdentifier: "MyFeedViewController")
+        myFeedVC?.modalPresentationStyle = .fullScreen
+        self.present(myFeedVC!, animated: true, completion: nil)
         
     }
     
@@ -34,6 +37,9 @@ class SettingViewController : UIViewController {
     
     @IBAction func profileChangeButton(_ sender: UIButton) {
         
+        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")
+        profileVC?.modalPresentationStyle = .fullScreen
+        self.present(profileVC!, animated: true, completion: nil)
     }
     
     
