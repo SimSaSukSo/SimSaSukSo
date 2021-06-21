@@ -9,6 +9,10 @@ import UIKit
 
 class SplashViewController: BaseViewController {
     
+    @IBAction func kakaoLoginButton(_ sender: UIButton) {
+        print("clicked")
+    }
+    
     @IBAction func presentMainButtonTouchUpInside(_ sender: UIButton) {
         let mainTabBarController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "ViewController")
         changeRootViewController(mainTabBarController)
