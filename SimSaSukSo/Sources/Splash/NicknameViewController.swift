@@ -18,6 +18,8 @@ class NicknameViewController : BaseViewController{
         //안내 라벨 초기화
         checkFormat()
         
+        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
+        
     }
     
     
@@ -29,8 +31,8 @@ class NicknameViewController : BaseViewController{
         
         //텍스트 필드가 validation() 처리할 수 있게 해줌
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
+        
     }
-    
     
     
     //텍스트 필드 채워지면 버튼 활성화
@@ -53,6 +55,11 @@ class NicknameViewController : BaseViewController{
             completeButtonAccessary.backgroundColor = .simsasuksoGreen
         }
     }
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
     
     func checkFormat(){
         
@@ -110,6 +117,9 @@ extension NicknameViewController: UITextFieldDelegate {
 //        checkpassLabel.text = ""
 //        phonenumLabel.text = ""
         checkFormat()
+        
+        self.view.endEditing(true)
+        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
         print("dd")
     
 }

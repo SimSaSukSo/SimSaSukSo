@@ -21,6 +21,8 @@
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
+		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
+		A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766CB4E26831A7200565095 /* WelcomeAlertView.xib */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
+		A766CB4E26831A7200565095 /* WelcomeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeAlertView.xib; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +272,8 @@
 				BD8BD76925E4B58C00346266 /* SplashViewController.swift */,
 				A766CB18267F502900565095 /* SplashStoryboard.storyboard */,
 				A766CB352680D1FE00565095 /* NicknameViewController.swift */,
+				A766CB4B268316DE00565095 /* WelcomAlertView.swift */,
+				A766CB4E26831A7200565095 /* WelcomeAlertView.xib */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */,
 				A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */,
 				BD4394A7252E2AE40055F2E6 /* NotoSansCJKkr-Medium.otf in Resources */,
+				A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +438,7 @@
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
+				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
