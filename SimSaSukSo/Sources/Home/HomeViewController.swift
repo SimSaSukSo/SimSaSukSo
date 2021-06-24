@@ -19,9 +19,12 @@ class HomeViewController : UIViewController {
     @IBOutlet var newTabLineView: UIView!
     
     var buttonLists: [UIButton] = []
+    var lineLists: [UIView] = []
+    
     var currentIndex : Int = 0 {
         didSet {
             changeButtonColor()
+            changeLineColor()
         }
     }
     
@@ -29,7 +32,7 @@ class HomeViewController : UIViewController {
         super.viewDidLoad()
         
         setButtonList()
-        
+        setLineList()
     }
     
     //MARK: - Function
@@ -42,6 +45,13 @@ class HomeViewController : UIViewController {
         homeTabButton.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
         bestTabButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         newTabButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+    }
+    
+    func setLineList() {
+        
+        lineLists.append(homeTabLineView)
+        lineLists.append(bestTabLineView)
+        lineLists.append(newTabLineView)
         
         homeTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         bestTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -59,6 +69,19 @@ class HomeViewController : UIViewController {
             }
         }
     }
+    
+    func changeLineColor() {
+        for (index, element) in lineLists.enumerated() {
+            if index == currentIndex {
+                element.backgroundColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+            }
+            else {
+                element.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            }
+        }
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
