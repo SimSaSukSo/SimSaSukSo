@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 class UploadViewController : UIViewController {
     
+    @IBAction func testButton(_ sender: UIButton) {
+        print("test")
+    }
+    
     override func viewDidLoad() {
        super.viewDidLoad()
     }
