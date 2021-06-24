@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -13,6 +14,51 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Home Tab View Controller-->
+        <scene sceneID="eff-sZ-epv">
+            <objects>
+                <viewController storyboardIdentifier="HomeTabViewController" id="vvi-5Q-tV7" customClass="HomeTabViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YyI-YB-L3x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WmT-qX-fIa"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U60-RZ-cDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1703" y="-954"/>
+        </scene>
+        <!--Best Tab View Controller-->
+        <scene sceneID="UZd-9K-jYM">
+            <objects>
+                <viewController storyboardIdentifier="BestTabViewController" id="ko5-14-Rm4" customClass="BestTabViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gNk-8I-Jq7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="r0G-rV-G5Z"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mf4-OZ-fFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-620" y="-954"/>
+        </scene>
+        <!--New Tab View Controller-->
+        <scene sceneID="ubG-Lj-tuu">
+            <objects>
+                <viewController storyboardIdentifier="NewTabViewController" id="NEH-Oq-0OE" customClass="NewTabViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ne1-8x-98Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="C5c-tM-bht"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyv-uR-uHh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-954"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="g9g-1S-5dg">
             <objects>
@@ -28,20 +74,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="fHS-Ok-wJN">
-                                <rect key="frame" x="21" y="137" width="144" height="43"/>
+                                <rect key="frame" x="21" y="137" width="144" height="39"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-uX-chl">
-                                        <rect key="frame" x="0.0" y="0.0" width="36" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-6S-u5Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="홈">
                                                     <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="homeTabButtonAction:" destination="CzK-Le-iYy" eventType="touchUpInside" id="Ay6-fR-qiW"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-lY-TWh">
-                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="8gQ-qX-HDA"/>
@@ -51,17 +100,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-O4-Z3m">
-                                        <rect key="frame" x="54" y="0.0" width="36" height="43"/>
+                                        <rect key="frame" x="54" y="0.0" width="36" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ota-jc-n4q">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="인기">
                                                     <color key="titleColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="bestTabButtonAction:" destination="CzK-Le-iYy" eventType="touchUpInside" id="HWp-WY-rze"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3N-yW-onK">
-                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="EaE-eZ-Cbf"/>
@@ -71,17 +123,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="TdX-iS-i8L">
-                                        <rect key="frame" x="108" y="0.0" width="36" height="43"/>
+                                        <rect key="frame" x="108" y="0.0" width="36" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70X-vT-Awk">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="최신">
                                                     <color key="titleColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="newTabButtonAction:" destination="CzK-Le-iYy" eventType="touchUpInside" id="eLd-Wp-AKS"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-rd-3Ov">
-                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="DfQ-6D-A9Y"/>
@@ -92,20 +147,54 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-6b-75W">
+                                <rect key="frame" x="0.0" y="177" width="414" height="719"/>
+                                <connections>
+                                    <segue destination="ajT-96-sOj" kind="embed" identifier="PageViewController" id="f4a-j1-D2V"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JEB-7S-y64"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fHS-Ok-wJN" firstAttribute="top" secondItem="8PU-TD-53o" secondAttribute="bottom" constant="22" id="AdQ-Z3-XzR"/>
+                            <constraint firstItem="ZTh-6b-75W" firstAttribute="leading" secondItem="JEB-7S-y64" secondAttribute="leading" id="EAi-EY-uWs"/>
+                            <constraint firstAttribute="bottom" secondItem="ZTh-6b-75W" secondAttribute="bottom" id="KAf-af-eqN"/>
+                            <constraint firstItem="ZTh-6b-75W" firstAttribute="trailing" secondItem="JEB-7S-y64" secondAttribute="trailing" id="ROe-KT-18m"/>
+                            <constraint firstItem="ZTh-6b-75W" firstAttribute="top" secondItem="fHS-Ok-wJN" secondAttribute="bottom" constant="1" id="cB6-s0-EnL"/>
                             <constraint firstItem="8PU-TD-53o" firstAttribute="centerX" secondItem="SE1-hI-FkL" secondAttribute="centerX" id="sLW-Dn-JcH"/>
                             <constraint firstItem="fHS-Ok-wJN" firstAttribute="leading" secondItem="JEB-7S-y64" secondAttribute="leading" constant="21" id="sza-EG-Pu3"/>
                             <constraint firstItem="8PU-TD-53o" firstAttribute="top" secondItem="JEB-7S-y64" secondAttribute="top" constant="51" id="tiV-Xh-G3i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bestTabButton" destination="ota-jc-n4q" id="Em5-WU-zgU"/>
+                        <outlet property="homeTabButton" destination="MAc-6S-u5Z" id="G41-SN-XU1"/>
+                        <outlet property="newTabButton" destination="70X-vT-Awk" id="DBg-cJ-Blo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-NY-cCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-619" y="-276"/>
+            <point key="canvasLocation" x="-620.28985507246387" y="-276.5625"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="MU6-Q1-sHX">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ajT-96-sOj" customClass="PageViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdl-Kb-2PI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626" y="369"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -14,6 +14,10 @@
 		A549562E2680F2D000F1AE44 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549562D2680F2CF00F1AE44 /* TagCollectionViewCell.swift */; };
 		A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */; };
 		A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */; };
+		A568FD1C2684BB2C0006353F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD1B2684BB2C0006353F /* PageViewController.swift */; };
+		A568FD1F2684BE860006353F /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD1E2684BE860006353F /* HomeTabViewController.swift */; };
+		A568FD222684BE900006353F /* BestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD212684BE900006353F /* BestTabViewController.swift */; };
+		A568FD252684BE990006353F /* NewTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD242684BE990006353F /* NewTabViewController.swift */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
 		A711E020267B5D4C006A1F0B /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */; };
@@ -58,6 +62,10 @@
 		A549562D2680F2CF00F1AE44 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNoticeViewController.swift; sourceTree = "<group>"; };
 		A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A568FD1B2684BB2C0006353F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		A568FD1E2684BE860006353F /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
+		A568FD212684BE900006353F /* BestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTabViewController.swift; sourceTree = "<group>"; };
+		A568FD242684BE990006353F /* NewTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabViewController.swift; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 			children = (
 				A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */,
 				A711E02B267B5E74006A1F0B /* HomeViewController.swift */,
+				A568FD1B2684BB2C0006353F /* PageViewController.swift */,
+				A568FD1E2684BE860006353F /* HomeTabViewController.swift */,
+				A568FD212684BE900006353F /* BestTabViewController.swift */,
+				A568FD242684BE990006353F /* NewTabViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -431,6 +443,8 @@
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
+				A568FD222684BE900006353F /* BestTabViewController.swift in Sources */,
+				A568FD1F2684BE860006353F /* HomeTabViewController.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
@@ -440,7 +454,9 @@
 				A549562E2680F2D000F1AE44 /* TagCollectionViewCell.swift in Sources */,
 				A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
+				A568FD1C2684BB2C0006353F /* PageViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
+				A568FD252684BE990006353F /* NewTabViewController.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
