@@ -14,6 +14,9 @@ class HomeViewController : UIViewController {
     @IBOutlet var homeTabButton: UIButton!
     @IBOutlet var bestTabButton: UIButton!
     @IBOutlet var newTabButton: UIButton!
+    @IBOutlet var homeTabLineView: UIView!
+    @IBOutlet var bestTabLineView: UIView!
+    @IBOutlet var newTabLineView: UIView!
     
     var buttonLists: [UIButton] = []
     var currentIndex : Int = 0 {
@@ -26,6 +29,7 @@ class HomeViewController : UIViewController {
         super.viewDidLoad()
         
         setButtonList()
+        
     }
     
     //MARK: - Function
@@ -39,6 +43,9 @@ class HomeViewController : UIViewController {
         bestTabButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         newTabButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         
+        homeTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        bestTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        newTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
     }
     
@@ -67,14 +74,24 @@ class HomeViewController : UIViewController {
     
     @IBAction func homeTabButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 0)
+        homeTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        bestTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        newTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
     }
     
     @IBAction func bestTabButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 1)
+        bestTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        homeTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        newTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     @IBAction func newTabButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 2)
+        newTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        bestTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        homeTabLineView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
 }

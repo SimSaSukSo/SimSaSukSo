@@ -163,8 +163,11 @@
                     </view>
                     <connections>
                         <outlet property="bestTabButton" destination="ota-jc-n4q" id="Em5-WU-zgU"/>
+                        <outlet property="bestTabLineView" destination="j3N-yW-onK" id="DBg-ch-84N"/>
                         <outlet property="homeTabButton" destination="MAc-6S-u5Z" id="G41-SN-XU1"/>
+                        <outlet property="homeTabLineView" destination="8PQ-lY-TWh" id="NiL-xq-eRv"/>
                         <outlet property="newTabButton" destination="70X-vT-Awk" id="DBg-cJ-Blo"/>
+                        <outlet property="newTabLineView" destination="cwP-rd-3Ov" id="psU-bE-rxi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-NY-cCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
