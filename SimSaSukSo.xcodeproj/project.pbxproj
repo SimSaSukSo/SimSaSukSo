@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A2CA9533B5E0277602759E4 /* Pods_EduTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E49E64A394E284203635128 /* Pods_EduTemplate.framework */; };
+		919F616C3FD1DF6B1A4D907C /* Pods_SimSaSukSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
 		A711E020267B5D4C006A1F0B /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */; };
@@ -47,7 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E49E64A394E284203635128 /* Pods_EduTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimSaSukSo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimSaSukSo.release.xcconfig"; path = "Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo.release.xcconfig"; sourceTree = "<group>"; };
 		8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.release.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.release.xcconfig"; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		BD4394F7252E37580055F2E6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BD8BD75525E497EB00346266 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BD8BD76925E4B58C00346266 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimSaSukSo.debug.xcconfig"; path = "Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2CA9533B5E0277602759E4 /* Pods_EduTemplate.framework in Frameworks */,
+				919F616C3FD1DF6B1A4D907C /* Pods_SimSaSukSo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +107,7 @@
 		48C2A21871D863A54F9258E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1E49E64A394E284203635128 /* Pods_EduTemplate.framework */,
+				07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +117,8 @@
 			children = (
 				B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */,
 				8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */,
+				F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */,
+				79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -386,7 +390,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EduTemplate-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SimSaSukSo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -399,15 +403,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EduTemplate/Pods-EduTemplate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EduTemplate/Pods-EduTemplate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduTemplate/Pods-EduTemplate-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -575,7 +579,7 @@
 		};
 		BD439412252E13F30055F2E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */;
+			baseConfigurationReference = F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -589,7 +593,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.softsquared.edu.template.storyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simsasukso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -598,7 +602,7 @@
 		};
 		BD439413252E13F30055F2E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */;
+			baseConfigurationReference = 79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -612,7 +616,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.softsquared.edu.template.storyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simsasukso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
