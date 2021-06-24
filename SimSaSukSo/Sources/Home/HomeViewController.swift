@@ -24,6 +24,8 @@ class HomeViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setButtonList()
     }
     
     //MARK: - Function

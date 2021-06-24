@@ -74,23 +74,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="fHS-Ok-wJN">
-                                <rect key="frame" x="21" y="137" width="144" height="39"/>
+                                <rect key="frame" x="21" y="137" width="144" height="43"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-uX-chl">
-                                        <rect key="frame" x="0.0" y="0.0" width="36" height="39"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-6S-u5Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
-                                                <state key="normal" title="홈">
-                                                    <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
+                                                <state key="normal" title="홈"/>
                                                 <connections>
                                                     <action selector="homeTabButtonAction:" destination="CzK-Le-iYy" eventType="touchUpInside" id="Ay6-fR-qiW"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-lY-TWh">
-                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="8gQ-qX-HDA"/>
@@ -100,20 +98,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-O4-Z3m">
-                                        <rect key="frame" x="54" y="0.0" width="36" height="39"/>
+                                        <rect key="frame" x="54" y="0.0" width="36" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ota-jc-n4q">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
-                                                <state key="normal" title="인기">
-                                                    <color key="titleColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
+                                                <state key="normal" title="인기"/>
                                                 <connections>
                                                     <action selector="bestTabButtonAction:" destination="CzK-Le-iYy" eventType="touchUpInside" id="HWp-WY-rze"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3N-yW-onK">
-                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="EaE-eZ-Cbf"/>
@@ -123,20 +119,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="TdX-iS-i8L">
-                                        <rect key="frame" x="108" y="0.0" width="36" height="39"/>
+                                        <rect key="frame" x="108" y="0.0" width="36" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70X-vT-Awk">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
-                                                <state key="normal" title="최신">
-                                                    <color key="titleColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
+                                                <state key="normal" title="최신"/>
                                                 <connections>
                                                     <action selector="newTabButtonAction:" destination="CzK-Le-iYy" eventType="touchUpInside" id="eLd-Wp-AKS"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-rd-3Ov">
-                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="DfQ-6D-A9Y"/>
@@ -148,7 +142,7 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-6b-75W">
-                                <rect key="frame" x="0.0" y="177" width="414" height="719"/>
+                                <rect key="frame" x="0.0" y="181" width="414" height="715"/>
                                 <connections>
                                     <segue destination="ajT-96-sOj" kind="embed" identifier="PageViewController" id="f4a-j1-D2V"/>
                                 </connections>
