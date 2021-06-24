@@ -35,8 +35,16 @@ class MyFeedDetailViewController: UIViewController {
         
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
         
+        linkStackView.isHidden = true
+        
         commentUserImageView.layer.cornerRadius = commentUserImageView.frame.size.height/2
         commentWriteButton.layer.cornerRadius = 15
+        
+//        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeGestureAction))
+
+//
+//        view.addGestureRecognizer(edgePan)
+        
         
     }
     
@@ -55,11 +63,25 @@ class MyFeedDetailViewController: UIViewController {
     }
     
     @IBAction func seeLinkButtonAction(_ sender: UIButton) {
-        linkStackView.isHidden = true
+        seeLinkButton.isSelected = !seeLinkButton.isSelected
+        if seeLinkButton.isSelected {
+            linkStackView.isHidden = false
+            seeLinkButton.setTitle("링크접기", for: .selected)
+            seeLinkButton.setImage(UIImage(systemName: "control"), for: .selected)
+        } else {
+            linkStackView.isHidden = true
+        }
+        
     }
     
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
+    }
+    
+    @objc func screenEdgeGestureAction(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 }

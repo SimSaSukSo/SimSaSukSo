@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t1T-CJ-cwE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -93,13 +93,14 @@
                             <constraint firstItem="kt5-8r-t2k" firstAttribute="leading" secondItem="Gak-Zk-oAS" secondAttribute="leading" constant="16" id="mmN-oq-LhM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="N40-Pu-mpw"/>
                     <connections>
                         <outlet property="settingStackView" destination="ucK-dB-9MW" id="grM-cx-qad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lyo-43-xbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="64"/>
+            <point key="canvasLocation" x="1186.9565217391305" y="63.616071428571423"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="GWY-ly-Xqu">
@@ -240,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIR-hv-0d7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="738"/>
+            <point key="canvasLocation" x="1990" y="738"/>
         </scene>
         <!--My Feed View Controller-->
         <scene sceneID="pJ0-6P-HIV">
@@ -338,6 +339,7 @@
                             <constraint firstItem="9bD-hk-tkN" firstAttribute="centerY" secondItem="oRc-aV-obA" secondAttribute="centerY" id="uuf-T5-h3W"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="djg-tn-mpf"/>
                     <connections>
                         <outlet property="myFeedCollectionView" destination="NK1-nD-dPI" id="JcX-Ns-VAN"/>
                         <outlet property="profileImageView" destination="nQL-nC-e0Y" id="c9P-i0-Z9T"/>
@@ -346,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vR-8w-9Ur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102.8985507246377" y="-586.60714285714278"/>
+            <point key="canvasLocation" x="1990" y="-587"/>
         </scene>
         <!--Set Notice View Controller-->
         <scene sceneID="bdk-ij-xs3">
@@ -475,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jec-K2-mJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="64"/>
+            <point key="canvasLocation" x="1989.8550724637682" y="63.616071428571423"/>
         </scene>
         <!--My Feed Detail View Controller-->
         <scene sceneID="gtp-xn-7la">
@@ -969,7 +971,7 @@
                                                         <rect key="frame" x="0.0" y="181.5" width="380" height="18"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                         <color key="tintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="링크접기" image="control" catalog="system">
+                                                        <state key="normal" title="링크보기" image="chevron.down" catalog="system">
                                                             <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="semibold"/>
                                                         </state>
@@ -1000,6 +1002,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="x4r-8G-NHx" firstAttribute="leading" secondItem="WP4-Vl-Ade" secondAttribute="leading" id="02x-KU-8HL"/>
                                             <constraint firstItem="tbr-8L-mr8" firstAttribute="leading" secondItem="WP4-Vl-Ade" secondAttribute="leading" constant="16" id="0Er-ol-UEJ"/>
@@ -1104,6 +1107,7 @@
                             <constraint firstItem="JvI-j4-wTE" firstAttribute="leading" secondItem="3DD-H3-bUJ" secondAttribute="trailing" constant="8" id="xR7-HK-hDW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iMm-3S-l8w"/>
                     <connections>
                         <outlet property="commentUserImageView" destination="1f2-OA-2dL" id="fSM-mh-fbX"/>
                         <outlet property="commentWriteButton" destination="JvI-j4-wTE" id="mwv-rr-cUv"/>
@@ -1120,7 +1124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjZ-dW-D3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.6376811594205" y="-587.27678571428567"/>
+            <point key="canvasLocation" x="2775" y="-587"/>
         </scene>
     </scenes>
     <resources>
@@ -1128,7 +1132,7 @@
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <image name="bookmark" width="14" height="21"/>
         <image name="camera" catalog="system" width="128" height="94"/>
-        <image name="control" catalog="system" width="128" height="72"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="heart" width="21" height="18"/>
         <image name="shape" width="16" height="16"/>
         <image name="view_score_image" width="18" height="19"/>

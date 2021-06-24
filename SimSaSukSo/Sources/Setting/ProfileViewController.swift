@@ -10,7 +10,7 @@ import MobileCoreServices
 
 class ProfileViewController: UIViewController {
     
-    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    let imagePicker = UIImagePickerController()
     var captureImage: UIImage!
     var flagImageSave = false
     
@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
         
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
         
@@ -62,8 +64,8 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     func cameraAlertAction() {
         let cameraAlert = UIAlertController(title: "프로필 사진 변경", message: .none, preferredStyle: .actionSheet)
         
-        let cameraAction = UIAlertAction(title: "사진 촬영", style: .default, handler: {(action) in self.cameraCapture()})
-        let photoAction = UIAlertAction(title: "사진 불러오기", style: .default, handler: {(action) in self.photoLibraryLoad()})
+        let cameraAction = UIAlertAction(title: "사진 촬영", style: .default, handler: {(action) in self.openCamera()})
+        let photoAction = UIAlertAction(title: "사진 불러오기", style: .default, handler: {(action) in self.openLibrary()})
         let cancleAction = UIAlertAction(title: "취소", style: .cancel, handler: {(action) in print("cancle")})
         
         cameraAlert.addAction(cameraAction)
@@ -73,13 +75,13 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         present(cameraAlert, animated: true, completion: nil)
     }
     
-    func cameraCapture() {
+    func openCamera() {
         if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
             flagImageSave = true
             
-            imagePicker.delegate = self
+            
             imagePicker.sourceType = .camera
-            imagePicker.mediaTypes = [kUTTypeImage as String]
+            //imagePicker.mediaTypes = [kUTTypeImage as String]
             imagePicker.allowsEditing = false
             
             present(imagePicker, animated: true, completion: nil)
@@ -90,13 +92,12 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     
     }
     
-    func photoLibraryLoad() {
+    func openLibrary() {
         if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
             flagImageSave = false
             
-            imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
-            imagePicker.mediaTypes = [kUTTypeImage as String]
+            //imagePicker.mediaTypes = [kUTTypeImage as String]
             imagePicker.allowsEditing = true
             
             present(imagePicker, animated: true, completion: nil)

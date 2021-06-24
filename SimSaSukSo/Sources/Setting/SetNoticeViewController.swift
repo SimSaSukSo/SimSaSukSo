@@ -19,7 +19,7 @@ class SetNoticeViewController: UIViewController {
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        if noticeSwitch.isEnabled == true {
+        if saveButton.titleLabel?.textColor == #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1) {
             print("저장노노?")
         } else {
             self.dismiss(animated: true, completion: nil)
