@@ -29,6 +29,7 @@ class SetNoticeViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         print("저장")
         self.dismiss(animated: true, completion: nil)
+        ExitAlertView.instance.showAlert(title: "하이", message: "노노")
     }
     
     @IBAction func pushNoticeSwitchAction(_ sender: UISwitch) {
