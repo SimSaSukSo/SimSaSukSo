@@ -14,6 +14,12 @@
       "filename" : "안녕하세요. 심사숙소입니다 _)@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "안녕하세요. 심사숙소입니다 _).svg",
+      "idiom" : "universal",
+      "scale" : "1x",
+      "unassigned" : true
     }
   ],
   "info" : {

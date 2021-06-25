@@ -9,12 +9,13 @@ import Foundation
 import UIKit
 class UploadViewController : UIViewController {
     
-    @IBAction func testButton(_ sender: UIButton) {
-        print("test")
+    @IBOutlet weak var button: UIButton!
+    
+    
+    @IBAction func button(_ sender: Any) {
+        print("why")
     }
     
-    override func viewDidLoad() {
-       super.viewDidLoad()
-    }
+    
     
 }
