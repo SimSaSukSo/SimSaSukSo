@@ -36,7 +36,7 @@
         <!--New Tab View Controller-->
         <scene sceneID="UZd-9K-jYM">
             <objects>
-                <viewController storyboardIdentifier="NewabViewController" id="ko5-14-Rm4" customClass="NewTabViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTabViewController" id="ko5-14-Rm4" customClass="NewTabViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gNk-8I-Jq7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
