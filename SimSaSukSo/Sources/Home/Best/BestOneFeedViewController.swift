@@ -4,13 +4,15 @@
 //
 //  Created by 소영 on 2021/06/25.
 //
-
+import Foundation
 import UIKit
 
 class BestOneFeedViewController: UIViewController {
     
+    let count = 10
+
     @IBOutlet var bestOneFeedCollectionView: UICollectionView!
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +26,9 @@ class BestOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
