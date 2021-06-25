@@ -8,8 +8,6 @@ import Foundation
 import UIKit
 
 class BestOneFeedViewController: UIViewController {
-    
-    let count = 10
 
     @IBOutlet var bestOneFeedCollectionView: UICollectionView!
   
@@ -26,7 +24,7 @@ class BestOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return count
+        return 10
     }
     
     

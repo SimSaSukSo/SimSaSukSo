@@ -21,6 +21,8 @@
 		A59DDBCA26860258008D4AF9 /* HomeTabBestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */; };
 		A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */; };
 		A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBD826863327008D4AF9 /* BestPageViewController.swift */; };
+		A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBDC26863FC8008D4AF9 /* BestFeedsViewController.swift */; };
+		A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
 		A711E020267B5D4C006A1F0B /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */; };
@@ -76,6 +78,8 @@
 		A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBestCollectionViewCell.swift; sourceTree = "<group>"; };
 		A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestOneFeedViewController.swift; sourceTree = "<group>"; };
 		A59DDBD826863327008D4AF9 /* BestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPageViewController.swift; sourceTree = "<group>"; };
+		A59DDBDC26863FC8008D4AF9 /* BestFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFeedsViewController.swift; sourceTree = "<group>"; };
+		A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */,
 				A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */,
 				A59DDBD826863327008D4AF9 /* BestPageViewController.swift */,
+				A59DDBDC26863FC8008D4AF9 /* BestFeedsViewController.swift */,
+				A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */,
 			);
 			path = Best;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
+				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
@@ -516,6 +523,7 @@
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
+				A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
 				A567962F2685D6B100CAB9F6 /* TagCollectionViewCell.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,

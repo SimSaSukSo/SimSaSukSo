@@ -16,9 +16,9 @@ class BestPageViewController: UIPageViewController {
             let storyBoard = UIStoryboard(name: "HomeStoryboard", bundle: nil)
             
             let vc0 = storyBoard.instantiateViewController(identifier: "BestOneFeedViewController")
-            let vc1 = storyBoard.instantiateViewController(identifier: "BestTabViewController")
+            let vc1 = storyBoard.instantiateViewController(identifier: "BestFeedsViewController")
             
-            return [vc0]
+            return [vc0, vc1]
             
         } ()
         
