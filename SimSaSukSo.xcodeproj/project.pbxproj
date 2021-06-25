@@ -7,17 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A2CA9533B5E0277602759E4 /* Pods_EduTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E49E64A394E284203635128 /* Pods_EduTemplate.framework */; };
-		A54956242680B79500F1AE44 /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956232680B79500F1AE44 /* MyFeedViewController.swift */; };
-		A54956272680BD5900F1AE44 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54956262680BD5900F1AE44 /* MyFeedCollectionViewCell.swift */; };
-		A549562B2680C78100F1AE44 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549562A2680C78100F1AE44 /* MyFeedDetailViewController.swift */; };
-		A549562E2680F2D000F1AE44 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549562D2680F2CF00F1AE44 /* TagCollectionViewCell.swift */; };
-		A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */; };
-		A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */; };
-		A568FD1C2684BB2C0006353F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD1B2684BB2C0006353F /* PageViewController.swift */; };
-		A568FD1F2684BE860006353F /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD1E2684BE860006353F /* HomeTabViewController.swift */; };
-		A568FD222684BE900006353F /* BestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD212684BE900006353F /* BestTabViewController.swift */; };
-		A568FD252684BE990006353F /* NewTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A568FD242684BE990006353F /* NewTabViewController.swift */; };
+		919F616C3FD1DF6B1A4D907C /* Pods_SimSaSukSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
 		A711E020267B5D4C006A1F0B /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */; };
@@ -30,6 +20,9 @@
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
+		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
+		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
+		A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766CB4E26831A7200565095 /* WelcomeAlertView.xib */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -54,18 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E49E64A394E284203635128 /* Pods_EduTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimSaSukSo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimSaSukSo.release.xcconfig"; path = "Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo.release.xcconfig"; sourceTree = "<group>"; };
 		8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.release.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.release.xcconfig"; sourceTree = "<group>"; };
-		A54956232680B79500F1AE44 /* MyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewController.swift; sourceTree = "<group>"; };
-		A54956262680BD5900F1AE44 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
-		A549562A2680C78100F1AE44 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
-		A549562D2680F2CF00F1AE44 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
-		A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNoticeViewController.swift; sourceTree = "<group>"; };
-		A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		A568FD1B2684BB2C0006353F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		A568FD1E2684BE860006353F /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
-		A568FD212684BE900006353F /* BestTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTabViewController.swift; sourceTree = "<group>"; };
-		A568FD242684BE990006353F /* NewTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabViewController.swift; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
 		A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
@@ -78,6 +62,9 @@
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
+		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
+		A766CB4E26831A7200565095 /* WelcomeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeAlertView.xib; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +89,7 @@
 		BD4394F7252E37580055F2E6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BD8BD75525E497EB00346266 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BD8BD76925E4B58C00346266 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimSaSukSo.debug.xcconfig"; path = "Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2CA9533B5E0277602759E4 /* Pods_EduTemplate.framework in Frameworks */,
+				919F616C3FD1DF6B1A4D907C /* Pods_SimSaSukSo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +107,7 @@
 		48C2A21871D863A54F9258E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1E49E64A394E284203635128 /* Pods_EduTemplate.framework */,
+				07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +117,8 @@
 			children = (
 				B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */,
 				8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */,
+				F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */,
+				79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -138,10 +128,6 @@
 			children = (
 				A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */,
 				A711E02B267B5E74006A1F0B /* HomeViewController.swift */,
-				A568FD1B2684BB2C0006353F /* PageViewController.swift */,
-				A568FD1E2684BE860006353F /* HomeTabViewController.swift */,
-				A568FD212684BE900006353F /* BestTabViewController.swift */,
-				A568FD242684BE990006353F /* NewTabViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -178,12 +164,6 @@
 			children = (
 				A711E028267B5E03006A1F0B /* SettingStoryboard.storyboard */,
 				A711E037267B5EAE006A1F0B /* SettingViewController.swift */,
-				A54ED97F267F5F48001E5BD1 /* SetNoticeViewController.swift */,
-				A54ED982267F62E3001E5BD1 /* ProfileViewController.swift */,
-				A54956232680B79500F1AE44 /* MyFeedViewController.swift */,
-				A54956262680BD5900F1AE44 /* MyFeedCollectionViewCell.swift */,
-				A549562A2680C78100F1AE44 /* MyFeedDetailViewController.swift */,
-				A549562D2680F2CF00F1AE44 /* TagCollectionViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -295,6 +275,9 @@
 			children = (
 				BD8BD76925E4B58C00346266 /* SplashViewController.swift */,
 				A766CB18267F502900565095 /* SplashStoryboard.storyboard */,
+				A766CB352680D1FE00565095 /* NicknameViewController.swift */,
+				A766CB4B268316DE00565095 /* WelcomAlertView.swift */,
+				A766CB4E26831A7200565095 /* WelcomeAlertView.xib */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -385,6 +368,7 @@
 				BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */,
 				A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */,
 				BD4394A7252E2AE40055F2E6 /* NotoSansCJKkr-Medium.otf in Resources */,
+				A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +390,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EduTemplate-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SimSaSukSo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -419,15 +403,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EduTemplate/Pods-EduTemplate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EduTemplate/Pods-EduTemplate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EduTemplate/Pods-EduTemplate-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -443,30 +427,22 @@
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
-				A568FD222684BE900006353F /* BestTabViewController.swift in Sources */,
-				A568FD1F2684BE860006353F /* HomeTabViewController.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
-				A54956272680BD5900F1AE44 /* MyFeedCollectionViewCell.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
-				A549562E2680F2D000F1AE44 /* TagCollectionViewCell.swift in Sources */,
-				A54ED980267F5F48001E5BD1 /* SetNoticeViewController.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
-				A568FD1C2684BB2C0006353F /* PageViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
-				A568FD252684BE990006353F /* NewTabViewController.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
-				A54ED983267F62E3001E5BD1 /* ProfileViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
+				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
-				A549562B2680C78100F1AE44 /* MyFeedDetailViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
-				A54956242680B79500F1AE44 /* MyFeedViewController.swift in Sources */,
+				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +579,7 @@
 		};
 		BD439412252E13F30055F2E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */;
+			baseConfigurationReference = F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -617,7 +593,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.softsquared.edu.template.storyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simsasukso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -626,7 +602,7 @@
 		};
 		BD439413252E13F30055F2E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */;
+			baseConfigurationReference = 79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -640,7 +616,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.softsquared.edu.template.storyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.simsasukso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
