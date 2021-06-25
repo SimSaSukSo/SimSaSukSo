@@ -17,25 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaW-3x-FHX">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-vi-Xif">
+                                <rect key="frame" x="48" y="231" width="307" height="337"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="testButton:" destination="rvF-KZ-hNP" eventType="touchUpInside" id="q0w-GR-OTU"/>
+                                    <action selector="button:" destination="rvF-KZ-hNP" eventType="touchUpInside" id="Lnf-B0-RKm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bGu-l3-gwN"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
-                            <constraint firstItem="RaW-3x-FHX" firstAttribute="centerY" secondItem="Yl9-hR-GEJ" secondAttribute="centerY" id="2mv-cr-A45"/>
-                            <constraint firstItem="RaW-3x-FHX" firstAttribute="centerX" secondItem="Yl9-hR-GEJ" secondAttribute="centerX" id="JFV-7i-ilj"/>
+                            <constraint firstItem="bGu-l3-gwN" firstAttribute="trailing" secondItem="qzI-vi-Xif" secondAttribute="trailing" constant="59" id="Hbf-Iw-MrF"/>
+                            <constraint firstItem="bGu-l3-gwN" firstAttribute="bottom" secondItem="qzI-vi-Xif" secondAttribute="bottom" constant="294" id="YGJ-xl-fbg"/>
+                            <constraint firstItem="qzI-vi-Xif" firstAttribute="leading" secondItem="bGu-l3-gwN" secondAttribute="leading" constant="48" id="awz-J1-heP"/>
+                            <constraint firstItem="qzI-vi-Xif" firstAttribute="top" secondItem="bGu-l3-gwN" secondAttribute="top" constant="187" id="mPx-y8-i3i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="qzI-vi-Xif" id="Gid-Fb-zzz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ot-lr-ig1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="53"/>
+            <point key="canvasLocation" x="8.6956521739130448" y="52.901785714285715"/>
         </scene>
     </scenes>
     <resources>

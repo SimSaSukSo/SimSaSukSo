@@ -15,13 +15,13 @@ class ViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
+     Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
+           self.forhome()
+   }
+//        DispatchQueue.main.async {
 //            self.forhome()
 //        }
-        DispatchQueue.main.async {
-            self.forhome()
-        }
-        //forhome()
+       // forhome()
     }
     
     func forhome(){
