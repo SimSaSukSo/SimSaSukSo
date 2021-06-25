@@ -64,6 +64,8 @@ class NicknameViewController : BaseViewController{
         }
     
     func checkFormat(){
+        let mainTabBarController = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeViewController")
+        changeRootViewController(mainTabBarController)
         
     }
     
@@ -122,6 +124,7 @@ extension NicknameViewController: UITextFieldDelegate {
         
         self.view.endEditing(true)
         WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
+        checkFormat()
         print("dd")
     
 }

@@ -35,6 +35,16 @@
             </objects>
             <point key="canvasLocation" x="715" y="77"/>
         </scene>
+        <!--SearchStoryboard-->
+        <scene sceneID="4TQ-WQ-Md1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchStoryboard" id="VHS-rL-XUc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="mjg-jb-t7g"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Dx-LL-eVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="185"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="s7J-2R-ERW">
             <objects>
@@ -61,7 +71,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlN-Ki-EnD">
-                                                        <rect key="frame" x="22.333333333333336" y="21" width="10.333333333333336" height="13"/>
+                                                        <rect key="frame" x="22.333333333333336" y="21" width="10.333333333333336" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -105,7 +115,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keJ-0y-whY">
-                                                        <rect key="frame" x="17.333333333333343" y="21" width="20.333333333333329" height="13"/>
+                                                        <rect key="frame" x="17.333333333333343" y="21" width="20.333333333333329" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -149,7 +159,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBM-oV-AMx">
-                                                        <rect key="frame" x="13.000000000000002" y="21" width="28.666666666666671" height="13"/>
+                                                        <rect key="frame" x="12.000000000000002" y="21" width="30.666666666666671" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -190,7 +200,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iK-Ee-cWd">
-                                                        <rect key="frame" x="13.333333333333345" y="19" width="28.666666666666671" height="13"/>
+                                                        <rect key="frame" x="12.333333333333345" y="19" width="30.666666666666671" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -234,7 +244,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nl-l9-JDG">
-                                                        <rect key="frame" x="17.333333333333314" y="21" width="20.333333333333329" height="13"/>
+                                                        <rect key="frame" x="17.333333333333314" y="21" width="20.333333333333329" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -313,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3J0-pu-NrA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67.692307692307693" y="96.682464454976298"/>
+            <point key="canvasLocation" x="-625" y="345"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="Hth-Mx-Y7h">
