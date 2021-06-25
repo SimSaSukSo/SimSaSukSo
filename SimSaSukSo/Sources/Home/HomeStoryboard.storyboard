@@ -147,18 +147,28 @@
                                     <segue destination="ajT-96-sOj" kind="embed" identifier="PageViewController" id="f4a-j1-D2V"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs6-d2-Lba">
+                                <rect key="frame" x="0.0" y="181" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="V5h-h8-cEM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JEB-7S-y64"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xs6-d2-Lba" firstAttribute="top" secondItem="fHS-Ok-wJN" secondAttribute="bottom" constant="1" id="16y-SU-xMd"/>
                             <constraint firstItem="fHS-Ok-wJN" firstAttribute="top" secondItem="8PU-TD-53o" secondAttribute="bottom" constant="22" id="AdQ-Z3-XzR"/>
                             <constraint firstItem="ZTh-6b-75W" firstAttribute="leading" secondItem="JEB-7S-y64" secondAttribute="leading" id="EAi-EY-uWs"/>
                             <constraint firstAttribute="bottom" secondItem="ZTh-6b-75W" secondAttribute="bottom" id="KAf-af-eqN"/>
                             <constraint firstItem="ZTh-6b-75W" firstAttribute="trailing" secondItem="JEB-7S-y64" secondAttribute="trailing" id="ROe-KT-18m"/>
                             <constraint firstItem="ZTh-6b-75W" firstAttribute="top" secondItem="fHS-Ok-wJN" secondAttribute="bottom" constant="1" id="cB6-s0-EnL"/>
+                            <constraint firstItem="Xs6-d2-Lba" firstAttribute="leading" secondItem="JEB-7S-y64" secondAttribute="leading" id="nwu-QR-sjn"/>
                             <constraint firstItem="8PU-TD-53o" firstAttribute="centerX" secondItem="SE1-hI-FkL" secondAttribute="centerX" id="sLW-Dn-JcH"/>
                             <constraint firstItem="fHS-Ok-wJN" firstAttribute="leading" secondItem="JEB-7S-y64" secondAttribute="leading" constant="21" id="sza-EG-Pu3"/>
                             <constraint firstItem="8PU-TD-53o" firstAttribute="top" secondItem="JEB-7S-y64" secondAttribute="top" constant="51" id="tiV-Xh-G3i"/>
+                            <constraint firstItem="JEB-7S-y64" firstAttribute="trailing" secondItem="Xs6-d2-Lba" secondAttribute="trailing" id="trI-NA-7W7"/>
                         </constraints>
                     </view>
                     <connections>
