@@ -50,6 +50,7 @@ class WelcomeAlertView: UIView{
     
     @IBAction func startButtonAction(_ sender: Any) {
         parentView.removeFromSuperview()
+        
     }
     
 }
