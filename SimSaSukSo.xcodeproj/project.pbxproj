@@ -38,6 +38,7 @@
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
 		A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766CB4E26831A7200565095 /* WelcomeAlertView.xib */; };
+		A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -95,6 +96,7 @@
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
 		A766CB4E26831A7200565095 /* WelcomeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeAlertView.xib; sourceTree = "<group>"; };
+		A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */,
+				A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
+				A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
