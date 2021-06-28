@@ -39,6 +39,7 @@
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
 		A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766CB4E26831A7200565095 /* WelcomeAlertView.xib */; };
 		A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */; };
+		A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -97,6 +98,7 @@
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
 		A766CB4E26831A7200565095 /* WelcomeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeAlertView.xib; sourceTree = "<group>"; };
 		A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
+		A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSearchesCollectionView.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			children = (
 				A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */,
 				A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */,
+				A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
+				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */,
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,

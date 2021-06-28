@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -35,7 +36,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-Wa-fBQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dpw-Gw-kd6" userLabel="sliderCollectionView">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dpw-Gw-kd6" userLabel="sliderCollectionView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -63,19 +64,19 @@
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34787193251533743" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요즘 대세 호텔!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M6-br-lUU" userLabel="sliderLabelText">
-                                                                    <rect key="frame" x="16" y="135" width="77" height="21"/>
+                                                                    <rect key="frame" x="16" y="135" width="72.5" height="21"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="속초 가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-nu-nh4">
-                                                                    <rect key="frame" x="16" y="154" width="140.5" height="30"/>
+                                                                    <rect key="frame" x="16" y="160.5" width="132.5" height="23.5"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BXn-5U-T59">
-                                                                    <rect key="frame" x="373" y="163.5" width="25" height="11"/>
+                                                                    <rect key="frame" x="373" y="167" width="25" height="11"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-3H-JiU">
                                                                             <rect key="frame" x="0.0" y="0.0" width="7" height="11"/>
@@ -133,11 +134,109 @@
                                                 <color key="pageIndicatorTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="currentPageIndicatorTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </pageControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1AD-Fo-4si">
+                                                <rect key="frame" x="16" y="224" width="382" height="234"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 Top5 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tk1-gZ-Km9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 가장 검색이 많은 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-Vb-7iL">
+                                                        <rect key="frame" x="0.0" y="23" width="145" height="14"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                        <color key="textColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bvt-Az-qXB">
+                                                        <rect key="frame" x="0.0" y="53" width="382" height="181"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hGv-bS-otD">
+                                                            <size key="itemSize" width="150" height="177"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BestSearchesCollectionViewCell" id="3PJ-Xf-LzA" customClass="BestSearchesCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="2" width="150" height="177"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XFV-up-olR">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="177"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pZV-V6-Lw7">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                                            <color key="backgroundColor" name="mainOrange"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="150" id="0Wo-xh-gEq"/>
+                                                                                <constraint firstAttribute="width" constant="150" id="Kxc-IK-Upi"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7a-NB-MfZ">
+                                                                            <rect key="frame" x="0.0" y="158" width="55.5" height="14"/>
+                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                                            <color key="textColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best5_green" translatesAutoresizingMaskIntoConstraints="NO" id="Oy8-f6-PeA">
+                                                                            <rect key="frame" x="4" y="0.0" width="24" height="28"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="24" id="Um9-8u-yAA"/>
+                                                                                <constraint firstAttribute="height" constant="28" id="z5h-K3-Zzw"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geg-3p-XII">
+                                                                            <rect key="frame" x="13" y="3" width="6.5" height="13"/>
+                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="Oy8-f6-PeA" firstAttribute="leading" secondItem="XFV-up-olR" secondAttribute="leading" constant="4" id="IBM-sP-AhC"/>
+                                                                        <constraint firstItem="Oy8-f6-PeA" firstAttribute="top" secondItem="XFV-up-olR" secondAttribute="top" id="Nbb-oK-c3y"/>
+                                                                        <constraint firstItem="geg-3p-XII" firstAttribute="centerX" secondItem="Oy8-f6-PeA" secondAttribute="centerX" id="Ygg-c8-bNA"/>
+                                                                        <constraint firstItem="t7a-NB-MfZ" firstAttribute="leading" secondItem="XFV-up-olR" secondAttribute="leading" id="dHC-jW-9VE"/>
+                                                                        <constraint firstItem="pZV-V6-Lw7" firstAttribute="leading" secondItem="XFV-up-olR" secondAttribute="leading" id="e9R-s2-Ck6"/>
+                                                                        <constraint firstItem="geg-3p-XII" firstAttribute="top" secondItem="XFV-up-olR" secondAttribute="top" constant="3" id="l85-gF-z0v"/>
+                                                                        <constraint firstItem="pZV-V6-Lw7" firstAttribute="top" secondItem="XFV-up-olR" secondAttribute="top" id="lNW-5R-YeV"/>
+                                                                        <constraint firstItem="t7a-NB-MfZ" firstAttribute="top" secondItem="pZV-V6-Lw7" secondAttribute="bottom" constant="8" id="mzl-tU-7nH"/>
+                                                                    </constraints>
+                                                                </collectionViewCellContentView>
+                                                                <size key="customSize" width="150" height="177"/>
+                                                                <connections>
+                                                                    <outlet property="BestSearchesImageView" destination="pZV-V6-Lw7" id="6oN-Fz-MTr"/>
+                                                                    <outlet property="BestSearchesNameLabel" destination="t7a-NB-MfZ" id="V3Z-6U-7zH"/>
+                                                                    <outlet property="BestSearchesRankImageView" destination="Oy8-f6-PeA" id="W0W-lP-UbJ"/>
+                                                                    <outlet property="BestSearchesRankLabel" destination="geg-3p-XII" id="fKU-hI-w0s"/>
+                                                                </connections>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="bvt-Az-qXB" secondAttribute="trailing" id="0Hx-Ir-PFA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bvt-Az-qXB" secondAttribute="bottom" id="DrW-u6-Z8f"/>
+                                                    <constraint firstItem="Tk1-gZ-Km9" firstAttribute="leading" secondItem="1AD-Fo-4si" secondAttribute="leading" id="Jrr-uT-agI"/>
+                                                    <constraint firstAttribute="height" constant="234" id="M9K-o0-TXP"/>
+                                                    <constraint firstItem="bvt-Az-qXB" firstAttribute="top" secondItem="f4y-Vb-7iL" secondAttribute="bottom" constant="16" id="ah0-qm-R4j"/>
+                                                    <constraint firstItem="Tk1-gZ-Km9" firstAttribute="top" secondItem="1AD-Fo-4si" secondAttribute="top" id="bPI-PA-GCE"/>
+                                                    <constraint firstItem="f4y-Vb-7iL" firstAttribute="leading" secondItem="1AD-Fo-4si" secondAttribute="leading" id="ir4-F0-b2s"/>
+                                                    <constraint firstItem="bvt-Az-qXB" firstAttribute="leading" secondItem="1AD-Fo-4si" secondAttribute="leading" id="lkN-xf-SXN"/>
+                                                    <constraint firstItem="f4y-Vb-7iL" firstAttribute="top" secondItem="Tk1-gZ-Km9" secondAttribute="bottom" constant="4" id="s2C-Vn-B1T"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1500" id="KJB-0X-p7h"/>
+                                            <constraint firstItem="1AD-Fo-4si" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="L7j-Df-XX3"/>
                                             <constraint firstAttribute="trailing" secondItem="VB7-vR-1bk" secondAttribute="trailing" id="TTa-Vf-oen"/>
+                                            <constraint firstAttribute="trailing" secondItem="1AD-Fo-4si" secondAttribute="trailing" constant="16" id="Y40-bt-hyy"/>
+                                            <constraint firstItem="1AD-Fo-4si" firstAttribute="top" secondItem="Dpw-Gw-kd6" secondAttribute="bottom" constant="24" id="mBD-LY-khh"/>
                                             <constraint firstAttribute="trailing" secondItem="Dpw-Gw-kd6" secondAttribute="trailing" id="oem-Yq-lBk"/>
                                             <constraint firstItem="VB7-vR-1bk" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" id="qz7-R8-cUZ"/>
                                             <constraint firstItem="VB7-vR-1bk" firstAttribute="bottom" secondItem="Dpw-Gw-kd6" secondAttribute="bottom" id="s5E-PL-BHH"/>
@@ -168,6 +267,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BestSearchesCollectionView" destination="bvt-Az-qXB" id="tHz-0o-CDf"/>
                         <outlet property="SliderCollectionView" destination="Dpw-Gw-kd6" id="o6D-pa-DgF"/>
                         <outlet property="slidePageControl" destination="VB7-vR-1bk" id="lT3-Li-6gJ"/>
                     </connections>
@@ -632,7 +732,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="best5_green" width="24" height="28"/>
         <image name="view_score_image" width="18" height="19"/>
+        <namedColor name="mainOrange">
+            <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
