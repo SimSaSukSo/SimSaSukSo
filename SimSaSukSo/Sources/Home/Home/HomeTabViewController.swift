@@ -13,6 +13,8 @@ class HomeTabViewController: UIViewController {
     
     @IBOutlet weak var BestSearchesCollectionView: UICollectionView!
     
+    @IBOutlet weak var TrendPlacesCollectionView: UICollectionView!
+    
     @IBOutlet weak var BestLikesCollectionView: UICollectionView!
     
     @IBOutlet weak var slidePageControl: UIPageControl!
@@ -42,6 +44,8 @@ class HomeTabViewController: UIViewController {
         BestSearchesCollectionView.dataSource = self
         BestSearchesCollectionView.delegate = self
         
+        TrendPlacesCollectionView.dataSource = self
+        TrendPlacesCollectionView.delegate = self
         
         BestLikesCollectionView.dataSource = self
         BestLikesCollectionView.delegate = self
@@ -88,6 +92,8 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
         }
         else if collectionView == BestSearchesCollectionView{
             count = 5
+        }else if collectionView == TrendPlacesCollectionView{
+            count = 5
         }else if collectionView == BestLikesCollectionView{
             count = 5
         }
@@ -114,6 +120,10 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
             }
             cell = searchscell
             
+        }else if collectionView == TrendPlacesCollectionView{
+            let trendcell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendPlacesCollectionViewCell", for: indexPath) as! TrendPlacesCollectionViewCell
+            cell = trendcell
+            
         }else if collectionView == BestLikesCollectionView{
             let likescell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestLikesCollectionViewCell", for: indexPath) as! BestLikesCollectionViewCell
             likescell.BestLikesRankLabel.text = "\(indexPath.row+1)"
@@ -136,7 +146,10 @@ extension HomeTabViewController : UICollectionViewDelegateFlowLayout{
          edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }else if collectionView == BestSearchesCollectionView{
             edgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }else if collectionView == BestLikesCollectionView{
+        }else if collectionView == TrendPlacesCollectionView{
+            edgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        else if collectionView == BestLikesCollectionView{
             edgeInsets =  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         return edgeInsets
@@ -148,7 +161,10 @@ extension HomeTabViewController : UICollectionViewDelegateFlowLayout{
         size = sliderCollectionView.frame.size
         }else if collectionView == BestSearchesCollectionView{
             size = CGSize(width: 150, height: 177)
-        }else if collectionView == BestLikesCollectionView{
+        }else if collectionView == TrendPlacesCollectionView{
+            size = CGSize(width: 150, height: 226)
+        }
+        else if collectionView == BestLikesCollectionView{
             size = CGSize(width: 150, height: 177)
         }
         return size
@@ -159,6 +175,9 @@ extension HomeTabViewController : UICollectionViewDelegateFlowLayout{
         if collectionView == sliderCollectionView{
             space = 0.0
         }else if collectionView == BestSearchesCollectionView{
+            space = 4.0
+            
+        }else if collectionView == TrendPlacesCollectionView{
             space = 4.0
         }else if collectionView == BestLikesCollectionView{
             space = 4.0

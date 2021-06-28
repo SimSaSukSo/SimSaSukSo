@@ -41,6 +41,7 @@
 		A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */; };
 		A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */; };
 		A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9F2689F9D900565095 /* BestLikesCollectionViewCell.swift */; };
+		A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCA3268A263100565095 /* TrendPlacesCollectionViewCell.swift */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -101,6 +102,7 @@
 		A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSearchesCollectionView.swift; sourceTree = "<group>"; };
 		A766CC9F2689F9D900565095 /* BestLikesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestLikesCollectionViewCell.swift; sourceTree = "<group>"; };
+		A766CCA3268A263100565095 /* TrendPlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendPlacesCollectionViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 				A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */,
 				A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */,
 				A766CC9F2689F9D900565095 /* BestLikesCollectionViewCell.swift */,
+				A766CCA3268A263100565095 /* TrendPlacesCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
+				A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */,
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
 				A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
