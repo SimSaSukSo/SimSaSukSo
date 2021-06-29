@@ -13,10 +13,12 @@ class BestTabViewController: UIViewController {
     
     let count = 10
     
+    @IBOutlet var bestTabScrollView: UIScrollView!
+    
     @IBOutlet var bestHashtagCollectionView: UICollectionView!
-    @IBOutlet var bestViewHeight: NSLayoutConstraint!
     @IBOutlet var bestOneFeedButton: UIButton!
     @IBOutlet var bestFeedsButton: UIButton!
+    @IBOutlet var bestViewHeight: NSLayoutConstraint!
     
     var buttonLists: [UIButton] = []
     
@@ -36,8 +38,12 @@ class BestTabViewController: UIViewController {
         bestHashtagCollectionView.delegate = self
         bestHashtagCollectionView.dataSource = self
         
-        bestViewHeight.constant = CGFloat(Double(count) * 440)
+        bestTabScrollView.delegate = self
+
+        bestViewHeight.constant = 1500
+        bestTabScrollView.frame.size.height = bestViewHeight.constant + 10000
         
+    
         setButtonList()
     
     }

@@ -39,7 +39,8 @@ class NewTabViewController: UIViewController {
         newHashTagCollectionView.delegate = self
         newHashTagCollectionView.dataSource = self
         
-        newViewHeight.constant = CGFloat(Double(count) * 440)
+        //newViewHeight.constant = CGFloat(Double(count) * 440)
+        //newViewHeight.constant =
         
         setButtonList()
     
