@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rvF-KZ-hNP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sxL-Nk-c81">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -16,34 +16,38 @@
                     <view key="view" contentMode="scaleToFill" id="Yl9-hR-GEJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzI-vi-Xif">
-                                <rect key="frame" x="48" y="231" width="307" height="337"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="button:" destination="rvF-KZ-hNP" eventType="touchUpInside" id="Lnf-B0-RKm"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bGu-l3-gwN"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                        <constraints>
-                            <constraint firstItem="bGu-l3-gwN" firstAttribute="trailing" secondItem="qzI-vi-Xif" secondAttribute="trailing" constant="59" id="Hbf-Iw-MrF"/>
-                            <constraint firstItem="bGu-l3-gwN" firstAttribute="bottom" secondItem="qzI-vi-Xif" secondAttribute="bottom" constant="294" id="YGJ-xl-fbg"/>
-                            <constraint firstItem="qzI-vi-Xif" firstAttribute="leading" secondItem="bGu-l3-gwN" secondAttribute="leading" constant="48" id="awz-J1-heP"/>
-                            <constraint firstItem="qzI-vi-Xif" firstAttribute="top" secondItem="bGu-l3-gwN" secondAttribute="top" constant="187" id="mPx-y8-i3i"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="button" destination="qzI-vi-Xif" id="Gid-Fb-zzz"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="Jvf-Mq-hw5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ot-lr-ig1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="918.84057971014499" y="52.901785714285715"/>
+        </scene>
+        <!--업로드-->
+        <scene sceneID="cy5-Xb-X89">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sxL-Nk-c81" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="업로드" image="img_upload" id="F5n-Dg-g4D"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oXu-a3-hJP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rvF-KZ-hNP" kind="relationship" relationship="rootViewController" id="Jpf-Rz-j9c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5d6-P6-faU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.6956521739130448" y="52.901785714285715"/>
         </scene>
     </scenes>
     <resources>
+        <image name="img_upload" width="18" height="18"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

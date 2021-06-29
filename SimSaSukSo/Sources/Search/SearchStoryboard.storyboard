@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bC0-7W-6AB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FZi-Hz-lwZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,20 +12,42 @@
         <!--Search View Controller-->
         <scene sceneID="Mqf-yz-TwC">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bC0-7W-6AB" customClass="SearchViewController" customModule="EduTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bC0-7W-6AB" customClass="SearchViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oaG-IT-Odm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9GY-1Z-tIg"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Dnf-cy-YdF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogE-mn-e6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="62"/>
+            <point key="canvasLocation" x="1097.1014492753625" y="61.607142857142854"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="UHh-gQ-PzZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FZi-Hz-lwZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색" image="img_search" id="KKt-bh-o8i"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="asg-cm-ecH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bC0-7W-6AB" kind="relationship" relationship="rootViewController" id="FQW-vt-jlc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyV-PF-sUK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186.95652173913044" y="61.607142857142854"/>
         </scene>
     </scenes>
     <resources>
+        <image name="img_search" width="18" height="18"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
