@@ -47,6 +47,7 @@
 		A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */; };
 		A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9F2689F9D900565095 /* BestLikesCollectionViewCell.swift */; };
 		A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCA3268A263100565095 /* TrendPlacesCollectionViewCell.swift */; };
+		A766CCAA268B9E1500565095 /* BestBelievesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCA9268B9E1500565095 /* BestBelievesTableViewCell.swift */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -113,6 +114,7 @@
 		A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSearchesCollectionView.swift; sourceTree = "<group>"; };
 		A766CC9F2689F9D900565095 /* BestLikesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestLikesCollectionViewCell.swift; sourceTree = "<group>"; };
 		A766CCA3268A263100565095 /* TrendPlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendPlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		A766CCA9268B9E1500565095 /* BestBelievesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBelievesTableViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +218,7 @@
 				A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */,
 				A766CC9F2689F9D900565095 /* BestLikesCollectionViewCell.swift */,
 				A766CCA3268A263100565095 /* TrendPlacesCollectionViewCell.swift */,
+				A766CCA9268B9E1500565095 /* BestBelievesTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
+				A766CCAA268B9E1500565095 /* BestBelievesTableViewCell.swift in Sources */,
 				A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
 				A567962F2685D6B100CAB9F6 /* TagCollectionViewCell.swift in Sources */,

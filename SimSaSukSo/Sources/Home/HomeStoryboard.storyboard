@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-Wa-fBQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1450"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dpw-Gw-kd6" userLabel="sliderCollectionView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -408,18 +408,145 @@
                                                     <constraint firstItem="boi-B1-F5k" firstAttribute="top" secondItem="yYY-k4-2rC" secondAttribute="bottom" constant="4" id="lRV-13-hGL"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjN-f5-i7h">
+                                                <rect key="frame" x="16" y="1014" width="398" height="386"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 Top5 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5Y-N8-4lF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번 주 사람들이 가장 관심이 많은 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npv-Jp-btC">
+                                                        <rect key="frame" x="0.0" y="28" width="214" height="18"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-Nz-hyS">
+                                                        <rect key="frame" x="0.0" y="62" width="398" height="374"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BestBelievesTableViewCell" rowHeight="96" id="TV2-Kl-H9T" customClass="BestBelievesTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28" width="398" height="96"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TV2-Kl-H9T" id="BrD-Wj-oXM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="96"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-lC-dCU">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                            <color key="backgroundColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="0.40124137269938648" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="80" id="int-5w-2jW"/>
+                                                                                <constraint firstAttribute="height" constant="80" id="pnH-GD-tgD"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmI-Pu-JFE">
+                                                                            <rect key="frame" x="96" y="15.5" width="302" height="49"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82D-zO-9gx">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="18"/>
+                                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                                                    <color key="textColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2rl-WW-xiZ">
+                                                                                    <rect key="frame" x="0.0" y="26" width="216" height="23"/>
+                                                                                    <subviews>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBP-f5-LXd">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="23"/>
+                                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                                            <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
+                                                                                            <state key="normal" title="가성비 맛집" backgroundImage="Rectangle 1475">
+                                                                                                <color key="titleColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                            </state>
+                                                                                        </button>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhT-Ky-KYt">
+                                                                                            <rect key="frame" x="64" y="0.0" width="44" height="23"/>
+                                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                                            <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
+                                                                                            <state key="normal" title="뷰 맛집" backgroundImage="Rectangle 1475">
+                                                                                                <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                            </state>
+                                                                                        </button>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ys-lN-GXY">
+                                                                                            <rect key="frame" x="118" y="0.0" width="44" height="23"/>
+                                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                                            <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
+                                                                                            <state key="normal" title="힐링" backgroundImage="Rectangle 1475">
+                                                                                                <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                            </state>
+                                                                                        </button>
+                                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD5-99-Bg1">
+                                                                                            <rect key="frame" x="172" y="0.0" width="44" height="23"/>
+                                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
+                                                                                            <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
+                                                                                            <state key="normal" title="우정 여행" backgroundImage="Rectangle 1475">
+                                                                                                <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                            </state>
+                                                                                        </button>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                            <constraints>
+                                                                                <constraint firstItem="2rl-WW-xiZ" firstAttribute="top" secondItem="82D-zO-9gx" secondAttribute="bottom" constant="8" id="Boh-Jl-NXo"/>
+                                                                                <constraint firstItem="82D-zO-9gx" firstAttribute="top" secondItem="lmI-Pu-JFE" secondAttribute="top" id="JF6-ms-ojX"/>
+                                                                                <constraint firstItem="2rl-WW-xiZ" firstAttribute="leading" secondItem="lmI-Pu-JFE" secondAttribute="leading" id="aNU-t1-mRd"/>
+                                                                                <constraint firstItem="82D-zO-9gx" firstAttribute="leading" secondItem="lmI-Pu-JFE" secondAttribute="leading" id="p9z-T4-nDZ"/>
+                                                                                <constraint firstAttribute="height" constant="49" id="qiu-K5-M41"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="4nq-lC-dCU" firstAttribute="top" secondItem="BrD-Wj-oXM" secondAttribute="top" id="ENh-kb-YTe"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="lmI-Pu-JFE" secondAttribute="trailing" id="RWV-i8-uPr"/>
+                                                                        <constraint firstItem="lmI-Pu-JFE" firstAttribute="centerY" secondItem="4nq-lC-dCU" secondAttribute="centerY" id="W3r-V9-nOy"/>
+                                                                        <constraint firstItem="4nq-lC-dCU" firstAttribute="leading" secondItem="BrD-Wj-oXM" secondAttribute="leading" id="b56-ZA-Zqr"/>
+                                                                        <constraint firstItem="lmI-Pu-JFE" firstAttribute="leading" secondItem="4nq-lC-dCU" secondAttribute="trailing" constant="16" id="dAU-UX-4I0"/>
+                                                                    </constraints>
+                                                                </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="BestBelievesHashTagFour" destination="JD5-99-Bg1" id="YRq-ez-DBc"/>
+                                                                    <outlet property="BestBelievesHashTagOne" destination="cBP-f5-LXd" id="Lkv-hk-8D0"/>
+                                                                    <outlet property="BestBelievesHashTagThree" destination="5ys-lN-GXY" id="t88-SH-gwk"/>
+                                                                    <outlet property="BestBelievesHashTagTwo" destination="IhT-Ky-KYt" id="XTC-oN-EAR"/>
+                                                                    <outlet property="BestBelievesImageView" destination="4nq-lC-dCU" id="j0E-vz-w8J"/>
+                                                                    <outlet property="BestBelievesNameLabel" destination="82D-zO-9gx" id="AbP-sq-dM2"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="P5Y-N8-4lF" firstAttribute="leading" secondItem="wjN-f5-i7h" secondAttribute="leading" id="IXb-8E-IcQ"/>
+                                                    <constraint firstItem="npv-Jp-btC" firstAttribute="leading" secondItem="wjN-f5-i7h" secondAttribute="leading" id="L0c-h7-QAC"/>
+                                                    <constraint firstItem="ckA-Nz-hyS" firstAttribute="top" secondItem="npv-Jp-btC" secondAttribute="bottom" constant="16" id="Uw6-aw-TeD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ckA-Nz-hyS" secondAttribute="trailing" id="kFl-lh-VPZ"/>
+                                                    <constraint firstItem="npv-Jp-btC" firstAttribute="top" secondItem="P5Y-N8-4lF" secondAttribute="bottom" constant="4" id="pxF-Uv-0Wp"/>
+                                                    <constraint firstItem="P5Y-N8-4lF" firstAttribute="top" secondItem="wjN-f5-i7h" secondAttribute="top" id="uFb-tM-3Tg"/>
+                                                    <constraint firstItem="ckA-Nz-hyS" firstAttribute="leading" secondItem="wjN-f5-i7h" secondAttribute="leading" id="y06-o5-Tgg"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="KWy-q6-WE0" secondAttribute="trailing" id="4IJ-rg-ZLy"/>
                                             <constraint firstItem="KWy-q6-WE0" firstAttribute="top" secondItem="u62-qL-ZjQ" secondAttribute="bottom" constant="32" id="6iW-xR-UHr"/>
+                                            <constraint firstItem="wjN-f5-i7h" firstAttribute="top" secondItem="KWy-q6-WE0" secondAttribute="bottom" constant="32" id="EMc-8o-FaI"/>
                                             <constraint firstAttribute="trailing" secondItem="u62-qL-ZjQ" secondAttribute="trailing" id="Frc-rA-4Bs"/>
-                                            <constraint firstAttribute="height" constant="1500" id="KJB-0X-p7h"/>
+                                            <constraint firstAttribute="bottom" secondItem="ckA-Nz-hyS" secondAttribute="bottom" id="Jy7-z8-fWa"/>
+                                            <constraint firstAttribute="height" constant="1450" id="KJB-0X-p7h"/>
                                             <constraint firstItem="1AD-Fo-4si" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="L7j-Df-XX3"/>
                                             <constraint firstItem="u62-qL-ZjQ" firstAttribute="top" secondItem="1AD-Fo-4si" secondAttribute="bottom" constant="32" id="MWG-KR-8Er"/>
+                                            <constraint firstAttribute="trailing" secondItem="wjN-f5-i7h" secondAttribute="trailing" id="Mra-T2-oAO"/>
+                                            <constraint firstAttribute="bottom" secondItem="wjN-f5-i7h" secondAttribute="bottom" constant="50" id="Mz0-A0-EIy"/>
                                             <constraint firstItem="KWy-q6-WE0" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="NQG-60-b4c"/>
                                             <constraint firstAttribute="trailing" secondItem="VB7-vR-1bk" secondAttribute="trailing" id="TTa-Vf-oen"/>
                                             <constraint firstAttribute="trailing" secondItem="1AD-Fo-4si" secondAttribute="trailing" id="Y40-bt-hyy"/>
+                                            <constraint firstItem="wjN-f5-i7h" firstAttribute="leading" secondItem="VCz-4H-m5I" secondAttribute="leading" id="d8p-vy-IXl"/>
                                             <constraint firstItem="1AD-Fo-4si" firstAttribute="top" secondItem="Dpw-Gw-kd6" secondAttribute="bottom" constant="24" id="mBD-LY-khh"/>
                                             <constraint firstAttribute="trailing" secondItem="Dpw-Gw-kd6" secondAttribute="trailing" id="oem-Yq-lBk"/>
                                             <constraint firstItem="VB7-vR-1bk" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" id="qz7-R8-cUZ"/>
@@ -452,6 +579,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BestBelievesTableView" destination="ckA-Nz-hyS" id="vLS-Rk-GpD"/>
                         <outlet property="BestLikesCollectionView" destination="VCz-4H-m5I" id="l45-58-Phf"/>
                         <outlet property="BestSearchesCollectionView" destination="bvt-Az-qXB" id="tHz-0o-CDf"/>
                         <outlet property="SliderCollectionView" destination="Dpw-Gw-kd6" id="o6D-pa-DgF"/>
@@ -461,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U60-RZ-cDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239" y="-1020"/>
+            <point key="canvasLocation" x="237.68115942028987" y="-1020.5357142857142"/>
         </scene>
         <!--Best Page View Controller-->
         <scene sceneID="0e6-Oh-cWT">
@@ -1255,6 +1383,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Rectangle 1475" width="44" height="23"/>
         <image name="best5_green" width="24" height="28"/>
         <image name="feed_Four_S" width="16" height="16"/>
         <image name="feed_One_S" width="15" height="15"/>

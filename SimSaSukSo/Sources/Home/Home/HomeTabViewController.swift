@@ -17,6 +17,7 @@ class HomeTabViewController: UIViewController {
     
     @IBOutlet weak var BestLikesCollectionView: UICollectionView!
     
+    @IBOutlet weak var BestBelievesTableView: UITableView!
     @IBOutlet weak var slidePageControl: UIPageControl!
     
     
@@ -49,6 +50,10 @@ class HomeTabViewController: UIViewController {
         
         BestLikesCollectionView.dataSource = self
         BestLikesCollectionView.delegate = self
+        
+        BestBelievesTableView.dataSource = self
+        BestBelievesTableView.delegate = self
+        
         
         DispatchQueue.main.async {
 
@@ -188,6 +193,21 @@ extension HomeTabViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
+    
+    
+}
+
+extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let believecell = tableView.dequeueReusableCell(withIdentifier: "BestBelievesTableViewCell") as! BestBelievesTableViewCell
+       return believecell
+    }
+    
+    
     
     
 }
