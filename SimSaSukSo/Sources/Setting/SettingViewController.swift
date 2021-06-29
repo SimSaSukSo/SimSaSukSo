@@ -18,9 +18,9 @@ class SettingViewController : UIViewController {
     }
 
     @IBAction func myFeedButton(_ sender: UIButton) {
-        let myFeedVC = self.storyboard?.instantiateViewController(withIdentifier: "MyFeedViewController")
-        myFeedVC?.modalPresentationStyle = .fullScreen
-        self.present(myFeedVC!, animated: true, completion: nil)
+        let myFeedNaviVC = self.storyboard?.instantiateViewController(withIdentifier: "MyFeedNavi")
+        myFeedNaviVC?.modalPresentationStyle = .fullScreen
+        self.present(myFeedNaviVC!, animated: true, completion: nil)
         
     }
     

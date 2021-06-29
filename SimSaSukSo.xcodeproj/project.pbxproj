@@ -13,6 +13,7 @@
 		A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A3268AF73C002DA257 /* NewPageViewController.swift */; };
 		A54C34F2268B52D100D6F839 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */; };
 		A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */; };
+		A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3506268B98C900D6F839 /* ClearNavigationController.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -79,6 +80,7 @@
 		A547A6A3268AF73C002DA257 /* NewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageViewController.swift; sourceTree = "<group>"; };
 		A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
+		A54C3506268B98C900D6F839 /* ClearNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationController.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				BD439436252E1FE40055F2E6 /* BaseViewController.swift */,
+				A54C3506268B98C900D6F839 /* ClearNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
+				A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
