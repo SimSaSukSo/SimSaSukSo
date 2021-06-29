@@ -1,28 +1,28 @@
 //
-//  BestFeedsViewController.swift
+//  NewFeedsViewController.swift
 //  SimSaSukSo
 //
-//  Created by 소영 on 2021/06/26.
+//  Created by 소영 on 2021/06/29.
 //
 
 import UIKit
 
-class BestFeedsViewController: UIViewController {
+class NewFeedsViewController: UIViewController {
 
-    @IBOutlet var bestFeedsCollectionView: UICollectionView!
+    @IBOutlet var newFeedsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        bestFeedsCollectionView.dataSource = self
-        bestFeedsCollectionView.delegate = self
+        newFeedsCollectionView.dataSource = self
+        newFeedsCollectionView.delegate = self
     }
     
 
 }
 
 //MARK: - CollectionView
-extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -37,7 +37,7 @@ extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDat
 }
 
 //MARK: - CollectionView FlowLayout
-extension BestFeedsViewController: UICollectionViewDelegateFlowLayout {
+extension NewFeedsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

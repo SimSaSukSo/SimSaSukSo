@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		919F616C3FD1DF6B1A4D907C /* Pods_SimSaSukSo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */; };
+		A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */; };
+		A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */; };
+		A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A3268AF73C002DA257 /* NewPageViewController.swift */; };
+		A54C34F2268B52D100D6F839 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -69,6 +73,10 @@
 		07B5F9DC56235CEA791ADFD0 /* Pods_SimSaSukSo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimSaSukSo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimSaSukSo.release.xcconfig"; path = "Target Support Files/Pods-SimSaSukSo/Pods-SimSaSukSo.release.xcconfig"; sourceTree = "<group>"; };
 		8A81AF6DCC43E6E162128C48 /* Pods-EduTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.release.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOneFeedViewController.swift; sourceTree = "<group>"; };
+		A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
+		A547A6A3268AF73C002DA257 /* NewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageViewController.swift; sourceTree = "<group>"; };
+		A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				A56796342685D6C400CAB9F6 /* NewTabViewController.swift */,
+				A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */,
+				A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */,
+				A547A6A3268AF73C002DA257 /* NewPageViewController.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -245,6 +256,7 @@
 				A56796282685D68E00CAB9F6 /* ProfileViewController.swift */,
 				A567962B2685D69B00CAB9F6 /* SetNoticeViewController.swift */,
 				A567962E2685D6B100CAB9F6 /* TagCollectionViewCell.swift */,
+				A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -505,14 +517,17 @@
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
+				A54C34F2268B52D100D6F839 /* CommentTableViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
+				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */,
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
+				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
@@ -532,6 +547,7 @@
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
 				A59DDBCA26860258008D4AF9 /* HomeTabBestCollectionViewCell.swift in Sources */,
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,
+				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				A567962C2685D69C00CAB9F6 /* SetNoticeViewController.swift in Sources */,
@@ -681,7 +697,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F79CD35CD0E03E2DCF0BF9E9 /* Pods-SimSaSukSo.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -704,7 +719,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 79D673E20301371D94D86C94 /* Pods-SimSaSukSo.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

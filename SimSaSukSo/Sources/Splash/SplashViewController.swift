@@ -34,7 +34,7 @@ class SplashViewController: BaseViewController {
     }
     
     @IBAction func presentMainButtonTouchUpInside(_ sender: UIButton) {
-        let mainTabBarController = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeViewController")
+        let mainTabBarController = UIStoryboard(name: "SettingStoryboard", bundle: nil).instantiateViewController(identifier: "SettingViewController")
         changeRootViewController(mainTabBarController)
     }
 }

@@ -18,7 +18,7 @@ class BestPageViewController: UIPageViewController {
             let vc0 = storyBoard.instantiateViewController(identifier: "BestOneFeedViewController")
             let vc1 = storyBoard.instantiateViewController(identifier: "BestFeedsViewController")
             
-            return [vc0, vc1]
+            return [vc1, vc0]
             
         } ()
         
@@ -33,7 +33,7 @@ class BestPageViewController: UIPageViewController {
             self.dataSource = self
             self.delegate = self
             
-            if let firstVC = viewList.first{
+            if let firstVC = viewList.last{
                 self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
             }
 
