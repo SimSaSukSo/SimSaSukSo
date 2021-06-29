@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -699,23 +698,19 @@
                                                 </connections>
                                             </containerView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="3dm-E2-vYn">
-                                                <rect key="frame" x="336.5" y="176.5" width="59" height="22"/>
+                                                <rect key="frame" x="345.5" y="176.5" width="50" height="22"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vms-Sg-BCW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="22"/>
-                                                        <state key="normal">
-                                                            <imageReference key="image" image="square.grid.2x2" catalog="system" symbolScale="large"/>
-                                                        </state>
+                                                        <rect key="frame" x="0.0" y="0.0" width="19.5" height="22"/>
+                                                        <state key="normal" image="square.split.2x2" catalog="system"/>
                                                         <state key="selected" image="feed_Four_S"/>
                                                         <connections>
                                                             <action selector="bestFeedsButtonAction:" destination="Io0-1R-Tb4" eventType="touchUpInside" id="BDF-6w-Swx"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YZ-S1-6Ld">
-                                                        <rect key="frame" x="35" y="0.0" width="24" height="22"/>
-                                                        <state key="normal">
-                                                            <imageReference key="image" image="square" catalog="system" symbolScale="large"/>
-                                                        </state>
+                                                        <rect key="frame" x="30.5" y="0.0" width="19.5" height="22"/>
+                                                        <state key="normal" image="square" catalog="system"/>
                                                         <state key="selected" image="feed_One_S"/>
                                                         <connections>
                                                             <action selector="bestOneFeedButtonAction:" destination="Io0-1R-Tb4" eventType="touchUpInside" id="vpA-o8-g8Q"/>
@@ -982,18 +977,18 @@
                                                 </connections>
                                             </containerView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="zti-bs-FE3">
-                                                <rect key="frame" x="292.5" y="172.5" width="103" height="30"/>
+                                                <rect key="frame" x="345.5" y="176.5" width="50" height="22"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-UQ-fBz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-UQ-fBz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="19.5" height="22"/>
+                                                        <state key="normal" image="square.split.2x2" catalog="system"/>
                                                         <connections>
                                                             <action selector="newFeedsButtonAction:" destination="6je-vD-qPp" eventType="touchUpInside" id="7W4-6h-dFJ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4V-S8-a3G">
-                                                        <rect key="frame" x="57" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4V-S8-a3G">
+                                                        <rect key="frame" x="30.5" y="0.0" width="19.5" height="22"/>
+                                                        <state key="normal" image="square" catalog="system"/>
                                                         <connections>
                                                             <action selector="newOneFeedButtonAction:" destination="6je-vD-qPp" eventType="touchUpInside" id="zhl-1y-Qoq"/>
                                                         </connections>
@@ -1218,7 +1213,7 @@
         <image name="feed_Four_S" width="16" height="16"/>
         <image name="feed_One_S" width="16" height="16"/>
         <image name="square" catalog="system" width="128" height="114"/>
-        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="square.split.2x2" catalog="system" width="128" height="114"/>
         <image name="view_score_image" width="19" height="20"/>
         <namedColor name="mainOrange">
             <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

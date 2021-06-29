@@ -18,7 +18,7 @@ class NewPageViewController: UIPageViewController {
         let vc0 = storyBoard.instantiateViewController(identifier: "NewOneFeedViewController")
         let vc1 = storyBoard.instantiateViewController(identifier: "NewFeedsViewController")
         
-        return [vc0, vc1]
+        return [vc1, vc0]
         
     } ()
     
@@ -33,7 +33,7 @@ class NewPageViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         
-        if let firstVC = viewList.first{
+        if let firstVC = viewList.last{
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
         

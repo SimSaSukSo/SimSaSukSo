@@ -48,15 +48,17 @@ class NewTabViewController: UIViewController {
     //MARK: - Function
     
     func setButtonList() {
-        buttonLists.append(newOneFeedButton)
         buttonLists.append(newFeedsButton)
-
+        buttonLists.append(newOneFeedButton)
+        
+        newOneFeedButton.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        newFeedsButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
     }
     
     func changeButtonColor() {
         for (index, element) in buttonLists.enumerated() {
             if index == currentIndex {
-                element.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
+                element.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
             }
             else {
                 element.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
@@ -77,10 +79,10 @@ class NewTabViewController: UIViewController {
     }
     
     @IBAction func newOneFeedButtonAction(_ sender: UIButton) {
-        newPageViewController.setViewcontrollersFromIndex(index: 0)
+        newPageViewController.setViewcontrollersFromIndex(index: 1)
     }
     @IBAction func newFeedsButtonAction(_ sender: UIButton) {
-        newPageViewController.setViewcontrollersFromIndex(index: 1)
+        newPageViewController.setViewcontrollersFromIndex(index: 0)
     }
     
     

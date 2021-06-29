@@ -45,8 +45,8 @@ class BestTabViewController: UIViewController {
     //MARK: - Function
     
     func setButtonList() {
-        buttonLists.append(bestOneFeedButton)
         buttonLists.append(bestFeedsButton)
+        buttonLists.append(bestOneFeedButton)
         
         bestOneFeedButton.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         bestFeedsButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
@@ -77,10 +77,10 @@ class BestTabViewController: UIViewController {
     }
     
     @IBAction func bestOneFeedButtonAction(_ sender: UIButton) {
-        bestPageViewController.setViewcontrollersFromIndex(index: 0)
+        bestPageViewController.setViewcontrollersFromIndex(index: 1)
     }
     @IBAction func bestFeedsButtonAction(_ sender: UIButton) {
-        bestPageViewController.setViewcontrollersFromIndex(index: 1)
+        bestPageViewController.setViewcontrollersFromIndex(index: 0)
     }
 }
 
