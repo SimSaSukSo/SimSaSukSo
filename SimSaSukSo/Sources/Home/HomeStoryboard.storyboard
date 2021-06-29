@@ -408,9 +408,36 @@
                                                     <constraint firstItem="boi-B1-F5k" firstAttribute="top" secondItem="yYY-k4-2rC" secondAttribute="bottom" constant="4" id="lRV-13-hGL"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbk-1h-jQE">
+                                                <rect key="frame" x="16" y="1014" width="398" height="486"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신뢰도가 가장 높은 게시글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QT-Ba-Deb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번 주 사람들이 가장 신뢰한 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BF9-jF-Tx3">
+                                                        <rect key="frame" x="0.0" y="23" width="179.5" height="14"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <constraints>
+                                                    <constraint firstItem="8QT-Ba-Deb" firstAttribute="top" secondItem="Cbk-1h-jQE" secondAttribute="top" id="04a-LV-bPc"/>
+                                                    <constraint firstItem="BF9-jF-Tx3" firstAttribute="top" secondItem="8QT-Ba-Deb" secondAttribute="bottom" constant="4" id="Ezk-z7-npU"/>
+                                                    <constraint firstItem="8QT-Ba-Deb" firstAttribute="leading" secondItem="Cbk-1h-jQE" secondAttribute="leading" id="Z51-Sq-52d"/>
+                                                    <constraint firstItem="BF9-jF-Tx3" firstAttribute="leading" secondItem="Cbk-1h-jQE" secondAttribute="leading" id="pd5-m3-leS"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="Cbk-1h-jQE" firstAttribute="top" secondItem="KWy-q6-WE0" secondAttribute="bottom" constant="32" id="1Dw-ze-Wfq"/>
+                                            <constraint firstItem="Cbk-1h-jQE" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="1mK-Ot-fnT"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cbk-1h-jQE" secondAttribute="bottom" id="3LX-cW-PcV"/>
                                             <constraint firstAttribute="trailing" secondItem="KWy-q6-WE0" secondAttribute="trailing" id="4IJ-rg-ZLy"/>
                                             <constraint firstItem="KWy-q6-WE0" firstAttribute="top" secondItem="u62-qL-ZjQ" secondAttribute="bottom" constant="32" id="6iW-xR-UHr"/>
                                             <constraint firstAttribute="trailing" secondItem="u62-qL-ZjQ" secondAttribute="trailing" id="Frc-rA-4Bs"/>
@@ -426,6 +453,7 @@
                                             <constraint firstItem="VB7-vR-1bk" firstAttribute="bottom" secondItem="Dpw-Gw-kd6" secondAttribute="bottom" id="s5E-PL-BHH"/>
                                             <constraint firstItem="Dpw-Gw-kd6" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" id="v2M-2K-man"/>
                                             <constraint firstItem="u62-qL-ZjQ" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="xDs-o2-UJu"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cbk-1h-jQE" secondAttribute="trailing" id="xLZ-ry-5zH"/>
                                             <constraint firstItem="Dpw-Gw-kd6" firstAttribute="top" secondItem="4Au-Wa-fBQ" secondAttribute="top" id="yPa-zR-GTQ"/>
                                         </constraints>
                                     </view>
@@ -799,13 +827,13 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="fHS-Ok-wJN">
-                                <rect key="frame" x="21" y="146" width="144" height="39"/>
+                                <rect key="frame" x="21" y="146" width="144" height="43"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-uX-chl">
-                                        <rect key="frame" x="0.0" y="0.0" width="36" height="39"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-6S-u5Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="홈"/>
                                                 <connections>
@@ -813,7 +841,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-lY-TWh">
-                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="8gQ-qX-HDA"/>
@@ -823,10 +851,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-O4-Z3m">
-                                        <rect key="frame" x="54" y="0.0" width="36" height="39"/>
+                                        <rect key="frame" x="54" y="0.0" width="36" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ota-jc-n4q">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="인기"/>
                                                 <connections>
@@ -834,7 +862,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3N-yW-onK">
-                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="EaE-eZ-Cbf"/>
@@ -844,10 +872,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="TdX-iS-i8L">
-                                        <rect key="frame" x="108" y="0.0" width="36" height="39"/>
+                                        <rect key="frame" x="108" y="0.0" width="36" height="43"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70X-vT-Awk">
-                                                <rect key="frame" x="0.0" y="0.0" width="36" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="최신"/>
                                                 <connections>
@@ -855,7 +883,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwP-rd-3Ov">
-                                                <rect key="frame" x="0.0" y="37" width="36" height="2"/>
+                                                <rect key="frame" x="0.0" y="41" width="36" height="2"/>
                                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="36" id="DfQ-6D-A9Y"/>
@@ -867,13 +895,13 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-6b-75W">
-                                <rect key="frame" x="0.0" y="185" width="414" height="711"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="707"/>
                                 <connections>
                                     <segue destination="ajT-96-sOj" kind="embed" identifier="PageViewController" id="f4a-j1-D2V"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs6-d2-Lba">
-                                <rect key="frame" x="0.0" y="186" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="190" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="V5h-h8-cEM"/>
@@ -929,6 +957,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
