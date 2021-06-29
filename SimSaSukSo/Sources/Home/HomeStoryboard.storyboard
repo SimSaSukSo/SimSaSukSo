@@ -774,7 +774,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CzK-Le-iYy" customClass="HomeViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SE1-hI-FkL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs6-d2-Lba">
@@ -862,7 +862,7 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-6b-75W">
-                                <rect key="frame" x="0.0" y="189" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="624"/>
                                 <connections>
                                     <segue destination="ajT-96-sOj" kind="embed" identifier="PageViewController" id="f4a-j1-D2V"/>
                                 </connections>
@@ -1234,16 +1234,17 @@
         <scene sceneID="4pB-z1-SJF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lxt-Eg-6PD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" image="img_home" id="Ha4-9i-NKN">
-                        <color key="badgeColor" systemColor="labelColor"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="홈" image="img_home" id="Ha4-9i-NKN"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TaI-wa-EB3">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="TaI-wa-EB3">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Bx-aF-KMu">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="CzK-Le-iYy" kind="relationship" relationship="rootViewController" id="7WV-f8-eTQ"/>
                     </connections>
@@ -1264,9 +1265,6 @@
         <namedColor name="mainOrange">
             <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
