@@ -15,11 +15,8 @@ class SettingViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        
     }
-    
-    
-    
+
     @IBAction func myFeedButton(_ sender: UIButton) {
         let myFeedVC = self.storyboard?.instantiateViewController(withIdentifier: "MyFeedViewController")
         myFeedVC?.modalPresentationStyle = .fullScreen
