@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "bookmark.png",
+      "filename" : "feed_Four.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "feed_Four_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

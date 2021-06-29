@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "shape.png",
+      "filename" : "view_score_image.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "view_score_image_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "heart.png",
+      "filename" : "feed_One_S.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "feed_One_S_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -8,22 +8,107 @@
 import UIKit
 
 class NewTabViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    var newPageViewController : NewPageViewController!
+    
+    let count = 10
+    
+    
+    @IBOutlet var newHashTagCollectionView: UICollectionView!
+    
+    @IBOutlet var newOneFeedButton: UIButton!
+    @IBOutlet var newFeedsButton: UIButton!
+    @IBOutlet var newViewHeight: NSLayoutConstraint!
+    
+    
+    var buttonLists: [UIButton] = []
+    
+    var currentIndex : Int = 0 {
+        didSet {
+            changeButtonColor()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let bestHashtagFlowLayout = UICollectionViewFlowLayout()
+        bestHashtagFlowLayout.scrollDirection = .horizontal
+        self.newHashTagCollectionView.collectionViewLayout = bestHashtagFlowLayout
+        
+        newHashTagCollectionView.delegate = self
+        newHashTagCollectionView.dataSource = self
+        
+        newViewHeight.constant = CGFloat(Double(count) * 440)
+        
+        setButtonList()
+    
     }
-    */
+    
+    //MARK: - Function
+    
+    func setButtonList() {
+        buttonLists.append(newOneFeedButton)
+        buttonLists.append(newFeedsButton)
 
+    }
+    
+    func changeButtonColor() {
+        for (index, element) in buttonLists.enumerated() {
+            if index == currentIndex {
+                element.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
+            }
+            else {
+                element.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "NewPageViewController" {
+            guard let vc = segue.destination as? NewPageViewController else {return}
+            newPageViewController = vc
+            
+            newPageViewController.completeHandler = { (result) in
+                self.currentIndex = result
+            }
+        }
+    }
+    
+    @IBAction func newOneFeedButtonAction(_ sender: UIButton) {
+        newPageViewController.setViewcontrollersFromIndex(index: 0)
+    }
+    @IBAction func newFeedsButtonAction(_ sender: UIButton) {
+        newPageViewController.setViewcontrollersFromIndex(index: 1)
+    }
+    
+    
+}
+//MARK: - CollectionView
+extension NewTabViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestHashtagCollectionViewCell", for: indexPath) as! BestHashtagCollectionViewCell
+        
+        return cell
+    }
+
+}
+//MARK: - CollectionView FlowLayout
+extension NewTabViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: 96, height: 96)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+    
+    
 }
