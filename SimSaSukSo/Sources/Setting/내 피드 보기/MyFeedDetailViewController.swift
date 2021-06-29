@@ -36,6 +36,9 @@ class MyFeedDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTransparent = true
+        self.navigationController?.navigationBar.tintColor = .clear
+        
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
@@ -49,12 +52,9 @@ class MyFeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
-        //        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeGestureAction))
-        //
-        //        view.addGestureRecognizer(edgePan)
-        
         commentTableViewHeight.constant = 170 * 9
         
+       
         
     }
     
@@ -92,12 +92,6 @@ class MyFeedDetailViewController: UIViewController {
     
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
-    }
-    
-    @objc func screenEdgeGestureAction(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if recognizer.state == .recognized {
-            dismiss(animated: true, completion: nil)
-        }
     }
     
 }

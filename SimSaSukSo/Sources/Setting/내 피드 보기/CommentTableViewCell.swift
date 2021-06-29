@@ -10,6 +10,7 @@ import UIKit
 class CommentTableViewCell: UITableViewCell {
     
     @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var heartButton: UIButton!
     
 
     override func awakeFromNib() {
@@ -22,5 +23,16 @@ class CommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func heartButtonAction(_ sender: UIButton) {
+        heartButton.isSelected = !heartButton.isSelected
+        if heartButton.isSelected {
+            heartButton.setImage(UIImage(named: "comment_heart_fill"), for: .selected)
+        } else {
+            heartButton.setImage(UIImage(named: "comment_heart"), for: .normal)
+        }
+        
+        
+    }
+    
 }

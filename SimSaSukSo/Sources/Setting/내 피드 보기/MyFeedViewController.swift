@@ -46,20 +46,26 @@ class MyFeedViewController: UIViewController {
        
    }
 
-   //MARK: - CollectionView FlowLayout
-   extension MyFeedViewController: UICollectionViewDelegateFlowLayout {
-       
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           
-           let width = view.frame.width/3-3
-           return CGSize(width: width, height: width)
-       }
-       
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-           return 4
-       }
-       
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-           return 4
-       }
-   }
+//MARK: - CollectionView FlowLayout
+extension MyFeedViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = view.frame.width/3-3
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let VC = self.storyboard?.instantiateViewController(withIdentifier: "MyFeedDetailViewController")
+        
+        self.navigationController?.pushViewController(VC!, animated: true)
+    }
+}
