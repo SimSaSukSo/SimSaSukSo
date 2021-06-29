@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CzK-Le-iYy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lxt-Eg-6PD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -517,7 +517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqE-Ln-e8M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="-277"/>
+            <point key="canvasLocation" x="3571.0144927536235" y="-277.23214285714283"/>
         </scene>
         <!--Best One Feed View Controller-->
         <scene sceneID="hUK-zN-oif">
@@ -623,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4W-U9-RHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="-277"/>
+            <point key="canvasLocation" x="2865.217391304348" y="-277.23214285714283"/>
         </scene>
         <!--Best Tab View Controller-->
         <scene sceneID="OGF-RZ-FYV">
@@ -767,7 +767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoA-aY-fdo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="203" y="-277"/>
+            <point key="canvasLocation" x="2023.1884057971015" y="-277.23214285714283"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="g9g-1S-5dg">
@@ -884,6 +884,7 @@
                             <constraint firstItem="JEB-7S-y64" firstAttribute="trailing" secondItem="Xs6-d2-Lba" secondAttribute="trailing" id="trI-NA-7W7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hr8-fi-JS6"/>
                     <connections>
                         <outlet property="bestTabButton" destination="ota-jc-n4q" id="Em5-WU-zgU"/>
                         <outlet property="bestTabLineView" destination="j3N-yW-onK" id="DBg-ch-84N"/>
@@ -895,7 +896,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-NY-cCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620.28985507246387" y="-276.5625"/>
+            <point key="canvasLocation" x="1200" y="-276.5625"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="MU6-Q1-sHX">
@@ -1229,17 +1230,43 @@
             </objects>
             <point key="canvasLocation" x="1838" y="946"/>
         </scene>
+        <!--홈-->
+        <scene sceneID="4pB-z1-SJF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lxt-Eg-6PD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="img_home" id="Ha4-9i-NKN">
+                        <color key="badgeColor" systemColor="labelColor"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TaI-wa-EB3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CzK-Le-iYy" kind="relationship" relationship="rootViewController" id="7WV-f8-eTQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNV-ao-Zyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289.85507246376812" y="-276.5625"/>
+        </scene>
     </scenes>
     <resources>
         <image name="best5_green" width="24" height="28"/>
         <image name="feed_Four_S" width="16" height="16"/>
         <image name="feed_One_S" width="15" height="15"/>
+        <image name="img_home" width="16" height="18"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.split.2x2" catalog="system" width="128" height="114"/>
         <image name="view_score_image" width="19" height="20"/>
         <namedColor name="mainOrange">
             <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
