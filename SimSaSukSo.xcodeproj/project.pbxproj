@@ -12,6 +12,7 @@
 		A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */; };
 		A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A3268AF73C002DA257 /* NewPageViewController.swift */; };
 		A54C34F2268B52D100D6F839 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */; };
+		A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -77,6 +78,7 @@
 		A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
 		A547A6A3268AF73C002DA257 /* NewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageViewController.swift; sourceTree = "<group>"; };
 		A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A54C34F4268B5DE400D6F839 /* 내 피드 보기 */ = {
+			isa = PBXGroup;
+			children = (
+				A56796252685D65700CAB9F6 /* MyFeedViewController.swift */,
+				A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */,
+				A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */,
+				A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */,
+				A567962E2685D6B100CAB9F6 /* TagCollectionViewCell.swift */,
+			);
+			name = "내 피드 보기";
+			path = "내 피드 보기";
+			sourceTree = "<group>";
+		};
 		A59DDBC6268601F9008D4AF9 /* Best */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,15 +263,12 @@
 		A711E01B267B5CBD006A1F0B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				A54C34F4268B5DE400D6F839 /* 내 피드 보기 */,
 				A711E028267B5E03006A1F0B /* SettingStoryboard.storyboard */,
 				A711E037267B5EAE006A1F0B /* SettingViewController.swift */,
-				A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */,
-				A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */,
-				A56796252685D65700CAB9F6 /* MyFeedViewController.swift */,
 				A56796282685D68E00CAB9F6 /* ProfileViewController.swift */,
 				A567962B2685D69B00CAB9F6 /* SetNoticeViewController.swift */,
-				A567962E2685D6B100CAB9F6 /* TagCollectionViewCell.swift */,
-				A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */,
+				A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -545,6 +557,7 @@
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
+				A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */,
 				A59DDBCA26860258008D4AF9 /* HomeTabBestCollectionViewCell.swift in Sources */,
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,

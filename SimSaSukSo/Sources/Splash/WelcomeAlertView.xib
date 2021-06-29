@@ -48,7 +48,7 @@
                                             <rect key="frame" x="0.0" y="67" width="384" height="67"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnN-tS-Cmu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="44.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T90-iR-4ei">
-                                                    <rect key="frame" x="167.5" y="19" width="49" height="29"/>
+                                                    <rect key="frame" x="166" y="17" width="52" height="33"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                     <state key="normal" title="시작하기">
                                                         <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,8 +99,6 @@
                                 <constraint firstItem="ztR-cf-0y8" firstAttribute="leading" secondItem="Ym0-oC-kfR" secondAttribute="leading" id="Hiv-RT-A1r"/>
                                 <constraint firstItem="ztR-cf-0y8" firstAttribute="top" secondItem="Ym0-oC-kfR" secondAttribute="top" id="VIL-ug-Wu3"/>
                                 <constraint firstAttribute="trailing" secondItem="ztR-cf-0y8" secondAttribute="trailing" id="XsK-jl-lsX"/>
-                                <constraint firstAttribute="width" constant="384" id="gS0-u4-Ck0"/>
-                                <constraint firstAttribute="height" constant="201" id="u64-xB-JVn"/>
                                 <constraint firstAttribute="bottom" secondItem="ztR-cf-0y8" secondAttribute="bottom" id="uqQ-Hb-E7d"/>
                             </constraints>
                         </view>
