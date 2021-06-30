@@ -24,6 +24,7 @@
 		A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796312685D6C000CAB9F6 /* BestTabViewController.swift */; };
 		A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796342685D6C400CAB9F6 /* NewTabViewController.swift */; };
 		A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */; };
+		A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58833AA268C53360046E313 /* FeedDetailViewController.swift */; };
 		A59DDBCA26860258008D4AF9 /* HomeTabBestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */; };
 		A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */; };
 		A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBD826863327008D4AF9 /* BestPageViewController.swift */; };
@@ -92,6 +93,7 @@
 		A56796312685D6C000CAB9F6 /* BestTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestTabViewController.swift; sourceTree = "<group>"; };
 		A56796342685D6C400CAB9F6 /* NewTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTabViewController.swift; sourceTree = "<group>"; };
 		A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
+		A58833AA268C53360046E313 /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
 		A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBestCollectionViewCell.swift; sourceTree = "<group>"; };
 		A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestOneFeedViewController.swift; sourceTree = "<group>"; };
 		A59DDBD826863327008D4AF9 /* BestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPageViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */,
 				A711E02B267B5E74006A1F0B /* HomeViewController.swift */,
 				A567961C2685D3DB00CAB9F6 /* PageViewController.swift */,
+				A58833AA268C53360046E313 /* FeedDetailViewController.swift */,
 				A59DDBC82686021E008D4AF9 /* Home */,
 				A59DDBC6268601F9008D4AF9 /* Best */,
 				A59DDBC726860212008D4AF9 /* New */,
@@ -561,6 +564,7 @@
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
+				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
