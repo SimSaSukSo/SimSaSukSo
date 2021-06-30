@@ -428,11 +428,11 @@
                                                         <rect key="frame" x="0.0" y="62" width="398" height="374"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BestBelievesTableViewCell" rowHeight="96" id="TV2-Kl-H9T" customClass="BestBelievesTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BestBelievesTableViewCell" rowHeight="96" id="TV2-Kl-H9T" customClass="BestBelievesTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="398" height="96"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TV2-Kl-H9T" id="BrD-Wj-oXM">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="367" height="96"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="96"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-lC-dCU">
@@ -444,7 +444,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmI-Pu-JFE">
-                                                                            <rect key="frame" x="96" y="15.5" width="271" height="49"/>
+                                                                            <rect key="frame" x="96" y="15.5" width="302" height="49"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82D-zO-9gx">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="59" height="18"/>
@@ -515,7 +515,6 @@
                                                                     <outlet property="BestBelievesHashTagTwo" destination="IhT-Ky-KYt" id="XTC-oN-EAR"/>
                                                                     <outlet property="BestBelievesImageView" destination="4nq-lC-dCU" id="j0E-vz-w8J"/>
                                                                     <outlet property="BestBelievesNameLabel" destination="82D-zO-9gx" id="AbP-sq-dM2"/>
-                                                                    <segue destination="zuc-eV-Fku" kind="show" id="9I2-7n-aSM"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -580,7 +579,6 @@
                             <constraint firstItem="q6K-yw-M5K" firstAttribute="top" secondItem="WmT-qX-fIa" secondAttribute="top" id="b45-CO-spS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R3D-oc-Nrb"/>
                     <connections>
                         <outlet property="BestBelievesTableView" destination="ckA-Nz-hyS" id="vLS-Rk-GpD"/>
                         <outlet property="BestLikesCollectionView" destination="VCz-4H-m5I" id="l45-58-Phf"/>
@@ -592,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U60-RZ-cDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147.8260869565217" y="-1020.5357142857142"/>
+            <point key="canvasLocation" x="237.68115942028987" y="-1020.5357142857142"/>
         </scene>
         <!--Best Page View Controller-->
         <scene sceneID="0e6-Oh-cWT">
@@ -906,18 +904,18 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CzK-Le-iYy" customClass="HomeViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SE1-hI-FkL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs6-d2-Lba">
-                                <rect key="frame" x="0.0" y="144" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="V5h-h8-cEM"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심사숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PU-TD-53o">
-                                <rect key="frame" x="172.5" y="51" width="69.5" height="29"/>
+                                <rect key="frame" x="172.5" y="95" width="69.5" height="29"/>
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                 <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -926,7 +924,7 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="fHS-Ok-wJN">
-                                <rect key="frame" x="21" y="102" width="144" height="43"/>
+                                <rect key="frame" x="21" y="146" width="144" height="43"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-uX-chl">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="43"/>
@@ -994,7 +992,7 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-6b-75W">
-                                <rect key="frame" x="0.0" y="145" width="414" height="580"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="624"/>
                                 <connections>
                                     <segue destination="ajT-96-sOj" kind="embed" identifier="PageViewController" id="f4a-j1-D2V"/>
                                 </connections>
@@ -1365,13 +1363,12 @@
         <!--홈-->
         <scene sceneID="4pB-z1-SJF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lxt-Eg-6PD" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lxt-Eg-6PD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="img_home" id="Ha4-9i-NKN"/>
                     <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="TaI-wa-EB3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1391,11 +1388,11 @@
             <objects>
                 <viewController storyboardIdentifier="FeedDetailViewController" id="zuc-eV-Fku" customClass="FeedDetailViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sR8-uw-zhj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIR-aO-SkM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="738"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lr7-Aw-Bxk">
                                         <rect key="frame" x="0.0" y="44" width="414" height="1323.5"/>
@@ -1426,7 +1423,7 @@
                                                     <constraint firstAttribute="height" constant="300" id="FSS-S6-fPK"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentTableViewCell" rowHeight="171" id="WbP-Bj-lcK" customClass="CommentTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCommentTableViewCell" rowHeight="171" id="WbP-Bj-lcK" customClass="FeedCommentTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="171"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WbP-Bj-lcK" id="fv1-A4-AYT">
@@ -1502,6 +1499,7 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
+                                                            <outlet property="commentLabel" destination="2m1-3m-iv0" id="quU-2N-Jr0"/>
                                                             <outlet property="heartButton" destination="kr5-Cd-0U7" id="CMb-Ap-jzA"/>
                                                             <outlet property="userImageView" destination="E6P-uT-rDW" id="IG3-Ze-XlQ"/>
                                                         </connections>
@@ -2069,7 +2067,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="aVv-V0-ydl"/>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQQ-v0-W04">
-                                <rect key="frame" x="12" y="738" width="36" height="36"/>
+                                <rect key="frame" x="12" y="792" width="36" height="36"/>
                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="4YA-97-0h1"/>
@@ -2077,12 +2075,12 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4s-pe-qx3">
-                                <rect key="frame" x="56" y="739" width="286" height="34"/>
+                                <rect key="frame" x="56" y="793" width="286" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfU-oW-sRe">
-                                <rect key="frame" x="350" y="740" width="52" height="32"/>
+                                <rect key="frame" x="350" y="794" width="52" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="GEk-Vu-mh7"/>
@@ -2097,7 +2095,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5s-9Z-b1a">
-                                <rect key="frame" x="0.0" y="727" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="781" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="myc-Dx-wDR"/>
@@ -2150,7 +2148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO0-S4-jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4073.913043478261" y="-974.33035714285711"/>
+            <point key="canvasLocation" x="3163.7681159420295" y="-974.33035714285711"/>
         </scene>
     </scenes>
     <resources>
