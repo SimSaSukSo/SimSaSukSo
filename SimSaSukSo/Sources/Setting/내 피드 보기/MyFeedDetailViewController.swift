@@ -8,13 +8,18 @@
 import UIKit
 
 class MyFeedDetailViewController: UIViewController {
+    
+    var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
+    var imageViews = [UIImageView]()
 
     @IBOutlet var myFeedDetailView: UIView!
     @IBOutlet var myFeedDetailScrollView: UIScrollView!
     
     @IBOutlet var userProfileImageView: UIImageView!
     @IBOutlet var userNicknameLabel: UILabel!
-    @IBOutlet var feedImageView: UIImageView!
+    
+    @IBOutlet var imageScrollView: UIScrollView!
+    @IBOutlet var pageControl: UIPageControl!
     
     @IBOutlet var heartButton: UIButton!
     @IBOutlet var faceIconImageView: UIImageView!
@@ -38,6 +43,10 @@ class MyFeedDetailViewController: UIViewController {
         
         self.navigationController?.navigationBar.isTransparent = true
         self.navigationController?.navigationBar.tintColor = .clear
+        
+        imageScrollView.delegate = self
+        addContentScrollView()
+        setPageControl()
         
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
@@ -96,6 +105,35 @@ class MyFeedDetailViewController: UIViewController {
     
 }
 
+//MARK: - Image ScrollView
+extension MyFeedDetailViewController: UIScrollViewDelegate {
+    
+    // imageScrollView
+    func addContentScrollView() {
+        for i in 0..<images.count {
+            let imageView = UIImageView()
+            let xPosition = self.view.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: imageScrollView.bounds.width, height: imageScrollView.bounds.height)
+            imageView.image = images[i]
+            imageScrollView.addSubview(imageView)
+            imageScrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let value = scrollView.contentOffset.x/scrollView.frame.size.width
+        setPageControlSelectedPage(currentPage: Int(round(value)))
+    }
+    
+    private func setPageControl() {
+        pageControl.numberOfPages = images.count
+    }
+    
+    private func setPageControlSelectedPage(currentPage:Int) {
+        pageControl.currentPage = currentPage
+    }
+    
+}
 //MARK: - CollectionView
 extension MyFeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
