@@ -37,6 +37,7 @@ class NewPageViewController: UIPageViewController {
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
         
+        
     }
     
     // 버튼으로 화면 전환
@@ -79,5 +80,6 @@ extension NewPageViewController: UIPageViewControllerDelegate, UIPageViewControl
         if nextIndex == viewList.count { return nil}
         return viewList[nextIndex]
     }
+
     
 }

@@ -16,6 +16,9 @@ class NewTabViewController: UIViewController {
     @IBOutlet var newOneFeedButton: UIButton!
     @IBOutlet var newFeedsButton: UIButton!
     @IBOutlet var newViewHeight: NSLayoutConstraint!
+    @IBOutlet var newScrollView: UIScrollView!
+    
+    @IBOutlet var contentView: UIView!
     
     
     var buttonLists: [UIButton] = []
@@ -29,12 +32,14 @@ class NewTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newViewHeight.constant = 435 * 10 // cell 수
+        newScrollView.delegate = self
+        
+        self.newViewHeight.constant = 10/3 * 130 + 200
         
         setButtonList()
     
     }
-    
+
     //MARK: - Function
     
     func setButtonList() {
@@ -70,6 +75,7 @@ class NewTabViewController: UIViewController {
     
     @IBAction func newOneFeedButtonAction(_ sender: UIButton) {
         newPageViewController.setViewcontrollersFromIndex(index: 1)
+        
     }
     @IBAction func newFeedsButtonAction(_ sender: UIButton) {
         newPageViewController.setViewcontrollersFromIndex(index: 0)
@@ -78,3 +84,25 @@ class NewTabViewController: UIViewController {
     
 }
 
+//MARK: - ScrollView
+extension NewTabViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView == newScrollView {
+            if newPageViewController.currentIndex == 1 { // OneFeed
+                adjustOneFeedPageHeight()
+            } else {
+                adjustFeedsPageHeight()
+            }
+        }
+
+    }
+    
+    func adjustOneFeedPageHeight(){
+        self.newViewHeight.constant = CGFloat(NewOneFeedViewController.testOneFeedArray.count * 476)
+    }
+    
+    func adjustFeedsPageHeight() {
+        self.newViewHeight.constant = CGFloat(NewFeedsViewController.testFeedsArray.count/3 * 130 + 170)
+    }
+}

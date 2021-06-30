@@ -8,6 +8,8 @@
 import UIKit
 
 class NewFeedsViewController: UIViewController {
+    
+    static let testFeedsArray = [1,2,3,4,5,6,7,8,9,10]
 
     @IBOutlet var newFeedsCollectionView: UICollectionView!
     
@@ -16,6 +18,8 @@ class NewFeedsViewController: UIViewController {
 
         newFeedsCollectionView.dataSource = self
         newFeedsCollectionView.delegate = self
+        
+        
     }
     
 
@@ -24,7 +28,7 @@ class NewFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return NewFeedsViewController.testFeedsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

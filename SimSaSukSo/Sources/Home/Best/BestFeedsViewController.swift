@@ -8,6 +8,8 @@
 import UIKit
 
 class BestFeedsViewController: UIViewController {
+    
+    static let testFeedsArray = [1,2,3,4,5,6,7,8,9,10]
 
     @IBOutlet var bestFeedsCollectionView: UICollectionView!
     
@@ -24,7 +26,7 @@ class BestFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return BestFeedsViewController.testFeedsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

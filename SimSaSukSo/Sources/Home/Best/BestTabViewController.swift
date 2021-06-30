@@ -19,6 +19,7 @@ class BestTabViewController: UIViewController {
     @IBOutlet var bestOneFeedButton: UIButton!
     @IBOutlet var bestFeedsButton: UIButton!
     @IBOutlet var bestViewHeight: NSLayoutConstraint!
+    @IBOutlet var bestScrollView: UIScrollView!
     
     var buttonLists: [UIButton] = []
     
@@ -39,8 +40,8 @@ class BestTabViewController: UIViewController {
         bestHashtagCollectionView.dataSource = self
         
         bestTabScrollView.delegate = self
-
-        bestViewHeight.constant = 435 * 10 // cell 수
+        
+        self.bestViewHeight.constant = 10/3 * 130 + 200
     
         setButtonList()
     
@@ -114,4 +115,27 @@ extension BestTabViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
+}
+
+//MARK: - ScrollView
+extension BestTabViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView == bestScrollView {
+            if bestPageViewController.currentIndex == 0 { // OneFeed
+                adjustFeedsPageHeight()
+            } else {
+                adjustOneFeedPageHeight()
+            }
+        }
+
+    }
+    
+    func adjustOneFeedPageHeight(){
+        self.bestViewHeight.constant = CGFloat(BestOneFeedViewController.testOneFeedArray.count * 476)
+    }
+    
+    func adjustFeedsPageHeight() {
+        self.bestViewHeight.constant = CGFloat(BestFeedsViewController.testFeedsArray.count/3 * 130 + 170)
+    }
 }
