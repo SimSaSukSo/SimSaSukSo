@@ -1,21 +1,21 @@
 //
-//  MyFeedDetailViewController.swift
+//  FeedDetailViewController.swift
 //  SimSaSukSo
 //
-//  Created by 소영 on 2021/06/25.
+//  Created by 소영 on 2021/06/30.
 //
 
 import UIKit
 
-class MyFeedDetailViewController: UIViewController {
+class FeedDetailViewController: UIViewController {
     
-    var textArray = ["태그1", "태태그ㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇ", "태그1태그1태그1", "태"]
+    var textArray = ["태그", "태그ㅇㅇㅇ", "태그태그태그태"]
     
     var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
     var imageViews = [UIImageView]()
 
-    @IBOutlet var myFeedDetailView: UIView!
-    @IBOutlet var myFeedDetailScrollView: UIScrollView!
+    @IBOutlet var feedDetailView: UIView!
+    @IBOutlet var feedDetailScrollView: UIScrollView!
     
     @IBOutlet var userProfileImageView: UIImageView!
     @IBOutlet var userNicknameLabel: UILabel!
@@ -108,7 +108,7 @@ class MyFeedDetailViewController: UIViewController {
 }
 
 //MARK: - Image ScrollView
-extension MyFeedDetailViewController: UIScrollViewDelegate {
+extension FeedDetailViewController: UIScrollViewDelegate {
     
     // imageScrollView
     func addContentScrollView() {
@@ -137,14 +137,14 @@ extension MyFeedDetailViewController: UIScrollViewDelegate {
     
 }
 //MARK: - CollectionView
-extension MyFeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! MyFeedTagCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedTagCollectionViewCell", for: indexPath) as! FeedTagCollectionViewCell
         
         cell.tagLabel.text = textArray[indexPath.row]
         
@@ -159,7 +159,7 @@ extension MyFeedDetailViewController: UICollectionViewDelegate, UICollectionView
 }
 
 //MARK: - CollectionView FlowLayout
-extension MyFeedDetailViewController: UICollectionViewDelegateFlowLayout {
+extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -168,7 +168,6 @@ extension MyFeedDetailViewController: UICollectionViewDelegateFlowLayout {
         label.sizeToFit()
 
         return CGSize(width: label.frame.width, height: 23)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -179,7 +178,7 @@ extension MyFeedDetailViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - TableView
 
-extension MyFeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }

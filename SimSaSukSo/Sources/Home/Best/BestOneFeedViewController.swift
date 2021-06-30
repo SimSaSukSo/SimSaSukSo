@@ -34,6 +34,14 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let feedVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedDetailViewController")
+        feedVC?.modalPresentationStyle = .fullScreen
+        self.present(feedVC!, animated: true, completion: nil)
+        
+    }
 }
 
 //MARK: - CollectionView FlowLayout
@@ -42,5 +50,6 @@ extension BestOneFeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 375, height: 429)
     }
+
     
 }
