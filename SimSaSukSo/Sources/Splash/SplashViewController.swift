@@ -23,14 +23,31 @@ class SplashViewController: BaseViewController {
                 print("loginWithKakaoAccount() success.")
                 
                 //do something
-                _ = oauthToken
-                // 어세스토큰
                 let accessToken = oauthToken?.accessToken
+                self.showIndicator()
+                kakaoLoginDataManager().kakaoLogin(accessToken: accessToken!, viewcontroller: self)
                 print("토큰:")
                 print(accessToken!)
+              
+                
+                _ = oauthToken
+                // 어세스토큰
+                
+                
+                
             }
         }
 
+    }
+    
+    func success(){
+        //회원가입 성공 -> 닉네임 작성 화면 이동
+        let nickNameController = UIStoryboard(name: "SplashStoryboard", bundle: nil).instantiateViewController(identifier: "NicknameViewController")
+        changeRootViewController(nickNameController)
+    }
+    
+    func fail(){
+        self.presentAlert(title: "서버와 통신이 불안정합니다")
     }
     
     @IBAction func presentMainButtonTouchUpInside(_ sender: UIButton) {
