@@ -46,6 +46,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var commentUserImageView: UIImageView!
     @IBOutlet var commentWriteButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,12 +72,15 @@ class FeedDetailViewController: UIViewController {
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         self.commentTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        //navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.commentTableView.removeObserver(self, forKeyPath: "contentSize")
+        //navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
