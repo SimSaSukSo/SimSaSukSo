@@ -207,7 +207,12 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
        return believecell
     }
     
-    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let feednavi = self.storyboard?.instantiateViewController(withIdentifier: "FeedNavigationController"){
+//            feednavi.modalPresentationStyle = .fullScreen
+//                self.present(feednavi, animated: true)
+//        }
+//    }
     
     
 }

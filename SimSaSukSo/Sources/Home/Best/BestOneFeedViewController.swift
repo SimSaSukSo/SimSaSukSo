@@ -40,8 +40,9 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let feedVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedDetailViewController")
-        feedVC?.modalPresentationStyle = .fullScreen
-        self.present(feedVC!, animated: true, completion: nil)
+        self.navigationController?.pushViewController(feedVC!, animated: true)
+//        feedVC?.modalPresentationStyle = .fullScreen
+//        self.present(feedVC!, animated: true, completion: nil)
         
     }
 }
