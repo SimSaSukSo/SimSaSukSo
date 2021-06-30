@@ -9,6 +9,8 @@ import UIKit
 
 class MyFeedDetailViewController: UIViewController {
     
+    var textArray = ["태그1", "태태그ㅇㄹㅇㄹㅇㄹㅇㄹㅇㄹㅇ", "태그1태그1태그1", "태"]
+    
     var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
     var imageViews = [UIImageView]()
 
@@ -142,7 +144,9 @@ extension MyFeedDetailViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! MyFeedTagCollectionViewCell
+        
+        cell.tagLabel.text = textArray[indexPath.row]
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
@@ -158,7 +162,13 @@ extension MyFeedDetailViewController: UICollectionViewDelegate, UICollectionView
 extension MyFeedDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 40, height: 23)
+        
+        let label = UILabel(frame: CGRect.zero)
+        label.text = textArray[indexPath.item]
+        label.sizeToFit()
+
+        return CGSize(width: label.frame.width, height: 23)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

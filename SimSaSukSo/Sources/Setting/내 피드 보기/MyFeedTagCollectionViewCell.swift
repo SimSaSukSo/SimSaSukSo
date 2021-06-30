@@ -7,6 +7,8 @@
 
 import UIKit
 
-class TagCollectionViewCell: UICollectionViewCell {
+class MyFeedTagCollectionViewCell: UICollectionViewCell {
+   
+    @IBOutlet var tagLabel: UILabel!
     
 }

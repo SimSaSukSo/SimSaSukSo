@@ -20,11 +20,12 @@
 		A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796252685D65700CAB9F6 /* MyFeedViewController.swift */; };
 		A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796282685D68E00CAB9F6 /* ProfileViewController.swift */; };
 		A567962C2685D69C00CAB9F6 /* SetNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567962B2685D69B00CAB9F6 /* SetNoticeViewController.swift */; };
-		A567962F2685D6B100CAB9F6 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567962E2685D6B100CAB9F6 /* TagCollectionViewCell.swift */; };
+		A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567962E2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift */; };
 		A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796312685D6C000CAB9F6 /* BestTabViewController.swift */; };
 		A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796342685D6C400CAB9F6 /* NewTabViewController.swift */; };
 		A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */; };
 		A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58833AA268C53360046E313 /* FeedDetailViewController.swift */; };
+		A58833AF268C75E20046E313 /* FeedTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58833AE268C75E20046E313 /* FeedTagCollectionViewCell.swift */; };
 		A59DDBCA26860258008D4AF9 /* HomeTabBestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */; };
 		A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */; };
 		A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBD826863327008D4AF9 /* BestPageViewController.swift */; };
@@ -89,11 +90,12 @@
 		A56796252685D65700CAB9F6 /* MyFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedViewController.swift; sourceTree = "<group>"; };
 		A56796282685D68E00CAB9F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A567962B2685D69B00CAB9F6 /* SetNoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNoticeViewController.swift; sourceTree = "<group>"; };
-		A567962E2685D6B100CAB9F6 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		A567962E2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFeedTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796312685D6C000CAB9F6 /* BestTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestTabViewController.swift; sourceTree = "<group>"; };
 		A56796342685D6C400CAB9F6 /* NewTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTabViewController.swift; sourceTree = "<group>"; };
 		A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 		A58833AA268C53360046E313 /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
+		A58833AE268C75E20046E313 /* FeedTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A59DDBC926860258008D4AF9 /* HomeTabBestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBestCollectionViewCell.swift; sourceTree = "<group>"; };
 		A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestOneFeedViewController.swift; sourceTree = "<group>"; };
 		A59DDBD826863327008D4AF9 /* BestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPageViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +186,7 @@
 				A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */,
 				A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */,
 				A54C34F1268B52D100D6F839 /* CommentTableViewCell.swift */,
-				A567962E2685D6B100CAB9F6 /* TagCollectionViewCell.swift */,
+				A567962E2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift */,
 			);
 			name = "내 피드 보기";
 			path = "내 피드 보기";
@@ -234,6 +236,7 @@
 				A711E02B267B5E74006A1F0B /* HomeViewController.swift */,
 				A567961C2685D3DB00CAB9F6 /* PageViewController.swift */,
 				A58833AA268C53360046E313 /* FeedDetailViewController.swift */,
+				A58833AE268C75E20046E313 /* FeedTagCollectionViewCell.swift */,
 				A59DDBC82686021E008D4AF9 /* Home */,
 				A59DDBC6268601F9008D4AF9 /* Best */,
 				A59DDBC726860212008D4AF9 /* New */,
@@ -582,9 +585,10 @@
 				A766CCAA268B9E1500565095 /* BestBelievesTableViewCell.swift in Sources */,
 				A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
-				A567962F2685D6B100CAB9F6 /* TagCollectionViewCell.swift in Sources */,
+				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
+				A58833AF268C75E20046E313 /* FeedTagCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
