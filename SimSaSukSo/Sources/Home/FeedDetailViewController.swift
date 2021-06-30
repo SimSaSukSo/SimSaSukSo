@@ -10,6 +10,12 @@ import UIKit
 class FeedDetailViewController: UIViewController {
     
     var textArray = ["태그", "태그ㅇㅇㅇ", "태그태그태그태"]
+    var commentArray = [
+                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧글. 내용덧글 내용덧글 내용 덧. 내용덧글 내용덧글 내용 덧.",
+                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧글. 내용덧글 내용덧글 내용 덧.",
+                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧.",
+                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧."
+                        ]
     
     var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
     var imageViews = [UIImageView]()
@@ -63,10 +69,23 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
-        commentTableViewHeight.constant = 170 * 9
-        
-       
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.commentTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.commentTableView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize" {
+            if let newvalue = change?[.newKey]{
+                let newsize = newvalue as! CGSize
+                self.commentTableViewHeight.constant = newsize.height
+            }
+        }
     }
     
     //MARK: - Function
@@ -180,16 +199,27 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
 
 extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return commentArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentTableViewCell", for: indexPath) as! FeedCommentTableViewCell
         
         cell.userImageView.layer.cornerRadius = userProfileImageView.frame.height/2
+        cell.commentLabel.text = commentArray[indexPath.row]
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        commentTableView.estimatedRowHeight = 171
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
 }

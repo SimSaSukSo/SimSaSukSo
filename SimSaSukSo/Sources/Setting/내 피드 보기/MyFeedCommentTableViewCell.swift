@@ -7,9 +7,10 @@
 
 import UIKit
 
-class CommentTableViewCell: UITableViewCell {
+class MyFeedCommentTableViewCell: UITableViewCell {
     
     @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var commentLabel: UILabel!
     @IBOutlet var heartButton: UIButton!
     
 
