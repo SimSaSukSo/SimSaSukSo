@@ -40,9 +40,7 @@ class BestTabViewController: UIViewController {
         
         bestTabScrollView.delegate = self
 
-        bestViewHeight.constant = 1500
-        bestTabScrollView.frame.size.height = bestViewHeight.constant + 10000
-        
+        bestViewHeight.constant = 435 * 10 // cell 수
     
         setButtonList()
     

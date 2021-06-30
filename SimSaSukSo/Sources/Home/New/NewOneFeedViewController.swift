@@ -30,7 +30,9 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeTabBestCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewTabOneFeedCollectionViewCell", for: indexPath) as! NewTabOneFeedCollectionViewCell
+        
+        cell.imageViewHeight.constant = view.frame.size.height
         
         return cell
     }
@@ -40,7 +42,18 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
 extension NewOneFeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 375, height: 429)
+        
+        let width = view.frame.size.width
+        
+        return CGSize(width: width, height: width + 54)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
     }
     
 }

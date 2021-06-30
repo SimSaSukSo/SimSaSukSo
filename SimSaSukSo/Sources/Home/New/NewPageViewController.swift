@@ -33,7 +33,7 @@ class NewPageViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         
-        if let firstVC = viewList.last{
+        if let firstVC = viewList.first{
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
         
