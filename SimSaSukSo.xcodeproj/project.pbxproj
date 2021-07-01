@@ -11,6 +11,10 @@
 		A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */; };
 		A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */; };
 		A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547A6A3268AF73C002DA257 /* NewPageViewController.swift */; };
+		A54BDAAD268E0F230070BFEF /* UploadCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BDAAC268E0F230070BFEF /* UploadCompleteViewController.swift */; };
+		A54BDAB0268E13470070BFEF /* EvaluViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BDAAF268E13470070BFEF /* EvaluViewController.swift */; };
+		A54BDAB3268E1AA00070BFEF /* EvaluCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */; };
+		A54BDAB6268E1D720070BFEF /* evaluImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BDAB5268E1D720070BFEF /* evaluImageCollectionViewCell.swift */; };
 		A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C34F1268B52D100D6F839 /* MyFeedCommentTableViewCell.swift */; };
 		A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */; };
 		A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3506268B98C900D6F839 /* ClearNavigationController.swift */; };
@@ -86,6 +90,10 @@
 		A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOneFeedViewController.swift; sourceTree = "<group>"; };
 		A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
 		A547A6A3268AF73C002DA257 /* NewPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPageViewController.swift; sourceTree = "<group>"; };
+		A54BDAAC268E0F230070BFEF /* UploadCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCompleteViewController.swift; sourceTree = "<group>"; };
+		A54BDAAF268E13470070BFEF /* EvaluViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluViewController.swift; sourceTree = "<group>"; };
+		A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluCollectionViewCell.swift; sourceTree = "<group>"; };
+		A54BDAB5268E1D720070BFEF /* evaluImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = evaluImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54C34F1268B52D100D6F839 /* MyFeedCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCommentTableViewCell.swift; sourceTree = "<group>"; };
 		A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
 		A54C3506268B98C900D6F839 /* ClearNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationController.swift; sourceTree = "<group>"; };
@@ -270,6 +278,10 @@
 			children = (
 				A711E022267B5D5A006A1F0B /* UploadStoryboard.storyboard */,
 				A711E031267B5E94006A1F0B /* UploadViewController.swift */,
+				A54BDAAC268E0F230070BFEF /* UploadCompleteViewController.swift */,
+				A54BDAAF268E13470070BFEF /* EvaluViewController.swift */,
+				A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */,
+				A54BDAB5268E1D720070BFEF /* evaluImageCollectionViewCell.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -577,6 +589,7 @@
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
 				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
 				A58833B5268C7D220046E313 /* FeedCommentTableViewCell.swift in Sources */,
+				A54BDAB6268E1D720070BFEF /* evaluImageCollectionViewCell.swift in Sources */,
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */,
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
@@ -587,10 +600,12 @@
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */,
+				A54BDAB3268E1AA00070BFEF /* EvaluCollectionViewCell.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
 				A766CCBB268C665500565095 /* kakaoLoginInput.swift in Sources */,
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
+				A54BDAB0268E13470070BFEF /* EvaluViewController.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */,
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
@@ -614,6 +629,7 @@
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				A567962C2685D69C00CAB9F6 /* SetNoticeViewController.swift in Sources */,
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
+				A54BDAAD268E0F230070BFEF /* UploadCompleteViewController.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */,
 				A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */,
