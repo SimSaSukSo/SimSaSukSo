@@ -44,6 +44,141 @@
             </objects>
             <point key="canvasLocation" x="918.84057971014499" y="52.901785714285715"/>
         </scene>
+        <!--Upload General Page One-->
+        <scene sceneID="Hbc-il-kb2">
+            <objects>
+                <viewController storyboardIdentifier="UploadGeneralPageOne" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2x0-Ai-bur" customClass="UploadGeneralPageOne" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q4J-er-B9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydb-4d-toP">
+                                <rect key="frame" x="16" y="88" width="93" height="30"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a4-MB-F5S">
+                                <rect key="frame" x="16" y="134" width="398" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vz0-aM-5bY">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvR-4D-Qcx">
+                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="HotelNameTextField:" destination="3M9-2p-gN0" eventType="editingDidEnd" id="IZK-ru-S5Y"/>
+                                        </connections>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kar-Ge-7zA">
+                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                        <color key="backgroundColor" red="0.90588235294117647" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="XUb-J4-g4R"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="GvR-4D-Qcx" firstAttribute="leading" secondItem="3a4-MB-F5S" secondAttribute="leading" id="6Pl-Lz-e3Z"/>
+                                    <constraint firstItem="GvR-4D-Qcx" firstAttribute="top" secondItem="vz0-aM-5bY" secondAttribute="bottom" constant="16" id="Bha-4H-qWF"/>
+                                    <constraint firstAttribute="trailing" secondItem="GvR-4D-Qcx" secondAttribute="trailing" constant="16" id="G3Q-bB-64n"/>
+                                    <constraint firstAttribute="height" constant="65" id="Hyc-DH-oZq"/>
+                                    <constraint firstItem="kar-Ge-7zA" firstAttribute="top" secondItem="GvR-4D-Qcx" secondAttribute="bottom" constant="4" id="UXg-LB-Wth"/>
+                                    <constraint firstItem="vz0-aM-5bY" firstAttribute="top" secondItem="3a4-MB-F5S" secondAttribute="top" id="Uj8-3l-Oai"/>
+                                    <constraint firstItem="vz0-aM-5bY" firstAttribute="leading" secondItem="3a4-MB-F5S" secondAttribute="leading" id="aYL-IP-Ljr"/>
+                                    <constraint firstItem="kar-Ge-7zA" firstAttribute="trailing" secondItem="GvR-4D-Qcx" secondAttribute="trailing" id="jRg-X9-awN"/>
+                                    <constraint firstItem="kar-Ge-7zA" firstAttribute="leading" secondItem="GvR-4D-Qcx" secondAttribute="leading" id="nqg-4Q-Lv8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zor-17-8uy">
+                                <rect key="frame" x="16" y="231" width="398" height="186"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGx-Wm-qbC">
+                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="21"/>
+                                        <string key="text">업로드한 사진
+</string>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <color key="textColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-bs-1kn">
+                                        <rect key="frame" x="0.0" y="37" width="398" height="149"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mp0-J4-ur1">
+                                            <size key="itemSize" width="150" height="150"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UploadGeneralPictureCollectionViewCell" id="4cb-PH-qW9" customClass="UploadGeneralPictureCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q2K-sE-EyC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="geu-jY-gKd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                            <color key="backgroundColor" red="0.99711424110000002" green="0.9057839513" blue="0.59993940589999994" alpha="0.54275306748466257" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="geu-jY-gKd" firstAttribute="top" secondItem="Q2K-sE-EyC" secondAttribute="top" id="Lqu-cj-b6G"/>
+                                                        <constraint firstAttribute="trailing" secondItem="geu-jY-gKd" secondAttribute="trailing" id="Q8p-dE-K5f"/>
+                                                        <constraint firstAttribute="bottom" secondItem="geu-jY-gKd" secondAttribute="bottom" id="WE0-aH-yF3"/>
+                                                        <constraint firstItem="geu-jY-gKd" firstAttribute="leading" secondItem="Q2K-sE-EyC" secondAttribute="leading" id="emp-gK-3Vj"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="150" height="150"/>
+                                                <connections>
+                                                    <outlet property="UploadGeneralPictureImageView" destination="geu-jY-gKd" id="DXK-2W-xP2"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="F1r-bs-1kn" secondAttribute="trailing" id="4fV-9Q-MWe"/>
+                                    <constraint firstItem="TGx-Wm-qbC" firstAttribute="leading" secondItem="zor-17-8uy" secondAttribute="leading" id="SSX-1k-EOF"/>
+                                    <constraint firstAttribute="height" constant="186" id="YBB-Ks-5jU"/>
+                                    <constraint firstAttribute="bottom" secondItem="F1r-bs-1kn" secondAttribute="bottom" id="nNz-DQ-qrf"/>
+                                    <constraint firstItem="F1r-bs-1kn" firstAttribute="leading" secondItem="zor-17-8uy" secondAttribute="leading" id="ooR-As-R7a"/>
+                                    <constraint firstItem="F1r-bs-1kn" firstAttribute="top" secondItem="TGx-Wm-qbC" secondAttribute="bottom" constant="16" id="vuB-nM-d3l"/>
+                                    <constraint firstItem="TGx-Wm-qbC" firstAttribute="top" secondItem="zor-17-8uy" secondAttribute="top" id="yYD-s9-w0C"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0aV-Sk-9hv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zor-17-8uy" firstAttribute="top" secondItem="3a4-MB-F5S" secondAttribute="bottom" constant="32" id="D6t-cm-TUk"/>
+                            <constraint firstItem="ydb-4d-toP" firstAttribute="top" secondItem="0aV-Sk-9hv" secondAttribute="top" constant="44" id="Dek-M8-iHq"/>
+                            <constraint firstItem="ydb-4d-toP" firstAttribute="leading" secondItem="0aV-Sk-9hv" secondAttribute="leading" constant="16" id="MPU-e6-pTb"/>
+                            <constraint firstItem="zor-17-8uy" firstAttribute="leading" secondItem="3a4-MB-F5S" secondAttribute="leading" id="YZc-0N-POR"/>
+                            <constraint firstItem="0aV-Sk-9hv" firstAttribute="trailing" secondItem="zor-17-8uy" secondAttribute="trailing" id="bSE-mC-gD2"/>
+                            <constraint firstItem="0aV-Sk-9hv" firstAttribute="trailing" secondItem="3a4-MB-F5S" secondAttribute="trailing" id="ckf-rB-Gu0"/>
+                            <constraint firstItem="3a4-MB-F5S" firstAttribute="top" secondItem="ydb-4d-toP" secondAttribute="bottom" constant="16" id="dQc-Ei-fbS"/>
+                            <constraint firstItem="3a4-MB-F5S" firstAttribute="leading" secondItem="ydb-4d-toP" secondAttribute="leading" id="dqx-nu-PYw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="HotelNameTextField" destination="GvR-4D-Qcx" id="HZI-ly-3gl"/>
+                        <outlet property="UplodGeneralPictureCollectionView" destination="F1r-bs-1kn" id="lVp-hG-VCu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVK-T5-ATd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3M9-2p-gN0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2085.507246376812" y="47.544642857142854"/>
+        </scene>
         <!--Upload Complete View Controller-->
         <scene sceneID="WCz-t4-2i0">
             <objects>
