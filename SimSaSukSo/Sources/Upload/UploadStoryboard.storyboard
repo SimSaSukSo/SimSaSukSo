@@ -37,16 +37,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="761"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wum-Uj-qca">
-                                                <rect key="frame" x="16" y="44" width="117" height="56"/>
+                                                <rect key="frame" x="16" y="44" width="124.5" height="67"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqG-tB-qcj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="23.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEL-7t-TR7">
-                                                        <rect key="frame" x="0.0" y="39.5" width="117" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="46" width="124.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31j-aI-Zi5">
-                                                <rect key="frame" x="379" y="49" width="14" height="14"/>
+                                                <rect key="frame" x="379" y="52" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="Zyw-XH-sbo"/>
                                                     <constraint firstAttribute="height" constant="14" id="i2F-Jy-Uw5"/>
@@ -65,20 +65,20 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="enF-Jl-Q2x">
-                                                <rect key="frame" x="0.0" y="116" width="414" height="414"/>
+                                                <rect key="frame" x="0.0" y="127" width="414" height="414"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="414" id="jUq-CL-Mhi"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="갤러리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4g-Rv-Fdx">
-                                                <rect key="frame" x="16" y="542" width="36.5" height="16.5"/>
+                                                <rect key="frame" x="16" y="553" width="39" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c3-mX-ZxM">
-                                                <rect key="frame" x="79.5" y="547" width="10.5" height="6.5"/>
+                                                <rect key="frame" x="82" y="560.5" width="10.5" height="6"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6.25" id="py1-aH-deW"/>
                                                     <constraint firstAttribute="width" constant="10.539999999999999" id="t5Q-QT-WHq"/>
@@ -89,7 +89,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAY-DE-UdI">
-                                                <rect key="frame" x="372.5" y="546" width="22.5" height="33"/>
+                                                <rect key="frame" x="372.5" y="557" width="22.5" height="22"/>
                                                 <color key="tintColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="square.on.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
