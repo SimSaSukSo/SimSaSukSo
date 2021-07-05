@@ -154,6 +154,14 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K9-EW-Oi9">
+                                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <segue destination="rd5-eP-jeC" kind="presentation" modalPresentationStyle="fullScreen" id="ij8-03-TEC"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -580,6 +588,9 @@
                                                     <constraint firstAttribute="width" constant="12" id="zLv-gW-ak2"/>
                                                 </constraints>
                                                 <state key="normal" image="xmark"/>
+                                                <connections>
+                                                    <action selector="closeButtonAction:" destination="Npq-Nl-Ghd" eventType="touchUpInside" id="XOS-sK-JhU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -643,6 +654,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d6-P6-faU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.6956521739130448" y="52.901785714285715"/>
+        </scene>
+        <!--Evalu Alert View Controller-->
+        <scene sceneID="p12-mO-xiI">
+            <objects>
+                <viewController storyboardIdentifier="EvaluAlertViewController" modalPresentationStyle="overFullScreen" id="hrm-jI-jpu" customClass="EvaluAlertViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cs-P0-FMF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80T-aC-zIX">
+                                <rect key="frame" x="16" y="349" width="382" height="198.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-VT-eJ6">
+                                        <rect key="frame" x="79" y="24" width="224.5" height="84.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가 끝내기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szk-9j-Nom">
+                                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="24"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" name="AccentColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i0-f9-Cbq">
+                                                <rect key="frame" x="0.0" y="40" width="224.5" height="44.5"/>
+                                                <string key="text">N명의 신뢰도 평가를 해주셨네요!
+평가를 마치고 홈으로 가시겠습니까?</string>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="4iG-4k-LAf">
+                                        <rect key="frame" x="50.5" y="149.5" width="281" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmD-hd-oXH">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <state key="normal" title="홈으로 가기">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goHomeButtonAction:" destination="hrm-jI-jpu" eventType="touchUpInside" id="kOk-x4-PFw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gk-fP-7xo">
+                                                <rect key="frame" x="199" y="0.0" width="82" height="33"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <state key="normal" title="마저 평가하기">
+                                                    <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="stayButtonAction:" destination="hrm-jI-jpu" eventType="touchUpInside" id="Kta-di-3OH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE4-dD-zmu">
+                                        <rect key="frame" x="0.0" y="132.5" width="382" height="1"/>
+                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="as9-n7-4BI"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aE4-dD-zmu" firstAttribute="leading" secondItem="80T-aC-zIX" secondAttribute="leading" id="6d2-Sk-gai"/>
+                                    <constraint firstItem="4iG-4k-LAf" firstAttribute="top" secondItem="aE4-dD-zmu" secondAttribute="bottom" constant="16" id="85c-hm-wNh"/>
+                                    <constraint firstAttribute="trailing" secondItem="aE4-dD-zmu" secondAttribute="trailing" id="CnQ-vb-3zL"/>
+                                    <constraint firstItem="4iG-4k-LAf" firstAttribute="centerX" secondItem="80T-aC-zIX" secondAttribute="centerX" id="MAd-1S-bL8"/>
+                                    <constraint firstAttribute="bottom" secondItem="4iG-4k-LAf" secondAttribute="bottom" constant="16" id="SRZ-43-siF"/>
+                                    <constraint firstItem="WdM-VT-eJ6" firstAttribute="top" secondItem="80T-aC-zIX" secondAttribute="top" constant="24" id="bz9-ho-ESq"/>
+                                    <constraint firstItem="WdM-VT-eJ6" firstAttribute="centerX" secondItem="80T-aC-zIX" secondAttribute="centerX" id="cMm-5c-yja"/>
+                                    <constraint firstItem="aE4-dD-zmu" firstAttribute="top" secondItem="WdM-VT-eJ6" secondAttribute="bottom" constant="24" id="ub5-k2-ofp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WW4-uE-Rbv"/>
+                        <constraints>
+                            <constraint firstItem="80T-aC-zIX" firstAttribute="centerX" secondItem="6cs-P0-FMF" secondAttribute="centerX" id="21n-1s-wgg"/>
+                            <constraint firstItem="80T-aC-zIX" firstAttribute="leading" secondItem="WW4-uE-Rbv" secondAttribute="leading" constant="16" id="EMT-iT-3Eh"/>
+                            <constraint firstItem="WW4-uE-Rbv" firstAttribute="trailing" secondItem="80T-aC-zIX" secondAttribute="trailing" constant="16" id="SuI-6h-M1R"/>
+                            <constraint firstItem="80T-aC-zIX" firstAttribute="centerY" secondItem="6cs-P0-FMF" secondAttribute="centerY" id="YYt-U7-K4R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="evaluAlertView" destination="80T-aC-zIX" id="Ad7-gc-MmE"/>
+                        <outlet property="mesaageLabel" destination="2i0-f9-Cbq" id="pju-ee-wat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VST-Tn-WUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="813"/>
         </scene>
     </scenes>
     <resources>

@@ -22,7 +22,13 @@ class EvaluViewController: UIViewController {
         evaluCollectionViewHeight.constant = 192 * 10
         
     }
+    @IBAction func closeButtonAction(_ sender: UIButton) {
+        
+        let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "EvaluAlertViewController")
 
+        self.present(alertVC!, animated: false, completion: nil)
+    }
+    
 }
 
 //MARK: - CollectionView
