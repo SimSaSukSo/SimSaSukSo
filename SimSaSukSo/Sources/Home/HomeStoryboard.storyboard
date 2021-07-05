@@ -1330,7 +1330,7 @@
         <!--홈-->
         <scene sceneID="4pB-z1-SJF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lxt-Eg-6PD" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="HomeNavi" storyboardIdentifier="HomeNavi" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="lxt-Eg-6PD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="img_home" id="Ha4-9i-NKN"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>

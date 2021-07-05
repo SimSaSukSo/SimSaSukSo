@@ -9,9 +9,6 @@ import UIKit
 
 class SettingAlertViewController: UIViewController {
     
-    var titleNote: String = ""
-    var mesaage: String = ""
-    
     @IBOutlet var settingAlertView: UIView!
     
     @IBOutlet var titleLabel: UILabel!
