@@ -162,6 +162,14 @@
                                                     <segue destination="rd5-eP-jeC" kind="presentation" modalPresentationStyle="fullScreen" id="ij8-03-TEC"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yb-Va-sQA">
+                                                <rect key="frame" x="326" y="287" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <segue destination="k5p-4V-bkP" kind="show" id="1O0-0b-NVh"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -217,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ot-lr-ig1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.84057971014499" y="52.901785714285715"/>
+            <point key="canvasLocation" x="958" y="53"/>
         </scene>
         <!--Upload General Page One-->
         <scene sceneID="Hbc-il-kb2">
@@ -352,7 +360,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVK-T5-ATd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="3M9-2p-gN0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2085.507246376812" y="47.544642857142854"/>
+            <point key="canvasLocation" x="2545" y="53"/>
         </scene>
         <!--Upload Complete View Controller-->
         <scene sceneID="WCz-t4-2i0">
@@ -406,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kt-Ey-hmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="813"/>
+            <point key="canvasLocation" x="622" y="813"/>
         </scene>
         <!--Evalu View Controller-->
         <scene sceneID="J70-jr-XXS">
@@ -633,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aY7-hg-yr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444.9275362318842" y="812.94642857142856"/>
+            <point key="canvasLocation" x="1375" y="813"/>
         </scene>
         <!--업로드-->
         <scene sceneID="cy5-Xb-X89">
@@ -746,7 +754,124 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VST-Tn-WUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="813"/>
+            <point key="canvasLocation" x="2181" y="813"/>
+        </scene>
+        <!--Upload Alert View Controller-->
+        <scene sceneID="Z18-gK-RmP">
+            <objects>
+                <viewController storyboardIdentifier="UploadAlertViewController" modalPresentationStyle="overFullScreen" id="k5p-4V-bkP" customClass="UploadAlertViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fzs-xw-jKE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPl-rd-2Ol">
+                                <rect key="frame" x="16" y="344" width="382" height="208"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후기를 남길 숙소 유형을 선택해주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl5-hq-VMI">
+                                        <rect key="frame" x="61.5" y="24" width="259" height="24"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" name="AccentColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-OC-puQ">
+                                        <rect key="frame" x="96" y="159" width="190" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-mN-Czf">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="33"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <state key="normal" title="닫기">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeButtonAction:" destination="k5p-4V-bkP" eventType="touchUpInside" id="B06-ko-JxB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-Mu-UWO">
+                                                <rect key="frame" x="160" y="0.0" width="30" height="33"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <state key="normal" title="선택">
+                                                    <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseButtonAction:" destination="k5p-4V-bkP" eventType="touchUpInside" id="WgG-02-TSt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFZ-tM-gti">
+                                        <rect key="frame" x="51" y="72" width="280" height="46"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuo-n0-PcF">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="s4q-K8-ZbL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <color key="tintColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="일반 숙소"/>
+                                                <connections>
+                                                    <action selector="normalButtonAction:" destination="k5p-4V-bkP" eventType="touchUpInside" id="XJB-87-ef1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xJ-8i-u2f">
+                                                <rect key="frame" x="140" y="0.0" width="140" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="CRC-1h-uHo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <color key="tintColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="에어비앤비"/>
+                                                <connections>
+                                                    <action selector="airButtonAction:" destination="k5p-4V-bkP" eventType="touchUpInside" id="60c-kL-j6x"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="0fU-Zh-IBP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5M-pO-yr9">
+                                        <rect key="frame" x="0.0" y="142" width="382" height="1"/>
+                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="1Fg-eg-gRP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NFZ-tM-gti" firstAttribute="top" secondItem="Pl5-hq-VMI" secondAttribute="bottom" constant="24" id="5bj-4U-OhO"/>
+                                    <constraint firstItem="Pl5-hq-VMI" firstAttribute="top" secondItem="UPl-rd-2Ol" secondAttribute="top" constant="24" id="Mcc-Dh-tyt"/>
+                                    <constraint firstItem="Pl5-hq-VMI" firstAttribute="centerX" secondItem="UPl-rd-2Ol" secondAttribute="centerX" id="RwD-hn-8Vx"/>
+                                    <constraint firstItem="v6q-OC-puQ" firstAttribute="top" secondItem="X5M-pO-yr9" secondAttribute="bottom" constant="16" id="a3b-8p-Hws"/>
+                                    <constraint firstItem="NFZ-tM-gti" firstAttribute="centerX" secondItem="UPl-rd-2Ol" secondAttribute="centerX" id="exA-iO-WbF"/>
+                                    <constraint firstItem="X5M-pO-yr9" firstAttribute="top" secondItem="NFZ-tM-gti" secondAttribute="bottom" constant="24" id="fqD-tZ-2Ab"/>
+                                    <constraint firstItem="v6q-OC-puQ" firstAttribute="centerX" secondItem="UPl-rd-2Ol" secondAttribute="centerX" id="gg4-0W-x1h"/>
+                                    <constraint firstAttribute="trailing" secondItem="X5M-pO-yr9" secondAttribute="trailing" id="nDz-C3-CZ0"/>
+                                    <constraint firstItem="X5M-pO-yr9" firstAttribute="leading" secondItem="UPl-rd-2Ol" secondAttribute="leading" id="prh-Rw-bi8"/>
+                                    <constraint firstAttribute="bottom" secondItem="v6q-OC-puQ" secondAttribute="bottom" constant="16" id="zEs-TC-Zdr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ldT-5r-E39"/>
+                        <constraints>
+                            <constraint firstItem="UPl-rd-2Ol" firstAttribute="centerX" secondItem="Fzs-xw-jKE" secondAttribute="centerX" id="0B4-9l-8DN"/>
+                            <constraint firstItem="UPl-rd-2Ol" firstAttribute="leading" secondItem="ldT-5r-E39" secondAttribute="leading" constant="16" id="9T0-7G-Sbz"/>
+                            <constraint firstItem="ldT-5r-E39" firstAttribute="trailing" secondItem="UPl-rd-2Ol" secondAttribute="trailing" constant="16" id="PFn-nR-dhs"/>
+                            <constraint firstItem="UPl-rd-2Ol" firstAttribute="centerY" secondItem="Fzs-xw-jKE" secondAttribute="centerY" id="yAq-Fb-ovb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PtH-ON-SkB"/>
+                    <connections>
+                        <outlet property="airButton" destination="0xJ-8i-u2f" id="cd4-7e-kcZ"/>
+                        <outlet property="normalButton" destination="nuo-n0-PcF" id="naI-oy-lpd"/>
+                        <outlet property="stackView" destination="NFZ-tM-gti" id="7zz-tk-qzH"/>
+                        <outlet property="uploadAlertView" destination="UPl-rd-2Ol" id="tz9-Sn-asU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDS-c9-pr9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="53"/>
         </scene>
     </scenes>
     <resources>
