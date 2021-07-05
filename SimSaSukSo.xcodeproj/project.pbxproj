@@ -48,6 +48,9 @@
 		A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E031267B5E94006A1F0B /* UploadViewController.swift */; };
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
+		A75EAE732692F63300B34597 /* UploadGeneralSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAE722692F63300B34597 /* UploadGeneralSecondStepViewController.swift */; };
+		A75EAE782692F6C400B34597 /* UploadGeneralThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAE772692F6C400B34597 /* UploadGeneralThirdStepViewController.swift */; };
+		A75EAE7B2692F6DF00B34597 /* UploadGeneralFourthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAE7A2692F6DF00B34597 /* UploadGeneralFourthStepViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
@@ -60,7 +63,7 @@
 		A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCAF268C650100565095 /* kakaoLoginResponse.swift */; };
 		A766CCBB268C665500565095 /* kakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBA268C665500565095 /* kakaoLoginInput.swift */; };
 		A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */; };
-		A766CCC82690501600565095 /* UploadGeneralPageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralPageOne.swift */; };
+		A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */; };
 		A766CCCB2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
@@ -129,6 +132,9 @@
 		A711E031267B5E94006A1F0B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A75EAE722692F63300B34597 /* UploadGeneralSecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralSecondStepViewController.swift; sourceTree = "<group>"; };
+		A75EAE772692F6C400B34597 /* UploadGeneralThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralThirdStepViewController.swift; sourceTree = "<group>"; };
+		A75EAE7A2692F6DF00B34597 /* UploadGeneralFourthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFourthStepViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
@@ -141,7 +147,7 @@
 		A766CCAF268C650100565095 /* kakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginResponse.swift; sourceTree = "<group>"; };
 		A766CCBA268C665500565095 /* kakaoLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginInput.swift; sourceTree = "<group>"; };
 		A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginDataManager.swift; sourceTree = "<group>"; };
-		A766CCC72690501600565095 /* UploadGeneralPageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralPageOne.swift; sourceTree = "<group>"; };
+		A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFirstStepViewController.swift; sourceTree = "<group>"; };
 		A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
@@ -286,8 +292,11 @@
 				A54BDAAF268E13470070BFEF /* EvaluViewController.swift */,
 				A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */,
 				A54BDAB5268E1D720070BFEF /* evaluImageCollectionViewCell.swift */,
-				A766CCC72690501600565095 /* UploadGeneralPageOne.swift */,
+				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
 				A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */,
+				A75EAE722692F63300B34597 /* UploadGeneralSecondStepViewController.swift */,
+				A75EAE772692F6C400B34597 /* UploadGeneralThirdStepViewController.swift */,
+				A75EAE7A2692F6DF00B34597 /* UploadGeneralFourthStepViewController.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -600,6 +609,7 @@
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */,
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
+				A75EAE7B2692F6DF00B34597 /* UploadGeneralFourthStepViewController.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
@@ -625,7 +635,7 @@
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
-				A766CCC82690501600565095 /* UploadGeneralPageOne.swift in Sources */,
+				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
@@ -648,6 +658,8 @@
 				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
+				A75EAE732692F63300B34597 /* UploadGeneralSecondStepViewController.swift in Sources */,
+				A75EAE782692F6C400B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
 				A58833AF268C75E20046E313 /* FeedTagCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

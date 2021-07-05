@@ -6,7 +6,8 @@
 //
 
 import UIKit
-class UploadGeneralPageOne : UIViewController{
+class UploadGeneralFirstStepViewController
+: UIViewController{
     
     
     @IBOutlet weak var HotelNameTextField: UITextField!
