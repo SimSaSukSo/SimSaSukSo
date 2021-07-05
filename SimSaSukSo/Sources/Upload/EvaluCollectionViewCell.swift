@@ -103,7 +103,7 @@ extension EvaluCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "evaluImageCollectionViewCell", for: indexPath) as! evaluImageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "evaluImageCollectionViewCell", for: indexPath) as! EvaluImageCollectionViewCell
         
         return cell
     }

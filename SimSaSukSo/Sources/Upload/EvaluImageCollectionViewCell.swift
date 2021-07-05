@@ -7,6 +7,6 @@
 
 import UIKit
 
-class evaluImageCollectionViewCell: UICollectionViewCell {
+class EvaluImageCollectionViewCell: UICollectionViewCell {
     
 }
