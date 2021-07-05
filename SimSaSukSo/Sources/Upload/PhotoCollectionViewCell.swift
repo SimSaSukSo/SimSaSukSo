@@ -10,7 +10,8 @@ import Photos
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var photoCellImageView: UIImageView!
+    @IBOutlet var numberLabel: UILabel!
     
     fileprivate let imageManager = PHImageManager()
     
@@ -24,7 +25,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         override func awakeFromNib() {
             super.awakeFromNib()
-            self.photoImageView.contentMode = .scaleAspectFill
+            self.photoCellImageView.contentMode = .scaleAspectFill
         }
         
         override func prepareForReuse() {
@@ -32,7 +33,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
         
         func configure(with image: UIImage?) {
-            self.photoImageView.image = image
+            self.photoCellImageView.image = image
         }
+    
     
 }

@@ -15,6 +15,9 @@ class UploadViewController : UIViewController {
     let scale = UIScreen.main.scale
     var thumbnailSize = CGSize.zero
     
+    var uploadPhotos = [UIImage]()
+    var photoArray = [Int]()
+    
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var photoImageViewHeight: NSLayoutConstraint!
     @IBOutlet var photosButton: UIButton!
@@ -39,7 +42,10 @@ class UploadViewController : UIViewController {
         
         photoImageViewHeight.constant = photoImageView.frame.size.width
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
+        
     }
+
+    
     
     @IBAction func nextButtonAction(_ sender: UIButton) {
     }
@@ -49,6 +55,7 @@ class UploadViewController : UIViewController {
 
 //MARK: - CollectionView
 extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.allMedia?.count ?? 0
     }
@@ -60,11 +67,30 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         LocalImageManager.shared.requestIamge(with: asset, thumbnailSize: self.thumbnailSize) { (image) in
             cell.configure(with: image)
         }
-
+        
+        if indexPath.row == 0 {
+            photoImageView.image = cell.photoCellImageView.image
+        }
+        
+        //cell.numberLabel.isHidden = true
+        
+        
+        cell.numberLabel.layer.cornerRadius = cell.numberLabel.frame.size.height/2
+        cell.numberLabel.layer.masksToBounds = true
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+        
+        self.photoImageView.image = cell.photoCellImageView.image
+        
+    }
+        
 
 }
+
 
 //MARK: - CollecitonView FlowLayout
 extension UploadViewController: UICollectionViewDelegateFlowLayout {
@@ -78,6 +104,7 @@ extension UploadViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
+//MARK: - LocalImageManager
 final class LocalImageManager {
     
     static var shared = LocalImageManager()
@@ -102,3 +129,4 @@ final class LocalImageManager {
         })
     }
 }
+
