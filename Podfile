@@ -12,6 +12,6 @@ target 'SimSaSukSo' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth' 
 pod 'KakaoSDKUser'
-
+pod 'Firebase/Storage'
 
 end

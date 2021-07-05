@@ -50,6 +50,7 @@
 		A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E031267B5E94006A1F0B /* UploadViewController.swift */; };
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
+		A75EAE802693612000B34597 /* UploadGeneralThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAE7F2693612000B34597 /* UploadGeneralThirdStepViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
@@ -133,6 +134,7 @@
 		A711E031267B5E94006A1F0B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A75EAE7F2693612000B34597 /* UploadGeneralThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralThirdStepViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				A54BDAB5268E1D720070BFEF /* EvaluImageCollectionViewCell.swift */,
 				A766CCC72690501600565095 /* UploadGeneralPageOne.swift */,
 				A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */,
+				A75EAE7F2693612000B34597 /* UploadGeneralThirdStepViewController.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				A766CCCB2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift in Sources */,
 				A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
+				A75EAE802693612000B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
 				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
 				A54DB8FF2693108900EA26DF /* UIImageView.swift in Sources */,
