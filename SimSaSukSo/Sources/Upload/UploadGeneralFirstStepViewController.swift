@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class UploadGeneralPageOne : UIViewController{
+class UploadGeneralFirstStepViewController : UIViewController{
     
     
     @IBOutlet weak var HotelNameTextField: UITextField!
@@ -21,7 +21,7 @@ class UploadGeneralPageOne : UIViewController{
     
 }
 
-extension UploadGeneralPageOne : UICollectionViewDelegate,UICollectionViewDataSource{
+extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
