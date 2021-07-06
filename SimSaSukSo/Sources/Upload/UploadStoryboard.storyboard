@@ -1372,52 +1372,52 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heE-f5-vR7">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="187" y="38" width="8" height="21"/>
-=======
+
                                                         <rect key="frame" x="187" y="37" width="8" height="21"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 시작일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uks-a0-g2J">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="37" width="175" height="22.5"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="37" width="175" height="21"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXZ-f5-6y2">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="63.5" width="175" height="1"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="62" width="175" height="1"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="pDm-3P-4Ux"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-xp-P5S">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="207" y="63.5" width="175" height="1"/>
-=======
+
                                                         <rect key="frame" x="207" y="62" width="175" height="1"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="vSV-of-7ne"/>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 마지막일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0Q-jA-RYh">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="207" y="37" width="175" height="22.5"/>
-=======
+
                                                         <rect key="frame" x="207" y="37" width="175" height="21"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -1453,20 +1453,20 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가격을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4iU-r4-Owt">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="37" width="382" height="21"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37E-d7-BWO">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="62" width="382" height="1"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="XpS-sj-2l5"/>
@@ -1496,20 +1496,20 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 위치를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tF2-bK-gp0">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="37" width="382" height="21"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIZ-Ju-mc0">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="62" width="382" height="1"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="LdY-xh-qUZ"/>
@@ -1539,20 +1539,20 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-Rz-lQu">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="37" width="366" height="22.5"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="37" width="366" height="21"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-5g-pp5">
-<<<<<<< HEAD
+
                                                         <rect key="frame" x="0.0" y="63.5" width="366" height="1"/>
-=======
+
                                                         <rect key="frame" x="0.0" y="62" width="366" height="1"/>
->>>>>>> 65a0f4c882a7524b917d256799444328e6248469
+
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="l8K-zh-OCw"/>
