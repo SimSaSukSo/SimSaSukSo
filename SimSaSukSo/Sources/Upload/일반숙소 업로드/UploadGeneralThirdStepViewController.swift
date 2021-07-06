@@ -13,6 +13,9 @@ class UploadGeneralThirdStepViewController : UIViewController{
     @IBOutlet weak var usedToolAppButton: AdaptableSizeButton!
     @IBOutlet weak var usedToolFilterButton: AdaptableSizeButton!
     @IBOutlet weak var usedToolSelfButton: AdaptableSizeButton!
+    @IBOutlet weak var editDegreeSlider: UISlider!
+    
+    @IBOutlet weak var sliderSplitView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +41,17 @@ class UploadGeneralThirdStepViewController : UIViewController{
         usedToolSelfButton.layer.cornerRadius = 4
         
         
+    }
+    
+    
+    @IBAction func editDegreeSliderAction(_ sender: UISlider) {
+        editDegreeSlider.value = roundf(editDegreeSlider.value)
+        print(editDegreeSlider.value)
+        if editDegreeSlider.value == 1.0{
+            sliderSplitView.isHidden = true
+        }else{
+            sliderSplitView.isHidden = false
+        }
     }
     
     

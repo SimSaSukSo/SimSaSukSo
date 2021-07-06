@@ -55,6 +55,7 @@
 		A75EAEA6269367CB00B34597 /* UploadGeneralSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */; };
 		A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */; };
 		A75EAEAE26936AC100B34597 /* AdaptableSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */; };
+		A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEB42694064700B34597 /* DesignableSlider.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
@@ -143,6 +144,7 @@
 		A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralSecondStepViewController.swift; sourceTree = "<group>"; };
 		A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralThirdStepViewController.swift; sourceTree = "<group>"; };
 		A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptableSizeButton.swift; sourceTree = "<group>"; };
+		A75EAEB42694064700B34597 /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */,
 				A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */,
 				A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */,
+				A75EAEB42694064700B34597 /* DesignableSlider.swift */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
@@ -675,6 +678,7 @@
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
+				A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */,
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
