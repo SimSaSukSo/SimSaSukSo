@@ -6,12 +6,17 @@
 //
 
 import UIKit
-class UploadGeneralTagCollectionViewCell : UICollectionViewCell{
+class UploadGeneralAddTagCollectionViewCell : UICollectionViewCell{
     
-    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var addTagButton: UIButton!
     
     
-    @IBOutlet weak var xButton: UIButton!
+    
+    
+    
+    
+    
+    
     
     
     
