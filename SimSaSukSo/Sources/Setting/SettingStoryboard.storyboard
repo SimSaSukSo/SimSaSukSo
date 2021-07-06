@@ -736,9 +736,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Wze-mI-stf">
                                                 <rect key="frame" x="95.5" y="445.5" width="36.5" height="18"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-5V-ElH">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angryFace" translatesAutoresizingMaskIntoConstraints="NO" id="sKc-5V-ElH">
                                                         <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18.300000000000001" id="Mk5-36-uDx"/>
                                                             <constraint firstAttribute="height" constant="18.300000000000001" id="sqD-OU-lm4"/>
@@ -1384,6 +1383,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="angryFace" width="20" height="20"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
         <image name="arrow_left" width="14" height="14"/>
         <image name="bookmark" width="14" height="20.5"/>
