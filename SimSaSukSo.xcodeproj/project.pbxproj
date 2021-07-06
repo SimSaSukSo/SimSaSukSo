@@ -60,6 +60,7 @@
 		A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */; };
 		A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */; };
 		A75EAEBF2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */; };
+		A75EAEC8269441D900B34597 /* UploadGeneralFourthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
@@ -153,6 +154,7 @@
 		A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFourthCollectionViewCell.swift; sourceTree = "<group>"; };
+		A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFourthStepViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */,
 				A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
 				A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */,
+				A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
@@ -719,6 +722,7 @@
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
 				A766CCAA268B9E1500565095 /* BestBelievesTableViewCell.swift in Sources */,
 				A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */,
+				A75EAEC8269441D900B34597 /* UploadGeneralFourthStepViewController.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
 				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
