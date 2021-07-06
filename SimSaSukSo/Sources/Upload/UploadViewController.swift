@@ -47,18 +47,18 @@ class UploadViewController : UIViewController {
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
         
         let image = UIImage(named: "evalu_Star_Fill")
-        uploadimage(image: image!)
+        uploadImage(image: image!)
         
     }
     
-    func uploadimage(image: UIImage) {
+    func uploadImage(image: UIImage) {
         var data = Data()
         data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "password"
+        let filePath = "testImage"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data,metadata: metaData) {
-            (metaData,error) in if let error = error {
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in if let error = error {
                 print("e")
                 return
             } else {
