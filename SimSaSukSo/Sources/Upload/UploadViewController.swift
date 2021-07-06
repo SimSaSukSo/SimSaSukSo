@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 import Photos
 import FirebaseStorage
+import FirebaseAuth
 
 class UploadViewController : UIViewController {
     
     let storage = Storage.storage()
-    
+
     var allMedia: PHFetchResult<PHAsset>?
     let scale = UIScreen.main.scale
     var thumbnailSize = CGSize.zero
@@ -47,30 +48,36 @@ class UploadViewController : UIViewController {
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
         
         let image = UIImage(named: "evalu_Star_Fill")
-        uploadimage(image: image!)
+        uploadImage(image: image!)
         
     }
     
-    func uploadimage(image: UIImage) {
+   
+  
+
+    
+    //MARK: - Function
+    
+    // Firebase 업로드
+    func uploadImage(image: UIImage) {
         var data = Data()
         data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "password"
+        let filePath = "무야호"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data,metadata: metaData) {
-            (metaData,error) in if let error = error {
-                print("e")
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in if let error = error {
+                print("실패")
                 return
             } else {
-                print("D")
+                print("성공")
             }
         }
 
     }
-
-    
     
     @IBAction func nextButtonAction(_ sender: UIButton) {
+   
     }
     @IBAction func photosButtonAction(_ sender: UIButton) {
     }
