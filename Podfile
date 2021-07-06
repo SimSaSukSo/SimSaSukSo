@@ -13,5 +13,8 @@ target 'SimSaSukSo' do
   pod 'KakaoSDKAuth' 
 pod 'KakaoSDKUser'
 pod 'Firebase/Storage'
+pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
 
 end

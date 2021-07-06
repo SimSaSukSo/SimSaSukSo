@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireNetworkActivityIndicator
 import KakaoSDKCommon
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // StatusBar에 Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
         NetworkActivityIndicatorManager.shared.isEnabled = true
         KakaoSDKCommon.initSDK(appKey: "b9157f39fdb90c6cb12ae52ec6658951")
+        
+        // Firebase 설정
+        FirebaseApp.configure()
         
         return true
     }
