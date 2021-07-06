@@ -9,7 +9,7 @@ import UIKit
 class UploadedPictureFirstCollectionViewCell : UICollectionViewCell{
     
     
-    @IBOutlet weak var UploadGeneralPictureImageView: UIImageView!
+    @IBOutlet weak var firstPictureImageView: UIImageView!
     
     
 }

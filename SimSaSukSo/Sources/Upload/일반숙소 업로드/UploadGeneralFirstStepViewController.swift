@@ -11,12 +11,12 @@ class UploadGeneralFirstStepViewController : UIViewController{
     
     @IBOutlet weak var HotelNameTextField: UITextField!
     
-    @IBOutlet weak var UplodGeneralPictureCollectionView: UICollectionView!
+    @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UplodGeneralPictureCollectionView.dataSource = self
-        UplodGeneralPictureCollectionView.delegate = self
+        FirstPictureCollectionView.dataSource = self
+        FirstPictureCollectionView.delegate = self
     }
     
 }
@@ -27,7 +27,7 @@ extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralPictureCollectionViewCell", for: indexPath) as! UploadGeneralPictureCollectionViewCell
+        let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFirstCollectionViewCell", for: indexPath) as! UploadedPictureFirstCollectionViewCell
         
         return uploadGeneralcell
     }
