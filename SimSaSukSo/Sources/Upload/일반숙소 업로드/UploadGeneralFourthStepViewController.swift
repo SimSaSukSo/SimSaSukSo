@@ -14,10 +14,13 @@ class UploadGeneralFourthStepViewController : UIViewController{
     @IBOutlet weak var tagEnterButton: UIButton!
     
     @IBOutlet weak var tagTextFieldView: UIView!
+    
+    var tagArray = ["태그", "태그1234", "xormdlkfs","태그추가하기"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tagTextFieldView.isHidden = true
+      //  tagTextFieldView.isHidden = true
         
         tagEnterButton.layer.cornerRadius = 15
         
@@ -30,17 +33,36 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
     
   
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 1
+            return tagArray.count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let addTagcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralTagCollectionViewCell", for: indexPath) as! UploadGeneralTagCollectionViewCell
-            addTagcell.addTagButton.layer.borderWidth = 1
-           
-            addTagcell.addTagButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
-            addTagcell.addTagButton.layer.cornerRadius = 4
+            var cell : UICollectionViewCell!
+            if indexPath.item == tagArray.count - 1{
+                let addTagcell =
+                collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddTagCollectionViewCell", for: indexPath) as! UploadGeneralAddTagCollectionViewCell
+                addTagcell.addTagButton.layer.borderWidth = 1
+                //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
+                addTagcell.addTagButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                addTagcell.addTagButton.layer.cornerRadius = 4
+                
+                cell = addTagcell
+            }else{
+                let tagcell =
+                collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralTagCollectionViewCell", for: indexPath) as! UploadGeneralTagCollectionViewCell
+                
+                tagcell.tagLabel.text = tagArray[indexPath.row]
+                tagcell.layer.borderWidth = 1
+                tagcell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                tagcell.layer.cornerRadius = 4
+                
+                cell = tagcell
+                
+                
+                
+            }
             
-            return addTagcell
+            return cell
         }
     
     
@@ -48,3 +70,29 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
     
     
 }
+
+//MARK: - CollectionView FlowLayout
+extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var size : CGSize!
+
+        if indexPath.item == tagArray.count - 1{
+            size = CGSize(width: 119, height: 32)
+        }else{
+            let label = UILabel(frame: CGRect.zero)
+            label.text = tagArray[indexPath.item]
+            label.sizeToFit()
+            size = CGSize(width: label.frame.width + 28, height: 32)
+            
+        }
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+}
+
