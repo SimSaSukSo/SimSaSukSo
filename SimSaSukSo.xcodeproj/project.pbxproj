@@ -56,6 +56,9 @@
 		A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */; };
 		A75EAEAE26936AC100B34597 /* AdaptableSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */; };
 		A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEB42694064700B34597 /* DesignableSlider.swift */; };
+		A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */; };
+		A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */; };
+		A75EAEBF2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
 		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
@@ -69,7 +72,7 @@
 		A766CCBB268C665500565095 /* kakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBA268C665500565095 /* kakaoLoginInput.swift */; };
 		A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */; };
 		A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */; };
-		A766CCCB2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */; };
+		A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */; };
 		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -145,6 +148,9 @@
 		A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralThirdStepViewController.swift; sourceTree = "<group>"; };
 		A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptableSizeButton.swift; sourceTree = "<group>"; };
 		A75EAEB42694064700B34597 /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
+		A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureSecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureThirdCollectionViewCell.swift; sourceTree = "<group>"; };
+		A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFourthCollectionViewCell.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
@@ -158,7 +164,7 @@
 		A766CCBA268C665500565095 /* kakaoLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginInput.swift; sourceTree = "<group>"; };
 		A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFirstStepViewController.swift; sourceTree = "<group>"; };
-		A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralPictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,8 +355,11 @@
 				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
 				A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */,
 				A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */,
-				A766CCCA2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift */,
 				A75EAEB42694064700B34597 /* DesignableSlider.swift */,
+				A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */,
+				A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */,
+				A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
+				A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
@@ -639,10 +648,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
+				A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
-				A766CCCB2690504D00565095 /* UploadGeneralPictureCollectionViewCell.swift in Sources */,
+				A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */,
 				A75EAEAE26936AC100B34597 /* AdaptableSizeButton.swift in Sources */,
 				A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */,
 				A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */,
@@ -657,6 +667,7 @@
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
+				A75EAEBF2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
@@ -674,6 +685,7 @@
 				A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
+				A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
