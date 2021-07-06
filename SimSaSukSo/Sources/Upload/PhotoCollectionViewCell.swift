@@ -11,6 +11,7 @@ import Photos
 class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var photoCellImageView: UIImageView!
+    @IBOutlet var blackView: UIView!
     @IBOutlet var numberLabel: UILabel!
     
     fileprivate let imageManager = PHImageManager()

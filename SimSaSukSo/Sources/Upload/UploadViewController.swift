@@ -12,7 +12,7 @@ import FirebaseStorage
 import FirebaseAuth
 
 class UploadViewController : UIViewController {
-    
+   
     let storage = Storage.storage()
 
     var allMedia: PHFetchResult<PHAsset>?
@@ -103,8 +103,16 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             photoImageView.image = cell.photoCellImageView.image
         }
         
-        //cell.numberLabel.isHidden = true
+        cell.blackView.isHidden = true
+        cell.numberLabel.isHidden = true
         
+        if !photoArray.isEmpty { // 배열 안비어있으면
+            for i in 0...photoArray.count-1 {
+                if indexPath.item == photoArray[i] {
+                    cell.numberLabel.text = "\(i)"
+                }
+            }
+        }
         
         cell.numberLabel.layer.cornerRadius = cell.numberLabel.frame.size.height/2
         cell.numberLabel.layer.masksToBounds = true
@@ -117,8 +125,44 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         self.photoImageView.image = cell.photoCellImageView.image
         
-    }
+        if cell.blackView.isHidden == true { // 선택안함 -> 선택
+            cell.blackView.isHidden = false
+            cell.numberLabel.isHidden = false
+            photoArray.append(indexPath.item)
+            uploadPhotos.append(cell.photoCellImageView.image!)
+            
+        } else {
+            cell.blackView.isHidden = true
+            cell.numberLabel.isHidden = true
+            photoArray.remove(at: Int(cell.numberLabel.text!)!)
+            uploadPhotos.remove(at: Int(cell.numberLabel.text!)!)
+        }
         
+        if !photoArray.isEmpty { // 배열 안비어있으면
+            for i in 0...photoArray.count-1 {
+                if indexPath.item == photoArray[i] {
+                    cell.numberLabel.text = "\(i)"
+                }
+            }
+        }
+        
+//        print(photoArray)
+//        print("\(cell.numberLabel.text)")
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+            
+        if !photoArray.isEmpty { // 배열 안비어있으면
+            if cell.numberLabel.isHidden == false { // 선택된
+                
+            }
+            
+        }
+           
+    }
+    
 
 }
 
