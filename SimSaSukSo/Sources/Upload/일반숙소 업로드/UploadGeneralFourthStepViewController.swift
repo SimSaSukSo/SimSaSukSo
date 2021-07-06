@@ -9,6 +9,11 @@ import UIKit
 class UploadGeneralFourthStepViewController : UIViewController{
     
     
+    @IBOutlet weak var tagEnterButton: UIButton!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tagEnterButton.layer.cornerRadius = 15
+    }
 }

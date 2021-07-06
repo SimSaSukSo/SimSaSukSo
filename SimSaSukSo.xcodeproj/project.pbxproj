@@ -357,12 +357,12 @@
 				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
 				A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */,
 				A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */,
+				A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */,
 				A75EAEB42694064700B34597 /* DesignableSlider.swift */,
 				A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */,
 				A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */,
 				A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
 				A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */,
-				A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
