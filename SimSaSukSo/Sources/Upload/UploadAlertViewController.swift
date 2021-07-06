@@ -56,7 +56,7 @@ class UploadAlertViewController: UIViewController {
     @IBAction func chooseButtonAction(_ sender: UIButton) {
         
         if normalButton.tintColor == #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1) {
-            let normalVC = self.storyboard?.instantiateViewController(identifier: "UploadGeneralPageOne")
+            let normalVC = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFirstStepViewController")
             
             self.present(normalVC!, animated: false, completion: nil)
         } else {
