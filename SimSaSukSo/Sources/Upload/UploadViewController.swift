@@ -28,12 +28,12 @@ class UploadViewController : UIViewController {
     @IBOutlet var photoCollectionView: UICollectionView!
     @IBOutlet var photoCollectionViewHeight: NSLayoutConstraint!
     
-    
     override func viewDidLoad() {
        super.viewDidLoad()
         
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
+        
         
         // MAKR: - 모든 미디어 가져오는 메소드
         //self.allMedia = PHAsset.fetchAssets(with: nil)
@@ -48,14 +48,10 @@ class UploadViewController : UIViewController {
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
         
         let image = UIImage(named: "evalu_Star_Fill")
-        uploadImage(image: image!)
+        //uploadImage(image: image!)
         
     }
-    
-   
   
-
-    
     //MARK: - Function
     
     // Firebase 업로드
@@ -80,6 +76,11 @@ class UploadViewController : UIViewController {
    
     }
     @IBAction func photosButtonAction(_ sender: UIButton) {
+    }
+    @IBAction func testButtonAction(_ sender: UIButton) {
+        let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "UploadAlertViewController")
+        
+        self.present(alertVC!, animated: false, completion: nil)
     }
 }
 
@@ -159,4 +160,3 @@ final class LocalImageManager {
         })
     }
 }
-
