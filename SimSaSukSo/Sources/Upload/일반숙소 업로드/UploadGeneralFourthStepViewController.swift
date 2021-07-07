@@ -20,7 +20,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
     @IBOutlet weak var tagTextFieldView: UIView!
     
     @IBOutlet weak var stackView: UIStackView!
-    var tagArray = ["태그", "태그1234","태그추가하기"]
+    var tagArray = ["태그","태그124","태그추가하기"]
     
    
     
@@ -40,13 +40,17 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 if let flowLayout = tagCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
                     flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
                     
+                    collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height
+                    print("따란")
+                    print(collectionViewHeight.constant)
                     
                   }
+        
+        
 
 //        collectionViewHeight.constant = CGFloat(32 * (rowCounts) + 8 * (rowCounts + 1))
 //        print("-----")
-       
-         //print(collectionViewHeight.constant)
+        
     }
     
     
@@ -112,7 +116,7 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
         
         var size : CGSize!
         
-        let collectionViewWidth = stackView.frame.width
+        
 
         if indexPath.item == tagArray.count - 1{
             size = CGSize(width: 119, height: 32)
@@ -130,7 +134,7 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
         }
      
        
-      
+        
        
         return size
     }
