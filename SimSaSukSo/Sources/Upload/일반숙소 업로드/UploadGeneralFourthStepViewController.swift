@@ -18,9 +18,10 @@ class UploadGeneralFourthStepViewController : UIViewController{
     @IBOutlet weak var tagEnterButton: UIButton!
     
     @IBOutlet weak var tagTextFieldView: UIView!
+    @IBOutlet weak var tagTextField: UITextField!
     
     @IBOutlet weak var stackView: UIStackView!
-    var tagArray = ["태그","태그124","태그추가하기"]
+    var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
     
    
     
@@ -40,20 +41,33 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 if let flowLayout = tagCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
                     flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
                     
-                    collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height
+                    
+                    //MARK: - COLLECTIONVIEW HEIGHT
+                    collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
                     print("따란")
                     print(collectionViewHeight.constant)
                     
                   }
         
         
-
-//        collectionViewHeight.constant = CGFloat(32 * (rowCounts) + 8 * (rowCounts + 1))
-//        print("-----")
+        //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
+        NotificationCenter.default.addObserver(self, selector: #selector(EnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
     }
     
-    
+    //MARK: - 텍스트 필드 채워지면 버튼 활성화
+    @objc func EnterButtonActivate(){
+        let textArray = [tagTextField].filter { $0?.text == "" }
+        if !textArray.isEmpty {
+            tagEnterButton.isEnabled = false
+            tagEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+        
+        } else {
+            tagEnterButton.isEnabled = true
+            tagEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        }
+    }
+
     @IBAction func addTagButtonAction(_ sender: Any) {
         tagTextFieldView.isHidden = false
     }
