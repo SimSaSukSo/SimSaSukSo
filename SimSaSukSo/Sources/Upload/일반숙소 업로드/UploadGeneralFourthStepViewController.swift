@@ -6,6 +6,10 @@
 //
 
 import UIKit
+
+
+
+
 class UploadGeneralFourthStepViewController : UIViewController{
     
     
@@ -26,7 +30,17 @@ class UploadGeneralFourthStepViewController : UIViewController{
         
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
+        
+        tagCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
+                if let flowLayout = tagCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                  }
     }
+    
+    
+}
+extension ViewController:UICollectionViewDelegate {
+    
 }
 
 extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICollectionViewDataSource{
@@ -80,6 +94,7 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
 
         if indexPath.item == tagArray.count - 1{
             size = CGSize(width: 119, height: 32)
+            
         }else{
             let label = UILabel(frame: CGRect.zero)
             label.text = tagArray[indexPath.item]

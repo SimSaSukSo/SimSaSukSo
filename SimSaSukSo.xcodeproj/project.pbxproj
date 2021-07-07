@@ -55,6 +55,7 @@
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
+		A75835162695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */; };
 		A75EAEA6269367CB00B34597 /* UploadGeneralSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */; };
 		A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */; };
 		A75EAEAE26936AC100B34597 /* AdaptableSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */; };
@@ -151,6 +152,7 @@
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
 		A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralSecondStepViewController.swift; sourceTree = "<group>"; };
 		A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralThirdStepViewController.swift; sourceTree = "<group>"; };
 		A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptableSizeButton.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */,
 				A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */,
 				A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */,
+				A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
@@ -692,6 +695,7 @@
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
 				A54BDAB0268E13470070BFEF /* EvaluViewController.swift in Sources */,
+				A75835162695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */,
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
