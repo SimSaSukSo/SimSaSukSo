@@ -8,9 +8,10 @@
 
 struct kakaoLoginResponse : Decodable{
     
-    var isSuccess: Bool
-    var code: Int
-    var message: String
-    var token : String
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var token  : String?
+    var errorMessage : String?
     
 }
