@@ -18,9 +18,13 @@ class UploadGeneralFourthStepViewController : UIViewController{
     @IBOutlet weak var advantageCollectionView: UICollectionView!
     
     @IBOutlet weak var tagEnterButton: UIButton!
+    @IBOutlet weak var advantageEnterButton: UIButton!
     
     @IBOutlet weak var tagTextFieldView: UIView!
+    @IBOutlet weak var advantageTextFieldView: UIView!
+    
     @IBOutlet weak var tagTextField: UITextField!
+    @IBOutlet weak var advantageTextField: UITextField!
     
     @IBOutlet weak var stackView: UIStackView!
     var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
@@ -35,23 +39,26 @@ class UploadGeneralFourthStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       tagTextFieldView.isHidden = true
-        
-        tagEnterButton.layer.cornerRadius = 15
+        tagTextFieldView.isHidden = true
         
         tagCollectionViewConfigure()
         
+        advantageTextFieldView.isHidden = true
         advantageCollectionViewConfigure()
         
         
         //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
-        NotificationCenter.default.addObserver(self, selector: #selector(EnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TagEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AdvantageEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
     }
     
     func tagCollectionViewConfigure(){
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
+        
+        tagEnterButton.layer.cornerRadius = 15
         
         tagCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
                 if let flowLayout = tagCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -68,8 +75,11 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     func advantageCollectionViewConfigure(){
         
+        
         advantageCollectionView.dataSource = self
         advantageCollectionView.delegate = self
+        
+        advantageEnterButton.layer.cornerRadius = 15
         
         advantageCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
                 if let flowLayout = advantageCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -86,7 +96,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
     }
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
-    @objc func EnterButtonActivate(){
+    @objc func TagEnterButtonActivate(){
         let textArray = [tagTextField].filter { $0?.text == "" }
         if !textArray.isEmpty {
             tagEnterButton.isEnabled = false
@@ -95,6 +105,18 @@ class UploadGeneralFourthStepViewController : UIViewController{
         } else {
             tagEnterButton.isEnabled = true
             tagEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        }
+    }
+    
+    @objc func AdvantageEnterButtonActivate(){
+        let textArray = [advantageTextField].filter { $0?.text == "" }
+        if !textArray.isEmpty {
+            advantageEnterButton.isEnabled = false
+            advantageEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+        
+        } else {
+            advantageEnterButton.isEnabled = true
+            advantageEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }
     }
 
@@ -106,6 +128,18 @@ class UploadGeneralFourthStepViewController : UIViewController{
         tagTextFieldView.isHidden = true
         tagTextField.text = ""
     }
+    
+    
+    @IBAction func addAdvantageAction(_ sender: Any) {
+        advantageTextFieldView.isHidden = false
+        
+    }
+    
+    @IBAction func advantageEnterButtonAction(_ sender: Any) {
+        advantageTextFieldView.isHidden = true
+        advantageTextField.text = ""
+    }
+    
     
 }
 extension ViewController:UICollectionViewDelegate {
@@ -201,6 +235,7 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
                 let label = UILabel(frame: CGRect.zero)
                 label.text = tagArray[indexPath.item]
                 label.sizeToFit()
+                //x버튼 크기 28
                 size = CGSize(width: label.frame.width + 28, height: 32)
                 
             }
@@ -212,7 +247,7 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
                 let label = UILabel(frame: CGRect.zero)
                 label.text = advantageArray[indexPath.item]
                 label.sizeToFit()
-                size = CGSize(width: label.frame.width + 28, height: 32)
+                size = CGSize(width: label.frame.width + 1, height: 32)
                 
             }
         }
