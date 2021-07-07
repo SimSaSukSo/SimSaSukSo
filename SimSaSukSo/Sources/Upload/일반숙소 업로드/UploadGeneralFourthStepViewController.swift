@@ -15,6 +15,8 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     @IBOutlet weak var tagCollectionView: UICollectionView!
     
+    @IBOutlet weak var advantageCollectionView: UICollectionView!
+    
     @IBOutlet weak var tagEnterButton: UIButton!
     
     @IBOutlet weak var tagTextFieldView: UIView!
@@ -23,10 +25,13 @@ class UploadGeneralFourthStepViewController : UIViewController{
     @IBOutlet weak var stackView: UIStackView!
     var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
     
-   
+   var advantageArray = ["장점","장점123123","장점3423423423423","장점ㅎㅎ","자장ㄹ안ㄹ점","다리자덜자아러니알","ㅇㅇㅇ","ㅎ"]
+    
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
    
+    @IBOutlet weak var advantageCollectionViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +39,17 @@ class UploadGeneralFourthStepViewController : UIViewController{
         
         tagEnterButton.layer.cornerRadius = 15
         
+        tagCollectionViewConfigure()
+        
+        advantageCollectionViewConfigure()
+        
+        
+        //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
+        NotificationCenter.default.addObserver(self, selector: #selector(EnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
+        
+    }
+    
+    func tagCollectionViewConfigure(){
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
@@ -42,16 +58,30 @@ class UploadGeneralFourthStepViewController : UIViewController{
                     flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
                     
                     
-                    //MARK: - COLLECTIONVIEW HEIGHT
+                    //MARK: - TagCOLLECTIONVIEW HEIGHT
                     collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
                     print("따란")
                     print(collectionViewHeight.constant)
                     
                   }
+    }
+    
+    func advantageCollectionViewConfigure(){
         
+        advantageCollectionView.dataSource = self
+        advantageCollectionView.delegate = self
         
-        //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
-        NotificationCenter.default.addObserver(self, selector: #selector(EnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
+        advantageCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
+                if let flowLayout = advantageCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                    
+                    
+                    //MARK: - AdvantageCOLLECTIONVIEW HEIGHT
+                    advantageCollectionViewHeight.constant = advantageCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+                    print("advantageCollectionView height : ")
+                    print(advantageCollectionViewHeight.constant)
+                    
+                  }
         
     }
     
@@ -74,6 +104,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     @IBAction func tagEnterButtonAction(_ sender: Any) {
         tagTextFieldView.isHidden = true
+        tagTextField.text = ""
     }
     
 }
@@ -85,34 +116,67 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
     
   
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return tagArray.count
+            
+            var count : Int!
+            if collectionView == tagCollectionView{
+                
+                count = tagArray.count
+            }else if collectionView == advantageCollectionView{
+                count = advantageArray.count
+            }
+            
+            return count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
             var cell : UICollectionViewCell!
-            if indexPath.item == tagArray.count - 1{
-                let addTagcell =
-                collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddTagCollectionViewCell", for: indexPath) as! UploadGeneralAddTagCollectionViewCell
-                addTagcell.addTagButton.layer.borderWidth = 1
-                //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
-                addTagcell.addTagButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
-                addTagcell.addTagButton.layer.cornerRadius = 4
-                
-                cell = addTagcell
-            }else{
-                let tagcell =
-                collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralTagCollectionViewCell", for: indexPath) as! UploadGeneralTagCollectionViewCell
-                
-                tagcell.tagLabel.text = tagArray[indexPath.row]
-                tagcell.layer.borderWidth = 1
-                tagcell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
-                tagcell.layer.cornerRadius = 4
-                
-                cell = tagcell
-                
-                
+            
+            if collectionView == tagCollectionView{
+                if indexPath.item == tagArray.count - 1{
+                    let addTagcell =
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddTagCollectionViewCell", for: indexPath) as! UploadGeneralAddTagCollectionViewCell
+                    addTagcell.addTagButton.layer.borderWidth = 1
+                    //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
+                    addTagcell.addTagButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                    addTagcell.addTagButton.layer.cornerRadius = 4
+                    
+                    cell = addTagcell
+                }else{
+                    let tagcell =
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralTagCollectionViewCell", for: indexPath) as! UploadGeneralTagCollectionViewCell
+                    
+                    tagcell.tagLabel.text = tagArray[indexPath.row]
+                    tagcell.layer.borderWidth = 1
+                    tagcell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                    tagcell.layer.cornerRadius = 4
+                    
+                    cell = tagcell
+                }
+            }else if collectionView == advantageCollectionView{
+                if indexPath.item == advantageArray.count - 1{
+                    let addAdvantagecell =
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddAdvantageCollectionViewCell
+                    addAdvantagecell.addAdvantageButton.layer.borderWidth = 1
+                    //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
+                    addAdvantagecell.addAdvantageButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                    addAdvantagecell.addAdvantageButton.layer.cornerRadius = 4
+                    
+                    cell = addAdvantagecell
+                }else{
+                    let advantagecell =
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAdvantageCollectionViewCell
+                    
+                    advantagecell.advantageLabel.text = advantageArray[indexPath.row]
+                    advantagecell.layer.borderWidth = 1
+                    advantagecell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                    advantagecell.layer.cornerRadius = 4
+                    
+                    cell = advantagecell
+                }
                 
             }
+           
             
             return cell
         }
@@ -127,29 +191,32 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
 extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         var size : CGSize!
         
-        
-
-        if indexPath.item == tagArray.count - 1{
-            size = CGSize(width: 119, height: 32)
-            
-            
-            
-        }else{
-            let label = UILabel(frame: CGRect.zero)
-            label.text = tagArray[indexPath.item]
-            label.sizeToFit()
-            size = CGSize(width: label.frame.width + 28, height: 32)
-            
-            
-            
+        if collectionView == tagCollectionView{
+            if indexPath.item == tagArray.count - 1{
+                size = CGSize(width: 119, height: 32)
+                
+            }else{
+                let label = UILabel(frame: CGRect.zero)
+                label.text = tagArray[indexPath.item]
+                label.sizeToFit()
+                size = CGSize(width: label.frame.width + 28, height: 32)
+                
+            }
+        }else if collectionView == advantageCollectionView{
+            if indexPath.item == advantageArray.count - 1{
+                size = CGSize(width: 119, height: 32)
+                
+            }else{
+                let label = UILabel(frame: CGRect.zero)
+                label.text = advantageArray[indexPath.item]
+                label.sizeToFit()
+                size = CGSize(width: label.frame.width + 28, height: 32)
+                
+            }
         }
-     
-       
         
-       
         return size
     }
     
