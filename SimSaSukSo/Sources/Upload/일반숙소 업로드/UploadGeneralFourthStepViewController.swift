@@ -19,10 +19,13 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     @IBOutlet weak var tagTextFieldView: UIView!
     
-    var tagArray = ["태그", "태그1234", "xormdlkfs", "dmdlkfosdof" ,"태그추가하기"]
+    @IBOutlet weak var stackView: UIStackView!
+    var tagArray = ["태그", "태그1234","태그추가하기"]
+    
+   
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +39,14 @@ class UploadGeneralFourthStepViewController : UIViewController{
         tagCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
                 if let flowLayout = tagCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
                     flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                    
+                    
                   }
+
+//        collectionViewHeight.constant = CGFloat(32 * (rowCounts) + 8 * (rowCounts + 1))
+//        print("-----")
+       
+         //print(collectionViewHeight.constant)
     }
     
     
@@ -101,9 +111,13 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var size : CGSize!
+        
+        let collectionViewWidth = stackView.frame.width
 
         if indexPath.item == tagArray.count - 1{
             size = CGSize(width: 119, height: 32)
+            
+            
             
         }else{
             let label = UILabel(frame: CGRect.zero)
@@ -111,9 +125,13 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
             label.sizeToFit()
             size = CGSize(width: label.frame.width + 28, height: 32)
             
+            
+            
         }
-        print(indexPath.row)
-        collectionViewHeight.constant = CGFloat(32 * (collectionView.numberOfSections + 1) + 8 * (collectionView.numberOfSections + 1))
+     
+       
+      
+       
         return size
     }
     
