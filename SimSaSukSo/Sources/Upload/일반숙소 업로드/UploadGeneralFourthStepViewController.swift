@@ -19,12 +19,14 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     @IBOutlet weak var tagTextFieldView: UIView!
     
-    var tagArray = ["태그", "태그1234", "xormdlkfs","태그추가하기"]
+    var tagArray = ["태그", "태그1234", "xormdlkfs", "dmdlkfosdof" ,"태그추가하기"]
+    
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      //  tagTextFieldView.isHidden = true
+       tagTextFieldView.isHidden = true
         
         tagEnterButton.layer.cornerRadius = 15
         
@@ -37,6 +39,14 @@ class UploadGeneralFourthStepViewController : UIViewController{
                   }
     }
     
+    
+    @IBAction func addTagButtonAction(_ sender: Any) {
+        tagTextFieldView.isHidden = false
+    }
+    
+    @IBAction func tagEnterButtonAction(_ sender: Any) {
+        tagTextFieldView.isHidden = true
+    }
     
 }
 extension ViewController:UICollectionViewDelegate {
@@ -102,6 +112,8 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
             size = CGSize(width: label.frame.width + 28, height: 32)
             
         }
+        print(indexPath.row)
+        collectionViewHeight.constant = CGFloat(32 * (collectionView.numberOfSections + 1) + 8 * (collectionView.numberOfSections + 1))
         return size
     }
     
