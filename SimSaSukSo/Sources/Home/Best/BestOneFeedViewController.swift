@@ -9,8 +9,10 @@ import UIKit
 
 class BestOneFeedViewController: UIViewController {
     
-    static let testOneFeedArray = [1,2,3,4,5,6,7,8,9,10]
-
+    lazy var dataManager = BestDataManager()
+    
+    var bestOneFeeds: [BestFeeds] = []
+    
     @IBOutlet var bestOneFeedCollectionView: UICollectionView!
   
     override func viewDidLoad() {
@@ -19,6 +21,7 @@ class BestOneFeedViewController: UIViewController {
         bestOneFeedCollectionView.delegate = self
         bestOneFeedCollectionView.dataSource = self
         
+        dataManager.bestOneFeed(delegate: self)
     }
     
 }
@@ -26,7 +29,7 @@ class BestOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return BestOneFeedViewController.testOneFeedArray.count
+        return bestOneFeeds.count
     }
     
     
@@ -34,7 +37,31 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestTabOneFeedCollectionViewCell", for: indexPath) as! BestTabOneFeedCollectionViewCell
         
+        let bestOneFeed = bestOneFeeds[indexPath.row]
+        
         cell.imageViewHeight.constant = view.frame.size.width
+        
+        cell.nameLabel.text = "\(bestOneFeed.name)"
+        
+        cell.reliabilityLabel.text = "\(bestOneFeed.reliability)"
+        let cellReliabilityLabel = Int(cell.reliabilityLabel.text!)
+        if 41 > cellReliabilityLabel! {
+            cell.faceImageView.image = UIImage(named: "angryFace")
+        } else if 81 > cellReliabilityLabel! {
+            cell.faceImageView.image = UIImage(named: "normalFace")
+        } else {
+            cell.faceImageView.image = UIImage(named: "goodFace")
+        }
+        
+        cell.degreeLabel.text = "\(bestOneFeed.degree)"
+        
+        // 이미지 URL 가져오기
+        let urlString = bestOneFeed.source
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.imageView.image = UIImage(data: data)
+        }
         
         return cell
     }
@@ -68,4 +95,18 @@ extension BestOneFeedViewController: UICollectionViewDelegateFlowLayout {
     }
 
     
+}
+
+//MARK: - API
+
+extension BestOneFeedViewController {
+    
+    func bestOneFeed(result: BestResult) {
+        bestOneFeeds = result.feeds!
+        bestOneFeedCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
 }

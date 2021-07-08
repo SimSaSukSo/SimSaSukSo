@@ -23,24 +23,38 @@ class BestDataManager {
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
                 }
             }
+    }
         
-        // 인기 - ONE Feed
-//        func bestOneFeed(delegate: BestOneFeedViewController) {
-//            let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
-//            AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
-//                .validate()
-//                .responseDecodable(of: BestResponse.self) { response in
-//                    switch response.result {
-//                    case .success(let response):
-//                        //delegate.bestHashTags(result: response.result!)
-//                    case .failure(let error):
-//                        print(error.localizedDescription)
-//                        //delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
-//                    }
-//                }
-        
-        // 인기 - Feeds
-        
+    // 인기 - ONE Feed
+    func bestOneFeed(delegate: BestOneFeedViewController) {
+        let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: BestResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.bestOneFeed(result: response.result!)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
     }
     
+    // 인기 - Feeds
+    func bestFeeds(delegate: BestFeedsViewController) {
+        let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: BestResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.bestFeeds(result: response.result!)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
+
 }

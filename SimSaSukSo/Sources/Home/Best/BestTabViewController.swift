@@ -105,7 +105,7 @@ extension BestTabViewController: UICollectionViewDelegate, UICollectionViewDataS
         let bestHashTag = bestHashTags[indexPath.row]
         
         cell.nameLabel.text = "\(bestHashTag.keyword)"
-        
+    
         // 이미지 URL 가져오기
         let urlString = bestHashTag.source
         if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -148,11 +148,11 @@ extension BestTabViewController: UIScrollViewDelegate {
     }
     
     func adjustOneFeedPageHeight(){
-        self.bestViewHeight.constant = CGFloat(BestOneFeedViewController.testOneFeedArray.count * 476)
+        self.bestViewHeight.constant = CGFloat(6 * 476)
     }
     
     func adjustFeedsPageHeight() {
-        self.bestViewHeight.constant = CGFloat(BestFeedsViewController.testFeedsArray.count/3 * 130 + 170)
+        self.bestViewHeight.constant = CGFloat(6/3 * 130 + 170)
     }
 }
 

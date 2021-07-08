@@ -9,8 +9,10 @@ import UIKit
 
 class BestFeedsViewController: UIViewController {
     
-    static let testFeedsArray = [1,2,3,4,5,6,7,8,9,10]
-
+    lazy var dataManager = BestDataManager()
+    
+    var bestFeeds: [BestFeeds] = []
+    
     @IBOutlet var bestFeedsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -18,6 +20,8 @@ class BestFeedsViewController: UIViewController {
 
         bestFeedsCollectionView.dataSource = self
         bestFeedsCollectionView.delegate = self
+        
+        dataManager.bestFeeds(delegate: self)
     }
     
 
@@ -26,11 +30,21 @@ class BestFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return BestFeedsViewController.testFeedsArray.count
+        return bestFeeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyFeedCollectionViewCell", for: indexPath) as! MyFeedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestFeedsCollectionViewCell", for: indexPath) as! BestFeedsCollectionViewCell
+        
+        let bestFeed = bestFeeds[indexPath.row]
+        
+        // 이미지 URL 가져오기
+        let urlString = bestFeed.source
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.imageView.image = UIImage(data: data)
+        }
         
         return cell
     }
@@ -53,5 +67,19 @@ extension BestFeedsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4
+    }
+}
+
+//MARK: - API
+
+extension BestFeedsViewController {
+    
+    func bestFeeds(result: BestResult) {
+        bestFeeds = result.feeds!
+        bestFeedsCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }
