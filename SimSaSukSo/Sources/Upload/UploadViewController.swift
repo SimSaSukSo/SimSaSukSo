@@ -73,6 +73,10 @@ class UploadViewController : UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: UIButton) {
+        
+        let alertlVC = self.storyboard?.instantiateViewController(identifier: "UploadAlertViewController")
+        
+        self.present(alertlVC!, animated: false, completion: nil)
    
     }
     @IBAction func photosButtonAction(_ sender: UIButton) {
