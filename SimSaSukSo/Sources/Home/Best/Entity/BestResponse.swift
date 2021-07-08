@@ -26,6 +26,6 @@ struct BestFeeds: Decodable {
     var feedIndex: Int
     var source: String
     var name: String
-    var reliability: String // 신뢰도
+    var reliability: Int // 신뢰도
     var degree: Int // 보정 정도
 }

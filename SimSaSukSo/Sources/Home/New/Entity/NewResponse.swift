@@ -20,6 +20,6 @@ struct NewFeeds: Decodable {
     var feedIndex: Int
     var source: String
     var name: String
-    var reliability: String
+    var reliability: Int
     var degree: Int
 }

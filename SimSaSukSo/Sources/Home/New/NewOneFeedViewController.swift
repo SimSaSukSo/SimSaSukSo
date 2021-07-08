@@ -43,7 +43,7 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
         
         cell.nameLabel.text = newOneFeed.name
         
-        cell.reliabilityLabel.text = newOneFeed.reliability
+        cell.reliabilityLabel.text = "\(newOneFeed.reliability)"
         let cellReliabilityLabel = Int(cell.reliabilityLabel.text!)
         if 41 > cellReliabilityLabel! {
             cell.faceImageView.image = UIImage(named: "angryFace")
