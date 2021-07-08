@@ -9,6 +9,10 @@ import UIKit
 
 class NewFeedsViewController: UIViewController {
     
+    lazy var dataManager = NewDataManager()
+    
+    var newFeeds: [NewFeeds] = []
+    
     static let testFeedsArray = [1,2,3,4,5,6,7,8,9,10]
 
     @IBOutlet var newFeedsCollectionView: UICollectionView!
@@ -19,7 +23,7 @@ class NewFeedsViewController: UIViewController {
         newFeedsCollectionView.dataSource = self
         newFeedsCollectionView.delegate = self
         
-        
+        dataManager.newFeeds(delegate: self)
     }
     
 
@@ -28,11 +32,21 @@ class NewFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NewFeedsViewController.testFeedsArray.count
+        return newFeeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyFeedCollectionViewCell", for: indexPath) as! MyFeedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewFeedsCollectionViewCell", for: indexPath) as! NewFeedsCollectionViewCell
+        
+        let newFeed = newFeeds[indexPath.row]
+        
+        // 이미지 URL 가져오기
+        let urlString = newFeed.source
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.imageView.image = UIImage(data: data)
+        }
         
         return cell
     }
@@ -55,5 +69,18 @@ extension NewFeedsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4
+    }
+}
+
+//MARK: - API
+extension NewFeedsViewController {
+    
+    func newFeeds(result: NewResult) {
+        newFeeds = result.feeds!
+        newFeedsCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }

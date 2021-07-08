@@ -71,7 +71,6 @@ extension BestFeedsViewController: UICollectionViewDelegateFlowLayout {
 }
 
 //MARK: - API
-
 extension BestFeedsViewController {
     
     func bestFeeds(result: BestResult) {
