@@ -9,6 +9,10 @@ import UIKit
 
 class NewOneFeedViewController: UIViewController {
     
+    lazy var dataManager = NewDataManager()
+    
+    var newOneFeeds: [NewFeeds] = []
+    
     static let testOneFeedArray = [1,2,3,4,5,6,7,8,9,10]
 
     @IBOutlet var newOneFeedCollectionView: UICollectionView!
@@ -19,6 +23,7 @@ class NewOneFeedViewController: UIViewController {
         newOneFeedCollectionView.delegate = self
         newOneFeedCollectionView.dataSource = self
         
+        dataManager.newOneFeed(delegate: self)
     }
     
 }
@@ -26,7 +31,7 @@ class NewOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NewOneFeedViewController.testOneFeedArray.count
+        return newOneFeeds.count
     }
     
     
@@ -34,7 +39,34 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewTabOneFeedCollectionViewCell", for: indexPath) as! NewTabOneFeedCollectionViewCell
         
+        let newOneFeed = newOneFeeds[indexPath.row]
+        
         cell.imageViewHeight.constant = view.frame.size.height
+        
+        cell.nameLabel.text = newOneFeed.name
+        
+        cell.reliabilityLabel.text = newOneFeed.reliability
+        let cellReliabilityLabel = Int(cell.reliabilityLabel.text!)
+        if 41 > cellReliabilityLabel! {
+            cell.faceImageView.image = UIImage(named: "angryFace")
+            cell.reliabilityLabel.textColor = #colorLiteral(red: 0.9764705882, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
+        } else if 81 > cellReliabilityLabel! {
+            cell.faceImageView.image = UIImage(named: "normalFace")
+            cell.reliabilityLabel.textColor = #colorLiteral(red: 1, green: 0.6549019608, blue: 0.137254902, alpha: 1)
+        } else {
+            cell.faceImageView.image = UIImage(named: "goodFace")
+            cell.reliabilityLabel.textColor = #colorLiteral(red: 0.1215686275, green: 0.8784313725, blue: 0.3803921569, alpha: 1)
+        }
+        
+        cell.degreeLabel.text = "\(newOneFeed.degree)"
+        
+        // 이미지 URL 가져오기
+        let urlString = newOneFeed.source
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.imageView.image = UIImage(data: data)
+        }
         
         return cell
     }
@@ -58,4 +90,18 @@ extension NewOneFeedViewController: UICollectionViewDelegateFlowLayout {
         return 8
     }
     
+}
+
+//MARK: - API
+
+extension NewOneFeedViewController {
+    
+    func newOneFeed(result: NewResult) {
+        newOneFeeds = result.feeds!
+        newOneFeedCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
 }

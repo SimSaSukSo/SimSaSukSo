@@ -11,5 +11,9 @@ class NewTabOneFeedCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var imageViewHeight: NSLayoutConstraint!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var faceImageView: UIImageView!
+    @IBOutlet var reliabilityLabel: UILabel!
+    @IBOutlet var degreeLabel: UILabel!
     
 }

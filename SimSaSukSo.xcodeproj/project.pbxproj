@@ -311,9 +311,9 @@
 				A55675CB26972463004103AA /* Entity */,
 				A56796342685D6C400CAB9F6 /* NewTabViewController.swift */,
 				A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */,
+				A58833BB268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift */,
 				A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */,
 				A547A6A3268AF73C002DA257 /* NewPageViewController.swift */,
-				A58833BB268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";

@@ -41,16 +41,19 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.imageViewHeight.constant = view.frame.size.width
         
-        cell.nameLabel.text = "\(bestOneFeed.name)"
+        cell.nameLabel.text = bestOneFeed.name
         
-        cell.reliabilityLabel.text = "\(bestOneFeed.reliability)"
+        cell.reliabilityLabel.text = bestOneFeed.reliability
         let cellReliabilityLabel = Int(cell.reliabilityLabel.text!)
         if 41 > cellReliabilityLabel! {
             cell.faceImageView.image = UIImage(named: "angryFace")
+            cell.reliabilityLabel.textColor = #colorLiteral(red: 0.9764705882, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
         } else if 81 > cellReliabilityLabel! {
             cell.faceImageView.image = UIImage(named: "normalFace")
+            cell.reliabilityLabel.textColor = #colorLiteral(red: 1, green: 0.6549019608, blue: 0.137254902, alpha: 1)
         } else {
             cell.faceImageView.image = UIImage(named: "goodFace")
+            cell.reliabilityLabel.textColor = #colorLiteral(red: 0.1215686275, green: 0.8784313725, blue: 0.3803921569, alpha: 1)
         }
         
         cell.degreeLabel.text = "\(bestOneFeed.degree)"
