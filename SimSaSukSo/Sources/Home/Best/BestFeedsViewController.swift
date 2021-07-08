@@ -11,7 +11,7 @@ class BestFeedsViewController: UIViewController {
     
     lazy var dataManager = BestDataManager()
     
-    var bestFeeds: [BestFeeds] = []
+    static var bestFeeds: [BestFeeds] = []
     
     @IBOutlet var bestFeedsCollectionView: UICollectionView!
     
@@ -30,13 +30,13 @@ class BestFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bestFeeds.count
+        return BestFeedsViewController.bestFeeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestFeedsCollectionViewCell", for: indexPath) as! BestFeedsCollectionViewCell
         
-        let bestFeed = bestFeeds[indexPath.row]
+        let bestFeed = BestFeedsViewController.bestFeeds[indexPath.row]
         
         // 이미지 URL 가져오기
         let urlString = bestFeed.source
@@ -74,7 +74,7 @@ extension BestFeedsViewController: UICollectionViewDelegateFlowLayout {
 extension BestFeedsViewController {
     
     func bestFeeds(result: BestResult) {
-        bestFeeds = result.feeds!
+        BestFeedsViewController.bestFeeds = result.feeds!
         bestFeedsCollectionView.reloadData()
     }
     

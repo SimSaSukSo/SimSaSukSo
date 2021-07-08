@@ -138,7 +138,7 @@ extension BestTabViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == bestScrollView {
-            if bestPageViewController.currentIndex == 0 { // OneFeed
+            if bestPageViewController.currentIndex == 0 { // Feeds
                 adjustFeedsPageHeight()
             } else {
                 adjustOneFeedPageHeight()
@@ -148,11 +148,11 @@ extension BestTabViewController: UIScrollViewDelegate {
     }
     
     func adjustOneFeedPageHeight(){
-        self.bestViewHeight.constant = CGFloat(6 * 476)
+        self.bestViewHeight.constant = CGFloat(BestOneFeedViewController.bestOneFeeds.count * 476)
     }
     
     func adjustFeedsPageHeight() {
-        self.bestViewHeight.constant = CGFloat(6/3 * 130 + 170)
+        self.bestViewHeight.constant = CGFloat(BestFeedsViewController.bestFeeds.count/3 * 130 + 170)
     }
 }
 

@@ -11,9 +11,7 @@ class NewOneFeedViewController: UIViewController {
     
     lazy var dataManager = NewDataManager()
     
-    var newOneFeeds: [NewFeeds] = []
-    
-    static let testOneFeedArray = [1,2,3,4,5,6,7,8,9,10]
+    static var newOneFeeds: [NewFeeds] = []
 
     @IBOutlet var newOneFeedCollectionView: UICollectionView!
     
@@ -31,7 +29,7 @@ class NewOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newOneFeeds.count
+        return NewOneFeedViewController.newOneFeeds.count
     }
     
     
@@ -39,7 +37,7 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewTabOneFeedCollectionViewCell", for: indexPath) as! NewTabOneFeedCollectionViewCell
         
-        let newOneFeed = newOneFeeds[indexPath.row]
+        let newOneFeed = NewOneFeedViewController.newOneFeeds[indexPath.row]
         
         cell.imageViewHeight.constant = view.frame.size.height
         
@@ -97,7 +95,7 @@ extension NewOneFeedViewController: UICollectionViewDelegateFlowLayout {
 extension NewOneFeedViewController {
     
     func newOneFeed(result: NewResult) {
-        newOneFeeds = result.feeds!
+        NewOneFeedViewController.newOneFeeds = result.feeds!
         newOneFeedCollectionView.reloadData()
     }
     

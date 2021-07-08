@@ -89,20 +89,20 @@ extension NewTabViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == newScrollView {
-            if newPageViewController.currentIndex == 1 { // OneFeed
-                adjustOneFeedPageHeight()
-            } else {
+            if newPageViewController.currentIndex == 0 { // Feeds
                 adjustFeedsPageHeight()
+            } else {
+                adjustOneFeedPageHeight()
             }
         }
 
     }
     
-    func adjustOneFeedPageHeight(){
-        self.newViewHeight.constant = CGFloat(NewOneFeedViewController.testOneFeedArray.count * 476)
+    func adjustOneFeedPageHeight() {
+        self.newViewHeight.constant = CGFloat(NewOneFeedViewController.newOneFeeds.count * 476)
     }
     
     func adjustFeedsPageHeight() {
-        self.newViewHeight.constant = CGFloat(NewFeedsViewController.testFeedsArray.count/3 * 130 + 170)
+        self.newViewHeight.constant = CGFloat(NewFeedsViewController.newFeeds.count/3 * 130 + 170)
     }
 }

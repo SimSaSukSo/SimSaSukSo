@@ -11,7 +11,7 @@ class BestOneFeedViewController: UIViewController {
     
     lazy var dataManager = BestDataManager()
     
-    var bestOneFeeds: [BestFeeds] = []
+    static var bestOneFeeds: [BestFeeds] = []
     
     @IBOutlet var bestOneFeedCollectionView: UICollectionView!
   
@@ -29,7 +29,7 @@ class BestOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bestOneFeeds.count
+        return BestOneFeedViewController.bestOneFeeds.count
     }
     
     
@@ -37,7 +37,7 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestTabOneFeedCollectionViewCell", for: indexPath) as! BestTabOneFeedCollectionViewCell
         
-        let bestOneFeed = bestOneFeeds[indexPath.row]
+        let bestOneFeed = BestOneFeedViewController.bestOneFeeds[indexPath.row]
         
         cell.imageViewHeight.constant = view.frame.size.width
         
@@ -105,7 +105,7 @@ extension BestOneFeedViewController: UICollectionViewDelegateFlowLayout {
 extension BestOneFeedViewController {
     
     func bestOneFeed(result: BestResult) {
-        bestOneFeeds = result.feeds!
+        BestOneFeedViewController.bestOneFeeds = result.feeds!
         bestOneFeedCollectionView.reloadData()
     }
     

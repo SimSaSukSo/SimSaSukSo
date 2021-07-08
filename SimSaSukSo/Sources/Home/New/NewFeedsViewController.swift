@@ -11,9 +11,7 @@ class NewFeedsViewController: UIViewController {
     
     lazy var dataManager = NewDataManager()
     
-    var newFeeds: [NewFeeds] = []
-    
-    static let testFeedsArray = [1,2,3,4,5,6,7,8,9,10]
+    static var newFeeds: [NewFeeds] = []
 
     @IBOutlet var newFeedsCollectionView: UICollectionView!
     
@@ -32,13 +30,13 @@ class NewFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newFeeds.count
+        return NewFeedsViewController.newFeeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewFeedsCollectionViewCell", for: indexPath) as! NewFeedsCollectionViewCell
         
-        let newFeed = newFeeds[indexPath.row]
+        let newFeed = NewFeedsViewController.newFeeds[indexPath.row]
         
         // 이미지 URL 가져오기
         let urlString = newFeed.source
@@ -76,7 +74,7 @@ extension NewFeedsViewController: UICollectionViewDelegateFlowLayout {
 extension NewFeedsViewController {
     
     func newFeeds(result: NewResult) {
-        newFeeds = result.feeds!
+        NewFeedsViewController.newFeeds = result.feeds!
         newFeedsCollectionView.reloadData()
     }
     
