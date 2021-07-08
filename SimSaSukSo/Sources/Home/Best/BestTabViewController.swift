@@ -9,9 +9,11 @@ import UIKit
 
 class BestTabViewController: UIViewController {
     
+    lazy var dataManager = BestDataManager()
+    
     var bestPageViewController : BestPageViewController!
     
-    let count = 10
+    var bestHashTags: [BestHashTags] = []
     
     @IBOutlet var bestTabScrollView: UIScrollView!
     
@@ -44,6 +46,8 @@ class BestTabViewController: UIViewController {
         self.bestViewHeight.constant = 10/3 * 130 + 200
     
         setButtonList()
+        
+        dataManager.bestHashTags(delegate: self)
     
     }
     
@@ -92,11 +96,23 @@ class BestTabViewController: UIViewController {
 //MARK: - CollectionView
 extension BestTabViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return bestHashTags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BestHashtagCollectionViewCell", for: indexPath) as! BestHashtagCollectionViewCell
+        
+        let bestHashTag = bestHashTags[indexPath.row]
+        
+        cell.nameLabel.text = "\(bestHashTag.keyword)"
+        
+        // 이미지 URL 가져오기
+        let urlString = bestHashTag.source
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.tagImageView.image = UIImage(data: data)
+        }
         
         return cell
     }
@@ -137,5 +153,19 @@ extension BestTabViewController: UIScrollViewDelegate {
     
     func adjustFeedsPageHeight() {
         self.bestViewHeight.constant = CGFloat(BestFeedsViewController.testFeedsArray.count/3 * 130 + 170)
+    }
+}
+
+//MARK: - API
+
+extension BestTabViewController {
+    
+    func bestHashTags(result: BestResult) {
+        bestHashTags = result.hashTags!
+        bestHashtagCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }

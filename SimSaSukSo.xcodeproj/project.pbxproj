@@ -22,6 +22,10 @@
 		A54DB8FF2693108900EA26DF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8FE2693108800EA26DF /* UIImageView.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
+		A55675C1269720B7004103AA /* BestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675C0269720B7004103AA /* BestDataManager.swift */; };
+		A55675C9269721B9004103AA /* BestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675C8269721B9004103AA /* BestResponse.swift */; };
+		A55675CD26972471004103AA /* NewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675CC26972471004103AA /* NewDataManager.swift */; };
+		A55675D126972485004103AA /* NewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675D026972485004103AA /* NewResponse.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -80,7 +84,7 @@
 		A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */; };
 		A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */; };
 		A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */; };
-		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
+		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
 		BD43940A252E13F30055F2E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD439409252E13F30055F2E6 /* Assets.xcassets */; };
@@ -121,6 +125,10 @@
 		A54DB8FE2693108800EA26DF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
+		A55675C0269720B7004103AA /* BestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDataManager.swift; sourceTree = "<group>"; };
+		A55675C8269721B9004103AA /* BestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResponse.swift; sourceTree = "<group>"; };
+		A55675CC26972471004103AA /* NewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataManager.swift; sourceTree = "<group>"; };
+		A55675D026972485004103AA /* NewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewResponse.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +188,7 @@
 		A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFirstStepViewController.swift; sourceTree = "<group>"; };
 		A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
-		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
+		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD439400252E13EF0055F2E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD439402252E13EF0055F2E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,15 +270,33 @@
 			path = "신뢰도 평가";
 			sourceTree = "<group>";
 		};
+		A55675BF2697205E004103AA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A55675C8269721B9004103AA /* BestResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A55675CB26972463004103AA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A55675D026972485004103AA /* NewResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		A59DDBC6268601F9008D4AF9 /* Best */ = {
 			isa = PBXGroup;
 			children = (
+				A55675C0269720B7004103AA /* BestDataManager.swift */,
+				A55675BF2697205E004103AA /* Entity */,
 				A56796312685D6C000CAB9F6 /* BestTabViewController.swift */,
+				A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */,
 				A59DDBCD268602EA008D4AF9 /* BestOneFeedViewController.swift */,
 				A59DDBC926860258008D4AF9 /* BestTabOneFeedCollectionViewCell.swift */,
 				A59DDBD826863327008D4AF9 /* BestPageViewController.swift */,
 				A59DDBDC26863FC8008D4AF9 /* BestFeedsViewController.swift */,
-				A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */,
 			);
 			path = Best;
 			sourceTree = "<group>";
@@ -278,6 +304,8 @@
 		A59DDBC726860212008D4AF9 /* New */ = {
 			isa = PBXGroup;
 			children = (
+				A55675CC26972471004103AA /* NewDataManager.swift */,
+				A55675CB26972463004103AA /* Entity */,
 				A56796342685D6C400CAB9F6 /* NewTabViewController.swift */,
 				A547A69D268AF63E002DA257 /* NewOneFeedViewController.swift */,
 				A547A6A0268AF658002DA257 /* NewFeedsViewController.swift */,
@@ -460,7 +488,7 @@
 		BD439418252E16B40055F2E6 /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				BD2FA070252F507E00C93B8B /* KobisKey.swift */,
+				BD2FA070252F507E00C93B8B /* KeyCenter.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -672,6 +700,7 @@
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
+				A55675C1269720B7004103AA /* BestDataManager.swift in Sources */,
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */,
@@ -689,7 +718,8 @@
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
 				A758351C2695D30700527E1A /* UploadGeneralAdvantageCollectionViewCell.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
-				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
+				BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */,
+				A55675CD26972471004103AA /* NewDataManager.swift in Sources */,
 				A75EAEBF2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
@@ -721,6 +751,7 @@
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
+				A55675D126972485004103AA /* NewResponse.swift in Sources */,
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
 				A75835192695D2D800527E1A /* UploadGeneralAddAdvantageCollectionViewCell.swift in Sources */,
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
@@ -744,6 +775,7 @@
 				A75EAEC8269441D900B34597 /* UploadGeneralFourthStepViewController.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
 				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,
+				A55675C9269721B9004103AA /* BestResponse.swift in Sources */,
 				A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
