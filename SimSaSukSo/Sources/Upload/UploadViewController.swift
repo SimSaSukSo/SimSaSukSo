@@ -19,8 +19,8 @@ class UploadViewController : UIViewController {
     let scale = UIScreen.main.scale
     var thumbnailSize = CGSize.zero
     
-    var uploadPhotos = [UIImage]()
-    var photoArray = [Int]()
+    static var uploadPhotos = [UIImage]()
+    static var photoArray = [Int]()
     
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var photoImageViewHeight: NSLayoutConstraint!
@@ -47,8 +47,8 @@ class UploadViewController : UIViewController {
         photoImageViewHeight.constant = photoImageView.frame.size.width
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
         
-        let image = UIImage(named: "evalu_Star_Fill")
-        //uploadImage(image: image!)
+        let images = UploadViewController.uploadPhotos
+        //uploadImage(image: images)
         
     }
   
@@ -73,19 +73,15 @@ class UploadViewController : UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: UIButton) {
-        
         let alertlVC = self.storyboard?.instantiateViewController(identifier: "UploadAlertViewController")
         
         self.present(alertlVC!, animated: false, completion: nil)
    
     }
+    
     @IBAction func photosButtonAction(_ sender: UIButton) {
     }
-    @IBAction func testButtonAction(_ sender: UIButton) {
-        let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "UploadAlertViewController")
-        
-        self.present(alertVC!, animated: false, completion: nil)
-    }
+   
 }
 
 //MARK: - CollectionView
@@ -110,9 +106,9 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.blackView.isHidden = true
         cell.numberLabel.isHidden = true
         
-        if !photoArray.isEmpty { // 배열 안비어있으면
-            for i in 0...photoArray.count-1 {
-                if indexPath.item == photoArray[i] {
+        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
+            for i in 0...UploadViewController.photoArray.count-1 {
+                if indexPath.item == UploadViewController.photoArray[i] {
                     cell.numberLabel.text = "\(i)"
                 }
             }
@@ -132,19 +128,19 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if cell.blackView.isHidden == true { // 선택안함 -> 선택
             cell.blackView.isHidden = false
             cell.numberLabel.isHidden = false
-            photoArray.append(indexPath.item)
-            uploadPhotos.append(cell.photoCellImageView.image!)
+            UploadViewController.photoArray.append(indexPath.item)
+            UploadViewController.uploadPhotos.append(cell.photoCellImageView.image!)
             
         } else {
             cell.blackView.isHidden = true
             cell.numberLabel.isHidden = true
-            photoArray.remove(at: Int(cell.numberLabel.text!)!)
-            uploadPhotos.remove(at: Int(cell.numberLabel.text!)!)
+            UploadViewController.photoArray.remove(at: Int(cell.numberLabel.text!)!)
+            UploadViewController.uploadPhotos.remove(at: Int(cell.numberLabel.text!)!)
         }
         
-        if !photoArray.isEmpty { // 배열 안비어있으면
-            for i in 0...photoArray.count-1 {
-                if indexPath.item == photoArray[i] {
+        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
+            for i in 0...UploadViewController.photoArray.count-1 {
+                if indexPath.item == UploadViewController.photoArray[i] {
                     cell.numberLabel.text = "\(i)"
                 }
             }
@@ -158,7 +154,7 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
             
-        if !photoArray.isEmpty { // 배열 안비어있으면
+        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             if cell.numberLabel.isHidden == false { // 선택된
                 
             }

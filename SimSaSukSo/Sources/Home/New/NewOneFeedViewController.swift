@@ -12,7 +12,7 @@ class NewOneFeedViewController: UIViewController {
     lazy var dataManager = NewDataManager()
     
     static var newOneFeeds: [NewFeeds] = []
-
+    
     @IBOutlet var newOneFeedCollectionView: UICollectionView!
     
     override func viewDidLoad() {

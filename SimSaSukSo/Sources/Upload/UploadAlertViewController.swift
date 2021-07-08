@@ -63,6 +63,7 @@ class UploadAlertViewController: UIViewController {
             let normalVC = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFirstStepViewController")
             
             self.present(normalVC!, animated: false, completion: nil)
+            print(UploadViewController.photoArray.count)
         } else {
             print("에어비앤비로")
         }

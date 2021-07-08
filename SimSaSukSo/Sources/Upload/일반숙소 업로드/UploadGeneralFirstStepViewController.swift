@@ -23,11 +23,15 @@ class UploadGeneralFirstStepViewController : UIViewController{
 
 extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFirstCollectionViewCell", for: indexPath) as! UploadedPictureFirstCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        
+        uploadGeneralcell.firstPictureImageView.image = photos
         
         return uploadGeneralcell
     }

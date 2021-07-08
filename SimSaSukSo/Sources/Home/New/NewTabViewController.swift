@@ -11,8 +11,6 @@ class NewTabViewController: UIViewController {
     
     var newPageViewController : NewPageViewController!
     
-    let count = 10
-    
     @IBOutlet var newOneFeedButton: UIButton!
     @IBOutlet var newFeedsButton: UIButton!
     @IBOutlet var newViewHeight: NSLayoutConstraint!
