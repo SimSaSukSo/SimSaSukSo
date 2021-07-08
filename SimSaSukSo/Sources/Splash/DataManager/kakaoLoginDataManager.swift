@@ -7,27 +7,27 @@
 
 import Alamofire
 class kakaoLoginDataManager{
-    func kakaoLogin( accessToken : String, viewcontroller : SplashViewController){
-        let parameters : Parameters = [
-            "accessToken": accessToken
-        ]
-        AF.request("\(Constant.BASE_URL)/app/users/kakaoLogin", method: .get,parameters: parameters,encoding: URLEncoding.queryString)
+    func kakaoLogin(parameters:kakaoLoginInput, viewcontroller : SplashViewController){
+       
+        AF.request("\(Constant.BASE_URL)api/users/kakaoLogin", method: .post,parameters: parameters)
             .validate()
             .responseDecodable(of:kakaoLoginResponse.self){response in
                 switch response.result{
                 case .success(let response):
                     if response.isSuccess{
-                        
+                        print("success")
                         viewcontroller.success()
                         //viewcontroller2.label_nickname.text = parameters.nickname
-                        print("success")
+                       
                     }else{
                         
-                       
+                       print("failed")
+                     print(response.message)
                         //viewcontroller.fail()
                     }
                 case .failure(let error):
-                    print("fail")
+                    print("서버연결x")
+                   
                     print(error.localizedDescription)
                     viewcontroller.fail()
                     

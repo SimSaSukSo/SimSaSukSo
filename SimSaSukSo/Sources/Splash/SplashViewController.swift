@@ -24,8 +24,11 @@ class SplashViewController: BaseViewController {
                 
                 //do something
                 let accessToken = oauthToken?.accessToken
+                
                 self.showIndicator()
-                kakaoLoginDataManager().kakaoLogin(accessToken: accessToken!, viewcontroller: self)
+                let input : kakaoLoginInput = kakaoLoginInput(accessToken: accessToken!)
+                kakaoLoginDataManager().kakaoLogin(parameters: input, viewcontroller: self)
+                
                 print("토큰:")
                 print(accessToken!)
               
