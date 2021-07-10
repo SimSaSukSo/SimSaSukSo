@@ -14,43 +14,58 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     
     @IBOutlet weak var tagCollectionView: UICollectionView!
-    
     @IBOutlet weak var advantageCollectionView: UICollectionView!
+    @IBOutlet weak var disadvantageCollectionView: UICollectionView!
+    
     
     @IBOutlet weak var tagEnterButton: UIButton!
     @IBOutlet weak var advantageEnterButton: UIButton!
+    @IBOutlet weak var disadvantageEnterButton: UIButton!
+    
     
     @IBOutlet weak var tagTextFieldView: UIView!
     @IBOutlet weak var advantageTextFieldView: UIView!
     
+    @IBOutlet weak var disadvantageTextFieldView: UIView!
+    
+    
     @IBOutlet weak var tagTextField: UITextField!
     @IBOutlet weak var advantageTextField: UITextField!
+    @IBOutlet weak var disadvantageTextField: UITextField!
+    
     
     @IBOutlet weak var stackView: UIStackView!
     var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
     
-   var advantageArray = ["장점","장점123123","장점3423423423423","장점ㅎㅎ","자장ㄹ안ㄹ점","다리자덜자아러니알","ㅇㅇㅇ","ㅎ"]
+   var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
     
+    var disadvantageArray = ["위치","가성비","더러움","인테리어","룸서비스","서비스 나쁨","건물노후","어매니티","부대시설","교통복잡","직접 입력하기"]
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
    
     @IBOutlet weak var advantageCollectionViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var disadvantageCollectionViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tagTextFieldView.isHidden = true
-        
         tagCollectionViewConfigure()
         
         advantageTextFieldView.isHidden = true
         advantageCollectionViewConfigure()
+        
+        disadvantageTextFieldView.isHidden = true
+        DisadvantageCollectionViewConfigure()
         
         
         //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
         NotificationCenter.default.addObserver(self, selector: #selector(TagEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(AdvantageEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DisadvantageEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
     }
     
@@ -95,6 +110,27 @@ class UploadGeneralFourthStepViewController : UIViewController{
         
     }
     
+    func DisadvantageCollectionViewConfigure(){
+        
+        
+        disadvantageCollectionView.dataSource = self
+        disadvantageCollectionView.delegate = self
+        
+        disadvantageEnterButton.layer.cornerRadius = 15
+        
+        disadvantageCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
+                if let flowLayout = disadvantageCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+                    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+                    
+                    
+                    //MARK: - DisadvantageCOLLECTIONVIEW HEIGHT
+                    disadvantageCollectionViewHeight.constant = disadvantageCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+                    print("disadvantageCollectionView height : ")
+                    print(disadvantageCollectionViewHeight.constant)
+                    
+                  }
+        
+    }
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func TagEnterButtonActivate(){
         let textArray = [tagTextField].filter { $0?.text == "" }
@@ -119,6 +155,19 @@ class UploadGeneralFourthStepViewController : UIViewController{
             advantageEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }
     }
+    
+    @objc func DisadvantageEnterButtonActivate(){
+        let textArray = [advantageTextField].filter { $0?.text == "" }
+        if !textArray.isEmpty {
+            advantageEnterButton.isEnabled = false
+            advantageEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+        
+        } else {
+            advantageEnterButton.isEnabled = true
+            advantageEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        }
+    }
+
 
     @IBAction func addTagButtonAction(_ sender: Any) {
         tagTextFieldView.isHidden = false
@@ -141,7 +190,25 @@ class UploadGeneralFourthStepViewController : UIViewController{
     }
     
     
+    @IBAction func addDisadvantageButtonAction(_ sender: Any) {
+        disadvantageTextFieldView.isHidden = false
+    }
+    
+    
+    @IBAction func disadvantageEnterButtonAction(_ sender: Any) {
+        
+        disadvantageTextFieldView.isHidden = true
+        disadvantageTextField.text = ""
+    }
+    
+    
+    
 }
+
+
+
+
+
 extension ViewController:UICollectionViewDelegate {
     
 }
@@ -157,6 +224,8 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
                 count = tagArray.count
             }else if collectionView == advantageCollectionView{
                 count = advantageArray.count
+            }else if collectionView == disadvantageCollectionView{
+                count = disadvantageArray.count
             }
             
             return count
@@ -209,24 +278,40 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
                     cell = advantagecell
                 }
                 
+            }else if collectionView == disadvantageCollectionView{
+                if indexPath.item == disadvantageArray.count - 1{
+                    let addDisadvantagecell =
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddDisadvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddDisadvantageCollectionViewCell
+                    addDisadvantagecell.addDisadvnatageButton.layer.borderWidth = 1
+                    addDisadvantagecell.addDisadvnatageButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                    addDisadvantagecell.addDisadvnatageButton.layer.cornerRadius = 4
+                    
+                    cell = addDisadvantagecell
+                }else{
+                    let disadvantagecell =
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralDisadvantageCollectionViewCell", for: indexPath) as! UploadGeneralDisadvantageCollectionViewCell
+                    
+                    disadvantagecell.disadvantageLabel.text = disadvantageArray[indexPath.row]
+                    disadvantagecell.layer.borderWidth = 1
+                    disadvantagecell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                    disadvantagecell.layer.cornerRadius = 4
+                    
+                    cell = disadvantagecell
+                
             }
            
-            
+            }
             return cell
-        }
-    
-    
-    
-    
-    
 }
+}
+
 
 //MARK: - CollectionView FlowLayout
 extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size : CGSize!
-        
+    
         if collectionView == tagCollectionView{
             if indexPath.item == tagArray.count - 1{
                 size = CGSize(width: 119, height: 32)
@@ -250,6 +335,17 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
                 size = CGSize(width: label.frame.width + 1, height: 32)
                 
             }
+        }else if collectionView == disadvantageCollectionView{
+            if indexPath.item == disadvantageArray.count - 1{
+                size = CGSize(width: 119, height: 32)
+                
+            }else{
+                let label = UILabel(frame: CGRect.zero)
+                label.text = disadvantageArray[indexPath.item]
+                label.sizeToFit()
+                size = CGSize(width: label.frame.width + 1, height: 32)
+                
+            }
         }
         
         return size
@@ -260,4 +356,5 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
     }
     
 }
+
 
