@@ -7,8 +7,7 @@
 
 import UIKit
 class UploadGeneralAddDisadvantageCollectionViewCell : UICollectionViewCell{
-    
-    @IBOutlet weak var addDisadvnatageButton: UIButton!
+        @IBOutlet weak var addDisadvnatageButton: UIButton!
     
     
     
