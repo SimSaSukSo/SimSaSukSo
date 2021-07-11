@@ -18,6 +18,8 @@ class SearchResultViewController: UIViewController {
 
         resultCollectionView.delegate = self
         resultCollectionView.dataSource = self
+        
+        self.resultCollectionView.collectionViewLayout = CustomCircularCollectionViewLayout()
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -30,7 +32,7 @@ class SearchResultViewController: UIViewController {
 //MARK: - CollectionView
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -40,4 +42,14 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     }
     
     
+}
+
+extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.row == 3 {
+            return CGSize(width: 249, height: 249)
+        }
+        return CGSize(width: 123, height: 123)
+    }
 }
