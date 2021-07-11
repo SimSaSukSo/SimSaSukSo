@@ -69,7 +69,6 @@
 		A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEB42694064700B34597 /* DesignableSlider.swift */; };
 		A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */; };
 		A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */; };
-		A75EAEBF2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */; };
 		A75EAEC8269441D900B34597 /* UploadGeneralFourthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
@@ -85,6 +84,8 @@
 		A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */; };
 		A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */; };
 		A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */; };
+		A7A066522699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */; };
+		A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */; };
 		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -173,7 +174,6 @@
 		A75EAEB42694064700B34597 /* DesignableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableSlider.swift; sourceTree = "<group>"; };
 		A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureThirdCollectionViewCell.swift; sourceTree = "<group>"; };
-		A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFourthCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFourthStepViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +189,8 @@
 		A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFirstStepViewController.swift; sourceTree = "<group>"; };
 		A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralDisadvantageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddDisadvantageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,24 +396,57 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		A758351F26998AE700527E1A /* Step4 */ = {
+			isa = PBXGroup;
+			children = (
+				A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */,
+				A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */,
+				A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */,
+				A758351B2695D30700527E1A /* UploadGeneralAdvantageCollectionViewCell.swift */,
+				A75835182695D2D800527E1A /* UploadGeneralAddAdvantageCollectionViewCell.swift */,
+				A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */,
+				A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */,
+				A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */,
+				A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */,
+			);
+			path = Step4;
+			sourceTree = "<group>";
+		};
+		A758352126998B4400527E1A /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */,
+				A75EAEB42694064700B34597 /* DesignableSlider.swift */,
+				A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
+		A758352326998B6F00527E1A /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */,
+				A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */,
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		A758352526998B8200527E1A /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
+				A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */,
+			);
+			path = Step1;
+			sourceTree = "<group>";
+		};
 		A75EAEB126936AE000B34597 /* 일반숙소 업로드 */ = {
 			isa = PBXGroup;
 			children = (
-				A75EAEAD26936AC100B34597 /* AdaptableSizeButton.swift */,
-				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
-				A75EAEA5269367CB00B34597 /* UploadGeneralSecondStepViewController.swift */,
-				A75EAEA92693680700B34597 /* UploadGeneralThirdStepViewController.swift */,
-				A75EAEC7269441D900B34597 /* UploadGeneralFourthStepViewController.swift */,
-				A75EAEB42694064700B34597 /* DesignableSlider.swift */,
-				A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */,
-				A75EAEB82694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift */,
-				A75EAEBB2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
-				A75EAEBE2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift */,
-				A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */,
-				A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */,
-				A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */,
-				A75835182695D2D800527E1A /* UploadGeneralAddAdvantageCollectionViewCell.swift */,
-				A758351B2695D30700527E1A /* UploadGeneralAdvantageCollectionViewCell.swift */,
+				A758352526998B8200527E1A /* Step1 */,
+				A758352326998B6F00527E1A /* Step2 */,
+				A758352126998B4400527E1A /* Step3 */,
+				A758351F26998AE700527E1A /* Step4 */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
@@ -723,7 +758,6 @@
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */,
 				A55675CD26972471004103AA /* NewDataManager.swift in Sources */,
-				A75EAEBF2694313400B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
@@ -743,6 +777,7 @@
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A55675DF26975427004103AA /* NewFeedsCollectionViewCell.swift in Sources */,
 				A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
+				A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */,
 				A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
@@ -775,6 +810,7 @@
 				A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
 				A766CCAA268B9E1500565095 /* BestBelievesTableViewCell.swift in Sources */,
+				A7A066522699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift in Sources */,
 				A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */,
 				A75EAEC8269441D900B34597 /* UploadGeneralFourthStepViewController.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
