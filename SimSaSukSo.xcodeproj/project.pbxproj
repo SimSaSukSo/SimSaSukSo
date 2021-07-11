@@ -49,6 +49,8 @@
 		A5A6B84E269ADC8300B66D53 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */; };
 		A5A6B851269ADDB900B66D53 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */; };
 		A5A6B858269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B857269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift */; };
+		A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B85A269B4B3500B66D53 /* SearchResultTableViewCell.swift */; };
+		A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */; };
 		A5AD4C412694850F0050CD52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5AD4C402694850F0050CD52 /* GoogleService-Info.plist */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
@@ -157,6 +159,8 @@
 		A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5A6B857269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircularCollectionViewLayout.swift; sourceTree = "<group>"; };
+		A5A6B85A269B4B3500B66D53 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5AD4C402694850F0050CD52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 				A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */,
 				A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */,
 				A5A6B857269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift */,
+				A5A6B85A269B4B3500B66D53 /* SearchResultTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 			children = (
 				A711E025267B5DF5006A1F0B /* FavoritesStoryboard.storyboard */,
 				A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */,
+				A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
+				A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */,
 				A55675C1269720B7004103AA /* BestDataManager.swift in Sources */,
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
@@ -791,6 +798,7 @@
 				A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */,
 				A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
+				A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,

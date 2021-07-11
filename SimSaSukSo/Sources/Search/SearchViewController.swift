@@ -9,6 +9,9 @@ import UIKit
 
 class SearchViewController : UIViewController {
     
+    var buttonLists: [UIButton] = []
+    var lineViewLists: [UIView] = []
+    
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var allButton: UIButton!
     @IBOutlet var houseButton: UIButton!
@@ -19,12 +22,14 @@ class SearchViewController : UIViewController {
     @IBOutlet var tagLineView: UIView!
     @IBOutlet var locationLineView: UIView!
     @IBOutlet var airButton: UIButton!
+    @IBOutlet var searchTableView: UITableView!
     
-    var buttonLists: [UIButton] = []
-    var lineViewLists: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
         
         airButton.layer.borderWidth = 1
         airButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
@@ -32,6 +37,7 @@ class SearchViewController : UIViewController {
         
         setupSearchBar()
         setupLists()
+        
     }
     
     //MARK: - Fuction
@@ -90,9 +96,11 @@ class SearchViewController : UIViewController {
     
     @IBAction func allButtonAction(_ sender: UIButton) {
         changeButtonColor()
+        searchTableView.reloadData()
     }
     @IBAction func houseButtonAction(_ sender: UIButton) {
         changeButtonColor()
+        searchTableView.reloadData()
     }
     @IBAction func tagButtonAction(_ sender: UIButton) {
         changeButtonColor()
@@ -137,4 +145,27 @@ extension SearchViewController {
 //        }
         
     }
+}
+
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
+        
+        if allButton.isTouchInside {
+            cell.firstLabel.text = "무야호"
+            cell.backgroundColor = .red
+        } else if houseButton.isTouchInside {
+            cell.firstLabel.text = "안녕요"
+            cell.backgroundColor = .black
+            tableView.reloadData()
+        }
+        
+        return cell
+    }
+    
+    
 }

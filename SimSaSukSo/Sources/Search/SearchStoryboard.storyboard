@@ -148,17 +148,57 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MnN-ht-ChR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MnN-ht-ChR">
                                 <rect key="frame" x="0.0" y="347" width="414" height="466"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="KBt-8P-gPz">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="87"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="77" id="KBt-8P-gPz" customClass="SearchResultTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KBt-8P-gPz" id="xBe-7H-nQl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s0a-Al-OQo">
+                                                    <rect key="frame" x="42" y="17" width="68.5" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉 네이처" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-Tg-YhE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="21"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9P-9k-YDB">
+                                                            <rect key="frame" x="0.0" y="25" width="22.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                            <color key="textColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-MV-aWZ">
+                                                    <rect key="frame" x="17.5" y="31.5" width="13" height="13.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13.33" id="UTn-l0-FFw"/>
+                                                        <constraint firstAttribute="width" constant="13.33" id="wJ0-5z-75e"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NCz-MV-aWZ" firstAttribute="top" secondItem="xBe-7H-nQl" secondAttribute="top" constant="31.670000000000002" id="1XC-Ex-D1q"/>
+                                                <constraint firstItem="s0a-Al-OQo" firstAttribute="leading" secondItem="NCz-MV-aWZ" secondAttribute="trailing" constant="11.33" id="7AD-xl-bgm"/>
+                                                <constraint firstItem="s0a-Al-OQo" firstAttribute="centerY" secondItem="NCz-MV-aWZ" secondAttribute="centerY" id="UGi-Jv-wF0"/>
+                                                <constraint firstAttribute="bottom" secondItem="NCz-MV-aWZ" secondAttribute="bottom" constant="32" id="VCG-GU-Tid"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="s0a-Al-OQo" secondAttribute="trailing" constant="283.5" id="lPL-By-rxt"/>
+                                                <constraint firstItem="NCz-MV-aWZ" firstAttribute="leading" secondItem="xBe-7H-nQl" secondAttribute="leading" constant="17.329999999999998" id="rNH-xX-M3p"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstLabel" destination="pIz-Tg-YhE" id="Re2-4y-AmE"/>
+                                            <outlet property="imageView" destination="NCz-MV-aWZ" id="Tn8-Ic-BHR"/>
+                                            <outlet property="secondLabel" destination="f9P-9k-YDB" id="Cjk-f9-9As"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -210,6 +250,7 @@
                         <outlet property="locationButton" destination="7qC-EB-KJ6" id="0j0-sO-CPp"/>
                         <outlet property="locationLineView" destination="yFO-s4-J39" id="WjS-Fr-CWD"/>
                         <outlet property="searchBar" destination="uac-DB-KrJ" id="vYT-Gw-F2h"/>
+                        <outlet property="searchTableView" destination="MnN-ht-ChR" id="bCb-Ky-Cdn"/>
                         <outlet property="tagButton" destination="rBQ-wM-m3b" id="NHd-RL-znb"/>
                         <outlet property="tagLineView" destination="GcO-oM-faj" id="ocU-SD-LI6"/>
                     </connections>
