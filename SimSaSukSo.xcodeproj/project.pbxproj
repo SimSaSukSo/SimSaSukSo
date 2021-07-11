@@ -19,7 +19,6 @@
 		A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */; };
 		A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3506268B98C900D6F839 /* ClearNavigationController.swift */; };
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
-		A54DB8FF2693108900EA26DF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8FE2693108800EA26DF /* UIImageView.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
 		A55675C1269720B7004103AA /* BestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675C0269720B7004103AA /* BestDataManager.swift */; };
@@ -124,7 +123,6 @@
 		A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
 		A54C3506268B98C900D6F839 /* ClearNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationController.swift; sourceTree = "<group>"; };
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		A54DB8FE2693108800EA26DF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
 		A55675C0269720B7004103AA /* BestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDataManager.swift; sourceTree = "<group>"; };
@@ -519,7 +517,6 @@
 				BD439427252E1C820055F2E6 /* UIButton.swift */,
 				BD43942A252E1D160055F2E6 /* UIViewController.swift */,
 				BD43942D252E1E9B0055F2E6 /* UINavigationBar.swift */,
-				A54DB8FE2693108800EA26DF /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -716,7 +713,6 @@
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
 				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
-				A54DB8FF2693108900EA26DF /* UIImageView.swift in Sources */,
 				A58833B5268C7D220046E313 /* FeedCommentTableViewCell.swift in Sources */,
 				A54BDAB6268E1D720070BFEF /* EvaluImageCollectionViewCell.swift in Sources */,
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
