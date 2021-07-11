@@ -51,6 +51,9 @@
 		A5A6B858269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B857269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift */; };
 		A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B85A269B4B3500B66D53 /* SearchResultTableViewCell.swift */; };
 		A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */; };
+		A5A6B861269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B860269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift */; };
+		A5A6B864269B5C2100B66D53 /* FavoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B863269B5C2100B66D53 /* FavoriteDetailViewController.swift */; };
+		A5A6B868269B5F9400B66D53 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */; };
 		A5AD4C412694850F0050CD52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5AD4C402694850F0050CD52 /* GoogleService-Info.plist */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
@@ -161,6 +164,9 @@
 		A5A6B857269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircularCollectionViewLayout.swift; sourceTree = "<group>"; };
 		A5A6B85A269B4B3500B66D53 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5A6B860269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5A6B863269B5C2100B66D53 /* FavoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewController.swift; sourceTree = "<group>"; };
+		A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
 		A5AD4C402694850F0050CD52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -394,6 +400,9 @@
 				A711E025267B5DF5006A1F0B /* FavoritesStoryboard.storyboard */,
 				A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */,
 				A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */,
+				A5A6B863269B5C2100B66D53 /* FavoriteDetailViewController.swift */,
+				A5A6B860269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift */,
+				A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -803,6 +812,7 @@
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */,
+				A5A6B861269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift in Sources */,
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
@@ -820,6 +830,8 @@
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
+				A5A6B868269B5F9400B66D53 /* AddAlertViewController.swift in Sources */,
+				A5A6B864269B5C2100B66D53 /* FavoriteDetailViewController.swift in Sources */,
 				A567962C2685D69C00CAB9F6 /* SetNoticeViewController.swift in Sources */,
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
 				A54BDAAD268E0F230070BFEF /* UploadCompleteViewController.swift in Sources */,

@@ -9,6 +9,8 @@ import UIKit
 
 class FavoritesViewController : UIViewController {
     
+    static var lists = ["하이", "하이하이", "라라라라라라"]
+    
     @IBOutlet var favoriteCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -21,6 +23,9 @@ class FavoritesViewController : UIViewController {
     @IBAction func editButtonAction(_ sender: UIButton) {
     }
     @IBAction func addButtonAction(_ sender: UIButton) {
+        let addVC = self.storyboard?.instantiateViewController(identifier: "AddAlertViewController")
+        
+        self.present(addVC!, animated: false, completion: nil)
     }
 }
 
@@ -28,15 +33,24 @@ class FavoritesViewController : UIViewController {
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 10
+        return FavoritesViewController.lists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCollectionViewCell", for: indexPath) as! FavoriteCollectionViewCell
         
+        let list = FavoritesViewController.lists[indexPath.row]
+        
         cell.stacView.layer.cornerRadius = 4
+        cell.titleLabel.text = list
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = self.storyboard?.instantiateViewController(identifier: "FavoriteDetailViewController")
+        
+        self.navigationController?.pushViewController(detailVC!, animated: true)
     }
     
     
