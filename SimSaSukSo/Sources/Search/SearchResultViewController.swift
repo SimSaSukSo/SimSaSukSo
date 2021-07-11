@@ -11,6 +11,7 @@ class SearchResultViewController: UIViewController {
 
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
+    @IBOutlet var searchButton: UIButton!
     @IBOutlet var resultCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -24,6 +25,15 @@ class SearchResultViewController: UIViewController {
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func searchButtonAction(_ sender: UIButton) {
+        searchButton.isSelected = !searchButton.isSelected
+        
+        if searchButton.isSelected {
+            searchButton.setImage(UIImage(named: "search_Best"), for: .normal)
+        } else {
+            searchButton.setImage(UIImage(named: "search_New"), for: .normal)
+        }
     }
     
 
