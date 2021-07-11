@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -119,6 +120,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
                                                 <state key="normal" title="위치"/>
+                                                <connections>
+                                                    <segue destination="kIF-EF-R6u" kind="presentation" modalPresentationStyle="fullScreen" id="JzY-Iu-hyX"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFO-s4-J39">
                                                 <rect key="frame" x="0.0" y="41" width="36" height="2"/>
@@ -177,6 +181,87 @@
             </objects>
             <point key="canvasLocation" x="1097.1014492753625" y="61.607142857142854"/>
         </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="gcV-Wu-qbh">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultViewController" id="kIF-EF-R6u" customClass="SearchResultViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WZ8-qX-gZ6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mva-VG-cR5">
+                                <rect key="frame" x="21" y="95" width="14" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="14" id="7Dc-8S-OIM"/>
+                                    <constraint firstAttribute="height" constant="14" id="wey-eM-Cky"/>
+                                </constraints>
+                                <state key="normal" image="arrow_left"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="kIF-EF-R6u" eventType="touchUpInside" id="e0m-xx-F3D"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-Eh-ER6">
+                                <rect key="frame" x="48" y="87" width="173" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="‘강릉’ 검색결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="892-kk-dQw">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="329개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6X-gX-2yg">
+                                        <rect key="frame" x="136" y="0.0" width="37" height="30"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <color key="textColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CCr-Wx-i1J">
+                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="can-e0-QDh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultCollectionViewCell" id="nEe-oj-ujQ" customClass="SearchResultCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1ht-jH-BTq">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AyS-jk-RIm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AyS-jk-RIm" firstAttribute="trailing" secondItem="CCr-Wx-i1J" secondAttribute="trailing" id="06l-yl-OFH"/>
+                            <constraint firstItem="mva-VG-cR5" firstAttribute="top" secondItem="AyS-jk-RIm" secondAttribute="top" constant="51" id="CkX-U1-iqq"/>
+                            <constraint firstItem="CCr-Wx-i1J" firstAttribute="top" secondItem="mva-VG-cR5" secondAttribute="bottom" constant="21" id="HXl-Xc-rQa"/>
+                            <constraint firstItem="CCr-Wx-i1J" firstAttribute="leading" secondItem="AyS-jk-RIm" secondAttribute="leading" id="ZFh-hy-34d"/>
+                            <constraint firstItem="mva-VG-cR5" firstAttribute="leading" secondItem="AyS-jk-RIm" secondAttribute="leading" constant="21" id="a1t-Xo-RkN"/>
+                            <constraint firstItem="ggS-Eh-ER6" firstAttribute="leading" secondItem="mva-VG-cR5" secondAttribute="trailing" constant="13" id="jOp-vt-ZgG"/>
+                            <constraint firstItem="ggS-Eh-ER6" firstAttribute="centerY" secondItem="mva-VG-cR5" secondAttribute="centerY" id="lpd-ov-UBR"/>
+                            <constraint firstItem="AyS-jk-RIm" firstAttribute="bottom" secondItem="CCr-Wx-i1J" secondAttribute="bottom" id="wto-Br-HRA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultCollectionView" destination="CCr-Wx-i1J" id="wYw-pN-f8Q"/>
+                        <outlet property="resultNumberLabel" destination="b6X-gX-2yg" id="nKl-Vl-cRa"/>
+                        <outlet property="searchResultLabel" destination="892-kk-dQw" id="e5K-7b-XCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cq-lb-lIE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="62"/>
+        </scene>
         <!--검색-->
         <scene sceneID="UHh-gQ-PzZ">
             <objects>
@@ -199,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_left" width="14" height="14"/>
         <image name="filter" width="18" height="16.5"/>
         <image name="img_search" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">

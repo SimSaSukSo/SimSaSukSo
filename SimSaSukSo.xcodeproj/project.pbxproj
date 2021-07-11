@@ -46,6 +46,8 @@
 		A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBD826863327008D4AF9 /* BestPageViewController.swift */; };
 		A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBDC26863FC8008D4AF9 /* BestFeedsViewController.swift */; };
 		A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */; };
+		A5A6B84E269ADC8300B66D53 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */; };
+		A5A6B851269ADDB900B66D53 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */; };
 		A5AD4C412694850F0050CD52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5AD4C402694850F0050CD52 /* GoogleService-Info.plist */; };
 		A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E013267B4E7D006A1F0B /* ViewController.swift */; };
 		A711E01D267B5D3D006A1F0B /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */; };
@@ -151,6 +153,8 @@
 		A59DDBD826863327008D4AF9 /* BestPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPageViewController.swift; sourceTree = "<group>"; };
 		A59DDBDC26863FC8008D4AF9 /* BestFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFeedsViewController.swift; sourceTree = "<group>"; };
 		A59DDBDF2686456C008D4AF9 /* BestHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
+		A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		A5AD4C402694850F0050CD52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A711E013267B4E7D006A1F0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A711E01C267B5D3D006A1F0B /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -355,6 +359,8 @@
 			children = (
 				A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */,
 				A711E02E267B5E86006A1F0B /* SearchViewController.swift */,
+				A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */,
+				A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -386,12 +392,12 @@
 		A711E01B267B5CBD006A1F0B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				A54C34F4268B5DE400D6F839 /* 내 피드 보기 */,
 				A711E028267B5E03006A1F0B /* SettingStoryboard.storyboard */,
 				A711E037267B5EAE006A1F0B /* SettingViewController.swift */,
 				A56796282685D68E00CAB9F6 /* ProfileViewController.swift */,
 				A567962B2685D69B00CAB9F6 /* SetNoticeViewController.swift */,
 				A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */,
+				A54C34F4268B5DE400D6F839 /* 내 피드 보기 */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -745,6 +751,7 @@
 				A75EAEAE26936AC100B34597 /* AdaptableSizeButton.swift in Sources */,
 				A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */,
 				A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */,
+				A5A6B851269ADDB900B66D53 /* SearchResultCollectionViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
 				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
@@ -805,6 +812,7 @@
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
 				A54BDAAD268E0F230070BFEF /* UploadCompleteViewController.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
+				A5A6B84E269ADC8300B66D53 /* SearchResultViewController.swift in Sources */,
 				A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */,
 				A75EAEA6269367CB00B34597 /* UploadGeneralSecondStepViewController.swift in Sources */,
 				A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */,
