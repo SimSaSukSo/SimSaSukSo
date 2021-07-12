@@ -10,15 +10,35 @@ class UploadGeneralFirstStepViewController : UIViewController{
     
     
     @IBOutlet weak var HotelNameTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
+        
         FirstPictureCollectionView.dataSource = self
         FirstPictureCollectionView.delegate = self
     }
     
+    //MARK: - 텍스트 필드 채워지면 버튼 활성화
+    @objc func validation(){
+        let filteredArray = [HotelNameTextField].filter { $0?.text == "" }
+        if !filteredArray.isEmpty {
+            nextButton.isEnabled = false
+            nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        } else {
+          
+            nextButton.isEnabled = true
+            
+            
+            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+            
+            
+        }
+    }
 }
 
 extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
