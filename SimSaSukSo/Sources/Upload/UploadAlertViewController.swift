@@ -66,7 +66,10 @@ class UploadAlertViewController: UIViewController {
             print(UploadViewController.photoArray.count)
         } else {
             print("에어비앤비로")
+            let airVC = self.storyboard?.instantiateViewController(identifier: "airNavigationController")
+            changeRootViewController(airVC!)
         }
+        
     }
     
     

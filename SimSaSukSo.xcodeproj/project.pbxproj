@@ -94,6 +94,10 @@
 		A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */; };
 		A7A066522699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */; };
 		A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */; };
+		A7A0665E269E0C55009A1397 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */; };
+		A7A06662269E0EEE009A1397 /* RegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */; };
+		A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06664269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift */; };
+		A7A06669269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */; };
 		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -207,6 +211,10 @@
 		A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralDisadvantageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddDisadvantageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
+		A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewCell.swift; sourceTree = "<group>"; };
+		A7A06664269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbFirstStepViewController.swift; sourceTree = "<group>"; };
+		A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbSecondStepViewController.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,6 +487,10 @@
 		A75EAEB226936AEB00B34597 /* 에어비엔비 업로드 */ = {
 			isa = PBXGroup;
 			children = (
+				A7A06659269E0BD1009A1397 /* Step1 */,
+				A7A0665A269E0BDF009A1397 /* Step2 */,
+				A7A0665B269E0BE6009A1397 /* Step3 */,
+				A7A0665C269E0BEE009A1397 /* Step4 */,
 			);
 			name = "에어비엔비 업로드";
 			path = "에어비엔비 업로드";
@@ -499,6 +511,38 @@
 				A766CCBA268C665500565095 /* kakaoLoginInput.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		A7A06659269E0BD1009A1397 /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				A7A06664269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift */,
+			);
+			path = Step1;
+			sourceTree = "<group>";
+		};
+		A7A0665A269E0BDF009A1397 /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */,
+				A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */,
+				A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */,
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		A7A0665B269E0BE6009A1397 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Step3;
+			sourceTree = "<group>";
+		};
+		A7A0665C269E0BEE009A1397 /* Step4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Step4;
 			sourceTree = "<group>";
 		};
 		BD4393F4252E13EF0055F2E6 = {
@@ -801,6 +845,7 @@
 				A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */,
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
 				A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */,
+				A7A0665E269E0C55009A1397 /* SelectRegionViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A55675DF26975427004103AA /* NewFeedsCollectionViewCell.swift in Sources */,
 				A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
@@ -809,12 +854,15 @@
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
 				A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
+				A7A06669269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift in Sources */,
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
+				A7A06662269E0EEE009A1397 /* RegionTableViewCell.swift in Sources */,
 				A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */,
 				A5A6B861269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift in Sources */,
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
+				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
