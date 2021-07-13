@@ -8,10 +8,9 @@
 import UIKit
 
 class UploadGeneralDisadvantageCollectionViewCell : UICollectionViewCell{
+        
+    @IBOutlet weak var disadvantageButton: UIButton!
     
-    @IBOutlet weak var disadvantageLabel: UILabel!
-    
-       
     
 }
 

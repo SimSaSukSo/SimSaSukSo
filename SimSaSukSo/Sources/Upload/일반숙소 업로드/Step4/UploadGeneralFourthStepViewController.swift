@@ -167,6 +167,22 @@ class UploadGeneralFourthStepViewController : UIViewController{
             advantageEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }
     }
+    
+    @objc func buttonClicked(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setTitleColor(.simsasuksoGreen, for: .selected)
+            sender.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+            
+        } else {
+            sender.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
+            sender.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+            sender.backgroundColor = .clear
+            
+        }
+        }
 
 
     @IBAction func addTagButtonAction(_ sender: Any) {
@@ -270,10 +286,12 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
                     let advantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAdvantageCollectionViewCell
                     
-                    advantagecell.advantageLabel.text = advantageArray[indexPath.row]
-                    advantagecell.layer.borderWidth = 1
-                    advantagecell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
-                    advantagecell.layer.cornerRadius = 4
+                    advantagecell.advantageButton.setTitle(advantageArray[indexPath.row], for: .normal)
+                    advantagecell.advantageButton.layer.borderWidth = 1
+                    advantagecell.advantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                    advantagecell.advantageButton.layer.cornerRadius = 4
+                    
+                    advantagecell.advantageButton.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
                     
                     cell = advantagecell
                 }
@@ -291,18 +309,27 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
                     let disadvantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralDisadvantageCollectionViewCell", for: indexPath) as! UploadGeneralDisadvantageCollectionViewCell
                     
-                    disadvantagecell.disadvantageLabel.text = disadvantageArray[indexPath.row]
-                    disadvantagecell.layer.borderWidth = 1
-                    disadvantagecell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
-                    disadvantagecell.layer.cornerRadius = 4
+                    disadvantagecell.disadvantageButton.setTitle(disadvantageArray[indexPath.row], for: .normal)
+                    disadvantagecell.disadvantageButton.layer.borderWidth = 1
+                    disadvantagecell.disadvantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                    disadvantagecell.disadvantageButton.layer.cornerRadius = 4
+                    
+                    disadvantagecell.disadvantageButton.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
+                    
+                   
                     
                     cell = disadvantagecell
+                    
+                    
                 
             }
            
             }
             return cell
 }
+    
+    
+    
 }
 
 
@@ -354,7 +381,5 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
-    
-}
-
+    }
 

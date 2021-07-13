@@ -8,8 +8,9 @@
 import UIKit
 
 class UploadGeneralAdvantageCollectionViewCell : UICollectionViewCell{
-        @IBOutlet weak var advantageLabel: UILabel!
+
     
-       
+    @IBOutlet weak var advantageButton: UIButton!
+    
     
 }
