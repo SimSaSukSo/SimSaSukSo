@@ -985,140 +985,191 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TnE-cw-x2t">
                                                 <rect key="frame" x="0.0" y="0.0" width="116" height="740"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sec-lo-Y4i">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sec-lo-Y4i">
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="43.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <state key="normal" title="서울">
                                                             <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="JRH-6a-d3i"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-xa-WWO">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-xa-WWO">
                                                         <rect key="frame" x="0.0" y="43.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <state key="normal" title="부산">
                                                             <color key="titleColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="F4t-O4-lbL"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-wx-d6i">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJb-wx-d6i">
                                                         <rect key="frame" x="0.0" y="87" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="제주">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="Biq-Ea-38C"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuc-tS-Y0C">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuc-tS-Y0C">
                                                         <rect key="frame" x="0.0" y="130.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="강원">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="4Tk-cg-BUa"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYf-iN-lyC">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYf-iN-lyC">
                                                         <rect key="frame" x="0.0" y="174" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="경기">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="5Ud-vA-4n3"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tF-zf-cFb">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tF-zf-cFb">
                                                         <rect key="frame" x="0.0" y="217.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="인천">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="BMB-kR-Hk2"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-ii-u8D">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-ii-u8D">
                                                         <rect key="frame" x="0.0" y="261" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="대구">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="cpv-Z7-ybg"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Z-8s-epa">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Z-8s-epa">
                                                         <rect key="frame" x="0.0" y="304.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="울산">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="Igu-DD-bdJ"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKm-kF-gaa">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKm-kF-gaa">
                                                         <rect key="frame" x="0.0" y="348" width="116" height="44"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="경남">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="3lE-rM-XWv"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWy-Qy-Pcb">
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWy-Qy-Pcb">
                                                         <rect key="frame" x="0.0" y="392" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="경북">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="Wl5-6Q-S6a"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-qr-V0D">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-qr-V0D">
                                                         <rect key="frame" x="0.0" y="435.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="광주">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="tV2-it-4gb"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yir-9w-f1h">
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yir-9w-f1h">
                                                         <rect key="frame" x="0.0" y="479" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="전남">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="SXF-hG-6T6"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLb-yR-MlG">
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLb-yR-MlG">
                                                         <rect key="frame" x="0.0" y="522.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="전북">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="vus-Ql-sLl"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0e-37-WMc">
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0e-37-WMc">
                                                         <rect key="frame" x="0.0" y="566" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="대전">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="iOO-Ed-0Vw"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPy-Ft-QXt">
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPy-Ft-QXt">
                                                         <rect key="frame" x="0.0" y="609.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="충북">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="yfx-RW-XsE"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-da-Ig0">
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d19-da-Ig0">
                                                         <rect key="frame" x="0.0" y="653" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="충남">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="HSc-lC-910"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-11-uoV">
+                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-11-uoV">
                                                         <rect key="frame" x="0.0" y="696.5" width="116" height="43.5"/>
                                                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <state key="normal" title="부산">
+                                                        <state key="normal" title="세종">
                                                             <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="ohq-nW-jTZ" eventType="touchUpInside" id="AXT-GN-7pM"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -1142,7 +1193,7 @@
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     <state key="normal" title="강남 / 역삼 / 삼성">
-                                                                        <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                                        <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                 </button>
                                                             </subviews>
