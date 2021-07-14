@@ -22,5 +22,18 @@ class RegionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func cellClicked(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setTitleColor(.simsasuksoGreen, for: .selected)
+            
+            
+        } else {
+            sender.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
+            
+            
+        }
+        }
 
 }

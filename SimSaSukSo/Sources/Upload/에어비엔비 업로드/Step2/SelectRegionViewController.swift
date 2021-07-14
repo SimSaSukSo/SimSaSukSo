@@ -133,19 +133,19 @@ class SelectRegionViewController : UIViewController{
     }
     
     
-    @objc func cellClicked(_ sender: UIButton) {
-        
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            sender.setTitleColor(.simsasuksoGreen, for: .selected)
-            
-            
-        } else {
-            sender.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-            
-            
-        }
-        }
+//    @objc func cellClicked(_ sender: UIButton) {
+//
+//        sender.isSelected = !sender.isSelected
+//        if sender.isSelected {
+//            sender.setTitleColor(.simsasuksoGreen, for: .selected)
+//
+//
+//        } else {
+//            sender.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
+//
+//
+//        }
+//        }
     
 }
 
@@ -158,7 +158,7 @@ extension SelectRegionViewController : UITableViewDelegate,UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegionTableViewCell") as! RegionTableViewCell
         
         cell.regionButton.setTitle(regionList[indexPath.row], for: .normal)
-        cell.regionButton.addTarget(self, action: #selector(self.cellClicked), for: .touchUpInside)
+//        cell.regionButton.addTarget(self, action: #selector(self.cellClicked), for: .touchUpInside)
         return cell
     }
     
