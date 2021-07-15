@@ -24,7 +24,9 @@ class SearchFilterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        resetButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        
         locationButton.layer.borderWidth = 1
         locationButton.layer.borderColor = #colorLiteral(red: 0.9098039216, green: 0.9215686275, blue: 0.9333333333, alpha: 1)
         locationButton.layer.cornerRadius = 4
@@ -45,7 +47,7 @@ class SearchFilterViewController: UIViewController {
         
         configure()
     }
-    
+    // CollectionView Left Align
     func configure() {
         goodCollectionView.collectionViewLayout = CollectionViewLeftAlignFlowLayout()
         if let flowLayout = goodCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -59,6 +61,9 @@ class SearchFilterViewController: UIViewController {
     
     @IBAction func backButtonAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func resetButtonAciton(_ sender: UIButton) {
+
     }
     
     @IBAction func dayButtonAction(_ sender: UIButton) {
@@ -74,7 +79,7 @@ class SearchFilterViewController: UIViewController {
     
     @IBAction func dayTitleButtonAction(_ sender: UIButton) {
         dayButton.setTitle("\(sender.currentTitle!)", for: .normal)
-        
+        resetButton.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
     }
     
 }
