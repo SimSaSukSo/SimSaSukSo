@@ -17,6 +17,7 @@ class SearchFilterViewController: UIViewController {
     @IBOutlet var minTextField: UITextField!
     @IBOutlet var maxTextField: UITextField!
     @IBOutlet var dayButton: UIButton!
+    @IBOutlet var dayView: UIView!
     @IBOutlet var goodCollectionView: UICollectionView!
     @IBOutlet var badCollectionView: UICollectionView!
     @IBOutlet var setButton: UIButton!
@@ -27,6 +28,12 @@ class SearchFilterViewController: UIViewController {
         locationButton.layer.borderWidth = 1
         locationButton.layer.borderColor = #colorLiteral(red: 0.9098039216, green: 0.9215686275, blue: 0.9333333333, alpha: 1)
         locationButton.layer.cornerRadius = 4
+        
+        dayView.isHidden = true
+        dayView.layer.masksToBounds = false
+        dayView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        dayView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        dayView.layer.shadowOpacity = 0.1
         
         goodCollectionView.delegate = self
         goodCollectionView.dataSource = self
@@ -54,6 +61,21 @@ class SearchFilterViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func dayButtonAction(_ sender: UIButton) {
+        dayButton.isSelected = !dayButton.isSelected
+        
+        if dayButton.isSelected { //선택
+            dayView.isHidden = false
+        } else {
+            dayView.isHidden = true
+        }
+       
+    }
+    
+    @IBAction func dayTitleButtonAction(_ sender: UIButton) {
+        dayButton.setTitle("\(sender.currentTitle!)", for: .normal)
+        
+    }
     
 }
 
