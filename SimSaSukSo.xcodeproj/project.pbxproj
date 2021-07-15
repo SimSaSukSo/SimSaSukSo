@@ -21,6 +21,10 @@
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
+		A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368E026A072AB002E232E /* SearchFilterViewController.swift */; };
+		A55368E426A07538002E232E /* GoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368E326A07538002E232E /* GoodCollectionViewCell.swift */; };
+		A55368E726A07551002E232E /* BadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368E626A07551002E232E /* BadCollectionViewCell.swift */; };
+		A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368ED26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift */; };
 		A55675C1269720B7004103AA /* BestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675C0269720B7004103AA /* BestDataManager.swift */; };
 		A55675C9269721B9004103AA /* BestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675C8269721B9004103AA /* BestResponse.swift */; };
 		A55675CD26972471004103AA /* NewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675CC26972471004103AA /* NewDataManager.swift */; };
@@ -138,6 +142,10 @@
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
+		A55368E026A072AB002E232E /* SearchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewController.swift; sourceTree = "<group>"; };
+		A55368E326A07538002E232E /* GoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		A55368E626A07551002E232E /* BadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadCollectionViewCell.swift; sourceTree = "<group>"; };
+		A55368ED26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
 		A55675C0269720B7004103AA /* BestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestDataManager.swift; sourceTree = "<group>"; };
 		A55675C8269721B9004103AA /* BestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResponse.swift; sourceTree = "<group>"; };
 		A55675CC26972471004103AA /* NewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataManager.swift; sourceTree = "<group>"; };
@@ -383,6 +391,10 @@
 				A5A6B850269ADDB900B66D53 /* SearchResultCollectionViewCell.swift */,
 				A5A6B857269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift */,
 				A5A6B85A269B4B3500B66D53 /* SearchResultTableViewCell.swift */,
+				A55368E026A072AB002E232E /* SearchFilterViewController.swift */,
+				A55368E326A07538002E232E /* GoodCollectionViewCell.swift */,
+				A55368E626A07551002E232E /* BadCollectionViewCell.swift */,
+				A55368ED26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -839,6 +851,7 @@
 				A766CCBB268C665500565095 /* kakaoLoginInput.swift in Sources */,
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
+				A55368E726A07551002E232E /* BadCollectionViewCell.swift in Sources */,
 				A54BDAB0268E13470070BFEF /* EvaluViewController.swift in Sources */,
 				A75835162695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
@@ -849,6 +862,7 @@
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A55675DF26975427004103AA /* NewFeedsCollectionViewCell.swift in Sources */,
 				A75EAEAA2693680700B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
+				A55368E426A07538002E232E /* GoodCollectionViewCell.swift in Sources */,
 				A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */,
 				A75EAEBC2694312200B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
@@ -864,6 +878,7 @@
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
+				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
@@ -877,6 +892,7 @@
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
+				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				A5A6B868269B5F9400B66D53 /* AddAlertViewController.swift in Sources */,
 				A5A6B864269B5C2100B66D53 /* FavoriteDetailViewController.swift in Sources */,
