@@ -38,8 +38,8 @@ class BestTabViewController: UIViewController {
         bestHashtagFlowLayout.scrollDirection = .horizontal
         self.bestHashtagCollectionView.collectionViewLayout = bestHashtagFlowLayout
         
-        //bestHashtagCollectionView.delegate = self
-        //bestHashtagCollectionView.dataSource = self
+        bestHashtagCollectionView.delegate = self
+        bestHashtagCollectionView.dataSource = self
         
         bestTabScrollView.delegate = self
         
