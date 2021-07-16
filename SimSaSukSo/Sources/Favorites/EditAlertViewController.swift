@@ -7,11 +7,18 @@
 
 import UIKit
 
-class EditAlertViewController: UIViewController {
+protocol editCellProtocol {
+    func presentDeleteVC()
+}
+
+class EditAlertViewController: UIViewController, editCellProtocol {
 
     @IBOutlet var alertView: UIView!
     @IBOutlet var editTableView: UITableView!
     @IBOutlet var editTableViewHeight: NSLayoutConstraint!
+    @IBOutlet var closeButton: UIButton!
+    @IBOutlet var saveButton: UIButton!
+   
     
     
     override func viewDidLoad() {
@@ -24,6 +31,12 @@ class EditAlertViewController: UIViewController {
         editTableView.dataSource = self
         
         editTableViewHeight.constant = 51 * 3
+        
+    }
+    
+    func presentDeleteVC() {
+        let deleteVC = self.storyboard?.instantiateViewController(withIdentifier: "DeleteAlertViewController")
+        self.present(deleteVC!, animated: false, completion: nil)
         
     }
     
@@ -46,7 +59,7 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteEditTableViewCell", for: indexPath) as! FavoriteEditTableViewCell
         
         cell.view.layer.cornerRadius = 4
-        
+        cell.delegate = self
         return cell
     }
     

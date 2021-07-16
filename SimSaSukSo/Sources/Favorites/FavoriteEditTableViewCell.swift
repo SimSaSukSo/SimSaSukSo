@@ -8,7 +8,9 @@
 import UIKit
 
 class FavoriteEditTableViewCell: UITableViewCell {
-
+    
+    var delegate: editCellProtocol!
+    
     @IBOutlet var view: UIView!
     @IBOutlet var titleLabel: UILabel!
     
@@ -24,5 +26,7 @@ class FavoriteEditTableViewCell: UITableViewCell {
     }
 
     @IBAction func deleteButtonAction(_ sender: UIButton) {
+        self.delegate.presentDeleteVC()
     }
+    
 }
