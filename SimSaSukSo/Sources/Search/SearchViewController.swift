@@ -94,6 +94,10 @@ class SearchViewController : UIViewController {
     
     }
     
+    @IBAction func filterButtonAction(_ sender: UIButton) {
+        let filterVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchFilterViewController")
+        self.present(filterVC!, animated: true, completion: nil)
+    }
     @IBAction func allButtonAction(_ sender: UIButton) {
         changeButtonColor()
         searchTableView.reloadData()
