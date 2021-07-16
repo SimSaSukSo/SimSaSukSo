@@ -8,7 +8,9 @@
 import UIKit
 class TrendPlacesCollectionViewCell : UICollectionViewCell{
     
+    @IBOutlet weak var trendImageView: UIImageView!
     
+    @IBOutlet weak var trendPlaceName: UILabel!
     
     
 }
