@@ -12,10 +12,7 @@ class BestBelievesTableViewCell : UITableViewCell{
     
     @IBOutlet weak var BestBelievesNameLabel: UILabel!
     
-    @IBOutlet weak var BestBelievesHashTagOne: UIButton!
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     
-    @IBOutlet weak var BestBelievesHashTagTwo: UIButton!
     
-    @IBOutlet weak var BestBelievesHashTagThree: UIButton!
-    @IBOutlet weak var BestBelievesHashTagFour: UIButton!
 }
