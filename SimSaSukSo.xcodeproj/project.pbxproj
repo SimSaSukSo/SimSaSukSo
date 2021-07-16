@@ -74,6 +74,8 @@
 		A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E031267B5E94006A1F0B /* UploadViewController.swift */; };
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
+		A74AFC9F26A1AF800047E9C2 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFC9E26A1AF800047E9C2 /* HomeResponse.swift */; };
+		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
 		A75835162695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */; };
@@ -199,6 +201,8 @@
 		A711E031267B5E94006A1F0B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A74AFC9E26A1AF800047E9C2 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 		A59DDBC82686021E008D4AF9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A74AFC9D26A1AD780047E9C2 /* DataManager */,
+				A74AFC9C26A1AD400047E9C2 /* Entity */,
 				A56796372685D6CC00CAB9F6 /* HomeTabViewController.swift */,
 				A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */,
 				A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */,
@@ -449,6 +455,22 @@
 				A54C34F4268B5DE400D6F839 /* 내 피드 보기 */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		A74AFC9C26A1AD400047E9C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A74AFC9E26A1AF800047E9C2 /* HomeResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A74AFC9D26A1AD780047E9C2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		A758351F26998AE700527E1A /* Step4 */ = {
@@ -828,6 +850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A6B858269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift in Sources */,
+				A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */,
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
@@ -891,8 +914,15 @@
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
+<<<<<<< HEAD
 				A54C659A26A1CAC600DFB096 /* FavoriteEditTableViewCell.swift in Sources */,
+=======
+<<<<<<< HEAD
+				A74AFC9F26A1AF800047E9C2 /* HomeResponse.swift in Sources */,
+=======
+>>>>>>> a7a2facefc07159db467bb7e1224360922dba2a9
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
+>>>>>>> 279e14e6e4ba64ffd5ddb917fc4c2b15dff2fe14
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
