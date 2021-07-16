@@ -394,23 +394,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="51"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfh-cW-hAM">
-                                                                    <rect key="frame" x="0.0" y="4" width="322" height="43"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구들이랑 호캉스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzp-p4-aZF">
-                                                                            <rect key="frame" x="10" y="10" width="107" height="23"/>
-                                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="Tzp-p4-aZF" secondAttribute="bottom" constant="10" id="1LB-ti-vzU"/>
-                                                                        <constraint firstItem="Tzp-p4-aZF" firstAttribute="leading" secondItem="Tfh-cW-hAM" secondAttribute="leading" constant="10" id="2F1-4p-1fZ"/>
-                                                                        <constraint firstItem="Tzp-p4-aZF" firstAttribute="top" secondItem="Tfh-cW-hAM" secondAttribute="top" constant="10" id="dQl-rg-pLM"/>
-                                                                    </constraints>
-                                                                </view>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxj-zy-45E">
                                                                     <rect key="frame" x="332.5" y="17" width="15" height="17"/>
                                                                     <constraints>
@@ -422,19 +405,28 @@
                                                                         <action selector="deleteButtonAction:" destination="Gng-gq-RsX" eventType="touchUpInside" id="fm5-3b-ccK"/>
                                                                     </connections>
                                                                 </button>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="친구들이랑 호캉스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-rr-mQQ">
+                                                                    <rect key="frame" x="0.0" y="4" width="322" height="43"/>
+                                                                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="tintColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="42" id="AJP-4f-OKz"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="J5c-rr-mQQ" firstAttribute="top" secondItem="0av-OX-p63" secondAttribute="top" constant="4" id="1Nc-2u-jws"/>
                                                                 <constraint firstItem="zxj-zy-45E" firstAttribute="centerY" secondItem="0av-OX-p63" secondAttribute="centerY" id="7IB-bf-xPL"/>
-                                                                <constraint firstItem="Tfh-cW-hAM" firstAttribute="leading" secondItem="0av-OX-p63" secondAttribute="leading" id="8PG-QY-g3B"/>
-                                                                <constraint firstItem="Tfh-cW-hAM" firstAttribute="top" secondItem="0av-OX-p63" secondAttribute="top" constant="4" id="CMO-y3-9cl"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Tfh-cW-hAM" secondAttribute="bottom" constant="4" id="JZ9-YV-eoE"/>
+                                                                <constraint firstAttribute="bottom" secondItem="J5c-rr-mQQ" secondAttribute="bottom" constant="4" id="8og-f1-6JG"/>
+                                                                <constraint firstItem="zxj-zy-45E" firstAttribute="leading" secondItem="J5c-rr-mQQ" secondAttribute="trailing" constant="10.5" id="TT2-Me-myX"/>
                                                                 <constraint firstAttribute="trailing" secondItem="zxj-zy-45E" secondAttribute="trailing" constant="2.5" id="Z4J-qD-8at"/>
-                                                                <constraint firstItem="zxj-zy-45E" firstAttribute="leading" secondItem="Tfh-cW-hAM" secondAttribute="trailing" constant="10.5" id="vEH-qT-x7g"/>
+                                                                <constraint firstItem="J5c-rr-mQQ" firstAttribute="leading" secondItem="0av-OX-p63" secondAttribute="leading" id="c0Z-tn-F8k"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="titleLabel" destination="Tzp-p4-aZF" id="YSl-kF-rlz"/>
-                                                            <outlet property="view" destination="Tfh-cW-hAM" id="d3l-FZ-wIt"/>
+                                                            <outlet property="editTextField" destination="J5c-rr-mQQ" id="PJY-I9-vK3"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>

@@ -58,7 +58,8 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteEditTableViewCell", for: indexPath) as! FavoriteEditTableViewCell
         
-        cell.view.layer.cornerRadius = 4
+        cell.editTextField.layer.cornerRadius = 4
+        cell.editTextField.setLeftPaddingPoints(10)
         cell.delegate = self
         return cell
     }

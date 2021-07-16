@@ -21,6 +21,7 @@
 		A54C659A26A1CAC600DFB096 /* FavoriteEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C659926A1CAC500DFB096 /* FavoriteEditTableViewCell.swift */; };
 		A54C659D26A1CB3500DFB096 /* EditAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C659C26A1CB3500DFB096 /* EditAlertViewController.swift */; };
 		A54C65A026A1D17D00DFB096 /* DeleteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C659F26A1D17D00DFB096 /* DeleteAlertViewController.swift */; };
+		A54C65A326A1E7D900DFB096 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C65A226A1E7D900DFB096 /* UITextField.swift */; };
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
@@ -145,6 +146,7 @@
 		A54C659926A1CAC500DFB096 /* FavoriteEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEditTableViewCell.swift; sourceTree = "<group>"; };
 		A54C659C26A1CB3500DFB096 /* EditAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlertViewController.swift; sourceTree = "<group>"; };
 		A54C659F26A1D17D00DFB096 /* DeleteAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAlertViewController.swift; sourceTree = "<group>"; };
+		A54C65A226A1E7D900DFB096 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 				BD439427252E1C820055F2E6 /* UIButton.swift */,
 				BD43942A252E1D160055F2E6 /* UIViewController.swift */,
 				BD43942D252E1E9B0055F2E6 /* UINavigationBar.swift */,
+				A54C65A226A1E7D900DFB096 /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				A54C659D26A1CB3500DFB096 /* EditAlertViewController.swift in Sources */,
 				A567962C2685D69C00CAB9F6 /* SetNoticeViewController.swift in Sources */,
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
+				A54C65A326A1E7D900DFB096 /* UITextField.swift in Sources */,
 				A54BDAAD268E0F230070BFEF /* UploadCompleteViewController.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				A5A6B84E269ADC8300B66D53 /* SearchResultViewController.swift in Sources */,

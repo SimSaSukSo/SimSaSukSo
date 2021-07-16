@@ -11,8 +11,7 @@ class FavoriteEditTableViewCell: UITableViewCell {
     
     var delegate: editCellProtocol!
     
-    @IBOutlet var view: UIView!
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var editTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
