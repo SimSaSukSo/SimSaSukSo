@@ -846,7 +846,6 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-dg-T1j">
                                                                     <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6u-WK-KEu">
                                                                     <rect key="frame" x="35" y="37.5" width="26" height="21"/>
@@ -855,6 +854,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <color key="backgroundColor" systemColor="linkColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="YNI-dg-T1j" firstAttribute="leading" secondItem="ldq-vT-Y9n" secondAttribute="leading" id="D9G-CT-Sws"/>
                                                                 <constraint firstItem="f6u-WK-KEu" firstAttribute="centerY" secondItem="ldq-vT-Y9n" secondAttribute="centerY" id="OCH-MG-xOl"/>
@@ -2205,6 +2205,9 @@
         <namedColor name="mainOrange">
             <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

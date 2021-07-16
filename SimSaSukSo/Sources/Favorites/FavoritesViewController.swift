@@ -22,7 +22,9 @@ class FavoritesViewController : UIViewController {
     
     
     @IBAction func editButtonAction(_ sender: UIButton) {
-        //print(test)
+        let editVC = self.storyboard?.instantiateViewController(identifier: "EditAlertViewController")
+        
+        self.present(editVC!, animated: false, completion: nil)
     }
     @IBAction func addButtonAction(_ sender: UIButton) {
         let addVC = self.storyboard?.instantiateViewController(identifier: "AddAlertViewController")
