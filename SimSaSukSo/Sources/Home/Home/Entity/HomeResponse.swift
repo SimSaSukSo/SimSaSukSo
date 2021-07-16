@@ -2,7 +2,7 @@
 //  HomeResponse.swift
 //  SimSaSukSo
 //
-//  Created by 이현서 on 2021/07/16.
+//  Created by 이현서 on 2021/07/17.
 //
 
 struct  HomeResponse:Decodable {
@@ -58,9 +58,3 @@ struct believePlacesDetail : Decodable {
     var tags : String
     
 }
-
-
-
-
-
-

@@ -70,7 +70,7 @@
 		A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E031267B5E94006A1F0B /* UploadViewController.swift */; };
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
-		A74AFC9F26A1AF800047E9C2 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFC9E26A1AF800047E9C2 /* HomeResponse.swift */; };
+		A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -193,7 +193,7 @@
 		A711E031267B5E94006A1F0B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		A74AFC9E26A1AF800047E9C2 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
+		A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 		A74AFC9C26A1AD400047E9C2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				A74AFC9E26A1AF800047E9C2 /* HomeResponse.swift */,
+				A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -901,11 +901,7 @@
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
-<<<<<<< HEAD
-				A74AFC9F26A1AF800047E9C2 /* HomeResponse.swift in Sources */,
-=======
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
->>>>>>> 279e14e6e4ba64ffd5ddb917fc4c2b15dff2fe14
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
@@ -917,6 +913,7 @@
 				A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */,
 				A59DDBCA26860258008D4AF9 /* BestTabOneFeedCollectionViewCell.swift in Sources */,
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,
+				A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,

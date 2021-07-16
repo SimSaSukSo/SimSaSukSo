@@ -65,7 +65,7 @@
                                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34787193251533743" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요즘 대세 호텔!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M6-br-lUU" userLabel="sliderLabelText">
-                                                                    <rect key="frame" x="16" y="135" width="72.5" height="21"/>
+                                                                    <rect key="frame" x="16" y="135" width="77" height="21"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -139,19 +139,19 @@
                                                 <rect key="frame" x="16" y="224" width="398" height="234"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 Top5 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tk1-gZ-Km9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="24"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 가장 검색이 많은 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4y-Vb-7iL">
-                                                        <rect key="frame" x="0.0" y="23" width="145" height="14"/>
+                                                        <rect key="frame" x="0.0" y="28" width="152" height="18"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                         <color key="textColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bvt-Az-qXB">
-                                                        <rect key="frame" x="0.0" y="53" width="398" height="181"/>
+                                                        <rect key="frame" x="0.0" y="62" width="398" height="172"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hGv-bS-otD">
                                                             <size key="itemSize" width="150" height="177"/>
@@ -161,7 +161,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BestSearchesCollectionViewCell" id="3PJ-Xf-LzA" customClass="BestSearchesCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="2" width="150" height="177"/>
+                                                                <rect key="frame" x="0.0" y="-2.5" width="150" height="177"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XFV-up-olR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="177"/>
@@ -176,7 +176,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7a-NB-MfZ">
-                                                                            <rect key="frame" x="0.0" y="158" width="55.5" height="14"/>
+                                                                            <rect key="frame" x="0.0" y="158" width="59" height="18"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                             <color key="textColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geg-3p-XII">
-                                                                            <rect key="frame" x="13" y="3" width="6.5" height="13"/>
+                                                                            <rect key="frame" x="13" y="3" width="6.5" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -237,13 +237,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="226"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심사숙소가 추천하는  숙소는 어디일까요 :)" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8F-aP-9vE">
-                                                                <rect key="frame" x="0.0" y="35" width="100.5" height="28"/>
+                                                                <rect key="frame" x="0.0" y="40" width="105" height="36"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                 <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="급상승 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWE-ba-phC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="101.5" height="24"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -285,7 +285,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIK-vw-Eo2">
-                                                                            <rect key="frame" x="0.0" y="208" width="55.5" height="14"/>
+                                                                            <rect key="frame" x="0.0" y="208" width="59" height="18"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                             <color key="textColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -322,19 +322,19 @@
                                                 <rect key="frame" x="16" y="748" width="398" height="234"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요가 가장 많은 게시글" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYY-k4-2rC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번 주 사람들이 가장 관심이 많은 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boi-B1-F5k">
-                                                        <rect key="frame" x="0.0" y="23" width="203.5" height="14"/>
+                                                        <rect key="frame" x="0.0" y="28" width="214" height="18"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VCz-4H-m5I">
-                                                        <rect key="frame" x="0.0" y="53" width="398" height="181"/>
+                                                        <rect key="frame" x="0.0" y="62" width="398" height="172"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gXn-43-WBi">
                                                             <size key="itemSize" width="150" height="177"/>
@@ -344,7 +344,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BestLikesCollectionViewCell" id="mEh-FH-IV1" customClass="BestLikesCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="2" width="150" height="177"/>
+                                                                <rect key="frame" x="0.0" y="-2.5" width="150" height="177"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Y2k-qO-RQX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="177"/>
@@ -359,7 +359,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-NH-04g">
-                                                                            <rect key="frame" x="0.0" y="158" width="55.5" height="14"/>
+                                                                            <rect key="frame" x="0.0" y="158" width="59" height="18"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                             <color key="textColor" red="0.25098039220000001" green="0.28235294119999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -372,7 +372,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxQ-xl-C3K">
-                                                                            <rect key="frame" x="13" y="3" width="6.5" height="13"/>
+                                                                            <rect key="frame" x="13" y="3" width="6.5" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -417,19 +417,19 @@
                                                 <rect key="frame" x="16" y="1014" width="398" height="386"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 Top5 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5Y-N8-4lF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="24"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번 주 사람들이 가장 관심이 많은 숙소는?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npv-Jp-btC">
-                                                        <rect key="frame" x="0.0" y="23" width="203.5" height="14"/>
+                                                        <rect key="frame" x="0.0" y="28" width="214" height="18"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-Nz-hyS">
-                                                        <rect key="frame" x="0.0" y="53" width="398" height="383"/>
+                                                        <rect key="frame" x="0.0" y="62" width="398" height="374"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BestBelievesTableViewCell" rowHeight="96" id="TV2-Kl-H9T" customClass="BestBelievesTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
@@ -451,16 +451,16 @@
                                                                             <rect key="frame" x="96" y="15.5" width="302" height="49"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가나다 호텔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82D-zO-9gx">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="55.5" height="14"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="18"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                                                     <color key="textColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2rl-WW-xiZ">
-                                                                                    <rect key="frame" x="0.0" y="22" width="213" height="23"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="216" height="23"/>
                                                                                     <subviews>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBP-f5-LXd">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="51" height="23"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="23"/>
                                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                             <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
                                                                                             <state key="normal" title="가성비 맛집" backgroundImage="Rectangle 1475">
@@ -468,7 +468,7 @@
                                                                                             </state>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhT-Ky-KYt">
-                                                                                            <rect key="frame" x="61" y="0.0" width="44" height="23"/>
+                                                                                            <rect key="frame" x="64" y="0.0" width="44" height="23"/>
                                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                             <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
                                                                                             <state key="normal" title="뷰 맛집" backgroundImage="Rectangle 1475">
@@ -476,7 +476,7 @@
                                                                                             </state>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ys-lN-GXY">
-                                                                                            <rect key="frame" x="115" y="0.0" width="44" height="23"/>
+                                                                                            <rect key="frame" x="118" y="0.0" width="44" height="23"/>
                                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                             <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
                                                                                             <state key="normal" title="힐링" backgroundImage="Rectangle 1475">
@@ -484,7 +484,7 @@
                                                                                             </state>
                                                                                         </button>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JD5-99-Bg1">
-                                                                                            <rect key="frame" x="169" y="0.0" width="44" height="23"/>
+                                                                                            <rect key="frame" x="172" y="0.0" width="44" height="23"/>
                                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                             <inset key="titleEdgeInsets" minX="6" minY="2" maxX="6" maxY="2"/>
                                                                                             <state key="normal" title="우정 여행" backgroundImage="Rectangle 1475">
