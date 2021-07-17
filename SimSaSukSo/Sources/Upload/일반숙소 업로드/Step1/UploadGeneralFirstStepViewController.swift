@@ -10,6 +10,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
     
     
     @IBOutlet weak var HotelNameTextField: UITextField!
+    @IBOutlet weak var searchHotelTableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
     
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
@@ -17,12 +18,29 @@ class UploadGeneralFirstStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTableviewLayout()
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showTableView), name: UITextField.textDidChangeNotification, object: nil)
         
         FirstPictureCollectionView.dataSource = self
         FirstPictureCollectionView.delegate = self
+        
+        searchHotelTableView.dataSource = self
+        searchHotelTableView.delegate = self
     }
     
+    
+    func setTableviewLayout(){
+        searchHotelTableView.isHidden = true
+        searchHotelTableView.layer.masksToBounds = false
+        searchHotelTableView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        searchHotelTableView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        searchHotelTableView.layer.shadowOpacity = 0.1
+        
+    }
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
         let filteredArray = [HotelNameTextField].filter { $0?.text == "" }
@@ -39,6 +57,21 @@ class UploadGeneralFirstStepViewController : UIViewController{
             
         }
     }
+    
+    @objc func showTableView(){
+        let filteredArray = [HotelNameTextField].filter { $0?.text == "" }
+        if !filteredArray.isEmpty {
+            searchHotelTableView.isHidden = true
+            
+        } else {
+            searchHotelTableView.isHidden = false
+            
+            
+            
+        }
+    }
+    
+    
 }
 
 extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
@@ -54,6 +87,19 @@ extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UIColl
         uploadGeneralcell.firstPictureImageView.image = photos
         
         return uploadGeneralcell
+    }
+    
+}
+
+extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let searchCell = tableView.dequeueReusableCell(withIdentifier: "searchHotelTableViewCell", for: indexPath) as! searchHotelTableViewCell
+        
+        return searchCell
     }
     
     

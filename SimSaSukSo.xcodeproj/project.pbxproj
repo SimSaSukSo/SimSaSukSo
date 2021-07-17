@@ -75,6 +75,7 @@
 		A74AB0E726A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */; };
 		A74AB0EF26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0EE26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift */; };
 		A74AB0F326A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0F226A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift */; };
+		A74AB0F626A2B8360038A1C1 /* searchHotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0F526A2B8360038A1C1 /* searchHotelTableViewCell.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -202,6 +203,7 @@
 		A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbThirdStepViewController.swift; sourceTree = "<group>"; };
 		A74AB0EE26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbFifthStepViewController.swift; sourceTree = "<group>"; };
 		A74AB0F226A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbFourthStepViewController.swift; sourceTree = "<group>"; };
+		A74AB0F526A2B8360038A1C1 /* searchHotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchHotelTableViewCell.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 			children = (
 				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
 				A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */,
+				A74AB0F526A2B8360038A1C1 /* searchHotelTableViewCell.swift */,
 			);
 			path = Step1;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 			files = (
 				A5A6B858269AEAC700B66D53 /* CustomCircularCollectionViewLayout.swift in Sources */,
 				A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */,
+				A74AB0F626A2B8360038A1C1 /* searchHotelTableViewCell.swift in Sources */,
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A75EAEB92694310800B34597 /* UploadedPictureSecondCollectionViewCell.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,

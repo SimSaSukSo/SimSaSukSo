@@ -18,26 +18,6 @@
             </objects>
             <point key="canvasLocation" x="1002" y="306"/>
         </scene>
-        <!--NetworkNavigationController-->
-        <scene sceneID="HKi-QP-2yZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="NetworkStoryboard" referencedIdentifier="NetworkNavigationController" id="Vch-ct-uAZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IVW-LI-XMi"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dxx-xY-BD0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1643.8461538461538" y="76.777251184834114"/>
-        </scene>
-        <!--SearchStoryboard-->
-        <scene sceneID="4TQ-WQ-Md1">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SearchStoryboard" id="VHS-rL-XUc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mjg-jb-t7g"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Dx-LL-eVF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1493.0769230769231" y="184.83412322274881"/>
-        </scene>
         <!--HomeStoryboard-->
         <scene sceneID="CvN-bT-0UQ">
             <objects>

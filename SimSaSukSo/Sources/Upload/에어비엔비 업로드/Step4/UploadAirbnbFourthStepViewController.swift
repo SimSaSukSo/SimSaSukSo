@@ -59,6 +59,14 @@ class UploadAirbnbFourthStepViewController : UIViewController{
         
     }
     
+    @IBAction func preButtonAction(_sender: UIButton){
+        let thirdVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbThirdStepViewController")
+        thirdVC?.modalPresentationStyle = .fullScreen
+        self.present(thirdVC!, animated: false, completion: nil)
+        
+    }
+    
+    
     @IBAction func nextButtonAction(_ sender: Any) {
         let fifthVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbFifthStepViewController")
         fifthVC?.modalPresentationStyle = .fullScreen

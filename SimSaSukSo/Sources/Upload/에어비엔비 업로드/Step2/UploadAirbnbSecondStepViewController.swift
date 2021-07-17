@@ -36,6 +36,13 @@ class UploadAirbnbSecondStepViewController : UIViewController{
         
     }
     
+    @IBAction func preButtonAction(_sender: UIButton){
+        let firstVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbFirstStepViewController")
+        firstVC?.modalPresentationStyle = .fullScreen
+        self.present(firstVC!, animated: false, completion: nil)
+        
+    }
+    
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
         let filteredArray = [locationTextfiled].filter { $0?.text == "" }
