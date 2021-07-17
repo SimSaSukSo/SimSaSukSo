@@ -72,6 +72,19 @@ class UploadGeneralFirstStepViewController : UIViewController{
     }
     
     
+    @IBAction func priorButtonAction(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+        
+    }
+    
+    @IBAction func nextButtonAction(_ sender : UIButton){
+        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")
+        secondVc?.modalPresentationStyle = .fullScreen
+        self.present(secondVc!, animated: false, completion: nil)
+        
+    }
+    
+    
 }
 
 extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{

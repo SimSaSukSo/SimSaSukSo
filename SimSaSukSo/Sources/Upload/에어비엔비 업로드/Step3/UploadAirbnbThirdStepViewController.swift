@@ -8,7 +8,7 @@
 
 import UIKit
 class UploadAirbnbThirdStepViewController : UIViewController{
-    @IBOutlet weak var SecondPictureCollectionView: UICollectionView!
+    @IBOutlet weak var ThirdPictureCollectionView: UICollectionView!
         @IBOutlet weak var startDateTextfiled: UITextField!
     @IBOutlet weak var endDateTextfiled: UITextField!
     @IBOutlet weak var priceTextfiled: UITextField!
@@ -19,8 +19,8 @@ class UploadAirbnbThirdStepViewController : UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         
-        SecondPictureCollectionView.delegate = self
-        SecondPictureCollectionView.dataSource = self
+        ThirdPictureCollectionView.delegate = self
+        ThirdPictureCollectionView.dataSource = self
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
@@ -62,7 +62,7 @@ extension UploadAirbnbThirdStepViewController : UICollectionViewDelegate,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureSecondCollectionViewCell", for: indexPath) as! UploadedPictureSecondCollectionViewCell
+        let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureThirdCollectionViewCell", for: indexPath) as! UploadedPictureThirdCollectionViewCell
         
         return uploadAircell
     }

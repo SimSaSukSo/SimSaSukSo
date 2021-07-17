@@ -13,13 +13,7 @@ class UploadAirbnbFirstStepViewController : UIViewController{
     
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
-    @IBAction func nextButtonAction(_ sender: Any) {
-        let secondVC = self.storyboard?.instantiateViewController(identifier: "AirbnbNavigator")
-        secondVC?.modalPresentationStyle = .fullScreen
-        self.present(secondVC!, animated: false, completion: nil)
-        
-        
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +39,20 @@ class UploadAirbnbFirstStepViewController : UIViewController{
             
             
         }
+    }
+    
+    @IBAction func nextButtonAction(_ sender: Any) {
+        let secondVC = self.storyboard?.instantiateViewController(identifier: "AirbnbNavigator")
+        secondVC?.modalPresentationStyle = .fullScreen
+        self.present(secondVC!, animated: false, completion: nil)
+        
+        
+    }
+    
+    @IBAction func priorButtonAction(_sender:Any){
+        self.dismiss(animated: false,completion: nil)
+        
+        
     }
 }
 

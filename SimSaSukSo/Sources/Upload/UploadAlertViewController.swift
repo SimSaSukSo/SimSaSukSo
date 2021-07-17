@@ -67,7 +67,9 @@ class UploadAlertViewController: UIViewController {
         } else {
             print("에어비앤비로")
             let airVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbFirstStepViewController")
-            changeRootViewController(airVC!)
+            
+            self.present(airVC!, animated: false, completion: nil)
+        
         }
         
     }

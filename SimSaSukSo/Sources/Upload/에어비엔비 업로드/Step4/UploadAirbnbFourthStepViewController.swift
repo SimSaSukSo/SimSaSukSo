@@ -7,7 +7,7 @@
 
 import UIKit
 class UploadAirbnbFourthStepViewController : UIViewController{
-    @IBOutlet weak var thirdPictureCollectionView: UICollectionView!
+    @IBOutlet weak var fourthPictureCollectionView: UICollectionView!
  @IBOutlet weak var usedToolCameraButton: AdaptableSizeButton!
     @IBOutlet weak var usedToolAppButton: AdaptableSizeButton!
     @IBOutlet weak var usedToolFilterButton: AdaptableSizeButton!
@@ -30,8 +30,8 @@ class UploadAirbnbFourthStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        thirdPictureCollectionView.dataSource = self
-        thirdPictureCollectionView.delegate = self
+        fourthPictureCollectionView.dataSource = self
+        fourthPictureCollectionView.delegate = self
         setButton()
     }
     
@@ -163,7 +163,7 @@ extension UploadAirbnbFourthStepViewController : UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureThirdCollectionViewCell", for: indexPath) as! UploadedPictureThirdCollectionViewCell
+        let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFourthCollectionViewCell", for: indexPath) as! UploadedPictureFourthCollectionViewCell
         
         return uploadGeneralcell
     }
