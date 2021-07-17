@@ -27,6 +27,10 @@ class SplashViewController: BaseViewController {
                 
                 self.showIndicator()
                 let input : kakaoLoginInput = kakaoLoginInput(accessToken: accessToken!)
+                
+                print("토큰:")
+                print(accessToken!)
+                
                 kakaoLoginDataManager().kakaoLogin(parameters: input, viewcontroller: self)
                 
                 print("토큰:")
@@ -43,10 +47,18 @@ class SplashViewController: BaseViewController {
 
     }
     
-    func success(){
+    func SignUpSuceess(){
         //회원가입 성공 -> 닉네임 작성 화면 이동
         let nickNameController = UIStoryboard(name: "SplashStoryboard", bundle: nil).instantiateViewController(identifier: "NicknameViewController")
         changeRootViewController(nickNameController)
+    }
+    
+    func LoginSuceess(jwt : String){
+        //로그인 성공 -> 메인 화면 이동
+        KeyCenter.LOGIN_TOKEN = jwt
+        let mainController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "TabBarController")
+        changeRootViewController(mainController)
+        
     }
     
     func fail(){

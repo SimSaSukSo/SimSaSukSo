@@ -19,7 +19,7 @@ class HomeDataManager{
                     if response.isSuccess{
                        
                         viewcontroller.success(result: response.result)
-                        //viewcontroller2.label_nickname.text = parameters.nickname
+                       
                        
                     }else{
                         viewcontroller.fail()

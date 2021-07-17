@@ -15,9 +15,19 @@ class kakaoLoginDataManager{
                 switch response.result{
                 case .success(let response):
                     if response.isSuccess{
-                        print("success")
-                        viewcontroller.success()
-                        //viewcontroller2.label_nickname.text = parameters.nickname
+                        print(response.code)
+                        if response.code == 1000{
+                            //로그인
+                            print("로그인 성공")
+                            viewcontroller.LoginSuceess(jwt: response.token!)
+                            
+                        }else if response.code == 1001{
+                            //회원 가입
+                            viewcontroller.SignUpSuceess()
+                        }
+                        
+                        
+                        
                        
                     }else{
                         

@@ -52,6 +52,12 @@ class HomeTabViewController: UIViewController {
         BestBelievesTableView.dataSource = self
         BestBelievesTableView.delegate = self
         
+        sliderCollectionView.reloadData()
+        BestSearchesCollectionView.reloadData()
+        TrendPlacesCollectionView.reloadData()
+        BestLikesCollectionView.reloadData()
+        BestBelievesTableView.reloadData()
+        
         HomeDataManager().home(region: "서울",viewcontroller: self)
         DispatchQueue.main.async {
 
