@@ -185,19 +185,48 @@ extension SelectRegionViewController : UITableViewDelegate,UITableViewDataSource
         print("클릭된 버튼 인덱스:")
         print(clickList.indices.filter({clickList[$0] == 1}))
         
+        print("안ㅍ클릭된 버튼 인덱스:")
+        print(clickList.indices.filter({clickList[$0] == 0}))
+        
+     
         
         for i in clickList.indices.filter({clickList[$0] == 1}){
             if indexPath.row == i{
                 cell.regionButton.setTitleColor(.simsasuksoGreen, for: .selected)
               //  self.regionTableView.reloadData()
-           
+
             }else{
-                cell.regionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-                
-            
+                for j in clickList.indices.filter({clickList[$0] == 0}){
+                    cell.regionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
+
+                }
+
+
+
             }
-        }
+      }
+    
         
+//        for i in 0...clickList.count-1{
+//
+//                for j in clickList.indices.filter({clickList[$0] == 1}){
+//                    if indexPath.row == j{
+//                        cell.regionButton.setTitleColor(.simsasuksoGreen, for: .selected)
+//
+//                    }
+//                }
+//
+//                for j in clickList.indices.filter({clickList[$0] == 0}){
+//                    if indexPath.row  == j{
+//                        print(j)
+//                        print("a")
+//                        cell.regionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
+//
+//
+//                    }
+//            }
+//        }
+    
         return cell
     }
 }

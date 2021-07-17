@@ -561,9 +561,9 @@
 		A7A0665A269E0BDF009A1397 /* Step2 */ = {
 			isa = PBXGroup;
 			children = (
+				A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */,
 				A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */,
 				A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */,
-				A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */,
 			);
 			path = Step2;
 			sourceTree = "<group>";
