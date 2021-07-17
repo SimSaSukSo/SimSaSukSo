@@ -1,15 +1,18 @@
 //
-//  UploadAirbnbSecondStepViewController.swift
+//  UploadAirbnbThirdStepViewController.swift
 //  SimSaSukSo
 //
-//  Created by 이현서 on 2021/07/14.
+//  Created by 이현서 on 2021/07/17.
 //
 
+
 import UIKit
-class UploadAirbnbSecondStepViewController : UIViewController{
+class UploadAirbnbThirdStepViewController : UIViewController{
     @IBOutlet weak var SecondPictureCollectionView: UICollectionView!
-    @IBOutlet weak var locationTextfiled: UITextField!
-    @IBOutlet weak var nextButton: UIButton!
+        @IBOutlet weak var startDateTextfiled: UITextField!
+    @IBOutlet weak var endDateTextfiled: UITextField!
+    @IBOutlet weak var priceTextfiled: UITextField!
+        @IBOutlet weak var nextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,25 +23,16 @@ class UploadAirbnbSecondStepViewController : UIViewController{
         SecondPictureCollectionView.dataSource = self
     }
     
-    @IBAction func locationButtonAction(_ sender: Any) {
-        let selectRegionVC = self.storyboard?.instantiateViewController(identifier: "SelectRegionViewController")
-        self.navigationController?.pushViewController(selectRegionVC!, animated: true)
-        
-        
-    }
-    
-    
     @IBAction func nextButtonAction(_ sender: Any) {
-        let thridVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbThirdStepViewController")
-        thridVC?.modalPresentationStyle = .fullScreen
-        self.present(thridVC!, animated: false, completion: nil)
-        
+        let fourthVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbFourthStepViewController")
+        fourthVC?.modalPresentationStyle = .fullScreen
+        self.present(fourthVC!, animated: false, completion: nil)
         
     }
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
-        let filteredArray = [locationTextfiled].filter { $0?.text == "" }
+        let filteredArray = [startDateTextfiled,endDateTextfiled,priceTextfiled].filter { $0?.text == "" }
         if !filteredArray.isEmpty {
             nextButton.isEnabled = false
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
@@ -54,16 +48,19 @@ class UploadAirbnbSecondStepViewController : UIViewController{
     }
 }
 
-extension UploadAirbnbSecondStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
+extension UploadAirbnbThirdStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureSecondCollectionViewCell", for: indexPath) as! UploadedPictureSecondCollectionViewCell
+        let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureSecondCollectionViewCell", for: indexPath) as! UploadedPictureSecondCollectionViewCell
         
-        return uploadGeneralcell
+        return uploadAircell
     }
+    
+    
+    
     
     
 }

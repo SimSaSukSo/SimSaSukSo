@@ -1,5 +1,6 @@
+
 //
-//  UploadGeneralFourthStepViewController.swift
+//  UploadAirbnbFifthStepViewController.swift
 //  SimSaSukSo
 //
 //  Created by 이현서 on 2021/07/06.
@@ -10,38 +11,33 @@ import UIKit
 
 
 
-class UploadGeneralFourthStepViewController : UIViewController{
+class UploadAirbnbFifthStepViewController : UIViewController{
     
-    
-    @IBOutlet weak var tagCollectionView: UICollectionView!
+        @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var advantageCollectionView: UICollectionView!
     @IBOutlet weak var disadvantageCollectionView: UICollectionView!
     
-    
-    @IBOutlet weak var tagEnterButton: UIButton!
+        @IBOutlet weak var tagEnterButton: UIButton!
     @IBOutlet weak var advantageEnterButton: UIButton!
     @IBOutlet weak var disadvantageEnterButton: UIButton!
     
-    
     @IBOutlet weak var tagTextFieldView: UIView!
     @IBOutlet weak var advantageTextFieldView: UIView!
+        @IBOutlet weak var disadvantageTextFieldView: UIView!
     
-    @IBOutlet weak var disadvantageTextFieldView: UIView!
-    
-    
-    @IBOutlet weak var tagTextField: UITextField!
+        @IBOutlet weak var tagTextField: UITextField!
     @IBOutlet weak var advantageTextField: UITextField!
     @IBOutlet weak var disadvantageTextField: UITextField!
     
+
     
-    @IBOutlet weak var stackView: UIStackView!
     var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
     
    var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
     
     var disadvantageArray = ["위치","가성비","더러움","인테리어","룸서비스","서비스 나쁨","건물노후","어매니티","부대시설","교통복잡","직접 입력하기"]
     
-    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+        @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
    
     @IBOutlet weak var advantageCollectionViewHeight: NSLayoutConstraint!
     
@@ -223,7 +219,13 @@ class UploadGeneralFourthStepViewController : UIViewController{
 
 
 
-extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICollectionViewDataSource{
+
+
+extension ViewController:UICollectionViewDelegate {
+    
+}
+
+extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     
   
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -328,7 +330,7 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate, UICo
 
 
 //MARK: - CollectionView FlowLayout
-extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLayout {
+extension UploadAirbnbFifthStepViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size : CGSize!
@@ -376,4 +378,5 @@ extension UploadGeneralFourthStepViewController: UICollectionViewDelegateFlowLay
         return 8
     }
     }
+
 

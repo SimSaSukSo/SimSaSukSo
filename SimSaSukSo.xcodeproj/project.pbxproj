@@ -72,6 +72,9 @@
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
 		A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */; };
 		A74AB0E326A1F24A0038A1C1 /* believeTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0E226A1F24A0038A1C1 /* believeTagCell.swift */; };
+		A74AB0E726A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */; };
+		A74AB0EF26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0EE26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift */; };
+		A74AB0F326A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0F226A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -196,6 +199,9 @@
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		A74AB0E226A1F24A0038A1C1 /* believeTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = believeTagCell.swift; sourceTree = "<group>"; };
+		A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbThirdStepViewController.swift; sourceTree = "<group>"; };
+		A74AB0EE26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbFifthStepViewController.swift; sourceTree = "<group>"; };
+		A74AB0F226A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbFourthStepViewController.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -449,6 +455,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		A74AB0E926A288F10038A1C1 /* Step5 */ = {
+			isa = PBXGroup;
+			children = (
+				A74AB0EE26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift */,
+			);
+			path = Step5;
+			sourceTree = "<group>";
+		};
 		A74AFC9C26A1AD400047E9C2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,6 +542,7 @@
 				A7A0665A269E0BDF009A1397 /* Step2 */,
 				A7A0665B269E0BE6009A1397 /* Step3 */,
 				A7A0665C269E0BEE009A1397 /* Step4 */,
+				A74AB0E926A288F10038A1C1 /* Step5 */,
 			);
 			name = "에어비엔비 업로드";
 			path = "에어비엔비 업로드";
@@ -571,6 +586,7 @@
 		A7A0665B269E0BE6009A1397 /* Step3 */ = {
 			isa = PBXGroup;
 			children = (
+				A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -578,6 +594,7 @@
 		A7A0665C269E0BEE009A1397 /* Step4 */ = {
 			isa = PBXGroup;
 			children = (
+				A74AB0F226A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift */,
 			);
 			path = Step4;
 			sourceTree = "<group>";
@@ -867,6 +884,7 @@
 				A55675DB26974C7D004103AA /* BestFeedsCollectionViewCell.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */,
+				A74AB0F326A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift in Sources */,
 				A55675CD26972471004103AA /* NewDataManager.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
@@ -896,6 +914,7 @@
 				A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
 				A7A06669269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift in Sources */,
+				A74AB0E726A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift in Sources */,
 				A59DDBDD26863FC8008D4AF9 /* BestFeedsViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				A7A06662269E0EEE009A1397 /* RegionTableViewCell.swift in Sources */,
@@ -918,6 +937,7 @@
 				A59DDBCA26860258008D4AF9 /* BestTabOneFeedCollectionViewCell.swift in Sources */,
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,
 				A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */,
+				A74AB0EF26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
