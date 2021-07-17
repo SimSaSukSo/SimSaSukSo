@@ -64,8 +64,8 @@ class NicknameViewController : BaseViewController{
         }
     
     func checkFormat(){
-        let mainTabBarController = UIStoryboard(name: "HomeStoryboard", bundle: nil).instantiateViewController(identifier: "HomeViewController")
-        changeRootViewController(mainTabBarController)
+        let mainController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "TabBarController")
+        changeRootViewController(mainController)
         
     }
     
