@@ -8,7 +8,8 @@
 import UIKit
 class UploadGeneralFirstStepViewController : UIViewController{
     
-    
+    var regionList : [documentsDetail] = []
+    var keyword : String = ""
     @IBOutlet weak var HotelNameTextField: UITextField!
     @IBOutlet weak var searchHotelTableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
@@ -19,6 +20,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
         super.viewDidLoad()
         
         setTableviewLayout()
+        
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
@@ -64,7 +66,10 @@ class UploadGeneralFirstStepViewController : UIViewController{
             searchHotelTableView.isHidden = true
             
         } else {
+            keyword = HotelNameTextField.text!
+            regionNameDataManager().regionName(keyword: "\(keyword)", viewcontroller: self)
             searchHotelTableView.isHidden = false
+            
             
             
             
@@ -106,16 +111,32 @@ extension UploadGeneralFirstStepViewController : UICollectionViewDelegate,UIColl
 
 extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return regionList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let searchCell = tableView.dequeueReusableCell(withIdentifier: "searchHotelTableViewCell", for: indexPath) as! searchHotelTableViewCell
         
+        searchCell.hotelNameLabel.text = regionList[indexPath.row].place_name
+        searchCell.hotelAddressLabel.text = regionList[indexPath.row].address_name
+        
         return searchCell
     }
     
     
+    
+    
+    
+    
+}
+
+//MARK:- API
+extension UploadGeneralFirstStepViewController{
+    func success(result : [documentsDetail]){
+        regionList = result
+        searchHotelTableView.reloadData()
+        
+    }
     
     
     

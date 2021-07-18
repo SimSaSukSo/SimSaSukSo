@@ -14,4 +14,7 @@ struct KeyCenter {
 
     static let header: HTTPHeaders = ["X-ACCESS-TOKEN": "\(KeyCenter.LOGIN_TOKEN)"]
     
+    
+    static let KakaoAuthorization = "KakaoAK b56fd7040b95ad4fa79c575d39fd320b"
+    static let kakaoHeader : HTTPHeaders = ["Authorization": "\(KeyCenter.KakaoAuthorization)"]
 }
