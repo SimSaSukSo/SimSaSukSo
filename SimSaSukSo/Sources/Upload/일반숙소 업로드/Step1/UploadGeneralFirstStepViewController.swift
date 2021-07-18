@@ -16,6 +16,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
     
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
+    @IBOutlet weak var regionTableviewHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +37,9 @@ class UploadGeneralFirstStepViewController : UIViewController{
     
     
     func setTableviewLayout(){
+    
         searchHotelTableView.isHidden = true
+        
         searchHotelTableView.layer.masksToBounds = false
         searchHotelTableView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         searchHotelTableView.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -134,7 +137,19 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
 extension UploadGeneralFirstStepViewController{
     func success(result : [documentsDetail]){
         regionList = result
+        if regionList.count == 0{
+            regionTableviewHeight.constant = 0
+        }else{
+            if regionList.count<11{
+                regionTableviewHeight.constant = CGFloat(regionList.count * 60)
+            }else{
+                regionTableviewHeight.constant = 500
+                
+            }
+        }
+        print(regionList.count)
         searchHotelTableView.reloadData()
+        
         
     }
     
