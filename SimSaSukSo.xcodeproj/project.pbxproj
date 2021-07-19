@@ -38,6 +38,7 @@
 		A55C463C26A60071008B4A5C /* FavoriteEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */; };
 		A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */; };
 		A55C464226A60099008B4A5C /* EditAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464126A60099008B4A5C /* EditAlertViewController.swift */; };
+		A55C464526A6030F008B4A5C /* FavoriteAddLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -177,6 +178,7 @@
 		A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEditTableViewCell.swift; sourceTree = "<group>"; };
 		A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAlertViewController.swift; sourceTree = "<group>"; };
 		A55C464126A60099008B4A5C /* EditAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlertViewController.swift; sourceTree = "<group>"; };
+		A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddLeftPadding.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				A55C464126A60099008B4A5C /* EditAlertViewController.swift */,
 				A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */,
 				A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */,
+				A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */,
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
 				A758351C2695D30700527E1A /* UploadGeneralAdvantageCollectionViewCell.swift in Sources */,
+				A55C464526A6030F008B4A5C /* FavoriteAddLeftPadding.swift in Sources */,
 				A74AB0E326A1F24A0038A1C1 /* believeTagCell.swift in Sources */,
 				A55675DB26974C7D004103AA /* BestFeedsCollectionViewCell.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
