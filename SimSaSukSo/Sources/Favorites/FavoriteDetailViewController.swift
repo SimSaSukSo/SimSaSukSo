@@ -8,7 +8,10 @@
 import UIKit
 
 class FavoriteDetailViewController: UIViewController {
-
+ 
+    var titleName: String?
+    
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var detailCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -16,10 +19,11 @@ class FavoriteDetailViewController: UIViewController {
 
         detailCollectionView.delegate = self
         detailCollectionView.dataSource = self
+    
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func filterButtonAction(_ sender: UIButton) {
     }
@@ -34,6 +38,7 @@ extension FavoriteDetailViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteDetailCollectionViewCell", for: indexPath)
+        
         
         return cell
     }
@@ -55,3 +60,4 @@ extension FavoriteDetailViewController: UICollectionViewDelegateFlowLayout {
         return 3
     }
 }
+

@@ -9,4 +9,5 @@ import UIKit
 
 class FavoriteDetailCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var imageView: UIImageView!
 }

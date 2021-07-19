@@ -8,8 +8,10 @@
 import UIKit
 
 class FavoritesViewController : UIViewController {
+
+    lazy var dataManager = FavoriteDataManager()
     
-    var test = ["하이", "하이하이", "라라라라라라"]
+    var favoriteLists: [FavoriteResult] = []
     
     @IBOutlet var favoriteCollectionView: UICollectionView!
     
@@ -18,8 +20,10 @@ class FavoritesViewController : UIViewController {
         
         favoriteCollectionView.delegate = self
         favoriteCollectionView.dataSource = self
+        
+        dataManager.favoriteList(delegate: self)
+        
     }
-    
     
     @IBAction func editButtonAction(_ sender: UIButton) {
         let editVC = self.storyboard?.instantiateViewController(identifier: "EditAlertViewController")
@@ -37,25 +41,43 @@ class FavoritesViewController : UIViewController {
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return test.count
+        return favoriteLists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteCollectionViewCell", for: indexPath) as! FavoriteCollectionViewCell
         
-        let list = test[indexPath.row]
+        let favoriteList = favoriteLists[indexPath.row]
+        let images = [cell.firstImageView, cell.secondImageView, cell.thirdImageView, cell.fourthImageView]
         
-        cell.stacView.layer.cornerRadius = 4
-        cell.titleLabel.text = list
+        cell.stackView.layer.cornerRadius = 10
+        cell.titleLabel.text = favoriteList.title
+        cell.titleLabel.tag = favoriteList.savedListIndex
+        
+        // 이미지 넣기
+        for i in 0..<favoriteList.sources.count {
+            let urlString = favoriteList.sources[i]
+            if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+               let url = URL(string: urlstring),
+               let data = try? Data(contentsOf: url) {
+                images[i]!.image = UIImage(data: data)
+            }
+        }
         
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = self.storyboard?.instantiateViewController(identifier: "FavoriteDetailViewController")
+        let cell = favoriteCollectionView.cellForItem(at: indexPath) as! FavoriteCollectionViewCell
         
+        performSegue(withIdentifier: "presentDetail", sender: indexPath.row)
+        
+        let detailVC = self.storyboard?.instantiateViewController(identifier: "FavoriteDetailViewController")
         self.navigationController?.pushViewController(detailVC!, animated: true)
+        
     }
+    
     
     
 }
@@ -74,5 +96,18 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 24
+    }
+}
+
+//MARK: - API
+extension FavoritesViewController {
+    
+    func favoriteLists(result: FavoriteResponse) {
+        favoriteLists = result.result!
+        favoriteCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }
