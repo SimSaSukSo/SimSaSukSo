@@ -12,15 +12,17 @@ protocol editCellProtocol {
 }
 
 class EditAlertViewController: UIViewController, editCellProtocol {
-
+    
+    lazy var dataManager = FavoriteDataManager()
+    
+    var text = ""
+    
     @IBOutlet var alertView: UIView!
     @IBOutlet var editTableView: UITableView!
     @IBOutlet var editTableViewHeight: NSLayoutConstraint!
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var saveButton: UIButton!
    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,8 @@ class EditAlertViewController: UIViewController, editCellProtocol {
         dismiss(animated: false, completion: nil)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
+        let input = EditRequest(savedListIndex: 3, title: text)
+        //dataManager.favoriteEdit(input, delegate: self)
         dismiss(animated: false, completion: nil)
     }
     
@@ -61,7 +65,21 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         cell.editTextField.layer.cornerRadius = 4
         cell.editTextField.setLeftPaddingPoints(10)
         cell.delegate = self
+        
+        cell.editTextField.text = text
+
         return cell
     }
     
+}
+
+//MARK: - API
+extension EditAlertViewController {
+    func favoriteEdit(result: FavoriteEditResponse) {
+        print("성공")
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
 }

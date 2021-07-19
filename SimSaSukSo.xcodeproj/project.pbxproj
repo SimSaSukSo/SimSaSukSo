@@ -39,6 +39,9 @@
 		A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */; };
 		A55C464226A60099008B4A5C /* EditAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464126A60099008B4A5C /* EditAlertViewController.swift */; };
 		A55C464526A6030F008B4A5C /* FavoriteAddLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */; };
+		A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */; };
+		A55C464E26A60D27008B4A5C /* FavoriteAddResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */; };
+		A55C465226A60D7A008B4A5C /* FavoriteAddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -179,6 +182,9 @@
 		A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAlertViewController.swift; sourceTree = "<group>"; };
 		A55C464126A60099008B4A5C /* EditAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlertViewController.swift; sourceTree = "<group>"; };
 		A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddLeftPadding.swift; sourceTree = "<group>"; };
+		A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEditResponse.swift; sourceTree = "<group>"; };
+		A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddResponse.swift; sourceTree = "<group>"; };
+		A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddRequest.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -364,8 +370,11 @@
 		A55C463126A5FFDC008B4A5C /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				A55C463226A5FFDC008B4A5C /* FavoriteEditRequest.swift */,
 				A55C463326A5FFDC008B4A5C /* FavoriteResponse.swift */,
+				A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */,
+				A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */,
+				A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */,
+				A55C463226A5FFDC008B4A5C /* FavoriteEditRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -376,6 +385,18 @@
 				A55C463826A60043008B4A5C /* MyFeedResponse.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		A55C464726A60460008B4A5C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */,
+				A55C464126A60099008B4A5C /* EditAlertViewController.swift */,
+				A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */,
+				A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */,
+				A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		A59DDBC6268601F9008D4AF9 /* Best */ = {
@@ -483,11 +504,7 @@
 				A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */,
 				A5A6B863269B5C2100B66D53 /* FavoriteDetailViewController.swift */,
 				A5A6B860269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift */,
-				A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */,
-				A55C464126A60099008B4A5C /* EditAlertViewController.swift */,
-				A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */,
-				A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */,
-				A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */,
+				A55C464726A60460008B4A5C /* Alert */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -998,6 +1015,7 @@
 				A55C463526A5FFDC008B4A5C /* FavoriteResponse.swift in Sources */,
 				A75EAEBC2694312200B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
+				A55C465226A60D7A008B4A5C /* FavoriteAddRequest.swift in Sources */,
 				A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
 				A7A06669269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift in Sources */,
@@ -1028,6 +1046,7 @@
 				A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */,
 				A74AB0EF26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
+				A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
@@ -1053,6 +1072,7 @@
 				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,
 				A55675C9269721B9004103AA /* BestResponse.swift in Sources */,
 				A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */,
+				A55C464E26A60D27008B4A5C /* FavoriteAddResponse.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
 				A58833AF268C75E20046E313 /* FeedTagCollectionViewCell.swift in Sources */,
