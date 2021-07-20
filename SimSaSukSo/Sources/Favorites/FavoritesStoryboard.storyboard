@@ -415,6 +415,7 @@
                                                                     <state key="normal" image="favorite_Del"/>
                                                                     <connections>
                                                                         <action selector="deleteButtonAction:" destination="Gng-gq-RsX" eventType="touchUpInside" id="fm5-3b-ccK"/>
+                                                                        <segue destination="is0-H6-qH9" kind="modal" identifier="toDelete" animates="NO" id="sep-71-8JT"/>
                                                                     </connections>
                                                                 </button>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="친구들이랑 호캉스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-rr-mQQ">
@@ -624,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YjY-KF-hPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3937.68115942029" y="50.892857142857139"/>
+            <point key="canvasLocation" x="4003" y="51"/>
         </scene>
     </scenes>
     <resources>

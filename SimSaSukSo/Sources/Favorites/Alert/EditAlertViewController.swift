@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol editCellProtocol {
-    func presentDeleteVC()
-}
+//protocol editCellProtocol {
+//    func presentDeleteVC()
+//}
 
-class EditAlertViewController: UIViewController, editCellProtocol {
+class EditAlertViewController: UIViewController {
     
     lazy var dataManager = FavoriteDataManager()
     
@@ -34,22 +34,22 @@ class EditAlertViewController: UIViewController, editCellProtocol {
         editTableView.delegate = self
         editTableView.dataSource = self
         
-        //editTableViewHeight.constant = CGFloat(51 * 3)
+        editTableViewHeight.constant = CGFloat(51 * 1)
        
         dataManager.favoriteList(delegate: self)
     }
     
-    func presentDeleteVC() {
-        let deleteVC = self.storyboard?.instantiateViewController(withIdentifier: "DeleteAlertViewController")
-        self.present(deleteVC!, animated: false, completion: nil)
-        
-    }
+//    func presentDeleteVC() {
+//        let deleteVC = self.storyboard?.instantiateViewController(withIdentifier: "DeleteAlertViewController")
+//        self.present(deleteVC!, animated: false, completion: nil)
+//
+//    }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: false, completion: nil)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
-        let input = EditRequest(savedListIndex: 14, title: text)
+        let input = EditRequest(savedListIndex: 14, title: "ㅇㅇㅇㅇ")
         let list = FavoriteEditRequest(list: [input])
         dataManager.favoriteEdit(list, delegate: self)
         dismiss(animated: false, completion: nil)
@@ -70,13 +70,22 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.editTextField.layer.cornerRadius = 4
         cell.editTextField.setLeftPaddingPoints(10)
-        cell.delegate = self
+        //cell.delegate = self
         
         cell.deleteButton.tag = favoriteList.savedListIndex
         cell.editTextField.text = favoriteList.title
-        text = cell.editTextField.text!
+        //text = cell.editTextField.text!
+        cell.deleteButton.setTitle(cell.editTextField.text, for: .normal)
         
         return cell
+    }
+    
+    // 찜 타이틀 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDelete" {
+            let deleteVC = segue.destination as! DeleteAlertViewController
+            deleteVC.titleLabel = (sender as! UIButton).currentTitle!
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -92,7 +101,7 @@ extension EditAlertViewController {
         editTableView.reloadData()
     }
     
-    func favoriteEdit(result: FavoriteEditResponse) {
+    func favoriteEdit(_ result: FavoriteEditResponse) {
         presentAlert(title: "타이틀 바꾸기 성공")
     }
 

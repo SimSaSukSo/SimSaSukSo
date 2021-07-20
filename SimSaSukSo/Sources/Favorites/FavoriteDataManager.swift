@@ -73,12 +73,12 @@ class FavoriteDataManager {
     
     // 찜 타이틀 수정
     func favoriteEdit(_ parameters: FavoriteEditRequest, delegate: EditAlertViewController) {
-        AF.request("\(Constant.BASE_URL)api/lists", method: .put, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        AF.request("\(Constant.BASE_URL)api/lists", method: .put, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: FavoriteEditResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.favoriteEdit(result: response)
+                    delegate.favoriteEdit(response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
