@@ -48,6 +48,7 @@ class EditAlertViewController: UIViewController, editCellProtocol {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         let input = EditRequest(savedListIndex: 3, title: text)
         //dataManager.favoriteEdit(input, delegate: self)
+        print(text)
         dismiss(animated: false, completion: nil)
     }
     
@@ -66,8 +67,9 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         cell.editTextField.setLeftPaddingPoints(10)
         cell.delegate = self
         
-        cell.editTextField.text = text
-
+        cell.editTextField.text = "ff"
+        text = cell.editTextField.text!
+        
         return cell
     }
     
