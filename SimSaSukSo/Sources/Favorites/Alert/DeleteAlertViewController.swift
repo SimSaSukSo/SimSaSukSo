@@ -9,7 +9,9 @@ import UIKit
 
 class DeleteAlertViewController: UIViewController {
     
-    let editVC = EditAlertViewController()
+    lazy var dataManager = FavoriteDataManager()
+    
+    var titleLabel: String = ""
     
     @IBOutlet var alertView: UIView!
     @IBOutlet var contentsLabel: UILabel!
@@ -23,7 +25,7 @@ class DeleteAlertViewController: UIViewController {
         alertView.layer.cornerRadius = 4
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
-        //closeButton.isHidden = true
+        contentsLabel.text = "'\(titleLabel)' 목록을 삭제하시겠습니까?"
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -32,14 +34,26 @@ class DeleteAlertViewController: UIViewController {
         self.present(editVC!, animated: false, completion: nil)
     }
     @IBAction func deleteButtonAction(_ sender: UIButton) {
-        contentsLabel.text = "‘친구들이랑 호캉스’ 목록이 삭제되었습니다."
+        contentsLabel.text = "'\(titleLabel)' 목록이 삭제되었습니다."
         deleteButton.isHidden = true
         backButton.isHidden = true
         closeButton.isHidden = false
+        dataManager.favoriteDelete(delegate: self, url: "\(Constant.BASE_URL)api/lists/14")
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
        dismiss(animated: false, completion: nil)
+       
         
     }
     
+}
+//MARK: - API
+extension DeleteAlertViewController {
+    func favoriteDelete(result: FavoriteDeleteResponse) {
+        print("\(result.message)")
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
 }

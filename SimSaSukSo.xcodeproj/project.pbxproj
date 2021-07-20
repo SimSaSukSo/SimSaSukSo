@@ -21,6 +21,8 @@
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
+		A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */; };
+		A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */; };
 		A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368E026A072AB002E232E /* SearchFilterViewController.swift */; };
 		A55368E426A07538002E232E /* GoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368E326A07538002E232E /* GoodCollectionViewCell.swift */; };
 		A55368E726A07551002E232E /* BadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55368E626A07551002E232E /* BadCollectionViewCell.swift */; };
@@ -167,6 +169,8 @@
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
+		A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailResponse.swift; sourceTree = "<group>"; };
+		A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDeleteResponse.swift; sourceTree = "<group>"; };
 		A55368E026A072AB002E232E /* SearchFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewController.swift; sourceTree = "<group>"; };
 		A55368E326A07538002E232E /* GoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		A55368E626A07551002E232E /* BadCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -377,10 +381,12 @@
 			isa = PBXGroup;
 			children = (
 				A55C463326A5FFDC008B4A5C /* FavoriteResponse.swift */,
+				A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */,
 				A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */,
 				A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */,
 				A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */,
 				A55C463226A5FFDC008B4A5C /* FavoriteEditRequest.swift */,
+				A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1034,12 +1040,17 @@
 				A7A06662269E0EEE009A1397 /* RegionTableViewCell.swift in Sources */,
 				A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */,
 				A5A6B861269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift in Sources */,
+<<<<<<< HEAD
+				A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */,
+=======
 				A74AB16126A6F0820038A1C1 /* nicknameResponse.swift in Sources */,
+>>>>>>> 0a981b6427562e63ee8750dd3d2f47084c2d76c1
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
 				A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */,
 				A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
+				A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,

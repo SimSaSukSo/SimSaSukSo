@@ -52,7 +52,7 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.stackView.layer.cornerRadius = 10
         cell.titleLabel.text = favoriteList.title
-        cell.titleLabel.tag = favoriteList.savedListIndex
+        cell.tag = favoriteList.savedListIndex
         
         // 이미지 넣기
         for i in 0..<favoriteList.sources.count {
@@ -68,14 +68,18 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = favoriteCollectionView.cellForItem(at: indexPath) as! FavoriteCollectionViewCell
-        
-        performSegue(withIdentifier: "presentDetail", sender: indexPath.row)
-        
-        let detailVC = self.storyboard?.instantiateViewController(identifier: "FavoriteDetailViewController")
-        self.navigationController?.pushViewController(detailVC!, animated: true)
-        
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = favoriteCollectionView.cellForItem(at: indexPath) as! FavoriteCollectionViewCell
+//
+//
+//    }
+    
+    // 찜 Index 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! FavoriteDetailViewController
+            detailVC.favoriteIndex = (sender as! UICollectionViewCell).tag
+        }
     }
     
     
@@ -110,4 +114,6 @@ extension FavoritesViewController {
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
     }
+    
+    
 }

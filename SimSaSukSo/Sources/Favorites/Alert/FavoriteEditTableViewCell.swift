@@ -9,9 +9,10 @@ import UIKit
 
 class FavoriteEditTableViewCell: UITableViewCell {
     
-    var delegate: editCellProtocol!
-    
+    //var delegate: editCellProtocol!
+        
     @IBOutlet var editTextField: UITextField!
+    @IBOutlet var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +26,7 @@ class FavoriteEditTableViewCell: UITableViewCell {
     }
 
     @IBAction func deleteButtonAction(_ sender: UIButton) {
-        self.delegate.presentDeleteVC()
+        //self.delegate.presentDeleteVC()
     }
     
 }
