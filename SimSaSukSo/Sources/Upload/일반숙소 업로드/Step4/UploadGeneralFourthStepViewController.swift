@@ -142,9 +142,10 @@ class UploadGeneralFourthStepViewController : UIViewController{
     }
     
     @IBAction func priorButtonAction(_ sender: Any) {
-        let thridhVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController")
-        thridhVc?.modalPresentationStyle = .fullScreen
-        self.present(thridhVc!, animated: false, completion: nil)
+//        let thridhVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController")
+//        thridhVc?.modalPresentationStyle = .fullScreen
+//        self.present(thridhVc!, animated: false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         
     }
         @IBAction func nextButtonAction(_ sender : UIButton){

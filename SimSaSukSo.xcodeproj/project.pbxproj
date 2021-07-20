@@ -610,11 +610,11 @@
 		A758352526998B8200527E1A /* Step1 */ = {
 			isa = PBXGroup;
 			children = (
-				A74AB10626A403F90038A1C1 /* Entity */,
-				A74AB10526A403E70038A1C1 /* DataManager */,
 				A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */,
 				A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */,
 				A74AB0F526A2B8360038A1C1 /* searchHotelTableViewCell.swift */,
+				A74AB10626A403F90038A1C1 /* Entity */,
+				A74AB10526A403E70038A1C1 /* DataManager */,
 			);
 			path = Step1;
 			sourceTree = "<group>";

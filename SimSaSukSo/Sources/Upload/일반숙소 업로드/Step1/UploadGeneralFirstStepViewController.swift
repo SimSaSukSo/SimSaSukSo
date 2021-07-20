@@ -6,8 +6,16 @@
 //
 
 import UIKit
+
+protocol SendDataDelegate {
+
+    func sendData(data: String)
+
+}
+
 class UploadGeneralFirstStepViewController : UIViewController{
     
+    var delegate: SendDataDelegate?
     var regionList : [documentsDetail] = []
     var keyword : String = ""
     @IBOutlet weak var HotelNameTextField: UITextField!
@@ -17,12 +25,13 @@ class UploadGeneralFirstStepViewController : UIViewController{
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
     @IBOutlet weak var regionTableviewHeight: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setTableviewLayout()
         
-        
+     
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
@@ -86,9 +95,19 @@ class UploadGeneralFirstStepViewController : UIViewController{
     }
     
     @IBAction func nextButtonAction(_ sender : UIButton){
-        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")
-        secondVc?.modalPresentationStyle = .fullScreen
-        self.present(secondVc!, animated: false, completion: nil)
+        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")as!UploadGeneralSecondStepViewController
+        secondVc.modalPresentationStyle = .fullScreen
+        
+        
+        
+        delegate?.sendData(data: HotelNameTextField.text!)
+        
+        
+        self.present(secondVc, animated: false, completion: nil)
+        
+        
+        
+        
         
     }
     
@@ -124,6 +143,13 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
         searchCell.hotelAddressLabel.text = regionList[indexPath.row].address_name
         
         return searchCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       
+        HotelNameTextField.text = regionList[indexPath.row].place_name
+        searchHotelTableView.isHidden = true
     }
     
     
