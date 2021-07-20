@@ -71,8 +71,6 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = favoriteCollectionView.cellForItem(at: indexPath) as! FavoriteCollectionViewCell
         
-        performSegue(withIdentifier: "presentDetail", sender: indexPath.row)
-        
         let detailVC = self.storyboard?.instantiateViewController(identifier: "FavoriteDetailViewController")
         self.navigationController?.pushViewController(detailVC!, animated: true)
         

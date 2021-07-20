@@ -87,10 +87,10 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aSE-bg-aa9">
                                                             <rect key="frame" x="0.0" y="0.0" width="173" height="82"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eS8-He-Rsr">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eS8-He-Rsr">
                                                                     <rect key="frame" x="0.0" y="0.0" width="85.5" height="82"/>
                                                                 </imageView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vz8-Bu-u2U">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vz8-Bu-u2U">
                                                                     <rect key="frame" x="87.5" y="0.0" width="85.5" height="82"/>
                                                                 </imageView>
                                                             </subviews>
@@ -101,10 +101,10 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HpY-YG-C8M">
                                                             <rect key="frame" x="0.0" y="82" width="173" height="82"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-EU-g5g">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-EU-g5g">
                                                                     <rect key="frame" x="0.0" y="0.0" width="85.5" height="82"/>
                                                                 </imageView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qm2-D9-vgT">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qm2-D9-vgT">
                                                                     <rect key="frame" x="87.5" y="0.0" width="85.5" height="82"/>
                                                                 </imageView>
                                                             </subviews>
@@ -129,7 +129,7 @@
                                             <outlet property="firstImageView" destination="eS8-He-Rsr" id="O2O-Ni-hOR"/>
                                             <outlet property="fourthImageView" destination="Qm2-D9-vgT" id="3jg-7f-g7h"/>
                                             <outlet property="secondImageView" destination="Vz8-Bu-u2U" id="NSz-nt-Sn2"/>
-                                            <outlet property="stacView" destination="vBy-tX-vhK" id="jyX-Dt-FBo"/>
+                                            <outlet property="stackView" destination="vBy-tX-vhK" id="9XW-fo-Gp8"/>
                                             <outlet property="thirdImageView" destination="Oxv-EU-g5g" id="aI0-qR-dF5"/>
                                             <outlet property="titleLabel" destination="Wuw-fT-GoC" id="Vf7-Qs-BRN"/>
                                         </connections>
@@ -201,7 +201,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIP-tu-pH5">
                                 <rect key="frame" x="0.0" y="130" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dcM-a8-dmu">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dcM-a8-dmu">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -214,8 +214,22 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EkD-XK-8JX">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ud-E2-em9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5ud-E2-em9" secondAttribute="trailing" id="FeX-bK-k7y"/>
+                                                <constraint firstAttribute="bottom" secondItem="5ud-E2-em9" secondAttribute="bottom" id="GKm-MN-fmx"/>
+                                                <constraint firstItem="5ud-E2-em9" firstAttribute="leading" secondItem="EkD-XK-8JX" secondAttribute="leading" id="ShC-YJ-jY5"/>
+                                                <constraint firstItem="5ud-E2-em9" firstAttribute="top" secondItem="EkD-XK-8JX" secondAttribute="top" id="yZR-Wh-up0"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="5ud-E2-em9" id="O4v-Am-Mj1"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -237,6 +251,7 @@
                     </view>
                     <connections>
                         <outlet property="detailCollectionView" destination="yIP-tu-pH5" id="CWQ-0D-NLl"/>
+                        <outlet property="titleLabel" destination="thx-Sz-sZi" id="hJV-7f-SCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hch-Kc-Ntt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

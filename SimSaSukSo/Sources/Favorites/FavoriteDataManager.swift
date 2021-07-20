@@ -24,6 +24,23 @@ class FavoriteDataManager {
                 }
             }
     }
+    
+    // 특정 찜 목록 조회
+    func favoriteDetail(delegate: FavoriteDetailViewController, url: String) {
+        //let url = "\(Constant.BASE_URL)api/lists"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: FavoriteDetailResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.favoriteDetail(result: response.result!)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
+    
     // 찜 목록 생성
     func favoriteAdd(_ parameters: FavoriteAddRequest, delegate: AddAlertViewController) {
         AF.request("\(Constant.BASE_URL)api/lists", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)

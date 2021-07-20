@@ -8,8 +8,11 @@
 import UIKit
 
 class FavoriteDetailViewController: UIViewController {
- 
-    var titleName: String?
+    
+    lazy var dataManager = FavoriteDataManager()
+    
+    var favoriteDetailResult: FavoriteDetailResult?
+    var favoriteDetailFeeds: [FavoriteDetailFeeds] = []
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var detailCollectionView: UICollectionView!
@@ -19,6 +22,8 @@ class FavoriteDetailViewController: UIViewController {
 
         detailCollectionView.delegate = self
         detailCollectionView.dataSource = self
+        
+        dataManager.favoriteDetail(delegate: self, url: "\(Constant.BASE_URL)api/lists/3")
     
     }
     
@@ -33,12 +38,21 @@ class FavoriteDetailViewController: UIViewController {
 //MARK: - CollectionView
 extension FavoriteDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return favoriteDetailFeeds.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteDetailCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteDetailCollectionViewCell", for: indexPath) as! FavoriteDetailCollectionViewCell
         
+        let favoriteDetailFeed = favoriteDetailFeeds[indexPath.row]
+        
+        // 이미지 URL 가져오기
+        let urlString = favoriteDetailFeed.source
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.imageView.image = UIImage(data: data)
+        }
         
         return cell
     }
@@ -61,3 +75,14 @@ extension FavoriteDetailViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - API
+extension FavoriteDetailViewController {
+    func favoriteDetail(result: FavoriteDetailResult) {
+        titleLabel.text = result.title
+        favoriteDetailFeeds = result.feeds!
+        detailCollectionView.reloadData()
+    }
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
