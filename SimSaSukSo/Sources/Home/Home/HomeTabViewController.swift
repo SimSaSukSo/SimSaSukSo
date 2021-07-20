@@ -264,7 +264,7 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
         believecell.layer.cornerRadius = 4
         
         believecell.BestBelievesNameLabel.text = believePlace[indexPath.row].name
-        believecell.cellDelegate = self
+      //  believecell.cellDelegate = self
         
         let urlString = believePlace[indexPath.row].source
         if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),

@@ -95,7 +95,7 @@
 		A74AB10B26A405C10038A1C1 /* regionNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10A26A405C10038A1C1 /* regionNameResponse.swift */; };
 		A74AB15826A6AB860038A1C1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */; };
 		A74AB15E26A6EF860038A1C1 /* nicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */; };
-		A74AB16126A6F0820038A1C1 /* nicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB16026A6F0820038A1C1 /* nicknameResponse.swift */; };
+		A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB16526A707300038A1C1 /* nicknameResponse.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -244,6 +244,7 @@
 		A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameDataManager.swift; sourceTree = "<group>"; };
 		A74AB16026A6F0820038A1C1 /* nicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameResponse.swift; sourceTree = "<group>"; };
+		A74AB16526A707300038A1C1 /* nicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameResponse.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -662,6 +663,7 @@
 			children = (
 				A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */,
 				A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */,
+				A74AB16526A707300038A1C1 /* nicknameResponse.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -974,6 +976,7 @@
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A75EAEB92694310800B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
+				A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */,
 				A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */,
 				A55675C1269720B7004103AA /* BestDataManager.swift in Sources */,
 				A55C462F26A5FFC1008B4A5C /* FavoriteDataManager.swift in Sources */,
@@ -1040,11 +1043,7 @@
 				A7A06662269E0EEE009A1397 /* RegionTableViewCell.swift in Sources */,
 				A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */,
 				A5A6B861269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift in Sources */,
-<<<<<<< HEAD
 				A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */,
-=======
-				A74AB16126A6F0820038A1C1 /* nicknameResponse.swift in Sources */,
->>>>>>> 0a981b6427562e63ee8750dd3d2f47084c2d76c1
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
 				A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */,
 				A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */,
