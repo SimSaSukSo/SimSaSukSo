@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func backButtonAction(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {

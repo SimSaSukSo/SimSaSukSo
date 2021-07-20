@@ -20,9 +20,7 @@ class SetNoticeViewController: UIViewController {
 
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingAlertViewController")
-
-        self.present(alertVC!, animated: false, completion: nil)
+        dismiss(animated: false, completion: nil)
         
     }
     

@@ -19,24 +19,21 @@ class SettingViewController : UIViewController {
 
     @IBAction func myFeedButton(_ sender: UIButton) {
         let myFeedNaviVC = self.storyboard?.instantiateViewController(withIdentifier: "MyFeedNavi")
-        myFeedNaviVC?.modalPresentationStyle = .fullScreen
-        self.present(myFeedNaviVC!, animated: true, completion: nil)
+        self.present(myFeedNaviVC!, animated: false, completion: nil)
         
     }
     
     @IBAction func setNoticeButton(_ sender: UIButton) {
         
         let setNoticeVC = self.storyboard?.instantiateViewController(withIdentifier: "SetNoticeViewController")
-        setNoticeVC?.modalPresentationStyle = .fullScreen
-        self.present(setNoticeVC!, animated: true, completion: nil)
+        self.present(setNoticeVC!, animated: false, completion: nil)
         
     }
     
     @IBAction func profileChangeButton(_ sender: UIButton) {
         
         let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")
-        profileVC?.modalPresentationStyle = .fullScreen
-        self.present(profileVC!, animated: true, completion: nil)
+        self.present(profileVC!, animated: false, completion: nil)
     }
     
     
