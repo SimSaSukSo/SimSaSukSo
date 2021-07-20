@@ -91,6 +91,7 @@
 		A74AB10226A2D3320038A1C1 /* UploadedPictureSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10126A2D3320038A1C1 /* UploadedPictureSecondCollectionViewCell.swift */; };
 		A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10726A404160038A1C1 /* regionNameDataManager.swift */; };
 		A74AB10B26A405C10038A1C1 /* regionNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10A26A405C10038A1C1 /* regionNameResponse.swift */; };
+		A74AB15826A6AB860038A1C1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -234,6 +235,7 @@
 		A74AB10126A2D3320038A1C1 /* UploadedPictureSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		A74AB10726A404160038A1C1 /* regionNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionNameDataManager.swift; sourceTree = "<group>"; };
 		A74AB10A26A405C10038A1C1 /* regionNameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionNameResponse.swift; sourceTree = "<group>"; };
+		A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -592,8 +594,9 @@
 		A758352126998B4400527E1A /* Step3 */ = {
 			isa = PBXGroup;
 			children = (
-				A75EAEB82694310800B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
 				A75EAEA5269367CB00B34597 /* UploadGeneralThirdStepViewController.swift */,
+				A75EAEB82694310800B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
+				A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 				A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
+				A74AB15826A6AB860038A1C1 /* DatePickerViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				A5A6B868269B5F9400B66D53 /* AddAlertViewController.swift in Sources */,
 				A55C463C26A60071008B4A5C /* FavoriteEditTableViewCell.swift in Sources */,
