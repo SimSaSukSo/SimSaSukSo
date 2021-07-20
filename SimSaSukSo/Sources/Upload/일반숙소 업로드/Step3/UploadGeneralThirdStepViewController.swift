@@ -7,14 +7,24 @@
 
 import UIKit
 class UploadGeneralThirdStepViewController : UIViewController{
-            
+    
+    var startDate : String = ""
+    
+    @IBOutlet weak var startDateButton: UIButton?
+    @IBOutlet weak var endDateButton: UIButton!
+    
     @IBOutlet weak var ThirdPictureCollectionView: UICollectionView!
     
-    @IBOutlet weak var startDateTextfiled: UITextField!
-    @IBOutlet weak var endDateTextfiled: UITextField!
+   
     @IBOutlet weak var priceTextfiled: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        nextButton.setTitle(startDate, for: .normal)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +37,7 @@ class UploadGeneralThirdStepViewController : UIViewController{
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
-        let filteredArray = [startDateTextfiled,endDateTextfiled,priceTextfiled].filter { $0?.text == "" }
+        let filteredArray = [priceTextfiled].filter { $0?.text == "" }
         if !filteredArray.isEmpty {
             nextButton.isEnabled = false
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
@@ -42,10 +52,19 @@ class UploadGeneralThirdStepViewController : UIViewController{
         }
     }
     
+    @IBAction func startDateButtonAction(_ sender: Any) {
+        let startVC = self.storyboard?.instantiateViewController(identifier: "DatePickerViewController")as!DatePickerViewController
+        
+        self.present(startVC, animated: false, completion: nil)
+        
+    }
+    
+    @IBAction func endDateButtonAction(_ sender: Any) {
+    }
+    
+    
     @IBAction func priorButtonAction(_ sender: Any) {
-//        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")
-//        secondVc?.modalPresentationStyle = .fullScreen
-//        self.present(secondVc!, animated: false, completion: nil)
+
         self.dismiss(animated: false, completion: nil)
         
     }
