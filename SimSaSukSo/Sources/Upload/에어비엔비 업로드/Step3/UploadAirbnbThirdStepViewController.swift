@@ -31,9 +31,7 @@ class UploadAirbnbThirdStepViewController : UIViewController{
     }
     
     @IBAction func preButtonAction(_sender: UIButton){
-        let secondVC = self.storyboard?.instantiateViewController(identifier: "AirbnbNavigator")
-        secondVC?.modalPresentationStyle = .fullScreen
-        self.present(secondVC!, animated: false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         
         
     }

@@ -25,6 +25,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
     @IBOutlet weak var regionTableviewHeight: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,11 +101,13 @@ class UploadGeneralFirstStepViewController : UIViewController{
         
         
         delegate?.sendData(data: HotelNameTextField.text!)
-   
-
         
         
         self.present(secondVc, animated: false, completion: nil)
+        
+        
+        
+        
         
     }
     

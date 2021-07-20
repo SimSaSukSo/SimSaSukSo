@@ -8,6 +8,10 @@
 import UIKit
 class UploadGeneralSecondStepViewController : UIViewController{
     
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let firstVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFirstStepViewController")as!UploadGeneralFirstStepViewController
@@ -22,11 +26,15 @@ class UploadGeneralSecondStepViewController : UIViewController{
     
     @IBOutlet weak var secondCollectionView: UICollectionView!
     
+    
     @IBAction func priorButtonAction(_ sender: Any) {
-        let firstVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFirstStepViewController")
+//        let firstVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFirstStepViewController")
 //        firstVc?.modalPresentationStyle = .fullScreen
+//        
 //        self.present(firstVc!, animated: false, completion: nil)
-        changeRootViewController(firstVc!)
+       // changeRootViewController(firstVc!)
+        
+        self.dismiss(animated: false, completion: nil)
         
     }
     

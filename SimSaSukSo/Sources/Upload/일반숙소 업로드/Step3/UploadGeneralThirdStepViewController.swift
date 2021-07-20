@@ -43,9 +43,10 @@ class UploadGeneralThirdStepViewController : UIViewController{
     }
     
     @IBAction func priorButtonAction(_ sender: Any) {
-        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")
-        secondVc?.modalPresentationStyle = .fullScreen
-        self.present(secondVc!, animated: false, completion: nil)
+//        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")
+//        secondVc?.modalPresentationStyle = .fullScreen
+//        self.present(secondVc!, animated: false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         
     }
     
