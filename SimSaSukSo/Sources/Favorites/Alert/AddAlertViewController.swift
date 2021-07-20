@@ -9,6 +9,8 @@ import UIKit
 
 class AddAlertViewController: UIViewController {
     
+    lazy var dataManager = FavoriteDataManager()
+    
     let favoritesViewController = FavoritesViewController()
 
     @IBOutlet var alertView: UIView!
@@ -26,8 +28,21 @@ class AddAlertViewController: UIViewController {
         dismiss(animated: false, completion: nil)
     }
     @IBAction func addButtonAction(_ sender: UIButton) {
+        let title = addTextField.text!
+        let input = FavoriteAddRequest(title: title)
+        dataManager.favoriteAdd(input, delegate: self)
         dismiss(animated: false, completion: nil)
     }
     
 
+}
+//MARK: - API
+extension AddAlertViewController {
+    func favoriteAdd(result: FavoriteAddResponse) {
+        print("d")
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
 }

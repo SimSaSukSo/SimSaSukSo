@@ -8,13 +8,13 @@
 import UIKit
 
 class FavoriteCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var stacView: UIStackView!
+    @IBOutlet var stackView: UIStackView!
     @IBOutlet var firstImageView: UIImageView!
     @IBOutlet var secondImageView: UIImageView!
     @IBOutlet var thirdImageView: UIImageView!
     @IBOutlet var fourthImageView: UIImageView!
     
-    
+
 }

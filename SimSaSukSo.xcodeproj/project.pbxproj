@@ -31,6 +31,17 @@
 		A55675D126972485004103AA /* NewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675D026972485004103AA /* NewResponse.swift */; };
 		A55675DB26974C7D004103AA /* BestFeedsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675DA26974C7D004103AA /* BestFeedsCollectionViewCell.swift */; };
 		A55675DF26975427004103AA /* NewFeedsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55675DE26975427004103AA /* NewFeedsCollectionViewCell.swift */; };
+		A55C462F26A5FFC1008B4A5C /* FavoriteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C462E26A5FFC1008B4A5C /* FavoriteDataManager.swift */; };
+		A55C463426A5FFDC008B4A5C /* FavoriteEditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463226A5FFDC008B4A5C /* FavoriteEditRequest.swift */; };
+		A55C463526A5FFDC008B4A5C /* FavoriteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463326A5FFDC008B4A5C /* FavoriteResponse.swift */; };
+		A55C463926A60044008B4A5C /* MyFeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463826A60043008B4A5C /* MyFeedResponse.swift */; };
+		A55C463C26A60071008B4A5C /* FavoriteEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */; };
+		A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */; };
+		A55C464226A60099008B4A5C /* EditAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464126A60099008B4A5C /* EditAlertViewController.swift */; };
+		A55C464526A6030F008B4A5C /* FavoriteAddLeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */; };
+		A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */; };
+		A55C464E26A60D27008B4A5C /* FavoriteAddResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */; };
+		A55C465226A60D7A008B4A5C /* FavoriteAddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */; };
 		A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961C2685D3DB00CAB9F6 /* PageViewController.swift */; };
 		A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */; };
 		A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */; };
@@ -163,6 +174,17 @@
 		A55675D026972485004103AA /* NewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewResponse.swift; sourceTree = "<group>"; };
 		A55675DA26974C7D004103AA /* BestFeedsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFeedsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A55675DE26975427004103AA /* NewFeedsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A55C462E26A5FFC1008B4A5C /* FavoriteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDataManager.swift; sourceTree = "<group>"; };
+		A55C463226A5FFDC008B4A5C /* FavoriteEditRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEditRequest.swift; sourceTree = "<group>"; };
+		A55C463326A5FFDC008B4A5C /* FavoriteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteResponse.swift; sourceTree = "<group>"; };
+		A55C463826A60043008B4A5C /* MyFeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFeedResponse.swift; sourceTree = "<group>"; };
+		A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEditTableViewCell.swift; sourceTree = "<group>"; };
+		A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAlertViewController.swift; sourceTree = "<group>"; };
+		A55C464126A60099008B4A5C /* EditAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlertViewController.swift; sourceTree = "<group>"; };
+		A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddLeftPadding.swift; sourceTree = "<group>"; };
+		A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEditResponse.swift; sourceTree = "<group>"; };
+		A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddResponse.swift; sourceTree = "<group>"; };
+		A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddRequest.swift; sourceTree = "<group>"; };
 		A567961C2685D3DB00CAB9F6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedDetailViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +328,7 @@
 		A54C34F4268B5DE400D6F839 /* 내 피드 보기 */ = {
 			isa = PBXGroup;
 			children = (
+				A55C463726A60043008B4A5C /* Entity */,
 				A56796252685D65700CAB9F6 /* MyFeedViewController.swift */,
 				A567961F2685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift */,
 				A56796222685D5A800CAB9F6 /* MyFeedDetailViewController.swift */,
@@ -342,6 +365,38 @@
 				A55675D026972485004103AA /* NewResponse.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		A55C463126A5FFDC008B4A5C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A55C463326A5FFDC008B4A5C /* FavoriteResponse.swift */,
+				A55C464D26A60D27008B4A5C /* FavoriteAddResponse.swift */,
+				A55C465126A60D7A008B4A5C /* FavoriteAddRequest.swift */,
+				A55C464926A6088C008B4A5C /* FavoriteEditResponse.swift */,
+				A55C463226A5FFDC008B4A5C /* FavoriteEditRequest.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A55C463726A60043008B4A5C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A55C463826A60043008B4A5C /* MyFeedResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A55C464726A60460008B4A5C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */,
+				A55C464126A60099008B4A5C /* EditAlertViewController.swift */,
+				A55C463B26A60071008B4A5C /* FavoriteEditTableViewCell.swift */,
+				A55C464426A6030F008B4A5C /* FavoriteAddLeftPadding.swift */,
+				A55C463E26A60087008B4A5C /* DeleteAlertViewController.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		A59DDBC6268601F9008D4AF9 /* Best */ = {
@@ -442,12 +497,14 @@
 		A711E01A267B5C9F006A1F0B /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				A55C462E26A5FFC1008B4A5C /* FavoriteDataManager.swift */,
+				A55C463126A5FFDC008B4A5C /* Entity */,
 				A711E025267B5DF5006A1F0B /* FavoritesStoryboard.storyboard */,
 				A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */,
 				A5A6B85D269B562D00B66D53 /* FavoriteCollectionViewCell.swift */,
 				A5A6B863269B5C2100B66D53 /* FavoriteDetailViewController.swift */,
 				A5A6B860269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift */,
-				A5A6B867269B5F9400B66D53 /* AddAlertViewController.swift */,
+				A55C464726A60460008B4A5C /* Alert */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -904,6 +961,7 @@
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
 				A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */,
 				A55675C1269720B7004103AA /* BestDataManager.swift in Sources */,
+				A55C462F26A5FFC1008B4A5C /* FavoriteDataManager.swift in Sources */,
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */,
@@ -921,12 +979,15 @@
 				A59DDBD926863327008D4AF9 /* BestPageViewController.swift in Sources */,
 				A56796262685D65700CAB9F6 /* MyFeedViewController.swift in Sources */,
 				A758351C2695D30700527E1A /* UploadGeneralAdvantageCollectionViewCell.swift in Sources */,
+				A55C464526A6030F008B4A5C /* FavoriteAddLeftPadding.swift in Sources */,
 				A74AB0E326A1F24A0038A1C1 /* believeTagCell.swift in Sources */,
 				A55675DB26974C7D004103AA /* BestFeedsCollectionViewCell.swift in Sources */,
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */,
+				A55C464226A60099008B4A5C /* EditAlertViewController.swift in Sources */,
 				A74AB0F326A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift in Sources */,
 				A55675CD26972471004103AA /* NewDataManager.swift in Sources */,
+				A55C463926A60044008B4A5C /* MyFeedResponse.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
@@ -951,8 +1012,10 @@
 				A75EAEAA2693680700B34597 /* UploadGeneralFourthStepViewController.swift in Sources */,
 				A55368E426A07538002E232E /* GoodCollectionViewCell.swift in Sources */,
 				A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */,
+				A55C463526A5FFDC008B4A5C /* FavoriteResponse.swift in Sources */,
 				A75EAEBC2694312200B34597 /* UploadedPictureFourthCollectionViewCell.swift in Sources */,
 				A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */,
+				A55C465226A60D7A008B4A5C /* FavoriteAddRequest.swift in Sources */,
 				A5A6B85B269B4B3500B66D53 /* SearchResultTableViewCell.swift in Sources */,
 				A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */,
 				A7A06669269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift in Sources */,
@@ -963,6 +1026,7 @@
 				A75EAEB52694064700B34597 /* DesignableSlider.swift in Sources */,
 				A5A6B861269B5BF200B66D53 /* FavoriteDetailCollectionViewCell.swift in Sources */,
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
+				A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */,
 				A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
@@ -982,10 +1046,12 @@
 				A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */,
 				A74AB0EF26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
+				A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				A5A6B868269B5F9400B66D53 /* AddAlertViewController.swift in Sources */,
+				A55C463C26A60071008B4A5C /* FavoriteEditTableViewCell.swift in Sources */,
 				A5A6B864269B5C2100B66D53 /* FavoriteDetailViewController.swift in Sources */,
 				A74AB0FE26A2D2C30038A1C1 /* UploadGeneralSecondStepViewController.swift in Sources */,
 				A567962C2685D69C00CAB9F6 /* SetNoticeViewController.swift in Sources */,
@@ -996,6 +1062,7 @@
 				A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */,
 				A75EAEA6269367CB00B34597 /* UploadGeneralThirdStepViewController.swift in Sources */,
 				A56796232685D5A800CAB9F6 /* MyFeedDetailViewController.swift in Sources */,
+				A55C463426A5FFDC008B4A5C /* FavoriteEditRequest.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
 				A766CCAA268B9E1500565095 /* BestBelievesTableViewCell.swift in Sources */,
 				A7A066522699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift in Sources */,
@@ -1005,6 +1072,7 @@
 				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,
 				A55675C9269721B9004103AA /* BestResponse.swift in Sources */,
 				A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */,
+				A55C464E26A60D27008B4A5C /* FavoriteAddResponse.swift in Sources */,
 				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
 				A58833AF268C75E20046E313 /* FeedTagCollectionViewCell.swift in Sources */,
