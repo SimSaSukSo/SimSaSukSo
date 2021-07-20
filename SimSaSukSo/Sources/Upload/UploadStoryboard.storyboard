@@ -4753,7 +4753,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j76-1B-Jw2">
-                                                <rect key="frame" x="16" y="98" width="382" height="65"/>
+                                                <rect key="frame" x="16" y="90" width="382" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-Dv-wgm">
                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
@@ -4762,15 +4762,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 위치를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUF-R9-RCe">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="locationTextField:" destination="6Zr-Qu-WXd" eventType="editingDidEnd" id="CXO-N4-0ia"/>
-                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrc-TV-MII">
-                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="dL3-qj-QZg"/>
@@ -4791,7 +4788,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9F-ew-hT9">
-                                                <rect key="frame" x="16" y="195" width="382" height="65"/>
+                                                <rect key="frame" x="16" y="187" width="382" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-x0-ZwH">
                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
@@ -4800,15 +4797,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgk-qp-5WK">
-                                                        <rect key="frame" x="0.0" y="37" width="366" height="21"/>
+                                                        <rect key="frame" x="0.0" y="37" width="366" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="nameTextField:" destination="6Zr-Qu-WXd" eventType="editingDidEnd" id="LnG-Fc-7gt"/>
-                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZZ-jW-ade">
-                                                        <rect key="frame" x="0.0" y="62" width="366" height="1"/>
+                                                        <rect key="frame" x="0.0" y="63.5" width="366" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="THv-i3-KZq"/>
@@ -4829,7 +4823,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-1i-rba">
-                                                <rect key="frame" x="16" y="292" width="398" height="186"/>
+                                                <rect key="frame" x="16" y="284" width="398" height="186"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeR-VH-7SU">
                                                         <rect key="frame" x="0.0" y="0.0" width="80.5" height="21"/>
@@ -4896,7 +4890,7 @@
                                             <constraint firstAttribute="trailing" secondItem="e1r-1i-rba" secondAttribute="trailing" id="W84-Dy-kYh"/>
                                             <constraint firstItem="XDk-FA-7iS" firstAttribute="top" secondItem="hSQ-Ay-T93" secondAttribute="top" constant="44" id="YrH-GQ-PSO"/>
                                             <constraint firstItem="j76-1B-Jw2" firstAttribute="leading" secondItem="hSQ-Ay-T93" secondAttribute="leading" constant="16" id="dCz-ei-BLL"/>
-                                            <constraint firstItem="j76-1B-Jw2" firstAttribute="top" secondItem="XDk-FA-7iS" secondAttribute="bottom" constant="24" id="jMT-7M-BB1"/>
+                                            <constraint firstItem="j76-1B-Jw2" firstAttribute="top" secondItem="XDk-FA-7iS" secondAttribute="bottom" constant="16" id="jMT-7M-BB1"/>
                                             <constraint firstItem="x9F-ew-hT9" firstAttribute="top" secondItem="j76-1B-Jw2" secondAttribute="bottom" constant="32" id="kog-6P-Dwf"/>
                                             <constraint firstItem="XDk-FA-7iS" firstAttribute="leading" secondItem="hSQ-Ay-T93" secondAttribute="leading" constant="16" id="luV-aq-M57"/>
                                             <constraint firstAttribute="height" constant="1500" id="pTl-AG-ItA"/>
@@ -4979,6 +4973,7 @@
                     <navigationItem key="navigationItem" id="dWM-JM-ZuP"/>
                     <connections>
                         <outlet property="locationTextField" destination="eUF-R9-RCe" id="J77-3u-fkA"/>
+                        <outlet property="nameTextField" destination="dgk-qp-5WK" id="xgy-48-Oii"/>
                         <outlet property="secondCollectionView" destination="nus-bd-muk" id="ppS-K4-Rp7"/>
                     </connections>
                 </viewController>
