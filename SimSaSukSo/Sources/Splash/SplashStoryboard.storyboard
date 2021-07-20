@@ -196,6 +196,12 @@
                                     <constraint firstAttribute="height" constant="1" id="rPT-PR-0Rr"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQg-Fj-kbe">
+                                <rect key="frame" x="16" y="177.5" width="382" height="0.0"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                <color key="textColor" red="0.94901960784313721" green="0.12156862745098039" blue="0.12156862745098039" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X1g-T1-5US"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -210,7 +216,10 @@
                             <constraint firstItem="Fdv-Xu-3L2" firstAttribute="leading" secondItem="ZJg-Qu-vVP" secondAttribute="leading" id="RhZ-6A-8SQ"/>
                             <constraint firstItem="N8c-c1-Ozc" firstAttribute="trailing" secondItem="Fdv-Xu-3L2" secondAttribute="trailing" id="V5b-4a-88Y"/>
                             <constraint firstItem="ZJg-Qu-vVP" firstAttribute="top" secondItem="X1g-T1-5US" secondAttribute="top" constant="30" id="VFk-Dg-Qfd"/>
+                            <constraint firstItem="IQg-Fj-kbe" firstAttribute="top" secondItem="N8c-c1-Ozc" secondAttribute="bottom" constant="8" id="WT6-71-JY5"/>
                             <constraint firstItem="XXJ-tV-08K" firstAttribute="bottom" secondItem="5Ze-s5-n5d" secondAttribute="bottom" id="aMW-P2-Pzr"/>
+                            <constraint firstItem="IQg-Fj-kbe" firstAttribute="leading" secondItem="X1g-T1-5US" secondAttribute="leading" constant="16" id="deE-BZ-wvl"/>
+                            <constraint firstItem="X1g-T1-5US" firstAttribute="trailing" secondItem="IQg-Fj-kbe" secondAttribute="trailing" constant="16" id="ejp-8E-iI8"/>
                             <constraint firstItem="X1g-T1-5US" firstAttribute="trailing" secondItem="Fdv-Xu-3L2" secondAttribute="trailing" constant="15" id="jaA-gh-UWr"/>
                             <constraint firstItem="YcQ-ai-FbR" firstAttribute="top" secondItem="ZJg-Qu-vVP" secondAttribute="bottom" constant="5" id="vQX-cU-Czy"/>
                             <constraint firstItem="XXJ-tV-08K" firstAttribute="height" secondItem="5Ze-s5-n5d" secondAttribute="height" multiplier="0.0848214" id="wDt-jm-kmx"/>
@@ -218,6 +227,7 @@
                     </view>
                     <connections>
                         <outlet property="completeButton" destination="XXJ-tV-08K" id="kjR-xd-l50"/>
+                        <outlet property="nicknameLabel" destination="IQg-Fj-kbe" id="UD8-dW-KBS"/>
                         <outlet property="nicknameTextfield" destination="Fdv-Xu-3L2" id="qsZ-NY-J6a"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,7 @@
 
 import Alamofire
 class HomeDataManager{
-    func home (region : String,viewcontroller : HomeTabViewController){
+    func home (region : Int,viewcontroller : HomeTabViewController){
         let parameters : Parameters = [
             "region": region
         ]

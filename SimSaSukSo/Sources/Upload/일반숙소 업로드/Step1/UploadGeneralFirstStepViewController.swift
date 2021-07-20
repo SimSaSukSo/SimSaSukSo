@@ -15,7 +15,7 @@ protocol SendDataDelegate {
 
 class UploadGeneralFirstStepViewController : UIViewController{
     
-    var delegate: SendDataDelegate?
+    
     var regionList : [documentsDetail] = []
     var keyword : String = ""
     @IBOutlet weak var HotelNameTextField: UITextField!
@@ -31,7 +31,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
         
         setTableviewLayout()
         
-     
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
@@ -98,10 +98,8 @@ class UploadGeneralFirstStepViewController : UIViewController{
         let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")as!UploadGeneralSecondStepViewController
         secondVc.modalPresentationStyle = .fullScreen
         
-        
-        
-        delegate?.sendData(data: HotelNameTextField.text!)
-        
+    
+        secondVc.nameText = HotelNameTextField.text ?? ""
         
         self.present(secondVc, animated: false, completion: nil)
         
@@ -183,3 +181,6 @@ extension UploadGeneralFirstStepViewController{
     
     
 }
+
+
+

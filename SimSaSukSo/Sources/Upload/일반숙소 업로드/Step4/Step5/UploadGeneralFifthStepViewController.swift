@@ -285,7 +285,6 @@ extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICol
                     let addAdvantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddAdvantageCollectionViewCell
                     addAdvantagecell.addAdvantageButton.layer.borderWidth = 1
-                    //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
                     addAdvantagecell.addAdvantageButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
                     addAdvantagecell.addAdvantageButton.layer.cornerRadius = 4
                     

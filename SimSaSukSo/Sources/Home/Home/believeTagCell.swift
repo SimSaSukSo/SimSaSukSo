@@ -8,6 +8,8 @@
 import UIKit
 class believeTagCell : UICollectionViewCell{
     
+    
+    
     @IBOutlet weak var believeTagLabel: UILabel!
     
     

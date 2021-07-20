@@ -58,7 +58,7 @@ class HomeTabViewController: UIViewController {
         BestLikesCollectionView.reloadData()
         BestBelievesTableView.reloadData()
         
-        HomeDataManager().home(region: "서울",viewcontroller: self)
+        HomeDataManager().home(region: 1000,viewcontroller: self)
         DispatchQueue.main.async {
 
                       self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeIMG), userInfo: nil, repeats: true)
@@ -258,7 +258,13 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let believecell = tableView.dequeueReusableCell(withIdentifier: "BestBelievesTableViewCell") as! BestBelievesTableViewCell
        
+        //셀 테두리
+        believecell.layer.borderWidth = 1
+        believecell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+        believecell.layer.cornerRadius = 4
+        
         believecell.BestBelievesNameLabel.text = believePlace[indexPath.row].name
+        believecell.cellDelegate = self
         
         let urlString = believePlace[indexPath.row].source
         if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -266,6 +272,7 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
            let data = try? Data(contentsOf: url) {
             believecell.BestBelievesImageView.image = UIImage(data: data)
         }
+        
         
        return believecell
     }

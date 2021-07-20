@@ -8,14 +8,15 @@
 import UIKit
 class UploadGeneralSecondStepViewController : UIViewController{
     
-   
+    var nameText : String = ""
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        nameTextField.text = nameText
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firstVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFirstStepViewController")as!UploadGeneralFirstStepViewController
-        firstVc.delegate = self
+        
         secondCollectionView.dataSource = self
         secondCollectionView.delegate = self
     }
@@ -67,13 +68,3 @@ extension UploadGeneralSecondStepViewController : UICollectionViewDelegate,UICol
     
 }
 
-extension  UploadGeneralSecondStepViewController : SendDataDelegate{
-    func sendData(data: String) {
-        nameTextField.text = data
-    }
-    
-    
-    
-    
-    
-}
