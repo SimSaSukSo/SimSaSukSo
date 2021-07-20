@@ -10,8 +10,6 @@ import UIKit
 class AddAlertViewController: UIViewController {
     
     lazy var dataManager = FavoriteDataManager()
-    
-    let favoritesViewController = FavoritesViewController()
 
     @IBOutlet var alertView: UIView!
     @IBOutlet var addTextField: UITextField!
@@ -21,6 +19,7 @@ class AddAlertViewController: UIViewController {
 
         alertView.layer.cornerRadius = 4
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        
     }
     
     
@@ -38,11 +37,12 @@ class AddAlertViewController: UIViewController {
 }
 //MARK: - API
 extension AddAlertViewController {
-    func favoriteAdd(result: FavoriteAddResponse) {
-        print("d")
+    func favoriteAdd(_ result: FavoriteAddResponse) {
+        print("성공")
     }
     
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
     }
+    
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class DeleteAlertViewController: UIViewController {
     
+    lazy var dataManager = FavoriteDataManager()
+    
     let editVC = EditAlertViewController()
     
     @IBOutlet var alertView: UIView!
@@ -23,7 +25,6 @@ class DeleteAlertViewController: UIViewController {
         alertView.layer.cornerRadius = 4
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
-        //closeButton.isHidden = true
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -36,10 +37,22 @@ class DeleteAlertViewController: UIViewController {
         deleteButton.isHidden = true
         backButton.isHidden = true
         closeButton.isHidden = false
+        dataManager.favoriteDelete(delegate: self, url: "\(Constant.BASE_URL)api/lists/14")
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
        dismiss(animated: false, completion: nil)
+       
         
     }
     
+}
+//MARK: - API
+extension DeleteAlertViewController {
+    func favoriteDelete(result: FavoriteDeleteResponse) {
+        print("\(result.message)")
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
 }
