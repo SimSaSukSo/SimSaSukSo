@@ -132,6 +132,7 @@
                                             <outlet property="stackView" destination="vBy-tX-vhK" id="9XW-fo-Gp8"/>
                                             <outlet property="thirdImageView" destination="Oxv-EU-g5g" id="aI0-qR-dF5"/>
                                             <outlet property="titleLabel" destination="Wuw-fT-GoC" id="Vf7-Qs-BRN"/>
+                                            <segue destination="kgu-En-5zc" kind="modal" identifier="toDetail" id="p17-Hf-FL3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -165,7 +166,7 @@
         <!--Favorite Detail View Controller-->
         <scene sceneID="xQV-3Y-o8e">
             <objects>
-                <viewController storyboardIdentifier="FavoriteDetailViewController" modalPresentationStyle="fullScreen" id="kgu-En-5zc" customClass="FavoriteDetailViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteDetailViewController" modalPresentationStyle="currentContext" id="kgu-En-5zc" customClass="FavoriteDetailViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yc2-3u-of9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +200,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yIP-tu-pH5">
-                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dcM-a8-dmu">
                                     <size key="itemSize" width="128" height="128"/>

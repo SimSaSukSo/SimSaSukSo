@@ -13,6 +13,7 @@ class FavoriteDetailViewController: UIViewController {
     
     var favoriteDetailResult: FavoriteDetailResult?
     var favoriteDetailFeeds: [FavoriteDetailFeeds] = []
+    var favoriteIndex = 0
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var detailCollectionView: UICollectionView!
@@ -23,12 +24,13 @@ class FavoriteDetailViewController: UIViewController {
         detailCollectionView.delegate = self
         detailCollectionView.dataSource = self
         
-        dataManager.favoriteDetail(delegate: self, url: "\(Constant.BASE_URL)api/lists/3")
+        dataManager.favoriteDetail(delegate: self, url: "\(Constant.BASE_URL)api/lists/\(favoriteIndex)")
     
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        //self.navigationController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func filterButtonAction(_ sender: UIButton) {
     }
