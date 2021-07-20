@@ -12,6 +12,7 @@ class NicknameViewController : BaseViewController{
     
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var nicknameTextfield: UITextField!
+    @IBOutlet weak var nicknameLabel: UILabel!
     
     let toolBar: UIToolbar = UIToolbar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 60))
     let completeButtonAccessary = UIButton.init(type: .custom)
@@ -64,6 +65,10 @@ class NicknameViewController : BaseViewController{
         }
     
     func checkFormat(){
+        
+        nicknameDataManager().nickname(nickname: nicknameTextfield.text ?? "", viewcontroller: self)
+        
+        
         let mainController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "TabBarController")
         changeRootViewController(mainController)
         
@@ -123,9 +128,29 @@ extension NicknameViewController: UITextFieldDelegate {
         checkFormat()
         
         self.view.endEditing(true)
-        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
+        
         checkFormat()
-        print("dd")
+        
     
 }
+}
+
+extension NicknameViewController{
+    
+    func success(){
+        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
+        
+    }
+    func nicknameError(message : String){
+        nicknameLabel.text = message
+    }
+    
+    func fail(){
+        self.presentAlert(title: "서버와 통신이 불안정합니다")
+    }
+    
+    
+    
+    
+    
 }
