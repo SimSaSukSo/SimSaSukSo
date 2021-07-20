@@ -258,10 +258,7 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let believecell = tableView.dequeueReusableCell(withIdentifier: "BestBelievesTableViewCell") as! BestBelievesTableViewCell
        
-        //셀 테두리
-        believecell.layer.borderWidth = 1
-        believecell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
-        believecell.layer.cornerRadius = 4
+        
         
         believecell.BestBelievesNameLabel.text = believePlace[indexPath.row].name
       //  believecell.cellDelegate = self
