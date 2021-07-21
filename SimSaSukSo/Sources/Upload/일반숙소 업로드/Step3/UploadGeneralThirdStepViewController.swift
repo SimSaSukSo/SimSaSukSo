@@ -8,6 +8,10 @@
 import UIKit
 class UploadGeneralThirdStepViewController : UIViewController{
     
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
+    
+   
+    
     var startDate : String = ""
     
     @IBOutlet weak var startDateButton: UIButton?
@@ -17,17 +21,20 @@ class UploadGeneralThirdStepViewController : UIViewController{
     
    
     @IBOutlet weak var priceTextfiled: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        nextButton.setTitle(startDate, for: .normal)
-        
+        nameTextField.text = self.generalInput.name
+        addressTextField.text = self.generalInput.address
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(generalInput)
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         
