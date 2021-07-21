@@ -108,8 +108,8 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
-                if indexPath.item == UploadViewController.photoArray[i] {
-                    cell.numberLabel.text = "\(i)"
+                if indexPath.item == UploadViewController.photoArray[i+1] {
+                    cell.numberLabel.text = "\(i+1)"
                 }
             }
         }
@@ -140,8 +140,8 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
-                if indexPath.item == UploadViewController.photoArray[i] {
-                    cell.numberLabel.text = "\(i)"
+                if indexPath.item == UploadViewController.photoArray[i+1] {
+                    cell.numberLabel.text = "\(i+1)"
                 }
             }
         }
@@ -172,9 +172,18 @@ extension UploadViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: 91, height: 91)
+        //let size = CGSize(width: 91, height: 91)
+        let width = view.frame.size.width/4-4
         
-        return size
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
     }
 
 }
