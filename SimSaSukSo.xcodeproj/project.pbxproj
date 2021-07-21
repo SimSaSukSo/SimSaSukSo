@@ -96,6 +96,9 @@
 		A74AB15E26A6EF860038A1C1 /* nicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */; };
 		A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB16526A707300038A1C1 /* nicknameResponse.swift */; };
 		A74AB16A26A719750038A1C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74AB16926A719750038A1C1 /* GoogleService-Info.plist */; };
+		A74AB17326A84D830038A1C1 /* UploadGeneralDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17226A84D820038A1C1 /* UploadGeneralDataManager.swift */; };
+		A74AB17826A84DC40038A1C1 /* UploadGeneralInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */; };
+		A74AB17B26A84EEA0038A1C1 /* UploadGeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -245,6 +248,9 @@
 		A74AB16026A6F0820038A1C1 /* nicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameResponse.swift; sourceTree = "<group>"; };
 		A74AB16526A707300038A1C1 /* nicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameResponse.swift; sourceTree = "<group>"; };
 		A74AB16926A719750038A1C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A74AB17226A84D820038A1C1 /* UploadGeneralDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralDataManager.swift; sourceTree = "<group>"; };
+		A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralInput.swift; sourceTree = "<group>"; };
+		A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralResponse.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -575,6 +581,23 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		A74AB17126A84CD10038A1C1 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A74AB17226A84D820038A1C1 /* UploadGeneralDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		A74AB17626A84D8E0038A1C1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */,
+				A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		A74AFC9C26A1AD400047E9C2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,7 +620,6 @@
 				A75EAEA92693680700B34597 /* UploadGeneralFourthStepViewController.swift */,
 				A75EAEB42694064700B34597 /* DesignableSlider.swift */,
 				A75EAEBB2694312200B34597 /* UploadedPictureFourthCollectionViewCell.swift */,
-				A74AB0F826A2CFCF0038A1C1 /* Step5 */,
 			);
 			path = Step4;
 			sourceTree = "<group>";
@@ -636,10 +658,13 @@
 		A75EAEB126936AE000B34597 /* 일반숙소 업로드 */ = {
 			isa = PBXGroup;
 			children = (
+				A74AB17626A84D8E0038A1C1 /* Entity */,
+				A74AB17126A84CD10038A1C1 /* DataManager */,
 				A758352526998B8200527E1A /* Step1 */,
 				A758352326998B6F00527E1A /* Step2 */,
 				A758352126998B4400527E1A /* Step3 */,
 				A758351F26998AE700527E1A /* Step4 */,
+				A74AB0F826A2CFCF0038A1C1 /* Step5 */,
 			);
 			name = "일반숙소 업로드";
 			path = "일반숙소 업로드";
@@ -1018,12 +1043,14 @@
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
 				A55368E726A07551002E232E /* BadCollectionViewCell.swift in Sources */,
+				A74AB17B26A84EEA0038A1C1 /* UploadGeneralResponse.swift in Sources */,
 				A54BDAB0268E13470070BFEF /* EvaluViewController.swift in Sources */,
 				A75835162695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A711E02C267B5E74006A1F0B /* HomeViewController.swift in Sources */,
 				A766CCA4268A263100565095 /* TrendPlacesCollectionViewCell.swift in Sources */,
 				A59DDBCE268602EA008D4AF9 /* BestOneFeedViewController.swift in Sources */,
 				A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */,
+				A74AB17826A84DC40038A1C1 /* UploadGeneralInput.swift in Sources */,
 				A7A0665E269E0C55009A1397 /* SelectRegionViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				A55675DF26975427004103AA /* NewFeedsCollectionViewCell.swift in Sources */,
@@ -1072,6 +1099,7 @@
 				A74AB15826A6AB860038A1C1 /* DatePickerViewController.swift in Sources */,
 				A74AB15E26A6EF860038A1C1 /* nicknameDataManager.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
+				A74AB17326A84D830038A1C1 /* UploadGeneralDataManager.swift in Sources */,
 				A5A6B868269B5F9400B66D53 /* AddAlertViewController.swift in Sources */,
 				A55C463C26A60071008B4A5C /* FavoriteEditTableViewCell.swift in Sources */,
 				A5A6B864269B5C2100B66D53 /* FavoriteDetailViewController.swift in Sources */,
