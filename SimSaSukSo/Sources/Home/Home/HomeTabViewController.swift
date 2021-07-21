@@ -261,7 +261,7 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
         
         
         believecell.BestBelievesNameLabel.text = believePlace[indexPath.row].name
-      //  believecell.cellDelegate = self
+        
         
         let urlString = believePlace[indexPath.row].source
         if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -270,19 +270,26 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
             believecell.BestBelievesImageView.image = UIImage(data: data)
         }
         
+        believecell.cellDelegate = self
+        
+        // Pass the data to colletionview inside the tableviewcell
+        let rowArray = believePlace[indexPath.row].tags.components(separatedBy: ",")
+        believecell.updateCellWith(row: rowArray)
         
        return believecell
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let feednavi = self.storyboard?.instantiateViewController(withIdentifier: "FeedNavigationController"){
-//            feednavi.modalPresentationStyle = .fullScreen
-//                self.present(feednavi, animated: true)
-//        }
-//    }
-    
-    
 }
+
+extension HomeTabViewController: CollectionViewCellDelegate {
+    func collectionView(collectionviewcell: believeTagCell?, index: Int, didTappedInTableViewCell: BestBelievesTableViewCell) {
+        if let colorsRow = didTappedInTableViewCell.rowWithCollectionview {
+            print("You tapped the cell \(index) in the row of colors \(colorsRow)")
+            // You can also do changes to the cell you tapped using the 'collectionviewcell'
+        }
+    }
+}
+
+
 
 // MARK:- API
 extension HomeTabViewController{

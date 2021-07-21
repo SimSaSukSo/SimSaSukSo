@@ -457,35 +457,40 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-ZO-yhQ">
-                                                                                    <rect key="frame" x="0.0" y="26" width="302" height="23"/>
+                                                                                    <rect key="frame" x="0.0" y="26" width="302" height="32"/>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V19-gJ-3df">
-                                                                                        <size key="itemSize" width="70" height="24"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="32" id="oQ5-eu-rpi"/>
+                                                                                    </constraints>
+                                                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V19-gJ-3df">
+                                                                                        <size key="itemSize" width="65" height="26"/>
                                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                                     </collectionViewFlowLayout>
                                                                                     <cells>
                                                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="believeTagCell" reuseIdentifier="believeTagCell" id="FeW-5N-9rn" customClass="believeTagCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="24"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
                                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lDz-Er-XL1">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="24"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="26"/>
                                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                                 <subviews>
-                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="가성비 최고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozp-vT-LT5">
-                                                                                                        <rect key="frame" x="14" y="1" width="54" height="17"/>
+                                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가성비 최고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozp-vT-LT5">
+                                                                                                        <rect key="frame" x="6" y="2" width="53" height="22"/>
                                                                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                         <nil key="highlightedColor"/>
                                                                                                     </label>
                                                                                                 </subviews>
                                                                                                 <constraints>
-                                                                                                    <constraint firstItem="Ozp-vT-LT5" firstAttribute="centerY" secondItem="lDz-Er-XL1" secondAttribute="centerY" id="5az-nP-hXn"/>
-                                                                                                    <constraint firstItem="Ozp-vT-LT5" firstAttribute="centerX" secondItem="lDz-Er-XL1" secondAttribute="centerX" id="RY3-5q-nEu"/>
+                                                                                                    <constraint firstAttribute="bottom" secondItem="Ozp-vT-LT5" secondAttribute="bottom" constant="2" id="aef-o5-ylm"/>
+                                                                                                    <constraint firstAttribute="trailing" secondItem="Ozp-vT-LT5" secondAttribute="trailing" constant="6" id="aiR-ur-a2t"/>
+                                                                                                    <constraint firstItem="Ozp-vT-LT5" firstAttribute="top" secondItem="lDz-Er-XL1" secondAttribute="top" constant="2" id="m1C-q6-LPe"/>
+                                                                                                    <constraint firstItem="Ozp-vT-LT5" firstAttribute="leading" secondItem="lDz-Er-XL1" secondAttribute="leading" constant="6" id="z7v-ft-URR"/>
                                                                                                 </constraints>
                                                                                             </collectionViewCellContentView>
-                                                                                            <size key="customSize" width="70" height="24"/>
+                                                                                            <size key="customSize" width="65" height="26"/>
                                                                                             <connections>
                                                                                                 <outlet property="believeTagLabel" destination="Ozp-vT-LT5" id="reA-7Y-MHX"/>
                                                                                             </connections>
@@ -496,7 +501,6 @@
                                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="5Ra-ZO-yhQ" firstAttribute="leading" secondItem="lmI-Pu-JFE" secondAttribute="leading" id="056-j8-KMS"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="5Ra-ZO-yhQ" secondAttribute="bottom" id="25y-c1-GBz"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="5Ra-ZO-yhQ" secondAttribute="trailing" id="CTi-24-iXa"/>
                                                                                 <constraint firstItem="82D-zO-9gx" firstAttribute="top" secondItem="lmI-Pu-JFE" secondAttribute="top" id="JF6-ms-ojX"/>
                                                                                 <constraint firstItem="5Ra-ZO-yhQ" firstAttribute="top" secondItem="82D-zO-9gx" secondAttribute="bottom" constant="8" id="Rhe-jq-0zJ"/>
