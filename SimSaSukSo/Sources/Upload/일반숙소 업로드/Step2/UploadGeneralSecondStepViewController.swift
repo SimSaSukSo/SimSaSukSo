@@ -10,9 +10,11 @@ class UploadGeneralSecondStepViewController : UIViewController{
     
     var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
     
-    var nameText : String = ""
     
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    
+    @IBOutlet weak var priceErrorLabel: UILabel!
+    @IBOutlet weak var addressTextField: UITextField!
     
     @IBOutlet  var nameTextField : UITextField!
     
@@ -20,7 +22,10 @@ class UploadGeneralSecondStepViewController : UIViewController{
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-        nameTextField.text = nameText
+        nameTextField.text = self.generalInput.name
+        addressTextField.text = self.generalInput.address
+        
+        
     }
     
     override func viewDidLoad() {
@@ -35,13 +40,15 @@ class UploadGeneralSecondStepViewController : UIViewController{
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
-        let filteredArray = [locationTextField].filter { $0?.text == "" }
+        let filteredArray = [priceTextField].filter { $0?.text == "" }
         if !filteredArray.isEmpty {
             nextButton.isEnabled = false
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         } else {
-          
-            generalInput.address = locationTextField.text ?? ""
+           
+            priceTextField.textColor = #colorLiteral(red: 0.2509803922, green: 0.2823529412, blue: 0.3058823529, alpha: 1)
+            saveChargeFromPriceTextView()
+        
             nextButton.isEnabled = true
             nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
             
@@ -49,6 +56,20 @@ class UploadGeneralSecondStepViewController : UIViewController{
             
         }
     }
+    
+    func saveChargeFromPriceTextView(){
+        let stringCharge = priceTextField.text!
+                if let charge = Int(stringCharge) {
+                    generalInput.charge = charge
+                    priceErrorLabel.text = ""
+                } else {
+                    print("error")
+                
+                    priceErrorLabel.text =  "숫자만 입력해 주세요"
+                }
+            
+    }
+
     
    
     

@@ -30,6 +30,7 @@ class UploadGeneralThirdStepViewController : UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         nameTextField.text = self.generalInput.name
         addressTextField.text = self.generalInput.address
+        priceTextfiled.text = "\(self.generalInput.charge)"
     }
     
     override func viewDidLoad() {
