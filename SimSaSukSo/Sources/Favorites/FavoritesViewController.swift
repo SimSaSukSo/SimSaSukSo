@@ -22,7 +22,15 @@ class FavoritesViewController : UIViewController {
         favoriteCollectionView.dataSource = self
         
         dataManager.favoriteList(delegate: self)
-        
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        dataManager.favoriteList(delegate: self)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        dataManager.favoriteList(delegate: self)
     }
     
     @IBAction func editButtonAction(_ sender: UIButton) {
@@ -68,11 +76,6 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = favoriteCollectionView.cellForItem(at: indexPath) as! FavoriteCollectionViewCell
-//
-//
-//    }
     
     // 찜 Index 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

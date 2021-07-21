@@ -34,8 +34,16 @@ class EditAlertViewController: UIViewController {
         editTableView.delegate = self
         editTableView.dataSource = self
         
-        editTableViewHeight.constant = CGFloat(51 * 1)
+        editTableViewHeight.constant = CGFloat(51 * 3)
        
+        dataManager.favoriteList(delegate: self)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        dataManager.favoriteList(delegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         dataManager.favoriteList(delegate: self)
     }
     
@@ -85,6 +93,7 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "toDelete" {
             let deleteVC = segue.destination as! DeleteAlertViewController
             deleteVC.titleLabel = (sender as! UIButton).currentTitle!
+            deleteVC.favoriteIndex = (sender as! UIButton).tag
         }
     }
     
