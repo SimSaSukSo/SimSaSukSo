@@ -8,6 +8,8 @@
 import UIKit
 class UploadGeneralFourthStepViewController : UIViewController{
     
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
+    
     @IBOutlet weak var fourthPictureCollectionView: UICollectionView!
     
     @IBOutlet weak var usedToolCameraButton: AdaptableSizeButton!

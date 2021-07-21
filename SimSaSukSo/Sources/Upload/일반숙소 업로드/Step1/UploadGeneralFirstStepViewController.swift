@@ -7,14 +7,12 @@
 
 import UIKit
 
-protocol SendDataDelegate {
 
-    func sendData(data: String)
-
-}
 
 class UploadGeneralFirstStepViewController : UIViewController{
     
+    
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
     
     var regionList : [documentsDetail] = []
     var keyword : String = ""
@@ -95,17 +93,12 @@ class UploadGeneralFirstStepViewController : UIViewController{
     }
     
     @IBAction func nextButtonAction(_ sender : UIButton){
-        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")as!UploadGeneralSecondStepViewController
-        secondVc.modalPresentationStyle = .fullScreen
+        let thirdVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController")as!UploadGeneralThirdStepViewController
+        thirdVc.modalPresentationStyle = .fullScreen
         
-    
-        secondVc.nameText = HotelNameTextField.text ?? ""
-        
-        self.present(secondVc, animated: false, completion: nil)
-        
-        
-        
-        
+        thirdVc.generalInput = self.generalInput 
+       
+        self.present(thirdVc, animated: false, completion: nil)
         
     }
     
@@ -147,6 +140,8 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
         
        
         HotelNameTextField.text = regionList[indexPath.row].place_name
+        self.generalInput.name = regionList[indexPath.row].place_name
+        self.generalInput.address = regionList[indexPath.row].address_name
         searchHotelTableView.isHidden = true
     }
     
