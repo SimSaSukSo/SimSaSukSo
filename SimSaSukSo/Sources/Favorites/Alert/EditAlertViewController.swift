@@ -17,45 +17,54 @@ class EditAlertViewController: UIViewController {
     
     var favoriteLists: [FavoriteResult] = []
     var favoriteIndex = 0
-    var text = ""
+    
+    var text: String = ""
     
     @IBOutlet var alertView: UIView!
     @IBOutlet var editTableView: UITableView!
     @IBOutlet var editTableViewHeight: NSLayoutConstraint!
     @IBOutlet var closeButton: UIButton!
     @IBOutlet var saveButton: UIButton!
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         alertView.layer.cornerRadius = 4
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
         editTableView.delegate = self
         editTableView.dataSource = self
         
-        editTableViewHeight.constant = CGFloat(51 * 1)
-       
+        editTableViewHeight.constant = CGFloat(51 * 3)
+        
+        dataManager.favoriteList(delegate: self)
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
         dataManager.favoriteList(delegate: self)
     }
     
-//    func presentDeleteVC() {
-//        let deleteVC = self.storyboard?.instantiateViewController(withIdentifier: "DeleteAlertViewController")
-//        self.present(deleteVC!, animated: false, completion: nil)
-//
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        dataManager.favoriteList(delegate: self)
+    }
+    
+    //    func presentDeleteVC() {
+    //        let deleteVC = self.storyboard?.instantiateViewController(withIdentifier: "DeleteAlertViewController")
+    //        self.present(deleteVC!, animated: false, completion: nil)
+    //
+    //    }
     
     @IBAction func closeButtonAction(_ sender: UIButton) {
         dismiss(animated: false, completion: nil)
     }
     @IBAction func saveButtonAction(_ sender: UIButton) {
-        let input = EditRequest(savedListIndex: 14, title: "ㅇㅇㅇㅇ")
-        let list = FavoriteEditRequest(list: [input])
-        dataManager.favoriteEdit(list, delegate: self)
+        let input = FavoriteEditRequest(savedListIndex: 35, title: "d")
+        dataManager.favoriteEdit(input, delegate: self)
         dismiss(animated: false, completion: nil)
     }
     
-
+    
 }
 
 extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
@@ -74,7 +83,7 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.deleteButton.tag = favoriteList.savedListIndex
         cell.editTextField.text = favoriteList.title
-        //text = cell.editTextField.text!
+        
         cell.deleteButton.setTitle(cell.editTextField.text, for: .normal)
         
         return cell
@@ -85,6 +94,7 @@ extension EditAlertViewController: UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "toDelete" {
             let deleteVC = segue.destination as! DeleteAlertViewController
             deleteVC.titleLabel = (sender as! UIButton).currentTitle!
+            deleteVC.favoriteIndex = (sender as! UIButton).tag
         }
     }
     
@@ -102,9 +112,9 @@ extension EditAlertViewController {
     }
     
     func favoriteEdit(_ result: FavoriteEditResponse) {
-        presentAlert(title: "타이틀 바꾸기 성공")
+        
     }
-
+    
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
     }

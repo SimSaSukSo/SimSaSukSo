@@ -6,10 +6,6 @@
 //
 
 struct FavoriteEditRequest: Encodable {
-    var list: [EditRequest]?
-}
-
-struct EditRequest: Encodable {
     var savedListIndex: Int
     var title: String
 }

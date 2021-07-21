@@ -12,6 +12,7 @@ class DeleteAlertViewController: UIViewController {
     lazy var dataManager = FavoriteDataManager()
     
     var titleLabel: String = ""
+    var favoriteIndex: Int = 0
     
     @IBOutlet var alertView: UIView!
     @IBOutlet var contentsLabel: UILabel!
@@ -38,7 +39,7 @@ class DeleteAlertViewController: UIViewController {
         deleteButton.isHidden = true
         backButton.isHidden = true
         closeButton.isHidden = false
-        dataManager.favoriteDelete(delegate: self, url: "\(Constant.BASE_URL)api/lists/14")
+        dataManager.favoriteDelete(delegate: self, url: "\(Constant.BASE_URL)api/lists/\(favoriteIndex)")
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
        dismiss(animated: false, completion: nil)
