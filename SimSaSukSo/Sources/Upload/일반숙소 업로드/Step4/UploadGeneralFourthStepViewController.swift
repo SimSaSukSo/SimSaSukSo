@@ -10,7 +10,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
     
-    @IBOutlet weak var fourthPictureCollectionView: UICollectionView!
+   
     
     @IBOutlet weak var usedToolCameraButton: AdaptableSizeButton!
     @IBOutlet weak var usedToolAppButton: AdaptableSizeButton!
@@ -23,10 +23,28 @@ class UploadGeneralFourthStepViewController : UIViewController{
         @IBOutlet weak var fiveLeadSp: NSLayoutConstraint!
         @IBOutlet weak var sixLeadSp: NSLayoutConstraint!
        
-
+    @IBOutlet weak var startDateTextField: UITextField!
+    
+    var startDate : String = ""
+    var endDate : String = ""
+    
+    @IBOutlet weak var endDateTextField: UITextField!
+    
+    @IBOutlet weak var priceTextField: UITextField!
+    
+    @IBOutlet weak var addressTextField: UITextField!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var fourthPictureCollectionView: UICollectionView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        startDateTextField.text = self.startDate
+        endDateTextField.text = self.endDate
+        priceTextField.text = String(generalInput.charge)
+        addressTextField.text = generalInput.address
+        nameTextField.text = generalInput.name
         
 
     }
@@ -34,6 +52,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(self.generalInput)
         fourthPictureCollectionView.dataSource = self
         fourthPictureCollectionView.delegate = self
         setButton()
@@ -144,9 +163,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
     }
     
     @IBAction func priorButtonAction(_ sender: Any) {
-//        let thridhVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController")
-//        thridhVc?.modalPresentationStyle = .fullScreen
-//        self.present(thridhVc!, animated: false, completion: nil)
+
         self.dismiss(animated: false, completion: nil)
         
     }
@@ -156,6 +173,7 @@ class UploadGeneralFourthStepViewController : UIViewController{
         self.present(fifthVC!, animated: false, completion: nil)
         
     }
+    
     
     
 

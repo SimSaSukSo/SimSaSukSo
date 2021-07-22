@@ -23,6 +23,7 @@ class UploadGeneralThirdStepViewController : UIViewController{
    
     
     var startDate : String = ""
+    var endDate : String = ""
     
     @IBOutlet weak var startDateButton: UIButton?
     @IBOutlet weak var endDateButton: UIButton!
@@ -93,9 +94,14 @@ class UploadGeneralThirdStepViewController : UIViewController{
     }
     
     @IBAction func nextButtonAction(_ sender : UIButton){
-        let fourthVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFourthStepViewController")
-        fourthVc?.modalPresentationStyle = .fullScreen
-        self.present(fourthVc!, animated: false, completion: nil)
+        let fourthVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFourthStepViewController") as! UploadGeneralFourthStepViewController
+        fourthVc.modalPresentationStyle = .fullScreen
+        
+        fourthVc.generalInput = self.generalInput
+        fourthVc.startDate = startDate
+        fourthVc.endDate = endDate
+        
+        self.present(fourthVc, animated: false, completion: nil)
         
     }
     
@@ -130,6 +136,7 @@ extension UploadGeneralThirdStepViewController : StartateDelegate,EndDateDelegat
         startDateButton?.setTitleColor(#colorLiteral(red: 0.2509803922, green: 0.2823529412, blue: 0.3058823529, alpha: 1), for: .normal)
         
         self.generalInput.startDate = forSave
+        self.startDate = forShow
         
         buttonActivation()
         print(startDateButton!.titleLabel!.text!)
@@ -143,7 +150,9 @@ extension UploadGeneralThirdStepViewController : StartateDelegate,EndDateDelegat
         
         endDateButton?.setTitle(forShow, for: .normal)
         endDateButton?.setTitleColor(#colorLiteral(red: 0.2509803922, green: 0.2823529412, blue: 0.3058823529, alpha: 1), for: .normal)
+        
         self.generalInput.endDate = forSave
+        self.endDate = forShow
         
         buttonActivation()
         
