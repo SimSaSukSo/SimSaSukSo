@@ -92,13 +92,14 @@
 		A74AB10226A2D3320038A1C1 /* UploadedPictureSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10126A2D3320038A1C1 /* UploadedPictureSecondCollectionViewCell.swift */; };
 		A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10726A404160038A1C1 /* regionNameDataManager.swift */; };
 		A74AB10B26A405C10038A1C1 /* regionNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB10A26A405C10038A1C1 /* regionNameResponse.swift */; };
-		A74AB15826A6AB860038A1C1 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */; };
+		A74AB15826A6AB860038A1C1 /* StartDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15726A6AB850038A1C1 /* StartDatePickerViewController.swift */; };
 		A74AB15E26A6EF860038A1C1 /* nicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */; };
 		A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB16526A707300038A1C1 /* nicknameResponse.swift */; };
 		A74AB16A26A719750038A1C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A74AB16926A719750038A1C1 /* GoogleService-Info.plist */; };
 		A74AB17326A84D830038A1C1 /* UploadGeneralDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17226A84D820038A1C1 /* UploadGeneralDataManager.swift */; };
 		A74AB17826A84DC40038A1C1 /* UploadGeneralInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */; };
 		A74AB17B26A84EEA0038A1C1 /* UploadGeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */; };
+		A74AB17F26A977240038A1C1 /* EndDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17E26A977240038A1C1 /* EndDatePickerViewController.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -243,7 +244,7 @@
 		A74AB10126A2D3320038A1C1 /* UploadedPictureSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureSecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		A74AB10726A404160038A1C1 /* regionNameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionNameDataManager.swift; sourceTree = "<group>"; };
 		A74AB10A26A405C10038A1C1 /* regionNameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionNameResponse.swift; sourceTree = "<group>"; };
-		A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		A74AB15726A6AB850038A1C1 /* StartDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDatePickerViewController.swift; sourceTree = "<group>"; };
 		A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameDataManager.swift; sourceTree = "<group>"; };
 		A74AB16026A6F0820038A1C1 /* nicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameResponse.swift; sourceTree = "<group>"; };
 		A74AB16526A707300038A1C1 /* nicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknameResponse.swift; sourceTree = "<group>"; };
@@ -251,6 +252,7 @@
 		A74AB17226A84D820038A1C1 /* UploadGeneralDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralDataManager.swift; sourceTree = "<group>"; };
 		A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralInput.swift; sourceTree = "<group>"; };
 		A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralResponse.swift; sourceTree = "<group>"; };
+		A74AB17E26A977240038A1C1 /* EndDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndDatePickerViewController.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -629,7 +631,8 @@
 			children = (
 				A75EAEA5269367CB00B34597 /* UploadGeneralThirdStepViewController.swift */,
 				A75EAEB82694310800B34597 /* UploadedPictureThirdCollectionViewCell.swift */,
-				A74AB15726A6AB850038A1C1 /* DatePickerViewController.swift */,
+				A74AB15726A6AB850038A1C1 /* StartDatePickerViewController.swift */,
+				A74AB17E26A977240038A1C1 /* EndDatePickerViewController.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -1073,6 +1076,7 @@
 				A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */,
 				A58833BC268C9C210046E313 /* NewTabOneFeedCollectionViewCell.swift in Sources */,
 				A55C463F26A60087008B4A5C /* DeleteAlertViewController.swift in Sources */,
+				A74AB17F26A977240038A1C1 /* EndDatePickerViewController.swift in Sources */,
 				A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
@@ -1096,7 +1100,7 @@
 				A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
-				A74AB15826A6AB860038A1C1 /* DatePickerViewController.swift in Sources */,
+				A74AB15826A6AB860038A1C1 /* StartDatePickerViewController.swift in Sources */,
 				A74AB15E26A6EF860038A1C1 /* nicknameDataManager.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				A74AB17326A84D830038A1C1 /* UploadGeneralDataManager.swift in Sources */,

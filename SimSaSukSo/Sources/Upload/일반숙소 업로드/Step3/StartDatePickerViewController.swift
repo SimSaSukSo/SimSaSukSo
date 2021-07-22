@@ -7,24 +7,30 @@
 
 import UIKit
 
-class DatePickerViewController: UIViewController {
+class StartDatePickerViewController: UIViewController {
     
-    
+    weak var delegate: StartateDelegate?
     
     @IBOutlet weak var chooseButton: UIButton!
     
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    let dateformatter = DateFormatter()
-    var date : String = ""
+    let dateformatterforShow = DateFormatter()
+    let dateformatterforSave = DateFormatter()
+    
+    var dateforShow : String = ""
+    var dateforSave : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        dateformatter.dateStyle = .long
-        dateformatter.dateFormat = "yyyy년 MM월 dd일"
+        dateformatterforShow.dateStyle = .long
+        dateformatterforShow.dateFormat = "YYYY년 MM월 dd일"
+        
+        dateformatterforSave.dateStyle = .long
+        dateformatterforSave.dateFormat = "YYYY-MM-dd"
         
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
@@ -35,8 +41,11 @@ class DatePickerViewController: UIViewController {
     }
     @objc func changed(){
         
-        date = dateformatter.string(from: datePicker.date)
-               print(date)
+        dateforShow = dateformatterforShow.string(from: datePicker.date)
+        dateforSave = dateformatterforSave.string(from: datePicker.date)
+        
+        print(dateforShow)
+        print(dateforSave)
         
         
 
@@ -46,14 +55,12 @@ class DatePickerViewController: UIViewController {
     
     @IBAction func chooseButtonAction(_ sender: Any) {
         
-        let upload3VC =
-            self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController")as!UploadGeneralThirdStepViewController
-        
-        upload3VC.startDateButton?.setTitle(date, for: .normal)
+        self.delegate?.sendStartDate(forSave:dateforSave, forShow: dateforShow)
         
         self.dismiss(animated: false, completion: nil)
 
     }
+    
     @IBAction func closeButtonAction(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
         
@@ -62,3 +69,4 @@ class DatePickerViewController: UIViewController {
     
     
 }
+
