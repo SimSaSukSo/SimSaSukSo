@@ -8,7 +8,7 @@
 import UIKit
 class UploadGeneralSecondStepViewController : UIViewController{
     
-    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
     
     @IBOutlet weak var priceTextField: UITextField!

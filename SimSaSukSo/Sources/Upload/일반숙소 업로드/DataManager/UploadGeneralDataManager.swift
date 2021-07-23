@@ -14,7 +14,7 @@ class UploadGeneralDataManager{
                 switch response.result{
                 case .success(let response):
                     if response.isSuccess{
-                        
+                        viewcontroller.success()
                         print("성공")
                         
                     }else{

@@ -18,7 +18,7 @@ protocol EndDateDelegate: class {
 
 class UploadGeneralThirdStepViewController : UIViewController{
     
-    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
    
     

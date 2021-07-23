@@ -8,7 +8,7 @@
 import UIKit
 class UploadGeneralFourthStepViewController : UIViewController{
     
-    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
    
     
@@ -84,8 +84,9 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     
     @IBAction func editDegreeSliderAction(_ sender: UISlider) {
-        slider.value = roundf(slider.value)
-        print(slider.value)
+        slider.value = Float(Int(slider.value))
+        self.generalInput.correctionDegree = Int(slider.value)
+        print(Int(slider.value))
         
         
         
@@ -103,10 +104,15 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolCameraButton.setTitleColor(.simsasuksoGreen, for: .selected)
                 usedToolCameraButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolCameraButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+                
+                self.generalInput.correctionTool.append(button.tag + 1)
+                print(generalInput.correctionTool)
             } else {
                 usedToolCameraButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolCameraButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolCameraButton.backgroundColor = .clear
+                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
+                print(generalInput.correctionTool)
                 
             }
             
@@ -118,11 +124,15 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolAppButton.setTitleColor(.simsasuksoGreen, for: .selected)
                 usedToolAppButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolAppButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+                
+                self.generalInput.correctionTool.append(button.tag + 1)
+                print(generalInput.correctionTool)
             } else {
                 usedToolAppButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolAppButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolAppButton.backgroundColor = .clear
-                
+                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
+                print(generalInput.correctionTool)
             }
             
             break
@@ -133,11 +143,16 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolFilterButton.setTitleColor(.simsasuksoGreen, for: .selected)
                 usedToolFilterButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolFilterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+                
+                self.generalInput.correctionTool.append(button.tag + 1)
+                print(generalInput.correctionTool)
+                
             } else {
                 usedToolFilterButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolFilterButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolFilterButton.backgroundColor = .clear
-                
+                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
+                print(generalInput.correctionTool)
             }
             
             break
@@ -148,11 +163,16 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolSelfButton.setTitleColor(.simsasuksoGreen, for: .selected)
                 usedToolSelfButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolSelfButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+                
+                self.generalInput.correctionTool.append(button.tag + 1)
+                print(generalInput.correctionTool)
+                
             } else {
                 usedToolSelfButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolSelfButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolSelfButton.backgroundColor = .clear
-                
+                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
+                print(generalInput.correctionTool)
             }
             
             break
@@ -168,9 +188,10 @@ class UploadGeneralFourthStepViewController : UIViewController{
         
     }
         @IBAction func nextButtonAction(_ sender : UIButton){
-        let fifthVC = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFifthStepViewController")
-            fifthVC?.modalPresentationStyle = .fullScreen
-        self.present(fifthVC!, animated: false, completion: nil)
+        let fifthVC = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFifthStepViewController")as!UploadGeneralFifthStepViewController
+            fifthVC.modalPresentationStyle = .fullScreen
+            fifthVC.generalInput = self.generalInput
+        self.present(fifthVC, animated: false, completion: nil)
         
     }
     
@@ -189,9 +210,7 @@ extension UploadGeneralFourthStepViewController : UICollectionViewDelegate,UICol
         
         return uploadGeneralcell
     }
-    
 
-    
 }
 
 
