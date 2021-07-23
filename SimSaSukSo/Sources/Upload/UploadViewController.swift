@@ -21,6 +21,7 @@ class UploadViewController : UIViewController {
     
     static var uploadPhotos = [UIImage]()
     static var photoArray = [Int]()
+    static var urlArray = [String]()
     
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var photoImageViewHeight: NSLayoutConstraint!
