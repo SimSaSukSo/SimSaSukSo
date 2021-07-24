@@ -7,53 +7,48 @@
 
 import UIKit
 
+protocol RegionCellDelegate {
+    func didPressButton(for index: Int,clicked: Bool)
+}
+
+
 class RegionTableViewCell: UITableViewCell {
     
+    var delegate: RegionCellDelegate?
+    var index: Int?
     
     @IBOutlet weak var regionButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
+        
     }
 
-//    var isTouched:Bool?{
-//
-//        didSet{
-//            if isTouched == true{
-//
-//                regionButton.setTitleColor(.simsasuksoGreen, for: .normal)
-//
-//
-//            }else{
-//                regionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-//
-//
-//                
-//            }
-//
-//
-//
-//        }
-//    }
-//    @IBAction func cellClicked(_ sender: UIButton) {
-//       
-//        sender.isSelected = !sender.isSelected
-//        if sender.isSelected {
-//            SelectRegionViewController.clickList[sender.tag] = 1
-//            print(clickList)
-//           // sender.setTitleColor(.simsasuksoGreen, for: .selected)
-//            
-//            
-//        } else {
-//            //sender.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-//            
-//            
-//        }
-//        }
+    @IBAction func didPressButton(_ sender: UIButton) {
+            guard let idx = index else {return}
+            if sender.isSelected {
+                isTouched = true
+                delegate?.didPressButton(for: idx, clicked: true)
+            }else {
+                isTouched = false
+                delegate?.didPressButton(for: idx, clicked: false)
+            }
+            sender.isSelected = !sender.isSelected
+        }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    var isTouched: Bool? {
+            didSet {
+                if isTouched == true {
+                    regionButton.setTitleColor(.simsasuksoGreen, for: .normal)
+                   print("click")
+                
+                }else{
+                    regionButton.setTitleColor(.black, for: .normal)
+                   
+                }
+            }
+        }
+    
 
 }

@@ -6,8 +6,8 @@
 //
 
 import UIKit
-class SelectRegionViewController : UIViewController{
-    var clickList : Array<Int> = []
+class SelectRegionViewController : UIViewController, RegionCellDelegate{
+    var clickList : [Int] = []
     @IBOutlet weak var regionTableView: UITableView!
     
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
@@ -21,11 +21,14 @@ class SelectRegionViewController : UIViewController{
         super.viewDidLoad()
         
         
+        
         regionTableView.dataSource = self
         regionTableView.delegate = self
+        
         self.regionTableView.rowHeight = viewHeight.constant/17;
         regionList = seoulList
-        clickList = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        
+        clickList = Array<Int>(repeating: 0, count: regionList.count)
         
         //네비게이션 바 라인 없애기
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -133,100 +136,36 @@ class SelectRegionViewController : UIViewController{
         
     }
     
-    
-    @objc func cellClicked(_ sender: UIButton) {
-
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected {
-            clickList[sender.tag] = 1
-            print("추가")
-            print(clickList)
-            regionTableView.reloadData()
-           
-        
-        } else {
-            clickList[sender.tag] = 0
-            print("제거")
-            print(clickList)
-            regionTableView.reloadData()
-         
-           
-        }
-        }
-    
-//    func setRegionCellButton(){
-//
-//        for i in clickList{
-//            let tmpButton = self.view.viewWithTag(i) as? UIButton
-//            if clickList[i] == 1{
-//                tmpButton?.setTitleColor(.simsasuksoGreen, for: .selected)
-//
-//            }else{
-//                tmpButton?.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-//            }
-//        }
-//
-//    }
+   
 }
 
 extension SelectRegionViewController : UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return regionList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegionTableViewCell") as! RegionTableViewCell
         
+        cell.delegate = self
+        cell.index = indexPath.row
+        
         cell.regionButton.setTitle(regionList[indexPath.row], for: .normal)
-        cell.regionButton.tag = indexPath.row
-        print(indexPath.row)
-       cell.regionButton.addTarget(self, action: #selector(self.cellClicked), for: .touchUpInside)
         
-        print("클릭된 버튼 인덱스:")
-        print(clickList.indices.filter({clickList[$0] == 1}))
-        
-        print("안ㅍ클릭된 버튼 인덱스:")
-        print(clickList.indices.filter({clickList[$0] == 0}))
-        
-     
-        
-        for i in clickList.indices.filter({clickList[$0] == 1}){
-            if indexPath.row == i{
-                cell.regionButton.setTitleColor(.simsasuksoGreen, for: .selected)
-              //  self.regionTableView.reloadData()
-
-            }else{
-                for j in clickList.indices.filter({clickList[$0] == 0}){
-                    cell.regionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-
+        if clickList[indexPath.row] == 1 {
+                    cell.isTouched = true
+                }else{
+                    cell.isTouched = false
                 }
-
-
-
-            }
-      }
-    
-        
-//        for i in 0...clickList.count-1{
-//
-//                for j in clickList.indices.filter({clickList[$0] == 1}){
-//                    if indexPath.row == j{
-//                        cell.regionButton.setTitleColor(.simsasuksoGreen, for: .selected)
-//
-//                    }
-//                }
-//
-//                for j in clickList.indices.filter({clickList[$0] == 0}){
-//                    if indexPath.row  == j{
-//                        print(j)
-//                        print("a")
-//                        cell.regionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-//
-//
-//                    }
-//            }
-//        }
-    
+              
         return cell
     }
+    
+    func didPressButton(for index: Int, clicked: Bool) {
+            if clicked == true{
+                clickList[index] = 1
+            }else{
+                clickList[index] = 0
+            }
+        }
 }

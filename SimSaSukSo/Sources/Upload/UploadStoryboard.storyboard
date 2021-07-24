@@ -1202,19 +1202,23 @@
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RegionTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegionTableViewCell" id="EiB-92-Prb" customClass="RegionTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="298" height="21"/>
+                                                        <rect key="frame" x="0.0" y="28" width="298" height="17"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EiB-92-Prb" id="cm4-es-txA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S59-zi-Thx">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="298" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="298" height="17"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     <state key="normal" title="강남 / 역삼 / 삼성">
                                                                         <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="didPressButton:" destination="EiB-92-Prb" eventType="touchUpInside" id="hPA-5V-Xjm"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
