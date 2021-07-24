@@ -21,8 +21,9 @@ class RegionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
-        
+       
+        regionButton.setTitleColor(.black, for: .selected)
+    
     }
 
     @IBAction func didPressButton(_ sender: UIButton) {
@@ -41,10 +42,11 @@ class RegionTableViewCell: UITableViewCell {
             didSet {
                 if isTouched == true {
                     regionButton.setTitleColor(.simsasuksoGreen, for: .normal)
-                   print("click")
+                   print("클릭")
                 
                 }else{
                     regionButton.setTitleColor(.black, for: .normal)
+                    print("안클릭")
                    
                 }
             }
