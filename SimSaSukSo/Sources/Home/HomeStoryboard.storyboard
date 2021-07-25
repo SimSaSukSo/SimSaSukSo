@@ -1539,8 +1539,11 @@
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="commentLabel" destination="2m1-3m-iv0" id="quU-2N-Jr0"/>
+                                                            <outlet property="dateLabel" destination="xu0-I5-SSr" id="8Nj-k5-kuk"/>
                                                             <outlet property="heartButton" destination="kr5-Cd-0U7" id="CMb-Ap-jzA"/>
+                                                            <outlet property="likeNumberLabel" destination="FRA-uG-3Sq" id="XeV-zd-v50"/>
                                                             <outlet property="userImageView" destination="E6P-uT-rDW" id="IG3-Ze-XlQ"/>
+                                                            <outlet property="userNameLabel" destination="TDk-XH-zSD" id="OcU-1V-gkA"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -2166,17 +2169,27 @@
                     <navigationItem key="navigationItem" id="awH-Ww-0k5"/>
                     <connections>
                         <outlet property="bookmarkButton" destination="xxK-Gz-Cbt" id="TG6-Gj-X1h"/>
+                        <outlet property="chargeLabel" destination="S3c-Ep-Gev" id="Uz8-Mh-sCM"/>
                         <outlet property="commentTableView" destination="iiC-V7-nLY" id="ot6-xh-3cL"/>
                         <outlet property="commentTableViewHeight" destination="FSS-S6-fPK" id="HSL-2v-i3m"/>
                         <outlet property="commentUserImageView" destination="PQQ-v0-W04" id="umW-Ru-Uy8"/>
                         <outlet property="commentWriteButton" destination="gfU-oW-sRe" id="nBU-ya-895"/>
+                        <outlet property="consLabel" destination="TMl-WP-OCk" id="ale-M0-u63"/>
+                        <outlet property="correctionDegreeLabel" destination="eqq-9E-Ved" id="hdv-qO-tIg"/>
+                        <outlet property="correctionToolLabel" destination="Bob-bh-Cgr" id="80J-qk-nn8"/>
+                        <outlet property="dateLabel" destination="Ssy-5i-rkX" id="fWA-CR-H6N"/>
                         <outlet property="faceIconImageView" destination="SgH-nY-CGB" id="JGL-8g-VK8"/>
                         <outlet property="feedDetailScrollView" destination="AIR-aO-SkM" id="7Eb-9U-JM8"/>
                         <outlet property="feedDetailView" destination="sR8-uw-zhj" id="Pv7-eG-Drf"/>
                         <outlet property="heartButton" destination="jid-sW-tN4" id="qvb-QT-SnT"/>
                         <outlet property="imageScrollView" destination="hMU-C1-MiN" id="Bt4-E0-OUn"/>
+                        <outlet property="likeNumberLabel" destination="vB5-LX-0Y9" id="Lml-Ci-McS"/>
                         <outlet property="linkStackView" destination="vwT-Ri-NmA" id="XUM-Ub-VJb"/>
+                        <outlet property="locationLabel" destination="AGq-Ud-uhF" id="ula-kb-5vk"/>
+                        <outlet property="nameLabel" destination="oTb-pb-Zpr" id="T68-12-AHK"/>
                         <outlet property="pageControl" destination="OV9-jB-me7" id="Cz3-fT-bFX"/>
+                        <outlet property="prosLabel" destination="jqB-98-McO" id="hUf-4w-kgK"/>
+                        <outlet property="reliabilityLabel" destination="T2H-vw-xYt" id="fBb-TB-cYF"/>
                         <outlet property="reviewLabel" destination="IKM-xa-cQf" id="2Eq-Ad-Nch"/>
                         <outlet property="seeLinkButton" destination="kta-QW-Rkk" id="89d-HQ-tV4"/>
                         <outlet property="tagCollectionView" destination="vEo-jO-0zS" id="oWR-WC-0oH"/>

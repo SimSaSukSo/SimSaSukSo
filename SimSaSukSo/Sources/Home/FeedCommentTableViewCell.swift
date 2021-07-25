@@ -10,7 +10,10 @@ import UIKit
 class FeedCommentTableViewCell: UITableViewCell {
     
     @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var likeNumberLabel: UILabel!
     @IBOutlet var heartButton: UIButton!
     
 
