@@ -70,9 +70,9 @@ class UploadAirbnbFourthStepViewController : UIViewController{
     
     @IBAction func nextButtonAction(_ sender: Any) {
         let fifthVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbFifthStepViewController")as!UploadAirbnbFifthStepViewController
-        fifthVC?.modalPresentationStyle = .fullScreen
+        fifthVC.modalPresentationStyle = .fullScreen
         fifthVC.airbnbInput = self.airbnbInput
-        self.present(fifthVC!, animated: false, completion: nil)
+        self.present(fifthVC, animated: false, completion: nil)
         
     }
     
