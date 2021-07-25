@@ -11,6 +11,8 @@ class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
     
+    var prosAndCons = [ProsAndCons]()
+    
     var feedImages = [feedImage]()
     var feedTags = [feedInfo]()
     
@@ -20,7 +22,10 @@ class FeedDetailViewController: UIViewController {
     
     var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
     var imageViews = [UIImageView]()
-
+    var hashTags = [String]()
+    
+    var feedIndex = 1
+    
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!
     
@@ -43,6 +48,9 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var prosLabel: UILabel!
     @IBOutlet var consLabel: UILabel!
     
+    @IBOutlet var commentNumberLabel: UILabel!
+    @IBOutlet var favoriteNumberLabel: UILabel!
+    
     @IBOutlet var reviewLabel: UILabel!
     
     @IBOutlet var tagCollectionView: UICollectionView!
@@ -50,10 +58,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var bookmarkButton: UIButton!
     
     @IBOutlet var correctionToolLabel: UILabel!
-    
-    
-    
-    
+  
     @IBOutlet var linkStackView: UIStackView!
     @IBOutlet var seeLinkButton: UIButton!
     
@@ -66,6 +71,9 @@ class FeedDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataManager.feedView(delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)")
+        dataManager.feedComment(delegate: self)
         
         self.navigationController?.navigationBar.isTransparent = true
         self.navigationController?.navigationBar.tintColor = .clear
@@ -87,8 +95,8 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
-        //dataManager.feedView(delegate: self)
-        dataManager.feedComment(delegate: self)
+        
+        
     }
     
     
@@ -118,16 +126,29 @@ class FeedDetailViewController: UIViewController {
     }
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
+        
         if heartButton.isSelected {
             heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-            print("찜")
+            print("좋아요")
         } else {
             heartButton.setImage(UIImage(named: "heart"), for: .normal)
-            print("찜취소")
+            print("좋아요취소")
         }
         
     }
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
+        bookmarkButton.isSelected = !bookmarkButton.isSelected
+        
+        let input = FavoriteCheckRequest(savedListIndex: 35, feedIndex: 35)
+        if bookmarkButton.isSelected {
+            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
+            dataManager.favoriteCheck(input, delegate: self)
+            print("찜")
+        } else {
+            bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
+            dataManager.favoriteCheck(input, delegate: self)
+            print("찜취소")
+        }
     
     }
     
@@ -182,13 +203,13 @@ extension FeedDetailViewController: UIScrollViewDelegate {
 extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return hashTags.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedTagCollectionViewCell", for: indexPath) as! FeedTagCollectionViewCell
         
-        cell.tagLabel.text = textArray[indexPath.row]
+        cell.tagLabel.text = hashTags[indexPath.row]
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
@@ -234,7 +255,7 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.commentLabel.text = feedComment.content
         cell.likeNumberLabel.text = "좋아요 " + String(feedComment.likeNum)
         cell.userNameLabel.text = feedComment.nickname
-        
+       
         // 이미지 URL 가져오기
         let urlString = feedComment.avatarUrl
         if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -262,12 +283,47 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - API
 extension FeedDetailViewController {
     func feedView(result: FeedResult) {
-        //likeNumberLabel.text = String(result.feedLike!.likeNum)
+        likeNumberLabel.text! = String(result.feedLike!.likeNum!)
+        reliabilityLabel.text! = String(result.feedInfo!.reliability!)
+        //correctionDegreeLabel.text! = String(result.correction!.correctionDegree!)
+        reviewLabel.text! = String(result.feedInfo!.review!)
+        chargeLabel.text! = String(result.feedInfo!.charge!) + "원"
+        favoriteNumberLabel.text! = String(result.save!.saveNum!)
+        
+//        let correctionToolContents = result.correction!.correctionTool!.joined()
+//        correctionToolLabel.text! = correctionToolContents
+        
+        nameLabel.text! = result.lodgingInfo!.info!
+        locationLabel.text! = result.lodgingInfo!.address!
+        dateLabel.text! = result.feedInfo!.startDate! + "~" + result.feedInfo!.endDate!
+        
+        prosAndCons = result.prosAndCons!
+        prosLabel.text! = prosAndCons.description
+       
+        // 좋아요
+        if result.feedLike?.isLiked == 1 { // Yes
+            heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+        } else {
+            heartButton.setImage(UIImage(named: "heart"), for: .normal)
+        }
+        
+        // 찜
+        if result.save?.isSaved == 1 { // Yes
+            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
+        } else {
+            bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
+        }
+        
     }
     
     func feedComment(result: FeedCommentResponse) {
         feedComments = result.result!
+        commentNumberLabel.text = String(feedComments.count)
         commentTableView.reloadData()
+    }
+    
+    func favoriteCheck(_ result: FavoriteCheckResponse) {
+        self.presentAlert(title: "성공")
     }
     
     func failedToRequest(message: String) {

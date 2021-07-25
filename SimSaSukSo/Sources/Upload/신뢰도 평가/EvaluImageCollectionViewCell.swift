@@ -8,5 +8,6 @@
 import UIKit
 
 class EvaluImageCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var imageView: UIImageView!
     
 }
