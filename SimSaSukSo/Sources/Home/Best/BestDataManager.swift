@@ -26,8 +26,8 @@ class BestDataManager {
     }
         
     // 인기 - ONE Feed
-    func bestOneFeed(delegate: BestOneFeedViewController) {
-        let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
+    func bestOneFeed(delegate: BestOneFeedViewController, url: String) {
+        //let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: BestResponse.self) { response in
@@ -42,8 +42,8 @@ class BestDataManager {
     }
     
     // 인기 - Feeds
-    func bestFeeds(delegate: BestFeedsViewController) {
-        let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
+    func bestFeeds(delegate: BestFeedsViewController, url: String) {
+        //let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: BestResponse.self) { response in
@@ -56,5 +56,6 @@ class BestDataManager {
                 }
             }
     }
+    
 
 }

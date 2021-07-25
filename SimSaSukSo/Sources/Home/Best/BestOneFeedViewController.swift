@@ -13,6 +13,8 @@ class BestOneFeedViewController: UIViewController {
     
     static var bestOneFeeds: [BestFeeds] = []
     
+    var page = 0
+    
     @IBOutlet var bestOneFeedCollectionView: UICollectionView!
   
     override func viewDidLoad() {
@@ -21,7 +23,7 @@ class BestOneFeedViewController: UIViewController {
         bestOneFeedCollectionView.delegate = self
         bestOneFeedCollectionView.dataSource = self
         
-        dataManager.bestOneFeed(delegate: self)
+        dataManager.bestOneFeed(delegate: self, url: "\(Constant.BASE_URL)api/feeds/hot?page=\(page+1)")
     }
     
 }
