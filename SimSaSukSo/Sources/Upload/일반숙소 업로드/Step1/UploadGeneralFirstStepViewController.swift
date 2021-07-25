@@ -12,7 +12,7 @@ import UIKit
 class UploadGeneralFirstStepViewController : UIViewController{
     
     
-    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: ["url"], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
     var regionList : [documentsDetail] = []
     var keyword : String = ""
@@ -34,6 +34,10 @@ class UploadGeneralFirstStepViewController : UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showTableView), name: UITextField.textDidChangeNotification, object: nil)
+        
+        self.generalInput.images = UploadViewController.urlArray
+        print("url :")
+        print(self.generalInput.images)
         
         FirstPictureCollectionView.dataSource = self
         FirstPictureCollectionView.delegate = self
