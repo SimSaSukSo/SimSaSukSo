@@ -7,7 +7,7 @@
 
 import Alamofire
 class UploadAirbnbDataManager{
-    func airbnb(parameters:UploadAirbnbInput,viewcontroller:UploadGeneralFifthStepViewController){
+    func airbnb(parameters:UploadAirbnbInput,viewcontroller:UploadAirbnbFifthStepViewController){
         AF.request("\(Constant.BASE_URL)api/feeds/airbnb", method: .post, parameters: parameters,headers: KeyCenter.header)
             .validate()
             .responseDecodable(of:UploadAirbnbResponse.self){response in

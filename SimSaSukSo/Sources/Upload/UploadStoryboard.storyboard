@@ -37,16 +37,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="761"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wum-Uj-qca">
-                                                <rect key="frame" x="16" y="44" width="117" height="56"/>
+                                                <rect key="frame" x="16" y="44" width="124.5" height="67"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqG-tB-qcj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="23.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="124.5" height="30"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 선택해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEL-7t-TR7">
-                                                        <rect key="frame" x="0.0" y="39.5" width="117" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="46" width="124.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31j-aI-Zi5">
-                                                <rect key="frame" x="379" y="49" width="14" height="14"/>
+                                                <rect key="frame" x="379" y="52" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="14" id="Zyw-XH-sbo"/>
                                                     <constraint firstAttribute="height" constant="14" id="i2F-Jy-Uw5"/>
@@ -65,20 +65,20 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="enF-Jl-Q2x">
-                                                <rect key="frame" x="0.0" y="116" width="414" height="414"/>
+                                                <rect key="frame" x="0.0" y="127" width="414" height="414"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="414" id="jUq-CL-Mhi"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="갤러리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4g-Rv-Fdx">
-                                                <rect key="frame" x="16" y="542" width="36.5" height="16.5"/>
+                                                <rect key="frame" x="16" y="553" width="39" height="21"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c3-mX-ZxM">
-                                                <rect key="frame" x="79.5" y="547" width="10.5" height="6.5"/>
+                                                <rect key="frame" x="82" y="560.5" width="10.5" height="6"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6.25" id="py1-aH-deW"/>
                                                     <constraint firstAttribute="width" constant="10.539999999999999" id="t5Q-QT-WHq"/>
@@ -89,7 +89,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAY-DE-UdI">
-                                                <rect key="frame" x="372.5" y="546" width="22.5" height="33"/>
+                                                <rect key="frame" x="372.5" y="557" width="22.5" height="22"/>
                                                 <color key="tintColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="square.on.square" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
@@ -229,22 +229,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydb-4d-toP">
-                                <rect key="frame" x="16" y="88" width="92.5" height="30"/>
+                                <rect key="frame" x="16" y="88" width="86.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                 <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a4-MB-F5S">
-                                <rect key="frame" x="16" y="134" width="398" height="65"/>
+                                <rect key="frame" x="16" y="127.5" width="398" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vz0-aM-5bY">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvR-4D-Qcx">
-                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="382" height="18"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -252,7 +252,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kar-Ge-7zA">
-                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="382" height="1"/>
                                         <color key="backgroundColor" red="0.90588235294117647" green="0.9137254901960784" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="XUb-J4-g4R"/>
@@ -273,10 +273,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zor-17-8uy">
-                                <rect key="frame" x="16" y="231" width="398" height="186"/>
+                                <rect key="frame" x="16" y="224.5" width="398" height="186"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGx-Wm-qbC">
-                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                         <string key="text">업로드한 사진
 </string>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -284,7 +284,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-bs-1kn">
-                                        <rect key="frame" x="0.0" y="37" width="398" height="149"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="398" height="153.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mp0-J4-ur1">
                                             <size key="itemSize" width="150" height="150"/>
@@ -294,7 +294,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UploadedPictureFirstCollectionViewCell" id="4cb-PH-qW9" customClass="UploadedPictureFirstCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-0.5" width="150" height="150"/>
+                                                <rect key="frame" x="0.0" y="2" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Q2K-sE-EyC">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -379,7 +379,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-oG-M4f">
-                                <rect key="frame" x="16" y="201.5" width="382" height="240"/>
+                                <rect key="frame" x="16" y="186" width="382" height="240"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Iwb-jX-rfV"/>
@@ -468,16 +468,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wNc-RZ-nue">
-                                <rect key="frame" x="99.5" y="512" width="215" height="104.5"/>
+                                <rect key="frame" x="106.5" y="512" width="201.5" height="84.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드가 완료되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH1-OJ-hMf">
-                                        <rect key="frame" x="0.0" y="0.0" width="215" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRj-0n-Yo6">
-                                        <rect key="frame" x="0.0" y="42" width="215" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="35.5" width="201.5" height="49"/>
                                         <string key="text">즐거운 여행 되셨나요?
 다른 분들을 위해 조회하셨던 글
 신뢰도 평가 부탁드려요!</string>
@@ -535,10 +535,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNJ-GM-67s">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="811.5"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="srk-5E-mfj">
-                                                <rect key="frame" x="16" y="74" width="398" height="744"/>
+                                                <rect key="frame" x="16" y="67.5" width="398" height="744"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="744" id="LQn-89-eL0"/>
@@ -566,7 +566,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="simsa123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mC-n1-zt1">
-                                                                    <rect key="frame" x="28" y="16" width="74" height="24"/>
+                                                                    <rect key="frame" x="28" y="18.5" width="68.5" height="19"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -691,13 +691,13 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신뢰도 평가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jng-C5-lEZ">
-                                                <rect key="frame" x="16" y="44" width="134.5" height="30"/>
+                                                <rect key="frame" x="16" y="44" width="127" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvi-2e-1iM">
-                                                <rect key="frame" x="380" y="53" width="12" height="12"/>
+                                                <rect key="frame" x="380" y="50" width="12" height="12"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="ykI-qC-Cc8"/>
                                                     <constraint firstAttribute="width" constant="12" id="zLv-gW-ak2"/>
@@ -779,19 +779,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80T-aC-zIX">
-                                <rect key="frame" x="16" y="358" width="382" height="180"/>
+                                <rect key="frame" x="16" y="349" width="382" height="198.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-VT-eJ6">
-                                        <rect key="frame" x="83.5" y="24" width="215.5" height="70"/>
+                                        <rect key="frame" x="79" y="24" width="224.5" height="84.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가 끝내기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szk-9j-Nom">
-                                                <rect key="frame" x="0.0" y="0.0" width="215.5" height="19"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="highlightedColor" name="AccentColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i0-f9-Cbq">
-                                                <rect key="frame" x="0.0" y="35" width="215.5" height="35"/>
+                                                <rect key="frame" x="0.0" y="40" width="224.5" height="44.5"/>
                                                 <string key="text">N명의 신뢰도 평가를 해주셨네요!
 평가를 마치고 홈으로 가시겠습니까?</string>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
@@ -801,10 +801,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="4iG-4k-LAf">
-                                        <rect key="frame" x="55" y="135" width="272" height="29"/>
+                                        <rect key="frame" x="50.5" y="149.5" width="281" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmD-hd-oXH">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="33"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <state key="normal" title="홈으로 가기">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -814,7 +814,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gk-fP-7xo">
-                                                <rect key="frame" x="195" y="0.0" width="77" height="29"/>
+                                                <rect key="frame" x="199" y="0.0" width="82" height="33"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <state key="normal" title="마저 평가하기">
                                                     <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -826,7 +826,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aE4-dD-zmu">
-                                        <rect key="frame" x="0.0" y="118" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="132.5" width="382" height="1"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="as9-n7-4BI"/>
@@ -872,19 +872,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPl-rd-2Ol">
-                                <rect key="frame" x="16" y="348.5" width="382" height="199"/>
+                                <rect key="frame" x="16" y="344" width="382" height="208"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후기를 남길 숙소 유형을 선택해주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl5-hq-VMI">
-                                        <rect key="frame" x="69" y="24" width="244" height="19"/>
+                                        <rect key="frame" x="61.5" y="24" width="259" height="24"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" name="AccentColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="v6q-OC-puQ">
-                                        <rect key="frame" x="96" y="154" width="190" height="29"/>
+                                        <rect key="frame" x="96" y="159" width="190" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5i-mN-Czf">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <state key="normal" title="닫기">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -894,7 +894,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-Mu-UWO">
-                                                <rect key="frame" x="160" y="0.0" width="30" height="29"/>
+                                                <rect key="frame" x="160" y="0.0" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <state key="normal" title="선택">
                                                     <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -906,7 +906,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFZ-tM-gti">
-                                        <rect key="frame" x="51" y="67" width="280" height="46"/>
+                                        <rect key="frame" x="51" y="72" width="280" height="46"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuo-n0-PcF">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="46"/>
@@ -938,7 +938,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5M-pO-yr9">
-                                        <rect key="frame" x="0.0" y="137" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="142" width="382" height="1"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="1Fg-eg-gRP"/>
@@ -1202,14 +1202,14 @@
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RegionTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegionTableViewCell" id="EiB-92-Prb" customClass="RegionTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="298" height="41"/>
+                                                        <rect key="frame" x="0.0" y="28" width="298" height="37"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EiB-92-Prb" id="cm4-es-txA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="41"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="37"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S59-zi-Thx">
-                                                                    <rect key="frame" x="10" y="10" width="278" height="21"/>
+                                                                    <rect key="frame" x="10" y="10" width="278" height="17"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1763,7 +1763,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="sDK-kv-jd7" customClass="DesignableSlider" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="-2" y="52.5" width="386" height="31"/>
+                                                        <rect key="frame" x="-2" y="52.5" width="386" height="22"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1774,13 +1774,13 @@
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCn-Xq-Qxo">
-                                                        <rect key="frame" x="0.0" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-Kf-MrD">
-                                                        <rect key="frame" x="375.5" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="375.5" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1818,33 +1818,33 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heE-f5-vR7">
-                                                        <rect key="frame" x="187" y="38" width="8" height="21"/>
+                                                        <rect key="frame" x="187" y="37" width="8" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 시작일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uks-a0-g2J">
-                                                        <rect key="frame" x="0.0" y="37" width="175" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="175" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXZ-f5-6y2">
-                                                        <rect key="frame" x="0.0" y="63.5" width="175" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="175" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="pDm-3P-4Ux"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-xp-P5S">
-                                                        <rect key="frame" x="207" y="63.5" width="175" height="1"/>
+                                                        <rect key="frame" x="207" y="62" width="175" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="vSV-of-7ne"/>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 마지막일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0Q-jA-RYh">
-                                                        <rect key="frame" x="207" y="37" width="175" height="22.5"/>
+                                                        <rect key="frame" x="207" y="37" width="175" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1881,13 +1881,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4iU-r4-Owt">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37E-d7-BWO">
-                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="XpS-sj-2l5"/>
@@ -1917,13 +1917,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tF2-bK-gp0">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIZ-Ju-mc0">
-                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="LdY-xh-qUZ"/>
@@ -1953,13 +1953,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-Rz-lQu">
-                                                        <rect key="frame" x="0.0" y="37" width="366" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="366" height="21"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-5g-pp5">
-                                                        <rect key="frame" x="0.0" y="63.5" width="366" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="366" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="l8K-zh-OCw"/>
@@ -2219,22 +2219,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdP-Cu-6gt">
-                                                <rect key="frame" x="16" y="44" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="44" width="382" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGy-OS-mqC">
-                                                <rect key="frame" x="16" y="90" width="382" height="176"/>
+                                                <rect key="frame" x="16" y="83.5" width="382" height="176"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3y-cv-cVa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="26" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="숙소의 실제 후기를 들려주세요 :)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xgc-Ze-EBW">
-                                                        <rect key="frame" x="0.0" y="31" width="382" height="145"/>
+                                                        <rect key="frame" x="0.0" y="26.5" width="382" height="149.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -2251,13 +2251,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndZ-ee-w7m">
-                                                <rect key="frame" x="16" y="290" width="382" height="21"/>
+                                                <rect key="frame" x="16" y="283.5" width="382" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-aR-a0i">
-                                                <rect key="frame" x="16" y="321" width="382" height="100"/>
+                                                <rect key="frame" x="16" y="310" width="382" height="100"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="A0g-Og-f0L">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -2280,7 +2280,7 @@
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWE-eh-j2e">
-                                                                            <rect key="frame" x="8" y="6.5" width="40" height="21"/>
+                                                                            <rect key="frame" x="8" y="9" width="40" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                                             <color key="textColor" red="0.20000000000000001" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -2418,13 +2418,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9u-rV-Vp7">
-                                                <rect key="frame" x="16" y="445" width="26" height="21"/>
+                                                <rect key="frame" x="16" y="434" width="24.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j5b-ph-uxA">
-                                                <rect key="frame" x="16" y="476" width="382" height="100"/>
+                                                <rect key="frame" x="16" y="460.5" width="382" height="100"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="89K-TO-bEF">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -2576,13 +2576,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUa-Qp-Le2">
-                                                <rect key="frame" x="16" y="600" width="26" height="21"/>
+                                                <rect key="frame" x="16" y="584.5" width="24.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SNm-Dz-O7p">
-                                                <rect key="frame" x="16" y="631" width="382" height="100"/>
+                                                <rect key="frame" x="16" y="611" width="382" height="100"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oH3-MW-wQR">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
@@ -2913,7 +2913,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="WGU-LD-AiW" customClass="DesignableSlider" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="-2" y="52.5" width="386" height="31"/>
+                                                        <rect key="frame" x="-2" y="52.5" width="386" height="22"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.81960784310000001" green="0.83529411760000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -2924,13 +2924,13 @@
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-O9-yIu">
-                                                        <rect key="frame" x="0.0" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KH-4U-s74">
-                                                        <rect key="frame" x="375.5" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="375.5" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2975,6 +2975,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 시작일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIM-3E-cab">
                                                         <rect key="frame" x="0.0" y="37" width="175" height="21"/>
+                                                        <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -2994,6 +2995,7 @@
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 마지막일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mtf-7g-P5n">
                                                         <rect key="frame" x="207" y="37" width="175" height="21"/>
+                                                        <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -3030,6 +3032,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가격을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5r-O5-m3I">
                                                         <rect key="frame" x="0.0" y="37" width="382" height="21"/>
+                                                        <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -3057,8 +3060,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbS-o7-4Av">
                                                 <rect key="frame" x="16" y="458" width="382" height="65"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZF-lE-JCn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 위치 부가 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZF-lE-JCn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -3092,7 +3095,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-uP-gcx">
                                                 <rect key="frame" x="16" y="555" width="382" height="65"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="py0-9P-ecM">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 링크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="py0-9P-ecM">
                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -3100,6 +3103,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-vV-cza">
                                                         <rect key="frame" x="0.0" y="37" width="366" height="21"/>
+                                                        <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -3283,8 +3287,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="efN-Xe-7mo"/>
                     <connections>
+                        <outlet property="endDateTextField" destination="Mtf-7g-P5n" id="LqB-o3-OpT"/>
                         <outlet property="fourthPictureCollectionView" destination="3Cg-gL-AYy" id="ajw-dD-gf7"/>
+                        <outlet property="locationTextField" destination="GBF-vV-cza" id="GOZ-Ws-vwx"/>
+                        <outlet property="priceTextField" destination="b5r-O5-m3I" id="94p-ws-EE3"/>
                         <outlet property="slider" destination="WGU-LD-AiW" id="nFn-cj-yAB"/>
+                        <outlet property="startDateTextFIeld" destination="XIM-3E-cab" id="d6R-J3-60J"/>
+                        <outlet property="urlTextField" destination="GBF-vV-cza" id="wNF-Ew-tYp"/>
                         <outlet property="usedToolAppButton" destination="mtS-3q-hzB" id="M6n-jv-GQY"/>
                         <outlet property="usedToolCameraButton" destination="XQ7-66-s9f" id="uUM-Ic-ktC"/>
                         <outlet property="usedToolFilterButton" destination="Ltx-4a-9dh" id="ffc-5T-4Uk"/>
@@ -3304,17 +3313,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtF-rC-iTC">
-                                <rect key="frame" x="0.0" y="808.5" width="414" height="87.5"/>
+                                <rect key="frame" x="0.0" y="420" width="414" height="45.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfo-e8-kQQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="6.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="3.5"/>
                                         <color key="backgroundColor" red="0.54901960780000003" green="0.92941176469999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="m4j-wP-AeG">
-                                        <rect key="frame" x="0.0" y="6.5" width="414" height="81"/>
+                                        <rect key="frame" x="0.0" y="3.5" width="414" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-U6-Qng">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="81"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="42"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                 <state key="normal" title="이전으로">
                                                     <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -3324,7 +3333,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAP-Zo-xpR">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="81"/>
+                                                <rect key="frame" x="207" y="0.0" width="207" height="42"/>
                                                 <color key="backgroundColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                 <state key="normal" title="업로드하기">
@@ -3351,7 +3360,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PsR-dm-Oyv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="764.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="376"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-Hx-RIf">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -3446,7 +3455,7 @@
                                                                     <outlet property="xButton" destination="RGf-qg-j4K" id="6Dd-yw-sby"/>
                                                                 </connections>
                                                             </collectionViewCell>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UploadGeneralAddTagCollectionViewCell" id="OKN-Y9-Y2a" customClass="UploadGeneralAddTagCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UploadAirTagCollectionViewCell" reuseIdentifier="UploadAirTagCollectionViewCell" id="OKN-Y9-Y2a" customClass="UploadAirTagCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
                                                                 <rect key="frame" x="81" y="9" width="119" height="32"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4zA-9A-hic">
@@ -3502,7 +3511,9 @@
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="119" height="32"/>
                                                                 <connections>
-                                                                    <outlet property="addTagButton" destination="iwh-Mo-On4" id="kRK-r0-uvD"/>
+                                                                    <outlet property="addTagButton" destination="iwh-Mo-On4" id="hK3-7L-rT3"/>
+                                                                    <outlet property="addTagLabel" destination="ISF-8r-Bxh" id="luM-JC-H13"/>
+                                                                    <outlet property="plusImageView" destination="GfG-Fn-Dps" id="mO1-d1-osr"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -3935,6 +3946,7 @@
                         <outlet property="disadvantageEnterButton" destination="elE-Ni-0Mq" id="Tig-da-sZ3"/>
                         <outlet property="disadvantageTextField" destination="tGA-2F-ofG" id="tq6-ql-PoE"/>
                         <outlet property="disadvantageTextFieldView" destination="pYe-Mt-Noa" id="dYc-Ko-5gA"/>
+                        <outlet property="reviewTextField" destination="rlZ-lA-Ws1" id="u5E-zF-2Mh"/>
                         <outlet property="tagCollectionView" destination="21V-vl-obo" id="HXG-Am-78V"/>
                         <outlet property="tagEnterButton" destination="9Ot-Rg-jtN" id="kBj-0k-WbB"/>
                         <outlet property="tagTextField" destination="U8h-u1-ddX" id="kDs-1M-3RI"/>
@@ -3954,22 +3966,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj9-2i-Ysy">
-                                <rect key="frame" x="16" y="88" width="92.5" height="30"/>
+                                <rect key="frame" x="16" y="88" width="86.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prw-xO-lca">
-                                <rect key="frame" x="16" y="134" width="398" height="65"/>
+                                <rect key="frame" x="16" y="127.5" width="398" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 링크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA3-Zc-DCL">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="에어비앤비 링크를 넣어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sj7-PO-m3H">
-                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="382" height="18"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -3978,7 +3990,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-5N-bBQ">
-                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="382" height="1"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="wxR-Qk-jIt"/>
@@ -3999,10 +4011,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iug-Fj-8Kk">
-                                <rect key="frame" x="16" y="231" width="398" height="186"/>
+                                <rect key="frame" x="16" y="224.5" width="398" height="186"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-Xx-Xdj">
-                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                         <string key="text">업로드한 사진
 </string>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -4010,7 +4022,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZaT-dk-APu">
-                                        <rect key="frame" x="0.0" y="37" width="398" height="149"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="398" height="153.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cjd-z1-Of0">
                                             <size key="itemSize" width="150" height="150"/>
@@ -4020,7 +4032,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UploadedPictureFirstCollectionViewCell" id="JXc-1i-l3v" customClass="UploadedPictureFirstCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-0.5" width="150" height="150"/>
+                                                <rect key="frame" x="0.0" y="2" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fyW-CM-LYY">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -4154,70 +4166,6 @@
                                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1f-J0-Cg1">
-                                                <rect key="frame" x="16" y="90" width="382" height="63"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙박 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECF-DJ-obq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="La6-qJ-0k7">
-                                                        <rect key="frame" x="187" y="38" width="8" height="21"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 시작일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p5Z-v5-H7J">
-                                                        <rect key="frame" x="0.0" y="37" width="175" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <action selector="startDateTFAction:" destination="qa7-rH-6Zj" eventType="editingDidEnd" id="l3y-P3-cbz"/>
-                                                        </connections>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gM1-Mw-bcI">
-                                                        <rect key="frame" x="0.0" y="63.5" width="175" height="1"/>
-                                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="MpZ-Cz-CKG"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rby-Hs-ifZ">
-                                                        <rect key="frame" x="207" y="63.5" width="175" height="1"/>
-                                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="77D-nO-tpi"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 마지막일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNi-mP-5rG">
-                                                        <rect key="frame" x="207" y="37" width="175" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstItem="gM1-Mw-bcI" firstAttribute="leading" secondItem="p5Z-v5-H7J" secondAttribute="leading" id="2eI-jm-6gA"/>
-                                                    <constraint firstItem="bNi-mP-5rG" firstAttribute="top" secondItem="p5Z-v5-H7J" secondAttribute="top" id="50y-QU-AOe"/>
-                                                    <constraint firstItem="gM1-Mw-bcI" firstAttribute="trailing" secondItem="p5Z-v5-H7J" secondAttribute="trailing" id="6gM-Sg-Fi8"/>
-                                                    <constraint firstItem="La6-qJ-0k7" firstAttribute="centerX" secondItem="u1f-J0-Cg1" secondAttribute="centerX" id="8bC-hD-9zL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="bNi-mP-5rG" secondAttribute="trailing" id="8fg-z9-ghK"/>
-                                                    <constraint firstItem="La6-qJ-0k7" firstAttribute="centerY" secondItem="p5Z-v5-H7J" secondAttribute="centerY" id="Aof-tl-Fvg"/>
-                                                    <constraint firstItem="p5Z-v5-H7J" firstAttribute="leading" secondItem="u1f-J0-Cg1" secondAttribute="leading" id="BSZ-fS-FOx"/>
-                                                    <constraint firstItem="p5Z-v5-H7J" firstAttribute="top" secondItem="ECF-DJ-obq" secondAttribute="bottom" constant="16" id="F2i-mf-r3r"/>
-                                                    <constraint firstAttribute="height" constant="63" id="Feh-Hc-DOT"/>
-                                                    <constraint firstItem="rby-Hs-ifZ" firstAttribute="leading" secondItem="bNi-mP-5rG" secondAttribute="leading" id="Mj8-fb-Mcp"/>
-                                                    <constraint firstItem="rby-Hs-ifZ" firstAttribute="top" secondItem="bNi-mP-5rG" secondAttribute="bottom" constant="4" id="aq7-1M-wkL"/>
-                                                    <constraint firstItem="rby-Hs-ifZ" firstAttribute="trailing" secondItem="bNi-mP-5rG" secondAttribute="trailing" id="lhe-eh-0ai"/>
-                                                    <constraint firstItem="ECF-DJ-obq" firstAttribute="leading" secondItem="u1f-J0-Cg1" secondAttribute="leading" id="mZI-Ye-c7W"/>
-                                                    <constraint firstItem="bNi-mP-5rG" firstAttribute="leading" secondItem="La6-qJ-0k7" secondAttribute="trailing" constant="12" id="tjP-E3-T3r"/>
-                                                    <constraint firstItem="ECF-DJ-obq" firstAttribute="top" secondItem="u1f-J0-Cg1" secondAttribute="top" id="xBm-dT-7e1"/>
-                                                    <constraint firstItem="La6-qJ-0k7" firstAttribute="leading" secondItem="p5Z-v5-H7J" secondAttribute="trailing" constant="12" id="yCu-WG-YIz"/>
-                                                    <constraint firstItem="gM1-Mw-bcI" firstAttribute="top" secondItem="p5Z-v5-H7J" secondAttribute="bottom" constant="4" id="z97-TC-vLP"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mp1-3l-N2T">
                                                 <rect key="frame" x="16" y="185" width="382" height="65"/>
                                                 <subviews>
@@ -4229,6 +4177,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가격을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSK-KL-A5I">
                                                         <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -4253,6 +4202,12 @@
                                                     <constraint firstAttribute="height" constant="65" id="wjv-Pr-5fL"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dddddd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzT-Jq-geE">
+                                                <rect key="frame" x="16" y="253.5" width="382" height="18"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                <color key="textColor" red="0.94901960780000005" green="0.1215686275" blue="0.1215686275" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyU-VA-Zdn">
                                                 <rect key="frame" x="16" y="282" width="382" height="65"/>
                                                 <subviews>
@@ -4264,6 +4219,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 위치를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdO-E3-0Ia">
                                                         <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -4299,6 +4255,7 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="urF-VF-PRH">
                                                         <rect key="frame" x="0.0" y="37" width="366" height="22.5"/>
+                                                        <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -4379,27 +4336,104 @@
                                                     <constraint firstItem="aPm-qJ-QV3" firstAttribute="leading" secondItem="dC6-HG-veO" secondAttribute="leading" id="f1Z-nv-LYf"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyl-vJ-ilV">
+                                                <rect key="frame" x="16" y="90" width="382" height="63"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙박 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkQ-mB-8wS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykv-n0-cbL">
+                                                        <rect key="frame" x="187" y="43" width="8" height="21"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eco-YS-C1z">
+                                                        <rect key="frame" x="0.0" y="70" width="175" height="1"/>
+                                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Vte-qN-uf6"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gY-MR-8Ep">
+                                                        <rect key="frame" x="199" y="70" width="183" height="1"/>
+                                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="APU-j2-x4p"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ual-im-vaE">
+                                                        <rect key="frame" x="0.0" y="37" width="183" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <state key="normal" title="숙박 시작일">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="startDateAction:" destination="qa7-rH-6Zj" eventType="touchUpInside" id="vgf-qG-vRP"/>
+                                                            <action selector="startDateButtonAction:" destination="Ade-nf-nDm" eventType="touchUpInside" id="hoa-LF-OE4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-SQ-UAF">
+                                                        <rect key="frame" x="199" y="37" width="183" height="33"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="숙박 마지막일">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="endDateAction:" destination="qa7-rH-6Zj" eventType="touchUpInside" id="Gga-wS-WYf"/>
+                                                            <action selector="endDateButtonAction:" destination="Ade-nf-nDm" eventType="touchUpInside" id="QS1-2f-8es"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ual-im-vaE" firstAttribute="top" secondItem="fkQ-mB-8wS" secondAttribute="bottom" constant="16" id="1OE-5a-ORK"/>
+                                                    <constraint firstItem="eco-YS-C1z" firstAttribute="top" secondItem="Ual-im-vaE" secondAttribute="bottom" id="3Hb-L5-WIN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eco-YS-C1z" secondAttribute="trailing" constant="207" id="3no-Xv-lLr"/>
+                                                    <constraint firstItem="3gY-MR-8Ep" firstAttribute="leading" secondItem="1WE-SQ-UAF" secondAttribute="leading" id="DMa-lo-Ubf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1WE-SQ-UAF" secondAttribute="trailing" id="Grb-Vk-cFv"/>
+                                                    <constraint firstItem="fkQ-mB-8wS" firstAttribute="top" secondItem="Tyl-vJ-ilV" secondAttribute="top" id="K1M-Rc-gev"/>
+                                                    <constraint firstItem="Ykv-n0-cbL" firstAttribute="centerX" secondItem="Tyl-vJ-ilV" secondAttribute="centerX" id="Nxx-5R-IkT"/>
+                                                    <constraint firstItem="3gY-MR-8Ep" firstAttribute="trailing" secondItem="1WE-SQ-UAF" secondAttribute="trailing" id="OlL-B7-lvW"/>
+                                                    <constraint firstItem="1WE-SQ-UAF" firstAttribute="top" secondItem="Ual-im-vaE" secondAttribute="top" id="Vp1-z6-Jpb"/>
+                                                    <constraint firstItem="1WE-SQ-UAF" firstAttribute="centerY" secondItem="Ual-im-vaE" secondAttribute="centerY" id="Y7d-oT-JFY"/>
+                                                    <constraint firstItem="eco-YS-C1z" firstAttribute="leading" secondItem="Ual-im-vaE" secondAttribute="leading" id="a70-Ds-QGP"/>
+                                                    <constraint firstItem="fkQ-mB-8wS" firstAttribute="leading" secondItem="Tyl-vJ-ilV" secondAttribute="leading" id="azg-IT-Iay"/>
+                                                    <constraint firstItem="3gY-MR-8Ep" firstAttribute="top" secondItem="1WE-SQ-UAF" secondAttribute="bottom" id="hsH-Zp-pGN"/>
+                                                    <constraint firstItem="Ual-im-vaE" firstAttribute="centerY" secondItem="Ykv-n0-cbL" secondAttribute="centerY" id="kTO-Qt-Pzq"/>
+                                                    <constraint firstItem="Ykv-n0-cbL" firstAttribute="leading" secondItem="Ual-im-vaE" secondAttribute="trailing" constant="4" id="tM8-HL-As0"/>
+                                                    <constraint firstAttribute="height" constant="63" id="tTF-Xl-5KO"/>
+                                                    <constraint firstItem="1WE-SQ-UAF" firstAttribute="leading" secondItem="Ykv-n0-cbL" secondAttribute="trailing" constant="4" id="ttd-iV-8Z5"/>
+                                                    <constraint firstItem="Ual-im-vaE" firstAttribute="leading" secondItem="Tyl-vJ-ilV" secondAttribute="leading" id="wVM-BB-hd2"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="CyU-VA-Zdn" secondAttribute="trailing" constant="16" id="1zK-xP-hWz"/>
-                                            <constraint firstItem="mp1-3l-N2T" firstAttribute="top" secondItem="u1f-J0-Cg1" secondAttribute="bottom" constant="32" id="3qW-Bx-ER2"/>
-                                            <constraint firstItem="u1f-J0-Cg1" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="5lG-em-gHY"/>
                                             <constraint firstItem="ykZ-5g-V1R" firstAttribute="top" secondItem="CyU-VA-Zdn" secondAttribute="bottom" constant="32" id="9aY-jM-jnW"/>
                                             <constraint firstAttribute="trailing" secondItem="dC6-HG-veO" secondAttribute="trailing" id="JaQ-Pc-08l"/>
                                             <constraint firstItem="ykZ-5g-V1R" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="LE6-fr-lXE"/>
+                                            <constraint firstItem="QzT-Jq-geE" firstAttribute="top" secondItem="4vp-4c-03H" secondAttribute="bottom" constant="4" id="Mkq-Tz-XD6"/>
                                             <constraint firstItem="Vdt-nV-hna" firstAttribute="top" secondItem="eug-kf-PZZ" secondAttribute="top" constant="44" id="NKy-EH-Xgb"/>
                                             <constraint firstItem="Vdt-nV-hna" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="PQU-Sf-8JL"/>
-                                            <constraint firstItem="u1f-J0-Cg1" firstAttribute="top" secondItem="Vdt-nV-hna" secondAttribute="bottom" constant="16" id="Rw5-U3-eEY"/>
-                                            <constraint firstAttribute="trailing" secondItem="u1f-J0-Cg1" secondAttribute="trailing" constant="16" id="TBn-5d-zfF"/>
                                             <constraint firstItem="dC6-HG-veO" firstAttribute="top" secondItem="ykZ-5g-V1R" secondAttribute="bottom" constant="32" id="XxS-W5-rMr"/>
                                             <constraint firstItem="mp1-3l-N2T" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="azz-Jb-S9g"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tyl-vJ-ilV" secondAttribute="trailing" constant="16" id="fyO-uD-S7V"/>
+                                            <constraint firstItem="Tyl-vJ-ilV" firstAttribute="top" secondItem="Vdt-nV-hna" secondAttribute="bottom" constant="16" id="hud-Zr-ar1"/>
                                             <constraint firstAttribute="trailing" secondItem="mp1-3l-N2T" secondAttribute="trailing" constant="16" id="m4H-Yd-eBj"/>
+                                            <constraint firstItem="mp1-3l-N2T" firstAttribute="top" secondItem="Tyl-vJ-ilV" secondAttribute="bottom" constant="32" id="oAh-Y6-7dE"/>
                                             <constraint firstAttribute="trailing" secondItem="ykZ-5g-V1R" secondAttribute="trailing" constant="16" id="pte-qX-HGJ"/>
                                             <constraint firstItem="dC6-HG-veO" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="rIc-4J-Aiy"/>
                                             <constraint firstItem="CyU-VA-Zdn" firstAttribute="top" secondItem="mp1-3l-N2T" secondAttribute="bottom" constant="32" id="smK-oX-ZqA"/>
                                             <constraint firstAttribute="height" constant="1500" id="uXG-BJ-3RS"/>
+                                            <constraint firstAttribute="trailing" secondItem="QzT-Jq-geE" secondAttribute="trailing" constant="16" id="xSq-nP-U35"/>
                                             <constraint firstItem="CyU-VA-Zdn" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="ygR-SH-HWk"/>
+                                            <constraint firstItem="QzT-Jq-geE" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="z7O-Kp-9Nu"/>
+                                            <constraint firstItem="Tyl-vJ-ilV" firstAttribute="leading" secondItem="eug-kf-PZZ" secondAttribute="leading" constant="16" id="zIQ-gr-qKq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -4477,11 +4511,12 @@
                     <navigationItem key="navigationItem" id="jLY-nH-12O"/>
                     <connections>
                         <outlet property="ThirdPictureCollectionView" destination="aPm-qJ-QV3" id="gLK-wc-7Qv"/>
-                        <outlet property="endDateTextfiled" destination="bNi-mP-5rG" id="MwU-RO-hxg"/>
+                        <outlet property="endDateButton" destination="1WE-SQ-UAF" id="xg7-hd-iG5"/>
                         <outlet property="locationTextField" destination="cdO-E3-0Ia" id="j4L-3U-mCk"/>
                         <outlet property="nextButton" destination="X2K-8U-nP3" id="zis-iC-O6U"/>
+                        <outlet property="priceErrorLabel" destination="QzT-Jq-geE" id="krA-pI-bFt"/>
                         <outlet property="priceTextfiled" destination="dSK-KL-A5I" id="RlN-uZ-QZO"/>
-                        <outlet property="startDateTextfiled" destination="p5Z-v5-H7J" id="9JS-gW-z6L"/>
+                        <outlet property="startDateButton" destination="Ual-im-vaE" id="iOM-wj-HV3"/>
                         <outlet property="urlTextField" destination="urF-VF-PRH" id="pcg-eG-6YN"/>
                     </connections>
                 </viewController>
@@ -4498,22 +4533,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업로드하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guZ-5W-jz1">
-                                <rect key="frame" x="16" y="132" width="92.5" height="30"/>
+                                <rect key="frame" x="16" y="132" width="86.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGi-uD-BAe">
-                                <rect key="frame" x="16" y="356" width="398" height="65"/>
+                                <rect key="frame" x="16" y="349.5" width="398" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ei-RS-KQh">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="에어비앤비 링크를 넣어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAS-3s-CUh">
-                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="382" height="18"/>
+                                        <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -4522,7 +4558,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mR-Yk-o62">
-                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="382" height="1"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="s5M-Su-0ji"/>
@@ -4543,10 +4579,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfs-uT-sag">
-                                <rect key="frame" x="16" y="453" width="398" height="186"/>
+                                <rect key="frame" x="16" y="446.5" width="398" height="186"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwl-qr-GwD">
-                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="16.5"/>
                                         <string key="text">업로드한 사진
 </string>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
@@ -4554,7 +4590,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bm0-Wf-gw5">
-                                        <rect key="frame" x="0.0" y="37" width="398" height="149"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="398" height="153.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ISB-8T-afe">
                                             <size key="itemSize" width="150" height="150"/>
@@ -4564,7 +4600,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UploadedPictureSecondCollectionViewCell" reuseIdentifier="UploadedPictureSecondCollectionViewCell" id="vBw-zP-LRB" customClass="UploadedPictureSecondCollectionViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-0.5" width="150" height="150"/>
+                                                <rect key="frame" x="0.0" y="2" width="150" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hEG-nM-Hl1">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -4650,16 +4686,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDH-79-u2E">
-                                <rect key="frame" x="16" y="178" width="398" height="65"/>
+                                <rect key="frame" x="16" y="171.5" width="398" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n96-OB-hbB">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oz6-l5-BNr">
-                                        <rect key="frame" x="0.0" y="37" width="398" height="21"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="398" height="17"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="위치 선택">
@@ -4682,21 +4718,21 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT5-qj-oIt">
-                                <rect key="frame" x="16" y="267" width="382" height="65"/>
+                                <rect key="frame" x="16" y="260.5" width="382" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙소 위치 부가 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crZ-rj-Ed0">
-                                        <rect key="frame" x="0.0" y="0.0" width="115" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="109" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="근처 가까운 지하철역이나 랜드마크를 적어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-zD-VBp">
-                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="382" height="18"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GM-Ii-Tns">
-                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="382" height="1"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="ABL-7T-xxs"/>
@@ -4745,6 +4781,7 @@
                         <outlet property="SecondPictureCollectionView" destination="Bm0-Wf-gw5" id="t2g-Ob-Uje"/>
                         <outlet property="locationTextfiled" destination="i5Z-zD-VBp" id="oQC-uI-dgW"/>
                         <outlet property="nextButton" destination="EcK-Dh-gcT" id="Yg1-at-qYL"/>
+                        <outlet property="urlTextField" destination="EAS-3s-CUh" id="4oW-j9-AtR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgF-zX-gsR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5434,10 +5471,10 @@
     </scenes>
     <designables>
         <designable name="WGU-LD-AiW">
-            <size key="intrinsicContentSize" width="-1" height="30"/>
+            <size key="intrinsicContentSize" width="-1" height="21"/>
         </designable>
         <designable name="sDK-kv-jd7">
-            <size key="intrinsicContentSize" width="-1" height="30"/>
+            <size key="intrinsicContentSize" width="-1" height="21"/>
         </designable>
     </designables>
     <resources>

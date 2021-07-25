@@ -9,17 +9,27 @@ import UIKit
 class UploadAirbnbSecondStepViewController : UIViewController{
     
    static var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
+    
     static var location : String = ""
     @IBOutlet weak var SecondPictureCollectionView: UICollectionView!
     @IBOutlet weak var locationTextfiled: UITextField!
+    @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        urlTextField.text = UploadAirbnbSecondStepViewController.airbnbInput.url
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //임시
+        UploadAirbnbSecondStepViewController.airbnbInput.locationId = 1
         print(UploadAirbnbSecondStepViewController.airbnbInput)
         
-        locationTextfiled.text = UploadAirbnbSecondStepViewController.airbnbInput.url
+        
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
@@ -71,11 +81,14 @@ class UploadAirbnbSecondStepViewController : UIViewController{
 
 extension UploadAirbnbSecondStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureSecondCollectionViewCell", for: indexPath) as! UploadedPictureSecondCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        uploadGeneralcell.secondPictureImageView.image = photos
         
         return uploadGeneralcell
     }

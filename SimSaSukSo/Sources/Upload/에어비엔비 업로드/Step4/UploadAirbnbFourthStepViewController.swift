@@ -17,6 +17,14 @@ class UploadAirbnbFourthStepViewController : UIViewController{
     @IBOutlet weak var usedToolSelfButton: AdaptableSizeButton!
     @IBOutlet weak var slider: UISlider!
     
+    @IBOutlet weak var startDateTextFIeld:
+        UITextField!
+    @IBOutlet weak var endDateTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+   
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var urlTextField: UITextField!
+    
     @IBOutlet weak var twoLeadSp: NSLayoutConstraint!
         @IBOutlet weak var threeLeadSp: NSLayoutConstraint!
         @IBOutlet weak var fiveLeadSp: NSLayoutConstraint!
@@ -25,6 +33,12 @@ class UploadAirbnbFourthStepViewController : UIViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        startDateTextFIeld.text = self.airbnbInput.startDate
+        endDateTextField.text = self.airbnbInput.endDate
+        priceTextField.text = String(self.airbnbInput.charge)
+        locationTextField.text = self.airbnbInput.description
+        urlTextField.text = self.airbnbInput.url
+        
         
         
 
@@ -178,11 +192,14 @@ class UploadAirbnbFourthStepViewController : UIViewController{
 extension UploadAirbnbFourthStepViewController : UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFourthCollectionViewCell", for: indexPath) as! UploadedPictureFourthCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        uploadGeneralcell.fourthPictureImageView.image = photos
         
         return uploadGeneralcell
     }

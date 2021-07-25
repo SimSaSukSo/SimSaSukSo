@@ -36,6 +36,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(showTableView), name: UITextField.textDidChangeNotification, object: nil)
         
         self.generalInput.images = UploadViewController.urlArray
+        
         print("url :")
         print(self.generalInput.images)
         

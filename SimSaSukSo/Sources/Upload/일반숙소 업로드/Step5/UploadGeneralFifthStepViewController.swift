@@ -248,9 +248,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
     }
     
     @IBAction func priorButtonAction(_ sender: Any) {
-//        let fourthVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFourthStepViewController")
-//        fourthVc?.modalPresentationStyle = .fullScreen
-//        self.present(fourthVc!, animated: false, completion: nil)
+
         self.dismiss(animated: false, completion: nil)
         
     }

@@ -20,6 +20,8 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.airbnbInput.images = UploadViewController.urlArray
+
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         FirstPictureCollectionView.dataSource = self
@@ -34,7 +36,7 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         } else {
           
-            airbnbInput.url =  AirbnbLinkTextField.text ?? ""
+            airbnbInput.url = AirbnbLinkTextField.text ?? ""
     
             nextButton.isEnabled = true
             nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
@@ -71,7 +73,6 @@ extension UploadAirbnbFirstStepViewController : UICollectionViewDelegate,UIColle
         let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFirstCollectionViewCell", for: indexPath) as! UploadedPictureFirstCollectionViewCell
         
         let photos = UploadViewController.uploadPhotos[indexPath.row]
-        
         uploadAircell.firstPictureImageView.image = photos
         
         return uploadAircell

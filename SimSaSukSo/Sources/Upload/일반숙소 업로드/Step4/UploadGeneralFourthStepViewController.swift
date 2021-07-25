@@ -202,11 +202,14 @@ class UploadGeneralFourthStepViewController : UIViewController{
 
 extension UploadGeneralFourthStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFourthCollectionViewCell", for: indexPath) as! UploadedPictureFourthCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        uploadGeneralcell.fourthPictureImageView.image = photos
         
         return uploadGeneralcell
     }

@@ -101,12 +101,16 @@ class UploadGeneralSecondStepViewController : UIViewController{
 
 extension UploadGeneralSecondStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let secondCell =
         collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureSecondCollectionViewCell", for: indexPath) as! UploadedPictureSecondCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        
+        secondCell.secondPictureImageView.image = photos
         
         return secondCell
     }
