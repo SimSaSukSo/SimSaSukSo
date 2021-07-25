@@ -336,76 +336,94 @@ extension SelectRegionViewController : UITableViewDataSource,RegionCellDelegate{
                 if nowTag == 1{
                     reset()
                     seoulClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1
                     regionTableView.reloadData()
                     
                 }else if nowTag == 2{
                     reset()
                     busanClickedList[index] = 1
                     regionTableView.reloadData()
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+22
                     
                 }else if nowTag == 3{
                     reset()
                    jejuClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+37
                     regionTableView.reloadData()
+                    
                 }else if nowTag == 4{
                     reset()
                     gangwonClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+44
                     regionTableView.reloadData()
                 }else if nowTag == 5{
                     reset()
                     gyeongiClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+55
                     regionTableView.reloadData()
                 }else if nowTag == 6{
                     reset()
                     incheonClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+77
                     regionTableView.reloadData()
                 }else if nowTag == 7{
                     reset()
                     deaguClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+88
                     regionTableView.reloadData()
                 }else if nowTag == 8{
                     reset()
                     ulsanClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+96
                     regionTableView.reloadData()
                 }else if nowTag == 9{
                     reset()
                     gyeongnamClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+98
                     regionTableView.reloadData()
                   
                 }else if nowTag == 10{
                     reset()
                     gyeongbukClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+110
                     regionTableView.reloadData()
                     
                 }else if nowTag == 11{
                     reset()
                     gwangjuClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+123
                     regionTableView.reloadData()
                    
                 }else if nowTag == 12{
                     reset()
                     jeonnamClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+127
                     regionTableView.reloadData()
                     
                 }else if nowTag == 13{
                     reset()
                     jeonbukClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+140
                     regionTableView.reloadData()
                     
                 }else if nowTag == 14{
                     reset()
                     daejeonClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+148
                     regionTableView.reloadData()
         
                 }else if nowTag == 15{
                     reset()
                   chungnamClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+152
                     regionTableView.reloadData()
                 }else if nowTag == 16{
                     reset()
                     chungbukClickedList[index] = 1
+                    UploadAirbnbSecondStepViewController.airbnbInput.locationId = index+1+165
                     regionTableView.reloadData()
                 }
+                print(UploadAirbnbSecondStepViewController.airbnbInput.locationId)
                 print (seoulClickedList)
                 print(busanClickedList)
             
