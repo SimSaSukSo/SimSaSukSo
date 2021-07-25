@@ -184,6 +184,25 @@ class SelectRegionViewController : UIViewController {
         
     }
     
+    func reset(){
+        seoulClickedList = Array<Int>(repeating: 0, count: regionData.seoulList.count)
+         busanClickedList = Array<Int>(repeating: 0, count: regionData.busanList.count)
+         jejuClickedList = Array<Int>(repeating: 0, count: regionData.jejuList.count)
+         gangwonClickedList = Array<Int>(repeating: 0, count: regionData.gangwonList.count)
+         gyeongiClickedList = Array<Int>(repeating: 0, count: regionData.gyeonggiList.count)
+         incheonClickedList = Array<Int>(repeating: 0, count: regionData.incheonList.count)
+         deaguClickedList = Array<Int>(repeating: 0, count: regionData.deaguList.count)
+         ulsanClickedList = Array<Int>(repeating: 0, count: regionData.ulsanList.count)
+         gyeongnamClickedList = Array<Int>(repeating: 0, count: regionData.gyeongnamList.count)
+         gyeongbukClickedList = Array<Int>(repeating: 0, count: regionData.gyeonbukList.count)
+         gwangjuClickedList = Array<Int>(repeating: 0, count: regionData.gwangjuList.count)
+         jeonnamClickedList = Array<Int>(repeating: 0, count: regionData.jeonnamList.count)
+         jeonbukClickedList = Array<Int>(repeating: 0, count: regionData.jeonbukList.count)
+         daejeonClickedList = Array<Int>(repeating: 0, count: regionData.daejeonList.count)
+         chungnamClickedList = Array<Int>(repeating: 0, count: regionData.chungnamList.count)
+         chungbukClickedList = Array<Int>(repeating: 0, count: regionData.chungbukList.count)
+        
+    }
    
 }
 
@@ -315,100 +334,81 @@ extension SelectRegionViewController : UITableViewDataSource,RegionCellDelegate{
     func didPressButton(for index: Int, clicked: Bool) {
             if clicked == true{
                 if nowTag == 1{
+                    reset()
                     seoulClickedList[index] = 1
+                    regionTableView.reloadData()
+                    
                 }else if nowTag == 2{
+                    reset()
                     busanClickedList[index] = 1
+                    regionTableView.reloadData()
+                    
                 }else if nowTag == 3{
-                   
+                    reset()
+                   jejuClickedList[index] = 1
+                    regionTableView.reloadData()
                 }else if nowTag == 4{
+                    reset()
                     gangwonClickedList[index] = 1
-                    
+                    regionTableView.reloadData()
                 }else if nowTag == 5{
+                    reset()
                     gyeongiClickedList[index] = 1
-                    
+                    regionTableView.reloadData()
                 }else if nowTag == 6{
+                    reset()
                     incheonClickedList[index] = 1
-                    
+                    regionTableView.reloadData()
                 }else if nowTag == 7{
+                    reset()
                     deaguClickedList[index] = 1
-                   
+                    regionTableView.reloadData()
                 }else if nowTag == 8{
-                   
+                    reset()
                     ulsanClickedList[index] = 1
+                    regionTableView.reloadData()
                 }else if nowTag == 9{
+                    reset()
                     gyeongnamClickedList[index] = 1
+                    regionTableView.reloadData()
                   
                 }else if nowTag == 10{
+                    reset()
                     gyeongbukClickedList[index] = 1
+                    regionTableView.reloadData()
                     
                 }else if nowTag == 11{
+                    reset()
                     gwangjuClickedList[index] = 1
+                    regionTableView.reloadData()
                    
                 }else if nowTag == 12{
+                    reset()
                     jeonnamClickedList[index] = 1
+                    regionTableView.reloadData()
                     
                 }else if nowTag == 13{
+                    reset()
                     jeonbukClickedList[index] = 1
+                    regionTableView.reloadData()
                     
                 }else if nowTag == 14{
+                    reset()
                     daejeonClickedList[index] = 1
+                    regionTableView.reloadData()
         
                 }else if nowTag == 15{
+                    reset()
                   chungnamClickedList[index] = 1
+                    regionTableView.reloadData()
                 }else if nowTag == 16{
+                    reset()
                     chungbukClickedList[index] = 1
+                    regionTableView.reloadData()
                 }
                 print (seoulClickedList)
                 print(busanClickedList)
-            }else{
-                if nowTag == 1{
-                    seoulClickedList[index] = 0
-                }else if nowTag == 2{
-                    busanClickedList[index] = 0
-                }else if nowTag == 3{
-                   
-                }else if nowTag == 4{
-                    gangwonClickedList[index] = 0
-                    
-                }else if nowTag == 5{
-                    gyeongiClickedList[index] = 0
-                    
-                }else if nowTag == 6{
-                    incheonClickedList[index] = 0
-                    
-                }else if nowTag == 7{
-                    deaguClickedList[index] = 0
-                   
-                }else if nowTag == 8{
-                   
-                    ulsanClickedList[index] = 0
-                }else if nowTag == 9{
-                    gyeongnamClickedList[index] = 0
-                  
-                }else if nowTag == 10{
-                    gyeongbukClickedList[index] = 0
-                }else if nowTag == 11{
-                    gwangjuClickedList[index] = 0
-                   
-                }else if nowTag == 12{
-                    jeonnamClickedList[index] = 0
-                    
-                }else if nowTag == 13{
-                    jeonbukClickedList[index] = 0
-                    
-                }else if nowTag == 14{
-                    daejeonClickedList[index] = 0
-        
-                }else if nowTag == 15{
-                  chungnamClickedList[index] = 0
-                }else if nowTag == 16{
-                    chungbukClickedList[index] = 0
-                }
-                print (seoulClickedList)
-                print(busanClickedList)
-                
-               
-                
+            
                
             }
         }
