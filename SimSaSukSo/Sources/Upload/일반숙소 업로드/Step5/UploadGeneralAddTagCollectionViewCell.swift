@@ -11,8 +11,10 @@ class UploadGeneralAddTagCollectionViewCell : UICollectionViewCell{
     @IBOutlet weak var addTagButton: UIButton!
     
     
+    @IBOutlet weak var addTagLabel: UILabel!
     
     
+    @IBOutlet weak var plusImageView: UIImageView!
     
     
     

@@ -14,6 +14,15 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
     
+    var tagArray : [String] = ["태그 추가하기"]
+    
+   var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
+    
+    var disadvantageArray = ["위치","가성비","더러움","인테리어","룸서비스","서비스 나쁨","건물노후","어매니티","부대시설","교통복잡","직접 입력하기"]
+    
+    
+    @IBOutlet weak var reviewTextField: UITextField!
+    
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var advantageCollectionView: UICollectionView!
     @IBOutlet weak var disadvantageCollectionView: UICollectionView!
@@ -22,6 +31,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
     @IBOutlet weak var tagEnterButton: UIButton!
     @IBOutlet weak var advantageEnterButton: UIButton!
     @IBOutlet weak var disadvantageEnterButton: UIButton!
+    
     
     
     @IBOutlet weak var tagTextFieldView: UIView!
@@ -36,11 +46,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     
     @IBOutlet weak var stackView: UIStackView!
-    var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
     
-   var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
-    
-    var disadvantageArray = ["위치","가성비","더러움","인테리어","룸서비스","서비스 나쁨","건물노후","어매니티","부대시설","교통복잡","직접 입력하기"]
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
    
@@ -50,9 +56,14 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("endindex : \(tagArray.endIndex)")
+        print(self.generalInput)
         
         tagTextFieldView.isHidden = true
         tagCollectionViewConfigure()
+        //tagArray의 마지막 원소 인덱스
+      
+        
         
         advantageTextFieldView.isHidden = true
         advantageCollectionViewConfigure()
@@ -140,6 +151,8 @@ class UploadGeneralFifthStepViewController : UIViewController{
             tagEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
         
         } else {
+            
+            
             tagEnterButton.isEnabled = true
             tagEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }
@@ -188,11 +201,19 @@ class UploadGeneralFifthStepViewController : UIViewController{
 
     @IBAction func addTagButtonAction(_ sender: Any) {
         tagTextFieldView.isHidden = false
+        
     }
     
     @IBAction func tagEnterButtonAction(_ sender: Any) {
+        
         tagTextFieldView.isHidden = true
+        tagArray.insert(tagTextField.text!, at: tagArray.endIndex-1)
+        print(tagArray)
+        
+        tagCollectionView.reloadData()
         tagTextField.text = ""
+        
+        
     }
     
     
@@ -203,7 +224,12 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     @IBAction func advantageEnterButtonAction(_ sender: Any) {
         advantageTextFieldView.isHidden = true
+        advantageArray.insert(advantageTextField.text!, at: advantageArray.endIndex)
+        print(advantageArray)
+        
+        advantageCollectionView.reloadData()
         advantageTextField.text = ""
+        
     }
     
     
@@ -213,8 +239,11 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     
     @IBAction func disadvantageEnterButtonAction(_ sender: Any) {
-        
         disadvantageTextFieldView.isHidden = true
+        disadvantageArray.insert(disadvantageTextField.text!, at: disadvantageArray.endIndex)
+        print(disadvantageArray)
+        
+        disadvantageCollectionView.reloadData()
         disadvantageTextField.text = ""
     }
     
@@ -226,9 +255,15 @@ class UploadGeneralFifthStepViewController : UIViewController{
         
     }
         @IBAction func nextButtonAction(_ sender : UIButton){
-        let uploadVc = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
-            uploadVc?.modalPresentationStyle = .fullScreen
-        self.present(uploadVc!, animated: false, completion: nil)
+            
+            generalInput.tags = tagArray
+            generalInput.pros = advantageArray
+            generalInput.cons = disadvantageArray
+            generalInput.review = reviewTextField.text ?? " "
+            print(generalInput)
+            UploadGeneralDataManager().feeds(parameters: self.generalInput, viewcontroller: self)
+            
+        
         
     }
     
@@ -261,13 +296,31 @@ extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICol
             var cell : UICollectionViewCell!
             
             if collectionView == tagCollectionView{
-                if indexPath.item == tagArray.count - 1{
+                if indexPath.item == tagArray.endIndex-1{
                     let addTagcell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddTagCollectionViewCell", for: indexPath) as! UploadGeneralAddTagCollectionViewCell
-                    addTagcell.addTagButton.layer.borderWidth = 1
-                    //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
-                    addTagcell.addTagButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
-                    addTagcell.addTagButton.layer.cornerRadius = 4
+                   
+                    if tagArray.count > 5{
+                        print("5개 넘음 ")
+                        addTagcell.addTagButton.isEnabled = false
+                        addTagcell.addTagLabel.text = tagArray[indexPath.row]
+                        addTagcell.addTagLabel.textColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+                        addTagcell.plusImageView.image = UIImage(named: "plus_gray")
+                        addTagcell.layer.borderWidth = 1
+                        addTagcell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+                        addTagcell.layer.cornerRadius = 4
+                        
+                      
+                    }else{
+                        addTagcell.addTagLabel.text = tagArray[indexPath.row]
+                        addTagcell.layer.borderWidth = 1
+                        addTagcell.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                        addTagcell.layer.cornerRadius = 4
+                        
+                    }
+                        
+                 
+                    
                     
                     cell = addTagcell
                 }else{
@@ -282,7 +335,7 @@ extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICol
                     cell = tagcell
                 }
             }else if collectionView == advantageCollectionView{
-                if indexPath.item == advantageArray.count - 1{
+                if indexPath.item == 10{
                     let addAdvantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddAdvantageCollectionViewCell
                     addAdvantagecell.addAdvantageButton.layer.borderWidth = 1
@@ -305,7 +358,7 @@ extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICol
                 }
                 
             }else if collectionView == disadvantageCollectionView{
-                if indexPath.item == disadvantageArray.count - 1{
+                if indexPath.item == 10{
                     let addDisadvantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddDisadvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddDisadvantageCollectionViewCell
                     addDisadvantagecell.addDisadvnatageButton.layer.borderWidth = 1
@@ -390,4 +443,19 @@ extension UploadGeneralFifthStepViewController: UICollectionViewDelegateFlowLayo
         return 8
     }
     }
+
+extension UploadGeneralFifthStepViewController{
+    
+   func success(){
+    let uploadVc = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
+            uploadVc?.modalPresentationStyle = .fullScreen
+        self.present(uploadVc!, animated: false, completion: nil)
+        
+    }
+    
+    func fail(){
+        
+    }
+
+}
 

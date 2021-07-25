@@ -12,7 +12,7 @@ import UIKit
 class UploadGeneralFirstStepViewController : UIViewController{
     
     
-    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [""], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [0], correctionDegree: 0, review: "", tags: [""], pros: [""], cons: [""])
+    var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: ["url"], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
     var regionList : [documentsDetail] = []
     var keyword : String = ""
@@ -93,12 +93,12 @@ class UploadGeneralFirstStepViewController : UIViewController{
     }
     
     @IBAction func nextButtonAction(_ sender : UIButton){
-        let thirdVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController")as!UploadGeneralThirdStepViewController
-        thirdVc.modalPresentationStyle = .fullScreen
+        let secondVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralSecondStepViewController")as!UploadGeneralSecondStepViewController
+        secondVc.modalPresentationStyle = .fullScreen
         
-        thirdVc.generalInput = self.generalInput 
+        secondVc.generalInput = self.generalInput
        
-        self.present(thirdVc, animated: false, completion: nil)
+        self.present(secondVc, animated: false, completion: nil)
         
     }
     
