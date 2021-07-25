@@ -8,6 +8,8 @@
 import UIKit
 class UploadAirbnbFirstStepViewController : UIViewController{
     
+var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
+    
 @IBOutlet weak var AirbnbLinkTextField: UITextField!
 @IBOutlet weak var nextButton: UIButton!
     
@@ -32,9 +34,9 @@ class UploadAirbnbFirstStepViewController : UIViewController{
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         } else {
           
+            airbnbInput.url =  AirbnbLinkTextField.text ?? ""
+    
             nextButton.isEnabled = true
-            
-            
             nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
             
             
@@ -42,9 +44,13 @@ class UploadAirbnbFirstStepViewController : UIViewController{
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        let secondVC = self.storyboard?.instantiateViewController(identifier: "AirbnbNavigator")
-        secondVC?.modalPresentationStyle = .fullScreen
-        self.present(secondVC!, animated: false, completion: nil)
+        let secondNV = self.storyboard?.instantiateViewController(identifier: "AirbnbNavigator")
+        secondNV?.modalPresentationStyle = .fullScreen
+        
+       
+        UploadAirbnbSecondStepViewController.airbnbInput = self.airbnbInput
+        
+        self.present(secondNV!, animated: false, completion: nil)
         
         
     }

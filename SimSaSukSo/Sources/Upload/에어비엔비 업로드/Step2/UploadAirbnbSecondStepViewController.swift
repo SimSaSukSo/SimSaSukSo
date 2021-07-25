@@ -7,11 +7,19 @@
 
 import UIKit
 class UploadAirbnbSecondStepViewController : UIViewController{
+    
+   static var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
+    static var location : String = ""
     @IBOutlet weak var SecondPictureCollectionView: UICollectionView!
     @IBOutlet weak var locationTextfiled: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print(UploadAirbnbSecondStepViewController.airbnbInput)
+        
+        locationTextfiled.text = UploadAirbnbSecondStepViewController.airbnbInput.url
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
@@ -29,10 +37,12 @@ class UploadAirbnbSecondStepViewController : UIViewController{
     
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        let thridVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbThirdStepViewController")
-        thridVC?.modalPresentationStyle = .fullScreen
-        self.present(thridVC!, animated: false, completion: nil)
+        let thridVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbThirdStepViewController")as!UploadAirbnbThirdStepViewController
+        thridVC.modalPresentationStyle = .fullScreen
         
+        thridVC.airbnbInput = UploadAirbnbSecondStepViewController.airbnbInput
+        
+        self.present(thridVC, animated: false, completion: nil)
         
     }
     
@@ -49,9 +59,9 @@ class UploadAirbnbSecondStepViewController : UIViewController{
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         } else {
           
+            UploadAirbnbSecondStepViewController.airbnbInput.description = locationTextfiled.text ?? ""
+            
             nextButton.isEnabled = true
-            
-            
             nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
             
             

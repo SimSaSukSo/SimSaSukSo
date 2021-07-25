@@ -104,6 +104,8 @@
 		A74AB1A226AD241A0038A1C1 /* UploadAirbnbDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB1A126AD241A0038A1C1 /* UploadAirbnbDataManager.swift */; };
 		A74AB1A626AD24A10038A1C1 /* UploadAirbnbInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB1A526AD24A10038A1C1 /* UploadAirbnbInput.swift */; };
 		A74AB1A926AD24B00038A1C1 /* UploadAirbnbResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB1A826AD24B00038A1C1 /* UploadAirbnbResponse.swift */; };
+		A74AB1AC26AD32BB0038A1C1 /* AirStartDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB1AB26AD32BB0038A1C1 /* AirStartDatePicker.swift */; };
+		A74AB1AF26AD32CF0038A1C1 /* AirEndDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB1AE26AD32CF0038A1C1 /* AirEndDatePicker.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -261,6 +263,8 @@
 		A74AB1A126AD241A0038A1C1 /* UploadAirbnbDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbDataManager.swift; sourceTree = "<group>"; };
 		A74AB1A526AD24A10038A1C1 /* UploadAirbnbInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbInput.swift; sourceTree = "<group>"; };
 		A74AB1A826AD24B00038A1C1 /* UploadAirbnbResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbResponse.swift; sourceTree = "<group>"; };
+		A74AB1AB26AD32BB0038A1C1 /* AirStartDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirStartDatePicker.swift; sourceTree = "<group>"; };
+		A74AB1AE26AD32CF0038A1C1 /* AirEndDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirEndDatePicker.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -756,6 +760,8 @@
 			isa = PBXGroup;
 			children = (
 				A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */,
+				A74AB1AB26AD32BB0038A1C1 /* AirStartDatePicker.swift */,
+				A74AB1AE26AD32CF0038A1C1 /* AirEndDatePicker.swift */,
 			);
 			path = Step3;
 			sourceTree = "<group>";
@@ -1064,6 +1070,7 @@
 				A74AB0F326A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift in Sources */,
 				A55675CD26972471004103AA /* NewDataManager.swift in Sources */,
 				A55C463926A60044008B4A5C /* MyFeedResponse.swift in Sources */,
+				A74AB1AC26AD32BB0038A1C1 /* AirStartDatePicker.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
@@ -1073,6 +1080,7 @@
 				A74AB10B26A405C10038A1C1 /* regionNameResponse.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
 				A766CCBB268C665500565095 /* kakaoLoginInput.swift in Sources */,
+				A74AB1AF26AD32CF0038A1C1 /* AirEndDatePicker.swift in Sources */,
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
 				A55368E726A07551002E232E /* BadCollectionViewCell.swift in Sources */,

@@ -13,6 +13,8 @@ import UIKit
 
 class UploadAirbnbFifthStepViewController : UIViewController{
     
+    var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
+    
         @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var advantageCollectionView: UICollectionView!
     @IBOutlet weak var disadvantageCollectionView: UICollectionView!
