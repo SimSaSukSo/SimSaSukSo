@@ -8,19 +8,46 @@
 
 import UIKit
 class UploadAirbnbThirdStepViewController : UIViewController{
+    
+    var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
+   
     @IBOutlet weak var ThirdPictureCollectionView: UICollectionView!
         @IBOutlet weak var startDateTextfiled: UITextField!
     @IBOutlet weak var endDateTextfiled: UITextField!
     @IBOutlet weak var priceTextfiled: UITextField!
-        @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var urlTextField: UITextField!
+    
+    @IBOutlet weak var nextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(self.airbnbInput)
+        
+        startDateTextfiled.addTarget(self, action: #selector(showStartDatePicker), for: .touchDown)
+        endDateTextfiled.addTarget(self, action: #selector(showEndDatePicker), for: .touchDown)
+        
+        locationTextField.text = self.airbnbInput.description
+        urlTextField.text = self.airbnbInput.url
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         
+        
         ThirdPictureCollectionView.delegate = self
         ThirdPictureCollectionView.dataSource = self
+    }
+    
+    @objc func showStartDatePicker(textField: UITextField) {
+        let startVC = self.storyboard?.instantiateViewController(identifier: "AirStartDatePicker")as!StartDatePickerViewController
+        startVC.delegate = self
+        self.present(startVC, animated: false, completion: nil)
+    }
+    
+    @objc func showEndDatePicker(textField: UITextField) {
+        let endVC = self.storyboard?.instantiateViewController(identifier: "AirEndDatePicker")as!AirEndDatePicker
+        endVC.delegate = self
+        self.present(endVC, animated: false, completion: nil)
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
@@ -68,6 +95,33 @@ extension UploadAirbnbThirdStepViewController : UICollectionViewDelegate,UIColle
     
     
     
+    
+}
+
+extension UploadAirbnbThirdStepViewController : StartateDelegate,EndDateDelegate{
+    
+    
+    func sendStartDate(forSave: String, forShow : String) -> String {
+        // DatePickerViewController에서 입력한 data를 현재 화면에서 사용 가능
+        
+        startDateTextfiled.text = forShow
+    
+        self.airbnbInput.startDate = forSave
+    
+        print(startDateTextfiled.text ?? "")
+        
+        return forSave
+    }
+    
+    func sendEndDate(forSave: String, forShow: String) -> String {
+        
+        endDateTextfiled.text = forShow
+    
+        
+        self.airbnbInput.endDate = forSave
+      
+        return forSave
+    }
     
 }
 
