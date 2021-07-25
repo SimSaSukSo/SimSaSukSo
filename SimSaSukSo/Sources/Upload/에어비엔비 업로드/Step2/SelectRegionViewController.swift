@@ -6,29 +6,47 @@
 //
 
 import UIKit
-class SelectRegionViewController : UIViewController, RegionCellDelegate{
+class SelectRegionViewController : UIViewController {
     var clickList : [Int] = []
     @IBOutlet weak var regionTableView: UITableView!
     
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
+    var nowTag : Int = 0
+    var region : regionData?
     var regionList : Array<String> = []
     var tagList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
-    var seoulList = ["강남 / 역삼 / 삼성","서초 / 교대 / 방배","사당","신사 / 압구정 / 청담","잠실 / 송파 / 잠실새내 / 천호 / 강동","서울역 / 이태원 / 용산","명동 / 중구","을지로 / 충무로","종로 / 동대문 / 대학로","인사동","서대문 / 마포 / 신촌 / 홍대","영등포","여의도","신림 / 서울대","구로 / 금천","김포공항","강서 / 화곡","건대 / 성수","왕십리","군자 / 상봉 / 중랑구","장안 / 청량리","강북 / 수유 / 도봉 / 미아 / 성북 / 노원"]
-    var busanList = ["부산","부산"]
-    var jejuList = ["제주제주","제주"]
-    var gangwonList = ["강원","강원강원"]
+   
+    var seoulClickedList = Array<Int>(repeating: 0, count: regionData.seoulList.count)
+    var busanClickedList = Array<Int>(repeating: 0, count: regionData.busanList.count)
+    var jejuClickedList = Array<Int>(repeating: 0, count: regionData.jejuList.count)
+    var gangwonClickedList = Array<Int>(repeating: 0, count: regionData.gangwonList.count)
+    var gyeongiClickedList = Array<Int>(repeating: 0, count: regionData.gyeonggiList.count)
+    var incheonClickedList = Array<Int>(repeating: 0, count: regionData.incheonList.count)
+    var deaguClickedList = Array<Int>(repeating: 0, count: regionData.deaguList.count)
+    var ulsanClickedList = Array<Int>(repeating: 0, count: regionData.ulsanList.count)
+    var gyeongnamClickedList = Array<Int>(repeating: 0, count: regionData.gyeongnamList.count)
+    var gyeongbukClickedList = Array<Int>(repeating: 0, count: regionData.gyeonbukList.count)
+    var gwangjuClickedList = Array<Int>(repeating: 0, count: regionData.gwangjuList.count)
+    var jeonnamClickedList = Array<Int>(repeating: 0, count: regionData.jeonnamList.count)
+    var jeonbukClickedList = Array<Int>(repeating: 0, count: regionData.jeonbukList.count)
+    var daejeonClickedList = Array<Int>(repeating: 0, count: regionData.daejeonList.count)
+    var chungnamClickedList = Array<Int>(repeating: 0, count: regionData.chungnamList.count)
+    var chungbukClickedList = Array<Int>(repeating: 0, count: regionData.chungbukList.count)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
         regionTableView.dataSource = self
-        regionTableView.delegate = self
+     
         
         self.regionTableView.rowHeight = viewHeight.constant/17;
-        regionList = seoulList
+        regionList = regionData.seoulList
         
         clickList = Array<Int>(repeating: 0, count: regionList.count)
+        nowTag = 1
         
         //네비게이션 바 라인 없애기
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -38,74 +56,104 @@ class SelectRegionViewController : UIViewController, RegionCellDelegate{
     @IBAction func regionButtonClicked(_ sender: UIButton) {
         switch sender.tag{
         case 1 :
-            regionList = seoulList
+            nowTag = sender.tag
+            regionList = regionData.seoulList
             setFontnBackground(sender: sender)
+            clickList = seoulClickedList
             break
         case 2 :
-            regionList = busanList
+            nowTag = sender.tag
+            regionList = regionData.busanList
             setFontnBackground(sender: sender)
+            clickList = busanClickedList
             break
          
         case 3 :
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.jejuList
             setFontnBackground(sender: sender)
+            clickList = gangwonClickedList
             break
         case 4 :
-            regionList = gangwonList
+            nowTag = sender.tag
+            regionList = regionData.gangwonList
             setFontnBackground(sender: sender)
+            clickList = gyeongiClickedList
             break
         case 5 :
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.gyeonggiList
             setFontnBackground(sender: sender)
+            clickList = incheonClickedList
             break
         case 6 :
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.incheonList
             setFontnBackground(sender: sender)
+            clickList = deaguClickedList
             break
         case 7 :
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.deaguList
             setFontnBackground(sender: sender)
+            clickList = incheonClickedList
             break
         case 8 :
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.ulsanList
             setFontnBackground(sender: sender)
+            clickList = ulsanClickedList
             break
         case 9 :
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.gyeongnamList
             setFontnBackground(sender: sender)
+            clickList = gyeongnamClickedList
             break
         case 10:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.gyeonbukList
             setFontnBackground(sender: sender)
+            clickList = gyeongbukClickedList
             break
         case 11:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.gwangjuList
             setFontnBackground(sender: sender)
+            clickList = gwangjuClickedList
             break
         case 12:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.jeonnamList
             setFontnBackground(sender: sender)
+            clickList = jeonnamClickedList
+            
             break
         case 13:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.jeonbukList
             setFontnBackground(sender: sender)
+            clickList = jeonbukClickedList
             break
         case 14:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.daejeonList
             setFontnBackground(sender: sender)
+            clickList = daejeonClickedList
             break
         case 15:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.chungnamList
             setFontnBackground(sender: sender)
+            clickList = chungnamClickedList
             break
         case 16:
-            regionList = jejuList
+            nowTag = sender.tag
+            regionList = regionData.chungbukList
             setFontnBackground(sender: sender)
+            clickList = chungbukClickedList
             break
-        case 17:
-            regionList = jejuList
-            setFontnBackground(sender: sender)
-            break
+    
         default:
             print("")
         }
@@ -139,7 +187,7 @@ class SelectRegionViewController : UIViewController, RegionCellDelegate{
    
 }
 
-extension SelectRegionViewController : UITableViewDelegate,UITableViewDataSource{
+extension SelectRegionViewController : UITableViewDataSource,RegionCellDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return regionList.count
     }
@@ -150,22 +198,218 @@ extension SelectRegionViewController : UITableViewDelegate,UITableViewDataSource
         cell.delegate = self
         cell.index = indexPath.row
         
+        let background = UIView()
+
+        background.backgroundColor = .clear
+
+        cell.selectedBackgroundView = background
+        
         cell.regionButton.setTitle(regionList[indexPath.row], for: .normal)
         
-        if clickList[indexPath.row] == 1 {
-                    cell.isTouched = true
-                }else{
-                    cell.isTouched = false
-                }
+        switch nowTag{
+        case 1 :
+            if seoulClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false
+                    }
+           break
+        case 2:
+            if busanClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 3:
+            if jejuClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 4:
+            if gangwonClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 5:
+            if gyeongiClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 6:
+            if incheonClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 7:
+            if deaguClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 8:
+            if ulsanClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 9:
+            if gyeongnamClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 10:
+            if gyeongbukClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 11:
+            if gwangjuClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 12:
+            if jeonnamClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 13:
+            if jeonbukClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 14:
+            if daejeonClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 15:
+            if chungnamClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        case 16:
+            if chungbukClickedList[indexPath.row] == 1 {
+                        cell.isTouched = true
+                    }else{
+                        cell.isTouched = false}
+            break
+        default:
+            print("")
+        }
+        
               
         return cell
     }
     
     func didPressButton(for index: Int, clicked: Bool) {
             if clicked == true{
-                clickList[index] = 1
+                if nowTag == 1{
+                    seoulClickedList[index] = 1
+                }else if nowTag == 2{
+                    busanClickedList[index] = 1
+                }else if nowTag == 3{
+                   
+                }else if nowTag == 4{
+                    gangwonClickedList[index] = 1
+                    
+                }else if nowTag == 5{
+                    gyeongiClickedList[index] = 1
+                    
+                }else if nowTag == 6{
+                    incheonClickedList[index] = 1
+                    
+                }else if nowTag == 7{
+                    deaguClickedList[index] = 1
+                   
+                }else if nowTag == 8{
+                   
+                    ulsanClickedList[index] = 1
+                }else if nowTag == 9{
+                    gyeongnamClickedList[index] = 1
+                  
+                }else if nowTag == 10{
+                    gyeongbukClickedList[index] = 1
+                    
+                }else if nowTag == 11{
+                    gwangjuClickedList[index] = 1
+                   
+                }else if nowTag == 12{
+                    jeonnamClickedList[index] = 1
+                    
+                }else if nowTag == 13{
+                    jeonbukClickedList[index] = 1
+                    
+                }else if nowTag == 14{
+                    daejeonClickedList[index] = 1
+        
+                }else if nowTag == 15{
+                  chungnamClickedList[index] = 1
+                }else if nowTag == 16{
+                    chungbukClickedList[index] = 1
+                }
+                print (seoulClickedList)
+                print(busanClickedList)
             }else{
-                clickList[index] = 0
+                if nowTag == 1{
+                    seoulClickedList[index] = 0
+                }else if nowTag == 2{
+                    busanClickedList[index] = 0
+                }else if nowTag == 3{
+                   
+                }else if nowTag == 4{
+                    gangwonClickedList[index] = 0
+                    
+                }else if nowTag == 5{
+                    gyeongiClickedList[index] = 0
+                    
+                }else if nowTag == 6{
+                    incheonClickedList[index] = 0
+                    
+                }else if nowTag == 7{
+                    deaguClickedList[index] = 0
+                   
+                }else if nowTag == 8{
+                   
+                    ulsanClickedList[index] = 0
+                }else if nowTag == 9{
+                    gyeongnamClickedList[index] = 0
+                  
+                }else if nowTag == 10{
+                    gyeongbukClickedList[index] = 0
+                }else if nowTag == 11{
+                    gwangjuClickedList[index] = 0
+                   
+                }else if nowTag == 12{
+                    jeonnamClickedList[index] = 0
+                    
+                }else if nowTag == 13{
+                    jeonbukClickedList[index] = 0
+                    
+                }else if nowTag == 14{
+                    daejeonClickedList[index] = 0
+        
+                }else if nowTag == 15{
+                  chungnamClickedList[index] = 0
+                }else if nowTag == 16{
+                    chungbukClickedList[index] = 0
+                }
+                print (seoulClickedList)
+                print(busanClickedList)
+                
+               
+                
+               
             }
         }
 }

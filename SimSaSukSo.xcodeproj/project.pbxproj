@@ -100,6 +100,7 @@
 		A74AB17826A84DC40038A1C1 /* UploadGeneralInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */; };
 		A74AB17B26A84EEA0038A1C1 /* UploadGeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */; };
 		A74AB17F26A977240038A1C1 /* EndDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB17E26A977240038A1C1 /* EndDatePickerViewController.swift */; };
+		A74AB19926AD1A2C0038A1C1 /* regionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB19826AD1A2C0038A1C1 /* regionData.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
@@ -253,6 +254,7 @@
 		A74AB17726A84DC40038A1C1 /* UploadGeneralInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralInput.swift; sourceTree = "<group>"; };
 		A74AB17A26A84EEA0038A1C1 /* UploadGeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralResponse.swift; sourceTree = "<group>"; };
 		A74AB17E26A977240038A1C1 /* EndDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndDatePickerViewController.swift; sourceTree = "<group>"; };
+		A74AB19826AD1A2C0038A1C1 /* regionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = regionData.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */,
 				A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */,
 				A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */,
+				A74AB19826AD1A2C0038A1C1 /* regionData.swift */,
 			);
 			path = Step2;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */,
+				A74AB19926AD1A2C0038A1C1 /* regionData.swift in Sources */,
 				A75EAEAE26936AC100B34597 /* AdaptableSizeButton.swift in Sources */,
 				A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */,
 				A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */,
