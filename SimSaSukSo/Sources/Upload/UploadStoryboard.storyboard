@@ -1763,11 +1763,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="sDK-kv-jd7" customClass="DesignableSlider" customModule="SimSaSukSo" customModuleProvider="target">
-<<<<<<< HEAD
-                                                        <rect key="frame" x="-2" y="44.5" width="386" height="31"/>
-=======
                                                         <rect key="frame" x="-2" y="52.5" width="386" height="31"/>
->>>>>>> 33240fff637ad4a16bc7a449a7c63f89bad52a1a
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                         <userDefinedRuntimeAttributes>
