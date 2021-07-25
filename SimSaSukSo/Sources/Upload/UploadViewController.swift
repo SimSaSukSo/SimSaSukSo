@@ -23,6 +23,10 @@ class UploadViewController : UIViewController {
     static var photoArray = [Int]()
     static var urlArray = [String]()
     
+    var images = UploadViewController.uploadPhotos
+    
+    var fireImage = UIImage(named: "evalu_Star_Fill")
+    
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var photoImageViewHeight: NSLayoutConstraint!
     @IBOutlet var photosButton: UIButton!
@@ -48,9 +52,6 @@ class UploadViewController : UIViewController {
         photoImageViewHeight.constant = photoImageView.frame.size.width
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
         
-        let images = UploadViewController.uploadPhotos
-        //uploadImage(image: images)
-        
     }
   
     //MARK: - Function
@@ -59,7 +60,7 @@ class UploadViewController : UIViewController {
     func uploadImage(image: UIImage) {
         var data = Data()
         data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "무야호"
+        let filePath = "업로드 사진"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         storage.reference().child(filePath).putData(data, metadata: metaData) {
@@ -68,16 +69,19 @@ class UploadViewController : UIViewController {
                 return
             } else {
                 print("성공")
+                UploadViewController.urlArray.append("firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=875ce4bc-62cd-41b2-a4fd-e253e50d6a21")
             }
         }
 
     }
     
+ 
     @IBAction func nextButtonAction(_ sender: UIButton) {
         let alertlVC = self.storyboard?.instantiateViewController(identifier: "UploadAlertViewController")
         
         self.present(alertlVC!, animated: false, completion: nil)
-   
+        
+        
     }
     
     @IBAction func photosButtonAction(_ sender: UIButton) {
@@ -109,8 +113,8 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
-                if indexPath.item == UploadViewController.photoArray[i+1] {
-                    cell.numberLabel.text = "\(i+1)"
+                if indexPath.item == UploadViewController.photoArray[i] {
+                    cell.numberLabel.text = "\(i)"
                 }
             }
         }
@@ -141,14 +145,11 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
-                if indexPath.item == UploadViewController.photoArray[i+1] {
-                    cell.numberLabel.text = "\(i+1)"
+                if indexPath.item == UploadViewController.photoArray[i] {
+                    cell.numberLabel.text = "\(i)"
                 }
             }
         }
-        
-//        print(photoArray)
-//        print("\(cell.numberLabel.text)")
         
     }
     
@@ -157,10 +158,10 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             if cell.numberLabel.isHidden == false { // 선택된
-                
             }
-            
         }
+        
+        uploadImage(image: cell.photoCellImageView.image!)
            
     }
     
@@ -173,7 +174,6 @@ extension UploadViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        //let size = CGSize(width: 91, height: 91)
         let width = view.frame.size.width/4-4
         
         return CGSize(width: width, height: width)
