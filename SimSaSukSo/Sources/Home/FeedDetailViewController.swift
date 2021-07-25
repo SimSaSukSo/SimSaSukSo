@@ -9,13 +9,14 @@ import UIKit
 
 class FeedDetailViewController: UIViewController {
     
+    lazy var dataManager = FeedDataManager()
+    
+    var feedImages = [feedImage]()
+    var feedTags = [feedInfo]()
+    
+    var feedComments = [FeedCommentResult]()
+    
     var textArray = ["태그", "태그ㅇㅇㅇ", "태그태그태그태"]
-    var commentArray = [
-                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧글. 내용덧글 내용덧글 내용 덧. 내용덧글 내용덧글 내용 덧.",
-                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧글. 내용덧글 내용덧글 내용 덧.",
-                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧.",
-                        "덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧.덧글내용 덧글내용. 덧글 내용덧글내 용덧."
-                        ]
     
     var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
     var imageViews = [UIImageView]()
@@ -30,12 +31,28 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var pageControl: UIPageControl!
     
     @IBOutlet var heartButton: UIButton!
+    @IBOutlet var likeNumberLabel: UILabel!
     @IBOutlet var faceIconImageView: UIImageView!
+    @IBOutlet var reliabilityLabel: UILabel!
+
+    @IBOutlet var correctionDegreeLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var chargeLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var prosLabel: UILabel!
+    @IBOutlet var consLabel: UILabel!
     
     @IBOutlet var reviewLabel: UILabel!
+    
     @IBOutlet var tagCollectionView: UICollectionView!
     
     @IBOutlet var bookmarkButton: UIButton!
+    
+    @IBOutlet var correctionToolLabel: UILabel!
+    
+    
+    
     
     @IBOutlet var linkStackView: UIStackView!
     @IBOutlet var seeLinkButton: UIButton!
@@ -70,6 +87,8 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
+        //dataManager.feedView(delegate: self)
+        dataManager.feedComment(delegate: self)
     }
     
     
@@ -203,14 +222,26 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
 
 extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commentArray.count
+        return feedComments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentTableViewCell", for: indexPath) as! FeedCommentTableViewCell
         
+        let feedComment = feedComments[indexPath.row]
+        
         cell.userImageView.layer.cornerRadius = userProfileImageView.frame.height/2
-        cell.commentLabel.text = commentArray[indexPath.row]
+        cell.commentLabel.text = feedComment.content
+        cell.likeNumberLabel.text = "좋아요 " + String(feedComment.likeNum)
+        cell.userNameLabel.text = feedComment.nickname
+        
+        // 이미지 URL 가져오기
+        let urlString = feedComment.avatarUrl
+        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.userImageView.image = UIImage(data: data)
+        }
         
         tableView.rowHeight = UITableView.automaticDimension
         commentTableView.estimatedRowHeight = 171
@@ -227,3 +258,21 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+//MARK: - API
+extension FeedDetailViewController {
+    func feedView(result: FeedResult) {
+        //likeNumberLabel.text = String(result.feedLike!.likeNum)
+    }
+    
+    func feedComment(result: FeedCommentResponse) {
+        feedComments = result.result!
+        commentTableView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
+
+

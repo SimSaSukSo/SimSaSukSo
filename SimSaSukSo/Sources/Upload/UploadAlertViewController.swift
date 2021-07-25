@@ -64,6 +64,8 @@ class UploadAlertViewController: UIViewController {
             
             self.present(normalVC!, animated: false, completion: nil)
             print(UploadViewController.photoArray.count)
+            print(UploadViewController.urlArray.count)
+            print(UploadViewController.urlArray.description)
         } else {
             print("에어비앤비로")
             let airVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbFirstStepViewController")

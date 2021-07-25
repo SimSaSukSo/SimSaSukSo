@@ -14,7 +14,7 @@ import FirebaseAuth
 class UploadViewController : UIViewController {
    
     let storage = Storage.storage()
-
+    
     var allMedia: PHFetchResult<PHAsset>?
     let scale = UIScreen.main.scale
     var thumbnailSize = CGSize.zero
@@ -24,8 +24,6 @@ class UploadViewController : UIViewController {
     static var urlArray = [String]()
     
     var images = UploadViewController.uploadPhotos
-    
-    var fireImage = UIImage(named: "evalu_Star_Fill")
     
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var photoImageViewHeight: NSLayoutConstraint!

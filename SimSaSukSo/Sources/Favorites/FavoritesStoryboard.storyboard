@@ -31,13 +31,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-Pe-Lys">
-                                <rect key="frame" x="16" y="88" width="97" height="23.5"/>
+                                <rect key="frame" x="16" y="88" width="97" height="30"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy8-Pl-FQk">
-                                <rect key="frame" x="349" y="92" width="18" height="16"/>
+                                <rect key="frame" x="349" y="95" width="18" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="PKg-cK-tz9"/>
                                     <constraint firstAttribute="height" constant="16" id="RYH-Pc-Ho4"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-8U-k9S">
-                                <rect key="frame" x="378" y="90" width="20" height="20"/>
+                                <rect key="frame" x="378" y="93" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ed3-C2-rnN"/>
                                     <constraint firstAttribute="width" constant="20" id="yQl-3W-kI6"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ER1-IE-agF">
-                                <rect key="frame" x="16" y="127.5" width="382" height="768.5"/>
+                                <rect key="frame" x="16" y="134" width="382" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cmV-f2-5kW">
                                     <size key="itemSize" width="173" height="192"/>
@@ -76,7 +76,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuw-fT-GoC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="24.5" height="20"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="26" height="20"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구들과 호캉스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thx-Sz-sZi">
-                                <rect key="frame" x="48" y="90.5" width="127" height="23.5"/>
+                                <rect key="frame" x="48" y="87" width="134.5" height="30"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
