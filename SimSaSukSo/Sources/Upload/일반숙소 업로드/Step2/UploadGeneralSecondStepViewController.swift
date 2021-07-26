@@ -43,23 +43,14 @@ class UploadGeneralSecondStepViewController : UIViewController{
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
         let filteredArray = [priceTextField].filter { $0?.text == "" }
-        if filteredArray.isEmpty {
-            priceTextField.textColor = #colorLiteral(red: 0.2509803922, green: 0.2823529412, blue: 0.3058823529, alpha: 1)
-            saveChargeFromPriceTextView()
-            
-            
-            nextButton.isEnabled = true
-            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
-            
-        } else {
-           
-            
+        if !filteredArray.isEmpty {
             
             nextButton.isEnabled = false
-            priceErrorLabel.text = ""
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+            priceErrorLabel.text =  ""
             
-            
+        } else {
+            saveChargeFromPriceTextView()
             
         }
     }
@@ -67,16 +58,25 @@ class UploadGeneralSecondStepViewController : UIViewController{
     func saveChargeFromPriceTextView(){
         let stringCharge = priceTextField.text!
                 if let charge = Int(stringCharge) {
-                    generalInput.charge = charge
-    
-                    priceErrorLabel.text = ""
-                } else {
+                        self.generalInput.charge = charge
+                        
+                        priceErrorLabel.text = ""
+                        nextButton.isEnabled = true
+                        nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)}
+                else {
                     print("error")
                 
                     priceErrorLabel.text =  "숫자만 입력해 주세요"
+                    nextButton.isEnabled = false
+                    nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
                 }
             
+            
+    
+    
     }
+    
+   
 
     
    

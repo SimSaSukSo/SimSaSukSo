@@ -443,6 +443,7 @@
                             <constraint firstItem="wIL-UY-5zH" firstAttribute="leading" secondItem="q4J-er-B9Z" secondAttribute="leading" id="fva-vC-Oep"/>
                             <constraint firstItem="OXU-oG-M4f" firstAttribute="leading" secondItem="GvR-4D-Qcx" secondAttribute="leading" id="h0Y-r8-Nez"/>
                             <constraint firstItem="OXU-oG-M4f" firstAttribute="trailing" secondItem="GvR-4D-Qcx" secondAttribute="trailing" id="kd9-cg-mxh"/>
+                            <constraint firstItem="wIL-UY-5zH" firstAttribute="top" relation="lessThanOrEqual" secondItem="OXU-oG-M4f" secondAttribute="bottom" constant="372.5" id="mti-9E-HJp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="82k-gC-9MR"/>
@@ -1687,73 +1688,74 @@
                                                 <rect key="frame" x="16" y="90" width="382" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용도구" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NB5-Oy-ki6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="16"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buk-7W-JRe" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="37" width="69" height="33"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
-                                                        <state key="normal" title="기본 카메라">
-                                                            <color key="titleColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="vfn-Wu-3Uo"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ub9-1I-57g" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="73" y="37" width="69" height="33"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
-                                                        <state key="normal" title="카메라 어플">
-                                                            <color key="titleColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="Rxr-J1-n41"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-as-iWx" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="146" y="37" width="56" height="33"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
-                                                        <state key="normal" title="보정 필터">
-                                                            <color key="titleColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="l3t-6d-4Dg"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGs-eX-qZc" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="206" y="37" width="56" height="33"/>
-                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
-                                                        <state key="normal" title="직접 보정">
-                                                            <color key="titleColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="ghh-3q-pOr"/>
-                                                        </connections>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pc3-vD-wJF">
+                                                        <rect key="frame" x="0.0" y="32" width="382" height="33"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buk-7W-JRe" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="95.5" height="33"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
+                                                                <state key="normal" title="기본 카메라">
+                                                                    <color key="titleColor" red="0.43529411764705883" green="0.47058823529411764" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="vfn-Wu-3Uo"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ub9-1I-57g" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
+                                                                <rect key="frame" x="95.5" y="0.0" width="95.5" height="33"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
+                                                                <state key="normal" title="카메라 어플">
+                                                                    <color key="titleColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="Rxr-J1-n41"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-as-iWx" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
+                                                                <rect key="frame" x="191" y="0.0" width="95.5" height="33"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
+                                                                <state key="normal" title="보정 필터">
+                                                                    <color key="titleColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="l3t-6d-4Dg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGs-eX-qZc" customClass="AdaptableSizeButton" customModule="SimSaSukSo" customModuleProvider="target">
+                                                                <rect key="frame" x="286.5" y="0.0" width="95.5" height="33"/>
+                                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="titleEdgeInsets" minX="10" minY="4" maxX="10" maxY="5"/>
+                                                                <state key="normal" title="직접 보정">
+                                                                    <color key="titleColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectButtonWithSender:" destination="VXz-dN-zw0" eventType="touchUpInside" id="ghh-3q-pOr"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="Buk-7W-JRe" firstAttribute="leading" secondItem="GJ2-Ue-tBx" secondAttribute="leading" id="1Bx-Ia-Wvn"/>
+                                                    <constraint firstItem="pc3-vD-wJF" firstAttribute="leading" secondItem="GJ2-Ue-tBx" secondAttribute="leading" id="1Tt-O1-jkg"/>
                                                     <constraint firstItem="NB5-Oy-ki6" firstAttribute="top" secondItem="GJ2-Ue-tBx" secondAttribute="top" id="3Oe-1o-CbQ"/>
-                                                    <constraint firstItem="TGs-eX-qZc" firstAttribute="top" secondItem="Buk-7W-JRe" secondAttribute="top" id="8YU-kU-N3n"/>
+                                                    <constraint firstItem="pc3-vD-wJF" firstAttribute="top" secondItem="NB5-Oy-ki6" secondAttribute="bottom" constant="16" id="Ddd-bP-1uE"/>
                                                     <constraint firstItem="NB5-Oy-ki6" firstAttribute="leading" secondItem="GJ2-Ue-tBx" secondAttribute="leading" id="EpE-GZ-r49"/>
-                                                    <constraint firstItem="ub9-1I-57g" firstAttribute="leading" secondItem="Buk-7W-JRe" secondAttribute="trailing" constant="4" id="GU7-TO-6mG"/>
-                                                    <constraint firstItem="Buk-7W-JRe" firstAttribute="top" secondItem="NB5-Oy-ki6" secondAttribute="bottom" constant="16" id="Xmq-8Q-CLF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pc3-vD-wJF" secondAttribute="trailing" id="VUu-FZ-P7F"/>
                                                     <constraint firstAttribute="height" constant="65" id="cXl-lz-AIw"/>
-                                                    <constraint firstItem="ntK-as-iWx" firstAttribute="leading" secondItem="ub9-1I-57g" secondAttribute="trailing" constant="4" id="fko-fL-Rac"/>
-                                                    <constraint firstItem="TGs-eX-qZc" firstAttribute="leading" secondItem="ntK-as-iWx" secondAttribute="trailing" constant="4" id="sHP-fI-0IN"/>
-                                                    <constraint firstItem="ntK-as-iWx" firstAttribute="top" secondItem="Buk-7W-JRe" secondAttribute="top" id="vC3-Hl-Oyr"/>
-                                                    <constraint firstItem="ub9-1I-57g" firstAttribute="top" secondItem="Buk-7W-JRe" secondAttribute="top" id="wZw-md-6wl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="pc3-vD-wJF" secondAttribute="bottom" id="drW-f7-BvN"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oX-fQ-5qq">
