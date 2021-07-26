@@ -19,8 +19,6 @@ class FeedDetailViewController: UIViewController {
     
     var textArray = ["태그", "태그ㅇㅇㅇ", "태그태그태그태"]
     
-    var images: [UIImage] = [#imageLiteral(resourceName: "Rectangle"), #imageLiteral(resourceName: "comment_heart_fill"), #imageLiteral(resourceName: "heart_fill")]
-    var imageViews = [UIImageView]()
     var hashTags = [String]()
     
     var feedIndex = 1
@@ -31,8 +29,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var userProfileImageView: UIImageView!
     @IBOutlet var userNicknameLabel: UILabel!
     
-    @IBOutlet var imageScrollView: UIScrollView!
-    @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var imageCollectionView: UICollectionView!
     
     @IBOutlet var heartButton: UIButton!
     @IBOutlet var likeNumberLabel: UILabel!
@@ -77,9 +74,8 @@ class FeedDetailViewController: UIViewController {
         self.navigationController?.navigationBar.isTransparent = true
         self.navigationController?.navigationBar.tintColor = .clear
         
-        imageScrollView.delegate = self
-        addContentScrollView()
-        setPageControl()
+        imageCollectionView.tag = 1
+        tagCollectionView.tag = 2
         
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
@@ -169,35 +165,7 @@ class FeedDetailViewController: UIViewController {
     
 }
 
-//MARK: - Image ScrollView
-extension FeedDetailViewController: UIScrollViewDelegate {
-    
-    // imageScrollView
-    func addContentScrollView() {
-        for i in 0..<images.count {
-            let imageView = UIImageView()
-            let xPosition = self.view.frame.width * CGFloat(i)
-            imageView.frame = CGRect(x: xPosition, y: 0, width: imageScrollView.bounds.width, height: imageScrollView.bounds.height)
-            imageView.image = images[i]
-            imageScrollView.addSubview(imageView)
-            imageScrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
-        }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let value = scrollView.contentOffset.x/scrollView.frame.size.width
-        setPageControlSelectedPage(currentPage: Int(round(value)))
-    }
-    
-    private func setPageControl() {
-        pageControl.numberOfPages = images.count
-    }
-    
-    private func setPageControlSelectedPage(currentPage:Int) {
-        pageControl.currentPage = currentPage
-    }
-    
-}
+
 //MARK: - CollectionView
 extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
