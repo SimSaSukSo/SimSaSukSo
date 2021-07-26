@@ -32,7 +32,8 @@ class UploadGeneralSecondStepViewController : UIViewController{
         super.viewDidLoad()
         print(generalInput)
         
-    
+        nextButton.isEnabled = false
+        
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         secondCollectionView.dataSource = self

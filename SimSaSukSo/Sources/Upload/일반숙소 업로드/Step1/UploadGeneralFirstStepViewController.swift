@@ -29,6 +29,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
         
         setTableviewLayout()
         
+        nextButton.isEnabled = false
        
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)

@@ -70,7 +70,7 @@ class UploadAirbnbThirdStepViewController : UIViewController{
     func saveChargeFromPriceTextView(){
         let stringCharge = priceTextfiled.text!
                 if let charge = Int(stringCharge) {
-                    if startDateButton?.titleLabel!.text != "숙박 시작일" && endDateButton.titleLabel!.text != "숙박 마지막일" && startDateButton?.titleLabel!.text != "" && startDateButton?.titleLabel!.text != ""{
+                    if startDateButton?.titleLabel!.text != "숙박 시작일" && endDateButton.titleLabel!.text != "숙박 마지막일" && startDateButton?.titleLabel!.text != "" && endDateButton?.titleLabel!.text != ""{
                          print("HAHA")
                         self.airbnbInput.charge = charge
                         
