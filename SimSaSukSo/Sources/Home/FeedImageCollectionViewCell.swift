@@ -8,5 +8,6 @@
 import UIKit
 
 class FeedImageCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var imageView: UIImageView!
     
 }

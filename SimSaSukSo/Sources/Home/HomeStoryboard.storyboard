@@ -2063,6 +2063,9 @@
                                                                 <constraint firstItem="S3D-fL-Hwz" firstAttribute="leading" secondItem="zKt-UL-uch" secondAttribute="leading" id="xC5-hR-b4l"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="S3D-fL-Hwz" id="Cyz-Mb-s6w"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>

@@ -125,7 +125,7 @@ class FeedDetailViewController: UIViewController {
     //MARK: - Function
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
-        print("게시글 삭제")
+        print("게시글 신고")
     }
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
@@ -189,7 +189,15 @@ extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedImageCollectionViewCell", for: indexPath) as! FeedImageCollectionViewCell
             
-            //let feedImage = feedImages[indexPath.row]
+            let feedImage = feedImages[indexPath.row]
+            
+            // 이미지 URL 가져오기
+            let urlString = feedImage.source
+            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+               let url = URL(string: urlstring),
+               let data = try? Data(contentsOf: url) {
+                cell.imageView.image = UIImage(data: data)
+            }
             
             return cell
         } else {
