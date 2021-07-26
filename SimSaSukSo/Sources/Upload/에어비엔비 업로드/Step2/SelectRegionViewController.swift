@@ -7,11 +7,20 @@
 
 import UIKit
 class SelectRegionViewController : UIViewController {
+    
+    weak var delegate: regionDelegate?
+    
     var clickList : [Int] = []
     @IBOutlet weak var regionTableView: UITableView!
     
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var resetButton: UIBarButtonItem!
+    
     var nowTag : Int = 0
+    var nowText : String = ""
+    var nowID : Int = 0
     var region : regionData?
     var regionList : Array<String> = []
     var tagList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
@@ -37,7 +46,8 @@ class SelectRegionViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        resetButton.isEnabled = false
+        selectButton.isEnabled = false
         
         regionTableView.dataSource = self
      
@@ -51,6 +61,18 @@ class SelectRegionViewController : UIViewController {
         //네비게이션 바 라인 없애기
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    
+    @IBAction func resetButtonAction(_ sender: Any) {
+        reset()
+        //reload
+        resetButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        resetButton.isEnabled = false
+        selectButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        selectButton.isEnabled = false
+        regionTableView.reloadData()
+        UploadAirbnbSecondStepViewController.airbnbInput.locationId = 0
     }
     
     @IBAction func regionButtonClicked(_ sender: UIButton) {
@@ -184,7 +206,37 @@ class SelectRegionViewController : UIViewController {
         
     }
     
-   
+    func reset(){
+        seoulClickedList = Array<Int>(repeating: 0, count: regionData.seoulList.count)
+         busanClickedList = Array<Int>(repeating: 0, count: regionData.busanList.count)
+         jejuClickedList = Array<Int>(repeating: 0, count: regionData.jejuList.count)
+         gangwonClickedList = Array<Int>(repeating: 0, count: regionData.gangwonList.count)
+         gyeongiClickedList = Array<Int>(repeating: 0, count: regionData.gyeonggiList.count)
+         incheonClickedList = Array<Int>(repeating: 0, count: regionData.incheonList.count)
+         deaguClickedList = Array<Int>(repeating: 0, count: regionData.deaguList.count)
+         ulsanClickedList = Array<Int>(repeating: 0, count: regionData.ulsanList.count)
+         gyeongnamClickedList = Array<Int>(repeating: 0, count: regionData.gyeongnamList.count)
+         gyeongbukClickedList = Array<Int>(repeating: 0, count: regionData.gyeonbukList.count)
+         gwangjuClickedList = Array<Int>(repeating: 0, count: regionData.gwangjuList.count)
+         jeonnamClickedList = Array<Int>(repeating: 0, count: regionData.jeonnamList.count)
+         jeonbukClickedList = Array<Int>(repeating: 0, count: regionData.jeonbukList.count)
+         daejeonClickedList = Array<Int>(repeating: 0, count: regionData.daejeonList.count)
+         chungnamClickedList = Array<Int>(repeating: 0, count: regionData.chungnamList.count)
+         chungbukClickedList = Array<Int>(repeating: 0, count: regionData.chungbukList.count)
+        
+    }
+    
+    
+    @IBAction func selectButtonAction(_ sender: Any) {
+        
+        delegate?.sendregionName(forShow: nowText)
+        UploadAirbnbSecondStepViewController.airbnbInput.locationId = nowID
+        print(nowText)
+        self.navigationController?.popViewController(animated: true)
+        
+        
+    }
+    
 }
 
 extension SelectRegionViewController : UITableViewDataSource,RegionCellDelegate{
@@ -315,100 +367,121 @@ extension SelectRegionViewController : UITableViewDataSource,RegionCellDelegate{
     func didPressButton(for index: Int, clicked: Bool) {
             if clicked == true{
                 if nowTag == 1{
+                    reset()
                     seoulClickedList[index] = 1
+                    nowID = index+1
+                    nowText = regionData.seoulList[index]
+                    regionTableView.reloadData()
+                    
                 }else if nowTag == 2{
+                    reset()
                     busanClickedList[index] = 1
+                    regionTableView.reloadData()
+                    nowText = regionData.busanList[index]
+                    nowID = index+1+22
+                    
                 }else if nowTag == 3{
-                   
+                    reset()
+                   jejuClickedList[index] = 1
+                    nowText = regionData.jejuList[index]
+                    nowID = index+1+37
+                    regionTableView.reloadData()
+                    
                 }else if nowTag == 4{
+                    reset()
                     gangwonClickedList[index] = 1
-                    
+                    nowText = regionData.gangwonList[index]
+                    nowID = index+1+44
+                    regionTableView.reloadData()
                 }else if nowTag == 5{
+                    reset()
                     gyeongiClickedList[index] = 1
-                    
+                    nowText = regionData.gyeonggiList[index]
+                    nowID = index+1+55
+                    regionTableView.reloadData()
                 }else if nowTag == 6{
+                    reset()
                     incheonClickedList[index] = 1
-                    
+                    nowText = regionData.incheonList[index]
+                    nowID = index+1+77
+                    regionTableView.reloadData()
                 }else if nowTag == 7{
+                    reset()
                     deaguClickedList[index] = 1
-                   
+                    nowText = regionData.deaguList[index]
+                    nowID = index+1+88
+                    regionTableView.reloadData()
                 }else if nowTag == 8{
-                   
+                    reset()
                     ulsanClickedList[index] = 1
+                    nowText = regionData.ulsanList[index]
+                    nowID = index+1+96
+                    regionTableView.reloadData()
                 }else if nowTag == 9{
+                    reset()
                     gyeongnamClickedList[index] = 1
+                    nowText = regionData.gyeongnamList[index]
+                    nowID = index+1+98
+                    regionTableView.reloadData()
                   
                 }else if nowTag == 10{
+                    reset()
                     gyeongbukClickedList[index] = 1
+                    nowText = regionData.gyeonbukList[index]
+                    nowID = index+1+110
+                    regionTableView.reloadData()
                     
                 }else if nowTag == 11{
+                    reset()
                     gwangjuClickedList[index] = 1
+                    nowText = regionData.gwangjuList[index]
+                    nowID = index+1+123
+                    regionTableView.reloadData()
                    
                 }else if nowTag == 12{
+                    reset()
                     jeonnamClickedList[index] = 1
+                    nowText = regionData.jeonnamList[index]
+                    nowID = index+1+127
+                    regionTableView.reloadData()
                     
                 }else if nowTag == 13{
+                    reset()
                     jeonbukClickedList[index] = 1
+                    nowText = regionData.jeonbukList[index]
+                    nowID = index+1+140
+                    regionTableView.reloadData()
                     
                 }else if nowTag == 14{
+                    reset()
                     daejeonClickedList[index] = 1
+                    nowText = regionData.daejeonList[index]
+                    nowID = index+1+148
+                    regionTableView.reloadData()
         
                 }else if nowTag == 15{
+                    reset()
                   chungnamClickedList[index] = 1
+                    nowText = regionData.chungnamList[index]
+                    nowID = index+1+152
+                    regionTableView.reloadData()
                 }else if nowTag == 16{
+                    reset()
                     chungbukClickedList[index] = 1
+                    nowText = regionData.seoulList[index]
+                    nowID = index+1+165
+                    regionTableView.reloadData()
                 }
+                print(UploadAirbnbSecondStepViewController.airbnbInput.locationId)
+                
+                selectButton.isEnabled = true
+                selectButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+                resetButton.isEnabled = true
+                resetButton.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+                
                 print (seoulClickedList)
                 print(busanClickedList)
-            }else{
-                if nowTag == 1{
-                    seoulClickedList[index] = 0
-                }else if nowTag == 2{
-                    busanClickedList[index] = 0
-                }else if nowTag == 3{
-                   
-                }else if nowTag == 4{
-                    gangwonClickedList[index] = 0
-                    
-                }else if nowTag == 5{
-                    gyeongiClickedList[index] = 0
-                    
-                }else if nowTag == 6{
-                    incheonClickedList[index] = 0
-                    
-                }else if nowTag == 7{
-                    deaguClickedList[index] = 0
-                   
-                }else if nowTag == 8{
-                   
-                    ulsanClickedList[index] = 0
-                }else if nowTag == 9{
-                    gyeongnamClickedList[index] = 0
-                  
-                }else if nowTag == 10{
-                    gyeongbukClickedList[index] = 0
-                }else if nowTag == 11{
-                    gwangjuClickedList[index] = 0
-                   
-                }else if nowTag == 12{
-                    jeonnamClickedList[index] = 0
-                    
-                }else if nowTag == 13{
-                    jeonbukClickedList[index] = 0
-                    
-                }else if nowTag == 14{
-                    daejeonClickedList[index] = 0
-        
-                }else if nowTag == 15{
-                  chungnamClickedList[index] = 0
-                }else if nowTag == 16{
-                    chungbukClickedList[index] = 0
-                }
-                print (seoulClickedList)
-                print(busanClickedList)
-                
-               
-                
+            
                
             }
         }

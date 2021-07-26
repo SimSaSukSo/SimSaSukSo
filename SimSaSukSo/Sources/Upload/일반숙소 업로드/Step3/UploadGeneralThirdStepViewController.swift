@@ -22,8 +22,8 @@ class UploadGeneralThirdStepViewController : UIViewController{
     
    
     
-    var startDate : String = ""
-    var endDate : String = ""
+    var startDate : String = "숙박 시작일"
+    var endDate : String = "숙박 마지막일"
     
     @IBOutlet weak var startDateButton: UIButton?
     @IBOutlet weak var endDateButton: UIButton!
@@ -40,7 +40,8 @@ class UploadGeneralThirdStepViewController : UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
       
-        
+        startDateButton?.setTitle(self.startDate, for: .normal)
+        endDateButton.setTitle(self.endDate, for: .normal)
         nameTextField.text = self.generalInput.name
         addressTextField.text = self.generalInput.address
         priceTextfiled.text = "\(self.generalInput.charge)"
@@ -50,28 +51,26 @@ class UploadGeneralThirdStepViewController : UIViewController{
         super.viewDidLoad()
         print(generalInput)
        
-        
+        nextButton.isEnabled = false
         
         ThirdPictureCollectionView.delegate = self
         ThirdPictureCollectionView.dataSource = self
     }
     
-    
-   func buttonActivation(){
+   func validation(){
+        if startDateButton?.titleLabel!.text != "숙박 시작일" && endDateButton.titleLabel!.text != "숙박 마지막일" && startDateButton?.titleLabel!.text != "" && endDateButton?.titleLabel!.text != ""{
+             print("HAHA")
         
-    if startDateButton?.titleLabel!.text != "숙박 시작일" && endDateButton.titleLabel!.text != "숙박 마지막일"{
-            print("HAHA")
             nextButton.isEnabled = true
-            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
-        } else {
-            print("흙흙")
+            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)}
+        else{
             nextButton.isEnabled = false
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
             
-            
-            
         }
-    }
+        
+   }
+   
     
     @IBAction func startDateButtonAction(_ sender: Any) {
         let startVC = self.storyboard?.instantiateViewController(identifier: "StartDatePickerViewController")as!StartDatePickerViewController
@@ -109,11 +108,14 @@ class UploadGeneralThirdStepViewController : UIViewController{
 
 extension UploadGeneralThirdStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureThirdCollectionViewCell", for: indexPath) as! UploadedPictureThirdCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        uploadAircell.thirdPictureImageView.image = photos
         
         return uploadAircell
     }
@@ -138,10 +140,10 @@ extension UploadGeneralThirdStepViewController : StartateDelegate,EndDateDelegat
         self.generalInput.startDate = forSave
         self.startDate = forShow
         
-        buttonActivation()
+       
         print(startDateButton!.titleLabel!.text!)
-        
-                return forSave
+        validation()
+        return forSave
     }
     
     func sendEndDate(forSave: String, forShow: String) -> String {
@@ -154,7 +156,7 @@ extension UploadGeneralThirdStepViewController : StartateDelegate,EndDateDelegat
         self.generalInput.endDate = forSave
         self.endDate = forShow
         
-        buttonActivation()
+        validation()
         
         return forSave
     }

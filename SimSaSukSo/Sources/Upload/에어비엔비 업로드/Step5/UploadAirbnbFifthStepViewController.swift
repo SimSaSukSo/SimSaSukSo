@@ -15,7 +15,17 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     
     var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
-        @IBOutlet weak var tagCollectionView: UICollectionView!
+    var tagArray : [String] = ["태그 추가하기"]
+    
+   var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
+    
+    var disadvantageArray = ["위치","가성비","더러움","인테리어","룸서비스","서비스 나쁨","건물노후","어매니티","부대시설","교통복잡","직접 입력하기"]
+    
+    var clickedAdvantageArray : [String] = []
+    var clickedDisadvantageArray : [String] = []
+    
+    @IBOutlet weak var reviewTextField: UITextField!
+    @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var advantageCollectionView: UICollectionView!
     @IBOutlet weak var disadvantageCollectionView: UICollectionView!
     
@@ -31,13 +41,6 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     @IBOutlet weak var advantageTextField: UITextField!
     @IBOutlet weak var disadvantageTextField: UITextField!
     
-
-    
-    var tagArray = ["태그","태그124","ㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ","태그추가하기"]
-    
-   var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
-    
-    var disadvantageArray = ["위치","가성비","더러움","인테리어","룸서비스","서비스 나쁨","건물노후","어매니티","부대시설","교통복잡","직접 입력하기"]
     
         @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
    
@@ -45,8 +48,11 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     
     @IBOutlet weak var disadvantageCollectionViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var nextButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nextButton.isEnabled = false
         
         tagTextFieldView.isHidden = true
         tagCollectionViewConfigure()
@@ -59,6 +65,8 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         
         
         //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
+        NotificationCenter.default.addObserver(self, selector: #selector(reviewTextFieldAction), name: UITextField.textDidChangeNotification, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(TagEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(AdvantageEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
@@ -129,6 +137,18 @@ class UploadAirbnbFifthStepViewController : UIViewController{
                   }
         
     }
+    @objc func reviewTextFieldAction(){
+        let textArray = [reviewTextField].filter { $0?.text == "" }
+        if !textArray.isEmpty {
+            validation()
+        
+        } else {
+            validation()
+            
+        }
+    }
+    
+    
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func TagEnterButtonActivate(){
         let textArray = [tagTextField].filter { $0?.text == "" }
@@ -137,6 +157,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
             tagEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
         
         } else {
+          
             tagEnterButton.isEnabled = true
             tagEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }
@@ -174,10 +195,42 @@ class UploadAirbnbFifthStepViewController : UIViewController{
             sender.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
             
+            clickedAdvantageArray.append((sender.titleLabel?.text!)!)
+            validation()
+            print(clickedAdvantageArray)
+
+            
         } else {
             sender.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
             sender.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
             sender.backgroundColor = .clear
+            clickedAdvantageArray.removeAll{$0 == sender.titleLabel?.text!}
+            print(clickedAdvantageArray)
+            validation()
+            
+        }
+        }
+    
+    @objc func disaAdvanbuttonClicked(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setTitleColor(.simsasuksoGreen, for: .selected)
+            sender.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+            sender.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+           
+            clickedDisadvantageArray.append((sender.titleLabel?.text!)!)
+            validation()
+            print(clickedDisadvantageArray)
+
+            
+        } else {
+            sender.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
+            sender.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+            sender.backgroundColor = .clear
+            clickedDisadvantageArray.removeAll{$0 == sender.titleLabel?.text!}
+            print(clickedDisadvantageArray)
+            validation()
             
         }
         }
@@ -189,7 +242,13 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     
     @IBAction func tagEnterButtonAction(_ sender: Any) {
         tagTextFieldView.isHidden = true
+        tagArray.insert(tagTextField.text!, at: tagArray.endIndex-1)
+        print(tagArray)
+        
+        tagCollectionView.reloadData()
         tagTextField.text = ""
+        
+        validation()
     }
     
     
@@ -200,7 +259,12 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     
     @IBAction func advantageEnterButtonAction(_ sender: Any) {
         advantageTextFieldView.isHidden = true
+        advantageArray.insert(advantageTextField.text!, at: advantageArray.endIndex)
+        print(advantageArray)
+        
+        advantageCollectionView.reloadData()
         advantageTextField.text = ""
+        validation()
     }
     
     
@@ -212,7 +276,12 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     @IBAction func disadvantageEnterButtonAction(_ sender: Any) {
         
         disadvantageTextFieldView.isHidden = true
+        disadvantageArray.insert(disadvantageTextField.text!, at: disadvantageArray.endIndex)
+        print(disadvantageArray)
+        
+        disadvantageCollectionView.reloadData()
         disadvantageTextField.text = ""
+        validation()
     }
     
     
@@ -222,11 +291,25 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     }
     
     @IBAction func uploadButtonAction(_ sender: Any) {
-        let eveluVC = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
-        eveluVC?.modalPresentationStyle = .fullScreen
-        self.present(eveluVC!, animated: false, completion: nil)
+        self.airbnbInput.tags = tagArray
+        self.airbnbInput.pros = clickedAdvantageArray
+        self.airbnbInput.cons = clickedDisadvantageArray
+        self.airbnbInput.review = reviewTextField.text ?? "후기가 없습니다."
+        print(self.airbnbInput)
+        UploadAirbnbDataManager().airbnb(parameters: self.airbnbInput, viewcontroller: self)
         
         
+        
+    }
+    
+    func validation(){
+        if reviewTextField.text != "" && tagArray.count > 1 && clickedAdvantageArray.count > 0 && clickedDisadvantageArray.count > 0{
+            nextButton.isEnabled = true
+            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        }else{
+            nextButton.isEnabled = false
+            nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        }
         
     }
     
@@ -235,11 +318,6 @@ class UploadAirbnbFifthStepViewController : UIViewController{
 
 
 
-
-
-extension ViewController:UICollectionViewDelegate {
-    
-}
 
 extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     
@@ -264,13 +342,31 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
             var cell : UICollectionViewCell!
             
             if collectionView == tagCollectionView{
-                if indexPath.item == tagArray.count - 1{
+                if indexPath.item == tagArray.endIndex-1{
                     let addTagcell =
-                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddTagCollectionViewCell", for: indexPath) as! UploadGeneralAddTagCollectionViewCell
-                    addTagcell.addTagButton.layer.borderWidth = 1
-                    //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
-                    addTagcell.addTagButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
-                    addTagcell.addTagButton.layer.cornerRadius = 4
+                    collectionView.dequeueReusableCell(withReuseIdentifier: "UploadAirTagCollectionViewCell", for: indexPath) as! UploadAirTagCollectionViewCell
+                   
+                    if tagArray.count > 5{
+                        print("5개 넘음 ")
+                        addTagcell.addTagButton.isEnabled = false
+                        addTagcell.addTagLabel.text = tagArray[indexPath.row]
+                        addTagcell.addTagLabel.textColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+                        addTagcell.plusImageView.image = UIImage(named: "plus_gray")
+                        addTagcell.layer.borderWidth = 1
+                        addTagcell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+                        addTagcell.layer.cornerRadius = 4
+                        
+                      
+                    }else{
+                        addTagcell.addTagLabel.text = tagArray[indexPath.row]
+                        addTagcell.layer.borderWidth = 1
+                        addTagcell.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                        addTagcell.layer.cornerRadius = 4
+                        
+                    }
+                        
+                 
+                    
                     
                     cell = addTagcell
                 }else{
@@ -285,11 +381,10 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                     cell = tagcell
                 }
             }else if collectionView == advantageCollectionView{
-                if indexPath.item == advantageArray.count - 1{
+                if indexPath.item == 10{
                     let addAdvantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddAdvantageCollectionViewCell
                     addAdvantagecell.addAdvantageButton.layer.borderWidth = 1
-                    //addTagcell.addTagButton.titleLabel?.text = "태그 추가하기"
                     addAdvantagecell.addAdvantageButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
                     addAdvantagecell.addAdvantageButton.layer.cornerRadius = 4
                     
@@ -309,7 +404,7 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                 }
                 
             }else if collectionView == disadvantageCollectionView{
-                if indexPath.item == disadvantageArray.count - 1{
+                if indexPath.item == 10{
                     let addDisadvantagecell =
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAddDisadvantageCollectionViewCell", for: indexPath) as! UploadGeneralAddDisadvantageCollectionViewCell
                     addDisadvantagecell.addDisadvnatageButton.layer.borderWidth = 1
@@ -326,7 +421,7 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                     disadvantagecell.disadvantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
                     disadvantagecell.disadvantageButton.layer.cornerRadius = 4
                     
-                    disadvantagecell.disadvantageButton.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
+                    disadvantagecell.disadvantageButton.addTarget(self, action: #selector(self.disaAdvanbuttonClicked), for: .touchUpInside)
                     
                    
                     
@@ -395,4 +490,18 @@ extension UploadAirbnbFifthStepViewController: UICollectionViewDelegateFlowLayou
     }
     }
 
+extension UploadAirbnbFifthStepViewController{
+    
+   func success(){
+    let uploadVc = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
+            uploadVc?.modalPresentationStyle = .fullScreen
+        self.present(uploadVc!, animated: false, completion: nil)
+        
+    }
+    
+    func fail(){
+        
+    }
+
+}
 

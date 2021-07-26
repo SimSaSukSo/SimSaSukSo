@@ -6,7 +6,13 @@
 //
 
 struct UploadGeneralResponse : Decodable{
-        var isSuccess: Bool
-        var code: Int
-        var message: String
+    var isSuccess: Bool
+    var code: Int
+    var message: String
+    var result : results?
+}
+
+struct results : Decodable{
+    var type: Int
+    var lodgingIndex : Int
 }

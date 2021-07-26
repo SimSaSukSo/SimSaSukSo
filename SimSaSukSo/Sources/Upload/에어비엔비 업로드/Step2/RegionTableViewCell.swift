@@ -28,27 +28,27 @@ class RegionTableViewCell: UITableViewCell {
 
     @IBAction func didPressButton(_ sender: UIButton) {
             guard let idx = index else {return}
-            if sender.isSelected {
+        if sender.isSelected == false {
                 isTouched = true
                 delegate?.didPressButton(for: idx, clicked: true)
             }else {
-                isTouched = false
+               isTouched = false
                 delegate?.didPressButton(for: idx, clicked: false)
             }
-            sender.isSelected = !sender.isSelected
+         
         }
     
     var isTouched: Bool? {
             didSet {
                 if isTouched == true {
                     
-                    regionButton.setTitleColor(.simsasuksoGreen, for: .normal)
+                 regionButton.setTitleColor(.simsasuksoGreen, for: .normal)
                    print("클릭")
                 
                 }else{
                     
                     regionButton.setTitleColor(.black, for: .normal)
-                    regionButton.setTitleColor(.black, for: .selected)
+                 
                     print("안클릭")
                    
                 }

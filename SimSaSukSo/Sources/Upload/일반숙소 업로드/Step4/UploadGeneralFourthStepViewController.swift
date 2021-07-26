@@ -10,7 +10,9 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
-   
+    var ismoved : Bool = false
+    
+    var usedTool : [Int] = []
     
     @IBOutlet weak var usedToolCameraButton: AdaptableSizeButton!
     @IBOutlet weak var usedToolAppButton: AdaptableSizeButton!
@@ -22,11 +24,12 @@ class UploadGeneralFourthStepViewController : UIViewController{
         @IBOutlet weak var threeLeadSp: NSLayoutConstraint!
         @IBOutlet weak var fiveLeadSp: NSLayoutConstraint!
         @IBOutlet weak var sixLeadSp: NSLayoutConstraint!
-       
+   
     @IBOutlet weak var startDateTextField: UITextField!
     
     var startDate : String = ""
     var endDate : String = ""
+    
     
     @IBOutlet weak var endDateTextField: UITextField!
     
@@ -37,6 +40,8 @@ class UploadGeneralFourthStepViewController : UIViewController{
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var fourthPictureCollectionView: UICollectionView!
+    
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -52,7 +57,12 @@ class UploadGeneralFourthStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ismoved = false
+        
         print(self.generalInput)
+        
+        nextButton.isEnabled = false
+        
         fourthPictureCollectionView.dataSource = self
         fourthPictureCollectionView.delegate = self
         setButton()
@@ -84,13 +94,33 @@ class UploadGeneralFourthStepViewController : UIViewController{
     
     
     @IBAction func editDegreeSliderAction(_ sender: UISlider) {
+        ismoved = true
         slider.value = Float(Int(slider.value))
-        self.generalInput.correctionDegree = Int(slider.value)
         print(Int(slider.value))
+        
+        if self.usedTool != []{
+            nextButton.isEnabled = true
+            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        }else{
+            nextButton.isEnabled = false
+            nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        }
         
         
         
     }
+    
+    func validation(){
+        if ismoved == true && usedTool != []{
+            nextButton.isEnabled = true
+            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        }else{
+            nextButton.isEnabled = false
+            nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        }
+        
+    }
+    
     
     @IBAction func selectButton(sender: AnyObject) {
         guard let button = sender as? UIButton else {
@@ -105,14 +135,16 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolCameraButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolCameraButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
                 
-                self.generalInput.correctionTool.append(button.tag + 1)
-                print(generalInput.correctionTool)
+                self.usedTool.append(button.tag + 1)
+                validation()
+                print(usedTool)
             } else {
                 usedToolCameraButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolCameraButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolCameraButton.backgroundColor = .clear
-                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
-                print(generalInput.correctionTool)
+                self.usedTool.removeAll(where: { $0 == button.tag + 1 })
+                validation()
+                print(usedTool)
                 
             }
             
@@ -125,14 +157,16 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolAppButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolAppButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
                 
-                self.generalInput.correctionTool.append(button.tag + 1)
-                print(generalInput.correctionTool)
+                self.usedTool.append(button.tag + 1)
+                validation()
+                print(usedTool)
             } else {
                 usedToolAppButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolAppButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolAppButton.backgroundColor = .clear
-                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
-                print(generalInput.correctionTool)
+                self.usedTool.removeAll(where: { $0 == button.tag + 1 })
+                validation()
+                print(usedTool)
             }
             
             break
@@ -144,15 +178,17 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolFilterButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolFilterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
                 
-                self.generalInput.correctionTool.append(button.tag + 1)
-                print(generalInput.correctionTool)
+                self.usedTool.append(button.tag + 1)
+                validation()
+                print(usedTool)
                 
             } else {
                 usedToolFilterButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolFilterButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolFilterButton.backgroundColor = .clear
-                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
-                print(generalInput.correctionTool)
+                self.usedTool.removeAll(where: { $0 == button.tag + 1 })
+                validation()
+                print(usedTool)
             }
             
             break
@@ -164,15 +200,17 @@ class UploadGeneralFourthStepViewController : UIViewController{
                 usedToolSelfButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
                 usedToolSelfButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
                 
-                self.generalInput.correctionTool.append(button.tag + 1)
-                print(generalInput.correctionTool)
+                self.usedTool.append(button.tag + 1)
+                validation()
+                print(usedTool)
                 
             } else {
                 usedToolSelfButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
                 usedToolSelfButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 usedToolSelfButton.backgroundColor = .clear
-                self.generalInput.correctionTool.removeAll(where: { $0 == button.tag + 1 })
-                print(generalInput.correctionTool)
+                self.usedTool.removeAll(where: { $0 == button.tag + 1 })
+                validation()
+                print(usedTool)
             }
             
             break
@@ -190,8 +228,13 @@ class UploadGeneralFourthStepViewController : UIViewController{
         @IBAction func nextButtonAction(_ sender : UIButton){
         let fifthVC = self.storyboard?.instantiateViewController(identifier: "UploadGeneralFifthStepViewController")as!UploadGeneralFifthStepViewController
             fifthVC.modalPresentationStyle = .fullScreen
+            
+            self.generalInput.correctionTool = usedTool
+            self.generalInput.correctionDegree = Int(slider.value)
+            print(self.generalInput)
             fifthVC.generalInput = self.generalInput
-        self.present(fifthVC, animated: false, completion: nil)
+            
+         self.present(fifthVC, animated: false, completion: nil)
         
     }
     
@@ -202,11 +245,14 @@ class UploadGeneralFourthStepViewController : UIViewController{
 
 extension UploadGeneralFourthStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        UploadViewController.photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let uploadGeneralcell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureFourthCollectionViewCell", for: indexPath) as! UploadedPictureFourthCollectionViewCell
+        
+        let photos = UploadViewController.uploadPhotos[indexPath.row]
+        uploadGeneralcell.fourthPictureImageView.image = photos
         
         return uploadGeneralcell
     }

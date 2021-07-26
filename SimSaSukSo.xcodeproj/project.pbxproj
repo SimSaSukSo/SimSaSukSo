@@ -89,6 +89,7 @@
 		A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E031267B5E94006A1F0B /* UploadViewController.swift */; };
 		A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */; };
 		A711E038267B5EAE006A1F0B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711E037267B5EAE006A1F0B /* SettingViewController.swift */; };
+		A714ECC526AD9D9B005CA0EE /* UploadAirTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714ECC426AD9D9B005CA0EE /* UploadAirTagCollectionViewCell.swift */; };
 		A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */; };
 		A74AB0E326A1F24A0038A1C1 /* believeTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0E226A1F24A0038A1C1 /* believeTagCell.swift */; };
 		A74AB0E726A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */; };
@@ -254,6 +255,7 @@
 		A711E031267B5E94006A1F0B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		A711E034267B5EA1006A1F0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		A711E037267B5EAE006A1F0B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A714ECC426AD9D9B005CA0EE /* UploadAirTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A74AB0DD26A1EE9F0038A1C1 /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		A74AB0E226A1F24A0038A1C1 /* believeTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = believeTagCell.swift; sourceTree = "<group>"; };
 		A74AB0E626A288C50038A1C1 /* UploadAirbnbThirdStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbThirdStepViewController.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				A74AB0EE26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift */,
+				A714ECC426AD9D9B005CA0EE /* UploadAirTagCollectionViewCell.swift */,
 			);
 			path = Step5;
 			sourceTree = "<group>";
@@ -1078,6 +1081,7 @@
 				A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */,
 				A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */,
 				A55675C1269720B7004103AA /* BestDataManager.swift in Sources */,
+				A714ECC526AD9D9B005CA0EE /* UploadAirTagCollectionViewCell.swift in Sources */,
 				A55C462F26A5FFC1008B4A5C /* FavoriteDataManager.swift in Sources */,
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
 				A55362C426AD5B4A0087C28D /* FeedResponse.swift in Sources */,
