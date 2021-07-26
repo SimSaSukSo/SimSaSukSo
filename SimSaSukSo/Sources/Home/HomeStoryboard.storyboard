@@ -2031,7 +2031,7 @@
                                                     <action selector="deleteButtonAction:" destination="zuc-eV-Fku" eventType="touchUpInside" id="BHh-ZG-t3u"/>
                                                 </connections>
                                             </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QLl-Us-5pZ">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QLl-Us-5pZ">
                                                 <rect key="frame" x="0.0" y="52" width="414" height="414"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -2205,6 +2205,7 @@
                         <outlet property="feedDetailView" destination="sR8-uw-zhj" id="Pv7-eG-Drf"/>
                         <outlet property="heartButton" destination="jid-sW-tN4" id="qvb-QT-SnT"/>
                         <outlet property="imageCollectionView" destination="QLl-Us-5pZ" id="IUq-Su-sGv"/>
+                        <outlet property="imageCollectionViewHeight" destination="6u5-06-V3u" id="Si2-2A-avg"/>
                         <outlet property="likeNumberLabel" destination="vB5-LX-0Y9" id="Lml-Ci-McS"/>
                         <outlet property="linkStackView" destination="vwT-Ri-NmA" id="XUM-Ub-VJb"/>
                         <outlet property="locationLabel" destination="AGq-Ud-uhF" id="ula-kb-5vk"/>
