@@ -166,6 +166,9 @@ class UploadGeneralFifthStepViewController : UIViewController{
         let i = sender.tag
         tagArray.remove(at: i)
         tagCollectionView.reloadData()
+        
+        collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        
         print(tagArray)
         
     }
@@ -260,6 +263,8 @@ class UploadGeneralFifthStepViewController : UIViewController{
         tagCollectionView.reloadData()
         tagTextField.text = ""
         
+        collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        
         validation()
     }
     
@@ -276,6 +281,9 @@ class UploadGeneralFifthStepViewController : UIViewController{
         advantageClickedBook.insert(0, at: advantageClickedBook.endIndex)
         advantageCollectionView.reloadData()
         advantageTextField.text = ""
+        
+        advantageCollectionViewHeight.constant = advantageCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        
         validation()
     }
     
@@ -294,6 +302,9 @@ class UploadGeneralFifthStepViewController : UIViewController{
         disadvantageClickedBook.insert(0, at: disadvantageClickedBook.endIndex)
         disadvantageCollectionView.reloadData()
         disadvantageTextField.text = ""
+        
+        disadvantageCollectionViewHeight.constant = disadvantageCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        
         validation()
     }
     
@@ -370,7 +381,10 @@ extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICol
                         
                       
                     }else{
+                        addTagcell.addTagButton.isEnabled = true
                         addTagcell.addTagLabel.text = tagArray[indexPath.row]
+                        addTagcell.addTagLabel.textColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                        addTagcell.plusImageView.image = UIImage(named: "plus")
                         addTagcell.layer.borderWidth = 1
                         addTagcell.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
                         addTagcell.layer.cornerRadius = 4

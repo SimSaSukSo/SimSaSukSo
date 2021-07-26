@@ -91,7 +91,6 @@ class UploadAirbnbFifthStepViewController : UIViewController{
                     
                     //MARK: - TagCOLLECTIONVIEW HEIGHT
                     collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
-                    print("따란")
                     print(collectionViewHeight.constant)
                     
                   }
@@ -170,6 +169,9 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         let i = sender.tag
         tagArray.remove(at: i)
         tagCollectionView.reloadData()
+        collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        print("따란")
+        print(collectionViewHeight.constant)
         print(tagArray)
         
     }
@@ -265,6 +267,10 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         tagCollectionView.reloadData()
         tagTextField.text = ""
         
+        collectionViewHeight.constant = tagCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        print("따란")
+        print(collectionViewHeight.constant)
+        
         validation()
     }
     
@@ -281,6 +287,10 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         advantageClickedBook.insert(0, at: advantageClickedBook.endIndex)
         advantageCollectionView.reloadData()
         advantageTextField.text = ""
+        
+        advantageCollectionViewHeight.constant = advantageCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        print(advantageCollectionViewHeight.constant)
+        
         validation()
     }
     
@@ -298,6 +308,10 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         disadvantageClickedBook.insert(0, at: disadvantageClickedBook.endIndex)
         disadvantageCollectionView.reloadData()
         disadvantageTextField.text = ""
+        
+        disadvantageCollectionViewHeight.constant = disadvantageCollectionView.collectionViewLayout.collectionViewContentSize.height + 10
+        print(disadvantageCollectionViewHeight.constant)
+        
         validation()
     }
     
@@ -375,7 +389,10 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                         
                       
                     }else{
+                        addTagcell.addTagButton.isEnabled = true
                         addTagcell.addTagLabel.text = tagArray[indexPath.row]
+                        addTagcell.addTagLabel.textColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                        addTagcell.plusImageView.image = UIImage(named: "plus")
                         addTagcell.layer.borderWidth = 1
                         addTagcell.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
                         addTagcell.layer.cornerRadius = 4
@@ -383,8 +400,6 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                     }
                         
                  
-                    
-                    
                     cell = addTagcell
                 }else{
                     let tagcell =
