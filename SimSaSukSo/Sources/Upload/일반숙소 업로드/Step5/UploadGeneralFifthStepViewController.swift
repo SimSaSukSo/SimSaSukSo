@@ -160,6 +160,14 @@ class UploadGeneralFifthStepViewController : UIViewController{
         }
     }
     
+    @objc func TagDeleteAction(_ sender : UIButton){
+        let i = sender.tag
+        tagArray.remove(at: i)
+        tagCollectionView.reloadData()
+        print(tagArray)
+        
+    }
+    
     @objc func AdvantageEnterButtonActivate(){
         let textArray = [advantageTextField].filter { $0?.text == "" }
         if !textArray.isEmpty {
@@ -370,6 +378,8 @@ extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICol
                     tagcell.layer.borderWidth = 1
                     tagcell.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
                     tagcell.layer.cornerRadius = 4
+                    tagcell.xButton.tag = indexPath.row
+                    tagcell.xButton.addTarget(self, action: #selector(self.TagDeleteAction(_:)), for: UIControl.Event.touchUpInside)
                     
                     cell = tagcell
                 }
