@@ -9,8 +9,9 @@
 import UIKit
 class UploadAirbnbThirdStepViewController : UIViewController{
     
-    var startDate : String = ""
-    var endDate : String = ""
+    static var regionText : String = ""
+    var startDate : String = "숙박 시작일"
+    var endDate : String = "숙박 마지막일"
     
     var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
    
@@ -19,6 +20,7 @@ class UploadAirbnbThirdStepViewController : UIViewController{
     @IBOutlet weak var endDateButton: UIButton!
     
     @IBOutlet weak var priceErrorLabel: UILabel!
+    @IBOutlet weak var regionButton: UIButton!
     @IBOutlet weak var ThirdPictureCollectionView: UICollectionView!
       
     @IBOutlet weak var priceTextfiled: UITextField!
@@ -30,14 +32,18 @@ class UploadAirbnbThirdStepViewController : UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
+        
         startDateButton?.setTitle(self.startDate, for: .normal)
         endDateButton.setTitle(self.endDate, for: .normal)
+        regionButton.setTitle(UploadAirbnbThirdStepViewController.regionText, for: .normal)
         locationTextField.text = self.airbnbInput.description
         urlTextField.text = self.airbnbInput.url
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nextButton.isEnabled = false
         
         print(self.airbnbInput)
     
@@ -50,20 +56,13 @@ class UploadAirbnbThirdStepViewController : UIViewController{
     @objc func validation(){
         let filteredArray = [priceTextfiled].filter { $0?.text == "" }
         if !filteredArray.isEmpty {
+            
             nextButton.isEnabled = false
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+            priceErrorLabel.text =  ""
+            
         } else {
-            if startDateButton?.titleLabel!.text != "숙박 시작일" && endDateButton.titleLabel!.text != "숙박 마지막일"{
-                 print("HAHA")
-                
-                saveChargeFromPriceTextView()
-                
-                 
-             } else {
-                 print("흙흙")
-                 nextButton.isEnabled = false
-                 nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
-             }
+            saveChargeFromPriceTextView()
             
         }
     }
@@ -71,20 +70,27 @@ class UploadAirbnbThirdStepViewController : UIViewController{
     func saveChargeFromPriceTextView(){
         let stringCharge = priceTextfiled.text!
                 if let charge = Int(stringCharge) {
-                    self.airbnbInput.charge = charge
-    
-                    priceErrorLabel.text = ""
-                    nextButton.isEnabled = true
-                    nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+                    if startDateButton?.titleLabel!.text != "숙박 시작일" && endDateButton.titleLabel!.text != "숙박 마지막일" && startDateButton?.titleLabel!.text != "" && startDateButton?.titleLabel!.text != ""{
+                         print("HAHA")
+                        self.airbnbInput.charge = charge
+                        
+                        priceErrorLabel.text = ""
+                        nextButton.isEnabled = true
+                        nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)}
                 } else {
                     print("error")
-                    
+                
                     priceErrorLabel.text =  "숫자만 입력해 주세요"
                     nextButton.isEnabled = false
                     nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
                 }
             
+            
+    
+    
     }
+    
+  
     
     @IBAction func startDateAction(_ sender: Any) {
         let startVC = self.storyboard?.instantiateViewController(identifier: "StartDatePickerViewController")as!StartDatePickerViewController
@@ -150,7 +156,7 @@ extension UploadAirbnbThirdStepViewController : StartateDelegate,EndDateDelegate
         self.airbnbInput.startDate = forSave
         self.startDate = forShow
         
-       
+        validation()
         print(startDateButton!.titleLabel!.text!)
         
                 return forSave
@@ -165,7 +171,8 @@ extension UploadAirbnbThirdStepViewController : StartateDelegate,EndDateDelegate
         
         self.airbnbInput.endDate = forSave
         self.endDate = forShow
-    
+       
+        validation()
         
         return forSave
     }

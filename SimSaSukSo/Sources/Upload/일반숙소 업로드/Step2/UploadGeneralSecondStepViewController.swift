@@ -32,6 +32,7 @@ class UploadGeneralSecondStepViewController : UIViewController{
         super.viewDidLoad()
         print(generalInput)
         
+    
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         secondCollectionView.dataSource = self
@@ -89,7 +90,7 @@ class UploadGeneralSecondStepViewController : UIViewController{
         let thirdVc = self.storyboard?.instantiateViewController(identifier: "UploadGeneralThirdStepViewController") as! UploadGeneralThirdStepViewController
         thirdVc.modalPresentationStyle = .fullScreen
         thirdVc.generalInput  = self.generalInput
-        
+       
         self.present(thirdVc, animated: false, completion: nil)
         
     }

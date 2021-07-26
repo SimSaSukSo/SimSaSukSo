@@ -20,6 +20,8 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nextButton.isEnabled = false
+        
         self.airbnbInput.images = UploadViewController.urlArray
 
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)

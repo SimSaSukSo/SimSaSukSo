@@ -62,9 +62,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
         tagTextFieldView.isHidden = true
         tagCollectionViewConfigure()
         //tagArray의 마지막 원소 인덱스
-      
-        
-        
+    
         advantageTextFieldView.isHidden = true
         advantageCollectionViewConfigure()
         
@@ -246,6 +244,8 @@ class UploadGeneralFifthStepViewController : UIViewController{
         disadvantageCollectionView.reloadData()
         disadvantageTextField.text = ""
     }
+    
+    
     
     @IBAction func priorButtonAction(_ sender: Any) {
 

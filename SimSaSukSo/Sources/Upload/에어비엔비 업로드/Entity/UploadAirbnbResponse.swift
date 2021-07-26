@@ -9,7 +9,7 @@ struct UploadAirbnbResponse : Decodable{
     var isSuccess: Bool
     var code: Int
     var message: String
-    var result : airResults
+    var result : airResults?
 }
 
 struct airResults : Decodable{

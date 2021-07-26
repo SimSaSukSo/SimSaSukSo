@@ -6,10 +6,17 @@
 //
 
 import UIKit
+
+protocol regionDelegate: class {
+    func sendregionName(forShow : String) -> String
+}
+
 class UploadAirbnbSecondStepViewController : UIViewController{
     
    static var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [], description: "", url: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
+
+    @IBOutlet weak var selectRegionButton: UIButton!
     static var location : String = ""
     @IBOutlet weak var SecondPictureCollectionView: UICollectionView!
     @IBOutlet weak var locationTextfiled: UITextField!
@@ -24,8 +31,8 @@ class UploadAirbnbSecondStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //임시
-        UploadAirbnbSecondStepViewController.airbnbInput.locationId = 1
+        nextButton.isEnabled = false
+        
         print(UploadAirbnbSecondStepViewController.airbnbInput)
         
         
@@ -39,8 +46,9 @@ class UploadAirbnbSecondStepViewController : UIViewController{
     }
     
     @IBAction func locationButtonAction(_ sender: Any) {
-        let selectRegionVC = self.storyboard?.instantiateViewController(identifier: "SelectRegionViewController")
-        self.navigationController?.pushViewController(selectRegionVC!, animated: true)
+        let selectRegionVC = self.storyboard?.instantiateViewController(identifier: "SelectRegionViewController") as! SelectRegionViewController
+        selectRegionVC.delegate = self
+        self.navigationController?.pushViewController(selectRegionVC, animated: true)
         
         
     }
@@ -94,5 +102,17 @@ extension UploadAirbnbSecondStepViewController : UICollectionViewDelegate,UIColl
     }
     
     
+}
+
+extension UploadAirbnbSecondStepViewController : regionDelegate{
+    
+    
+    func sendregionName(forShow: String) -> String {
+        
+        self.selectRegionButton.setTitle(forShow, for: .normal)
+        self.selectRegionButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
+        UploadAirbnbThirdStepViewController.regionText = forShow
+        return forShow
+    }
 }
 
