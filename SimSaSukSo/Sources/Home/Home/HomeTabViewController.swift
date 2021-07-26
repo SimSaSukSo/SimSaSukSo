@@ -16,6 +16,7 @@ class HomeTabViewController: UIViewController {
     var believePlace : [believePlacesDetail] = []
 
 
+    @IBOutlet weak var sliderCollectionView: UICollectionView!
     
     @IBOutlet weak var BestSearchesCollectionView: UICollectionView!
     
