@@ -24,6 +24,9 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     var clickedAdvantageArray : [String] = []
     var clickedDisadvantageArray : [String] = []
     
+    var advantageClickedBook : [Int] = [0,0,0,0,0,0,0,0,0,0,0]
+    var disadvantageClickedBook : [Int] = [0,0,0,0,0,0,0,0,0,0,0]
+    
     @IBOutlet weak var reviewTextField: UITextField!
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var advantageCollectionView: UICollectionView!
@@ -195,7 +198,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         }
     }
     
-    @objc func buttonClicked(_ sender: UIButton) {
+    @objc func advantageButtonClicked(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -204,6 +207,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
             
             clickedAdvantageArray.append((sender.titleLabel?.text!)!)
+            advantageClickedBook[sender.tag] = 1
             validation()
             print(clickedAdvantageArray)
 
@@ -212,7 +216,9 @@ class UploadAirbnbFifthStepViewController : UIViewController{
             sender.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
             sender.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
             sender.backgroundColor = .clear
+            
             clickedAdvantageArray.removeAll{$0 == sender.titleLabel?.text!}
+            advantageClickedBook[sender.tag] = 0
             print(clickedAdvantageArray)
             validation()
             
@@ -226,8 +232,9 @@ class UploadAirbnbFifthStepViewController : UIViewController{
             sender.setTitleColor(.simsasuksoGreen, for: .selected)
             sender.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
-           
+            
             clickedDisadvantageArray.append((sender.titleLabel?.text!)!)
+            disadvantageClickedBook[sender.tag] = 1
             validation()
             print(clickedDisadvantageArray)
 
@@ -237,11 +244,13 @@ class UploadAirbnbFifthStepViewController : UIViewController{
             sender.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
             sender.backgroundColor = .clear
             clickedDisadvantageArray.removeAll{$0 == sender.titleLabel?.text!}
+            disadvantageClickedBook[sender.tag] = 0
             print(clickedDisadvantageArray)
             validation()
             
         }
         }
+
 
 
     @IBAction func addTagButtonAction(_ sender: Any) {
@@ -269,7 +278,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         advantageTextFieldView.isHidden = true
         advantageArray.insert(advantageTextField.text!, at: advantageArray.endIndex)
         print(advantageArray)
-        
+        advantageClickedBook.insert(0, at: advantageClickedBook.endIndex)
         advantageCollectionView.reloadData()
         advantageTextField.text = ""
         validation()
@@ -286,7 +295,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         disadvantageTextFieldView.isHidden = true
         disadvantageArray.insert(disadvantageTextField.text!, at: disadvantageArray.endIndex)
         print(disadvantageArray)
-        
+        disadvantageClickedBook.insert(0, at: disadvantageClickedBook.endIndex)
         disadvantageCollectionView.reloadData()
         disadvantageTextField.text = ""
         validation()
@@ -404,11 +413,28 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralAdvantageCollectionViewCell", for: indexPath) as! UploadGeneralAdvantageCollectionViewCell
                     
                     advantagecell.advantageButton.setTitle(advantageArray[indexPath.row], for: .normal)
-                    advantagecell.advantageButton.layer.borderWidth = 1
-                    advantagecell.advantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
-                    advantagecell.advantageButton.layer.cornerRadius = 4
                     
-                    advantagecell.advantageButton.addTarget(self, action: #selector(self.buttonClicked), for: .touchUpInside)
+                    print("indexpath.row : '\(indexPath.row)'")
+                    print(advantageClickedBook)
+                    
+                    if advantageClickedBook[indexPath.row] == 1{
+                        advantagecell.advantageButton.isSelected = true
+                        advantagecell.advantageButton.layer.borderWidth = 1
+                        advantagecell.advantageButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                        advantagecell.advantageButton.layer.cornerRadius = 4
+                        advantagecell.advantageButton.setTitleColor(.simsasuksoGreen, for: .selected)
+                        advantagecell.advantageButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+                    }else{
+                        advantagecell.advantageButton.isSelected = false
+                        advantagecell.advantageButton.layer.borderWidth = 1
+                        advantagecell.advantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                        advantagecell.advantageButton.layer.cornerRadius = 4
+                        advantagecell.advantageButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
+                        advantagecell.advantageButton.backgroundColor = .clear
+                        
+                    }
+                    advantagecell.advantageButton.tag = indexPath.row
+                    advantagecell.advantageButton.addTarget(self, action: #selector(self.advantageButtonClicked), for: .touchUpInside)
                     
                     cell = advantagecell
                 }
@@ -427,18 +453,31 @@ extension UploadAirbnbFifthStepViewController : UICollectionViewDelegate, UIColl
                     collectionView.dequeueReusableCell(withReuseIdentifier: "UploadGeneralDisadvantageCollectionViewCell", for: indexPath) as! UploadGeneralDisadvantageCollectionViewCell
                     
                     disadvantagecell.disadvantageButton.setTitle(disadvantageArray[indexPath.row], for: .normal)
-                    disadvantagecell.disadvantageButton.layer.borderWidth = 1
-                    disadvantagecell.disadvantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
-                    disadvantagecell.disadvantageButton.layer.cornerRadius = 4
+                    
+                    print("indexpath.row : '\(indexPath.row)'")
+                    print(disadvantageClickedBook)
+                    
+                    if disadvantageClickedBook[indexPath.row] == 1{
+                        disadvantagecell.disadvantageButton.isSelected = true
+                        disadvantagecell.disadvantageButton.layer.borderWidth = 1
+                        disadvantagecell.disadvantageButton.layer.borderColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+                        disadvantagecell.disadvantageButton.layer.cornerRadius = 4
+                        disadvantagecell.disadvantageButton.setTitleColor(.simsasuksoGreen, for: .selected)
+                        disadvantagecell.disadvantageButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 0.1)
+                    }else{
+                        disadvantagecell.disadvantageButton.isSelected = false
+                        disadvantagecell.disadvantageButton.layer.borderWidth = 1
+                        disadvantagecell.disadvantageButton.layer.borderColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+                        disadvantagecell.disadvantageButton.layer.cornerRadius = 4
+                        disadvantagecell.disadvantageButton.setTitleColor(#colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1), for: .normal)
+                        disadvantagecell.disadvantageButton.backgroundColor = .clear
+                        
+                    }
+                    disadvantagecell.disadvantageButton.tag = indexPath.row
                     
                     disadvantagecell.disadvantageButton.addTarget(self, action: #selector(self.disaAdvanbuttonClicked), for: .touchUpInside)
                     
-                   
-                    
                     cell = disadvantagecell
-                    
-                    
-                
             }
            
             }
