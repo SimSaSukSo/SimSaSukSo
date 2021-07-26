@@ -10,8 +10,7 @@ import Alamofire
 class FeedDataManager {
     
     // 피드 정보 조회
-    func feedView(delegate: FeedDetailViewController) {
-        let url = "https://dev.enudgu.shop/api/feeds/1"
+    func feedView(delegate: FeedDetailViewController, url: String) {
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: FeedResponse.self) { response in
@@ -34,6 +33,36 @@ class FeedDataManager {
                 switch response.result {
                 case .success(let response):
                     delegate.feedComment(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
+    
+//    // 피드 찜하기-해제
+//    func favoriteCheck(_ parameters: FavoriteCheckRequest, delegate: FeedDetailViewController) {
+//        AF.request("https://dev.enudgu.shop/api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+//            .validate()
+//            .responseDecodable(of: FavoriteCheckResponse.self) { response in
+//                switch response.result {
+//                case .success(let response):
+//                    delegate.favoriteCheck(response)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+//                }
+//            }
+//    }
+//
+    // 피드 찜하기-해제
+    func favoriteCheck(_ parameters: FavoriteCheckRequest, delegate: FeedDetailViewController) {
+        AF.request("https://dev.enudgu.shop/api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: FavoriteCheckResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.favoriteCheck(response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
