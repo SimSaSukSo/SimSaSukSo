@@ -12,8 +12,7 @@ class FeedDetailViewController: UIViewController {
     lazy var dataManager = FeedDataManager()
     
     var prosAndCons = [ProsAndCons]()
-    
-    var feedImages = [feedImage]()
+    var feedImages = [FeedImage]()
     var feedTags = [feedInfo]()
     
     var feedComments = [FeedCommentResult]()
@@ -292,6 +291,8 @@ extension FeedDetailViewController {
         
 //        let correctionToolContents = result.correction!.correctionTool!.joined()
 //        correctionToolLabel.text! = correctionToolContents
+        
+        feedImages = result.feedImage!
         
         nameLabel.text! = result.lodgingInfo!.info!
         locationLabel.text! = result.lodgingInfo!.address!
