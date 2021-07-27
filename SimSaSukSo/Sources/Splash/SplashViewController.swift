@@ -14,6 +14,23 @@ import KakaoSDKCommon
 class SplashViewController: BaseViewController {
     
 
+    
+    @IBOutlet weak var appleImage: UIImageView!
+    override func viewWillAppear(_ animated: Bool) {
+       
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        appleImage.layer.cornerRadius = appleImage.frame.size.height / 2
+        appleImage.backgroundColor = UIColor.black
+        
+       
+       
+        
+    }
+    @IBAction func appleLoginButton(_ sender: Any) {
+       
+    }
     @IBAction func kakaoLoginButton(_ sender: UIButton) {
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
@@ -65,10 +82,5 @@ class SplashViewController: BaseViewController {
         self.presentAlert(title: "서버와 통신이 불안정합니다")
     }
     
-    @IBAction func presentMainButtonTouchUpInside(_ sender: UIButton) {
-        let mainTabBarController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "TabBarController")
-        changeRootViewController(mainTabBarController)
-//        let mainTabBarController = UIStoryboard(name: "SettingStoryboard", bundle: nil).instantiateViewController(identifier: "SettingViewController")
-//        changeRootViewController(mainTabBarController)
-    }
+   
 }
