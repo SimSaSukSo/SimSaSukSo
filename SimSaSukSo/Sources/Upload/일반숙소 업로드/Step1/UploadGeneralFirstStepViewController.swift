@@ -34,7 +34,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
        
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
-        
+       
        
         
         self.generalInput.images = UploadViewController.urlArray
@@ -61,9 +61,15 @@ class UploadGeneralFirstStepViewController : UIViewController{
         
     }
     
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
     @IBAction func closeButton(_ sender: Any) {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
+    
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
@@ -169,6 +175,9 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
     
 }
 
+
+
+
 //MARK:- API
 extension UploadGeneralFirstStepViewController{
     func success(result : [documentsDetail]){
@@ -177,8 +186,8 @@ extension UploadGeneralFirstStepViewController{
         print(regionList.count)
         searchHotelTableView.reloadData()
         
-        if regionList.count > 8{
-            regionTableviewHeight.constant = 60 * 8
+        if regionList.count > 7{
+            regionTableviewHeight.constant = 60 * 7
         }else{
             regionTableviewHeight.constant = regionTableView.contentSize.height
         }

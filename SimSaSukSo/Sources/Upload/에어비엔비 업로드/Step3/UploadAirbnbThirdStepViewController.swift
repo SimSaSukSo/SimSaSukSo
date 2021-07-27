@@ -53,6 +53,10 @@ class UploadAirbnbThirdStepViewController : UIViewController{
         ThirdPictureCollectionView.dataSource = self
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
     @objc func validation(){
         let filteredArray = [priceTextfiled].filter { $0?.text == "" }
         if !filteredArray.isEmpty {

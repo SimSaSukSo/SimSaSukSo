@@ -45,6 +45,10 @@ class UploadAirbnbSecondStepViewController : UIViewController{
         SecondPictureCollectionView.dataSource = self
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
     @IBAction func locationButtonAction(_ sender: Any) {
         let selectRegionVC = self.storyboard?.instantiateViewController(identifier: "SelectRegionViewController") as! SelectRegionViewController
         selectRegionVC.delegate = self

@@ -167,6 +167,9 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func TagEnterButtonActivate(){

@@ -220,6 +220,10 @@ class UploadGeneralFourthStepViewController : UIViewController{
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
     @IBAction func closeButton(_ sender: Any) {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
