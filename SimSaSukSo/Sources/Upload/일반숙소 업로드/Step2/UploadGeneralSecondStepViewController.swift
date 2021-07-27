@@ -22,11 +22,15 @@ class UploadGeneralSecondStepViewController : UIViewController{
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         nameTextField.text = self.generalInput.name
         addressTextField.text = self.generalInput.address
         
         
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

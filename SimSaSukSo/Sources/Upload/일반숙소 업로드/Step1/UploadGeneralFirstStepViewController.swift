@@ -103,7 +103,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
         secondVc.modalPresentationStyle = .fullScreen
         
         secondVc.generalInput = self.generalInput
-       
+      
         self.present(secondVc, animated: false, completion: nil)
         
     }
