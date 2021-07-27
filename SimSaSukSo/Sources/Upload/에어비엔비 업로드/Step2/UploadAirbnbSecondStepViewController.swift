@@ -53,6 +53,9 @@ class UploadAirbnbSecondStepViewController : UIViewController{
         
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
     
     @IBAction func nextButtonAction(_ sender: Any) {
         let thridVC = self.storyboard?.instantiateViewController(identifier: "UploadAirbnbThirdStepViewController")as!UploadAirbnbThirdStepViewController

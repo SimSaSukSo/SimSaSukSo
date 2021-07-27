@@ -47,6 +47,10 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
         }
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+    
     @IBAction func nextButtonAction(_ sender: Any) {
         let secondNV = self.storyboard?.instantiateViewController(identifier: "AirbnbNavigator")
         secondNV?.modalPresentationStyle = .fullScreen
@@ -60,8 +64,7 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
     }
     
     @IBAction func priorButtonAction(_sender:Any){
-        self.dismiss(animated: false,completion: nil)
-        
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
 }

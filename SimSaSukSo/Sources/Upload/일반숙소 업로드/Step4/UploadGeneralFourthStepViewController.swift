@@ -220,6 +220,10 @@ class UploadGeneralFourthStepViewController : UIViewController{
         }
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+    
     @IBAction func priorButtonAction(_ sender: Any) {
 
         self.dismiss(animated: false, completion: nil)

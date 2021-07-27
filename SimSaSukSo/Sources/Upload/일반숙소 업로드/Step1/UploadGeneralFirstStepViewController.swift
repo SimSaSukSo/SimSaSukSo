@@ -59,6 +59,11 @@ class UploadGeneralFirstStepViewController : UIViewController{
         searchHotelTableView.layer.shadowOpacity = 0.1
         
     }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+    
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
         let filteredArray = [HotelNameTextField].filter { $0?.text == "" }
@@ -94,7 +99,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
     
     
     @IBAction func priorButtonAction(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
     

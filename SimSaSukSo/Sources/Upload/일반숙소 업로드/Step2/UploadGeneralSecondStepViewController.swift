@@ -44,6 +44,10 @@ class UploadGeneralSecondStepViewController : UIViewController{
         secondCollectionView.delegate = self
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+    
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
         let filteredArray = [priceTextField].filter { $0?.text == "" }

@@ -315,6 +315,9 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         validation()
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
     
     @IBAction func preButtonAction(_sender: UIButton){
         self.dismiss(animated: false, completion: nil)

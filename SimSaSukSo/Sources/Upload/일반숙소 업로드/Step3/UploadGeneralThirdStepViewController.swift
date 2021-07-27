@@ -70,7 +70,10 @@ class UploadGeneralThirdStepViewController : UIViewController{
         }
         
    }
-   
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+    
     
     @IBAction func startDateButtonAction(_ sender: Any) {
         let startVC = self.storyboard?.instantiateViewController(identifier: "StartDatePickerViewController")as!StartDatePickerViewController
