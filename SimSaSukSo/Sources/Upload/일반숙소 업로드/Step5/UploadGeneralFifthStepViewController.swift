@@ -186,14 +186,14 @@ class UploadGeneralFifthStepViewController : UIViewController{
     }
     
     @objc func DisadvantageEnterButtonActivate(){
-        let textArray = [advantageTextField].filter { $0?.text == "" }
+        let textArray = [disadvantageTextField].filter { $0?.text == "" }
         if !textArray.isEmpty {
-            advantageEnterButton.isEnabled = false
-            advantageEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
+            disadvantageEnterButton.isEnabled = false
+            disadvantageEnterButton.backgroundColor = #colorLiteral(red: 0.8196078431, green: 0.8352941176, blue: 0.8549019608, alpha: 1)
         
         } else {
-            advantageEnterButton.isEnabled = true
-            advantageEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+            disadvantageEnterButton.isEnabled = true
+            disadvantageEnterButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }
     }
     
