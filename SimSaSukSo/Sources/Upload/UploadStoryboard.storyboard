@@ -372,10 +372,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-oG-M4f">
-                                <rect key="frame" x="16" y="199.5" width="382" height="240"/>
+                                <rect key="frame" x="16" y="199.5" width="382" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="Iwb-jX-rfV"/>
+                                    <constraint firstAttribute="height" constant="150" id="Iwb-jX-rfV"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchHotelTableViewCell" rowHeight="73" id="469-5a-VSB" customClass="searchHotelTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
@@ -475,6 +475,7 @@
                         <outlet property="FirstPictureCollectionView" destination="F1r-bs-1kn" id="QUI-nW-kIv"/>
                         <outlet property="HotelNameTextField" destination="GvR-4D-Qcx" id="HZI-ly-3gl"/>
                         <outlet property="nextButton" destination="hgC-lG-Hxi" id="th5-f6-zf7"/>
+                        <outlet property="regionTableView" destination="OXU-oG-M4f" id="jJq-48-GtK"/>
                         <outlet property="regionTableviewHeight" destination="Iwb-jX-rfV" id="ySL-25-plJ"/>
                         <outlet property="searchHotelTableView" destination="OXU-oG-M4f" id="e0J-ao-JMo"/>
                     </connections>
