@@ -138,6 +138,14 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
         searchCell.hotelNameLabel.text = regionList[indexPath.row].place_name
         searchCell.hotelAddressLabel.text = regionList[indexPath.row].address_name
         
+       // keyword포함하는 hotelnamelabel.text 색상 변경
+        let text = searchCell.hotelNameLabel.text
+        let attributeString = NSMutableAttributedString(string: text!)
+        attributeString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1), range: (text! as NSString).range(of: keyword, options: .caseInsensitive))
+      
+        searchCell.hotelNameLabel.attributedText = attributeString
+
+       
         return searchCell
     }
     
@@ -169,7 +177,12 @@ extension UploadGeneralFirstStepViewController{
         print(regionList.count)
         searchHotelTableView.reloadData()
         
-        regionTableviewHeight.constant = regionTableView.contentSize.height
+        if regionList.count > 8{
+            regionTableviewHeight.constant = 60 * 8
+        }else{
+            regionTableviewHeight.constant = regionTableView.contentSize.height
+        }
+        
         searchHotelTableView.isHidden = false
         
         
