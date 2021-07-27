@@ -10,7 +10,7 @@ import UIKit
 class EvaluViewController: UIViewController {
     
     lazy var dataManager = EvaluDataManager()
-    var evalueResults: [EvalueResult] = []
+    var evaluResults: [EvaluResult] = []
     
     var type = 1 // 1: 일반숙소 2: 에어비앤비
     var lodgingIndex = 3 // 숙소 인덱스
@@ -41,7 +41,7 @@ class EvaluViewController: UIViewController {
 //MARK: - CollectionView
 extension EvaluViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return evalueResults.count
+        return evaluResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,7 +50,7 @@ extension EvaluViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.setupViews()
         cell.userImageView.layer.cornerRadius = cell.userImageView.frame.height/2
         
-        let evalueResult = evalueResults[indexPath.row]
+        let evalueResult = evaluResults[indexPath.row]
         cell.userIdLabel.text = evalueResult.nickname
         
         // 이미지 URL 가져오기
@@ -84,8 +84,8 @@ extension EvaluViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - API
 extension EvaluViewController {
-    func evalueView(result: EvaluResponse) {
-        evalueResults = result.result!
+    func evaluView(result: EvaluResponse) {
+        evaluResults = result.result!
         evaluCollectionView.reloadData()
     }
     func failedToRequest(message: String) {

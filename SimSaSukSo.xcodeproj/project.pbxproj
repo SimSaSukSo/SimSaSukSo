@@ -391,12 +391,12 @@
 		A54DB90B269354CB00EA26DF /* 신뢰도 평가 */ = {
 			isa = PBXGroup;
 			children = (
+				A55362D226AD9B100087C28D /* EvaluDataManager.swift */,
 				A55362CE26AD9A8F0087C28D /* Entity */,
 				A54BDAAF268E13470070BFEF /* EvaluViewController.swift */,
 				A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */,
 				A54BDAB5268E1D720070BFEF /* EvaluImageCollectionViewCell.swift */,
 				A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */,
-				A55362D226AD9B100087C28D /* EvaluDataManager.swift */,
 			);
 			name = "신뢰도 평가";
 			path = "신뢰도 평가";
@@ -527,12 +527,12 @@
 				A711E02B267B5E74006A1F0B /* HomeViewController.swift */,
 				A567961C2685D3DB00CAB9F6 /* PageViewController.swift */,
 				A58833AA268C53360046E313 /* FeedDetailViewController.swift */,
+				A5A6F56926AEF68700201A32 /* FeedImageCollectionViewCell.swift */,
 				A58833AE268C75E20046E313 /* FeedTagCollectionViewCell.swift */,
 				A58833B4268C7D220046E313 /* FeedCommentTableViewCell.swift */,
 				A59DDBC82686021E008D4AF9 /* Home */,
 				A59DDBC6268601F9008D4AF9 /* Best */,
 				A59DDBC726860212008D4AF9 /* New */,
-				A5A6F56926AEF68700201A32 /* FeedImageCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

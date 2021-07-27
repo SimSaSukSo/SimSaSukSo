@@ -15,7 +15,7 @@ class EvaluDataManager {
             .responseDecodable(of: EvaluResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.evalueView(result: response)
+                    delegate.evaluView(result: response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
@@ -30,7 +30,7 @@ class EvaluDataManager {
             .responseDecodable(of: EvaluResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.evalueView(result: response)
+                    delegate.evaluView(result: response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")

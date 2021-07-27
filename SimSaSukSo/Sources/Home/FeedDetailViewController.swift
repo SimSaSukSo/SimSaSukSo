@@ -11,7 +11,6 @@ class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
     
-    var prosAndCons = [ProsAndCons]()
     var feedImages = [FeedImage]()
     var feedTags = [feedInfo]()
     
@@ -30,6 +29,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var userNicknameLabel: UILabel!
     
     @IBOutlet var imageCollectionView: UICollectionView!
+    @IBOutlet var imageCollectionViewHeight: NSLayoutConstraint!
     
     @IBOutlet var heartButton: UIButton!
     @IBOutlet var likeNumberLabel: UILabel!
@@ -77,8 +77,17 @@ class FeedDetailViewController: UIViewController {
         imageCollectionView.tag = 1
         tagCollectionView.tag = 2
         
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
+        
+        imageCollectionViewHeight.constant = view.frame.size.width
+        
+        imageCollectionView.isPagingEnabled = true
+        let imageFlowLayout = UICollectionViewFlowLayout()
+        imageFlowLayout.scrollDirection = .horizontal
+        self.imageCollectionView.collectionViewLayout = imageFlowLayout
         
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
         
@@ -89,8 +98,6 @@ class FeedDetailViewController: UIViewController {
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
-        
-        
         
     }
     
@@ -117,7 +124,7 @@ class FeedDetailViewController: UIViewController {
     //MARK: - Function
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
-        print("게시글 삭제")
+        print("게시글 신고")
     }
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
@@ -170,19 +177,40 @@ class FeedDetailViewController: UIViewController {
 extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hashTags.count
+        if collectionView.tag == 1 {
+            return feedImages.count
+        } else {
+            return hashTags.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedTagCollectionViewCell", for: indexPath) as! FeedTagCollectionViewCell
+        if collectionView.tag == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedImageCollectionViewCell", for: indexPath) as! FeedImageCollectionViewCell
+            
+            let feedImage = feedImages[indexPath.row]
+            
+            // 이미지 URL 가져오기
+            let urlString = feedImage.source
+            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+               let url = URL(string: urlstring),
+               let data = try? Data(contentsOf: url) {
+                cell.imageView.image = UIImage(data: data)
+            }
+
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedTagCollectionViewCell", for: indexPath) as! FeedTagCollectionViewCell
+            
+            cell.tagLabel.text = hashTags[indexPath.row]
+            
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+            cell.layer.cornerRadius = 4
+            
+            return cell
+        }
         
-        cell.tagLabel.text = hashTags[indexPath.row]
-        
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
-        cell.layer.cornerRadius = 4
-        
-        return cell
     }
     
     
@@ -193,15 +221,36 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let label = UILabel(frame: CGRect.zero)
-        label.text = textArray[indexPath.item]
-        label.sizeToFit()
+        if collectionView.tag == 1 {
+            let width = view.frame.size.width
+            return CGSize(width: width, height: width)
+        } else {
+            let label = UILabel(frame: CGRect.zero)
+            label.text = textArray[indexPath.item]
+            label.sizeToFit()
 
-        return CGSize(width: label.frame.width, height: 23)
+            return CGSize(width: label.frame.width, height: 23)
+        }
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        
+        if collectionView.tag == 1 {
+            return 0
+        } else {
+            return 8
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        if collectionView.tag == 1 {
+            return 0
+        } else {
+            return 0
+        }
     }
     
 }
@@ -252,22 +301,19 @@ extension FeedDetailViewController {
     func feedView(result: FeedResult) {
         likeNumberLabel.text! = String(result.feedLike!.likeNum!)
         reliabilityLabel.text! = String(result.feedInfo!.reliability!)
-        //correctionDegreeLabel.text! = String(result.correction!.correctionDegree!)
+        correctionDegreeLabel.text! = String(result.correction!.correctionDegree!)
         reviewLabel.text! = String(result.feedInfo!.review!)
         chargeLabel.text! = String(result.feedInfo!.charge!) + "원"
         favoriteNumberLabel.text! = String(result.save!.saveNum!)
-        
-//        let correctionToolContents = result.correction!.correctionTool!.joined()
-//        correctionToolLabel.text! = correctionToolContents
-        
-        feedImages = result.feedImage!
-        
         nameLabel.text! = result.lodgingInfo!.info!
         locationLabel.text! = result.lodgingInfo!.address!
         dateLabel.text! = result.feedInfo!.startDate! + "~" + result.feedInfo!.endDate!
         
-        prosAndCons = result.prosAndCons!
-        prosLabel.text! = prosAndCons.description
+        let correctionToolContents = result.correction!.correctionTool!.joined()
+        correctionToolLabel.text! = correctionToolContents
+        
+        feedImages = result.feedImage!
+        imageCollectionView.reloadData()
        
         // 좋아요
         if result.feedLike?.isLiked == 1 { // Yes
