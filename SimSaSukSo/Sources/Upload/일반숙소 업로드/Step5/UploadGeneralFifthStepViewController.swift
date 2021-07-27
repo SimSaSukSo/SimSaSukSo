@@ -12,6 +12,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     var generalInput : UploadGeneralInput = UploadGeneralInput(name: "", images: [], address: "", startDate: "", endDate: "", charge: 0, correctionTool: [], correctionDegree: 0, review: "", tags: [], pros: [], cons: [])
     
+   
     var tagArray : [String] = ["태그 추가하기"]
     
    var advantageArray = ["위치","가성비","깨끗함","인테리어","룸서비스","서비스 좋음","건물신축","어매니티","부대시설","교통편리","직접 입력하기"]
@@ -23,7 +24,10 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     var advantageClickedBook : [Int] = [0,0,0,0,0,0,0,0,0,0,0]
     var disadvantageClickedBook : [Int] = [0,0,0,0,0,0,0,0,0,0,0]
-    @IBOutlet weak var reviewTextField: UITextField!
+  
+    
+    @IBOutlet weak var reviewTextView: UITextView!
+    
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var advantageCollectionView: UICollectionView!
     @IBOutlet weak var disadvantageCollectionView: UICollectionView!
@@ -53,6 +57,8 @@ class UploadGeneralFifthStepViewController : UIViewController{
         
         nextButton.isEnabled = false
         
+        reviewTextViewConfigure()
+        
         tagTextFieldView.isHidden = true
         tagCollectionViewConfigure()
         
@@ -64,13 +70,27 @@ class UploadGeneralFifthStepViewController : UIViewController{
         
         
         //MARK: - 텍스트 필드가 EnterButtonActivate 처리할 수 있게 해줌
-        NotificationCenter.default.addObserver(self, selector: #selector(reviewTextFieldAction), name: UITextField.textDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reviewTextFieldAction), name: UITextView.textDidChangeNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(TagEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(AdvantageEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(DisadvantageEnterButtonActivate), name: UITextField.textDidChangeNotification, object: nil)
+        
+    }
+    
+    func reviewTextViewConfigure(){
+        
+        //placeholder
+        reviewTextView.delegate = self
+        reviewTextView.text =  "숙소의 실제 후기를 들려주세요 :) (공백 포함 300byte 이내)"
+        reviewTextView.textColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+        
+        //테두리
+        reviewTextView.layer.borderWidth = 1
+        reviewTextView.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
+        reviewTextView.layer.cornerRadius = 4
         
     }
     
@@ -137,11 +157,12 @@ class UploadGeneralFifthStepViewController : UIViewController{
         
     }
     @objc func reviewTextFieldAction(){
-        let textArray = [reviewTextField].filter { $0?.text == "" }
+        let textArray = [reviewTextView].filter { $0?.text == "" }
         if !textArray.isEmpty {
             validation()
         
         } else {
+           
             validation()
             
         }
@@ -321,7 +342,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
         self.generalInput.tags = tagArray
         self.generalInput.pros = clickedAdvantageArray
         self.generalInput.cons = clickedDisadvantageArray
-        self.generalInput.review = reviewTextField.text ?? "후기가 없습니다."
+        self.generalInput.review = reviewTextView.text ?? "후기가 없습니다."
         print(self.generalInput)
         UploadGeneralDataManager().feeds(parameters: self.generalInput, viewcontroller: self)
         
@@ -329,7 +350,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
     }
     
     func validation(){
-        if reviewTextField.text != "" && tagArray.count > 1 && clickedAdvantageArray.count > 0 && clickedDisadvantageArray.count > 0{
+        if reviewTextView.text != "" && tagArray.count > 1 && clickedAdvantageArray.count > 0 && clickedDisadvantageArray.count > 0{
             nextButton.isEnabled = true
             nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         }else{
@@ -553,7 +574,43 @@ extension UploadGeneralFifthStepViewController: UICollectionViewDelegateFlowLayo
     }
     }
 
-extension UploadGeneralFifthStepViewController{
+//MARK:- UITEXTVIEW delegate
+extension UploadGeneralFifthStepViewController :UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        if textView.textColor == #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1) {
+
+          textView.text = nil
+
+          textView.textColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
+
+        }
+
+      }
+
+      func textViewDidEndEditing(_ textView: UITextView) {
+
+        if textView.text.isEmpty {
+
+          textView.text = "숙소의 실제 후기를 들려주세요 :) (공백 포함 300byte 이내)"
+
+          textView.textColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+
+        }
+
+      }
+    
+    //글자 수 제한
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+           guard let str = textView.text else { return true }
+           let newLength = str.count + text.count - range.length
+           return newLength <= 300
+       }
+    
+}
+
+//MARK:- API
+    extension UploadGeneralFifthStepViewController {
     
    func success(){
     let uploadVc = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
@@ -567,4 +624,3 @@ extension UploadGeneralFifthStepViewController{
     }
 
 }
-
