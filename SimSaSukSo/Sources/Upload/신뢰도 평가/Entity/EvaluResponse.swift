@@ -9,12 +9,16 @@ struct EvaluResponse: Decodable {
     var isSuccess: Bool
     var code: Int
     var message: String
-    var result: [EvalueResult]?
+    var result: [EvaluResult]?
 }
 
-struct EvalueResult: Decodable {
+struct EvaluResult: Decodable {
     var feedIndex: Int
     var avatarUrl: String
     var nickname: String
-    var sources: Array<String>
+    var sources: [EvaluSources]?
+}
+
+struct EvaluSources: Decodable {
+    var source: String
 }

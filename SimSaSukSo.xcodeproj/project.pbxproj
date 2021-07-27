@@ -391,12 +391,12 @@
 		A54DB90B269354CB00EA26DF /* 신뢰도 평가 */ = {
 			isa = PBXGroup;
 			children = (
+				A55362D226AD9B100087C28D /* EvaluDataManager.swift */,
 				A55362CE26AD9A8F0087C28D /* Entity */,
 				A54BDAAF268E13470070BFEF /* EvaluViewController.swift */,
 				A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */,
 				A54BDAB5268E1D720070BFEF /* EvaluImageCollectionViewCell.swift */,
 				A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */,
-				A55362D226AD9B100087C28D /* EvaluDataManager.swift */,
 			);
 			name = "신뢰도 평가";
 			path = "신뢰도 평가";

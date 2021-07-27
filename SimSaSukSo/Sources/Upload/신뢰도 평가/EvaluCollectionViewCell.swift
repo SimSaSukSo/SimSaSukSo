@@ -10,9 +10,9 @@ import UIKit
 class EvaluCollectionViewCell: UICollectionViewCell {
     
     lazy var dataManager = EvaluDataManager()
-    var evalueResults: [EvalueResult] = []
     
-    var imageLists: [String] = []
+    var evaluImages = [EvaluSources]()
+    var evaluResults = [EvaluResult]()
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userIdLabel: UILabel!
@@ -35,7 +35,6 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         imageCollectionViewFlowLayout.scrollDirection = .horizontal
         
         dataManager.evaluView(delegate: self, url: "https://dev.enudgu.shop/api/feedbacks?type=1&lodging=3")
-        print(imageLists.count)
         
     }
     
@@ -108,18 +107,16 @@ class EvaluCollectionViewCell: UICollectionViewCell {
 extension EvaluCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return imageLists.count
+        return evaluImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "evaluImageCollectionViewCell", for: indexPath) as! EvaluImageCollectionViewCell
         
-        let evaluResult = evalueResults[indexPath.row]
-        let evalueImage = evaluResult.sources[indexPath.row]
-        imageLists.append(evalueImage)
-        
-        // 이미지 URL 가져오기
-        let urlString = evaluResult.sources[indexPath.row]
+        let evaluResult = evaluResults[indexPath.row]
+        let evaluImage = evaluResult.sources![indexPath.row]
+         //이미지 URL 가져오기
+        let urlString = evaluImage.source
         if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
            let url = URL(string: urlString),
            let data = try? Data(contentsOf: url) {
@@ -144,10 +141,13 @@ extension EvaluCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
 //MARK: - API
 extension EvaluCollectionViewCell {
-    func evalueView(result: EvaluResponse) {
-        evalueResults = result.result!
+    func evaluView(result: EvaluResponse) {
+        evaluResults = result.result!
         imageCollectionView.reloadData()
         
+    }
+    func evaluImageView(result: EvaluResult) {
+        evaluImages = result.sources!
     }
     
     func failedToRequest(message: String) {

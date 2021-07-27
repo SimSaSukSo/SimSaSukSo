@@ -22,7 +22,7 @@ class BestOneFeedViewController: UIViewController {
 
         bestOneFeedCollectionView.delegate = self
         bestOneFeedCollectionView.dataSource = self
-        
+
         dataManager.bestOneFeed(delegate: self, url: "\(Constant.BASE_URL)api/feeds/hot?page=\(page+1)")
     }
     
@@ -79,6 +79,7 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
 //        self.present(feedVC!, animated: true, completion: nil)
         
     }
+    
 }
 
 //MARK: - CollectionView FlowLayout
@@ -103,7 +104,6 @@ extension BestOneFeedViewController: UICollectionViewDelegateFlowLayout {
 }
 
 //MARK: - API
-
 extension BestOneFeedViewController {
     
     func bestOneFeed(result: BestResult) {

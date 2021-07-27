@@ -11,7 +11,6 @@ class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
     
-    var prosAndCons = [ProsAndCons]()
     var feedImages = [FeedImage]()
     var feedTags = [feedInfo]()
     
@@ -198,7 +197,7 @@ extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDa
                let data = try? Data(contentsOf: url) {
                 cell.imageView.image = UIImage(data: data)
             }
-            
+
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedTagCollectionViewCell", for: indexPath) as! FeedTagCollectionViewCell
@@ -302,22 +301,19 @@ extension FeedDetailViewController {
     func feedView(result: FeedResult) {
         likeNumberLabel.text! = String(result.feedLike!.likeNum!)
         reliabilityLabel.text! = String(result.feedInfo!.reliability!)
-        //correctionDegreeLabel.text! = String(result.correction!.correctionDegree!)
+        correctionDegreeLabel.text! = String(result.correction!.correctionDegree!)
         reviewLabel.text! = String(result.feedInfo!.review!)
         chargeLabel.text! = String(result.feedInfo!.charge!) + "원"
         favoriteNumberLabel.text! = String(result.save!.saveNum!)
-        
-//        let correctionToolContents = result.correction!.correctionTool!.joined()
-//        correctionToolLabel.text! = correctionToolContents
-        
-        feedImages = result.feedImage!
-        
         nameLabel.text! = result.lodgingInfo!.info!
         locationLabel.text! = result.lodgingInfo!.address!
         dateLabel.text! = result.feedInfo!.startDate! + "~" + result.feedInfo!.endDate!
         
-        prosAndCons = result.prosAndCons!
-        prosLabel.text! = prosAndCons.description
+        let correctionToolContents = result.correction!.correctionTool!.joined()
+        correctionToolLabel.text! = correctionToolContents
+        
+        feedImages = result.feedImage!
+        imageCollectionView.reloadData()
        
         // 좋아요
         if result.feedLike?.isLiked == 1 { // Yes
