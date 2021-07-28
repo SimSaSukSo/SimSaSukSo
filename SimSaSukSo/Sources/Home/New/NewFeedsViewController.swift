@@ -9,10 +9,17 @@ import UIKit
 
 class NewFeedsViewController: UIViewController {
     
+ 
     lazy var dataManager = NewDataManager()
-    
+   
+   
     static var newFeeds: [NewFeeds] = []
-
+    
+    
+    var fetchingMore = false
+    var page : Int = 1
+    var stop : Bool = false
+        
     @IBOutlet var newFeedsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -21,16 +28,18 @@ class NewFeedsViewController: UIViewController {
         newFeedsCollectionView.dataSource = self
         newFeedsCollectionView.delegate = self
         
-        dataManager.newFeeds(delegate: self)
+        dataManager.newFeeds(page: page, delegate: self)
     }
     
-
+    
 }
 
 //MARK: - CollectionView
 extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("count :\(NewFeedsViewController.newFeeds.count)")
         return NewFeedsViewController.newFeeds.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,11 +54,40 @@ extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewData
            let data = try? Data(contentsOf: url) {
             cell.imageView.image = UIImage(data: data)
         }
-        
+
         return cell
     }
     
+   
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          let offsetY = scrollView.contentOffset.y
+          let contentHeight = scrollView.contentSize.height
+        
+          if offsetY >= contentHeight - scrollView.frame.size.height {
+            print("늘렸다")
+            if !fetchingMore
+                        {
+                            beginBatchFetch()
+                        }
+             
+          }
+       }
+    
+    func beginBatchFetch()
+        {
+                fetchingMore = true
+                self.page += 1
+                print("page : \(page)")
+        
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                    
+                    self.dataManager.newFeeds(page:self.page, delegate: self)
+
+                })
+            }
+        
+
 }
 
 //MARK: - CollectionView FlowLayout
@@ -78,7 +116,17 @@ extension NewFeedsViewController {
         newFeedsCollectionView.reloadData()
     }
     
+    func addnewFeeds(result: NewResult){
+        
+        NewFeedsViewController.newFeeds.append(contentsOf: result.feeds!)
+        self.fetchingMore = false
+        self.newFeedsCollectionView.reloadData()
+       
+        
+    }
+    
     func failedToRequest(message: String) {
+        
         self.presentAlert(title: message)
     }
 }
