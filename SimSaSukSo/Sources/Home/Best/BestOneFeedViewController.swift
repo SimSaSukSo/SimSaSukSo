@@ -25,7 +25,7 @@ class BestOneFeedViewController: UIViewController {
         bestOneFeedCollectionView.delegate = self
         bestOneFeedCollectionView.dataSource = self
 
-        dataManager.bestOneFeed(page: page, delegate: self)
+        dataManager.bestOneFeed(page: self.page, delegate: self)
     }
     
 }
@@ -144,7 +144,7 @@ extension BestOneFeedViewController {
         bestOneFeedCollectionView.reloadData()
     }
     
-    func addbestOneFeed(result: BestResult){
+    func addBestOneFeed(result: BestResult){
         
         BestOneFeedViewController.bestOneFeeds.append(contentsOf: result.feeds!)
         self.fetchingMore = false

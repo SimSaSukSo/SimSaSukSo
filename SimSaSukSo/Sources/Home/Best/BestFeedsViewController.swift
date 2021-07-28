@@ -13,7 +13,10 @@ class BestFeedsViewController: UIViewController {
     
     static var bestFeeds: [BestFeeds] = []
     
-    var page = 1
+    var fetchingMore = false
+    var page : Int = 1
+    var stop : Bool = false
+    
     
     @IBOutlet var bestFeedsCollectionView: UICollectionView!
     
@@ -23,7 +26,7 @@ class BestFeedsViewController: UIViewController {
         bestFeedsCollectionView.dataSource = self
         bestFeedsCollectionView.delegate = self
         
-        dataManager.bestFeeds(delegate: self, url: "\(Constant.BASE_URL)api/feeds/hot?page=\(page)")
+        dataManager.bestFeeds(page: self.page, delegate: self)
     }
     
 
@@ -32,6 +35,7 @@ class BestFeedsViewController: UIViewController {
 //MARK: - CollectionView
 extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(BestFeedsViewController.bestFeeds.count)
         return BestFeedsViewController.bestFeeds.count
     }
     
@@ -50,6 +54,33 @@ extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          let offsetY = scrollView.contentOffset.y
+          let contentHeight = scrollView.contentSize.height
+        
+          if offsetY >= contentHeight - scrollView.frame.size.height {
+            print("늘렸다")
+            if !fetchingMore
+                        {
+                            beginBatchFetch()
+                        }
+             
+          }
+       }
+    
+    func beginBatchFetch()
+        {
+                fetchingMore = true
+                self.page += 1
+                print("page : \(page)")
+        
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                    
+                    self.dataManager.bestFeeds(page: self.page, delegate: self)
+
+                })
+            }
     
     
 }
@@ -79,6 +110,14 @@ extension BestFeedsViewController {
         BestFeedsViewController.bestFeeds = result.feeds!
         bestFeedsCollectionView.reloadData()
     }
+    
+    func addBestFeeds(result : BestResult){
+        BestFeedsViewController.bestFeeds.append(contentsOf: result.feeds!)
+        self.fetchingMore = false
+        self.bestFeedsCollectionView.reloadData()
+       
+    }
+        
     
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
