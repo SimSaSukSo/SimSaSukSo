@@ -15,13 +15,10 @@ class BestTabViewController: UIViewController {
     
     var bestHashTags: [BestHashTags] = []
     
-    @IBOutlet var bestTabScrollView: UIScrollView!
-    
     @IBOutlet var bestHashtagCollectionView: UICollectionView!
     @IBOutlet var bestOneFeedButton: UIButton!
     @IBOutlet var bestFeedsButton: UIButton!
     @IBOutlet var bestViewHeight: NSLayoutConstraint!
-    @IBOutlet var bestScrollView: UIScrollView!
     
     var buttonLists: [UIButton] = []
     
@@ -40,9 +37,7 @@ class BestTabViewController: UIViewController {
         
         bestHashtagCollectionView.delegate = self
         bestHashtagCollectionView.dataSource = self
-        
-        bestTabScrollView.delegate = self
-        
+                
         self.bestViewHeight.constant = 10/3 * 130 + 200
     
         setButtonList()
@@ -131,29 +126,6 @@ extension BestTabViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
-}
-
-//MARK: - ScrollView
-extension BestTabViewController: UIScrollViewDelegate {
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView == bestScrollView {
-            if bestPageViewController.currentIndex == 0 { // Feeds
-                adjustFeedsPageHeight()
-            } else {
-                adjustOneFeedPageHeight()
-            }
-        }
-
-    }
-    
-    func adjustOneFeedPageHeight(){
-        self.bestViewHeight.constant = CGFloat(BestOneFeedViewController.bestOneFeeds.count * 476)
-    }
-    
-    func adjustFeedsPageHeight() {
-        self.bestViewHeight.constant = CGFloat(BestFeedsViewController.bestFeeds.count/3 * 130 + 170)
-    }
 }
 
 //MARK: - API

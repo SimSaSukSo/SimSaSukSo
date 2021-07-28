@@ -4,7 +4,7 @@
 //
 //  Created by 소영 on 2021/06/25.
 //
-import Foundation
+
 import UIKit
 
 class BestOneFeedViewController: UIViewController {
@@ -13,7 +13,9 @@ class BestOneFeedViewController: UIViewController {
     
     static var bestOneFeeds: [BestFeeds] = []
     
-    var page = 0
+    var fetchingMore = false
+    var page : Int = 1
+    var stop : Bool = false
     
     @IBOutlet var bestOneFeedCollectionView: UICollectionView!
   
@@ -23,7 +25,7 @@ class BestOneFeedViewController: UIViewController {
         bestOneFeedCollectionView.delegate = self
         bestOneFeedCollectionView.dataSource = self
 
-        dataManager.bestOneFeed(delegate: self, url: "\(Constant.BASE_URL)api/feeds/hot?page=\(page+1)")
+        dataManager.bestOneFeed(page: page, delegate: self)
     }
     
 }
@@ -31,6 +33,7 @@ class BestOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("count :\(BestOneFeedViewController.bestOneFeeds.count)")
         return BestOneFeedViewController.bestOneFeeds.count
     }
     
@@ -80,6 +83,36 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          let offsetY = scrollView.contentOffset.y
+          let contentHeight = scrollView.contentSize.height
+        
+          if offsetY >= contentHeight - scrollView.frame.size.height {
+            print("늘렸다")
+            if !fetchingMore
+                        {
+                            beginBatchFetch()
+                        }
+             
+          }
+       }
+    
+    func beginBatchFetch()
+        {
+                fetchingMore = true
+                self.page += 1
+                print("page : \(page)")
+        
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                    
+                    self.dataManager.bestOneFeed(page: self.page, delegate: self)
+
+                })
+            }
+    
+    
+    
+    
 }
 
 //MARK: - CollectionView FlowLayout
@@ -109,6 +142,15 @@ extension BestOneFeedViewController {
     func bestOneFeed(result: BestResult) {
         BestOneFeedViewController.bestOneFeeds = result.feeds!
         bestOneFeedCollectionView.reloadData()
+    }
+    
+    func addbestOneFeed(result: BestResult){
+        
+        BestOneFeedViewController.bestOneFeeds.append(contentsOf: result.feeds!)
+        self.fetchingMore = false
+        self.bestOneFeedCollectionView.reloadData()
+       
+        
     }
     
     func failedToRequest(message: String) {

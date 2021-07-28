@@ -133,7 +133,7 @@ extension NewOneFeedViewController {
     
     func addnewOneFeed(result: NewResult){
         
-        NewFeedsViewController.newFeeds.append(contentsOf: result.feeds!)
+        NewOneFeedViewController.newOneFeeds.append(contentsOf: result.feeds!)
         self.fetchingMore = false
         self.newOneFeedCollectionView.reloadData()
        

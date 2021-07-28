@@ -26,8 +26,11 @@ class BestDataManager {
     }
         
     // 인기 - ONE Feed
-    func bestOneFeed(delegate: BestOneFeedViewController, url: String) {
-        //let url = "\(Constant.BASE_URL)api/feeds/hot?page=1"
+    func bestOneFeed(page: Int, delegate: BestOneFeedViewController) {
+        let url = "\(Constant.BASE_URL)api/feeds/hot"
+        let parameters : Parameters = [
+            "page": page
+        ]
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: BestResponse.self) { response in
