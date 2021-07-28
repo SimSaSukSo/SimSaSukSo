@@ -13,6 +13,10 @@ class NewOneFeedViewController: UIViewController {
     
     static var newOneFeeds: [NewFeeds] = []
     
+    var fetchingMore = false
+    var page : Int = 1
+    var stop : Bool = false
+    
     @IBOutlet var newOneFeedCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -21,7 +25,7 @@ class NewOneFeedViewController: UIViewController {
         newOneFeedCollectionView.delegate = self
         newOneFeedCollectionView.dataSource = self
         
-        dataManager.newOneFeed(delegate: self)
+        dataManager.newOneFeed(page: page, delegate: self)
     }
     
 }
@@ -29,6 +33,7 @@ class NewOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("count :\(NewOneFeedViewController.newOneFeeds.count)")
         return NewOneFeedViewController.newOneFeeds.count
     }
     
@@ -68,6 +73,33 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
         
         return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+          let offsetY = scrollView.contentOffset.y
+          let contentHeight = scrollView.contentSize.height
+        
+          if offsetY >= contentHeight - scrollView.frame.size.height {
+            print("늘렸다")
+            if !fetchingMore
+                        {
+                            beginBatchFetch()
+                        }
+             
+          }
+       }
+    
+    func beginBatchFetch()
+        {
+                fetchingMore = true
+                self.page += 1
+                print("page : \(page)")
+        
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                    
+                    self.dataManager.newOneFeed(page:self.page, delegate: self)
+
+                })
+            }
 }
 
 //MARK: - CollectionView FlowLayout
@@ -97,6 +129,15 @@ extension NewOneFeedViewController {
     func newOneFeed(result: NewResult) {
         NewOneFeedViewController.newOneFeeds = result.feeds!
         newOneFeedCollectionView.reloadData()
+    }
+    
+    func addnewOneFeed(result: NewResult){
+        
+        NewFeedsViewController.newFeeds.append(contentsOf: result.feeds!)
+        self.fetchingMore = false
+        self.newOneFeedCollectionView.reloadData()
+       
+        
     }
     
     func failedToRequest(message: String) {

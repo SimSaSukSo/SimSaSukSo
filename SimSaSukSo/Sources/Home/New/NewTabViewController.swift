@@ -13,8 +13,6 @@ class NewTabViewController: UIViewController {
     
     @IBOutlet var newOneFeedButton: UIButton!
     @IBOutlet var newFeedsButton: UIButton!
-    @IBOutlet var newViewHeight: NSLayoutConstraint!
-    @IBOutlet var newScrollView: UIScrollView!
     
     @IBOutlet var contentView: UIView!
     
