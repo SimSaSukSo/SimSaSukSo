@@ -22,11 +22,15 @@ class UploadGeneralSecondStepViewController : UIViewController{
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         nameTextField.text = self.generalInput.name
         addressTextField.text = self.generalInput.address
         
         
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,14 @@ class UploadGeneralSecondStepViewController : UIViewController{
         
         secondCollectionView.dataSource = self
         secondCollectionView.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화

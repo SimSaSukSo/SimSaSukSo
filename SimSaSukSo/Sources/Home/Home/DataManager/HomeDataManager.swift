@@ -26,7 +26,8 @@ class HomeDataManager{
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                  
+                    
+                    viewcontroller.dismissIndicator()
                     viewcontroller.presentAlert(title: "서버와 통신이 불안정합니다")
                     
                 

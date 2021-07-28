@@ -5,19 +5,30 @@
 //  Created by 이현서 on 2021/06/17.
 //
 
-import Foundation
+
 import UIKit
 
-class ViewController : UITabBarController {
+
+
+class ViewController : UITabBarController{
     
    
     
+ 
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setTabBarBackgroundColor()
         setTabBarTextColor()
         
+        
+       
+        
    }
+    
+    
     
     func setTabBarBackgroundColor() {
         self.tabBar.barTintColor = .white
@@ -33,5 +44,11 @@ class ViewController : UITabBarController {
         self.tabBar.unselectedItemTintColor = UIColor(hex: 0xA6B0BA)
         
     }
+    
+   
 
 }
+
+
+
+       

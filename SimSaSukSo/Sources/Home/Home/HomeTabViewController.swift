@@ -6,8 +6,15 @@
 //
 
 import UIKit
-
-class HomeTabViewController: UIViewController {
+import CoreLocation
+class HomeTabViewController: UIViewController{
+    
+    static var regionNumber : Int = 0
+    
+    var locationManager = CLLocationManager()
+    let geocoder = CLGeocoder()
+    let locale = Locale(identifier: "Ko-kr")
+    var findLocation = CLLocation()
     
     var hotPlace : [hotPlacesDetail] = []
     var regionPlace : [regionPlacesDetail] = []
@@ -15,7 +22,7 @@ class HomeTabViewController: UIViewController {
     var likePlace : [likePlacesDetail] = []
     var believePlace : [believePlacesDetail] = []
 
-
+    
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     
     @IBOutlet weak var BestSearchesCollectionView: UICollectionView!
@@ -35,6 +42,9 @@ class HomeTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingGps()
+        
         sliderCollectionView.dataSource = self
         sliderCollectionView.delegate = self
          
@@ -59,7 +69,8 @@ class HomeTabViewController: UIViewController {
         BestLikesCollectionView.reloadData()
         BestBelievesTableView.reloadData()
         
-        HomeDataManager().home(region: 1000,viewcontroller: self)
+        
+        
         DispatchQueue.main.async {
 
                       self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeIMG), userInfo: nil, repeats: true)
@@ -68,6 +79,25 @@ class HomeTabViewController: UIViewController {
         
         
     }
+    
+    func settingGps(){
+        // 델리게이트 설정
+        locationManager.delegate = self
+                // 거리 정확도 설정
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                // 사용자에게 허용 받기 alert 띄우기
+        getLocationUsagePermission()
+          
+        
+        
+        
+    }
+    
+   
+    
+    
+
+    
     
     @objc func changeIMG(){
 
@@ -308,6 +338,8 @@ extension HomeTabViewController{
         TrendPlacesCollectionView.reloadData()
         BestLikesCollectionView.reloadData()
         BestBelievesTableView.reloadData()
+        
+        dismissIndicator()
     }
     
     func fail(){
@@ -317,4 +349,151 @@ extension HomeTabViewController{
     }
     
     
+}
+
+
+//MARK:- GPS
+extension HomeTabViewController : CLLocationManagerDelegate{
+    
+    func getLocationUsagePermission() {
+            //location4
+            self.locationManager.requestWhenInUseAuthorization()
+
+        }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+            //location5
+            switch status {
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("GPS 권한 설정됨")
+                // 아이폰 설정에서의 위치 서비스가 켜진 상태라면
+                if CLLocationManager.locationServicesEnabled() {
+                    print("위치 서비스 On 상태")
+                    self.locationManager.startUpdatingLocation() //위치 정보 받아오기 시작
+                    print(locationManager.location?.coordinate)
+                    
+                    let coor = locationManager.location?.coordinate
+                    let latititude = coor?.latitude
+                    let logitude = coor?.longitude
+                    
+                    print("여긴가?")
+                    print(latititude)
+                    print(logitude)
+                    
+                    findLocation = CLLocation(latitude: latititude!, longitude: logitude!)
+                        
+                    geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in if let address: [CLPlacemark] = placemarks { if let name: String = address.first?.administrativeArea { print(name)
+                                        self.convertToRegionNumber(region: name)
+                                    } } })
+                } else {
+                    print("위치 서비스 Off 상태")
+                }
+                
+            case .restricted, .notDetermined:
+                print("GPS 권한 설정되지 않음")
+                getLocationUsagePermission()
+            case .denied:
+                print("GPS 권한 요청 거부됨")
+                getLocationUsagePermission()
+            default:
+                print("GPS: Default")
+            }
+        }
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//
+//            // the most recent location update is at the end of the array.
+//            let location: CLLocation = locations[locations.count - 1]
+//            let longtitude: CLLocationDegrees = location.coordinate.longitude
+//            let latitude:CLLocationDegrees = location.coordinate.latitude
+//
+//        print("저긴가?")
+//            print(location)
+//            print(longtitude)
+//        print(latitude)
+//    }
+//
+//    // 위치 정보 계속 업데이트 -> 위도 경도 받아옴
+//        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//            print("didUpdateLocations")
+//            if let location = locations.first {
+//                print("위도: \(location.coordinate.latitude)")
+//                print("경도: \(location.coordinate.longitude)")
+//                geocoder.reverseGeocodeLocation(location, preferredLocale: locale, completionHandler: {(placemarks, error) in if let address: [CLPlacemark] = placemarks { if let name: String = address.first?.administrativeArea { print(name)
+//                    self.convertToRegionNumber(region: name)
+//                } } })
+//
+//
+//            }
+//        }
+        
+        // 위도 경도 받아오기 에러
+        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print(error)
+        }
+    
+    func convertToRegionNumber(region : String){
+        switch region{
+        case "서울특별시" :
+            print("잘되냐")
+            HomeTabViewController.regionNumber = 1000
+            
+            break
+        case "부산광역시":
+            HomeTabViewController.regionNumber = 1001
+            break
+        case "제주도" :
+            HomeTabViewController.regionNumber = 1002
+            break
+        case "강원도" :
+            HomeTabViewController.regionNumber = 1003
+            break
+        case "경기도" :
+            HomeTabViewController.regionNumber = 1004
+            break
+        case "인천광역시":
+            HomeTabViewController.regionNumber = 1005
+            break
+        case "대구광역시" :
+            HomeTabViewController.regionNumber = 1006
+            break
+        case "울산광역시" :
+            HomeTabViewController.regionNumber = 1007
+            break
+        case "경상남도" :
+            HomeTabViewController.regionNumber = 1008
+            break
+        case "경상북도":
+            HomeTabViewController.regionNumber = 1009
+            break
+        case "광주광역시" :
+            HomeTabViewController.regionNumber = 1010
+            break
+        case "전라남도" :
+            HomeTabViewController.regionNumber = 1011
+            break
+        case "전라북도" :
+            HomeTabViewController.regionNumber = 1012
+            break
+        case "대전광역시":
+            HomeTabViewController.regionNumber = 1013
+            break
+        case "충청남도" :
+            HomeTabViewController.regionNumber = 1014
+            break
+        case "충청북도" :
+            HomeTabViewController.regionNumber = 1015
+            break
+        default :
+            HomeTabViewController.regionNumber = 1000
+            break
+            
+        }
+        showIndicator()
+        HomeDataManager().home(region: HomeTabViewController.regionNumber,viewcontroller: self)
+        
+        
+        
+    }
+
 }

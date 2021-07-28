@@ -86,6 +86,9 @@ class UploadAirbnbFourthStepViewController : UIViewController{
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
     
     @IBAction func editDegreeSliderAction(_ sender: UISlider) {
         ismoved = true
@@ -210,6 +213,10 @@ class UploadAirbnbFourthStepViewController : UIViewController{
                 return
             }
         }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
     
     @IBAction func preButtonAction(_sender: UIButton){
         self.dismiss(animated: false, completion: nil)

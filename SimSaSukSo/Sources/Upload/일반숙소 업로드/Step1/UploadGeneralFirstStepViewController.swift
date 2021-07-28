@@ -20,6 +20,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
     @IBOutlet weak var searchHotelTableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var regionTableView: UITableView!
     @IBOutlet weak var FirstPictureCollectionView: UICollectionView!
     
     @IBOutlet weak var regionTableviewHeight: NSLayoutConstraint!
@@ -33,8 +34,8 @@ class UploadGeneralFirstStepViewController : UIViewController{
        
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(showTableView), name: UITextField.textDidChangeNotification, object: nil)
+       
+       
         
         self.generalInput.images = UploadViewController.urlArray
         
@@ -59,42 +60,46 @@ class UploadGeneralFirstStepViewController : UIViewController{
         searchHotelTableView.layer.shadowOpacity = 0.1
         
     }
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+    }
+    
+    
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func validation(){
         let filteredArray = [HotelNameTextField].filter { $0?.text == "" }
         if !filteredArray.isEmpty {
+           
+            searchHotelTableView.isHidden = true
+            
             nextButton.isEnabled = false
             nextButton.backgroundColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         } else {
+            //버튼 활성화
           
-            nextButton.isEnabled = true
+            
+           
+            keyword = HotelNameTextField.text!
+            regionNameDataManager().regionName(keyword: "\(keyword)", viewcontroller: self)
             
             
-            nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+            
             
             
         }
     }
     
-    @objc func showTableView(){
-        let filteredArray = [HotelNameTextField].filter { $0?.text == "" }
-        if !filteredArray.isEmpty {
-            searchHotelTableView.isHidden = true
-            
-        } else {
-            keyword = HotelNameTextField.text!
-            regionNameDataManager().regionName(keyword: "\(keyword)", viewcontroller: self)
-            searchHotelTableView.isHidden = false
-            
-            
-            
-            
-        }
-    }
+   
     
     
     @IBAction func priorButtonAction(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
     
@@ -103,7 +108,7 @@ class UploadGeneralFirstStepViewController : UIViewController{
         secondVc.modalPresentationStyle = .fullScreen
         
         secondVc.generalInput = self.generalInput
-       
+      
         self.present(secondVc, animated: false, completion: nil)
         
     }
@@ -139,6 +144,14 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
         searchCell.hotelNameLabel.text = regionList[indexPath.row].place_name
         searchCell.hotelAddressLabel.text = regionList[indexPath.row].address_name
         
+       // keyword포함하는 hotelnamelabel.text 색상 변경
+        let text = searchCell.hotelNameLabel.text
+        let attributeString = NSMutableAttributedString(string: text!)
+        attributeString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1), range: (text! as NSString).range(of: keyword, options: .caseInsensitive))
+      
+        searchCell.hotelNameLabel.attributedText = attributeString
+
+       
         return searchCell
     }
     
@@ -148,6 +161,10 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
         HotelNameTextField.text = regionList[indexPath.row].place_name
         self.generalInput.name = regionList[indexPath.row].place_name
         self.generalInput.address = regionList[indexPath.row].address_name
+        
+        nextButton.isEnabled = true
+        nextButton.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
+        
         searchHotelTableView.isHidden = true
     }
     
@@ -158,22 +175,25 @@ extension UploadGeneralFirstStepViewController : UITableViewDelegate,UITableView
     
 }
 
+
+
+
 //MARK:- API
 extension UploadGeneralFirstStepViewController{
     func success(result : [documentsDetail]){
         regionList = result
-        if regionList.count == 0{
-            regionTableviewHeight.constant = 0
-        }else{
-            if regionList.count<11{
-                regionTableviewHeight.constant = CGFloat(regionList.count * 60)
-            }else{
-                regionTableviewHeight.constant = 500
-                
-            }
-        }
+        
         print(regionList.count)
         searchHotelTableView.reloadData()
+        
+        if regionList.count > 7{
+            regionTableviewHeight.constant = 60 * 7
+        }else{
+            regionTableviewHeight.constant = regionTableView.contentSize.height
+        }
+        
+        searchHotelTableView.isHidden = false
+        
         
         
     }
