@@ -19,7 +19,7 @@ struct FeedResult: Decodable {
     var save: Save?
     var prosAndCons: ProsAndCons?
     var feedInfo: FeedInfo?
-    var hashTags: Array<String>?
+    var hashTags: [HashTags]?
     var lodgingInfo: LodgingInfo?
 }
 
@@ -58,6 +58,10 @@ struct FeedInfo: Decodable {
     var createdAt: String?
     var reliability: Int?
     var hashTags: Array<String>?
+}
+
+struct HashTags: Decodable {
+    var hashTags: String?
 }
 
 struct LodgingInfo: Decodable {

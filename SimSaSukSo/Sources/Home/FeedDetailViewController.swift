@@ -11,16 +11,11 @@ class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
     
-    //var hashTags = [Feed]
-    
+    var hashTags = [HashTags]()
     var feedImages = [FeedImage]()
     
     var feedComments = [FeedCommentResult]()
-    
-    var textArray = ["태그", "태그ㅇㅇㅇ", "태그태그태그태"]
-    
-    var hashTags = [String]()
-    
+            
     var feedIndex = 1
     
     @IBOutlet var feedDetailView: UIView!
@@ -203,7 +198,9 @@ extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedTagCollectionViewCell", for: indexPath) as! FeedTagCollectionViewCell
             
-            cell.tagLabel.text = hashTags[indexPath.row]
+            let hashTag = hashTags[indexPath.row]
+            
+            cell.tagLabel.text = hashTag.hashTags
             
             cell.layer.borderWidth = 1
             cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
@@ -227,7 +224,8 @@ extension FeedDetailViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: width)
         } else {
             let label = UILabel(frame: CGRect.zero)
-            label.text = textArray[indexPath.item]
+            let hashTag = hashTags[indexPath.row]
+            label.text = hashTag.hashTags
             label.sizeToFit()
 
             return CGSize(width: label.frame.width, height: 23)
@@ -312,6 +310,8 @@ extension FeedDetailViewController {
         prosLabel.text! = result.prosAndCons!.pros!.description
         consLabel.text! = result.prosAndCons!.cons!.description
         
+        hashTags = result.hashTags!
+        tagCollectionView.reloadData()
         
         let correctionToolContents = result.correction!.correctionTool!.joined()
         correctionToolLabel.text! = correctionToolContents

@@ -107,7 +107,7 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         cell.blackView.isHidden = true
-        cell.numberLabel.isHidden = true
+        //cell.numberLabel.isHidden = true
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
