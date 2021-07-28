@@ -25,6 +25,7 @@ class HomeTabViewController: UIViewController{
     
     @IBOutlet weak var sliderCollectionView: UICollectionView!
     
+    @IBOutlet weak var Top5HotelLabel: UILabel!
     @IBOutlet weak var BestSearchesCollectionView: UICollectionView!
     
     @IBOutlet weak var TrendPlacesCollectionView: UICollectionView!
@@ -437,55 +438,73 @@ extension HomeTabViewController : CLLocationManagerDelegate{
         case "서울특별시" :
             print("잘되냐")
             HomeTabViewController.regionNumber = 1000
+            self.Top5HotelLabel.text = "서울 TOP5 숙소"
             
             break
         case "부산광역시":
             HomeTabViewController.regionNumber = 1001
+            self.Top5HotelLabel.text = "부산 TOP5 숙소"
             break
         case "제주도" :
             HomeTabViewController.regionNumber = 1002
+            self.Top5HotelLabel.text = "제주 TOP5 숙소"
             break
         case "강원도" :
             HomeTabViewController.regionNumber = 1003
+            self.Top5HotelLabel.text = "강원 TOP5 숙소"
             break
         case "경기도" :
             HomeTabViewController.regionNumber = 1004
+            self.Top5HotelLabel.text = "경기 TOP5 숙소"
             break
         case "인천광역시":
             HomeTabViewController.regionNumber = 1005
+            self.Top5HotelLabel.text = "인천 TOP5 숙소"
             break
         case "대구광역시" :
             HomeTabViewController.regionNumber = 1006
+            self.Top5HotelLabel.text = "대구 TOP5 숙소"
             break
         case "울산광역시" :
             HomeTabViewController.regionNumber = 1007
+            self.Top5HotelLabel.text = "울산 TOP5 숙소"
             break
         case "경상남도" :
             HomeTabViewController.regionNumber = 1008
+            self.Top5HotelLabel.text = "경남 TOP5 숙소"
             break
         case "경상북도":
             HomeTabViewController.regionNumber = 1009
+            self.Top5HotelLabel.text = "경북 TOP5 숙소"
             break
         case "광주광역시" :
             HomeTabViewController.regionNumber = 1010
+            self.Top5HotelLabel.text = "광주 TOP5 숙소"
             break
         case "전라남도" :
             HomeTabViewController.regionNumber = 1011
+            self.Top5HotelLabel.text = "전남 TOP5 숙소"
             break
         case "전라북도" :
             HomeTabViewController.regionNumber = 1012
+            self.Top5HotelLabel.text = "전북 TOP5 숙소"
             break
         case "대전광역시":
             HomeTabViewController.regionNumber = 1013
+            self.Top5HotelLabel.text = "대전 TOP5 숙소"
             break
         case "충청남도" :
             HomeTabViewController.regionNumber = 1014
+            self.Top5HotelLabel.text = "충남 TOP5 숙소"
             break
         case "충청북도" :
             HomeTabViewController.regionNumber = 1015
+            self.Top5HotelLabel.text = "충북 TOP5 숙소"
             break
         default :
+            //전체 지역 번호로 수정하기
             HomeTabViewController.regionNumber = 1000
+            self.Top5HotelLabel.text = "전체 TOP5 숙소"
             break
             
         }
