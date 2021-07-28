@@ -30,9 +30,9 @@ class NewTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newScrollView.delegate = self
+       
         
-        self.newViewHeight.constant = 10/3 * 130 + 200
+      //  self.newViewHeight.constant = 10/3 * 130 + 200
         
         setButtonList()
     
@@ -82,25 +82,3 @@ class NewTabViewController: UIViewController {
     
 }
 
-//MARK: - ScrollView
-extension NewTabViewController: UIScrollViewDelegate {
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if scrollView == newScrollView {
-            if newPageViewController.currentIndex == 0 { // Feeds
-                adjustFeedsPageHeight()
-            } else {
-                adjustOneFeedPageHeight()
-            }
-        }
-
-    }
-    
-    func adjustOneFeedPageHeight() {
-        self.newViewHeight.constant = CGFloat(NewOneFeedViewController.newOneFeeds.count * 476)
-    }
-    
-    func adjustFeedsPageHeight() {
-        self.newViewHeight.constant = CGFloat(NewFeedsViewController.newFeeds.count/3 * 130 + 170)
-    }
-}
