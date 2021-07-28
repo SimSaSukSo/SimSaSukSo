@@ -131,26 +131,9 @@ extension SearchViewController {
         searchBar.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         searchBar.layer.cornerRadius = 4
         
-        
-        
-//        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
-//            //textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
-//
-//            textField.textColor = UIColor.black
-//            textField.backgroundColor = .clear
-//
-//            if let leftView = textField.leftView as? UIImageView {
-//                leftView.image = leftView.image?.withRenderingMode(.alwaysTemplate)
-//            }
-//            if let rightView = textField.rightView as? UIImageView {
-//                rightView.image = rightView.image?.withRenderingMode(.alwaysTemplate)
-//            }
-//
-//        }
-        
     }
 }
-
+//MARK: - TableView
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
