@@ -17,8 +17,9 @@ struct FeedResult: Decodable {
     var feedLike: FeedLike?
     var correction: Correction?
     var save: Save?
-    var prosAndCons: [ProsAndCons]?
+    var prosAndCons: ProsAndCons?
     var feedInfo: FeedInfo?
+    var hashTags: Array<String>?
     var lodgingInfo: LodgingInfo?
 }
 
@@ -45,8 +46,8 @@ struct Save: Decodable {
 }
 
 struct ProsAndCons: Decodable { // 장단점
-    var satus: String?
-    var keyword: String?
+    var cons: String?
+    var pros: String?
 }
 
 struct FeedInfo: Decodable {
