@@ -9,11 +9,11 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
 import KakaoSDKCommon
-
+import AuthenticationServices
 
 class SplashViewController: BaseViewController {
     
-
+    
     
     @IBOutlet weak var appleImage: UIImageView!
     override func viewWillAppear(_ animated: Bool) {
@@ -24,7 +24,7 @@ class SplashViewController: BaseViewController {
         appleImage.layer.cornerRadius = appleImage.frame.size.height / 2
         appleImage.backgroundColor = UIColor.black
         
-       
+     
        
         
     }
@@ -82,5 +82,66 @@ class SplashViewController: BaseViewController {
         self.presentAlert(title: "서버와 통신이 불안정합니다")
     }
     
-   
+    
+
+
+    @IBAction func handleSignInButton(sender : UIButton){
+        
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName,.email]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self as? ASAuthorizationControllerDelegate
+        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+        controller.performRequests()
+        
+    }
+    
+
+}
+
+extension SplashViewController : ASAuthorizationControllerDelegate{
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        //성공 후 동작
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                // Create an account in your system.
+                let userIdentifier = appleIDCredential.user
+                let userFirstName = appleIDCredential.fullName?.givenName
+                let userLastName = appleIDCredential.fullName?.familyName
+                let userEmail = appleIDCredential.email
+                let jwt = appleIDCredential.identityToken
+                
+                
+                print(userIdentifier)
+                print(userFirstName)
+                print(userLastName)
+                print(userEmail)
+                print(jwt?.base64EncodedString())
+         
+            let input : appleLoginInput = appleLoginInput(accessToken: (jwt?.base64EncodedString())!)
+               
+                appleLoginDataManager().appleLogin(parameters: input, viewcontroller: self)
+               
+                
+                
+            } else if let passwordCredential = authorization.credential as? ASPasswordCredential {
+                // Sign in using an existing iCloud Keychain credential.
+                let username = passwordCredential.user
+                let password = passwordCredential.password
+                
+                print(username)
+                print(password)
+                //Navigate to other view controller 
+            }
+
+
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        //실패 후 동작
+        print("실패")
+    }
+    
+    
+    
 }

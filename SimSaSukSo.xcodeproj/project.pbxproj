@@ -148,6 +148,9 @@
 		A7A06662269E0EEE009A1397 /* RegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */; };
 		A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06664269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift */; };
 		A7A06669269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */; };
+		A7C2A0DC26B32C9900C0F003 /* appleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0DB26B32C9900C0F003 /* appleLoginManager.swift */; };
+		A7C2A0DF26B32CBF00C0F003 /* appleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */; };
+		A7C2A0E226B32CFD00C0F003 /* appleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */; };
 		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -284,6 +287,7 @@
 		A74AB1AB26AD32BB0038A1C1 /* AirStartDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirStartDatePicker.swift; sourceTree = "<group>"; };
 		A74AB1AE26AD32CF0038A1C1 /* AirEndDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirEndDatePicker.swift; sourceTree = "<group>"; };
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		A75154A326B2DD7200C87035 /* SimSaSukSo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimSaSukSo.entitlements; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
@@ -316,6 +320,9 @@
 		A7A06661269E0EEE009A1397 /* RegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewCell.swift; sourceTree = "<group>"; };
 		A7A06664269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbFirstStepViewController.swift; sourceTree = "<group>"; };
 		A7A06668269E1E2C009A1397 /* UploadAirbnbSecondStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAirbnbSecondStepViewController.swift; sourceTree = "<group>"; };
+		A7C2A0DB26B32C9900C0F003 /* appleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginManager.swift; sourceTree = "<group>"; };
+		A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginResponse.swift; sourceTree = "<group>"; };
+		A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginInput.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -766,6 +773,7 @@
 				A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */,
 				A74AB15D26A6EF860038A1C1 /* nicknameDataManager.swift */,
 				A74AB16526A707300038A1C1 /* nicknameResponse.swift */,
+				A7C2A0DB26B32C9900C0F003 /* appleLoginManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -776,6 +784,8 @@
 				A766CCAF268C650100565095 /* kakaoLoginResponse.swift */,
 				A766CCBA268C665500565095 /* kakaoLoginInput.swift */,
 				A74AB16026A6F0820038A1C1 /* nicknameResponse.swift */,
+				A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */,
+				A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -838,6 +848,7 @@
 		BD4393FF252E13EF0055F2E6 /* SimSaSukSo */ = {
 			isa = PBXGroup;
 			children = (
+				A75154A326B2DD7200C87035 /* SimSaSukSo.entitlements */,
 				BD439417252E16A50055F2E6 /* Configuration */,
 				BDB626AE25EF877A00B3867E /* Sources */,
 				BD439400252E13EF0055F2E6 /* AppDelegate.swift */,
@@ -1080,6 +1091,7 @@
 				A74AB0F626A2B8360038A1C1 /* searchHotelTableViewCell.swift in Sources */,
 				A711E02F267B5E86006A1F0B /* SearchViewController.swift in Sources */,
 				A75EAEB92694310800B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
+				A7C2A0DF26B32CBF00C0F003 /* appleLoginResponse.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
 				A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */,
 				A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */,
@@ -1167,6 +1179,7 @@
 				A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
+				A7C2A0DC26B32C9900C0F003 /* appleLoginManager.swift in Sources */,
 				A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
@@ -1186,6 +1199,7 @@
 				A74AB0EF26A2893D0038A1C1 /* UploadAirbnbFifthStepViewController.swift in Sources */,
 				A547A6A1268AF658002DA257 /* NewFeedsViewController.swift in Sources */,
 				A55C464A26A6088C008B4A5C /* FavoriteEditResponse.swift in Sources */,
+				A7C2A0E226B32CFD00C0F003 /* appleLoginInput.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
 				A74AB15826A6AB860038A1C1 /* StartDatePickerViewController.swift in Sources */,
@@ -1363,9 +1377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimSaSukSo/SimSaSukSo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VYDSVU3PZ3;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "$(SRCROOT)/SimSaSukSo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1373,7 +1388,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.simsasukso;
+				PRODUCT_BUNDLE_IDENTIFIER = app.com.simsasukso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1386,9 +1401,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SimSaSukSo/SimSaSukSo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VYDSVU3PZ3;
+				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "$(SRCROOT)/SimSaSukSo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1396,7 +1412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.simsasukso;
+				PRODUCT_BUNDLE_IDENTIFIER = app.com.simsasukso;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

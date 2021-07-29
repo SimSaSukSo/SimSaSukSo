@@ -17,6 +17,7 @@ class SelectRegionViewController : UIViewController {
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     var nowTag : Int = 0
     var nowText : String = ""
@@ -43,6 +44,13 @@ class SelectRegionViewController : UIViewController {
     var chungbukClickedList = Array<Int>(repeating: 0, count: regionData.chungbukList.count)
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        backButton.tintColor = UIColor(red: 1, green: 0.133, blue: 0.133, alpha: 1)
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
