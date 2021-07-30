@@ -72,16 +72,26 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
             cell.imageView.image = UIImage(data: data)
         }
         
+        cell.tag = bestOneFeed.feedIndex
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let feedVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedDetailViewController")
-        self.navigationController?.pushViewController(feedVC!, animated: true)
+  //      let feedVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedDetailViewController")
+//        self.navigationController?.pushViewController(feedVC!, animated: true)
 //        feedVC?.modalPresentationStyle = .fullScreen
 //        self.present(feedVC!, animated: true, completion: nil)
         
+    }
+    
+    // 찜 Index 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! FeedDetailViewController
+            detailVC.feedIndex = (sender as! UICollectionViewCell).tag
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

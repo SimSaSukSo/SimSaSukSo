@@ -785,6 +785,7 @@
                                             <outlet property="imageViewHeight" destination="YhP-Ly-swf" id="xbn-gh-y5N"/>
                                             <outlet property="nameLabel" destination="BGv-8D-pog" id="BwP-dF-MWq"/>
                                             <outlet property="reliabilityLabel" destination="BD1-HQ-hhB" id="D98-aK-xH0"/>
+                                            <segue destination="zuc-eV-Fku" kind="modal" identifier="toDetail" id="Dvd-P3-Hfd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2209,6 +2210,9 @@
             <point key="canvasLocation" x="3163.7681159420295" y="-974.33035714285711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dvd-P3-Hfd"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="angryFace" width="20" height="20"/>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
