@@ -44,6 +44,7 @@ class UploadAirbnbThirdStepViewController : UIViewController{
         super.viewDidLoad()
         
         nextButton.isEnabled = false
+        priceTextfiled.delegate = self
         
         print(self.airbnbInput)
     
@@ -53,9 +54,6 @@ class UploadAirbnbThirdStepViewController : UIViewController{
         ThirdPictureCollectionView.dataSource = self
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
     
     @objc func validation(){
         let filteredArray = [priceTextfiled].filter { $0?.text == "" }
@@ -127,6 +125,21 @@ class UploadAirbnbThirdStepViewController : UIViewController{
         self.dismiss(animated: false, completion: nil)
         
         
+    }
+    
+}
+
+extension UploadAirbnbThirdStepViewController : UITextFieldDelegate{
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        priceTextfiled.resignFirstResponder() //텍스트필드 비활성화
+        return true
     }
     
 }

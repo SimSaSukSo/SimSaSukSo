@@ -28,9 +28,6 @@ class SplashViewController: BaseViewController {
        
         
     }
-    @IBAction func appleLoginButton(_ sender: Any) {
-       
-    }
     @IBAction func kakaoLoginButton(_ sender: UIButton) {
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {

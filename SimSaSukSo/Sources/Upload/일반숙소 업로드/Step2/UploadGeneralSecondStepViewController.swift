@@ -37,16 +37,14 @@ class UploadGeneralSecondStepViewController : UIViewController{
         print(generalInput)
         
         nextButton.isEnabled = false
+        priceTextField.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(validation), name: UITextField.textDidChangeNotification, object: nil)
         
         secondCollectionView.dataSource = self
         secondCollectionView.delegate = self
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
+  
     
     @IBAction func closeButton(_ sender: Any) {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
@@ -110,6 +108,21 @@ class UploadGeneralSecondStepViewController : UIViewController{
     
     
     
+    
+}
+
+extension UploadGeneralSecondStepViewController : UITextFieldDelegate{
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        priceTextField.resignFirstResponder() //텍스트필드 비활성화
+        return true
+    }
     
 }
 
