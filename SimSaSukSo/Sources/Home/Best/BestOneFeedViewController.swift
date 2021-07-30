@@ -86,7 +86,7 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         
     }
     
-    // 찜 Index 전달
+    // Feed Index 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
             let detailVC = segue.destination as! FeedDetailViewController

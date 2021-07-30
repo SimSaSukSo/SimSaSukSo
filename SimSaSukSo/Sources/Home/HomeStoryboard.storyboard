@@ -649,6 +649,7 @@
                                         <size key="customSize" width="123" height="123"/>
                                         <connections>
                                             <outlet property="imageView" destination="D6s-6Q-2ct" id="2E7-P9-wa1"/>
+                                            <segue destination="zuc-eV-Fku" kind="modal" identifier="toDetail" id="8Yu-dn-ONl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1299,6 +1300,7 @@
                                             <outlet property="imageViewHeight" destination="ZBa-BL-fj0" id="dnE-5S-ADS"/>
                                             <outlet property="nameLabel" destination="so3-Nb-AwV" id="hNG-zz-0O7"/>
                                             <outlet property="reliabilityLabel" destination="Gaa-2f-rJF" id="4E2-MV-Jwr"/>
+                                            <segue destination="zuc-eV-Fku" kind="modal" identifier="toDetail" id="Niz-FD-XMN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1361,6 +1363,7 @@
                                         <size key="customSize" width="123" height="123"/>
                                         <connections>
                                             <outlet property="imageView" destination="91F-gg-91B" id="SUa-Tc-c0g"/>
+                                            <segue destination="zuc-eV-Fku" kind="modal" identifier="toDetail" id="1c3-8D-Oet"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2211,7 +2214,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dvd-P3-Hfd"/>
+        <segue reference="1c3-8D-Oet"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="angryFace" width="20" height="20"/>

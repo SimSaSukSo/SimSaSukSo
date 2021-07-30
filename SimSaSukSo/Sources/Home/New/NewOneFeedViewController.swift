@@ -71,7 +71,17 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
             cell.imageView.image = UIImage(data: data)
         }
         
+        cell.tag = newOneFeed.feedIndex
+        
         return cell
+    }
+    
+    // Feed Index 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! FeedDetailViewController
+            detailVC.feedIndex = (sender as! UICollectionViewCell).tag
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
