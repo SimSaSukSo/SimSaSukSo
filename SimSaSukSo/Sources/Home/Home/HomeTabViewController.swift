@@ -219,7 +219,7 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
             
             
             cell = likescell
-            
+            cell.tag = likePlace[indexPath.row].feedIndex
             
         }
         
@@ -277,6 +277,14 @@ extension HomeTabViewController : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
+    }
+    
+    // Feed Index 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! FeedDetailViewController
+            detailVC.feedIndex = (sender as! UICollectionViewCell).tag
+        }
     }
     
     

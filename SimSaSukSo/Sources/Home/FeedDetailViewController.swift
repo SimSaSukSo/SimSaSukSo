@@ -16,7 +16,7 @@ class FeedDetailViewController: UIViewController {
     
     var feedComments = [FeedCommentResult]()
             
-    var feedIndex = 1
+    var feedIndex = 0
     
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!

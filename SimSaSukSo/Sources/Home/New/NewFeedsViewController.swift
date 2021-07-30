@@ -54,11 +54,19 @@ extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewData
            let data = try? Data(contentsOf: url) {
             cell.imageView.image = UIImage(data: data)
         }
-
+        
+        cell.tag = newFeed.feedIndex
+        
         return cell
     }
     
-   
+    // Feed Index 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            let detailVC = segue.destination as! FeedDetailViewController
+            detailVC.feedIndex = (sender as! UICollectionViewCell).tag
+        }
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
           let offsetY = scrollView.contentOffset.y
