@@ -8,7 +8,7 @@
 import UIKit
 
 protocol locationDelegate: class {
-    func sendregionName(forShow : String) -> String
+    func sendlocationName(forShow : String) -> String
 }
 
 class SearchFilterViewController: UIViewController {
@@ -76,7 +76,9 @@ class SearchFilterViewController: UIViewController {
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        let searchVC = self.storyboard?.instantiateViewController(identifier: "SearchViewController")as! SearchViewController
+                
+        self.present(searchVC, animated: false, completion: nil)
     }
     @IBAction func resetButtonAciton(_ sender: UIButton) {
 
@@ -219,7 +221,7 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout {
 extension SearchFilterViewController: locationDelegate{
     
     
-    func sendregionName(forShow: String) -> String {
+    func sendlocationName(forShow: String) -> String {
         
         self.locationButton.setTitle(forShow, for: .normal)
         self.locationButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)

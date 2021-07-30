@@ -247,9 +247,9 @@ class SearchLocationViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBAction func selectButtonAction(_ sender: Any) {
         
-        let filterVC = self.storyboard?.instantiateViewController(identifier: "SearchFilterViewController")as!SearchFilterViewController
+        let filterVC = self.storyboard?.instantiateViewController(identifier: "SearchFilterViewController")as! SearchFilterViewController
         
-        delegate?.sendregionName(forShow: nowText)
+        delegate?.sendlocationName(forShow: nowText)
         //UploadAirbnbSecondStepViewController.airbnbInput.locationId = nowID
         print(nowText)
         self.present(filterVC, animated: true, completion: nil)
