@@ -133,7 +133,7 @@ class FeedDetailViewController: UIViewController {
             heartButton.setImage(UIImage(named: "heart"), for: .normal)
             dataManager.dislikeCheck(input, delegate: self)
         }
-        
+    
     }
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
@@ -142,11 +142,9 @@ class FeedDetailViewController: UIViewController {
         if bookmarkButton.isSelected {
             bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
             dataManager.favoriteCheck(input, delegate: self)
-            print("찜")
         } else {
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
             dataManager.favoriteCheck(input, delegate: self)
-            print("찜취소")
         }
     
     }
@@ -343,7 +341,7 @@ extension FeedDetailViewController {
     }
     
     func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
-        self.presentAlert(title: "성공")
+        self.presentAlert(title: result.message)
     }
     
     func likeCheck(_ result: FeedLikeResponse) { // 좋아요
