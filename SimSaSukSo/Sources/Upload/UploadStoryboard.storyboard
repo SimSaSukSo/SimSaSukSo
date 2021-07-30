@@ -65,7 +65,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="enF-Jl-Q2x">
-                                                <rect key="frame" x="0.0" y="127" width="414" height="414"/>
+                                                <rect key="frame" x="0.0" y="116" width="414" height="414"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="414" id="jUq-CL-Mhi"/>

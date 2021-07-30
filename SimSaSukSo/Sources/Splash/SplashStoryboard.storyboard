@@ -86,7 +86,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvO-xz-1fh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                                 <connections>
-                                                                    <action selector="appleLoginButton:" destination="69O-nq-11B" eventType="touchUpInside" id="0yN-hf-WhL"/>
+                                                                    <action selector="handleSignInButtonWithSender:" destination="69O-nq-11B" eventType="touchUpInside" id="qA3-1t-Uzh"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -152,9 +152,6 @@
                             <constraint firstItem="djr-ct-At4" firstAttribute="top" secondItem="aT5-hZ-U2y" secondAttribute="bottom" constant="30" id="oT8-Bq-Dog"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="appleImage" destination="SmA-5S-aeu" id="ovY-NH-suV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxM-Bj-F1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,17 +15,12 @@ class SplashViewController: BaseViewController {
     
     
     
-    @IBOutlet weak var appleImage: UIImageView!
+
     override func viewWillAppear(_ animated: Bool) {
        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        appleImage.layer.cornerRadius = appleImage.frame.size.height / 2
-        appleImage.backgroundColor = UIColor.black
-        
-     
-       
         
     }
     @IBAction func kakaoLoginButton(_ sender: UIButton) {
