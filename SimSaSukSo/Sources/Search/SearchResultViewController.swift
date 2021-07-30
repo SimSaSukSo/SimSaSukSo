@@ -11,7 +11,15 @@ class SearchResultViewController: UIViewController {
     
     lazy var dataManager = SearchDataManager()
     
+    //let input = SearchImageRequest(pros: <#T##[Int]#>, cons: <#T##[Int]#>, minPrice: <#T##Int#>, maxPrice: <#T##Int#>, locationIdx: <#T##Int#>, interval: <#T##String#>)
+    
     var searchResults: [SearchImageResult] = []
+    
+    var pros: [Int] = []
+    var cons: [Int] = []
+    var minPrice = ""
+    var maxPrice = ""
+    var interval = ""
 
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
@@ -25,6 +33,10 @@ class SearchResultViewController: UIViewController {
         resultCollectionView.dataSource = self
         
         self.resultCollectionView.collectionViewLayout = CustomCircularCollectionViewLayout()
+        
+        //dataManager.searchImage(input, delegate: self)
+        
+        print(pros)
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
