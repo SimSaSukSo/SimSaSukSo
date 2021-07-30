@@ -172,6 +172,21 @@ class FeedDetailViewController: UIViewController {
 }
 
 
+extension FeedDetailViewController : UITextFieldDelegate{
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        commentWriteTextField.resignFirstResponder() //텍스트필드 비활성화
+        return true
+    }
+    
+}
+
 //MARK: - CollectionView
 extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
