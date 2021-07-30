@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController : UIViewController {
+class SearchViewController : UIViewController{
     
     var buttonLists: [UIButton] = []
     var lineViewLists: [UIView] = []
@@ -27,6 +27,10 @@ class SearchViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       
+
         
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -130,6 +134,19 @@ extension SearchViewController {
         searchBar.layer.borderWidth = 1
         searchBar.layer.borderColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         searchBar.layer.cornerRadius = 4
+        
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+
+            let backgroundView = textField.subviews.first
+            if #available(iOS 11.0, *) {
+                backgroundView?.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+                backgroundView?.subviews.forEach({ $0.removeFromSuperview() }) 
+            }
+            backgroundView?.layer.cornerRadius = 10.5
+            backgroundView?.layer.masksToBounds = true
+          
+        }
         
     }
 }
