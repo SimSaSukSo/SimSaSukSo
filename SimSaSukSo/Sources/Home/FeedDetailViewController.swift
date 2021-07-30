@@ -17,6 +17,7 @@ class FeedDetailViewController: UIViewController {
     var feedComments = [FeedCommentResult]()
             
     var feedIndex = 0
+    var saveComment = ""
     
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!
@@ -60,6 +61,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var commentUserImageView: UIImageView!
     @IBOutlet var commentWriteButton: UIButton!
     
+    @IBOutlet weak var commentWriteTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,10 +165,27 @@ class FeedDetailViewController: UIViewController {
     
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
+        saveComment = commentWriteTextField.text ?? "좋아보여요!"
+        dataManager.writeFeedComment(text: saveComment, delegate: self)
     }
     
 }
 
+
+extension FeedDetailViewController : UITextFieldDelegate{
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        commentWriteTextField.resignFirstResponder() //텍스트필드 비활성화
+        return true
+    }
+    
+}
 
 //MARK: - CollectionView
 extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -339,6 +358,12 @@ extension FeedDetailViewController {
         commentNumberLabel.text = String(feedComments.count)
         commentTableView.reloadData()
     }
+    
+    func writeFeedComment(result : WriteFeedCommentResponse){
+            dataManager.feedComment(delegate: self)
+           
+            
+        }
     
     func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
         self.presentAlert(title: result.message)

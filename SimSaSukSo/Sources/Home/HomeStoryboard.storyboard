@@ -2185,6 +2185,7 @@
                         <outlet property="commentTableViewHeight" destination="FSS-S6-fPK" id="HSL-2v-i3m"/>
                         <outlet property="commentUserImageView" destination="PQQ-v0-W04" id="umW-Ru-Uy8"/>
                         <outlet property="commentWriteButton" destination="gfU-oW-sRe" id="nBU-ya-895"/>
+                        <outlet property="commentWriteTextField" destination="K4s-pe-qx3" id="RbE-w9-rcj"/>
                         <outlet property="consLabel" destination="TMl-WP-OCk" id="ale-M0-u63"/>
                         <outlet property="correctionDegreeLabel" destination="eqq-9E-Ved" id="hdv-qO-tIg"/>
                         <outlet property="correctionToolLabel" destination="Bob-bh-Cgr" id="80J-qk-nn8"/>
