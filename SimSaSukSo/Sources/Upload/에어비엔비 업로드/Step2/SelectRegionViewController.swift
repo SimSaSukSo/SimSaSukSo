@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class SelectRegionViewController : UIViewController {
+class SelectRegionViewController : UIViewController, UIGestureRecognizerDelegate {
     
     weak var delegate: regionDelegate?
     
@@ -17,7 +17,7 @@ class SelectRegionViewController : UIViewController {
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var resetButton: UIBarButtonItem!
-    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var regionSelectItem: UIBarButtonItem!
     
     var nowTag : Int = 0
     var nowText : String = ""
@@ -46,9 +46,18 @@ class SelectRegionViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        backButton.tintColor = UIColor(red: 1, green: 0.133, blue: 0.133, alpha: 1)
+        regionSelectItem.tintColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 1)
+        regionSelectItem.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "NotoSansCJKKR-Bold", size:22)!],for: .normal)
+
         
         
+        let backBTN = UIBarButtonItem(image: UIImage(named: "arrow_left"),
+                                      style: .plain,
+                                      target: navigationController,
+                                      action: #selector(UINavigationController.popViewController(animated:)))
+        backBTN.tintColor = #colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1)
+        navigationItem.leftBarButtonItem = backBTN
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
     }
     override func viewDidLoad() {
