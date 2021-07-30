@@ -327,7 +327,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CCr-Wx-i1J">
-                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="can-e0-QDh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -726,6 +726,10 @@
                                 <state key="normal" title="적용하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="setButtonAction:" destination="DBf-QV-xgX" eventType="touchUpInside" id="yKe-QM-uQI"/>
+                                    <segue destination="kIF-EF-R6u" kind="modal" identifier="toSearchImage" id="pBy-yd-igV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wQ7-Pv-wtL"/>
@@ -785,6 +789,9 @@
             <point key="canvasLocation" x="186.95652173913044" y="61.607142857142854"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pBy-yd-igV"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_left" width="14" height="14"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
