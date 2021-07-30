@@ -71,6 +71,7 @@ extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func beginBatchFetch()
         {
+                if stop == false{
                 fetchingMore = true
                 self.page += 1
                 print("page : \(page)")
@@ -80,7 +81,10 @@ extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDat
                     self.dataManager.bestFeeds(page: self.page, delegate: self)
 
                 })
-            }
+                }else{
+                    print("마지막 페이지 입니다 / page : \(page)")
+                }
+    }
     
     
 }
@@ -114,6 +118,7 @@ extension BestFeedsViewController {
     func addBestFeeds(result : BestResult){
         BestFeedsViewController.bestFeeds.append(contentsOf: result.feeds!)
         self.fetchingMore = false
+        stop = result.isLast
         self.bestFeedsCollectionView.reloadData()
        
     }

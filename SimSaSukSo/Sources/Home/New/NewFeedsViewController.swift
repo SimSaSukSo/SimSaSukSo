@@ -76,6 +76,7 @@ extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewData
     
     func beginBatchFetch()
         {
+        if stop == false{
                 fetchingMore = true
                 self.page += 1
                 print("page : \(page)")
@@ -85,7 +86,11 @@ extension NewFeedsViewController: UICollectionViewDelegate, UICollectionViewData
                     self.dataManager.newFeeds(page:self.page, delegate: self)
 
                 })
-            }
+        }else{
+            print("마지막 페이지 입니다 / page : \(page)")
+            
+        }
+    }
         
 
 }
@@ -120,6 +125,7 @@ extension NewFeedsViewController {
         
         NewFeedsViewController.newFeeds.append(contentsOf: result.feeds!)
         self.fetchingMore = false
+        stop = result.isLast
         self.newFeedsCollectionView.reloadData()
        
         
