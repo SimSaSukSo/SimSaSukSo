@@ -1,13 +1,13 @@
 //
-//  SearchResultTableViewCell.swift
+//  AllTableViewCell.swift
 //  SimSaSukSo
 //
-//  Created by 소영 on 2021/07/12.
+//  Created by 소영 on 2021/07/30.
 //
 
 import UIKit
 
-class SearchResultTableViewCell: UITableViewCell {
+class AllTableViewCell: UITableViewCell {
 
     @IBOutlet var searchImageView: UIImageView!
     @IBOutlet var firstLabel: UILabel!

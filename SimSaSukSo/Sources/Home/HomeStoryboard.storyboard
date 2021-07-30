@@ -1805,6 +1805,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7일 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-5N-haD">
                                                 <rect key="frame" x="16" y="784.5" width="29.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
@@ -1812,6 +1813,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="owI-jm-gKj">
+
                                                 <rect key="frame" x="18" y="805" width="130" height="16.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Nl-go-wmB">
@@ -1848,6 +1850,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="hME-MT-HAq">
                                                         <rect key="frame" x="78" y="0.0" width="52" height="16.5"/>
                                                         <subviews>
