@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol locationDelegate: class {
+    func sendregionName(forShow : String) -> String
+}
+
 class SearchFilterViewController: UIViewController {
     
     let goodLists = ["위치", "가성비", "깨끗함", "인테리어", "룸서비스", "서비스좋음", "건물신축", "어매니티", "부대시설", "교통편리", "기타"]
@@ -19,6 +23,7 @@ class SearchFilterViewController: UIViewController {
     var minPrice = ""
     var maxPrice = ""
     var interval = ""
+    var locationId = 0
     
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var locationButton: UIButton!
@@ -75,6 +80,13 @@ class SearchFilterViewController: UIViewController {
     }
     @IBAction func resetButtonAciton(_ sender: UIButton) {
 
+    }
+    @IBAction func locationButtonAction(_ sender: UIButton) {
+        
+        let locationVC = self.storyboard?.instantiateViewController(identifier: "SearchLocationViewController")as! SearchLocationViewController
+                
+        self.present(locationVC, animated: true, completion: nil)
+        
     }
     
     @IBAction func dayButtonAction(_ sender: UIButton) {
@@ -203,3 +215,16 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout {
     
     
 }
+
+extension SearchFilterViewController: locationDelegate{
+    
+    
+    func sendregionName(forShow: String) -> String {
+        
+        self.locationButton.setTitle(forShow, for: .normal)
+        self.locationButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
+        //UploadAirbnbThirdStepViewController.regionText = forShow
+        return forShow
+    }
+}
+

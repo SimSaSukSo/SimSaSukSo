@@ -20,7 +20,8 @@ class SearchResultViewController: UIViewController {
     var minPrice = ""
     var maxPrice = ""
     var interval = ""
-
+    var locationId = 0
+    
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     @IBOutlet var searchButton: UIButton!

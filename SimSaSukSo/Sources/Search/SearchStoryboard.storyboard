@@ -388,7 +388,7 @@
         <!--Search Filter View Controller-->
         <scene sceneID="dM7-oG-blK">
             <objects>
-                <viewController storyboardIdentifier="SearchFilterViewController" modalPresentationStyle="overFullScreen" id="DBf-QV-xgX" customClass="SearchFilterViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchFilterViewController" modalPresentationStyle="overCurrentContext" id="DBf-QV-xgX" customClass="SearchFilterViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6p-2E-DIN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -446,6 +446,9 @@
                                                 <state key="normal" title="서울">
                                                     <color key="titleColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="locationButtonAction:" destination="DBf-QV-xgX" eventType="touchUpInside" id="BKZ-3O-B4b"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -787,6 +790,331 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyV-PF-sUK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="61.607142857142854"/>
+        </scene>
+        <!--Search Location View Controller-->
+        <scene sceneID="Bmh-y8-x7p">
+            <objects>
+                <viewController storyboardIdentifier="SearchLocationViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VT5-Fl-gcR" customClass="SearchLocationViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxG-gQ-uPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUv-m5-J6u">
+                                <rect key="frame" x="0.0" y="820" width="414" height="76"/>
+                                <color key="backgroundColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
+                                <state key="normal" title="선택완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectButtonAction:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="bKD-kw-uCO"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Miq-eH-xzD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="732"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AN-3a-EWV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="740"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zg9-ZR-mVV">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="740"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukC-H6-eUb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="116" height="43.5"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="서울">
+                                                            <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="eh8-KV-OMb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jv-jj-3g9">
+                                                        <rect key="frame" x="0.0" y="43.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="부산">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="XDd-2X-fA3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKZ-5z-Iiz">
+                                                        <rect key="frame" x="0.0" y="87" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="제주">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="Z1r-JV-SVt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwC-1q-Vu7">
+                                                        <rect key="frame" x="0.0" y="130.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="강원">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="D0N-85-eoH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndX-fG-pRI">
+                                                        <rect key="frame" x="0.0" y="174" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="경기">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="XHn-lk-H7Y"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSO-xb-Wre">
+                                                        <rect key="frame" x="0.0" y="217.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="인천">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="80r-NS-DOM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw5-6W-A2t">
+                                                        <rect key="frame" x="0.0" y="261" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="대구">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="dmE-AU-eZd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p43-GL-g7d">
+                                                        <rect key="frame" x="0.0" y="304.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="울산">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="fQm-3V-MXm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWV-3C-hZ0">
+                                                        <rect key="frame" x="0.0" y="348" width="116" height="44"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="경남">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="3nX-si-Dt7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj0-73-Db1">
+                                                        <rect key="frame" x="0.0" y="392" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="경북">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="uTl-kF-Nkx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQy-k8-696">
+                                                        <rect key="frame" x="0.0" y="435.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="광주">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="3HJ-2w-WT3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk8-ks-GxT">
+                                                        <rect key="frame" x="0.0" y="479" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="전남">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="TrA-Cg-3YQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIB-nu-nSW">
+                                                        <rect key="frame" x="0.0" y="522.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="전북">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="9om-dr-j6k"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYL-cq-o5J">
+                                                        <rect key="frame" x="0.0" y="566" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="대전">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="U8N-75-vo8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ph-mA-RSX">
+                                                        <rect key="frame" x="0.0" y="609.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="충북">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="kWD-fs-52V"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6h-2A-YQy">
+                                                        <rect key="frame" x="0.0" y="653" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="충남">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="Lmw-O4-kpT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRh-d2-Mez">
+                                                        <rect key="frame" x="0.0" y="696.5" width="116" height="43.5"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                        <state key="normal" title="세종">
+                                                            <color key="titleColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="regionButtonClicked:" destination="VT5-Fl-gcR" eventType="touchUpInside" id="TMX-Jk-s2R"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="116" id="e6i-WO-ZqD"/>
+                                                </constraints>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QQe-YX-d4U">
+                                                <rect key="frame" x="116" y="0.0" width="298" height="740"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RegionTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegionTableViewCell" id="xHJ-M9-bX3" customClass="RegionTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="298" height="41"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xHJ-M9-bX3" id="5cf-6C-B6a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="298" height="41"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-Eh-dhI">
+                                                                    <rect key="frame" x="10" y="10" width="278" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                    <state key="normal" title="강남 / 역삼 / 삼성">
+                                                                        <color key="titleColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="didPressButton:" destination="xHJ-M9-bX3" eventType="touchUpInside" id="Wsn-iJ-ytF"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="3eZ-Eh-dhI" secondAttribute="bottom" constant="10" id="HyQ-9i-H4o"/>
+                                                                <constraint firstItem="3eZ-Eh-dhI" firstAttribute="top" secondItem="5cf-6C-B6a" secondAttribute="top" constant="10" id="Tig-rO-VeH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="3eZ-Eh-dhI" secondAttribute="trailing" constant="10" id="hwG-kG-6n1"/>
+                                                                <constraint firstItem="3eZ-Eh-dhI" firstAttribute="leading" secondItem="5cf-6C-B6a" secondAttribute="leading" constant="10" id="yj1-gv-IRu"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                        <connections>
+                                                            <outlet property="regionButton" destination="3eZ-Eh-dhI" id="3Hc-nN-J2H"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QQe-YX-d4U" secondAttribute="trailing" id="3cW-kI-3vq"/>
+                                            <constraint firstItem="Zg9-ZR-mVV" firstAttribute="leading" secondItem="5AN-3a-EWV" secondAttribute="leading" id="HCs-qB-dPj"/>
+                                            <constraint firstAttribute="bottom" secondItem="QQe-YX-d4U" secondAttribute="bottom" id="V2A-hT-ARH"/>
+                                            <constraint firstItem="Zg9-ZR-mVV" firstAttribute="top" secondItem="5AN-3a-EWV" secondAttribute="top" id="YxF-rV-jud"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zg9-ZR-mVV" secondAttribute="bottom" id="qVP-SS-QVO"/>
+                                            <constraint firstItem="QQe-YX-d4U" firstAttribute="top" secondItem="5AN-3a-EWV" secondAttribute="top" id="rbL-R9-NLS"/>
+                                            <constraint firstItem="QQe-YX-d4U" firstAttribute="leading" secondItem="Zg9-ZR-mVV" secondAttribute="trailing" id="siy-UY-r1M"/>
+                                            <constraint firstAttribute="height" constant="740" id="xjK-lo-IAm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5AN-3a-EWV" firstAttribute="width" secondItem="LrZ-Gw-TaT" secondAttribute="width" id="RWT-er-5iE"/>
+                                    <constraint firstItem="5AN-3a-EWV" firstAttribute="leading" secondItem="41w-LW-B08" secondAttribute="leading" id="amR-6F-Lxo"/>
+                                    <constraint firstItem="5AN-3a-EWV" firstAttribute="top" secondItem="41w-LW-B08" secondAttribute="top" id="gmb-zD-Mar"/>
+                                    <constraint firstItem="5AN-3a-EWV" firstAttribute="bottom" secondItem="41w-LW-B08" secondAttribute="bottom" id="lLo-ZX-x6l"/>
+                                    <constraint firstItem="5AN-3a-EWV" firstAttribute="trailing" secondItem="41w-LW-B08" secondAttribute="trailing" id="yIP-a1-RBO"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="41w-LW-B08"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="LrZ-Gw-TaT"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JeW-2V-nKp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JeW-2V-nKp" firstAttribute="trailing" secondItem="EUv-m5-J6u" secondAttribute="trailing" id="06C-oe-VPe"/>
+                            <constraint firstAttribute="bottom" secondItem="EUv-m5-J6u" secondAttribute="bottom" id="3i2-HG-gF9"/>
+                            <constraint firstItem="EUv-m5-J6u" firstAttribute="leading" secondItem="JeW-2V-nKp" secondAttribute="leading" id="4iA-x9-LUn"/>
+                            <constraint firstItem="Miq-eH-xzD" firstAttribute="top" secondItem="JeW-2V-nKp" secondAttribute="top" id="9hQ-up-LXP"/>
+                            <constraint firstItem="EUv-m5-J6u" firstAttribute="top" secondItem="Miq-eH-xzD" secondAttribute="bottom" id="Ezv-tO-fVz"/>
+                            <constraint firstItem="Miq-eH-xzD" firstAttribute="leading" secondItem="JeW-2V-nKp" secondAttribute="leading" id="Mds-DH-Rre"/>
+                            <constraint firstItem="Miq-eH-xzD" firstAttribute="trailing" secondItem="JeW-2V-nKp" secondAttribute="trailing" id="UT6-ls-eOf"/>
+                            <constraint firstItem="EUv-m5-J6u" firstAttribute="height" secondItem="uxG-gQ-uPZ" secondAttribute="height" multiplier="0.0848214" id="Yej-sl-ejv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mcS-Vy-wfs">
+                        <leftBarButtonItems>
+                            <barButtonItem image="arrow_left" id="Nzu-D5-fSQ">
+                                <color key="tintColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="지역 선택" id="w6W-0B-6Tv">
+                                <color key="tintColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="초기화" id="cqY-fj-fWz">
+                            <color key="tintColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="resetButtonAction:" destination="VT5-Fl-gcR" id="Ji8-qZ-d2H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="regionSelectItem" destination="w6W-0B-6Tv" id="Um7-53-HnW"/>
+                        <outlet property="regionTableView" destination="QQe-YX-d4U" id="GRv-bO-vvB"/>
+                        <outlet property="resetButton" destination="cqY-fj-fWz" id="jgc-6P-JvW"/>
+                        <outlet property="selectButton" destination="EUv-m5-J6u" id="j0N-dy-ng8"/>
+                        <outlet property="viewHeight" destination="xjK-lo-IAm" id="D92-ak-ei6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTt-Ar-Qbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3275" y="62"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
