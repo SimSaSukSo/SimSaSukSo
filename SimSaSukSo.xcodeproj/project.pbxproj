@@ -30,6 +30,7 @@
 		A54E95B626B421CF005B6F18 /* SearchAllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E95B526B421CF005B6F18 /* SearchAllTableViewController.swift */; };
 		A54E95BD26B423F0005B6F18 /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E95BC26B423F0005B6F18 /* SearchPageViewController.swift */; };
 		A54E95FA26B42A45005B6F18 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E95F926B42A45005B6F18 /* AllTableViewCell.swift */; };
+		A54E95FD26B4326A005B6F18 /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E95FC26B4326A005B6F18 /* SearchDataManager.swift */; };
 		A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */; };
 		A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */; };
 		A55362C426AD5B4A0087C28D /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55362C326AD5B4A0087C28D /* FeedResponse.swift */; };
@@ -207,6 +208,7 @@
 		A54E95B526B421CF005B6F18 /* SearchAllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllTableViewController.swift; sourceTree = "<group>"; };
 		A54E95BC26B423F0005B6F18 /* SearchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewController.swift; sourceTree = "<group>"; };
 		A54E95F926B42A45005B6F18 /* AllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
+		A54E95FC26B4326A005B6F18 /* SearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
 		A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailResponse.swift; sourceTree = "<group>"; };
 		A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDeleteResponse.swift; sourceTree = "<group>"; };
 		A55362C326AD5B4A0087C28D /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 		A711E018267B5C87006A1F0B /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				A54E95FC26B4326A005B6F18 /* SearchDataManager.swift */,
 				A54E95A426B41573005B6F18 /* Entity */,
 				A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */,
 				A711E02E267B5E86006A1F0B /* SearchViewController.swift */,
@@ -1176,6 +1179,7 @@
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				A55362D026AD9AAA0087C28D /* EvaluResponse.swift in Sources */,
 				A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */,
+				A54E95FD26B4326A005B6F18 /* SearchDataManager.swift in Sources */,
 				A54BDAB3268E1AA00070BFEF /* EvaluCollectionViewCell.swift in Sources */,
 				A74AB10B26A405C10038A1C1 /* regionNameResponse.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,

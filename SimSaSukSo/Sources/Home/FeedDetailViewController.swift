@@ -125,19 +125,20 @@ class FeedDetailViewController: UIViewController {
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
         
+        let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
             heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-            print("좋아요")
+            dataManager.likeCheck(input, delegate: self)
         } else {
             heartButton.setImage(UIImage(named: "heart"), for: .normal)
-            print("좋아요취소")
+            dataManager.dislikeCheck(input, delegate: self)
         }
         
     }
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
         
-        let input = FavoriteCheckRequest(savedListIndex: 35, feedIndex: 35)
+        let input = FavoriteCheckRequest(savedListIndex: 35, feedIndex: feedIndex)
         if bookmarkButton.isSelected {
             bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
             dataManager.favoriteCheck(input, delegate: self)
@@ -341,8 +342,16 @@ extension FeedDetailViewController {
         commentTableView.reloadData()
     }
     
-    func favoriteCheck(_ result: FavoriteCheckResponse) {
+    func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
         self.presentAlert(title: "성공")
+    }
+    
+    func likeCheck(_ result: FeedLikeResponse) { // 좋아요
+        self.presentAlert(title: "좋아요")
+    }
+    
+    func dislikeCheck(_ result: FeedDislikeResponse) { // 좋아요 취소
+        self.presentAlert(title: "좋아요 취소")
     }
     
     func failedToRequest(message: String) {
