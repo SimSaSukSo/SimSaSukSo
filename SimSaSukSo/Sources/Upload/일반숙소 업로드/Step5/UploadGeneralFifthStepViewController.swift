@@ -56,6 +56,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
         super.viewDidLoad()
         
         nextButton.isEnabled = false
+        reviewTextView.delegate = self
         
         reviewTextViewConfigure()
         
@@ -168,9 +169,6 @@ class UploadGeneralFifthStepViewController : UIViewController{
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
     
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
@@ -366,8 +364,6 @@ class UploadGeneralFifthStepViewController : UIViewController{
     
     
 }
-
-
 
 
 extension UploadGeneralFifthStepViewController : UICollectionViewDelegate, UICollectionViewDataSource{
@@ -579,7 +575,7 @@ extension UploadGeneralFifthStepViewController: UICollectionViewDelegateFlowLayo
     }
 
 //MARK:- UITEXTVIEW delegate
-extension UploadGeneralFifthStepViewController :UITextViewDelegate{
+extension UploadGeneralFifthStepViewController : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
 
         if textView.textColor == #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1) {
@@ -611,6 +607,20 @@ extension UploadGeneralFifthStepViewController :UITextViewDelegate{
            return newLength <= 300
        }
     
+   
+        
+        //화면 터치하면 키보드 내려가게
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                self.view.endEditing(true)
+            }
+        
+        //리턴키 델리게이트 처리
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            reviewTextView.resignFirstResponder() //텍스트필드 비활성화
+            return true
+        }
+        
+
 }
 
 
@@ -628,5 +638,9 @@ extension UploadGeneralFifthStepViewController :UITextViewDelegate{
     func fail(){
         
     }
+        
+        
+
+
 
 }

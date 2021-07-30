@@ -32,6 +32,7 @@ class UploadAirbnbSecondStepViewController : UIViewController{
         super.viewDidLoad()
         
         nextButton.isEnabled = false
+        locationTextfiled.delegate = self
         
         print(UploadAirbnbSecondStepViewController.airbnbInput)
         
@@ -45,10 +46,7 @@ class UploadAirbnbSecondStepViewController : UIViewController{
         SecondPictureCollectionView.dataSource = self
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
-    
+   
     @IBAction func locationButtonAction(_ sender: Any) {
         let selectRegionVC = self.storyboard?.instantiateViewController(identifier: "SelectRegionViewController") as! SelectRegionViewController
         selectRegionVC.delegate = self
@@ -92,6 +90,21 @@ class UploadAirbnbSecondStepViewController : UIViewController{
             
         }
     }
+}
+
+extension UploadAirbnbSecondStepViewController : UITextFieldDelegate{
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        locationTextfiled.resignFirstResponder() //텍스트필드 비활성화
+        return true
+    }
+    
 }
 
 extension UploadAirbnbSecondStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{

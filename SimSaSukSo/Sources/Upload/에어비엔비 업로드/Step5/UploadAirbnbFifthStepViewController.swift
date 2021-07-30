@@ -57,6 +57,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         super.viewDidLoad()
         
         nextButton.isEnabled = false
+        reviewTextView.delegate = self
         
         reviewTextViewConfigure()
         
@@ -167,9 +168,6 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
     
     //MARK: - 텍스트 필드 채워지면 버튼 활성화
     @objc func TagEnterButtonActivate(){
@@ -369,7 +367,6 @@ class UploadAirbnbFifthStepViewController : UIViewController{
     
     
 }
-
 
 
 
@@ -610,6 +607,17 @@ extension UploadAirbnbFifthStepViewController :UITextViewDelegate{
            return newLength <= 300
        }
     
+        //화면 터치하면 키보드 내려가게
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                self.view.endEditing(true)
+            }
+        
+        //리턴키 델리게이트 처리
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            reviewTextView.resignFirstResponder() //텍스트필드 비활성화
+            return true
+        }
+        
 }
     
 

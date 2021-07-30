@@ -14,6 +14,7 @@ struct NewResponse: Decodable {
 
 struct NewResult: Decodable {
     var feeds: [NewFeeds]?
+    var isLast : Bool
 }
 
 struct NewFeeds: Decodable {

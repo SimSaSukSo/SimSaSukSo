@@ -90,6 +90,7 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func beginBatchFetch()
         {
+        if stop == false{
                 fetchingMore = true
                 self.page += 1
                 print("page : \(page)")
@@ -99,7 +100,11 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
                     self.dataManager.newOneFeed(page:self.page, delegate: self)
 
                 })
-            }
+        }else{
+            print("마지막 페이지 입니다 / page : \(page)")
+            
+        }
+    }
 }
 
 //MARK: - CollectionView FlowLayout
@@ -135,6 +140,7 @@ extension NewOneFeedViewController {
         
         NewOneFeedViewController.newOneFeeds.append(contentsOf: result.feeds!)
         self.fetchingMore = false
+        stop = result.isLast
         self.newOneFeedCollectionView.reloadData()
        
         

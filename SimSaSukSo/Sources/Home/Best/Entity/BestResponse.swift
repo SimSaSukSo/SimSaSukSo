@@ -15,6 +15,7 @@ struct BestResponse: Decodable {
 struct BestResult: Decodable {
     var hashTags: [BestHashTags]?
     var feeds: [BestFeeds]?
+    var isLast : Bool
 }
 
 struct BestHashTags: Decodable {

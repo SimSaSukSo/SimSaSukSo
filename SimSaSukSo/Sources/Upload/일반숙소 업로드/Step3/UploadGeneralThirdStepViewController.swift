@@ -114,6 +114,8 @@ class UploadGeneralThirdStepViewController : UIViewController{
     
 }
 
+
+
 extension UploadGeneralThirdStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return UploadViewController.photoArray.count

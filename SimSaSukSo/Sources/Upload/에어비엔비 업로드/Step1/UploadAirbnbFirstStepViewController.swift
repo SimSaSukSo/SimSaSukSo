@@ -21,6 +21,7 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
         super.viewDidLoad()
         
         nextButton.isEnabled = false
+        AirbnbLinkTextField.delegate = self
         
         self.airbnbInput.images = UploadViewController.urlArray
 
@@ -47,10 +48,6 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
-    
     
     @IBAction func closeButton(_ sender: Any) {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
@@ -72,6 +69,21 @@ var airbnbInput : UploadAirbnbInput = UploadAirbnbInput(locationId: 0, images: [
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
+}
+
+extension UploadAirbnbFirstStepViewController : UITextFieldDelegate{
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        AirbnbLinkTextField.resignFirstResponder() //텍스트필드 비활성화
+        return true
+    }
+    
 }
 
 extension UploadAirbnbFirstStepViewController : UICollectionViewDelegate,UICollectionViewDataSource{
