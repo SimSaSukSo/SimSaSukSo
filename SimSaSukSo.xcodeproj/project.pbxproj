@@ -159,6 +159,7 @@
 		A7C2A0DC26B32C9900C0F003 /* appleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0DB26B32C9900C0F003 /* appleLoginManager.swift */; };
 		A7C2A0DF26B32CBF00C0F003 /* appleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */; };
 		A7C2A0E226B32CFD00C0F003 /* appleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */; };
+		A7C2A0EC26B447E700C0F003 /* WriteFeedCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */; };
 		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -339,6 +340,7 @@
 		A7C2A0DB26B32C9900C0F003 /* appleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginManager.swift; sourceTree = "<group>"; };
 		A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginResponse.swift; sourceTree = "<group>"; };
 		A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginInput.swift; sourceTree = "<group>"; };
+		A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFeedCommentResponse.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -453,6 +455,7 @@
 				A54E95AB26B41714005B6F18 /* FeedLikeResponse.swift */,
 				A54E95B126B4178F005B6F18 /* FeedDislikeResponse.swift */,
 				A54E95AE26B41753005B6F18 /* FeedLikeRequest.swift */,
+				A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1177,6 +1180,7 @@
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
+				A7C2A0EC26B447E700C0F003 /* WriteFeedCommentResponse.swift in Sources */,
 				A55362D026AD9AAA0087C28D /* EvaluResponse.swift in Sources */,
 				A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */,
 				A54E95FD26B4326A005B6F18 /* SearchDataManager.swift in Sources */,

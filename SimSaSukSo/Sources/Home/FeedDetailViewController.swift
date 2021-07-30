@@ -17,6 +17,7 @@ class FeedDetailViewController: UIViewController {
     var feedComments = [FeedCommentResult]()
             
     var feedIndex = 0
+    var saveComment = ""
     
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!
@@ -60,6 +61,7 @@ class FeedDetailViewController: UIViewController {
     @IBOutlet var commentUserImageView: UIImageView!
     @IBOutlet var commentWriteButton: UIButton!
     
+    @IBOutlet weak var commentWriteTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,6 +165,8 @@ class FeedDetailViewController: UIViewController {
     
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
+        saveComment = commentWriteTextField.text ?? "좋아보여요!"
+        dataManager.writeFeedComment(text: saveComment, delegate: self)
     }
     
 }
@@ -339,6 +343,13 @@ extension FeedDetailViewController {
         commentNumberLabel.text = String(feedComments.count)
         commentTableView.reloadData()
     }
+    
+    func writeFeedComment(result : WriteFeedCommentResponse){
+            feedComments.append(FeedCommentResult(commentIndex: 2, userIndex: 1, nickname: "siri", avatarUrl: "", content: saveComment, createdAt:"2021-6-5", updatedAt: "", likeNum: 0))
+            commentNumberLabel.text = String(feedComments.count + 1)
+            commentTableView.reloadData()
+            
+        }
     
     func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
         self.presentAlert(title: result.message)
