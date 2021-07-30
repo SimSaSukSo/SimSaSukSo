@@ -1852,13 +1852,13 @@
                                                         <rect key="frame" x="78" y="0.0" width="52" height="16.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조회수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsa-qA-cIO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="16.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="30.5" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                 <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEC-sJ-mhk">
-                                                                <rect key="frame" x="3" y="0.0" width="0.0" height="16.5"/>
+                                                                <rect key="frame" x="33.5" y="0.0" width="18.5" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                                 <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>

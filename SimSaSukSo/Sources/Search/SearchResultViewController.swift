@@ -8,6 +8,10 @@
 import UIKit
 
 class SearchResultViewController: UIViewController {
+    
+    lazy var dataManager = SearchDataManager()
+    
+    var searchResults: [SearchImageResult] = []
 
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
@@ -61,5 +65,16 @@ extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 249, height: 249)
         }
         return CGSize(width: 123, height: 123)
+    }
+}
+
+//MARK: - API
+extension SearchResultViewController {
+    func searchImage(_ result: SearchImageResponse) {
+        searchResults = result.result!
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
     }
 }
