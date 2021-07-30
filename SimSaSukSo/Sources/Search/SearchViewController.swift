@@ -9,8 +9,7 @@ import UIKit
 
 class SearchViewController : UIViewController{
     
-    var buttonLists: [UIButton] = []
-    var lineViewLists: [UIView] = []
+    var pageViewController: SearchPageViewController!
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var allButton: UIButton!
@@ -22,18 +21,19 @@ class SearchViewController : UIViewController{
     @IBOutlet var tagLineView: UIView!
     @IBOutlet var locationLineView: UIView!
     @IBOutlet var airButton: UIButton!
-    @IBOutlet var searchTableView: UITableView!
     
+    var buttonLists: [UIButton] = []
+    var lineViewLists: [UIView] = []
+    
+    var currentIndex : Int = 0 {
+        didSet {
+            changeButtonColor()
+            changeLineColor()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-       
-
-        
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
         
         airButton.layer.borderWidth = 1
         airButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
@@ -57,11 +57,6 @@ class SearchViewController : UIViewController{
         tagButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         locationButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         
-        allButton.tag = 1
-        houseButton.tag = 2
-        tagButton.tag = 3
-        locationButton.tag = 4
-        
         lineViewLists.append(allLineView)
         lineViewLists.append(houseLineView)
         lineViewLists.append(tagLineView)
@@ -71,15 +66,32 @@ class SearchViewController : UIViewController{
         houseLineView.backgroundColor = .clear
         tagLineView.backgroundColor = .clear
         locationLineView.backgroundColor = .clear
-        
-        allLineView.tag = 1
-        houseLineView.tag = 2
-        tagLineView.tag = 3
-        locationLineView.tag = 4
 
     }
     
     func changeButtonColor() {
+        for (index, element) in buttonLists.enumerated() {
+            if index == currentIndex {
+                element.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
+            }
+            else {
+                element.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+            }
+        }
+    }
+    
+    func changeLineColor() {
+        for (index, element) in lineViewLists.enumerated() {
+            if index == currentIndex {
+                element.backgroundColor = #colorLiteral(red: 0, green: 0.8614205718, blue: 0.7271383405, alpha: 1)
+            }
+            else {
+                element.backgroundColor = .clear
+            }
+        }
+    }
+    
+    func changeButtonAndLineColor() {
         for (button) in buttonLists {
             for (view) in lineViewLists {
                 if button.isTouchInside {
@@ -93,9 +105,21 @@ class SearchViewController : UIViewController{
                     button.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
                 }
             }
-           
+
         }
+
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "PageViewController" {
+            guard let vc = segue.destination as? SearchPageViewController else {return}
+            pageViewController = vc
+            
+            pageViewController.completeHandler = { (result) in
+                self.currentIndex = result
+            }
+        }
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
@@ -103,18 +127,23 @@ class SearchViewController : UIViewController{
         self.present(filterVC!, animated: true, completion: nil)
     }
     @IBAction func allButtonAction(_ sender: UIButton) {
-        changeButtonColor()
-        searchTableView.reloadData()
+        pageViewController.setViewcontrollersFromIndex(index: 0)
+        changeButtonAndLineColor()
     }
     @IBAction func houseButtonAction(_ sender: UIButton) {
-        changeButtonColor()
-        searchTableView.reloadData()
+        pageViewController.setViewcontrollersFromIndex(index: 1)
+        changeButtonAndLineColor()
+
     }
     @IBAction func tagButtonAction(_ sender: UIButton) {
-        changeButtonColor()
+        pageViewController.setViewcontrollersFromIndex(index: 2)
+        changeButtonAndLineColor()
+
     }
     @IBAction func locationButtonAction(_ sender: UIButton) {
-        changeButtonColor()
+        pageViewController.setViewcontrollersFromIndex(index: 3)
+        changeButtonAndLineColor()
+
     }
     
     @IBAction func airButtonAction(_ sender: UIButton) {
@@ -149,27 +178,4 @@ extension SearchViewController {
         }
         
     }
-}
-//MARK: - TableView
-extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell", for: indexPath) as! SearchResultTableViewCell
-        
-        if allButton.isTouchInside {
-            cell.firstLabel.text = "무야호"
-            cell.backgroundColor = .red
-        } else if houseButton.isTouchInside {
-            cell.firstLabel.text = "안녕요"
-            cell.backgroundColor = .black
-            tableView.reloadData()
-        }
-        
-        return cell
-    }
-    
-    
 }
