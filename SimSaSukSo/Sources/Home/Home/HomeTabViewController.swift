@@ -404,13 +404,19 @@ extension HomeTabViewController : CLLocationManagerDelegate{
                 print("GPS 권한 설정되지 않음")
                 getLocationUsagePermission()
                 HomeTabViewController.regionNumber = 2000
+                showIndicator()
+                HomeDataManager().home(region: HomeTabViewController.regionNumber,viewcontroller: self)
             case .denied:
                 print("GPS 권한 요청 거부됨")
                 getLocationUsagePermission()
                 HomeTabViewController.regionNumber = 2000
+                showIndicator()
+                HomeDataManager().home(region: HomeTabViewController.regionNumber,viewcontroller: self)
             default:
                 print("GPS: Default")
                 HomeTabViewController.regionNumber = 2000
+                showIndicator()
+                HomeDataManager().home(region: HomeTabViewController.regionNumber,viewcontroller: self)
             }
         }
     
