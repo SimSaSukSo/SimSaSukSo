@@ -345,9 +345,8 @@ extension FeedDetailViewController {
     }
     
     func writeFeedComment(result : WriteFeedCommentResponse){
-            feedComments.append(FeedCommentResult(commentIndex: 2, userIndex: 1, nickname: "siri", avatarUrl: "", content: saveComment, createdAt:"2021-6-5", updatedAt: "", likeNum: 0))
-            commentNumberLabel.text = String(feedComments.count + 1)
-            commentTableView.reloadData()
+            dataManager.feedComment(delegate: self)
+           
             
         }
     
