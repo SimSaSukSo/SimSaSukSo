@@ -40,21 +40,6 @@ class FeedDataManager {
             }
     }
     
-//    // 피드 찜하기-해제
-//    func favoriteCheck(_ parameters: FavoriteCheckRequest, delegate: FeedDetailViewController) {
-//        AF.request("https://dev.enudgu.shop/api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
-//            .validate()
-//            .responseDecodable(of: FavoriteCheckResponse.self) { response in
-//                switch response.result {
-//                case .success(let response):
-//                    delegate.favoriteCheck(response)
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
-//                }
-//            }
-//    }
-//
     // 피드 찜하기-해제
     func favoriteCheck(_ parameters: FavoriteCheckRequest, delegate: FeedDetailViewController) {
         AF.request("https://dev.enudgu.shop/api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
