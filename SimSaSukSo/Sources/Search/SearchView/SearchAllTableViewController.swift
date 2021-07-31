@@ -18,12 +18,10 @@ class SearchAllTableViewController: UITableViewController {
     
     var searchWord = "s"
     
+    let searchViewC = SearchViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let searchVC = self.storyboard?.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
-        
-        searchWord = searchVC.searchBar.text!
         
         //dataManager.searchAll(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/total?searchWord=\(searchWord)")
     }
@@ -65,4 +63,15 @@ extension SearchAllTableViewController: searchDelegate {
         searchWord = data
     }
     
+}
+
+//MARK: - SearchBar
+extension SearchAllTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchVC = self.storyboard?.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        searchWord = searchVC.searchBar.text!
+        dataManager.searchAll(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/total?searchWord=\(searchWord)")
+        print(searchWord)
+    }
 }

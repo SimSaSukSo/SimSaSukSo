@@ -174,6 +174,8 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
         
         searchBar.delegate = self
         
+        //searchBar.delegate = SearchAllTableViewController()
+        
         searchBar.placeholder = "검색어를 입력하세요."
         searchBar.setImage(UIImage(named: "search_Icon"), for: UISearchBar.Icon.search, state: .normal)
         searchBar.setImage(UIImage(named: "search_Clear"), for: .clear, state: .normal)
@@ -202,8 +204,10 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        airButton.setTitle("'\(searchBar.text)'가 포함된 에어비앤비 숙소 모아보기", for: .normal)
         searchDelegate?.searchWord(data: searchBar.text!)
         print(searchBar.text!)
+        
     }
     
 }
