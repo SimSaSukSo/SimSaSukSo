@@ -123,13 +123,10 @@ class SearchViewController : UIViewController{
     }
     
     @IBAction func filterButtonAction(_ sender: UIButton) {
-//        let filterVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchFilterViewController")
-//        filterVC?.modalPresentationStyle = .fullScreen
-//        self.present(filterVC!, animated: true, completion: nil)
         
         let filterNV = self.storyboard?.instantiateViewController(identifier: "filterNV")
         filterNV?.modalPresentationStyle = .fullScreen
-      //  UploadAirbnbSecondStepViewController.airbnbInput = self.airbnbInput
+     
         self.present(filterNV!, animated: false, completion: nil)
         
         

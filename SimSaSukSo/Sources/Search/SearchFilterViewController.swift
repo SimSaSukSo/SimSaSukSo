@@ -9,6 +9,7 @@ import UIKit
 
 protocol locationDelegate: class {
     func sendlocationName(forShow : String) -> String
+    func locationId(id: Int)
 }
 
 class SearchFilterViewController: UIViewController {
@@ -20,10 +21,10 @@ class SearchFilterViewController: UIViewController {
     
     var pros: [Int] = []
     var cons: [Int] = []
-    var minPrice = ""
-    var maxPrice = ""
-    var interval = ""
-    var locationId = 0
+    var minPrice = 0
+    var maxPrice = 0
+    var interval = "hour"
+    var locationId = 1000
     
     @IBOutlet var resetButton: UIButton!
     @IBOutlet var locationButton: UIButton!
@@ -76,9 +77,6 @@ class SearchFilterViewController: UIViewController {
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-//        let searchVC = self.storyboard?.instantiateViewController(identifier: "SearchViewController")as! SearchViewController
-//
-//        self.present(searchVC, animated: false, completion: nil)
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func resetButtonAciton(_ sender: UIButton) {
@@ -108,8 +106,7 @@ class SearchFilterViewController: UIViewController {
         dayButton.setTitle("\(sender.currentTitle!)", for: .normal)
         resetButton.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         dayView.isHidden = true
-        dayButton.titleLabel?.text = interval
-        print(dayButton.titleLabel?.text)
+        
     }
     
     @IBAction func setButtonAction(_ sender: UIButton) {
@@ -120,11 +117,21 @@ class SearchFilterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSearchImage" {
             let searchImageVC = segue.destination as! SearchResultViewController
-            searchImageVC.minPrice = minPrice
-            searchImageVC.maxPrice = maxPrice
-            searchImageVC.interval = interval
-            searchImageVC.pros = pros
-            searchImageVC.cons = cons
+            
+            if dayButton.currentTitle == "지난 1시간" {
+                interval = "hour"
+            } else if dayButton.currentTitle == "지난 1일" {
+                interval = "day"
+            } else if dayButton.currentTitle == "지난 1주" {
+                interval = "week"
+            } else if dayButton.currentTitle == "지난 1개월" {
+                interval = "month"
+            } else {
+                interval = "year"
+            }
+            
+            searchImageVC.searchResultName = (locationButton.titleLabel?.text)!
+            searchImageVC.input = SearchImageRequest(pros: pros, cons: cons, minPrice: Int(minTextField.text!)!, maxPrice: Int(maxTextField.text!)!, locationIdx: locationId, interval: interval)
         }
     }
     
@@ -132,10 +139,12 @@ class SearchFilterViewController: UIViewController {
 //MARK: - TextField
 extension SearchFilterViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        minPrice = minTextField.text!
-        maxPrice = maxTextField.text!
-
+       
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        minTextField.textColor = .black
+        maxTextField.textColor = .black
     }
 }
 //MARK: - CollectionView
@@ -222,13 +231,18 @@ extension SearchFilterViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchFilterViewController: locationDelegate{
     
-    
     func sendlocationName(forShow: String) -> String {
         
         self.locationButton.setTitle(forShow, for: .normal)
         self.locationButton.setTitleColor(#colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1), for: .normal)
-        //UploadAirbnbThirdStepViewController.regionText = forShow
+
         return forShow
     }
+    
+    func locationId(id: Int) {
+        self.locationId = id
+
+    }
+    
 }
 
