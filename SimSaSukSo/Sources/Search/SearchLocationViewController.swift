@@ -249,7 +249,7 @@ class SearchLocationViewController: UIViewController, UIGestureRecognizerDelegat
         
         delegate?.sendlocationName(forShow: nowText)
         delegate?.locationId(id: nowID)
-        //UploadAirbnbSecondStepViewController.airbnbInput.locationId = nowID
+        
         print(nowText)
         self.navigationController?.popViewController(animated: true)
     }

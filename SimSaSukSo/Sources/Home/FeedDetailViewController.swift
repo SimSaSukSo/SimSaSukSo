@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol feedIndexDelegate {
+    func feedIndex(index: Int)
+}
+
 class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
@@ -16,7 +20,7 @@ class FeedDetailViewController: UIViewController {
     
     var feedComments = [FeedCommentResult]()
             
-    var feedIndex = 0
+    var feedIndex = 1
     var saveComment = ""
     
     @IBOutlet var feedDetailView: UIView!
@@ -97,6 +101,7 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
+        print(feedIndex)
     }
     
     
@@ -396,4 +401,10 @@ extension FeedDetailViewController {
     }
 }
 
+//MARK: - Delegate
+extension FeedDetailViewController: feedIndexDelegate {
+    func feedIndex(index: Int) {
+        self.feedIndex = index
+    }
+}
 
