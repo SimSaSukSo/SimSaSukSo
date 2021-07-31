@@ -69,7 +69,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
             cell.searchImageView.image = UIImage(data: data)
         }
         
-        cell.tag = searchResult.feedInex!
+        //cell.tag = searchResult.feedInex!
         
         return cell
     }
@@ -92,7 +92,8 @@ extension SearchResultViewController {
     func searchImage(_ result: SearchImageResponse) {
         searchResults = result.result!
         resultNumberLabel.text = String(result.result!.count) + "개"
-        print(input)
+        resultCollectionView.reloadData()
+        
     }
     
     func failedToRequest(message: String) {
