@@ -25,6 +25,8 @@
 		A54D8D6E26B5BB410037B883 /* ProfileImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6D26B5BB410037B883 /* ProfileImageRequest.swift */; };
 		A54D8D7126B5BB650037B883 /* SettingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D7026B5BB650037B883 /* SettingDataManager.swift */; };
 		A54D8D7526B5BFF10037B883 /* UserDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D7426B5BFF10037B883 /* UserDeleteResponse.swift */; };
+		A54D8D9426B5CAC00037B883 /* SearchTagResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D9326B5CAC00037B883 /* SearchTagResponse.swift */; };
+		A54D8D9726B5CB4B0037B883 /* SearchTagRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D9626B5CB4B0037B883 /* SearchTagRequest.swift */; };
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
@@ -213,6 +215,8 @@
 		A54D8D6D26B5BB410037B883 /* ProfileImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageRequest.swift; sourceTree = "<group>"; };
 		A54D8D7026B5BB650037B883 /* SettingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataManager.swift; sourceTree = "<group>"; };
 		A54D8D7426B5BFF10037B883 /* UserDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDeleteResponse.swift; sourceTree = "<group>"; };
+		A54D8D9326B5CAC00037B883 /* SearchTagResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagResponse.swift; sourceTree = "<group>"; };
+		A54D8D9626B5CB4B0037B883 /* SearchTagRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagRequest.swift; sourceTree = "<group>"; };
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +467,8 @@
 				A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */,
 				A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */,
 				A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */,
+				A54D8D9326B5CAC00037B883 /* SearchTagResponse.swift */,
+				A54D8D9626B5CB4B0037B883 /* SearchTagRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1192,6 +1198,7 @@
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
 				A7C2A0F226B55EEA00C0F003 /* UIViewController + Extension.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
+				A54D8D9726B5CB4B0037B883 /* SearchTagRequest.swift in Sources */,
 				A55362D326AD9B100087C28D /* EvaluDataManager.swift in Sources */,
 				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
 				A58833B5268C7D220046E313 /* FeedCommentTableViewCell.swift in Sources */,
@@ -1216,6 +1223,7 @@
 				A74AB1AC26AD32BB0038A1C1 /* AirStartDatePicker.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				A54E95BD26B423F0005B6F18 /* SearchPageViewController.swift in Sources */,
+				A54D8D9426B5CAC00037B883 /* SearchTagResponse.swift in Sources */,
 				A547A69E268AF63E002DA257 /* NewOneFeedViewController.swift in Sources */,
 				A766CCA02689F9D900565095 /* BestLikesCollectionViewCell.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
