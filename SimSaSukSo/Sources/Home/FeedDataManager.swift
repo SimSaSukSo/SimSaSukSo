@@ -73,8 +73,8 @@ class FeedDataManager {
     }
     
     // 피드 좋아요
-    func likeCheck(_ parameters: FeedLikeRequest, delegate: FeedDetailViewController) {
-        AF.request("https://dev.enudgu.shop/api/feeds/like", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+    func likeCheck(_ parameters: FeedLikeRequest, delegate: FeedDetailViewController, url: String) {
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: FeedLikeResponse.self) { response in
                 switch response.result {
@@ -88,8 +88,8 @@ class FeedDataManager {
     }
     
     // 피드 좋아요 취소
-    func dislikeCheck(_ parameters: FeedLikeRequest, delegate: FeedDetailViewController) {
-        AF.request("https://dev.enudgu.shop/api/feeds/dislike", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+    func dislikeCheck(_ parameters: FeedLikeRequest, delegate: FeedDetailViewController, url: String) {
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: FeedDislikeResponse.self) { response in
                 switch response.result {

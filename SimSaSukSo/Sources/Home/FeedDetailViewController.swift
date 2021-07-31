@@ -130,10 +130,10 @@ class FeedDetailViewController: UIViewController {
         let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
             heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-            dataManager.likeCheck(input, delegate: self)
+            dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
         } else {
             heartButton.setImage(UIImage(named: "heart"), for: .normal)
-            dataManager.dislikeCheck(input, delegate: self)
+            dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
         }
     
     }
