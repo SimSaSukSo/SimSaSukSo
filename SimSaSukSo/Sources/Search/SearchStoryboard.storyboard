@@ -255,7 +255,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="10d-WW-qCf">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="10d-WW-qCf">
                                             <rect key="frame" x="17.5" y="31.5" width="13" height="14"/>
                                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                                             <constraints>
@@ -327,7 +327,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CCr-Wx-i1J">
-                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="can-e0-QDh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1151,7 +1151,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dqc-cU-f2x"/>
+        <segue reference="T5h-SA-kix"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_left" width="14" height="14"/>

@@ -851,6 +851,10 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-dg-T1j">
                                                             <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                                         </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="deW-Zz-Dq0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                                            <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.45335511782032401" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6u-WK-KEu">
                                                             <rect key="frame" x="35" y="37.5" width="26" height="21"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
@@ -860,12 +864,16 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="linkColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="deW-Zz-Dq0" secondAttribute="trailing" id="3tL-An-CAI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="deW-Zz-Dq0" secondAttribute="bottom" id="C5I-hF-0ov"/>
                                                         <constraint firstItem="YNI-dg-T1j" firstAttribute="leading" secondItem="ldq-vT-Y9n" secondAttribute="leading" id="D9G-CT-Sws"/>
+                                                        <constraint firstItem="deW-Zz-Dq0" firstAttribute="top" secondItem="ldq-vT-Y9n" secondAttribute="top" id="He4-ds-c6r"/>
                                                         <constraint firstItem="f6u-WK-KEu" firstAttribute="centerY" secondItem="ldq-vT-Y9n" secondAttribute="centerY" id="OCH-MG-xOl"/>
                                                         <constraint firstItem="f6u-WK-KEu" firstAttribute="centerX" secondItem="ldq-vT-Y9n" secondAttribute="centerX" id="Q0w-EL-gDy"/>
                                                         <constraint firstAttribute="bottom" secondItem="YNI-dg-T1j" secondAttribute="bottom" id="Xeq-uT-hOB"/>
                                                         <constraint firstAttribute="trailing" secondItem="YNI-dg-T1j" secondAttribute="trailing" id="oH7-UD-yRO"/>
                                                         <constraint firstItem="YNI-dg-T1j" firstAttribute="top" secondItem="ldq-vT-Y9n" secondAttribute="top" id="oNQ-rp-KSQ"/>
+                                                        <constraint firstItem="deW-Zz-Dq0" firstAttribute="leading" secondItem="ldq-vT-Y9n" secondAttribute="leading" id="qsM-Vm-gmj"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="96" height="96"/>
