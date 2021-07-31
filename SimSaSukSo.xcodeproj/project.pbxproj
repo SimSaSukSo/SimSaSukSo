@@ -21,6 +21,9 @@
 		A54D8D6026B59FB30037B883 /* SearchLodgingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */; };
 		A54D8D6326B5A0670037B883 /* SearchLodgingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */; };
 		A54D8D6626B5A0B70037B883 /* SearchAllResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */; };
+		A54D8D6B26B5BB110037B883 /* ProfileImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6A26B5BB110037B883 /* ProfileImageResponse.swift */; };
+		A54D8D6E26B5BB410037B883 /* ProfileImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6D26B5BB410037B883 /* ProfileImageRequest.swift */; };
+		A54D8D7126B5BB650037B883 /* SettingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D7026B5BB650037B883 /* SettingDataManager.swift */; };
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
@@ -205,6 +208,9 @@
 		A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingsResponse.swift; sourceTree = "<group>"; };
 		A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingsRequest.swift; sourceTree = "<group>"; };
 		A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllResponse.swift; sourceTree = "<group>"; };
+		A54D8D6A26B5BB110037B883 /* ProfileImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageResponse.swift; sourceTree = "<group>"; };
+		A54D8D6D26B5BB410037B883 /* ProfileImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageRequest.swift; sourceTree = "<group>"; };
+		A54D8D7026B5BB650037B883 /* SettingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataManager.swift; sourceTree = "<group>"; };
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +427,15 @@
 			);
 			name = "내 피드 보기";
 			path = "내 피드 보기";
+			sourceTree = "<group>";
+		};
+		A54D8D6926B5BAF80037B883 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A54D8D6A26B5BB110037B883 /* ProfileImageResponse.swift */,
+				A54D8D6D26B5BB410037B883 /* ProfileImageRequest.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		A54DB90B269354CB00EA26DF /* 신뢰도 평가 */ = {
@@ -652,6 +667,8 @@
 		A711E01B267B5CBD006A1F0B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				A54D8D7026B5BB650037B883 /* SettingDataManager.swift */,
+				A54D8D6926B5BAF80037B883 /* Entity */,
 				A711E028267B5E03006A1F0B /* SettingStoryboard.storyboard */,
 				A711E037267B5EAE006A1F0B /* SettingViewController.swift */,
 				A56796282685D68E00CAB9F6 /* ProfileViewController.swift */,
@@ -1210,6 +1227,7 @@
 				A74AB1AF26AD32CF0038A1C1 /* AirEndDatePicker.swift in Sources */,
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
+				A54D8D6B26B5BB110037B883 /* ProfileImageResponse.swift in Sources */,
 				A55368E726A07551002E232E /* BadCollectionViewCell.swift in Sources */,
 				A74AB17B26A84EEA0038A1C1 /* UploadGeneralResponse.swift in Sources */,
 				A54BDAB0268E13470070BFEF /* EvaluViewController.swift in Sources */,
@@ -1262,6 +1280,8 @@
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
 				A74AB1A926AD24B00038A1C1 /* UploadAirbnbResponse.swift in Sources */,
+				A54D8D6E26B5BB410037B883 /* ProfileImageRequest.swift in Sources */,
+				A54D8D7126B5BB650037B883 /* SettingDataManager.swift in Sources */,
 				A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */,
 				A59DDBCA26860258008D4AF9 /* BestTabOneFeedCollectionViewCell.swift in Sources */,
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,

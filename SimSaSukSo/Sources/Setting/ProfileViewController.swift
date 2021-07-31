@@ -7,8 +7,14 @@
 
 import UIKit
 import MobileCoreServices
+import FirebaseStorage
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
+    
+    lazy var dataManager = SettingDataManager()
+    
+    let storage = Storage.storage()
     
     let imagePicker = UIImagePickerController()
     var captureImage: UIImage!
@@ -35,7 +41,24 @@ class ProfileViewController: UIViewController {
         cameraButton.layer.shadowRadius = 0.8
     }
     
+    // Firebase 업로드
+    func uploadImage(image: UIImage) {
+        var data = Data()
+        data = image.jpegData(compressionQuality: 0.8)!
+        let filePath = "프로필 사진"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in if let error = error {
+                print("실패")
+                return
+            } else {
+                print("성공")
+            }
+        }
 
+    }
+    
     @IBAction func backButtonAction(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
     }
@@ -44,6 +67,10 @@ class ProfileViewController: UIViewController {
         if cameraButton.isSelected {
             saveButton.titleLabel?.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
         }
+        uploadImage(image: userProfileImageView.image!)
+        let input = ProfileImageRequest(profileUrl: "https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/프로필%20사진?alt=media&token=10360d60-d51d-45fc-b2ee-609b6c417bbe")
+        dataManager.profileImage(input, delegate: self, url: "https://dev.enudgu.shop/api/users/profileUrl")
+    
     }
     
     @IBAction func cameraButtonAction(_ sender: UIButton) {
@@ -127,9 +154,14 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
 }
-
-
+//MARK: - API
+extension ProfileViewController {
+    func profileImage(_ reuslt: ProfileImageResponse) {
+        self.presentAlert(title: "프로필 사진 변경 완료")
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
