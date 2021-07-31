@@ -17,6 +17,8 @@ class SearchResultViewController: UIViewController {
     
     var searchResultName = ""
     
+    var delegate: feedIndexDelegate?
+    
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
@@ -69,9 +71,23 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
             cell.searchImageView.image = UIImage(data: data)
         }
         
-        cell.tag = searchResult.feedInex!
+        cell.tag = searchResult.feedIndex!
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = resultCollectionView.cellForItem(at: indexPath) as! SearchResultCollectionViewCell
+        
+        print(cell.tag)
+        
+        let feedStoryboard = UIStoryboard.init(name: "HomeStoryboard", bundle: nil)
+        let feedVC = feedStoryboard.instantiateViewController(withIdentifier: "FeedDetailViewController")
+        
+        delegate?.feedIndex(index: cell.tag)
+        
+        self.present(feedVC, animated: true, completion: nil)
+        //self.modalPresentationStyle = .
     }
     
     
@@ -92,7 +108,8 @@ extension SearchResultViewController {
     func searchImage(_ result: SearchImageResponse) {
         searchResults = result.result!
         resultNumberLabel.text = String(result.result!.count) + "개"
-        print(input)
+        resultCollectionView.reloadData()
+        
     }
     
     func failedToRequest(message: String) {

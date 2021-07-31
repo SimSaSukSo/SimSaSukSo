@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol feedIndexDelegate {
+    func feedIndex(index: Int)
+}
+
 class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
@@ -16,7 +20,7 @@ class FeedDetailViewController: UIViewController {
     
     var feedComments = [FeedCommentResult]()
             
-    var feedIndex = 0
+    var feedIndex = 1
     var saveComment = ""
     
     @IBOutlet var feedDetailView: UIView!
@@ -63,10 +67,8 @@ class FeedDetailViewController: UIViewController {
     
     @IBOutlet weak var commentWriteTextField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         
         dataManager.feedView(delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)")
         dataManager.feedComment(delegate: self)
@@ -99,25 +101,17 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
-        commentWriteTextField.delegate = self
-        
-        setKeyboardObserver()
-        
+        print(feedIndex)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.commentTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-    
-        
+        //navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.commentTableView.removeObserver(self, forKeyPath: "contentSize")
-        
         //navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -130,11 +124,6 @@ class FeedDetailViewController: UIViewController {
         }
     }
     
-    
-    @IBAction func tabGesture(_ sender: Any) {
-        view.endEditing(true)
-    }
-    
     //MARK: - Function
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
@@ -145,14 +134,28 @@ class FeedDetailViewController: UIViewController {
         
         let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
-            heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-            dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+            if heartButton.currentImage == UIImage(named: "heart_fill") {
+                heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+            } else {
+                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+            }
+            
         } else {
-            heartButton.setImage(UIImage(named: "heart"), for: .normal)
-            dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+            if heartButton.currentImage == UIImage(named: "heart") {
+                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+            } else {
+                heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+            }
+            
         }
     
+    
     }
+    
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
         
@@ -182,7 +185,6 @@ class FeedDetailViewController: UIViewController {
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
         saveComment = commentWriteTextField.text ?? "좋아보여요!"
-        print(saveComment)
         dataManager.writeFeedComment(text: saveComment, delegate: self)
     }
     
@@ -356,14 +358,14 @@ extension FeedDetailViewController {
        
         // 좋아요
         if result.feedLike?.isLiked == 1 { // Yes
-            heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+            heartButton.setImage(UIImage(named: "heart_fill"), for: .normal)
         } else {
             heartButton.setImage(UIImage(named: "heart"), for: .normal)
         }
         
         // 찜
         if result.save?.isSaved == 1 { // Yes
-            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
+            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .normal)
         } else {
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
         }
@@ -373,14 +375,12 @@ extension FeedDetailViewController {
     func feedComment(result: FeedCommentResponse) {
         feedComments = result.result!
         commentNumberLabel.text = String(feedComments.count)
-        print(result)
         commentTableView.reloadData()
     }
     
     func writeFeedComment(result : WriteFeedCommentResponse){
             dataManager.feedComment(delegate: self)
-        commentWriteTextField.text = ""
-           print("저장됨")
+           
             
         }
     
@@ -401,4 +401,10 @@ extension FeedDetailViewController {
     }
 }
 
+//MARK: - Delegate
+extension FeedDetailViewController: feedIndexDelegate {
+    func feedIndex(index: Int) {
+        self.feedIndex = index
+    }
+}
 
