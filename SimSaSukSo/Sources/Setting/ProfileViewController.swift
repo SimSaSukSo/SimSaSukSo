@@ -69,7 +69,7 @@ class ProfileViewController: UIViewController {
         }
         uploadImage(image: userProfileImageView.image!)
         let input = ProfileImageRequest(profileUrl: "https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/프로필%20사진?alt=media&token=10360d60-d51d-45fc-b2ee-609b6c417bbe")
-        dataManager.profileImage(input, delegate: self, url: "https://dev.enudgu.shop/api/users/profileUrl")
+        dataManager.profileImage(input, delegate: self)
     
     }
     

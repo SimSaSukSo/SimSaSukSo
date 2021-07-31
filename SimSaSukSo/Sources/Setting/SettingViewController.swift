@@ -38,3 +38,14 @@ class SettingViewController : UIViewController {
     
     
 }
+
+//MARK: - API
+extension SettingViewController {
+    func userDelete(result: UserDeleteResponse) {
+        self.presentAlert(title: "회원탈퇴 성공")
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
