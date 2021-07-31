@@ -76,9 +76,10 @@ class SearchFilterViewController: UIViewController {
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
-        let searchVC = self.storyboard?.instantiateViewController(identifier: "SearchViewController")as! SearchViewController
-                
-        self.present(searchVC, animated: false, completion: nil)
+//        let searchVC = self.storyboard?.instantiateViewController(identifier: "SearchViewController")as! SearchViewController
+//
+//        self.present(searchVC, animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func resetButtonAciton(_ sender: UIButton) {
 
@@ -86,8 +87,9 @@ class SearchFilterViewController: UIViewController {
     @IBAction func locationButtonAction(_ sender: UIButton) {
         
         let locationVC = self.storyboard?.instantiateViewController(identifier: "SearchLocationViewController")as! SearchLocationViewController
-                
-        self.present(locationVC, animated: true, completion: nil)
+
+        locationVC.delegate = self
+        self.navigationController?.pushViewController(locationVC, animated: true)
         
     }
     
