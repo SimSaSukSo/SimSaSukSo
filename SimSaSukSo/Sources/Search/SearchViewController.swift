@@ -11,6 +11,10 @@ class SearchViewController : UIViewController{
     
     var pageViewController: SearchPageViewController!
     
+    var filteredArray: [String] = []
+    
+    var searchDelegate: searchDelegate?
+
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var allButton: UIButton!
     @IBOutlet var houseButton: UIButton!
@@ -122,6 +126,11 @@ class SearchViewController : UIViewController{
         }
     }
     
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+    }
+    
     @IBAction func filterButtonAction(_ sender: UIButton) {
         
         let filterNV = self.storyboard?.instantiateViewController(identifier: "filterNV")
@@ -157,10 +166,16 @@ class SearchViewController : UIViewController{
 }
 
 //MARK: - searchBar
-extension SearchViewController {
-   //UIColor.init(red: 166, green: 176, blue: 186, alpha: 1)
+extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
     func setupSearchBar() {
-       
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        
+        searchBar.delegate = self
+        
+        //searchBar.delegate = SearchAllTableViewController()
+        
         searchBar.placeholder = "검색어를 입력하세요."
         searchBar.setImage(UIImage(named: "search_Icon"), for: UISearchBar.Icon.search, state: .normal)
         searchBar.setImage(UIImage(named: "search_Clear"), for: .clear, state: .normal)
@@ -183,4 +198,16 @@ extension SearchViewController {
         }
         
     }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        dump(searchBar.text)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        airButton.setTitle("'\(searchBar.text)'가 포함된 에어비앤비 숙소 모아보기", for: .normal)
+        searchDelegate?.searchWord(data: searchBar.text!)
+        print(searchBar.text!)
+        
+    }
+    
 }
