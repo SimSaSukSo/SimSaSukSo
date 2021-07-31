@@ -10,7 +10,7 @@ import Alamofire
 class SearchDataManager {
     // 이미지 검색
     func searchImage(_ parameters: SearchImageRequest, delegate: SearchResultViewController) {
-        AF.request("\(Constant.BASE_URL)api/feeds/ssearch/origin", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+        AF.request("https://dev.enudgu.shop/api/feeds/search/origin", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: SearchImageResponse.self) { response in
                 switch response.result {

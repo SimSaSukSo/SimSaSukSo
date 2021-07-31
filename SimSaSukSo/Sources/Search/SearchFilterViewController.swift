@@ -106,7 +106,7 @@ class SearchFilterViewController: UIViewController {
         dayButton.setTitle("\(sender.currentTitle!)", for: .normal)
         resetButton.tintColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         dayView.isHidden = true
-        print(dayButton.titleLabel?.text)
+        
     }
     
     @IBAction func setButtonAction(_ sender: UIButton) {
@@ -130,6 +130,7 @@ class SearchFilterViewController: UIViewController {
                 interval = "year"
             }
             
+            searchImageVC.searchResultName = (locationButton.titleLabel?.text)!
             searchImageVC.input = SearchImageRequest(pros: pros, cons: cons, minPrice: Int(minTextField.text!)!, maxPrice: Int(maxTextField.text!)!, locationIdx: locationId, interval: interval)
         }
     }

@@ -9,4 +9,5 @@ import UIKit
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var searchImageView: UIImageView!
 }

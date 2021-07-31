@@ -13,7 +13,7 @@ struct SearchImageResponse: Decodable {
 }
 
 struct SearchImageResult: Decodable {
-    var feedInex: Int
-    var feedImageIndex: Int
-    var source: String
+    var feedInex: Int?
+    var feedImageIndex: Int?
+    var source: String?
 }

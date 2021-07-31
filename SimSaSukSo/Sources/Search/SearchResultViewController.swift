@@ -15,6 +15,8 @@ class SearchResultViewController: UIViewController {
     
     var input = SearchImageRequest(pros: [], cons: [], minPrice: 0, maxPrice: 0, locationIdx: 0, interval: "")
     
+    var searchResultName = ""
+    
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
@@ -28,9 +30,9 @@ class SearchResultViewController: UIViewController {
         
         self.resultCollectionView.collectionViewLayout = CustomCircularCollectionViewLayout()
         
-        //dataManager.searchImage(input, delegate: self)
+        dataManager.searchImage(input, delegate: self)
         
-        print(input)
+        searchResultLabel.text = "'\(searchResultName)' 검색결과"
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -52,11 +54,22 @@ class SearchResultViewController: UIViewController {
 //MARK: - CollectionView
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return searchResults.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultCollectionViewCell", for: indexPath) as! SearchResultCollectionViewCell
+        
+        let searchResult = searchResults[indexPath.row]
+        // 이미지 URL 가져오기
+        let urlString = searchResult.source
+        if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            cell.searchImageView.image = UIImage(data: data)
+        }
+        
+        cell.tag = searchResult.feedInex!
         
         return cell
     }
@@ -78,6 +91,8 @@ extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
 extension SearchResultViewController {
     func searchImage(_ result: SearchImageResponse) {
         searchResults = result.result!
+        resultNumberLabel.text = String(result.result!.count) + "개"
+        print(input)
     }
     
     func failedToRequest(message: String) {
