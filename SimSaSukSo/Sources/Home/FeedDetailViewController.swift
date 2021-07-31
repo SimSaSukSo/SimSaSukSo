@@ -128,6 +128,10 @@ class FeedDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func tabGesture(_ sender: Any) {
+        view.endEditing(true)
+
+    }
     //MARK: - Function
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
@@ -189,7 +193,10 @@ class FeedDetailViewController: UIViewController {
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
         saveComment = commentWriteTextField.text ?? "좋아보여요!"
+        print(saveComment)
         dataManager.writeFeedComment(text: saveComment, delegate: self)
+       
+
     }
     
 }
@@ -379,11 +386,16 @@ extension FeedDetailViewController {
     func feedComment(result: FeedCommentResponse) {
         feedComments = result.result!
         commentNumberLabel.text = String(feedComments.count)
+        print(result)
+
         commentTableView.reloadData()
     }
     
     func writeFeedComment(result : WriteFeedCommentResponse){
             dataManager.feedComment(delegate: self)
+        commentWriteTextField.text = ""
+           print("저장됨")
+
            
             
         }

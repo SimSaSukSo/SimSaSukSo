@@ -2216,7 +2216,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO0-S4-jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="2bb-e1-WdT">
                     <connections>
-                        <action selector="tabGesture:" destination="zuc-eV-Fku" id="M54-rR-SvB"/>
+                        <action selector="tabGesture:" destination="zuc-eV-Fku" id="Way-Io-nVG"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
