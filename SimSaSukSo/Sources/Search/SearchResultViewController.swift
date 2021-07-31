@@ -82,9 +82,9 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         print(cell.tag)
         
         let feedStoryboard = UIStoryboard.init(name: "HomeStoryboard", bundle: nil)
-        let feedVC = feedStoryboard.instantiateViewController(withIdentifier: "FeedDetailViewController")
+        let feedVC = feedStoryboard.instantiateViewController(withIdentifier: "FeedDetailViewController") as! FeedDetailViewController
         
-        delegate?.feedIndex(index: cell.tag)
+        feedVC.feedIndex = cell.tag
         
         self.present(feedVC, animated: true, completion: nil)
         //self.modalPresentationStyle = .
