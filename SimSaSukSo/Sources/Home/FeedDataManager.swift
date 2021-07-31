@@ -25,8 +25,8 @@ class FeedDataManager {
     }
     
     // 피드 댓글 조회
-    func feedComment(delegate: FeedDetailViewController) {
-        let url = "https://dev.enudgu.shop/api/feeds/1/comments"
+    func feedComment(url : String, delegate: FeedDetailViewController) {
+        
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: FeedCommentResponse.self) { response in
@@ -41,8 +41,8 @@ class FeedDataManager {
     }
     
     //피드 댓글 작성
-        func writeFeedComment(text : String ,  delegate: FeedDetailViewController) {
-            let url = "https://dev.enudgu.shop/api/feeds/:idx/comments"
+    func writeFeedComment(text : String ,url : String , delegate: FeedDetailViewController) {
+            
             let body = ["content" : text]
             AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: KeyCenter.header)
                 .validate()

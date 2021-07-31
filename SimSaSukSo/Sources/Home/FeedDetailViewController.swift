@@ -71,7 +71,7 @@ class FeedDetailViewController: UIViewController {
         super.viewDidLoad()
         
         dataManager.feedView(delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)")
-        dataManager.feedComment(delegate: self)
+        dataManager.feedComment(url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
         
         self.navigationController?.navigationBar.isTransparent = true
         self.navigationController?.navigationBar.tintColor = .clear
@@ -194,7 +194,7 @@ class FeedDetailViewController: UIViewController {
         print("게시")
         saveComment = commentWriteTextField.text ?? "좋아보여요!"
         print(saveComment)
-        dataManager.writeFeedComment(text: saveComment, delegate: self)
+        dataManager.writeFeedComment(text: saveComment, url:  "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
        
 
     }
@@ -392,7 +392,7 @@ extension FeedDetailViewController {
     }
     
     func writeFeedComment(result : WriteFeedCommentResponse){
-            dataManager.feedComment(delegate: self)
+        dataManager.feedComment(url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
         commentWriteTextField.text = ""
            print("저장됨")
 

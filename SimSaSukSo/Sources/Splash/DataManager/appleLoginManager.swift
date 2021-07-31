@@ -28,9 +28,6 @@ class appleLoginDataManager{
                             print("회원가입")
                         }
                         
-                        
-                        
-                       
                     }else{
                         
                        print("failed")
