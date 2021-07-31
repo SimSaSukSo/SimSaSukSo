@@ -129,14 +129,28 @@ class FeedDetailViewController: UIViewController {
         
         let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
-            heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-            dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+            if heartButton.currentImage == UIImage(named: "heart_fill") {
+                heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+            } else {
+                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+            }
+            
         } else {
-            heartButton.setImage(UIImage(named: "heart"), for: .normal)
-            dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+            if heartButton.currentImage == UIImage(named: "heart") {
+                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+            } else {
+                heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+            }
+            
         }
     
+    
     }
+    
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
         
@@ -339,14 +353,14 @@ extension FeedDetailViewController {
        
         // 좋아요
         if result.feedLike?.isLiked == 1 { // Yes
-            heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+            heartButton.setImage(UIImage(named: "heart_fill"), for: .normal)
         } else {
             heartButton.setImage(UIImage(named: "heart"), for: .normal)
         }
         
         // 찜
         if result.save?.isSaved == 1 { // Yes
-            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
+            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .normal)
         } else {
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
         }
