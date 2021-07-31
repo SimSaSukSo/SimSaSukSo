@@ -102,6 +102,7 @@ extension SplashViewController : ASAuthorizationControllerDelegate{
                 let userLastName = appleIDCredential.fullName?.familyName
                 let userEmail = appleIDCredential.email
                 let jwt = appleIDCredential.identityToken
+          
                 
                 
                 print(userIdentifier)

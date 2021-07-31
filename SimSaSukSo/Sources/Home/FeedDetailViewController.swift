@@ -63,8 +63,10 @@ class FeedDetailViewController: UIViewController {
     
     @IBOutlet weak var commentWriteTextField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
         dataManager.feedView(delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)")
         dataManager.feedComment(delegate: self)
@@ -97,16 +99,25 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
+        commentWriteTextField.delegate = self
+        
+        setKeyboardObserver()
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.commentTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        //navigationController?.setNavigationBarHidden(true, animated: animated)
+    
+        
     }
     
+    
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.commentTableView.removeObserver(self, forKeyPath: "contentSize")
+        
         //navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
@@ -117,6 +128,11 @@ class FeedDetailViewController: UIViewController {
                 self.commentTableViewHeight.constant = newsize.height
             }
         }
+    }
+    
+    
+    @IBAction func tabGesture(_ sender: Any) {
+        view.endEditing(true)
     }
     
     //MARK: - Function
@@ -166,6 +182,7 @@ class FeedDetailViewController: UIViewController {
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
         print("게시")
         saveComment = commentWriteTextField.text ?? "좋아보여요!"
+        print(saveComment)
         dataManager.writeFeedComment(text: saveComment, delegate: self)
     }
     
@@ -356,12 +373,14 @@ extension FeedDetailViewController {
     func feedComment(result: FeedCommentResponse) {
         feedComments = result.result!
         commentNumberLabel.text = String(feedComments.count)
+        print(result)
         commentTableView.reloadData()
     }
     
     func writeFeedComment(result : WriteFeedCommentResponse){
             dataManager.feedComment(delegate: self)
-           
+        commentWriteTextField.text = ""
+           print("저장됨")
             
         }
     

@@ -161,6 +161,7 @@
 		A7C2A0DF26B32CBF00C0F003 /* appleLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */; };
 		A7C2A0E226B32CFD00C0F003 /* appleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */; };
 		A7C2A0EC26B447E700C0F003 /* WriteFeedCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */; };
+		A7C2A0F226B55EEA00C0F003 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0F126B55EEA00C0F003 /* UIViewController + Extension.swift */; };
 		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -343,6 +344,7 @@
 		A7C2A0DE26B32CBF00C0F003 /* appleLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginResponse.swift; sourceTree = "<group>"; };
 		A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginInput.swift; sourceTree = "<group>"; };
 		A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFeedCommentResponse.swift; sourceTree = "<group>"; };
+		A7C2A0F126B55EEA00C0F003 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -582,6 +584,7 @@
 				A59DDBC82686021E008D4AF9 /* Home */,
 				A59DDBC6268601F9008D4AF9 /* Best */,
 				A59DDBC726860212008D4AF9 /* New */,
+				A7C2A0F126B55EEA00C0F003 /* UIViewController + Extension.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1156,6 +1159,7 @@
 				A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */,
 				A5A6B851269ADDB900B66D53 /* SearchResultCollectionViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
+				A7C2A0F226B55EEA00C0F003 /* UIViewController + Extension.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
 				A55362D326AD9B100087C28D /* EvaluDataManager.swift in Sources */,
 				A547A6A4268AF73C002DA257 /* NewPageViewController.swift in Sources */,
