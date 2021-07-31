@@ -18,6 +18,9 @@
 		A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C34F1268B52D100D6F839 /* MyFeedCommentTableViewCell.swift */; };
 		A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */; };
 		A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3506268B98C900D6F839 /* ClearNavigationController.swift */; };
+		A54D8D6026B59FB30037B883 /* SearchLodgingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */; };
+		A54D8D6326B5A0670037B883 /* SearchLodgingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */; };
+		A54D8D6626B5A0B70037B883 /* SearchAllResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */; };
 		A54DB8FA269308D200EA26DF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */; };
 		A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */; };
 		A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */; };
@@ -199,6 +202,9 @@
 		A54C34F1268B52D100D6F839 /* MyFeedCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFeedCommentTableViewCell.swift; sourceTree = "<group>"; };
 		A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
 		A54C3506268B98C900D6F839 /* ClearNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationController.swift; sourceTree = "<group>"; };
+		A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingsResponse.swift; sourceTree = "<group>"; };
+		A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingsRequest.swift; sourceTree = "<group>"; };
+		A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllResponse.swift; sourceTree = "<group>"; };
 		A54DB8F9269308D200EA26DF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluAlertViewController.swift; sourceTree = "<group>"; };
 		A54DB91026935C8B00EA26DF /* UploadAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAlertViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +442,9 @@
 			children = (
 				A54E95A526B41597005B6F18 /* SearchImageResponse.swift */,
 				A54E95A826B4162A005B6F18 /* SearchImageRequest.swift */,
+				A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */,
+				A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */,
+				A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1150,6 +1159,7 @@
 				A55C462F26A5FFC1008B4A5C /* FavoriteDataManager.swift in Sources */,
 				A54E95AF26B41753005B6F18 /* FeedLikeRequest.swift in Sources */,
 				A54DB91126935C8B00EA26DF /* UploadAlertViewController.swift in Sources */,
+				A54D8D6326B5A0670037B883 /* SearchLodgingsRequest.swift in Sources */,
 				A55362C426AD5B4A0087C28D /* FeedResponse.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */,
@@ -1158,6 +1168,7 @@
 				A54DB90D269354FD00EA26DF /* EvaluAlertViewController.swift in Sources */,
 				A54C34F2268B52D100D6F839 /* MyFeedCommentTableViewCell.swift in Sources */,
 				A5A6B851269ADDB900B66D53 /* SearchResultCollectionViewCell.swift in Sources */,
+				A54D8D6626B5A0B70037B883 /* SearchAllResponse.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
 				A7C2A0F226B55EEA00C0F003 /* UIViewController + Extension.swift in Sources */,
 				A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */,
@@ -1246,6 +1257,7 @@
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
 				A55675D126972485004103AA /* NewResponse.swift in Sources */,
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
+				A54D8D6026B59FB30037B883 /* SearchLodgingsResponse.swift in Sources */,
 				A75835192695D2D800527E1A /* UploadGeneralAddAdvantageCollectionViewCell.swift in Sources */,
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
