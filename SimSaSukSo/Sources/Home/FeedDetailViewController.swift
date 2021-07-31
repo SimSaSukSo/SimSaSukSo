@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol feedIndexDelegate {
-    func feedIndex(index: Int)
-}
-
 class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
@@ -416,11 +412,3 @@ extension FeedDetailViewController {
         self.presentAlert(title: message)
     }
 }
-
-//MARK: - Delegate
-extension FeedDetailViewController: feedIndexDelegate {
-    func feedIndex(index: Int) {
-        self.feedIndex = index
-    }
-}
-

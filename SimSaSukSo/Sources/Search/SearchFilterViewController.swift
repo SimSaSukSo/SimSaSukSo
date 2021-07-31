@@ -138,14 +138,17 @@ class SearchFilterViewController: UIViewController {
 }
 //MARK: - TextField
 extension SearchFilterViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-       
-    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         minTextField.textColor = .black
         maxTextField.textColor = .black
     }
+    
+    //화면 터치하면 키보드 내려가게
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
 }
 //MARK: - CollectionView
 extension SearchFilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {

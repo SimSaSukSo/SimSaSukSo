@@ -16,9 +16,7 @@ class SearchResultViewController: UIViewController {
     var input = SearchImageRequest(pros: [], cons: [], minPrice: 0, maxPrice: 0, locationIdx: 0, interval: "")
     
     var searchResultName = ""
-    
-    var delegate: feedIndexDelegate?
-    
+        
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
@@ -87,7 +85,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         feedVC.feedIndex = cell.tag
         
         self.present(feedVC, animated: true, completion: nil)
-        //self.modalPresentationStyle = .
+        
     }
     
     
