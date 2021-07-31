@@ -29,7 +29,7 @@ extension UIViewController {
                     let keyboardRectangle = keyboardFrame.cgRectValue
                     let keyboardHeight = keyboardRectangle.height
                 UIView.animate(withDuration: 1) {
-                    self.view.window?.frame.origin.y += keyboardHeight
+                    self.view.window?.frame.origin.y = 0
                 }
             }
         }
