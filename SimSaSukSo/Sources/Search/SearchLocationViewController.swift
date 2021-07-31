@@ -247,14 +247,12 @@ class SearchLocationViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBAction func selectButtonAction(_ sender: Any) {
         
-        let filterVC = self.storyboard?.instantiateViewController(identifier: "SearchFilterViewController")as! SearchFilterViewController
-        
+       
         delegate?.sendlocationName(forShow: nowText)
         //UploadAirbnbSecondStepViewController.airbnbInput.locationId = nowID
         print(nowText)
-        self.present(filterVC, animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension SearchLocationViewController : UITableViewDataSource,RegionCellDelegate{
