@@ -101,6 +101,10 @@ class FeedDetailViewController: UIViewController {
         commentTableView.delegate = self
         commentTableView.dataSource = self
         
+        commentWriteTextField.delegate = self
+        
+        setKeyboardObserver()
+
         print(feedIndex)
     }
     

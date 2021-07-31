@@ -2105,6 +2105,9 @@
                                             <constraint firstItem="vEo-jO-0zS" firstAttribute="leading" secondItem="Lr7-Aw-Bxk" secondAttribute="leading" constant="16" id="zPH-ON-PHo"/>
                                             <constraint firstAttribute="trailing" secondItem="R1T-ZQ-x7H" secondAttribute="trailing" constant="16" id="zXp-nz-oxu"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="2bb-e1-WdT" appends="YES" id="ziQ-WY-CKD"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -2211,6 +2214,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO0-S4-jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2bb-e1-WdT">
+                    <connections>
+                        <action selector="tabGesture:" destination="zuc-eV-Fku" id="M54-rR-SvB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3163.7681159420295" y="-974.33035714285711"/>
         </scene>
