@@ -91,6 +91,7 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         if segue.identifier == "toDetail" {
             let detailVC = segue.destination as! FeedDetailViewController
             detailVC.feedIndex = (sender as! UICollectionViewCell).tag
+            print(detailVC.feedIndex)
         }
     }
     
