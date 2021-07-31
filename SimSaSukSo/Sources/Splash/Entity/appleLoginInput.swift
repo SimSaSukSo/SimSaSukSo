@@ -7,7 +7,8 @@
 
 struct appleLoginInput : Encodable{
     //애플 엑세스 토큰
-    var accessToken : String
-    
+    var appleID : String
+    var email : String
+    var nickname : String
     
 }

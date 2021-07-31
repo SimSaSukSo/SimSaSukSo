@@ -11,6 +11,6 @@ struct appleLoginResponse : Decodable{
     var code : Int
     var message : String
     var token  : String?
-    var errorMessage : String?
+   
     
 }

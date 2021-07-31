@@ -100,6 +100,7 @@ extension SplashViewController : ASAuthorizationControllerDelegate{
                 let userIdentifier = appleIDCredential.user
                 let userFirstName = appleIDCredential.fullName?.givenName
                 let userLastName = appleIDCredential.fullName?.familyName
+            let userFullName = appleIDCredential.fullName?.nickname
                 let userEmail = appleIDCredential.email
                 let jwt = appleIDCredential.identityToken
           
@@ -110,11 +111,13 @@ extension SplashViewController : ASAuthorizationControllerDelegate{
                 print(userLastName)
                 print(userEmail)
                 print(jwt?.base64EncodedString())
+                print(userFullName)
+            
          
-            let input : appleLoginInput = appleLoginInput(accessToken: (jwt?.base64EncodedString())!)
+            let input : appleLoginInput = appleLoginInput(appleID: userIdentifier, email: userEmail!, nickname: userFullName! )
                
                 appleLoginDataManager().appleLogin(parameters: input, viewcontroller: self)
-               
+
                 
                 
             } else if let passwordCredential = authorization.credential as? ASPasswordCredential {

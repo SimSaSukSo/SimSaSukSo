@@ -24,6 +24,8 @@ class appleLoginDataManager{
                         }else if response.code == 1000{
                             //회원 가입
                             viewcontroller.SignUpSuceess()
+                            print(response.token!)
+                            print("회원가입")
                         }
                         
                         
