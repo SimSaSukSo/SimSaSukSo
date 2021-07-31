@@ -11,16 +11,9 @@ class SearchResultViewController: UIViewController {
     
     lazy var dataManager = SearchDataManager()
     
-    //let input = SearchImageRequest(pros: <#T##[Int]#>, cons: <#T##[Int]#>, minPrice: <#T##Int#>, maxPrice: <#T##Int#>, locationIdx: <#T##Int#>, interval: <#T##String#>)
-    
     var searchResults: [SearchImageResult] = []
     
-    var pros: [Int] = []
-    var cons: [Int] = []
-    var minPrice = ""
-    var maxPrice = ""
-    var interval = ""
-    var locationId = 0
+    var input = SearchImageRequest(pros: [], cons: [], minPrice: 0, maxPrice: 0, locationIdx: 0, interval: "")
     
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
@@ -37,7 +30,7 @@ class SearchResultViewController: UIViewController {
         
         //dataManager.searchImage(input, delegate: self)
         
-        print(pros)
+        print(input)
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
