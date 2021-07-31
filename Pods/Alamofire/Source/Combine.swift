@@ -270,7 +270,7 @@ public struct DataStreamPublisher<Value>: Publisher {
             case let .stream(result):
                 return result
             // If the stream has completed with an error, send the error value downstream as a `.failure`.
-            case let .complete(completion):
+            case let .completeButtonAction(completion):
                 return completion.error.map(Result.failure)
             }
         }
@@ -314,7 +314,7 @@ public struct DataStreamPublisher<Value>: Publisher {
             self.downstream = nil
             streamHandler { stream in
                 _ = downstream.receive(stream)
-                if case .complete = stream.event {
+                if case .completeButtonAction = stream.event {
                     downstream.receive(completion: .finished)
                 }
             }.resume()

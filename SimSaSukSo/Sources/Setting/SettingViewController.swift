@@ -8,6 +8,8 @@
 import UIKit
 
 class SettingViewController : UIViewController {
+    
+    lazy var dataManager = SettingDataManager()
 
     @IBOutlet var settingStackView: UIStackView!
     
@@ -35,6 +37,11 @@ class SettingViewController : UIViewController {
         let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")
         self.present(profileVC!, animated: false, completion: nil)
     }
+    
+    @IBAction func userDeleteButtonAction(_ sender: UIButton) {
+        //dataManager.userDelete(delegate: self)
+    }
+    
     
     
 }

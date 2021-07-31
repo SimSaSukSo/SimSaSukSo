@@ -418,7 +418,7 @@
                                                                         <segue destination="is0-H6-qH9" kind="modal" identifier="toDelete" animates="NO" id="sep-71-8JT"/>
                                                                     </connections>
                                                                 </button>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="친구들이랑 호캉스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-rr-mQQ">
+                                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="친구들이랑 호캉스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5c-rr-mQQ">
                                                                     <rect key="frame" x="0.0" y="4" width="322" height="43"/>
                                                                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <color key="tintColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
