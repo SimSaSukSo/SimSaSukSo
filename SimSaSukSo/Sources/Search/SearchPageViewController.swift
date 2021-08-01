@@ -16,9 +16,12 @@ class SearchPageViewController: UIPageViewController {
         let storyBoard = UIStoryboard(name: "SearchStoryboard", bundle: nil)
         
         let vc0 = storyBoard.instantiateViewController(identifier: "SearchAllTableViewController")as!SearchAllTableViewController
+        let vc1 = storyBoard.instantiateViewController(identifier: "SearchHotelViewController")as!SearchHotelViewController
+        let vc2 = storyBoard.instantiateViewController(identifier: "SearchTagsViewController")as!SearchTagsViewController
+        
+        return [vc0, vc1, vc2]
         
         
-        return [vc0]
         
     } ()
     

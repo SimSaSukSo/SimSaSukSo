@@ -75,8 +75,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.84313725490196079" blue="0.6705882352941176" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bUD-CA-fd5" kind="relationship" relationship="viewControllers" id="jd0-uw-5HR"/>

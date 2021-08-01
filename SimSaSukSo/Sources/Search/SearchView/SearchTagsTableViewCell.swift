@@ -9,6 +9,9 @@ import UIKit
 
 class SearchTagsTableViewCell: UITableViewCell {
 
+  
+    @IBOutlet var firstLabel: UILabel!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

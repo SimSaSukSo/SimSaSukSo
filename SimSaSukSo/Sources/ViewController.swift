@@ -33,10 +33,10 @@ class ViewController : UITabBarController{
     
     func setTabBarTextColor(){
         // 기본적인 tabBar의 글자색을 지정해준다.
-        self.tabBar.tintColor = UIColor(hex: 0x222222)
+        //self.tabBar.tintColor = UIColor(hex: 0x222222)
         
         //tabBar가 선택되지 않았을때의 색을 지정해준다.
-        self.tabBar.unselectedItemTintColor = UIColor(hex: 0xA6B0BA)
+        //self.tabBar.unselectedItemTintColor = UIColor(hex: 0xA6B0BA)
         
     }
     

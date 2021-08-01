@@ -10,7 +10,8 @@ import UIKit
 class SearchViewController : UIViewController{
     
     var pageViewController: SearchPageViewController!
-    
+    var Lodging :SearchLodgingsRequest? = SearchLodgingsRequest(lodgings: "")
+    var tags : SearchTagRequest? = SearchTagRequest(tag: "")
     var filteredArray: [String] = []
     
     var searchWord : String = ""
@@ -56,22 +57,22 @@ class SearchViewController : UIViewController{
         buttonLists.append(allButton)
         buttonLists.append(houseButton)
         buttonLists.append(tagButton)
-        buttonLists.append(locationButton)
+        //buttonLists.append(locationButton)
         
         allButton.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
         houseButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         tagButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
-        locationButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+       // locationButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         
         lineViewLists.append(allLineView)
         lineViewLists.append(houseLineView)
         lineViewLists.append(tagLineView)
-        lineViewLists.append(locationLineView)
+       // lineViewLists.append(locationLineView)
         
         allLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         houseLineView.backgroundColor = .clear
         tagLineView.backgroundColor = .clear
-        locationLineView.backgroundColor = .clear
+       // locationLineView.backgroundColor = .clear
 
     }
     
@@ -208,9 +209,19 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         airButton.setTitle("'\(searchBar.text!)'가 포함된 에어비앤비 숙소 모아보기", for: .normal)
     searchWord = searchBar.text!
+        Lodging?.lodgings = searchWord
+        tags?.tag = searchWord
+        
         SearchDataManager().searchAll(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/total?searchWord=\(searchWord)")
-//        searchDelegate?.searchWord(data: searchBar.text!)
-        print(searchBar.text!)
+        SearchDataManager().searchHotel(self.Lodging!, delegate: self)
+        SearchDataManager().searchTags(self.tags!, delegate: self)
+        
+//
+//
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tagDataNotif"), object: nil)
+        
+        searchBar.text = ""
+       
         
     }
     
@@ -222,20 +233,36 @@ extension SearchViewController {
         SearchAllTableViewController.lodgings = result.result!.lodging!
         SearchAllTableViewController.searchWord = self.searchWord
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-        print("내용 : \(SearchAllTableViewController.lodgings)")
-        print("단어 : \(SearchAllTableViewController.searchWord)")
-        searchBar.text = ""
+        print(" all내용 : \(SearchAllTableViewController.lodgings)")
+        print("all단어 : \(SearchAllTableViewController.searchWord)")
+        
+        
+        
+    }
+    
+    
+    func searchHotel(result : SearchLodgingsResponse){
+        SearchHotelViewController.lodgings = result.result!
+        SearchHotelViewController.searchWord = self.searchWord
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        print("hotel내용 : \(SearchHotelViewController.lodgings)")
+        print("hotel단어 : \(SearchHotelViewController.searchWord)")
+      
+        
     }
     
     func searchTags(result : SearchTagResponse ){
-//        SearchAllTableViewController.lodgings = result.result!.lodging!
-//        SearchAllTableViewController.searchWord = self.searchWord
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-//        print("내용 : \(SearchAllTableViewController.lodgings)")
-//        print("단어 : \(SearchAllTableViewController.searchWord)")
-//        searchBar.text = ""
+        SearchTagsViewController.keywords = result.result!
+        SearchTagsViewController.searchWord = self.searchWord
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        print("tag내용 : \(SearchTagsViewController.keywords)")
+        
+        
         
     }
+    
+    
     
     func failedToRequest(message: String) {
         self.presentAlert(title: message)

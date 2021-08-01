@@ -10,7 +10,9 @@ import UIKit
 
 class SearchAllTableViewController: UIViewController {
 
-   
+    
+    
+    
     @IBOutlet var searchAllTableView: UITableView!
     
     lazy var dataManager = SearchDataManager()
@@ -22,7 +24,8 @@ class SearchAllTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+
        
         
     }
@@ -30,7 +33,7 @@ class SearchAllTableViewController: UIViewController {
     @objc func refresh() {
 
        self.searchAllTableView.reloadData() // a refresh the tableView.
-
+       
    }
 
 }
