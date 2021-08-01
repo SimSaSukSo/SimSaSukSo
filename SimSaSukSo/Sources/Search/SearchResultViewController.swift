@@ -12,11 +12,12 @@ class SearchResultViewController: UIViewController {
     lazy var dataManager = SearchDataManager()
     
     var searchResults: [SearchImageResult] = []
+    var searchIndexResults: [SearchLodgingIndexResult] = []
     
     var input = SearchImageRequest(pros: [], cons: [], minPrice: 0, maxPrice: 0, locationIdx: 0, interval: "")
     
     var searchResultName = ""
-        
+    
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
@@ -30,9 +31,15 @@ class SearchResultViewController: UIViewController {
         
         self.resultCollectionView.collectionViewLayout = CustomCircularCollectionViewLayout()
         
-        dataManager.searchImage(input, delegate: self)
+        if input.locationIdx == 0 {
+            dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/1")
+            searchResultLabel.text = "'\(searchResultName)' 검색결과"
+        } else {
+            dataManager.searchImage(input, delegate: self)
+            searchResultLabel.text = "필터된 검색결과"
+        }
         
-        searchResultLabel.text = "'\(searchResultName)' 검색결과"
+        
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -54,23 +61,42 @@ class SearchResultViewController: UIViewController {
 //MARK: - CollectionView
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchResults.count
+        if input.locationIdx == 0 {
+            return searchIndexResults.count
+        } else {
+            return searchResults.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultCollectionViewCell", for: indexPath) as! SearchResultCollectionViewCell
         
-        let searchResult = searchResults[indexPath.row]
-        // 이미지 URL 가져오기
-        let urlString = searchResult.source
-        if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.searchImageView.image = UIImage(data: data)
+        if input.locationIdx == 0 { // 숙소검색2
+            let searchResult = searchIndexResults[indexPath.row]
+            // 이미지 URL 가져오기
+            let urlString = searchResult.source
+            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+               let url = URL(string: urlstring),
+               let data = try? Data(contentsOf: url) {
+                cell.searchImageView.image = UIImage(data: data)
+                
+                cell.tag = searchResult.feedIndex
+            }
+        } else { // 필터검색
+            let searchResult = searchResults[indexPath.row]
+            // 이미지 URL 가져오기
+            let urlString = searchResult.source
+            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+               let url = URL(string: urlstring),
+               let data = try? Data(contentsOf: url) {
+                cell.searchImageView.image = UIImage(data: data)
+                
+                cell.tag = searchResult.feedIndex!
+            }
+        
         }
-        
-        cell.tag = searchResult.feedIndex!
-        
+
         return cell
     }
     
@@ -108,6 +134,12 @@ extension SearchResultViewController {
         resultNumberLabel.text = String(result.result!.count) + "개"
         resultCollectionView.reloadData()
         
+    }
+    
+    func searchLodgingIndex(result: SearchLodgingIndexResponse) {
+        searchIndexResults = result.result!
+        resultNumberLabel.text = String(result.result!.count) + "개"
+        resultCollectionView.reloadData()
     }
     
     func failedToRequest(message: String) {

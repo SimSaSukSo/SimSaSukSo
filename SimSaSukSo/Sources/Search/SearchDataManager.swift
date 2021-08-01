@@ -77,7 +77,7 @@ class SearchDataManager {
     }
     
     // 숙소인덱스 검색
-    func searchLodgingIndex(delegate: SearchAllTableViewController, url: String) {
+    func searchLodgingIndex(delegate: SearchResultViewController, url: String) {
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: SearchLodgingIndexResponse.self) { response in
