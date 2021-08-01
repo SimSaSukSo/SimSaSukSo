@@ -67,7 +67,7 @@ class UploadViewController : UIViewController {
                 return
             } else {
                 print("성공")
-                UploadViewController.urlArray.append("firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=875ce4bc-62cd-41b2-a4fd-e253e50d6a21")
+                UploadViewController.urlArray.append("https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=a96089a6-7933-4bd9-953a-631ede902ba2")
             }
         }
 
@@ -156,10 +156,11 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             if cell.numberLabel.isHidden == false { // 선택된
+                uploadImage(image: cell.photoCellImageView.image!)
             }
         }
         
-        uploadImage(image: cell.photoCellImageView.image!)
+       
            
     }
     
