@@ -20,6 +20,7 @@ class SearchResultViewController: UIViewController {
     var searchResultName = ""
     
     var lodgingIndex = 0
+    var tag = ""
     var isTag: Bool?
     
     @IBOutlet var searchResultLabel: UILabel!
@@ -39,10 +40,8 @@ class SearchResultViewController: UIViewController {
             searchResultLabel.text = "'\(searchResultName)' 검색결과"
             if isTag == false { // 전체, 숙소
                 dataManager.searchLodgingIndex(delegate: self, url: "\(Constant.BASE_URL)api/feeds/search/lodging/\(lodgingIndex)")
-                print("전체,숙소")
             } else {
-                dataManager.searchTagImage(delegate: self, url: "\(Constant.BASE_URL)api/feeds/search/tag?tag=호")
-                print("tag")
+                dataManager.searchTagImage(delegate: self, url: "\(Constant.BASE_URL)api/feeds/search/tag?tag=\(tag)")
             }
             
         } else {
@@ -138,7 +137,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         let feedVC = feedStoryboard.instantiateViewController(withIdentifier: "FeedDetailViewController") as! FeedDetailViewController
         
         feedVC.feedIndex = cell.tag
-        
+        print(tag)
         self.present(feedVC, animated: true, completion: nil)
         
     }

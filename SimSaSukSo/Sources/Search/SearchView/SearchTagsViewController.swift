@@ -57,14 +57,16 @@ extension SearchTagsViewController : UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTagsTableViewCell", for: indexPath) as! SearchTagsTableViewCell
         
         let keyword = SearchTagsViewController.keywords[indexPath.row]
-        //cell.tag =
-        
-        print(cell.tag)
+        cell.firstLabel.text = keyword.keyword
         
         let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
         
-        //searchResultVC.lodgingIndex = cell.tag
         searchResultVC.isTag = true
+        searchResultVC.tag = cell.firstLabel.text!
+        searchResultVC.searchResultName = cell.firstLabel.text!
+        
+        print(cell.firstLabel.text!)
+        
         self.present(searchResultVC, animated: true, completion: nil)
     }
     

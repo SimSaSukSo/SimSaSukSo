@@ -169,7 +169,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
         Lodging?.lodgings = searchWord
         tags?.tag = searchWord
         
-        SearchDataManager().searchAll(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/total?searchWord=\(searchWord)")
+        SearchDataManager().searchAll(delegate: self, url: "\(Constant.BASE_URL)api/feeds/search/total?searchWord=\(searchWord)")
         SearchDataManager().searchHotel(self.Lodging!, delegate: self)
         SearchDataManager().searchTags(self.tags!, delegate: self)
         

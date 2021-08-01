@@ -59,6 +59,7 @@ extension SearchHotelViewController : UITableViewDelegate,UITableViewDataSource{
         
         let lodging = SearchHotelViewController.lodgings[indexPath.row]
         cell.tag = lodging.generalLodgingIndex
+        cell.firstLabel.text = lodging.name
         
         print(cell.tag)
         
@@ -66,6 +67,7 @@ extension SearchHotelViewController : UITableViewDelegate,UITableViewDataSource{
        
         searchResultVC.lodgingIndex = cell.tag
         searchResultVC.isTag = false
+        searchResultVC.searchResultName = cell.firstLabel.text!
         
         self.present(searchResultVC, animated: true, completion: nil)
     }
