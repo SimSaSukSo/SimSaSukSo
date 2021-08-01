@@ -70,6 +70,11 @@ class SettingViewController : UIViewController {
 extension SettingViewController {
     func userDelete(result: UserDeleteResponse) {
         self.presentAlert(title: "회원탈퇴 성공")
+        let splashStoryboard = UIStoryboard.init(name: "SplashStoryboard", bundle: nil)
+        
+        let splashVC = splashStoryboard.instantiateViewController(identifier: "SplashViewController") as! SplashViewController
+        
+        self.changeRootViewController(splashVC)
     }
     
     func failedToRequest(message: String) {
@@ -77,8 +82,8 @@ extension SettingViewController {
     }
     
     func userDeleteAction() {
-        //dataManager.userDelete(delegate: self)
-        print("탈퇴")
+        dataManager.userDelete(delegate: self)
+        
     }
     
     func logout() {
