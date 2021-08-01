@@ -10,9 +10,9 @@ import UIKit
 class FavoritesViewController : UIViewController {
 
     lazy var dataManager = FavoriteDataManager()
-    
+    var favoriteResult : FavoriteResult = FavoriteResult(savedListIndex: 0, title: "", sources: [])
     var favoriteLists: [FavoriteResult] = []
-    
+    static var indexList : [Int] = []
     @IBOutlet var favoriteCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -49,6 +49,7 @@ class FavoritesViewController : UIViewController {
 extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        print(favoriteLists.count)
         return favoriteLists.count
     }
     
@@ -61,6 +62,9 @@ extension FavoritesViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.stackView.layer.cornerRadius = 10
         cell.titleLabel.text = favoriteList.title
         cell.tag = favoriteList.savedListIndex
+       
+        FavoritesViewController.indexList.append(cell.tag)
+        print(FavoritesViewController.indexList)
         
         // 이미지 넣기
         for i in 0..<favoriteList.sources.count {
@@ -111,6 +115,20 @@ extension FavoritesViewController {
     
     func favoriteLists(result: FavoriteResponse) {
         favoriteLists = result.result!
+       // print("count : \(favoriteLists.count)")
+//        if favoriteLists.count > 0{
+//
+//            for i in 0...favoriteLists.count - 1{
+//
+//                var favoriteList = favoriteLists[i]
+//
+//                FavoritesViewController.indexList.append(favoriteList.savedListIndex)
+//                print(favoriteList.savedListIndex)
+//                print("indexlist : \(FavoritesViewController.indexList)")
+//            }
+//        }
+        
+        
         favoriteCollectionView.reloadData()
     }
     

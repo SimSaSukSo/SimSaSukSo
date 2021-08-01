@@ -35,6 +35,8 @@ class DeleteAlertViewController: UIViewController {
         self.present(editVC!, animated: false, completion: nil)
     }
     @IBAction func deleteButtonAction(_ sender: UIButton) {
+       
+        
         contentsLabel.text = "'\(titleLabel)' 목록이 삭제되었습니다."
         deleteButton.isHidden = true
         backButton.isHidden = true
