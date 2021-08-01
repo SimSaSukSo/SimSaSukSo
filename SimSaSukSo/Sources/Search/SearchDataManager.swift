@@ -91,4 +91,21 @@ class SearchDataManager {
             }
     }
     
+    // 태그 이미지 검색
+    func searchTagImage(delegate: SearchResultViewController, url: String) {
+        let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let urlResult = URL(string: encodedString)!
+        AF.request(urlResult, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: SearchTagImageResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.searchTagImage(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
+    
 }

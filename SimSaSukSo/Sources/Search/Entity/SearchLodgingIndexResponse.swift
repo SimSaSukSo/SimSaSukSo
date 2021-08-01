@@ -15,5 +15,5 @@ struct SearchLodgingIndexResponse: Decodable {
 struct SearchLodgingIndexResult: Decodable {
     var feedIndex: Int
     var feedImageIndex: Int
-    var source: String?
+    var source: String
 }

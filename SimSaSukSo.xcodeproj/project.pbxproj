@@ -19,6 +19,7 @@
 		A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */; };
 		A54C3507268B98C900D6F839 /* ClearNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C3506268B98C900D6F839 /* ClearNavigationController.swift */; };
 		A54D361126B6C2FC00884E6B /* SearchLodgingIndexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D361026B6C2FC00884E6B /* SearchLodgingIndexResponse.swift */; };
+		A54D361426B6F3B400884E6B /* SearchTagImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D361326B6F3B400884E6B /* SearchTagImageResponse.swift */; };
 		A54D8D6026B59FB30037B883 /* SearchLodgingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */; };
 		A54D8D6326B5A0670037B883 /* SearchLodgingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */; };
 		A54D8D6626B5A0B70037B883 /* SearchAllResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */; };
@@ -215,6 +216,7 @@
 		A54C3501268B70E400D6F839 /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
 		A54C3506268B98C900D6F839 /* ClearNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationController.swift; sourceTree = "<group>"; };
 		A54D361026B6C2FC00884E6B /* SearchLodgingIndexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingIndexResponse.swift; sourceTree = "<group>"; };
+		A54D361326B6F3B400884E6B /* SearchTagImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagImageResponse.swift; sourceTree = "<group>"; };
 		A54D8D5F26B59FB30037B883 /* SearchLodgingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingsResponse.swift; sourceTree = "<group>"; };
 		A54D8D6226B5A0670037B883 /* SearchLodgingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLodgingsRequest.swift; sourceTree = "<group>"; };
 		A54D8D6526B5A0B70037B883 /* SearchAllResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllResponse.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				A54D8D9326B5CAC00037B883 /* SearchTagResponse.swift */,
 				A54D8D9626B5CB4B0037B883 /* SearchTagRequest.swift */,
 				A54D361026B6C2FC00884E6B /* SearchLodgingIndexResponse.swift */,
+				A54D361326B6F3B400884E6B /* SearchTagImageResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1355,6 +1358,7 @@
 				A59DDBE02686456C008D4AF9 /* BestHashtagCollectionViewCell.swift in Sources */,
 				A54E95A926B4162A005B6F18 /* SearchImageRequest.swift in Sources */,
 				A75EAEC8269441D900B34597 /* UploadGeneralFifthStepViewController.swift in Sources */,
+				A54D361426B6F3B400884E6B /* SearchTagImageResponse.swift in Sources */,
 				A56796382685D6CC00CAB9F6 /* HomeTabViewController.swift in Sources */,
 				A74AB1A626AD24A10038A1C1 /* UploadAirbnbInput.swift in Sources */,
 				A567962F2685D6B100CAB9F6 /* MyFeedTagCollectionViewCell.swift in Sources */,

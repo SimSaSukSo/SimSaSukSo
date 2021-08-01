@@ -13,12 +13,14 @@ class SearchResultViewController: UIViewController {
     
     var searchResults: [SearchImageResult] = []
     var searchIndexResults: [SearchLodgingIndexResult] = []
+    var searchTagResults: [SearchTagImageResult] = []
     
     var input = SearchImageRequest(pros: [], cons: [], minPrice: 0, maxPrice: 0, locationIdx: 0, interval: "")
     
     var searchResultName = ""
     
     var lodgingIndex = 0
+    var isTag: Bool?
     
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
@@ -34,9 +36,15 @@ class SearchResultViewController: UIViewController {
         self.resultCollectionView.collectionViewLayout = CustomCircularCollectionViewLayout()
         
         if input.locationIdx == 0 {
-            dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/\(lodgingIndex)")
             searchResultLabel.text = "'\(searchResultName)' 검색결과"
-           
+            if isTag == false { // 전체, 숙소
+                dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/\(lodgingIndex)")
+                print("전체,숙소")
+            } else {
+                dataManager.searchTagImage(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/tag?tag=호")
+                print("tag")
+            }
+            
         } else {
             dataManager.searchImage(input, delegate: self)
             searchResultLabel.text = "필터된 검색결과"
@@ -65,8 +73,12 @@ class SearchResultViewController: UIViewController {
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if input.locationIdx == 0 {
-            return searchIndexResults.count
-        } else {
+            if isTag == false { // 전체, 숙소
+                return searchIndexResults.count
+            } else {
+                return searchTagResults.count
+            }
+        } else { // 필터
             return searchResults.count
         }
         
@@ -75,18 +87,32 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchResultCollectionViewCell", for: indexPath) as! SearchResultCollectionViewCell
         
-        if input.locationIdx == 0 { // 숙소검색2
-            let searchResult = searchIndexResults[indexPath.row]
-            // 이미지 URL 가져오기
-            let urlString = searchResult.source
-            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                cell.searchImageView.image = UIImage(data: data)
-                
-                cell.tag = searchResult.feedIndex
+        if input.locationIdx == 0 { // 전체, 숙소
+            if isTag == false {
+                let searchResult = searchIndexResults[indexPath.row]
+                // 이미지 URL 가져오기
+                let urlString = searchResult.source
+                if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                   let url = URL(string: urlstring),
+                   let data = try? Data(contentsOf: url) {
+                    cell.searchImageView.image = UIImage(data: data)
+                    
+                    cell.tag = searchResult.feedIndex
+                    }
+                } else {
+                    let searchResult = searchTagResults[indexPath.row]
+                    // 이미지 URL 가져오기
+                    let urlString = searchResult.source
+                    if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                       let url = URL(string: urlstring),
+                       let data = try? Data(contentsOf: url) {
+                        cell.searchImageView.image = UIImage(data: data)
+                        
+                        cell.tag = searchResult.feedIndex
+                }
+            
             }
-        } else { // 필터검색
+        } else { // 필터
             let searchResult = searchResults[indexPath.row]
             // 이미지 URL 가져오기
             let urlString = searchResult.source
@@ -98,8 +124,8 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                 cell.tag = searchResult.feedIndex!
             }
         
-        }
-
+            }
+        
         return cell
     }
     
@@ -141,6 +167,12 @@ extension SearchResultViewController {
     
     func searchLodgingIndex(result: SearchLodgingIndexResponse) {
         searchIndexResults = result.result!
+        resultNumberLabel.text = String(result.result!.count) + "개"
+        resultCollectionView.reloadData()
+    }
+    
+    func searchTagImage(result: SearchTagImageResponse) {
+        searchTagResults = result.result!
         resultNumberLabel.text = String(result.result!.count) + "개"
         resultCollectionView.reloadData()
     }
