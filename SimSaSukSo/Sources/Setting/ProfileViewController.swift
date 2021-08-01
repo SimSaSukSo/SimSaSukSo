@@ -39,24 +39,9 @@ class ProfileViewController: UIViewController {
         cameraButton.layer.shadowOffset = CGSize(width: 3, height: 3)
         cameraButton.layer.shadowOpacity = 0.2
         cameraButton.layer.shadowRadius = 0.8
-    }
-    
-    // Firebase 업로드
-    func uploadImage(image: UIImage) {
-        var data = Data()
-        data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "프로필 사진"
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data, metadata: metaData) {
-            (metaData, error) in if let error = error {
-                print("실패")
-                return
-            } else {
-                print("성공")
-            }
-        }
-
+        
+        downloadImage(imageView: userProfileImageView)
+        
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -64,9 +49,6 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
-        if cameraButton.isSelected {
-            saveButton.titleLabel?.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        }
         uploadImage(image: userProfileImageView.image!)
         let input = ProfileImageRequest(profileUrl: "https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/프로필%20사진?alt=media&token=10360d60-d51d-45fc-b2ee-609b6c417bbe")
         dataManager.profileImage(input, delegate: self)
@@ -114,7 +96,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
             present(imagePicker, animated: true, completion: nil)
         }
         else {
-            print("사진 촬영 실패")
+            self.presentAlert(title: "카메라 안됨")
         }
     
     }
@@ -124,30 +106,29 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
             flagImageSave = false
             
             imagePicker.sourceType = .photoLibrary
-            //imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.mediaTypes = [kUTTypeImage as String]
             imagePicker.allowsEditing = true
-            
+           
             present(imagePicker, animated: true, completion: nil)
         }
         else {
-            print("사진 불러오기 실패")
+            self.presentAlert(title: "앨범 안됨")
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        var newImage: UIImage? = nil // update 할 이미지
         
-        if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
-            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            
-            if flagImageSave {
-                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
-            }
-            
-        userProfileImageView.image = captureImage
-    }
-        self.dismiss(animated: true, completion: nil)
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = possibleImage // 수정된 이미지 있을 경우
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = possibleImage // 원본 이미지가 있을 경우
+        }
+        self.userProfileImageView.image = newImage
+        saveButton.setTitleColor(#colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1), for: .normal)
+        picker.dismiss(animated: true, completion: nil)
+ 
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -155,10 +136,40 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     }
     
 }
+//MARK: - Firebase
+extension ProfileViewController {
+    // Firebase 업로드
+    func uploadImage(image: UIImage) {
+        var data = Data()
+        data = image.jpegData(compressionQuality: 0.8)!
+        let filePath = "프로필 사진"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in if let error = error {
+                print("실패")
+                return
+            } else {
+                print("성공")
+            }
+        }
+
+    }
+    
+    // Firebase 다운로드
+    func downloadImage(imageView: UIImageView) {
+        storage.reference(forURL: "gs://simsasukso.appspot.com/프로필 사진").downloadURL { (url, error) in
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            imageView.image = image
+        }
+    }
+}
 //MARK: - API
 extension ProfileViewController {
     func profileImage(_ reuslt: ProfileImageResponse) {
         self.presentAlert(title: "프로필 사진 변경 완료")
+        dismiss(animated: true, completion: nil)
     }
     
     func failedToRequest(message: String) {
