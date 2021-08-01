@@ -23,7 +23,8 @@ class SearchAllTableViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         
-        
+        searchAllTableView.delegate = self
+        searchAllTableView.dataSource = self
         
     }
     
