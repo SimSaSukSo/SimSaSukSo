@@ -189,9 +189,13 @@ extension SearchViewController {
     func searchAll(result: SearchAllResponse) {
         SearchAllTableViewController.lodgings = result.result!.lodging!
         SearchAllTableViewController.searchWord = self.searchWord
+        SearchAllTableViewController.alltags = result.result!.tag!
+        
+        SearchAllTableViewController.count = 0
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         print(" all내용 : \(SearchAllTableViewController.lodgings)")
         print("all단어 : \(SearchAllTableViewController.searchWord)")
+        print("all tag : \(SearchAllTableViewController.alltags)")
         
     }
     
@@ -199,6 +203,7 @@ extension SearchViewController {
     func searchHotel(_ result : SearchLodgingsResponse){
         SearchHotelViewController.lodgings = result.result!
         SearchHotelViewController.searchWord = self.searchWord
+        
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         print("hotel내용 : \(SearchHotelViewController.lodgings)")

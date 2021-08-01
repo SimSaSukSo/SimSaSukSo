@@ -31,6 +31,10 @@ class UploadAirbnbSecondStepViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectRegionButton.layer.borderWidth = 1
+        selectRegionButton.layer.borderColor = #colorLiteral(red: 0.9098039216, green: 0.9215686275, blue: 0.9333333333, alpha: 1)
+        selectRegionButton.layer.cornerRadius = 4
+        
         nextButton.isEnabled = false
         locationTextfiled.delegate = self
         
