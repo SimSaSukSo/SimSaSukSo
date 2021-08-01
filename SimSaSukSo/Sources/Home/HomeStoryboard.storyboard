@@ -35,7 +35,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-Wa-fBQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1450"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1365"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dpw-Gw-kd6" userLabel="sliderCollectionView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -415,7 +415,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjN-f5-i7h">
-                                                <rect key="frame" x="16" y="1014" width="398" height="386"/>
+                                                <rect key="frame" x="16" y="1014" width="398" height="351"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신뢰도가 가장 높은 게시물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5Y-N8-4lF">
                                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="24"/>
@@ -429,8 +429,8 @@
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-Nz-hyS">
-                                                        <rect key="frame" x="0.0" y="62" width="398" height="374"/>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-Nz-hyS">
+                                                        <rect key="frame" x="0.0" y="62" width="398" height="289"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BestBelievesTableViewCell" rowHeight="96" id="TV2-Kl-H9T" customClass="BestBelievesTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
@@ -547,11 +547,11 @@
                                             <constraint firstItem="wjN-f5-i7h" firstAttribute="top" secondItem="KWy-q6-WE0" secondAttribute="bottom" constant="32" id="EMc-8o-FaI"/>
                                             <constraint firstAttribute="trailing" secondItem="u62-qL-ZjQ" secondAttribute="trailing" id="Frc-rA-4Bs"/>
                                             <constraint firstAttribute="bottom" secondItem="ckA-Nz-hyS" secondAttribute="bottom" id="Jy7-z8-fWa"/>
-                                            <constraint firstAttribute="height" constant="1450" id="KJB-0X-p7h"/>
+                                            <constraint firstAttribute="height" constant="1365" id="KJB-0X-p7h"/>
                                             <constraint firstItem="1AD-Fo-4si" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="L7j-Df-XX3"/>
                                             <constraint firstItem="u62-qL-ZjQ" firstAttribute="top" secondItem="1AD-Fo-4si" secondAttribute="bottom" constant="32" id="MWG-KR-8Er"/>
                                             <constraint firstAttribute="trailing" secondItem="wjN-f5-i7h" secondAttribute="trailing" id="Mra-T2-oAO"/>
-                                            <constraint firstAttribute="bottom" secondItem="wjN-f5-i7h" secondAttribute="bottom" constant="50" id="Mz0-A0-EIy"/>
+                                            <constraint firstAttribute="bottom" secondItem="wjN-f5-i7h" secondAttribute="bottom" id="Mz0-A0-EIy"/>
                                             <constraint firstItem="KWy-q6-WE0" firstAttribute="leading" secondItem="4Au-Wa-fBQ" secondAttribute="leading" constant="16" id="NQG-60-b4c"/>
                                             <constraint firstAttribute="trailing" secondItem="VB7-vR-1bk" secondAttribute="trailing" id="TTa-Vf-oen"/>
                                             <constraint firstAttribute="trailing" secondItem="1AD-Fo-4si" secondAttribute="trailing" id="Y40-bt-hyy"/>

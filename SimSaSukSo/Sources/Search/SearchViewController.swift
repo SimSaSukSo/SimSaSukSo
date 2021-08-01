@@ -56,22 +56,22 @@ class SearchViewController : UIViewController{
         buttonLists.append(allButton)
         buttonLists.append(houseButton)
         buttonLists.append(tagButton)
-        buttonLists.append(locationButton)
+        //buttonLists.append(locationButton)
         
         allButton.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
         houseButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         tagButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
-        locationButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+       // locationButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         
         lineViewLists.append(allLineView)
         lineViewLists.append(houseLineView)
         lineViewLists.append(tagLineView)
-        lineViewLists.append(locationLineView)
+       // lineViewLists.append(locationLineView)
         
         allLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         houseLineView.backgroundColor = .clear
         tagLineView.backgroundColor = .clear
-        locationLineView.backgroundColor = .clear
+       // locationLineView.backgroundColor = .clear
 
     }
     
