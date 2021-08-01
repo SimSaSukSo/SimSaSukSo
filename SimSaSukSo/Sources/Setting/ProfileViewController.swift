@@ -114,7 +114,7 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
             present(imagePicker, animated: true, completion: nil)
         }
         else {
-            print("사진 촬영 실패")
+            self.presentAlert(title: "카메라 안됨")
         }
     
     }
@@ -124,30 +124,28 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
             flagImageSave = false
             
             imagePicker.sourceType = .photoLibrary
-            //imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.mediaTypes = [kUTTypeImage as String]
             imagePicker.allowsEditing = true
-            
+           
             present(imagePicker, animated: true, completion: nil)
         }
         else {
-            print("사진 불러오기 실패")
+            self.presentAlert(title: "앨범 안됨")
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        var newImage: UIImage? = nil // update 할 이미지
         
-        if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
-            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            
-            if flagImageSave {
-                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
-            }
-            
-        userProfileImageView.image = captureImage
-    }
-        self.dismiss(animated: true, completion: nil)
+        if let possibleImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            newImage = possibleImage // 수정된 이미지 있을 경우
+        } else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            newImage = possibleImage // 원본 이미지가 있을 경우
+        }
+        self.userProfileImageView.image = newImage
+        picker.dismiss(animated: true, completion: nil)
+ 
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
