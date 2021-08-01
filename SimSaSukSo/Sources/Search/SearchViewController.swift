@@ -47,6 +47,7 @@ class SearchViewController : UIViewController{
         setupSearchBar()
         setupLists()
         
+        airButton.setTitle("", for: .normal)
     }
     
     //MARK: - Fuction
