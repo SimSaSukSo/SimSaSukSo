@@ -66,8 +66,8 @@ class FeedDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataManager.feedView(delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)")
-        dataManager.feedComment(url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
+        dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
+        dataManager.feedComment(url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
         
         self.navigationController?.navigationBar.isTransparent = true
         self.navigationController?.navigationBar.tintColor = .clear
@@ -140,19 +140,19 @@ class FeedDetailViewController: UIViewController {
         if heartButton.isSelected {
             if heartButton.currentImage == UIImage(named: "heart_fill") {
                 heartButton.setImage(UIImage(named: "heart"), for: .normal)
-                dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+                dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
             } else {
                 heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-                dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+                dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
             }
             
         } else {
             if heartButton.currentImage == UIImage(named: "heart") {
                 heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-                dataManager.dislikeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/like")
+                dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
             } else {
                 heartButton.setImage(UIImage(named: "heart"), for: .normal)
-                dataManager.likeCheck(input, delegate: self, url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/dislike")
+                dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
             }
             
         }
@@ -190,7 +190,7 @@ class FeedDetailViewController: UIViewController {
         print("게시")
         saveComment = commentWriteTextField.text ?? "좋아보여요!"
         print(saveComment)
-        dataManager.writeFeedComment(text: saveComment, url:  "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
+        dataManager.writeFeedComment(text: saveComment, url:  "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
        
 
     }

@@ -55,7 +55,19 @@ extension SearchHotelViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("무야호")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchHotelTableViewCell", for: indexPath) as! AllTableViewCell
+        
+        let lodging = SearchHotelViewController.lodgings[indexPath.row]
+        cell.tag = lodging.generalLodgingIndex
+        
+        print(cell.tag)
+        
+        let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
+       
+        searchResultVC.lodgingIndex = cell.tag
+        searchResultVC.isTag = false
+        
+        self.present(searchResultVC, animated: true, completion: nil)
     }
     
 }

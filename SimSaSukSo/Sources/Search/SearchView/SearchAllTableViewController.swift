@@ -18,7 +18,6 @@ class SearchAllTableViewController: UIViewController {
     
     static var searchWord = "s"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
@@ -49,33 +48,24 @@ extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSour
         cell.firstLabel.text = lodging.name
         cell.secondLabel.text = lodging.address
         
-        cell.tag = lodging.generalLodgingIndex
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
         
-        dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/\(cell.tag)")
+        let lodging = SearchAllTableViewController.lodgings[indexPath.row]
+        cell.tag = lodging.generalLodgingIndex
         
-        print("무야호")
+        print(cell.tag)
+        
+        let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
+       
+        searchResultVC.lodgingIndex = cell.tag
+        searchResultVC.isTag = false
+        
+        self.present(searchResultVC, animated: true, completion: nil)
     }
     
     
 }
-
-//MARK: - API
-extension SearchAllTableViewController {
-    func searchLodgingIndex(result: SearchLodgingIndexResponse) {
-        print(result.result)
-    }
-    
-    func failedToRequest(message: String) {
-        self.presentAlert(title: message)
-    }
-}
-
-
-
-

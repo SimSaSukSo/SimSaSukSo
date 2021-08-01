@@ -68,7 +68,7 @@ class FeedDataManager {
     
     // 피드 찜하기-해제
     func favoriteCheck(_ parameters: FavoriteCheckRequest, delegate: FeedDetailViewController) {
-        AF.request("https://dev.enudgu.shop/api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+        AF.request("\(Constant.BASE_URL)api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: FavoriteCheckResponse.self) { response in
                 switch response.result {

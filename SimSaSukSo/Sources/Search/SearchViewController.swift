@@ -23,7 +23,6 @@ class SearchViewController : UIViewController{
     @IBOutlet var allLineView: UIView!
     @IBOutlet var houseLineView: UIView!
     @IBOutlet var tagLineView: UIView!
-    @IBOutlet var airButton: UIButton!
     
     var buttonLists: [UIButton] = []
     var lineViewLists: [UIView] = []
@@ -38,15 +37,9 @@ class SearchViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        airButton.layer.borderWidth = 1
-        airButton.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
-        airButton.layer.cornerRadius = 4
-        
         setupSearchBar()
         setupLists()
         
-        airButton.setTitle("", for: .normal)
     }
     
     //MARK: - Fuction
@@ -131,9 +124,7 @@ class SearchViewController : UIViewController{
         pageViewController.setViewcontrollersFromIndex(index: 2)
 
     }
-    
-    @IBAction func airButtonAction(_ sender: UIButton) {
-    }
+
     
 }
 
@@ -174,7 +165,6 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        airButton.setTitle("'\(searchBar.text!)'가 포함된 에어비앤비 숙소 모아보기", for: .normal)
         searchWord = searchBar.text!
         Lodging?.lodgings = searchWord
         tags?.tag = searchWord
