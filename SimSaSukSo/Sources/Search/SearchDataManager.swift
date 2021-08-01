@@ -10,7 +10,7 @@ import Alamofire
 class SearchDataManager {
     // 이미지 검색
     func searchImage(_ parameters: SearchImageRequest, delegate: SearchResultViewController) {
-        AF.request("https://dev.enudgu.shop/api/feeds/search/origin", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
+        AF.request("\(Constant.BASE_URL)api/feeds/search/origin", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: SearchImageResponse.self) { response in
                 switch response.result {
@@ -42,7 +42,7 @@ class SearchDataManager {
     
     // 숙소 검색
     func searchHotel(_ parameters: SearchLodgingsRequest, delegate: SearchViewController) {
-        let url = "https://dev.enudgu.shop/api/feeds/search/lodging"
+        let url = "\(Constant.BASE_URL)api/feeds/search/lodging"
         let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let urlResult = URL(string: encodedString)!
         AF.request(urlResult, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
@@ -60,7 +60,7 @@ class SearchDataManager {
     
     // 태그 검색
     func searchTags(_ parameters: SearchTagRequest, delegate: SearchViewController) {
-        let url = "https://dev.enudgu.shop/api/feeds/search/tag"
+        let url = "\(Constant.BASE_URL)api/feeds/search/tag"
         let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let urlResult = URL(string: encodedString)!
         AF.request(urlResult, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)

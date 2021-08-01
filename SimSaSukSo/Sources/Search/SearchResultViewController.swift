@@ -38,10 +38,10 @@ class SearchResultViewController: UIViewController {
         if input.locationIdx == 0 {
             searchResultLabel.text = "'\(searchResultName)' 검색결과"
             if isTag == false { // 전체, 숙소
-                dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/\(lodgingIndex)")
+                dataManager.searchLodgingIndex(delegate: self, url: "\(Constant.BASE_URL)api/feeds/search/lodging/\(lodgingIndex)")
                 print("전체,숙소")
             } else {
-                dataManager.searchTagImage(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/tag?tag=호")
+                dataManager.searchTagImage(delegate: self, url: "\(Constant.BASE_URL)api/feeds/search/tag?tag=호")
                 print("tag")
             }
             

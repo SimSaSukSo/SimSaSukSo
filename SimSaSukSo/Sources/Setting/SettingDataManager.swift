@@ -10,7 +10,7 @@ import Alamofire
 class SettingDataManager {
     // 프로필 사진 변경
     func profileImage(_ parameters: ProfileImageRequest, delegate: ProfileViewController) {
-        let url = "https://dev.enudgu.shop/api/users/profileUrl"
+        let url = "\(Constant.BASE_URL)api/users/profileUrl"
         AF.request(url, method: .put, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: ProfileImageResponse.self) { response in
@@ -26,7 +26,7 @@ class SettingDataManager {
     
     // 회원 탈퇴
     func userDelete(delegate: SettingViewController) {
-        let url = "https://dev.enudgu.shop/api/users"
+        let url = "\(Constant.BASE_URL)api/users"
         AF.request(url, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: UserDeleteResponse.self) { response in
