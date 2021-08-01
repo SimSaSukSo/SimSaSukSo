@@ -16,7 +16,13 @@ class FeedDataManager {
             .responseDecodable(of: FeedResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.feedView(result: response.result!)
+                    if response.result == nil{
+                        delegate.feedDefaultValue()
+                    }else{
+                        delegate.feedView(result: response.result!)
+                    }
+                   
+                    
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
@@ -32,7 +38,10 @@ class FeedDataManager {
             .responseDecodable(of: FeedCommentResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.feedComment(result: response)
+                    if response.result == nil{
+                        delegate.commentDefaultValue()
+                    }else{
+                        delegate.feedComment(result: response)}
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")

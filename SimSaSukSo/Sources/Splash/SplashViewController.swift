@@ -65,6 +65,7 @@ class SplashViewController: BaseViewController {
     func LoginSuceess(jwt : String){
         //로그인 성공 -> 메인 화면 이동
         KeyCenter.LOGIN_TOKEN = jwt
+        print("jwt:\(jwt)")
         let mainController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "TabBarController")
         changeRootViewController(mainController)
         
@@ -137,7 +138,4 @@ extension SplashViewController : ASAuthorizationControllerDelegate{
         //실패 후 동작
         print("실패")
     }
-    
-    
-    
 }

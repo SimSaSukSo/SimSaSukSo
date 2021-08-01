@@ -316,6 +316,13 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
         let rowArray = believePlace[indexPath.row].tags.components(separatedBy: ",")
         believecell.updateCellWith(row: rowArray)
         
+        let background = UIView()
+
+            background.backgroundColor = .clear
+
+        believecell.selectedBackgroundView = background
+
+           
        return believecell
     }
 }
@@ -358,6 +365,8 @@ extension HomeTabViewController{
         
         
     }
+    
+    
     
     
 }

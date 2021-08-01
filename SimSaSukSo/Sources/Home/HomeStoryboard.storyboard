@@ -212,6 +212,7 @@
                                                                     <outlet property="BestSearchesNameLabel" destination="t7a-NB-MfZ" id="V3Z-6U-7zH"/>
                                                                     <outlet property="BestSearchesRankImageView" destination="Oy8-f6-PeA" id="W0W-lP-UbJ"/>
                                                                     <outlet property="BestSearchesRankLabel" destination="geg-3p-XII" id="fKU-hI-w0s"/>
+                                                                    <segue destination="zuc-eV-Fku" kind="presentation" id="Anu-ie-uok"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -302,6 +303,7 @@
                                                                 <connections>
                                                                     <outlet property="trendImageView" destination="e91-Cd-MlB" id="MPs-zE-n8l"/>
                                                                     <outlet property="trendPlaceName" destination="NIK-vw-Eo2" id="j5j-vR-zTH"/>
+                                                                    <segue destination="zuc-eV-Fku" kind="presentation" id="8Bz-1R-J2z"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
