@@ -39,7 +39,16 @@ class SettingViewController : UIViewController {
     }
     
     @IBAction func userDeleteButtonAction(_ sender: UIButton) {
-        //dataManager.userDelete(delegate: self)
+        let userDeleteAlert = UIAlertController(title: "회원 탈퇴", message: "회원을 탈퇴하시겠습니까?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "네", style: .destructive, handler: {(action) in self.userDeleteAction()})
+        let noAction = UIAlertAction(title: "아니오", style: .cancel, handler: .none)
+        
+        userDeleteAlert.addAction(yesAction)
+        userDeleteAlert.addAction(noAction)
+        
+        present(userDeleteAlert, animated: true, completion: nil)
+
     }
     
     
@@ -54,5 +63,10 @@ extension SettingViewController {
     
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
+    }
+    
+    func userDeleteAction() {
+        //dataManager.userDelete(delegate: self)
+        print("탈퇴")
     }
 }
