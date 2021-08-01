@@ -10,7 +10,9 @@ import UIKit
 
 class SearchAllTableViewController: UIViewController {
 
-   
+    
+    
+    
     @IBOutlet var searchAllTableView: UITableView!
     
     lazy var dataManager = SearchDataManager()
@@ -31,7 +33,7 @@ class SearchAllTableViewController: UIViewController {
     @objc func refresh() {
 
        self.searchAllTableView.reloadData() // a refresh the tableView.
-
+       
    }
 
 }

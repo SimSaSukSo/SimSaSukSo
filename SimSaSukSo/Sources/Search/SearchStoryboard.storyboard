@@ -291,7 +291,86 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsf-V6-0fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="-609"/>
+            <point key="canvasLocation" x="1068" y="-609"/>
+        </scene>
+        <!--Search Hotel View Controller-->
+        <scene sceneID="DPR-gh-Bt8">
+            <objects>
+                <viewController storyboardIdentifier="SearchHotelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oC8-8H-JVC" customClass="SearchHotelViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8I0-Iy-tCW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i1t-rs-XwR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchHotelTableViewCell" rowHeight="77" id="5fP-cs-B94" customClass="AllTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5fP-cs-B94" id="z09-tz-euN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="prb-zx-iyu">
+                                                    <rect key="frame" x="42" y="17" width="372" height="43"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉 네이처" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3S-r6-0xk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="21"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuX-19-1IG">
+                                                            <rect key="frame" x="0.0" y="25" width="22.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                            <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="building" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-D1-MJh">
+                                                    <rect key="frame" x="17.5" y="31.5" width="13" height="14"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13.33" id="F7Y-FO-zDm"/>
+                                                        <constraint firstAttribute="width" constant="13.33" id="UWq-Jn-tJL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nAd-D1-MJh" firstAttribute="centerY" secondItem="z09-tz-euN" secondAttribute="centerY" id="B8D-eP-AMu"/>
+                                                <constraint firstItem="prb-zx-iyu" firstAttribute="leading" secondItem="nAd-D1-MJh" secondAttribute="trailing" constant="11.33" id="JyX-0I-wAH"/>
+                                                <constraint firstItem="prb-zx-iyu" firstAttribute="centerY" secondItem="nAd-D1-MJh" secondAttribute="centerY" id="R9E-ID-x2T"/>
+                                                <constraint firstItem="nAd-D1-MJh" firstAttribute="top" secondItem="z09-tz-euN" secondAttribute="top" constant="31.670000000000002" id="UFh-tc-p4p"/>
+                                                <constraint firstItem="nAd-D1-MJh" firstAttribute="leading" secondItem="z09-tz-euN" secondAttribute="leading" constant="17.329999999999998" id="W1c-U2-8wd"/>
+                                                <constraint firstAttribute="trailing" secondItem="prb-zx-iyu" secondAttribute="trailing" id="b88-pa-bI2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstLabel" destination="H3S-r6-0xk" id="Lli-81-H47"/>
+                                            <outlet property="searchImageView" destination="nAd-D1-MJh" id="YbY-EH-pYa"/>
+                                            <outlet property="secondLabel" destination="fuX-19-1IG" id="D0s-DQ-pkr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="I9J-ee-PJI" id="y6n-1C-9A3"/>
+                                    <outlet property="delegate" destination="I9J-ee-PJI" id="cPD-vg-thl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vq5-PV-dv4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchHotelTableView" destination="i1t-rs-XwR" id="iqu-E9-FCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNw-zT-bR0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702.8985507246377" y="-607.36607142857144"/>
         </scene>
         <!--Search Result View Controller-->
         <scene sceneID="gcV-Wu-qbh">
@@ -1152,126 +1231,77 @@
             </objects>
             <point key="canvasLocation" x="2528.985507246377" y="61.607142857142854"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="uEi-R6-hiL">
+        <!--Search Tags View Controller-->
+        <scene sceneID="Hu3-TM-y3b">
             <objects>
-                <tableViewController id="2aQ-vv-pM2" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Alo-Td-QwZ">
+                <viewController storyboardIdentifier="SearchTagsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o3h-8P-XUe" customClass="SearchTagsViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zxa-JH-wYS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AllTableViewCell" rowHeight="77" id="DUp-a6-Mf0" customClass="AllTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="77"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DUp-a6-Mf0" id="74t-cE-E1x">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eU9-ep-qdZ">
-                                            <rect key="frame" x="42" y="17" width="372" height="43"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cad-vW-gGG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchTagsTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchTagsTableViewCell" rowHeight="77" id="rPX-y0-CEE" customClass="SearchTagsTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rPX-y0-CEE" id="yfV-mD-dpY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉 네이처" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gko-uc-MOp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMz-a2-ujK">
-                                                    <rect key="frame" x="0.0" y="25" width="22.5" height="18"/>
-                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wCc-CX-xEk">
+                                                    <rect key="frame" x="42" y="28" width="372" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉 네이처" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pu4-qZ-f0m">
+                                                            <rect key="frame" x="0.0" y="0.0" width="68.5" height="21"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-a9-0f8" customClass="tags">
+                                                    <rect key="frame" x="17.5" y="31.5" width="13" height="14"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="13.33" id="0QK-6i-eYB"/>
+                                                        <constraint firstAttribute="height" constant="13.33" id="OSR-SX-tAh"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
-                                        </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Z4B-EY-E0X">
-                                            <rect key="frame" x="17.5" y="31.5" width="13" height="14"/>
-                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="13.33" id="aXN-Wl-H2e"/>
-                                                <constraint firstAttribute="width" constant="13.33" id="i6J-Lu-485"/>
+                                                <constraint firstItem="wCc-CX-xEk" firstAttribute="leading" secondItem="ki3-a9-0f8" secondAttribute="trailing" constant="11.33" id="5DL-tw-NQl"/>
+                                                <constraint firstItem="ki3-a9-0f8" firstAttribute="top" secondItem="yfV-mD-dpY" secondAttribute="top" constant="31.670000000000002" id="6bC-w3-zff"/>
+                                                <constraint firstItem="wCc-CX-xEk" firstAttribute="centerY" secondItem="ki3-a9-0f8" secondAttribute="centerY" id="Hmb-H7-W0u"/>
+                                                <constraint firstAttribute="trailing" secondItem="wCc-CX-xEk" secondAttribute="trailing" id="Q8d-Qh-a09"/>
+                                                <constraint firstItem="ki3-a9-0f8" firstAttribute="centerY" secondItem="yfV-mD-dpY" secondAttribute="centerY" id="qQG-TY-8dj"/>
+                                                <constraint firstItem="ki3-a9-0f8" firstAttribute="leading" secondItem="yfV-mD-dpY" secondAttribute="leading" constant="17.329999999999998" id="yuF-60-zuQ"/>
                                             </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Z4B-EY-E0X" firstAttribute="top" secondItem="74t-cE-E1x" secondAttribute="top" constant="31.670000000000002" id="5Kv-NB-jYZ"/>
-                                        <constraint firstItem="eU9-ep-qdZ" firstAttribute="leading" secondItem="Z4B-EY-E0X" secondAttribute="trailing" constant="11.33" id="AFY-Cc-02w"/>
-                                        <constraint firstItem="Z4B-EY-E0X" firstAttribute="leading" secondItem="74t-cE-E1x" secondAttribute="leading" constant="17.329999999999998" id="D92-Xe-IV0"/>
-                                        <constraint firstItem="Z4B-EY-E0X" firstAttribute="centerY" secondItem="74t-cE-E1x" secondAttribute="centerY" id="b3j-mC-RGP"/>
-                                        <constraint firstAttribute="trailing" secondItem="eU9-ep-qdZ" secondAttribute="trailing" id="hbY-dC-PtS"/>
-                                        <constraint firstItem="eU9-ep-qdZ" firstAttribute="centerY" secondItem="Z4B-EY-E0X" secondAttribute="centerY" id="mkP-jm-6on"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstLabel" destination="pu4-qZ-f0m" id="00L-Iz-PO9"/>
+                                            <outlet property="searchImageView" destination="ki3-a9-0f8" id="NQy-JE-oVp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="firstLabel" destination="gko-uc-MOp" id="JaS-SJ-giP"/>
-                                    <outlet property="searchImageView" destination="Z4B-EY-E0X" id="wOP-cf-oJd"/>
-                                    <outlet property="secondLabel" destination="fMz-a2-ujK" id="tws-Er-F8Z"/>
+                                    <outlet property="dataSource" destination="I9J-ee-PJI" id="7uo-z6-8fU"/>
+                                    <outlet property="delegate" destination="I9J-ee-PJI" id="2Jz-T4-R1V"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="npr-Dm-vPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1733" y="-609"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="OV7-2i-NpH">
-            <objects>
-                <tableViewController id="r2K-Sc-WrS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hqa-q8-zLp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JvN-Lx-IZP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AllTableViewCell" rowHeight="77" id="OSN-Mi-ANe" customClass="AllTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="77"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OSN-Mi-ANe" id="6Yk-1b-nrM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oza-LP-jr7">
-                                            <rect key="frame" x="42" y="28" width="372" height="21"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강릉 네이처" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzm-CR-bKW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="21"/>
-                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="kCT-hw-fIg">
-                                            <rect key="frame" x="17.5" y="31.5" width="13" height="14"/>
-                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="13.33" id="tuu-0l-I3k"/>
-                                                <constraint firstAttribute="height" constant="13.33" id="vW6-uw-frP"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="kCT-hw-fIg" firstAttribute="centerY" secondItem="6Yk-1b-nrM" secondAttribute="centerY" id="AE3-gE-imY"/>
-                                        <constraint firstItem="oza-LP-jr7" firstAttribute="leading" secondItem="kCT-hw-fIg" secondAttribute="trailing" constant="11.33" id="NIN-Oq-cRN"/>
-                                        <constraint firstItem="kCT-hw-fIg" firstAttribute="leading" secondItem="6Yk-1b-nrM" secondAttribute="leading" constant="17.329999999999998" id="TE3-au-N08"/>
-                                        <constraint firstItem="kCT-hw-fIg" firstAttribute="top" secondItem="6Yk-1b-nrM" secondAttribute="top" constant="31.670000000000002" id="sWp-ZG-jkV"/>
-                                        <constraint firstAttribute="trailing" secondItem="oza-LP-jr7" secondAttribute="trailing" id="uvB-5b-2TE"/>
-                                        <constraint firstItem="oza-LP-jr7" firstAttribute="centerY" secondItem="kCT-hw-fIg" secondAttribute="centerY" id="vyN-CN-b7R"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="firstLabel" destination="rzm-CR-bKW" id="Nho-RA-hkf"/>
-                                    <outlet property="searchImageView" destination="kCT-hw-fIg" id="4LY-bQ-dlP"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rrN-ji-DdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchTagsTableView" destination="Cad-vW-gGG" id="0qI-xU-IOF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXM-cs-cT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2388" y="-609"/>
+            <point key="canvasLocation" x="2346" y="-607"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="V9a-Vt-T4C">
@@ -1300,7 +1330,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="DCF-db-sg2">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="DCF-db-sg2">
                                             <rect key="frame" x="17.5" y="31.5" width="13" height="14"/>
                                             <color key="backgroundColor" systemColor="systemGreenColor"/>
                                             <constraints>
@@ -1328,7 +1358,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZ4-aC-VUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3036" y="-609"/>
+            <point key="canvasLocation" x="2975" y="-609"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1336,11 +1366,14 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_left" width="14" height="14"/>
+        <image name="building" width="16" height="16"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="defaultImage" width="300" height="300"/>
         <image name="filter" width="18" height="16.5"/>
         <image name="img_search" width="18" height="18"/>
+        <image name="map" width="16" height="16"/>
         <image name="search_New" width="52" height="24"/>
+        <image name="tag" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

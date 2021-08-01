@@ -41,13 +41,13 @@ class SearchDataManager {
     }
     
     // 숙소 검색
-    func searchHotel(_ parameters: SearchLodgingsRequest, delegate: SearchResultViewController) {
+    func searchHotel(_ parameters: SearchLodgingsRequest, delegate: SearchViewController) {
         AF.request("https://dev.enudgu.shop/api/feeds/search/lodging", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
-            .responseDecodable(of: SearchImageResponse.self) { response in
+            .responseDecodable(of: SearchLodgingsResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.searchImage(response)
+                    delegate.searchHotel(result: response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
