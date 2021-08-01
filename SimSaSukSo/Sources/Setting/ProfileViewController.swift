@@ -39,24 +39,9 @@ class ProfileViewController: UIViewController {
         cameraButton.layer.shadowOffset = CGSize(width: 3, height: 3)
         cameraButton.layer.shadowOpacity = 0.2
         cameraButton.layer.shadowRadius = 0.8
-    }
-    
-    // Firebase 업로드
-    func uploadImage(image: UIImage) {
-        var data = Data()
-        data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "프로필 사진"
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data, metadata: metaData) {
-            (metaData, error) in if let error = error {
-                print("실패")
-                return
-            } else {
-                print("성공")
-            }
-        }
-
+        
+        downloadImage(imageView: userProfileImageView)
+        
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -151,10 +136,40 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     }
     
 }
+//MARK: - Firebase
+extension ProfileViewController {
+    // Firebase 업로드
+    func uploadImage(image: UIImage) {
+        var data = Data()
+        data = image.jpegData(compressionQuality: 0.8)!
+        let filePath = "프로필 사진"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in if let error = error {
+                print("실패")
+                return
+            } else {
+                print("성공")
+            }
+        }
+
+    }
+    
+    // Firebase 다운로드
+    func downloadImage(imageView: UIImageView) {
+        storage.reference(forURL: "gs://simsasukso.appspot.com/프로필 사진").downloadURL { (url, error) in
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            imageView.image = image
+        }
+    }
+}
 //MARK: - API
 extension ProfileViewController {
     func profileImage(_ reuslt: ProfileImageResponse) {
         self.presentAlert(title: "프로필 사진 변경 완료")
+        dismiss(animated: true, completion: nil)
     }
     
     func failedToRequest(message: String) {
