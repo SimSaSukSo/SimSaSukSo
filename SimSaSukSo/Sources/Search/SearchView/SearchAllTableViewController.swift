@@ -23,8 +23,8 @@ class SearchAllTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-        //dataManager.searchAll(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/total?searchWord=\(searchWord)")
+       
+        
     }
     
     @objc func refresh() {
