@@ -93,24 +93,6 @@ class SearchViewController : UIViewController{
         }
     }
     
-    func changeButtonAndLineColor() {
-        for (button) in buttonLists {
-            for (view) in lineViewLists {
-                if button.isTouchInside {
-                    button.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
-                    if button.tag == view.tag  {
-                        view.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
-                    } else {
-                        view.backgroundColor = .clear
-                    }
-                } else {
-                    button.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
-                }
-            }
-
-        }
-
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -140,16 +122,13 @@ class SearchViewController : UIViewController{
     }
     @IBAction func allButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 0)
-        changeButtonAndLineColor()
     }
     @IBAction func houseButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 1)
-        changeButtonAndLineColor()
 
     }
     @IBAction func tagButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 2)
-        changeButtonAndLineColor()
 
     }
     
