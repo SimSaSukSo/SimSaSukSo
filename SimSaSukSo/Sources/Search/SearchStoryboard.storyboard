@@ -285,6 +285,9 @@
                             <outlet property="delegate" destination="I9J-ee-PJI" id="xft-8O-li5"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchAllTableView" destination="jOk-3B-LF3" id="DnW-GO-5vT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsf-V6-0fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,7 +330,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CCr-Wx-i1J">
-                                <rect key="frame" x="0.0" y="130" width="414" height="683"/>
+                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="can-e0-QDh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1151,7 +1154,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T5h-SA-kix"/>
+        <segue reference="Dqc-cU-f2x"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_left" width="14" height="14"/>

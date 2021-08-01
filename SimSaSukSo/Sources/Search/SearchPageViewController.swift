@@ -15,7 +15,8 @@ class SearchPageViewController: UIPageViewController {
         
         let storyBoard = UIStoryboard(name: "SearchStoryboard", bundle: nil)
         
-        let vc0 = storyBoard.instantiateViewController(identifier: "SearchAllTableViewController")
+        let vc0 = storyBoard.instantiateViewController(identifier: "SearchAllTableViewController")as!SearchAllTableViewController
+        
         
         return [vc0]
         
@@ -33,7 +34,9 @@ class SearchPageViewController: UIPageViewController {
         self.delegate = self
         
         if let firstVC = viewList.first{
+            
             self.setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+            
         }
         
     }

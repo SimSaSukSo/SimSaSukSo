@@ -24,7 +24,7 @@ class SearchDataManager {
     }
     
     // 전체 검색
-    func searchAll(delegate: SearchAllTableViewController, url: String) {
+    func searchAll(delegate: SearchViewController, url: String) {
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: SearchAllResponse.self) { response in
@@ -39,7 +39,7 @@ class SearchDataManager {
     }
     
     // 숙소 검색
-    func searchImage(_ parameters: SearchLodgingsRequest, delegate: SearchResultViewController) {
+    func searchHotel(_ parameters: SearchLodgingsRequest, delegate: SearchResultViewController) {
         AF.request("https://dev.enudgu.shop/api/feeds/search/lodging", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: SearchImageResponse.self) { response in
@@ -54,13 +54,13 @@ class SearchDataManager {
     }
     
     // 태그 검색
-    func searchImage(_ parameters: SearchTagRequest, delegate: SearchResultViewController) {
+    func searchTags(_ parameters: SearchTagRequest, delegate: SearchViewController) {
         AF.request("https://dev.enudgu.shop/api/feeds/search/tag", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)
             .validate()
-            .responseDecodable(of: SearchImageResponse.self) { response in
+            .responseDecodable(of: SearchTagResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    delegate.searchImage(response)
+                    delegate.searchTags(result : response)
                 case .failure(let error):
                     print(error.localizedDescription)
                     delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
