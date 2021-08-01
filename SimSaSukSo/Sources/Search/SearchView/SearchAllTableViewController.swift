@@ -10,9 +10,6 @@ import UIKit
 
 class SearchAllTableViewController: UIViewController {
 
-    
-    
-    
     @IBOutlet var searchAllTableView: UITableView!
     
     lazy var dataManager = SearchDataManager()

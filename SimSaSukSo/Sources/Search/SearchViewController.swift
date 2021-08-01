@@ -20,11 +20,9 @@ class SearchViewController : UIViewController{
     @IBOutlet var allButton: UIButton!
     @IBOutlet var houseButton: UIButton!
     @IBOutlet var tagButton: UIButton!
-    @IBOutlet var locationButton: UIButton!
     @IBOutlet var allLineView: UIView!
     @IBOutlet var houseLineView: UIView!
     @IBOutlet var tagLineView: UIView!
-    @IBOutlet var locationLineView: UIView!
     @IBOutlet var airButton: UIButton!
     
     var buttonLists: [UIButton] = []
@@ -57,22 +55,19 @@ class SearchViewController : UIViewController{
         buttonLists.append(allButton)
         buttonLists.append(houseButton)
         buttonLists.append(tagButton)
-        //buttonLists.append(locationButton)
         
         allButton.tintColor = #colorLiteral(red: 0.1333333333, green: 0.1333333333, blue: 0.1333333333, alpha: 1)
         houseButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
         tagButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
-       // locationButton.tintColor = #colorLiteral(red: 0.6509803922, green: 0.6901960784, blue: 0.7294117647, alpha: 1)
+
         
         lineViewLists.append(allLineView)
         lineViewLists.append(houseLineView)
         lineViewLists.append(tagLineView)
-       // lineViewLists.append(locationLineView)
         
         allLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
         houseLineView.backgroundColor = .clear
         tagLineView.backgroundColor = .clear
-       // locationLineView.backgroundColor = .clear
 
     }
     
@@ -157,11 +152,6 @@ class SearchViewController : UIViewController{
         changeButtonAndLineColor()
 
     }
-    @IBAction func locationButtonAction(_ sender: UIButton) {
-        pageViewController.setViewcontrollersFromIndex(index: 3)
-        changeButtonAndLineColor()
-
-    }
     
     @IBAction func airButtonAction(_ sender: UIButton) {
     }
@@ -176,8 +166,6 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
         searchController.searchResultsUpdater = self
         
         searchBar.delegate = self
-        
-        //searchBar.delegate = SearchAllTableViewController()
         
         searchBar.placeholder = "검색어를 입력하세요."
         searchBar.setImage(UIImage(named: "search_Icon"), for: UISearchBar.Icon.search, state: .normal)
@@ -208,7 +196,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         airButton.setTitle("'\(searchBar.text!)'가 포함된 에어비앤비 숙소 모아보기", for: .normal)
-    searchWord = searchBar.text!
+        searchWord = searchBar.text!
         Lodging?.lodgings = searchWord
         tags?.tag = searchWord
         
@@ -236,23 +224,20 @@ extension SearchViewController {
         print(" all내용 : \(SearchAllTableViewController.lodgings)")
         print("all단어 : \(SearchAllTableViewController.searchWord)")
         
-        
-        
     }
     
     
-    func searchHotel(result : SearchLodgingsResponse){
+    func searchHotel(_ result : SearchLodgingsResponse){
         SearchHotelViewController.lodgings = result.result!
         SearchHotelViewController.searchWord = self.searchWord
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         print("hotel내용 : \(SearchHotelViewController.lodgings)")
         print("hotel단어 : \(SearchHotelViewController.searchWord)")
-      
-        
+              
     }
     
-    func searchTags(result : SearchTagResponse ){
+    func searchTags(_ result : SearchTagResponse ){
         SearchTagsViewController.keywords = result.result!
         SearchTagsViewController.searchWord = self.searchWord
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
