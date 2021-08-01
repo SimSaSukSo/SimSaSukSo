@@ -9,7 +9,7 @@ import UIKit
 
 
 class SearchAllTableViewController: UIViewController {
-
+    
     @IBOutlet var searchAllTableView: UITableView!
     
     lazy var dataManager = SearchDataManager()
@@ -22,37 +22,58 @@ class SearchAllTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-
-       
+        
+        
         
     }
     
     @objc func refresh() {
-
-       self.searchAllTableView.reloadData() // a refresh the tableView.
-       
-   }
-
+        
+        self.searchAllTableView.reloadData() // a refresh the tableView.
+        
+    }
+    
 }
-    // MARK: - Table view data source
+// MARK: - Table view data source
 extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return SearchAllTableViewController.lodgings.count
     }
- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
         
-    let lodging = SearchAllTableViewController.lodgings[indexPath.row]
+        let lodging = SearchAllTableViewController.lodgings[indexPath.row]
         
         cell.firstLabel.text = lodging.name
         cell.secondLabel.text = lodging.address
-
+        
+        cell.tag = lodging.generalLodgingIndex
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
+        
+        dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/\(cell.tag)")
+        
+        print("무야호")
+    }
+    
+    
 }
 
+//MARK: - API
+extension SearchAllTableViewController {
+    func searchLodgingIndex(result: SearchLodgingIndexResponse) {
+        print(result.result)
+    }
+    
+    func failedToRequest(message: String) {
+        self.presentAlert(title: message)
+    }
+}
 
 
 

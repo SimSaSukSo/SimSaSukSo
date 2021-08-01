@@ -53,5 +53,9 @@ extension SearchTagsViewController : UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("무야호")
+    }
+    
 }
 

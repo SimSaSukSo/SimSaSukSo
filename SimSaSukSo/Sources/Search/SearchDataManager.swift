@@ -76,4 +76,19 @@ class SearchDataManager {
             }
     }
     
+    // 숙소인덱스 검색
+    func searchLodgingIndex(delegate: SearchAllTableViewController, url: String) {
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: SearchLodgingIndexResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.searchLodgingIndex(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
+    
 }
