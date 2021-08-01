@@ -25,7 +25,9 @@ class SearchDataManager {
     
     // 전체 검색
     func searchAll(delegate: SearchViewController, url: String) {
-        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+        let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let urlResult = URL(string: encodedString)!
+        AF.request(urlResult, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: SearchAllResponse.self) { response in
                 switch response.result {
