@@ -18,6 +18,8 @@ class SearchResultViewController: UIViewController {
     
     var searchResultName = ""
     
+    var lodgingIndex = 0
+    
     @IBOutlet var searchResultLabel: UILabel!
     @IBOutlet var resultNumberLabel: UILabel!
     @IBOutlet var searchButton: UIButton!
@@ -32,8 +34,9 @@ class SearchResultViewController: UIViewController {
         self.resultCollectionView.collectionViewLayout = CustomCircularCollectionViewLayout()
         
         if input.locationIdx == 0 {
-            dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/1")
+            dataManager.searchLodgingIndex(delegate: self, url: "https://dev.enudgu.shop/api/feeds/search/lodging/\(lodgingIndex)")
             searchResultLabel.text = "'\(searchResultName)' 검색결과"
+           
         } else {
             dataManager.searchImage(input, delegate: self)
             searchResultLabel.text = "필터된 검색결과"

@@ -58,8 +58,11 @@ extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSour
         cell.tag = lodging.generalLodgingIndex
         
         print(cell.tag)
+        
         let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
        
+        searchResultVC.lodgingIndex = cell.tag
+        
         self.present(searchResultVC, animated: true, completion: nil)
     }
     
