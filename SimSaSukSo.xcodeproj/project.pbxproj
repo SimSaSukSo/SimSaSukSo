@@ -160,6 +160,10 @@
 		A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */; };
 		A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */; };
 		A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */; };
+		A784F58B26B667A900548DEC /* SearchHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F58A26B667A900548DEC /* SearchHotelViewController.swift */; };
+		A784F58F26B667C500548DEC /* SearchHotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F58E26B667C500548DEC /* SearchHotelTableViewCell.swift */; };
+		A784F59226B6683300548DEC /* SearchTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F59126B6683300548DEC /* SearchTagsViewController.swift */; };
+		A784F59526B6684700548DEC /* SearchTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F59426B6684700548DEC /* SearchTagsTableViewCell.swift */; };
 		A7A066522699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */; };
 		A7A06655269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */; };
 		A7A0665E269E0C55009A1397 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */; };
@@ -352,6 +356,10 @@
 		A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFirstStepViewController.swift; sourceTree = "<group>"; };
 		A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		A784F58A26B667A900548DEC /* SearchHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelViewController.swift; sourceTree = "<group>"; };
+		A784F58E26B667C500548DEC /* SearchHotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelTableViewCell.swift; sourceTree = "<group>"; };
+		A784F59126B6683300548DEC /* SearchTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagsViewController.swift; sourceTree = "<group>"; };
+		A784F59426B6684700548DEC /* SearchTagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagsTableViewCell.swift; sourceTree = "<group>"; };
 		A7A066512699908B009A1397 /* UploadGeneralDisadvantageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralDisadvantageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7A06654269990FD009A1397 /* UploadGeneralAddDisadvantageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddDisadvantageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7A0665D269E0C55009A1397 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
@@ -478,6 +486,10 @@
 			children = (
 				A54E95B526B421CF005B6F18 /* SearchAllTableViewController.swift */,
 				A54E95F926B42A45005B6F18 /* AllTableViewCell.swift */,
+				A784F58A26B667A900548DEC /* SearchHotelViewController.swift */,
+				A784F58E26B667C500548DEC /* SearchHotelTableViewCell.swift */,
+				A784F59126B6683300548DEC /* SearchTagsViewController.swift */,
+				A784F59426B6684700548DEC /* SearchTagsTableViewCell.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -626,8 +638,8 @@
 			isa = PBXGroup;
 			children = (
 				A54E95FC26B4326A005B6F18 /* SearchDataManager.swift */,
-				A54E95A426B41573005B6F18 /* Entity */,
 				A711E01F267B5D4C006A1F0B /* SearchStoryboard.storyboard */,
+				A54E95A426B41573005B6F18 /* Entity */,
 				A711E02E267B5E86006A1F0B /* SearchViewController.swift */,
 				A54E95BC26B423F0005B6F18 /* SearchPageViewController.swift */,
 				A5A6B84D269ADC8300B66D53 /* SearchResultViewController.swift */,
@@ -1178,6 +1190,7 @@
 				A75EAEB92694310800B34597 /* UploadedPictureThirdCollectionViewCell.swift in Sources */,
 				A7C2A0DF26B32CBF00C0F003 /* appleLoginResponse.swift in Sources */,
 				A56796322685D6C000CAB9F6 /* BestTabViewController.swift in Sources */,
+				A784F59526B6684700548DEC /* SearchTagsTableViewCell.swift in Sources */,
 				A74AB16626A707300038A1C1 /* nicknameResponse.swift in Sources */,
 				A5A6B85E269B562D00B66D53 /* FavoriteCollectionViewCell.swift in Sources */,
 				A55675C1269720B7004103AA /* BestDataManager.swift in Sources */,
@@ -1276,6 +1289,7 @@
 				A74AB10826A404160038A1C1 /* regionNameDataManager.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
+				A784F58F26B667C500548DEC /* SearchHotelTableViewCell.swift in Sources */,
 				A7C2A0DC26B32C9900C0F003 /* appleLoginManager.swift in Sources */,
 				A54E95FA26B42A45005B6F18 /* AllTableViewCell.swift in Sources */,
 				A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */,
@@ -1283,6 +1297,7 @@
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
+				A784F58B26B667A900548DEC /* SearchHotelViewController.swift in Sources */,
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
 				A55675D126972485004103AA /* NewResponse.swift in Sources */,
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
@@ -1294,6 +1309,7 @@
 				A54D8D6E26B5BB410037B883 /* ProfileImageRequest.swift in Sources */,
 				A54D8D7126B5BB650037B883 /* SettingDataManager.swift in Sources */,
 				A54C3502268B70E400D6F839 /* SettingAlertViewController.swift in Sources */,
+				A784F59226B6683300548DEC /* SearchTagsViewController.swift in Sources */,
 				A59DDBCA26860258008D4AF9 /* BestTabOneFeedCollectionViewCell.swift in Sources */,
 				A56796352685D6C400CAB9F6 /* NewTabViewController.swift in Sources */,
 				A74AB0DE26A1EE9F0038A1C1 /* HomeResponse.swift in Sources */,
