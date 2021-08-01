@@ -23,5 +23,14 @@ class AllTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        firstLabel.text = ""
+        secondLabel.text = ""
+        self.accessoryType = .none
+        
+    }
 
 }
