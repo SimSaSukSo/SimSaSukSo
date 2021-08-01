@@ -22,7 +22,8 @@ class SearchAllTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+
        
         
     }
