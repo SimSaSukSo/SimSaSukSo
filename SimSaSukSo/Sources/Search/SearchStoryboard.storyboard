@@ -847,7 +847,7 @@
                         <constraints>
                             <constraint firstItem="wQ7-Pv-wtL" firstAttribute="trailing" secondItem="Wsp-rD-pnQ" secondAttribute="trailing" id="4XD-pu-Uqx"/>
                             <constraint firstItem="E1e-bH-wji" firstAttribute="top" secondItem="grT-gh-FiX" secondAttribute="bottom" constant="23" id="5RO-y4-nZQ"/>
-                            <constraint firstItem="grT-gh-FiX" firstAttribute="top" secondItem="wQ7-Pv-wtL" secondAttribute="top" id="8I8-d9-DRU"/>
+                            <constraint firstItem="grT-gh-FiX" firstAttribute="top" secondItem="g6p-2E-DIN" secondAttribute="top" constant="44" id="8I8-d9-DRU"/>
                             <constraint firstItem="bMz-iL-6DS" firstAttribute="leading" secondItem="wQ7-Pv-wtL" secondAttribute="leading" constant="16" id="Eja-3N-m4V"/>
                             <constraint firstItem="grT-gh-FiX" firstAttribute="leading" secondItem="wQ7-Pv-wtL" secondAttribute="leading" constant="21" id="NfJ-JG-K0J"/>
                             <constraint firstAttribute="bottom" secondItem="Wsp-rD-pnQ" secondAttribute="bottom" id="U1f-ha-XtW"/>
