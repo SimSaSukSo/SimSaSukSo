@@ -13,6 +13,7 @@ class BestFeedsViewController: UIViewController {
     
     static var bestFeeds: [BestFeeds] = []
     
+    static var nowTab : Int = 0 //전체1,숙소2,태그3,위치4
     var fetchingMore = false
     var page : Int = 1
     var stop : Bool = false
