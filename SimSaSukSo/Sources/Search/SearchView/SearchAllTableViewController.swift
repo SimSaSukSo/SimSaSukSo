@@ -29,52 +29,53 @@ class SearchAllTableViewController: UIViewController {
     
     @objc func refresh() {
         
-        
+        SearchAllTableViewController.count = 0
         self.searchAllTableView.reloadData() // a refresh the tableView.
         
+
     }
     
 }
 // MARK: - Table view data source
 extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         print(SearchAllTableViewController.lodgings.count)
         print(SearchAllTableViewController.alltags.count)
         print(SearchAllTableViewController.lodgings.count +  SearchAllTableViewController.alltags.count)
-        return SearchAllTableViewController.lodgings.count +  SearchAllTableViewController.alltags.count
+        
+        switch section {
+        case 0:
+            return SearchAllTableViewController.lodgings.count
+        case 1:
+            return SearchAllTableViewController.alltags.count
+        default:
+            return SearchAllTableViewController.lodgings.count +  SearchAllTableViewController.alltags.count
+        }
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        var cell = UITableViewCell()
-                
         
-        if SearchAllTableViewController.count < SearchAllTableViewController.lodgings.count{
+        switch indexPath.section {
+        case 0:
             let lodging = SearchAllTableViewController.lodgings[SearchAllTableViewController.count]
             let allCell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
             allCell.firstLabel.text = lodging.name
             allCell.secondLabel.text = lodging.address
-            cell = allCell
-            
-            print(indexPath.row)
-            print("loding index : \(indexPath.row)")
-            print("count :\(SearchAllTableViewController.count)")
-            SearchAllTableViewController.count+=1
-        }else if SearchAllTableViewController.count < SearchAllTableViewController.lodgings.count + SearchAllTableViewController.alltags.count  {
-            let tags = SearchAllTableViewController.alltags[SearchAllTableViewController.count - SearchAllTableViewController.lodgings.count]
+            return allCell
+        case 1:
+            let tags = SearchAllTableViewController.alltags[SearchAllTableViewController.count]
             let tagCell = tableView.dequeueReusableCell(withIdentifier: "SearchTagsTableViewCell", for: indexPath) as! SearchTagsTableViewCell
             tagCell.firstLabel.text = tags.keyword
-            cell = tagCell
-            print("tag index : \(indexPath.row)")
-            SearchAllTableViewController.count+=1
-            print("count :\(SearchAllTableViewController.count)")
+            return tagCell
+        default:
+            return UITableViewCell()
         }
-        
-        
-        
-       
-        return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
