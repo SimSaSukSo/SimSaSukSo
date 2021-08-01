@@ -22,8 +22,11 @@ class SearchHotelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
-
-       
+        
+        searchHotelTableView.delegate = self
+        searchHotelTableView.dataSource = self
+        
+       print("숙소")
         
     }
     
@@ -49,6 +52,10 @@ extension SearchHotelViewController : UITableViewDelegate,UITableViewDataSource{
         cell.secondLabel.text = lodging.address
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("무야호")
     }
     
 }

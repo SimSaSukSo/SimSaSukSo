@@ -24,7 +24,8 @@ class SearchTagsViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
 
-       
+        searchTagsTableView.delegate = self
+        searchTagsTableView.dataSource = self
         
     }
     
@@ -42,7 +43,7 @@ extension SearchTagsViewController : UITableViewDelegate,UITableViewDataSource{
         return SearchTagsViewController.keywords.count
     }
  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTagsTableViewCell", for: indexPath) as! SearchTagsTableViewCell
         
       let keyword = SearchTagsViewController.keywords[indexPath.row]
         
@@ -50,6 +51,10 @@ extension SearchTagsViewController : UITableViewDelegate,UITableViewDataSource{
       
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("무야호")
     }
     
 }

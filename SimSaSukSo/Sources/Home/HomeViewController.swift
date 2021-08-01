@@ -111,24 +111,14 @@ class HomeViewController : UIViewController {
     
     @IBAction func homeTabButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 0)
-        homeTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
-        bestTabLineView.backgroundColor = .clear
-        newTabLineView.backgroundColor = .clear
-        
     }
     
     @IBAction func bestTabButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 1)
-        bestTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
-        homeTabLineView.backgroundColor = .clear
-        newTabLineView.backgroundColor = .clear
     }
     
     @IBAction func newTabButtonAction(_ sender: UIButton) {
         pageViewController.setViewcontrollersFromIndex(index: 2)
-        newTabLineView.backgroundColor = #colorLiteral(red: 0, green: 0.8431372549, blue: 0.6705882353, alpha: 1)
-        bestTabLineView.backgroundColor = .clear
-        homeTabLineView.backgroundColor = .clear
     }
     
 }
