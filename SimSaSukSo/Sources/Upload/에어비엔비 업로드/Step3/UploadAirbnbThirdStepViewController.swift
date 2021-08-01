@@ -150,11 +150,10 @@ extension UploadAirbnbThirdStepViewController : UICollectionViewDelegate,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadedPictureThirdCollectionViewCell", for: indexPath) as! UploadedPictureThirdCollectionViewCell
-        
+        let uploadAircell = collectionView.dequeueReusableCell(withReuseIdentifier: "UploadAirStep3CollectionviewCell", for: indexPath) as! UploadAirStep3CollectionviewCell
         
         let photos = UploadViewController.uploadPhotos[indexPath.row]
-        uploadAircell.thirdPictureImageView.image = photos
+        uploadAircell.image.image = photos
         
         return uploadAircell
     }

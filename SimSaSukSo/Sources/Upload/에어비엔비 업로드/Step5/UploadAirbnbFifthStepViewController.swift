@@ -365,8 +365,16 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         
     }
     
+    @IBAction func tabGesture(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
+    }
+
 }
+
 
 
 
@@ -602,25 +610,37 @@ extension UploadAirbnbFifthStepViewController :UITextViewDelegate{
     
     //글자 수 제한
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-           guard let str = textView.text else { return true }
-           let newLength = str.count + text.count - range.length
-           return newLength <= 300
+        
+            
+           
+        if text == "\n"
+            {
+                textView.resignFirstResponder()
+                return false
+        }else{
+            guard let str = textView.text else { return true }
+            let newLength = str.count + text.count - range.length
+            return newLength <= 300
+        }
+           
+            
        }
     
-        //화면 터치하면 키보드 내려가게
-        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-                self.view.endEditing(true)
-            }
         
-        //리턴키 델리게이트 처리
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            reviewTextView.resignFirstResponder() //텍스트필드 비활성화
-            return true
-        }
+ 
         
 }
-    
 
+extension UploadAirbnbFifthStepViewController : UITextFieldDelegate{
+    
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        tagTextField.resignFirstResponder() //텍스트필드 비활성화
+        return true
+    }
+    
+}
 
 extension UploadAirbnbFifthStepViewController{
     
