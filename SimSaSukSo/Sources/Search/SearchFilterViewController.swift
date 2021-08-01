@@ -32,6 +32,11 @@ class SearchFilterViewController: UIViewController {
     @IBOutlet var maxTextField: UITextField!
     @IBOutlet var dayButton: UIButton!
     @IBOutlet var dayView: UIView!
+    
+    @IBOutlet weak var minPriceTextField: UITextField!
+    
+    @IBOutlet weak var maxPriceTextField: UITextField!
+    
     @IBOutlet var goodCollectionView: UICollectionView!
     @IBOutlet var badCollectionView: UICollectionView!
     @IBOutlet var setButton: UIButton!
@@ -148,6 +153,13 @@ extension SearchFilterViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
+    
+    //리턴키 델리게이트 처리
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        minPriceTextField.resignFirstResponder()
+        maxPriceTextField.resignFirstResponder()//텍스트필드 비활성화
+        return true
+    }
     
 }
 //MARK: - CollectionView
