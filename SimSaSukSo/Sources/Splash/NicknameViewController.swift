@@ -13,6 +13,8 @@ class NicknameViewController : BaseViewController{
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var nicknameTextfield: UITextField!
     @IBOutlet weak var nicknameLabel: UILabel!
+    var nickname : String = ""
+    var jwt : String? = ""
     
     let toolBar: UIToolbar = UIToolbar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 60))
     let completeButtonAccessary = UIButton.init(type: .custom)
@@ -21,7 +23,7 @@ class NicknameViewController : BaseViewController{
         //안내 라벨 초기화
         checkFormat()
         
-        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
+
         
     }
     
@@ -29,6 +31,9 @@ class NicknameViewController : BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //처음엔 버튼 못쓰게 설정
+        
+        nicknameLabel.isHidden = true
+        
         completeButton.isEnabled = false
         nicknameTextfield.delegate = self
         
@@ -46,9 +51,14 @@ class NicknameViewController : BaseViewController{
             completeButtonAccessary.isEnabled = false
             toolBar.barTintColor = .lightGray
             
+            nickname = nicknameTextfield.text ?? "익명의 유저"
+            
             completeButton.backgroundColor = .nicknameGrqy
             completeButtonAccessary.backgroundColor = .nicknameGrqy
+            
         } else {
+            
+            nickname = nicknameTextfield.text ?? ""
             toolBar.barTintColor = .simsasuksoGreen
             
             completeButton.isEnabled = true
@@ -66,11 +76,12 @@ class NicknameViewController : BaseViewController{
     
     func checkFormat(){
         
-        nicknameDataManager().nickname(nickname: nicknameTextfield.text ?? "", viewcontroller: self)
+        print(nicknameTextfield.text!)
+        KeyCenter.LOGIN_TOKEN = jwt!
+        nicknameDataManager().nickname(nickname: nicknameTextfield.text!, viewcontroller: self)
         
         
-        let mainController = UIStoryboard(name: "MainStoryboard", bundle: nil).instantiateViewController(identifier: "TabBarController")
-        changeRootViewController(mainController)
+        
         
     }
     
@@ -125,24 +136,36 @@ extension NicknameViewController: UITextFieldDelegate {
 //        passwordLabel.text = ""
 //        checkpassLabel.text = ""
 //        phonenumLabel.text = ""
-        checkFormat()
         
+        print(nicknameTextfield.text!)
+        KeyCenter.LOGIN_TOKEN = jwt!
+        nicknameDataManager().nickname(nickname: nicknameTextfield.text!, viewcontroller: self)
+        print("여기서만 되면돼")
         self.view.endEditing(true)
         
-        checkFormat()
-        
-    
 }
 }
 
 extension NicknameViewController{
     
     func success(){
-        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
         
+        
+        KeyCenter.LOGIN_TOKEN = self.jwt!
+        print("jwt 여기:\(jwt!)")
+        
+//        WelcomeAlertView.instance.showAlert(title: "환영합니다 :)", message: "가입이 완료되었습니다.  심사숙소를 통해 쉽고 간편하게 숙소 예약하세요!")
+        
+        let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomAlertViewController")
+
+        self.present(alertVC!, animated: false, completion: nil)
+        
+        print("???")
     }
     func nicknameError(message : String){
+        print("닉네임 에러..")
         nicknameLabel.text = message
+        nicknameLabel.isHidden = false
     }
     
     func fail(){

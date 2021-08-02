@@ -152,7 +152,6 @@
 		A75EAEC8269441D900B34597 /* UploadGeneralFifthStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EAEC7269441D900B34597 /* UploadGeneralFifthStepViewController.swift */; };
 		A766CB19267F502900565095 /* SplashStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A766CB18267F502900565095 /* SplashStoryboard.storyboard */; };
 		A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB352680D1FE00565095 /* NicknameViewController.swift */; };
-		A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CB4B268316DE00565095 /* WelcomAlertView.swift */; };
 		A766CB4F26831A7200565095 /* WelcomeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766CB4E26831A7200565095 /* WelcomeAlertView.xib */; };
 		A766CC9826897AD900565095 /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */; };
 		A766CC9D26899F4400565095 /* BestSearchesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */; };
@@ -164,6 +163,7 @@
 		A766CCBE268C671E00565095 /* kakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */; };
 		A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */; };
 		A766CCCB2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */; };
+		A777775626B80CFC00B2BFC2 /* WelcomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777775526B80CFC00B2BFC2 /* WelcomAlertViewController.swift */; };
 		A784F58B26B667A900548DEC /* SearchHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F58A26B667A900548DEC /* SearchHotelViewController.swift */; };
 		A784F59226B6683300548DEC /* SearchTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F59126B6683300548DEC /* SearchTagsViewController.swift */; };
 		A784F59526B6684700548DEC /* SearchTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784F59426B6684700548DEC /* SearchTagsTableViewCell.swift */; };
@@ -351,7 +351,6 @@
 		A75EAEC7269441D900B34597 /* UploadGeneralFifthStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFifthStepViewController.swift; sourceTree = "<group>"; };
 		A766CB18267F502900565095 /* SplashStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryboard.storyboard; sourceTree = "<group>"; };
 		A766CB352680D1FE00565095 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
-		A766CB4B268316DE00565095 /* WelcomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertView.swift; sourceTree = "<group>"; };
 		A766CB4E26831A7200565095 /* WelcomeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeAlertView.xib; sourceTree = "<group>"; };
 		A766CC9726897AD900565095 /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		A766CC9C26899F4400565095 /* BestSearchesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSearchesCollectionView.swift; sourceTree = "<group>"; };
@@ -363,6 +362,7 @@
 		A766CCBD268C671E00565095 /* kakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		A766CCC72690501600565095 /* UploadGeneralFirstStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralFirstStepViewController.swift; sourceTree = "<group>"; };
 		A766CCCA2690504D00565095 /* UploadedPictureFirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedPictureFirstCollectionViewCell.swift; sourceTree = "<group>"; };
+		A777775526B80CFC00B2BFC2 /* WelcomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomAlertViewController.swift; sourceTree = "<group>"; };
 		A784F58A26B667A900548DEC /* SearchHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelViewController.swift; sourceTree = "<group>"; };
 		A784F59126B6683300548DEC /* SearchTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagsViewController.swift; sourceTree = "<group>"; };
 		A784F59426B6684700548DEC /* SearchTagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagsTableViewCell.swift; sourceTree = "<group>"; };
@@ -1045,8 +1045,8 @@
 				BD8BD76925E4B58C00346266 /* SplashViewController.swift */,
 				A766CB18267F502900565095 /* SplashStoryboard.storyboard */,
 				A766CB352680D1FE00565095 /* NicknameViewController.swift */,
-				A766CB4B268316DE00565095 /* WelcomAlertView.swift */,
 				A766CB4E26831A7200565095 /* WelcomeAlertView.xib */,
+				A777775526B80CFC00B2BFC2 /* WelcomAlertViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -1309,6 +1309,7 @@
 				A766CCC82690501600565095 /* UploadGeneralFirstStepViewController.swift in Sources */,
 				A784F58B26B667A900548DEC /* SearchHotelViewController.swift in Sources */,
 				A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */,
+				A777775626B80CFC00B2BFC2 /* WelcomAlertViewController.swift in Sources */,
 				A55675D126972485004103AA /* NewResponse.swift in Sources */,
 				A567961D2685D3DB00CAB9F6 /* PageViewController.swift in Sources */,
 				A723732B26B68F17003F5EA1 /* UploadAirStep3CollectionviewCell.swift in Sources */,
@@ -1365,7 +1366,6 @@
 				A55675C9269721B9004103AA /* BestResponse.swift in Sources */,
 				A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */,
 				A55C464E26A60D27008B4A5C /* FavoriteAddResponse.swift in Sources */,
-				A766CB4C268316DE00565095 /* WelcomAlertView.swift in Sources */,
 				A711E032267B5E94006A1F0B /* UploadViewController.swift in Sources */,
 				A58833AF268C75E20046E313 /* FeedTagCollectionViewCell.swift in Sources */,
 			);

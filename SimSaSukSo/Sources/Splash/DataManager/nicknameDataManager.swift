@@ -8,27 +8,28 @@
 import Alamofire
 class nicknameDataManager{
     func nickname(nickname : String, viewcontroller : NicknameViewController ){
-       
-        AF.request("\(Constant.BASE_URL)api/users", method: .post,parameters: nickname,headers: KeyCenter.header)
+        let parameters = ["nickname" : nickname
+        ]
+        AF.request("\(Constant.BASE_URL)api/users", method: .post,parameters: parameters,encoding: URLEncoding.queryString, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of:nicknameResponse.self){response in
                 switch response.result{
                 case .success(let response):
                     if response.isSuccess{
-                        print(response.code)
-                        if response.code == 2001 || response.code == 2002 || response.code == 2003 {
-                        
-                            viewcontroller.nicknameError(message: response.message)
-                            
-                        }else if response.code == 1000{
-                            
+                        if response.code == 1000 {
+                            print("성공")
                             viewcontroller.success()
-                        }
+                            
+                    }
                         
                     }else{
-                       print(response.message)
-                       
+                        print("실패")
+                        viewcontroller.nicknameError(message: response.message)
+                        print(response.message)
+                        print("응답코드: \(response.code)")
+                        
                     }
+                    
                 case .failure(let error):
                     print("서버연결x")
                    
