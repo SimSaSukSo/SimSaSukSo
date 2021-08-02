@@ -19,6 +19,10 @@ class FeedDetailViewController: UIViewController {
     var feedIndex = 1
     var saveComment = ""
     
+    var favoriteLists: [FavoriteResult] = []
+    
+    var indexList : [Int] = []
+    
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!
     
@@ -68,6 +72,7 @@ class FeedDetailViewController: UIViewController {
         
         dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
         dataManager.feedComment(url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
+        FavoriteDataManager().favoriteList(delegate: self)
         
         self.navigationController?.navigationBar.isTransparent = true
         self.navigationController?.navigationBar.tintColor = .clear
@@ -162,8 +167,8 @@ class FeedDetailViewController: UIViewController {
     
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
-        print(FavoritesViewController.indexList)
-        var indexlist = FavoritesViewController.indexList
+        print(indexList)
+        var indexlist = indexList
         
       
         if bookmarkButton.isSelected {
@@ -172,14 +177,14 @@ class FeedDetailViewController: UIViewController {
                 presentAlert(title: "찜 목록을 먼저 생성하세요")
                 bookmarkButton.isSelected = false
             }else{
-                let input = FavoriteCheckRequest(savedListIndex: FavoritesViewController.indexList.first!, feedIndex: feedIndex)
+                let input = FavoriteCheckRequest(savedListIndex: indexList.first!, feedIndex: feedIndex)
                 bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
                 dataManager.favoriteCheck(input, delegate: self)
             }
             
         } else {
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
-            let input = FavoriteCheckRequest(savedListIndex: FavoritesViewController.indexList.first!, feedIndex: feedIndex)
+            let input = FavoriteCheckRequest(savedListIndex: indexList.first!, feedIndex: feedIndex)
             dataManager.favoriteCheck(input, delegate: self)
         }
     
@@ -477,4 +482,27 @@ extension FeedDetailViewController {
         
 
     }
+    
+
+    //찜 조회
+        
+    func favoriteLists(result: FavoriteResponse) {
+        favoriteLists = result.result!
+        print(favoriteLists)
+        print(favoriteLists.count)
+        if favoriteLists.count > 1 {
+            for i in 0...favoriteLists.count - 1{
+                indexList.append(favoriteLists[i].savedListIndex)
+                
+            }
+        }else{
+            indexList.append(favoriteLists[0].savedListIndex)
+        }
+        
+          print(self.indexList)
+        }
+      
+        
+        
+    
 }
