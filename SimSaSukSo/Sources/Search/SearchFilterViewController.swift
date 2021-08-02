@@ -222,7 +222,8 @@ extension SearchFilterViewController: UICollectionViewDelegate, UICollectionView
                 cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 cell.backgroundColor = .clear
                 cell.goodLabel.textColor = #colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1)
-                pros.remove(at: cell.tag)
+                pros.removeAll{$0 == cell.tag}
+                print(pros)
             }
             
         } else {
@@ -237,7 +238,7 @@ extension SearchFilterViewController: UICollectionViewDelegate, UICollectionView
                 cell.layer.borderColor = #colorLiteral(red: 0.9058823529, green: 0.9137254902, blue: 0.9215686275, alpha: 1)
                 cell.backgroundColor = .clear
                 cell.badLabel.textColor = #colorLiteral(red: 0.4352941176, green: 0.4705882353, blue: 0.5215686275, alpha: 1)
-                cons.remove(at: cell.tag)
+                cons.removeAll{$0 == cell.tag}
             }
        
         }
