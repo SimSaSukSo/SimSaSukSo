@@ -44,10 +44,6 @@ extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print(SearchAllTableViewController.lodgings.count)
-        print(SearchAllTableViewController.alltags.count)
-        print(SearchAllTableViewController.lodgings.count +  SearchAllTableViewController.alltags.count)
-        
         switch section {
         case 0:
             return SearchAllTableViewController.lodgings.count
@@ -62,14 +58,14 @@ extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSour
         
         switch indexPath.section {
         case 0:
-            let lodging = SearchAllTableViewController.lodgings[SearchAllTableViewController.count]
             let allCell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
+            let lodging = SearchAllTableViewController.lodgings[indexPath.row]
             allCell.firstLabel.text = lodging.name
             allCell.secondLabel.text = lodging.address
             return allCell
         case 1:
-            let tags = SearchAllTableViewController.alltags[SearchAllTableViewController.count]
             let tagCell = tableView.dequeueReusableCell(withIdentifier: "SearchTagsTableViewCell", for: indexPath) as! SearchTagsTableViewCell
+            let tags = SearchAllTableViewController.alltags[indexPath.row]
             tagCell.firstLabel.text = tags.keyword
             return tagCell
         default:
