@@ -158,11 +158,11 @@ extension SearchResultViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - API
 extension SearchResultViewController {
     func searchImage(_ result: SearchImageResponse) {
-        searchResults = result.result!
-        resultNumberLabel.text = String(result.result!.count) + "개"
-        if searchResults == nil {
-            print("")
-        } else {
+        if result.result == nil{
+            presentAlert(title: "데이터 없음")
+        }else{
+            searchResults = result.result!
+            resultNumberLabel.text = String(result.result!.count) + "개"
             resultCollectionView.reloadData()
         }
         
