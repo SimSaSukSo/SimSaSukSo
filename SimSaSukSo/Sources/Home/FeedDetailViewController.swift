@@ -162,8 +162,8 @@ class FeedDetailViewController: UIViewController {
     
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
-        
-        let input = FavoriteCheckRequest(savedListIndex: 36, feedIndex: feedIndex)
+        print(FavoritesViewController.indexList)
+        let input = FavoriteCheckRequest(savedListIndex: FavoritesViewController.indexList.first!, feedIndex: feedIndex)
         if bookmarkButton.isSelected {
             bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
             dataManager.favoriteCheck(input, delegate: self)
