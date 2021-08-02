@@ -67,7 +67,6 @@ class UploadViewController : UIViewController {
                 return
             } else {
                 print("성공")
-                UploadViewController.urlArray.append("https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=a96089a6-7933-4bd9-953a-631ede902ba2")
             }
         }
 
@@ -133,7 +132,7 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.numberLabel.isHidden = false
             UploadViewController.photoArray.append(indexPath.item)
             UploadViewController.uploadPhotos.append(cell.photoCellImageView.image!)
-            
+            UploadViewController.urlArray.append("https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=a96089a6-7933-4bd9-953a-631ede902ba2")
         } else {
             cell.blackView.isHidden = true
             cell.numberLabel.isHidden = true
