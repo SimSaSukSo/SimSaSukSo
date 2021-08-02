@@ -67,8 +67,9 @@ class SearchFilterViewController: UIViewController {
         goodCollectionView.tag = 1
         badCollectionView.tag = 2
         
-        minTextField.text! = "0"
-        maxTextField.text! = "999999"
+        //minTextField.text! = "0"
+        //maxTextField.text! = "999999"
+        
         
         configure()
         
@@ -140,6 +141,17 @@ class SearchFilterViewController: UIViewController {
             }
             
             searchImageVC.searchResultName = (locationButton.titleLabel?.text)!
+            
+            if minTextField.text! == "" {
+                minTextField.text! = "0"
+            } else {
+                minTextField.text! = minTextField.text!
+            }
+            if maxTextField.text! == "" {
+                maxTextField.text! = "9999999"
+            } else {
+                maxTextField.text! = maxTextField.text!
+            }
             
             searchImageVC.input = SearchImageRequest(pros: pros, cons: cons, minPrice: Int(minTextField.text!)!, maxPrice: Int(maxTextField.text!)!, locationIdx: locationId, interval: interval)
 
