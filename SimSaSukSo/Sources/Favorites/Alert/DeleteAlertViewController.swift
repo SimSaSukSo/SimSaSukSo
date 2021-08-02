@@ -41,6 +41,7 @@ class DeleteAlertViewController: UIViewController {
         deleteButton.isHidden = true
         backButton.isHidden = true
         closeButton.isHidden = false
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         dataManager.favoriteDelete(delegate: self, url: "\(Constant.BASE_URL)api/lists/\(favoriteIndex)")
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
