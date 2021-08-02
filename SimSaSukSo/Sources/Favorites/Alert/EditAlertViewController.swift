@@ -61,6 +61,7 @@ class EditAlertViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: UIButton) {
         let input = FavoriteEditRequest(savedListIndex: 35, title: "d")
         dataManager.favoriteEdit(input, delegate: self)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         dismiss(animated: false, completion: nil)
     }
     

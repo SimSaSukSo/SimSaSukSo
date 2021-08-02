@@ -18,12 +18,23 @@ class FavoritesViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        
         favoriteCollectionView.delegate = self
         favoriteCollectionView.dataSource = self
         
         dataManager.favoriteList(delegate: self)
     
     }
+    
+    @objc func refresh() {
+        
+        dataManager.favoriteList(delegate: self)
+        self.favoriteCollectionView.reloadData() // a refresh the tableView.
+        
+    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         dataManager.favoriteList(delegate: self)

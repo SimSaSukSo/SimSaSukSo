@@ -23,7 +23,7 @@ class kakaoLoginDataManager{
                             print(response.token!)
                         }else if response.code == 1000{
                             //회원 가입
-                            viewcontroller.SignUpSuceess()
+                            viewcontroller.SignUpSuceess(jwt:response.token!)
                         }
                         
                         

@@ -163,12 +163,23 @@ class FeedDetailViewController: UIViewController {
     @IBAction func bookmarkButtonAction(_ sender: UIButton) {
         bookmarkButton.isSelected = !bookmarkButton.isSelected
         print(FavoritesViewController.indexList)
-        let input = FavoriteCheckRequest(savedListIndex: FavoritesViewController.indexList.first!, feedIndex: feedIndex)
+        var indexlist = FavoritesViewController.indexList
+        
+      
         if bookmarkButton.isSelected {
-            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
-            dataManager.favoriteCheck(input, delegate: self)
+            
+            if indexlist == []{
+                presentAlert(title: "찜 목록을 먼저 생성하세요")
+                bookmarkButton.isSelected = false
+            }else{
+                let input = FavoriteCheckRequest(savedListIndex: FavoritesViewController.indexList.first!, feedIndex: feedIndex)
+                bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
+                dataManager.favoriteCheck(input, delegate: self)
+            }
+            
         } else {
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
+            let input = FavoriteCheckRequest(savedListIndex: FavoritesViewController.indexList.first!, feedIndex: feedIndex)
             dataManager.favoriteCheck(input, delegate: self)
         }
     
