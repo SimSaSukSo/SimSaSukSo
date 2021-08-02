@@ -32,7 +32,7 @@ class SearchAllTableViewController: UIViewController {
         SearchAllTableViewController.count = 0
         self.searchAllTableView.reloadData() // a refresh the tableView.
         
-
+        
     }
     
 }
@@ -71,24 +71,42 @@ extension SearchAllTableViewController : UITableViewDelegate,UITableViewDataSour
         default:
             return UITableViewCell()
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
         
-        let lodging = SearchAllTableViewController.lodgings[indexPath.row]
-        cell.tag = lodging.generalLodgingIndex
-        cell.firstLabel.text = lodging.name
-        print(cell.tag)
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AllTableViewCell", for: indexPath) as! AllTableViewCell
+            
+            let lodging = SearchAllTableViewController.lodgings[indexPath.row]
+            cell.tag = lodging.generalLodgingIndex
+            cell.firstLabel.text = lodging.name
+            print(cell.tag)
+            
+            let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
+            
+            searchResultVC.lodgingIndex = cell.tag
+            searchResultVC.isTag = false
+            searchResultVC.searchResultName = cell.firstLabel.text!
+            
+            self.present(searchResultVC, animated: true, completion: nil)
+        case 1:
+            let tagCell = tableView.dequeueReusableCell(withIdentifier: "SearchTagsTableViewCell", for: indexPath) as! SearchTagsTableViewCell
+            let tags = SearchAllTableViewController.alltags[indexPath.row]
+            tagCell.firstLabel.text = tags.keyword
+            
+            let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
+            searchResultVC.isTag = true
+            searchResultVC.tag = tagCell.firstLabel.text!
+            searchResultVC.searchResultName = tagCell.firstLabel.text!
+            self.present(searchResultVC, animated: true, completion: nil)
+        default:
+            print("")
+        }
         
-        let searchResultVC = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as! SearchResultViewController
-       
-        searchResultVC.lodgingIndex = cell.tag
-        searchResultVC.isTag = false
-        searchResultVC.searchResultName = cell.firstLabel.text!
         
-        self.present(searchResultVC, animated: true, completion: nil)
     }
     
     
