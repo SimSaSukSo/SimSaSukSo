@@ -67,10 +67,6 @@ class SearchFilterViewController: UIViewController {
         goodCollectionView.tag = 1
         badCollectionView.tag = 2
         
-        //minTextField.text! = "0"
-        //maxTextField.text! = "999999"
-        
-        
         configure()
         
     }
