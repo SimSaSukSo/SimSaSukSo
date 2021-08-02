@@ -19,11 +19,11 @@ class SearchFilterViewController: UIViewController {
     
     let indexLists = [1,2,3,4,5,6,7,8,9,10,11]
     
-    var pros: [Int] = []
-    var cons: [Int] = []
+    var pros: [Int] = [1]
+    var cons: [Int] = [1]
     var minPrice = 0
-    var maxPrice = 0
-    var interval = "hour"
+    var maxPrice = 999999
+    var interval = "year"
     var locationId = 1000
     
     @IBOutlet var resetButton: UIButton!
@@ -67,7 +67,11 @@ class SearchFilterViewController: UIViewController {
         goodCollectionView.tag = 1
         badCollectionView.tag = 2
         
+        minTextField.text! = "0"
+        maxTextField.text! = "999999"
+        
         configure()
+        
     }
     // CollectionView Left Align
     func configure() {
@@ -136,7 +140,9 @@ class SearchFilterViewController: UIViewController {
             }
             
             searchImageVC.searchResultName = (locationButton.titleLabel?.text)!
+            
             searchImageVC.input = SearchImageRequest(pros: pros, cons: cons, minPrice: Int(minTextField.text!)!, maxPrice: Int(maxTextField.text!)!, locationIdx: locationId, interval: interval)
+
         }
     }
     

@@ -160,7 +160,12 @@ extension SearchResultViewController {
     func searchImage(_ result: SearchImageResponse) {
         searchResults = result.result!
         resultNumberLabel.text = String(result.result!.count) + "개"
-        resultCollectionView.reloadData()
+        if searchResults == nil {
+            print("")
+        } else {
+            resultCollectionView.reloadData()
+        }
+        
         
     }
     
