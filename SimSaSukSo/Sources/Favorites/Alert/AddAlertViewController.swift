@@ -29,7 +29,9 @@ class AddAlertViewController: UIViewController {
     @IBAction func addButtonAction(_ sender: UIButton) {
         let title = addTextField.text!
         let input = FavoriteAddRequest(title: title)
+        
         dataManager.favoriteAdd(input, delegate: self)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         dismiss(animated: false, completion: nil)
     }
     
