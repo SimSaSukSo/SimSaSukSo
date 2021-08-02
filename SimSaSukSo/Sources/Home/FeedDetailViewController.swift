@@ -490,13 +490,11 @@ extension FeedDetailViewController {
         favoriteLists = result.result!
         print(favoriteLists)
         print(favoriteLists.count)
-        if favoriteLists.count > 1 {
+        if favoriteLists.count > 0 {
             for i in 0...favoriteLists.count - 1{
                 indexList.append(favoriteLists[i].savedListIndex)
                 
             }
-        }else{
-            indexList.append(favoriteLists[0].savedListIndex)
         }
         
           print(self.indexList)
