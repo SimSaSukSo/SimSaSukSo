@@ -56,8 +56,10 @@ class SplashViewController: BaseViewController {
 
     }
     
-    func SignUpSuceess(){
+    func SignUpSuceess(jwt : String){
         //회원가입 성공 -> 닉네임 작성 화면 이동
+        KeyCenter.LOGIN_TOKEN = jwt
+        print("jwt:\(jwt)")
         let nickNameController = UIStoryboard(name: "SplashStoryboard", bundle: nil).instantiateViewController(identifier: "NicknameViewController")
         changeRootViewController(nickNameController)
     }
