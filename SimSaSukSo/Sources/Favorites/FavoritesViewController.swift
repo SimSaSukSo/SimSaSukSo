@@ -24,8 +24,10 @@ class FavoritesViewController : UIViewController {
         favoriteCollectionView.dataSource = self
         
         dataManager.favoriteList(delegate: self)
+        
     
     }
+    
     
     @objc func refresh() {
         
@@ -126,20 +128,7 @@ extension FavoritesViewController {
     
     func favoriteLists(result: FavoriteResponse) {
         favoriteLists = result.result!
-       // print("count : \(favoriteLists.count)")
-//        if favoriteLists.count > 0{
-//
-//            for i in 0...favoriteLists.count - 1{
-//
-//                var favoriteList = favoriteLists[i]
-//
-//                FavoritesViewController.indexList.append(favoriteList.savedListIndex)
-//                print(favoriteList.savedListIndex)
-//                print("indexlist : \(FavoritesViewController.indexList)")
-//            }
-//        }
-        
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         favoriteCollectionView.reloadData()
     }
     
