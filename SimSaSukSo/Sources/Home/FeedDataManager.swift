@@ -122,6 +122,8 @@ class FeedDataManager {
                     if response.isSuccess == true{
                         delegate.report(result: "신고 접수가 정상적으로 처리되었습니다.")
                         
+                    }else if response.code == 3010{
+                        delegate.report(result: "신고 접수가 정상적으로 처리되었습니다.")
                     }else{
                         delegate.report(result: response.message)
                     }
