@@ -212,6 +212,11 @@ class FeedDetailViewController: UIViewController {
 
     }
     
+    @IBAction func commentReportAction(_ sender: Any) {
+        presentAlert(title: "부적절한 댓글은 hs7198@naver.com으로 신고해주세요. 24시간 내에 처리가 완료 됩니다.")
+    }
+    
+    
 }
 
 
