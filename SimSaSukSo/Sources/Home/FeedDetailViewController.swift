@@ -145,20 +145,70 @@ class FeedDetailViewController: UIViewController {
         let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
             if heartButton.currentImage == UIImage(named: "heart_fill") {
-                //heartButton.setImage(UIImage(named: "heart"), for: .normal)
-                dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                            let stringLikenum = likeNumberLabel.text!
+                            print("string:\(stringLikenum)")
+                            print(stringLikenum)
+                            if let favoriteNumber = Int(stringLikenum){
+                                likeNumberLabel.text =  String(favoriteNumber - 1)
+                                print(likeNumberLabel.text)
+                            }
+                }else{
+                    dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                }
+                
             } else {
-               // heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-                dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                    let stringLikenum = likeNumberLabel.text!
+                    print("string:\(stringLikenum)")
+                    print(stringLikenum)
+                    if let favoriteNumber = Int(stringLikenum){
+                        likeNumberLabel.text =  String(favoriteNumber + 1)
+                        print(likeNumberLabel.text)
+                    }
+                    
+                }else{
+                    
+                    dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                }
+               
+                
             }
             
         } else {
             if heartButton.currentImage == UIImage(named: "heart") {
-              //  heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-                dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                    let stringLikenum = likeNumberLabel.text!
+                    print("string:\(stringLikenum)")
+                    print(stringLikenum)
+                    if let favoriteNumber = Int(stringLikenum){
+                        likeNumberLabel.text =  String(favoriteNumber - 1)
+                        print(likeNumberLabel.text)
+                    }
+                }else{
+                    dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                }
+              
+                
             } else {
-              //  heartButton.setImage(UIImage(named: "heart"), for: .normal)
-                dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                    let stringLikenum = likeNumberLabel.text!
+                    print("string:\(stringLikenum)")
+                    print(stringLikenum)
+                    if let favoriteNumber = Int(stringLikenum){
+                        likeNumberLabel.text =  String(favoriteNumber - 1)
+                        print(likeNumberLabel.text)
+                    }
+                }else{
+                    dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                }
+              
+                
             }
             
         }
@@ -436,13 +486,7 @@ extension FeedDetailViewController {
     }
     
     func dislikeCheck(_ result: FeedDislikeResponse) { // 좋아요 취소
-//        let stringLikenum = likeNumberLabel.text!
-//        print("string:\(stringLikenum)")
-//        print(stringLikenum)
-//        if let favoriteNumber = Int(stringLikenum){
-//            likeNumberLabel.text =  String(favoriteNumber - 1)
-//            print(likeNumberLabel.text)
-//        }
+
        // self.presentAlert(title: "좋아요 취소")
         dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
     }
