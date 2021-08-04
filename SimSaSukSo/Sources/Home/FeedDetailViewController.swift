@@ -141,23 +141,23 @@ class FeedDetailViewController: UIViewController {
     }
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
-        
+        print(feedIndex)
         let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
             if heartButton.currentImage == UIImage(named: "heart_fill") {
-                heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                //heartButton.setImage(UIImage(named: "heart"), for: .normal)
                 dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
             } else {
-                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+               // heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
                 dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
             }
             
         } else {
             if heartButton.currentImage == UIImage(named: "heart") {
-                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+              //  heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
                 dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
             } else {
-                heartButton.setImage(UIImage(named: "heart"), for: .normal)
+              //  heartButton.setImage(UIImage(named: "heart"), for: .normal)
                 dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
             }
             
@@ -411,9 +411,6 @@ extension FeedDetailViewController {
         dataManager.feedComment(url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
         commentWriteTextField.text = ""
            print("저장됨")
-
-           
-            
         }
     
     func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
@@ -421,11 +418,28 @@ extension FeedDetailViewController {
     }
     
     func likeCheck(_ result: FeedLikeResponse) { // 좋아요
-        self.presentAlert(title: "좋아요")
+//        let stringLikenum = likeNumberLabel.text!
+//        print(likeNumberLabel.text!)
+//        print("string:\(stringLikenum)")
+//        if let favoriteNumber = Int(stringLikenum){
+//            likeNumberLabel.text =  String(favoriteNumber + 1)
+//            print(likeNumberLabel.text!)
+//            }
+        
+        //self.presentAlert(title: "좋아요")
+        dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
     }
     
     func dislikeCheck(_ result: FeedDislikeResponse) { // 좋아요 취소
-        self.presentAlert(title: "좋아요 취소")
+//        let stringLikenum = likeNumberLabel.text!
+//        print("string:\(stringLikenum)")
+//        print(stringLikenum)
+//        if let favoriteNumber = Int(stringLikenum){
+//            likeNumberLabel.text =  String(favoriteNumber - 1)
+//            print(likeNumberLabel.text)
+//        }
+       // self.presentAlert(title: "좋아요 취소")
+        dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
     }
     
     func failedToRequest(message: String) {
