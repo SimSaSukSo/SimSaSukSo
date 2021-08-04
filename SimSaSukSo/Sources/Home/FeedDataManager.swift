@@ -110,4 +110,26 @@ class FeedDataManager {
                 }
             }
     }
+    
+    //피드 신고하기
+    func report(idx : Int, delegate: FeedDetailViewController) {
+        let url = "\(Constant.BASE_URL)api/feeds/\(idx)/report"
+        AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: ReportResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    if response.isSuccess == true{
+                        delegate.report(result: "신고 접수가 정상적으로 처리되었습니다.")
+                        
+                    }else{
+                        delegate.report(result: response.message)
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
 }

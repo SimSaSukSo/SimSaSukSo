@@ -32,6 +32,7 @@ class kakaoLoginDataManager{
                     }else{
                         
                        print("failed")
+                        viewcontroller.presentAlert(title: response.message)
                      print(response.message)
                         //viewcontroller.fail()
                     }

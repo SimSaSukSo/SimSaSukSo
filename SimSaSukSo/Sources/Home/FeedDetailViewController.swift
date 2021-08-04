@@ -137,6 +137,7 @@ class FeedDetailViewController: UIViewController {
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
         print("게시글 신고")
+        FeedDataManager().report(idx: feedIndex, delegate: self)
     }
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
@@ -499,8 +500,11 @@ extension FeedDetailViewController {
         
           print(self.indexList)
         }
-      
-        
-        
     
+    //신고하기 성공
+    func report(result : String){
+        
+        presentAlert(title: result)
+    }
+      
 }

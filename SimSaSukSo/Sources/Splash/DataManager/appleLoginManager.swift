@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+
 class appleLoginDataManager{
     func appleLogin(parameters:appleLoginInput, viewcontroller : SplashViewController){
        
@@ -31,7 +32,8 @@ class appleLoginDataManager{
                     }else{
                         
                        print("failed")
-                     print(response.message)
+                    
+                        viewcontroller.presentAlert(title: response.message)
                         //viewcontroller.fail()
                     }
                 case .failure(let error):
