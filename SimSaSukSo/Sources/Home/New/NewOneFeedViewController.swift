@@ -26,6 +26,7 @@ class NewOneFeedViewController: UIViewController {
         newOneFeedCollectionView.dataSource = self
         
         dataManager.newOneFeed(page: page, delegate: self)
+        print("new one feed")
     }
     
 }

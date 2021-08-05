@@ -27,6 +27,7 @@ class BestOneFeedViewController: UIViewController {
         bestOneFeedCollectionView.dataSource = self
 
         dataManager.bestOneFeed(page: self.page, delegate: self)
+        print("베스트 onefeeed")
     }
     
 }
