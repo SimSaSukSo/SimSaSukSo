@@ -37,6 +37,7 @@ class SettingViewController : UIViewController {
         let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController")
         self.present(profileVC!, animated: false, completion: nil)
     }
+    
     @IBAction func logoutButtonAction(_ sender: UIButton) {
         let logoutAlert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
         
@@ -60,6 +61,12 @@ class SettingViewController : UIViewController {
         
         present(userDeleteAlert, animated: true, completion: nil)
 
+    }
+    
+    
+    @IBAction func askButtonAction(_ sender: Any) {
+        
+        presentAlert(title: "모든 문의와 불편 사항 및 신고는 'hs7198@naver.com' 으로 접수해주시길 바랍니다.")
     }
     
     

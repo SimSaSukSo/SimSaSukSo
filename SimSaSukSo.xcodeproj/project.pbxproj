@@ -178,6 +178,7 @@
 		A7C2A0E226B32CFD00C0F003 /* appleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */; };
 		A7C2A0EC26B447E700C0F003 /* WriteFeedCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */; };
 		A7C2A0F226B55EEA00C0F003 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C2A0F126B55EEA00C0F003 /* UIViewController + Extension.swift */; };
+		A7E45D5426BB05630003947D /* ReportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E45D5326BB05630003947D /* ReportResponse.swift */; };
 		BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KeyCenter.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
@@ -377,6 +378,7 @@
 		A7C2A0E126B32CFD00C0F003 /* appleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleLoginInput.swift; sourceTree = "<group>"; };
 		A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFeedCommentResponse.swift; sourceTree = "<group>"; };
 		A7C2A0F126B55EEA00C0F003 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		A7E45D5326BB05630003947D /* ReportResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportResponse.swift; sourceTree = "<group>"; };
 		B081B8C623C4481CBCF6E32F /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2FA070252F507E00C93B8B /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* SimSaSukSo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimSaSukSo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -512,6 +514,7 @@
 				A54E95B126B4178F005B6F18 /* FeedDislikeResponse.swift */,
 				A54E95AE26B41753005B6F18 /* FeedLikeRequest.swift */,
 				A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */,
+				A7E45D5326BB05630003947D /* ReportResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1259,6 +1262,7 @@
 				A74AB10B26A405C10038A1C1 /* regionNameResponse.swift in Sources */,
 				A711E014267B4E7D006A1F0B /* ViewController.swift in Sources */,
 				A766CCBB268C665500565095 /* kakaoLoginInput.swift in Sources */,
+				A7E45D5426BB05630003947D /* ReportResponse.swift in Sources */,
 				A74AB1AF26AD32CF0038A1C1 /* AirEndDatePicker.swift in Sources */,
 				A766CCB0268C650100565095 /* kakaoLoginResponse.swift in Sources */,
 				A56796202685D57C00CAB9F6 /* MyFeedCollectionViewCell.swift in Sources */,
@@ -1511,7 +1515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimSaSukSo/SimSaSukSo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "$(SRCROOT)/SimSaSukSo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1535,7 +1539,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimSaSukSo/SimSaSukSo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = "$(SRCROOT)/SimSaSukSo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

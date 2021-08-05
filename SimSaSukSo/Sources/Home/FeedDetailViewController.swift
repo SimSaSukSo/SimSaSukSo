@@ -137,27 +137,78 @@ class FeedDetailViewController: UIViewController {
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
         print("게시글 신고")
+        FeedDataManager().report(idx: feedIndex, delegate: self)
     }
     @IBAction func heartButtonAction(_ sender: UIButton) {
         heartButton.isSelected = !heartButton.isSelected
-        
+        print(feedIndex)
         let input = FeedLikeRequest(feedIndex: feedIndex)
         if heartButton.isSelected {
             if heartButton.currentImage == UIImage(named: "heart_fill") {
-                heartButton.setImage(UIImage(named: "heart"), for: .normal)
-                dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                            let stringLikenum = likeNumberLabel.text!
+                            print("string:\(stringLikenum)")
+                            print(stringLikenum)
+                            if let favoriteNumber = Int(stringLikenum){
+                                likeNumberLabel.text =  String(favoriteNumber - 1)
+                                print(likeNumberLabel.text)
+                            }
+                }else{
+                    dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                }
+                
             } else {
-                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-                dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                    let stringLikenum = likeNumberLabel.text!
+                    print("string:\(stringLikenum)")
+                    print(stringLikenum)
+                    if let favoriteNumber = Int(stringLikenum){
+                        likeNumberLabel.text =  String(favoriteNumber + 1)
+                        print(likeNumberLabel.text)
+                    }
+                    
+                }else{
+                    
+                    dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                }
+               
+                
             }
             
         } else {
             if heartButton.currentImage == UIImage(named: "heart") {
-                heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
-                dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart_fill"), for: .selected)
+                    let stringLikenum = likeNumberLabel.text!
+                    print("string:\(stringLikenum)")
+                    print(stringLikenum)
+                    if let favoriteNumber = Int(stringLikenum){
+                        likeNumberLabel.text =  String(favoriteNumber - 1)
+                        print(likeNumberLabel.text)
+                    }
+                }else{
+                    dataManager.dislikeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/like")
+                }
+              
+                
             } else {
-                heartButton.setImage(UIImage(named: "heart"), for: .normal)
-                dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                if feedIndex == 1{
+                    heartButton.setImage(UIImage(named: "heart"), for: .normal)
+                    let stringLikenum = likeNumberLabel.text!
+                    print("string:\(stringLikenum)")
+                    print(stringLikenum)
+                    if let favoriteNumber = Int(stringLikenum){
+                        likeNumberLabel.text =  String(favoriteNumber - 1)
+                        print(likeNumberLabel.text)
+                    }
+                }else{
+                    dataManager.likeCheck(input, delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/dislike")
+                }
+              
+                
             }
             
         }
@@ -210,6 +261,11 @@ class FeedDetailViewController: UIViewController {
        
 
     }
+    
+    @IBAction func commentReportAction(_ sender: Any) {
+        presentAlert(title: "부적절한 댓글은 hs7198@naver.com으로 신고해주세요. 24시간 내에 처리가 완료 됩니다.")
+    }
+    
     
 }
 
@@ -410,9 +466,6 @@ extension FeedDetailViewController {
         dataManager.feedComment(url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
         commentWriteTextField.text = ""
            print("저장됨")
-
-           
-            
         }
     
     func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
@@ -420,11 +473,22 @@ extension FeedDetailViewController {
     }
     
     func likeCheck(_ result: FeedLikeResponse) { // 좋아요
-        self.presentAlert(title: "좋아요")
+//        let stringLikenum = likeNumberLabel.text!
+//        print(likeNumberLabel.text!)
+//        print("string:\(stringLikenum)")
+//        if let favoriteNumber = Int(stringLikenum){
+//            likeNumberLabel.text =  String(favoriteNumber + 1)
+//            print(likeNumberLabel.text!)
+//            }
+        
+        //self.presentAlert(title: "좋아요")
+        dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
     }
     
     func dislikeCheck(_ result: FeedDislikeResponse) { // 좋아요 취소
-        self.presentAlert(title: "좋아요 취소")
+
+       // self.presentAlert(title: "좋아요 취소")
+        dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
     }
     
     func failedToRequest(message: String) {
@@ -499,8 +563,11 @@ extension FeedDetailViewController {
         
           print(self.indexList)
         }
-      
-        
-        
     
+    //신고하기 성공
+    func report(result : String){
+        
+        presentAlert(title: result)
+    }
+      
 }

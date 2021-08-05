@@ -348,6 +348,7 @@ class UploadAirbnbFifthStepViewController : UIViewController{
         self.airbnbInput.cons = clickedDisadvantageArray
         self.airbnbInput.review = reviewTextView.text ?? "후기가 없습니다."
         print(self.airbnbInput)
+        showIndicator()
         UploadAirbnbDataManager().airbnb(parameters: self.airbnbInput, viewcontroller: self)
         
         
@@ -645,6 +646,7 @@ extension UploadAirbnbFifthStepViewController : UITextFieldDelegate{
 extension UploadAirbnbFifthStepViewController{
     
    func success(){
+    dismissIndicator()
     let uploadVc = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
             uploadVc?.modalPresentationStyle = .fullScreen
         self.present(uploadVc!, animated: false, completion: nil)
@@ -652,6 +654,7 @@ extension UploadAirbnbFifthStepViewController{
     }
     
     func fail(){
+        dismissIndicator()
         
     }
 
