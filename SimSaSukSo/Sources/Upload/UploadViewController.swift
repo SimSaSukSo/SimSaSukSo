@@ -140,11 +140,13 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             UploadViewController.photoArray.append(indexPath.item)
             UploadViewController.uploadPhotos.append(cell.photoCellImageView.image!)
             uploadImage(image: cell.photoCellImageView.image!)
+            print(UploadViewController.photoArray)
         } else { // 선택 취소
             cell.blackView.isHidden = true
             cell.numberLabel.isHidden = true
-            UploadViewController.photoArray.remove(at: Int(cell.numberLabel.text!)!)
-            UploadViewController.uploadPhotos.remove(at: Int(cell.numberLabel.text!)!)
+            UploadViewController.photoArray.removeAll{ ($0 == indexPath.item) }
+            UploadViewController.uploadPhotos.removeAll{ ($0 == cell.photoCellImageView.image) }
+            print(UploadViewController.photoArray)
         }
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
