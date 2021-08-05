@@ -69,7 +69,6 @@ class UploadViewController : UIViewController {
                 print("실패")
             } else {
                 ref.downloadURL { (downUrl, error) in
-                    let downData = NSData(contentsOf:  downUrl!)
                     UploadViewController.urlArray.append(downUrl!.absoluteString)
                     print(UploadViewController.urlArray)
                     
