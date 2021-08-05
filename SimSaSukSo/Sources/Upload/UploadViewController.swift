@@ -58,15 +58,21 @@ class UploadViewController : UIViewController {
     func uploadImage(image: UIImage) {
         var data = Data()
         data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "업로드 사진"
+        let filePath = "Upload"
+        let imageName = "\(Int(NSDate.timeIntervalSinceReferenceDate * 1080)).jpg"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data, metadata: metaData) {
-            (metaData, error) in if let error = error {
+        let ref = storage.reference().child(filePath).child(imageName)
+       
+        ref.putData(data, metadata: metaData) { metaData, error in
+            if (error != nil) {
                 print("실패")
-                return
             } else {
-                print("성공")
+                ref.downloadURL { (downUrl, error) in
+                    UploadViewController.urlArray.append(downUrl!.absoluteString)
+                    print(UploadViewController.urlArray)
+                    
+                }
             }
         }
 
@@ -108,14 +114,6 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.blackView.isHidden = true
         cell.numberLabel.isHidden = true
         
-        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
-            for i in 0...UploadViewController.photoArray.count-1 {
-                if indexPath.item == UploadViewController.photoArray[i] {
-                    cell.numberLabel.text = "\(i+1)"
-                }
-            }
-        }
-        
         cell.numberLabel.layer.cornerRadius = cell.numberLabel.frame.size.height/2
         cell.numberLabel.layer.masksToBounds = true
         
@@ -132,37 +130,26 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.numberLabel.isHidden = false
             UploadViewController.photoArray.append(indexPath.item)
             UploadViewController.uploadPhotos.append(cell.photoCellImageView.image!)
-            UploadViewController.urlArray.append("https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=a96089a6-7933-4bd9-953a-631ede902ba2")
-        } else {
+            uploadImage(image: cell.photoCellImageView.image!)
+            print(UploadViewController.photoArray)
+        } else { // 선택 취소
             cell.blackView.isHidden = true
             cell.numberLabel.isHidden = true
-            UploadViewController.photoArray.remove(at: Int(cell.numberLabel.text!)!)
-            UploadViewController.uploadPhotos.remove(at: Int(cell.numberLabel.text!)!)
+            UploadViewController.photoArray.removeAll{ ($0 == indexPath.item) }
+            UploadViewController.uploadPhotos.removeAll{ ($0 == cell.photoCellImageView.image) }
+            print(UploadViewController.photoArray)
         }
         
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
                 if indexPath.item == UploadViewController.photoArray[i] {
-                    cell.numberLabel.text = "\(i+1)"
+                    cell.numberLabel.text = "✓"
                 }
             }
         }
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
-            
-        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
-            if cell.numberLabel.isHidden == false { // 선택된
-                uploadImage(image: cell.photoCellImageView.image!)
-            }
-        }
-        
-       
-           
-    }
-    
+
 
 }
 

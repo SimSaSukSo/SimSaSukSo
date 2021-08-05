@@ -50,9 +50,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func saveButtonAction(_ sender: UIButton) {
         uploadImage(image: userProfileImageView.image!)
-        let input = ProfileImageRequest(profileUrl: "https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/프로필%20사진?alt=media&token=10360d60-d51d-45fc-b2ee-609b6c417bbe")
-        dataManager.profileImage(input, delegate: self)
-    
+
     }
     
     @IBAction func cameraButtonAction(_ sender: UIButton) {
@@ -142,15 +140,22 @@ extension ProfileViewController {
     func uploadImage(image: UIImage) {
         var data = Data()
         data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "프로필 사진"
+        let filePath = "Profile"
+        let imageName = "\(Int(NSDate.timeIntervalSinceReferenceDate * 1080)).jpg"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data, metadata: metaData) {
-            (metaData, error) in if let error = error {
+        let ref = storage.reference().child(filePath).child(imageName)
+        
+        ref.putData(data, metadata: metaData) { (metaData, error) in
+            if (error != nil) {
                 print("실패")
                 return
             } else {
-                print("성공")
+                ref.downloadURL { (downUrl, error) in
+                    let input = ProfileImageRequest(profileUrl: downUrl!.absoluteString)
+                    self.dataManager.profileImage(input, delegate: self)
+                    print("성공")
+                }
             }
         }
 
@@ -169,7 +174,7 @@ extension ProfileViewController {
 extension ProfileViewController {
     func profileImage(_ reuslt: ProfileImageResponse) {
         self.presentAlert(title: "프로필 사진 변경 완료")
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false, completion: nil)
     }
     
     func failedToRequest(message: String) {
