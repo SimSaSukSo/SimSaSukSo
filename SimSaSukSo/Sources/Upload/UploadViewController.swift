@@ -58,15 +58,17 @@ class UploadViewController : UIViewController {
     func uploadImage(image: UIImage) {
         var data = Data()
         data = image.jpegData(compressionQuality: 0.8)!
-        let filePath = "업로드 사진"
+        let filePath = "Upload"
+        let imageName = "\(Int(NSDate.timeIntervalSinceReferenceDate * 1080)).jpg"
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
-        storage.reference().child(filePath).putData(data, metadata: metaData) {
-            (metaData, error) in if let error = error {
+        let ref = storage.reference().child(filePath).child(imageName)
+        
+        ref.putData(data, metadata: metaData) { metaData, error in
+            if (error != nil) {
                 print("실패")
-                return
             } else {
-                print("성공")
+                print("파이어베이스 성공")
             }
         }
 
