@@ -63,12 +63,17 @@ class UploadViewController : UIViewController {
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         let ref = storage.reference().child(filePath).child(imageName)
-        
+       
         ref.putData(data, metadata: metaData) { metaData, error in
             if (error != nil) {
                 print("실패")
             } else {
-                print("파이어베이스 성공")
+                ref.downloadURL { (downUrl, error) in
+                    let downData = NSData(contentsOf:  downUrl!)
+                    UploadViewController.urlArray.append(downUrl!.absoluteString)
+                    print(UploadViewController.urlArray)
+                    
+                }
             }
         }
 
@@ -134,8 +139,8 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.numberLabel.isHidden = false
             UploadViewController.photoArray.append(indexPath.item)
             UploadViewController.uploadPhotos.append(cell.photoCellImageView.image!)
-            UploadViewController.urlArray.append("https://firebasestorage.googleapis.com/v0/b/simsasukso.appspot.com/o/업로드%20사진?alt=media&token=a96089a6-7933-4bd9-953a-631ede902ba2")
-        } else {
+            uploadImage(image: cell.photoCellImageView.image!)
+        } else { // 선택 취소
             cell.blackView.isHidden = true
             cell.numberLabel.isHidden = true
             UploadViewController.photoArray.remove(at: Int(cell.numberLabel.text!)!)
@@ -157,7 +162,6 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
             
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             if cell.numberLabel.isHidden == false { // 선택된
-                uploadImage(image: cell.photoCellImageView.image!)
             }
         }
         
