@@ -115,14 +115,6 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.blackView.isHidden = true
         cell.numberLabel.isHidden = true
         
-        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
-            for i in 0...UploadViewController.photoArray.count-1 {
-                if indexPath.item == UploadViewController.photoArray[i] {
-                    cell.numberLabel.text = "\(i+1)"
-                }
-            }
-        }
-        
         cell.numberLabel.layer.cornerRadius = cell.numberLabel.frame.size.height/2
         cell.numberLabel.layer.masksToBounds = true
         
@@ -152,25 +144,13 @@ extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
             for i in 0...UploadViewController.photoArray.count-1 {
                 if indexPath.item == UploadViewController.photoArray[i] {
-                    cell.numberLabel.text = "\(i+1)"
+                    cell.numberLabel.text = "✓"
                 }
             }
         }
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
-            
-        if !UploadViewController.photoArray.isEmpty { // 배열 안비어있으면
-            if cell.numberLabel.isHidden == false { // 선택된
-            }
-        }
-        
-       
-           
-    }
-    
+
 
 }
 
