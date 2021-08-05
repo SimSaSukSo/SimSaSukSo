@@ -346,6 +346,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
         self.generalInput.cons = clickedDisadvantageArray
         self.generalInput.review = reviewTextView.text ?? "후기가 없습니다."
         print(self.generalInput)
+        showIndicator()
         UploadGeneralDataManager().feeds(parameters: self.generalInput, viewcontroller: self)
         
         
@@ -629,6 +630,7 @@ extension UploadGeneralFifthStepViewController : UITextViewDelegate{
     extension UploadGeneralFifthStepViewController {
     
    func success(){
+    self.dismissIndicator()
     let uploadVc = self.storyboard?.instantiateViewController(identifier: "UploadCompleteViewController")
             uploadVc?.modalPresentationStyle = .fullScreen
         self.present(uploadVc!, animated: false, completion: nil)
@@ -636,6 +638,7 @@ extension UploadGeneralFifthStepViewController : UITextViewDelegate{
     }
     
     func fail(){
+        self.dismissIndicator()
         
     }
         

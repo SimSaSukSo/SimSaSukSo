@@ -119,7 +119,8 @@ extension SplashViewController : ASAuthorizationControllerDelegate{
             
          
             let input : appleLoginInput = appleLoginInput(appleId: userIdentifier, email: userEmail ?? "이메일 없음", nickname: userFullName ?? "닉네임 없음" )
-               
+            
+                self.showIndicator()
                 appleLoginDataManager().appleLogin(parameters: input, viewcontroller: self)
 
                 

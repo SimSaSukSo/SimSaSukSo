@@ -78,6 +78,7 @@ class NicknameViewController : BaseViewController{
         
         print(nicknameTextfield.text!)
         KeyCenter.LOGIN_TOKEN = jwt!
+        showIndicator()
         nicknameDataManager().nickname(nickname: nicknameTextfield.text!, viewcontroller: self)
         
         
@@ -139,6 +140,7 @@ extension NicknameViewController: UITextFieldDelegate {
         
         print(nicknameTextfield.text!)
         KeyCenter.LOGIN_TOKEN = jwt!
+        showIndicator()
         nicknameDataManager().nickname(nickname: nicknameTextfield.text!, viewcontroller: self)
         print("여기서만 되면돼")
         self.view.endEditing(true)
@@ -150,7 +152,7 @@ extension NicknameViewController{
     
     func success(){
         
-        
+        dismissIndicator()
         KeyCenter.LOGIN_TOKEN = self.jwt!
         print("jwt 여기:\(jwt!)")
         
@@ -163,12 +165,14 @@ extension NicknameViewController{
         print("???")
     }
     func nicknameError(message : String){
+        dismissIndicator()
         print("닉네임 에러..")
         nicknameLabel.text = message
         nicknameLabel.isHidden = false
     }
     
     func fail(){
+        dismissIndicator()
         self.presentAlert(title: "서버와 통신이 불안정합니다")
     }
     

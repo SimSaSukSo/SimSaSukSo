@@ -18,7 +18,8 @@ class UploadAirbnbDataManager{
                         print("성공")
                         
                     }else{
-                        print(response.message)
+                        viewcontroller.presentAlert(title: response.message)
+                        
                             
                     }
                 case .failure(let error):
