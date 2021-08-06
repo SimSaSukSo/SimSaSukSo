@@ -50,6 +50,7 @@ class FeedCommentTableViewCell: UITableViewCell {
 extension FeedCommentTableViewCell {
     func commentLikeCheck(result: CommentLikeResponse) {
         print("좋아요 성공")
+        print(commentIndex)
     }
     
     func commentDislikeCheck(result: CommentDislikeResponse) {

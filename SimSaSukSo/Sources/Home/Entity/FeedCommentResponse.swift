@@ -21,4 +21,5 @@ struct FeedCommentResult: Decodable {
     var createdAt: String
     var updatedAt: String
     var likeNum: Int
+    var isLiked: Int
 }

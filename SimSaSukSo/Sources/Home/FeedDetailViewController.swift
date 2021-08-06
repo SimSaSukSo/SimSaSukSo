@@ -519,7 +519,7 @@ extension FeedDetailViewController {
     }
     
     func commentDefaultValue(){
-        let defaultComment : FeedCommentResponse = FeedCommentResponse(isSuccess: true, code: 1000, message: "성공", result: Optional([SimSaSukSo.FeedCommentResult(commentIndex: 1, userIndex: 2, nickname: "희동", avatarUrl: "https://avatars.githubusercontent.com/u/59307414?v=4", content: "첫번째 댓글을 작성해 주세요", createdAt: "2021-07-16T19:32:26.000Z", updatedAt: "2021-07-16T19:32:26.000Z", likeNum: 0)]))
+        let defaultComment : FeedCommentResponse = FeedCommentResponse(isSuccess: true, code: 1000, message: "성공", result: Optional([SimSaSukSo.FeedCommentResult(commentIndex: 1, userIndex: 2, nickname: "희동", avatarUrl: "https://avatars.githubusercontent.com/u/59307414?v=4", content: "첫번째 댓글을 작성해 주세요", createdAt: "2021-07-16T19:32:26.000Z", updatedAt: "2021-07-16T19:32:26.000Z", likeNum: 0, isLiked: 0)]))
         
         feedComments = defaultComment.result!
         commentNumberLabel.text = String(feedComments.count)
