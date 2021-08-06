@@ -303,12 +303,10 @@ extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDa
             
             let feedImage = feedImages[indexPath.row]
             
-            // 이미지 URL 가져오기
-            let urlString = feedImage.source
-            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                cell.imageView.image = UIImage(data: data)
+            if let url = URL(string: feedImage.source!) {
+                cell.imageView.kf.setImage(with: url)
+            } else {
+                cell.imageView.image = UIImage(named: "defaultImage")
             }
 
             return cell
@@ -388,12 +386,10 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.likeNumberLabel.text = "좋아요 " + String(feedComment.likeNum)
         cell.userNameLabel.text = feedComment.nickname
        
-        // 이미지 URL 가져오기
-        let urlString = feedComment.avatarUrl
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.userImageView.image = UIImage(data: data)
+        if let url = URL(string: feedComment.avatarUrl) {
+            cell.userImageView.kf.setImage(with: url)
+        } else {
+            cell.userImageView.image = UIImage(named: "defaultImage")
         }
         
         tableView.rowHeight = UITableView.automaticDimension
@@ -430,12 +426,10 @@ extension FeedDetailViewController {
         prosLabel.text! = result.prosAndCons?.pros?.description ?? "꺠끗함"
         consLabel.text! = result.prosAndCons?.cons?.description ?? "더러움"
         
-        // 이미지 URL 가져오기
-        let urlString = result.userInfo?.avatarUrl
-        if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            userProfileImageView.image = UIImage(data: data)
+        if let url = URL(string: result.userInfo!.avatarUrl) {
+            userProfileImageView.kf.setImage(with: url)
+        } else {
+            userProfileImageView.image = UIImage(named: "defaultImage")
         }
         
         hashTags = result.hashTags!
