@@ -44,6 +44,8 @@
 		A54E95FD26B4326A005B6F18 /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E95FC26B4326A005B6F18 /* SearchDataManager.swift */; };
 		A54E960126B44E05005B6F18 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E960026B44E05005B6F18 /* SearchLocationViewController.swift */; };
 		A550394C26BD521B0066C4F7 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550394B26BD521B0066C4F7 /* UserResponse.swift */; };
+		A550395126BD77AC0066C4F7 /* CommentLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550395026BD77AC0066C4F7 /* CommentLikeResponse.swift */; };
+		A550395426BD7A9D0066C4F7 /* CommentDislikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550395326BD7A9D0066C4F7 /* CommentDislikeResponse.swift */; };
 		A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */; };
 		A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */; };
 		A55362C426AD5B4A0087C28D /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55362C326AD5B4A0087C28D /* FeedResponse.swift */; };
@@ -244,6 +246,8 @@
 		A54E95FC26B4326A005B6F18 /* SearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
 		A54E960026B44E05005B6F18 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 		A550394B26BD521B0066C4F7 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		A550395026BD77AC0066C4F7 /* CommentLikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentLikeResponse.swift; sourceTree = "<group>"; };
+		A550395326BD7A9D0066C4F7 /* CommentDislikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDislikeResponse.swift; sourceTree = "<group>"; };
 		A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailResponse.swift; sourceTree = "<group>"; };
 		A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDeleteResponse.swift; sourceTree = "<group>"; };
 		A55362C326AD5B4A0087C28D /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
@@ -520,6 +524,8 @@
 				A54E95AE26B41753005B6F18 /* FeedLikeRequest.swift */,
 				A7C2A0EB26B447E700C0F003 /* WriteFeedCommentResponse.swift */,
 				A7E45D5326BB05630003947D /* ReportResponse.swift */,
+				A550395026BD77AC0066C4F7 /* CommentLikeResponse.swift */,
+				A550395326BD7A9D0066C4F7 /* CommentDislikeResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1312,6 +1318,7 @@
 				A7A06665269E1DD3009A1397 /* UploadAirbnbFirstStepViewController.swift in Sources */,
 				A7C2A0DC26B32C9900C0F003 /* appleLoginManager.swift in Sources */,
 				A54E95FA26B42A45005B6F18 /* AllTableViewCell.swift in Sources */,
+				A550395126BD77AC0066C4F7 /* CommentLikeResponse.swift in Sources */,
 				A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
@@ -1343,6 +1350,7 @@
 				A54E95AC26B41714005B6F18 /* FeedLikeResponse.swift in Sources */,
 				A766CB362680D1FE00565095 /* NicknameViewController.swift in Sources */,
 				A55368E126A072AB002E232E /* SearchFilterViewController.swift in Sources */,
+				A550395426BD7A9D0066C4F7 /* CommentDislikeResponse.swift in Sources */,
 				A74AB15826A6AB860038A1C1 /* StartDatePickerViewController.swift in Sources */,
 				A74AB15E26A6EF860038A1C1 /* nicknameDataManager.swift in Sources */,
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,

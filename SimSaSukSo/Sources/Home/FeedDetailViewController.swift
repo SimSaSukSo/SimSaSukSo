@@ -563,6 +563,14 @@ extension FeedDetailViewController {
 
     }
     
+    func commentLikeCheck(result: CommentLikeResponse) {
+        self.presentAlert(title: "좋아요")
+    }
+    
+    func commentDislikeCheck(result: CommentDislikeResponse) {
+        self.presentAlert(title: "좋아요 취소")
+    }
+    
 
     //찜 조회
         

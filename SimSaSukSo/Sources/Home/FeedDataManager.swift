@@ -135,4 +135,34 @@ class FeedDataManager {
                 }
             }
     }
+    
+    // 댓글 좋아요
+    func commentLikeCheck(delegate: FeedDetailViewController, url: String) {
+        AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: CommentLikeResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.commentLikeCheck(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
+    
+    // 댓글 좋아요 취소
+    func commentdislikeCheck(delegate: FeedDetailViewController, url: String) {
+        AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: CommentDislikeResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.commentDislikeCheck(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
 }
