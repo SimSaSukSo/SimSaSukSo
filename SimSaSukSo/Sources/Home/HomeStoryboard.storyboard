@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -2233,9 +2234,138 @@
             </objects>
             <point key="canvasLocation" x="3163.7681159420295" y="-974.33035714285711"/>
         </scene>
+        <!--Feed Favorite Alert View Controller-->
+        <scene sceneID="XcO-z8-GmJ">
+            <objects>
+                <viewController storyboardIdentifier="FeedFavoriteAlertViewController" modalPresentationStyle="overFullScreen" id="TxK-E8-uC8" customClass="FeedFavoriteAlertViewController" customModule="SimSaSukSo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JyM-JX-Y4c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHD-E0-ri4">
+                                <rect key="frame" x="16" y="274.5" width="382" height="347"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gr1-07-c9r">
+                                        <rect key="frame" x="16" y="26" width="350" height="239"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜 목록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vJ-qF-42y">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="19"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
+                                                <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="highlightedColor" name="AccentColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dz4-7f-uDO">
+                                                <rect key="frame" x="0.0" y="39" width="350" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="4gX-cq-Lsk"/>
+                                                </constraints>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteEditTableViewCell" rowHeight="51" id="rSf-kU-UKV" customClass="FavoriteEditTableViewCell" customModule="SimSaSukSo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="350" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rSf-kU-UKV" id="RPI-jv-6G2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="51"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="친구들이랑 호캉스" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4X-JI-aSD">
+                                                                    <rect key="frame" x="0.0" y="4" width="350" height="43"/>
+                                                                    <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="tintColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="42" id="XkP-Tv-AMR"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="S4X-JI-aSD" firstAttribute="top" secondItem="RPI-jv-6G2" secondAttribute="top" constant="4" id="FHX-za-MQ7"/>
+                                                                <constraint firstAttribute="trailing" secondItem="S4X-JI-aSD" secondAttribute="trailing" id="IaS-Aw-8js"/>
+                                                                <constraint firstItem="S4X-JI-aSD" firstAttribute="leading" secondItem="RPI-jv-6G2" secondAttribute="leading" id="Pdj-7W-baq"/>
+                                                                <constraint firstAttribute="bottom" secondItem="S4X-JI-aSD" secondAttribute="bottom" constant="4" id="o6R-AS-JEa"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="editTextField" destination="S4X-JI-aSD" id="Rzw-1n-gJ7"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="Ldb-hN-Pl2">
+                                        <rect key="frame" x="86" y="302" width="210" height="29"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gES-yP-oYf">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="29"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <state key="normal" title="닫기">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeButtonAction:" destination="TxK-E8-uC8" eventType="touchUpInside" id="9SS-Iz-Y8g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkn-QO-sk3">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="29"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                                <state key="normal" title="저장">
+                                                    <color key="titleColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveButtonAction:" destination="TxK-E8-uC8" eventType="touchUpInside" id="Yau-gY-X7L"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cex-3M-2Hs">
+                                        <rect key="frame" x="0.0" y="285" width="382" height="1"/>
+                                        <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Fjb-8S-L1s"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Gr1-07-c9r" firstAttribute="centerX" secondItem="cHD-E0-ri4" secondAttribute="centerX" id="34O-MC-OW9"/>
+                                    <constraint firstItem="Gr1-07-c9r" firstAttribute="top" secondItem="cHD-E0-ri4" secondAttribute="top" constant="26" id="4v1-nu-yUP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cex-3M-2Hs" secondAttribute="trailing" id="Hfx-XP-aNV"/>
+                                    <constraint firstItem="Cex-3M-2Hs" firstAttribute="top" secondItem="Gr1-07-c9r" secondAttribute="bottom" constant="20" id="JQL-oY-0aP"/>
+                                    <constraint firstItem="Gr1-07-c9r" firstAttribute="leading" secondItem="cHD-E0-ri4" secondAttribute="leading" constant="16" id="KDh-CJ-xTO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gr1-07-c9r" secondAttribute="trailing" constant="16" id="RYD-tv-okq"/>
+                                    <constraint firstItem="Ldb-hN-Pl2" firstAttribute="top" secondItem="Cex-3M-2Hs" secondAttribute="bottom" constant="16" id="TK6-11-mMz"/>
+                                    <constraint firstItem="Ldb-hN-Pl2" firstAttribute="centerX" secondItem="cHD-E0-ri4" secondAttribute="centerX" id="ol4-BD-dNv"/>
+                                    <constraint firstItem="Cex-3M-2Hs" firstAttribute="leading" secondItem="cHD-E0-ri4" secondAttribute="leading" id="rU7-Oy-Qon"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ldb-hN-Pl2" secondAttribute="bottom" constant="16" id="ttf-bK-h4T"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fhv-kS-vMh"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cHD-E0-ri4" firstAttribute="centerY" secondItem="JyM-JX-Y4c" secondAttribute="centerY" id="FHt-QI-P0W"/>
+                            <constraint firstItem="Fhv-kS-vMh" firstAttribute="trailing" secondItem="cHD-E0-ri4" secondAttribute="trailing" constant="16" id="Nqs-Y1-Sq9"/>
+                            <constraint firstItem="cHD-E0-ri4" firstAttribute="centerX" secondItem="JyM-JX-Y4c" secondAttribute="centerX" id="YNx-5w-Mtb"/>
+                            <constraint firstItem="cHD-E0-ri4" firstAttribute="leading" secondItem="Fhv-kS-vMh" secondAttribute="leading" constant="16" id="kd2-6z-AvW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="cHD-E0-ri4" id="xPe-gD-HUB"/>
+                        <outlet property="closeButton" destination="gES-yP-oYf" id="D6a-08-UQP"/>
+                        <outlet property="editTableView" destination="dz4-7f-uDO" id="b9u-Gp-rlD"/>
+                        <outlet property="editTableViewHeight" destination="4gX-cq-Lsk" id="Viy-95-jDK"/>
+                        <outlet property="saveButton" destination="Bkn-QO-sk3" id="gYs-pR-wXC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpB-EP-nux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3864" y="-974"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1c3-8D-Oet"/>
+        <segue reference="8Yu-dn-ONl"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="angryFace" width="20" height="20"/>
@@ -2252,6 +2382,9 @@
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.split.2x2" catalog="system" width="128" height="114"/>
         <image name="view_score_image" width="19" height="20"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
