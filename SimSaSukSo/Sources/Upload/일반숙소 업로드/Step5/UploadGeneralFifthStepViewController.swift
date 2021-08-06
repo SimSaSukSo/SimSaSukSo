@@ -345,7 +345,7 @@ class UploadGeneralFifthStepViewController : UIViewController{
         self.generalInput.pros = clickedAdvantageArray
         self.generalInput.cons = clickedDisadvantageArray
         self.generalInput.review = reviewTextView.text ?? "후기가 없습니다."
-        print(self.generalInput)
+        print("보낼값: \(self.generalInput)")
         showIndicator()
         UploadGeneralDataManager().feeds(parameters: self.generalInput, viewcontroller: self)
         
