@@ -59,7 +59,17 @@ extension FavoriteDetailViewController: UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = detailCollectionView.cellForItem(at: indexPath) as! FavoriteDetailCollectionViewCell
+        let favoriteDetailFeed = favoriteDetailFeeds[indexPath.row]
+        cell.tag = favoriteDetailFeed.feedIndex
+        
+        let feedStoryboard = UIStoryboard.init(name: "HomeStoryboard", bundle: nil)
+        let feedVC = feedStoryboard.instantiateViewController(identifier: "FeedDetailViewController") as! FeedDetailViewController
+        feedVC.feedIndex = cell.tag
+        
+        present(feedVC, animated: true, completion: nil)
+    }
 }
 
 extension FavoriteDetailViewController: UICollectionViewDelegateFlowLayout {
