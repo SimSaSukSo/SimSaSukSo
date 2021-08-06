@@ -9,6 +9,7 @@ import UIKit
 import MobileCoreServices
 import FirebaseStorage
 import FirebaseAuth
+import KakaoSDKUser
 
 class ProfileViewController: UIViewController {
     
@@ -24,6 +25,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var userProfileImageView: UIImageView!
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var userNicknameLabel: UILabel!
+    @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var userEmailLabel: UILabel!
     
 
@@ -33,6 +35,7 @@ class ProfileViewController: UIViewController {
         imagePicker.delegate = self
         
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
+        profileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
         
         cameraButton.layer.cornerRadius = cameraButton.frame.size.height/2
         cameraButton.layer.shadowColor = UIColor.lightGray.cgColor
@@ -42,6 +45,8 @@ class ProfileViewController: UIViewController {
         
         //downloadImage(imageView: userProfileImageView)
         
+        kakaoUser()
+    
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -132,6 +137,28 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func kakaoUser() {
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("me() success.")
+
+                //do something
+                _ = user?.kakaoAccount?.email
+                self.userEmailLabel.text = user?.kakaoAccount?.email
+                if let url = URL(string: (user?.kakaoAccount?.profile?.profileImageUrl?.absoluteString)!) {
+                    self.profileImageView.kf.setImage(with: url)
+                } else {
+                    self.profileImageView.image = UIImage(named: "defaultImage")
+                }
+
+            }
+        }
+    }
+    
     
 }
 //MARK: - Firebase
