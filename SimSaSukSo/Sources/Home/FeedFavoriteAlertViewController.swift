@@ -10,6 +10,7 @@ import UIKit
 
 class FeedFavoriteAlertViewController: UIViewController {
     
+    var delegate: bookmarkDelegate?
     
     var feedIndex : Int = 0
     var favoriteLists: [FavoriteResult] = []
@@ -55,8 +56,8 @@ class FeedFavoriteAlertViewController: UIViewController {
  
             let input = FavoriteCheckRequest(savedListIndex: selectedFavoriteIndex, feedIndex: feedIndex)
         print("보낼값 : \(input)")
-//            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
-            FeedDataManager().favoriteCheck(input, delegate: self)
+        
+        FeedDataManager().favoriteCheck(input, delegate: self)
         
     }
     
@@ -115,6 +116,12 @@ extension FeedFavoriteAlertViewController {
     
     func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
         self.presentAlert(title: result.message)
+        
+        if result.message == "성공"{
+            delegate?.toFilledButton()
+        }else if result.message == "찜 해제 성공"{
+            delegate?.toVacantButton()
+        }
         
     }
     
