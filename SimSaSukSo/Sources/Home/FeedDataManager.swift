@@ -137,7 +137,7 @@ class FeedDataManager {
     }
     
     // 댓글 좋아요
-    func commentLikeCheck(delegate: FeedDetailViewController, url: String) {
+    func commentLikeCheck(delegate: FeedCommentTableViewCell, url: String) {
         AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: CommentLikeResponse.self) { response in
@@ -152,7 +152,7 @@ class FeedDataManager {
     }
     
     // 댓글 좋아요 취소
-    func commentdislikeCheck(delegate: FeedDetailViewController, url: String) {
+    func commentdislikeCheck(delegate: FeedCommentTableViewCell, url: String) {
         AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
             .validate()
             .responseDecodable(of: CommentDislikeResponse.self) { response in

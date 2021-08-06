@@ -9,6 +9,8 @@ import UIKit
 
 class FeedCommentTableViewCell: UITableViewCell {
     
+    lazy var dataManager = FeedDataManager()
+    
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
@@ -32,10 +34,27 @@ class FeedCommentTableViewCell: UITableViewCell {
         heartButton.isSelected = !heartButton.isSelected
         if heartButton.isSelected {
             heartButton.setImage(UIImage(named: "comment_heart_fill"), for: .selected)
+            dataManager.commentLikeCheck(delegate: self, url: "\(Constant.BASE_URL)api/feeds/3/like")
         } else {
             heartButton.setImage(UIImage(named: "comment_heart"), for: .normal)
+            dataManager.commentdislikeCheck(delegate: self, url: "\(Constant.BASE_URL)api/feeds/3/dislike")
         }
         
         
+    }
+}
+
+//MARK: - API
+extension FeedCommentTableViewCell {
+    func commentLikeCheck(result: CommentLikeResponse) {
+        print("좋아요 성공")
+    }
+    
+    func commentDislikeCheck(result: CommentDislikeResponse) {
+        print("좋아요 취소 성공")
+    }
+    
+    func failedToRequest(message: String) {
+        print(message)
     }
 }
