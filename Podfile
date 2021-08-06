@@ -16,5 +16,6 @@ pod 'Firebase/Storage'
 pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Kingfisher', '~> 6.0'
 
 end
