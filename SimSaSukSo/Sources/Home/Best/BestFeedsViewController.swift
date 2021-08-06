@@ -46,12 +46,10 @@ extension BestFeedsViewController: UICollectionViewDelegate, UICollectionViewDat
         
         let bestFeed = BestFeedsViewController.bestFeeds[indexPath.row]
         
-        // 이미지 URL 가져오기
-        let urlString = bestFeed.source
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.imageView.image = UIImage(data: data)
+        if let url = URL(string: bestFeed.source) {
+            cell.imageView.kf.setImage(with: url)
+        } else {
+            cell.imageView.image = UIImage(named: "defaultImage")
         }
         
         cell.tag = bestFeed.feedIndex

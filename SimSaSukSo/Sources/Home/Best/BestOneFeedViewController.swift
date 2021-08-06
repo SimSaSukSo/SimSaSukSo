@@ -63,17 +63,14 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         }
         
         cell.degreeLabel.text = "\(bestOneFeed.degree)"
+
         
-        // 이미지 URL 가져오기
-//        let urlString = bestOneFeed.source
-//        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-//           let url = URL(string: urlstring),
-//           let data = try? Data(contentsOf: url) {
-//            cell.imageView.image = UIImage(data: data)
-//        }
+        if let url = URL(string: bestOneFeed.source) {
+            cell.imageView.kf.setImage(with: url)
+        } else {
+            cell.imageView.image = UIImage(named: "defaultImage")
+        }
         
-        guard let url = URL(string: bestOneFeed.source) else { return UICollectionViewCell()}
-        cell.imageView.kf.setImage(with: url)
         
         cell.tag = bestOneFeed.feedIndex
         

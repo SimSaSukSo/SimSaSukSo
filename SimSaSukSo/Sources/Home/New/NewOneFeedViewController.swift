@@ -64,12 +64,10 @@ extension NewOneFeedViewController: UICollectionViewDelegate, UICollectionViewDa
         
         cell.degreeLabel.text = "\(newOneFeed.degree)"
         
-        // 이미지 URL 가져오기
-        let urlString = newOneFeed.source
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.imageView.image = UIImage(data: data)
+        if let url = URL(string: newOneFeed.source) {
+            cell.imageView.kf.setImage(with: url)
+        } else {
+            cell.imageView.image = UIImage(named: "defaultImage")
         }
         
         cell.tag = newOneFeed.feedIndex
