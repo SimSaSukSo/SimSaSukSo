@@ -466,7 +466,7 @@ extension FeedDetailViewController {
     }
     
     func writeFeedComment(result : WriteFeedCommentResponse){
-        dataManager.feedComment(url: "https://dev.enudgu.shop/api/feeds/\(feedIndex)/comments", delegate: self)
+        dataManager.feedComment(url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
         commentWriteTextField.text = ""
            print("저장됨")
         }

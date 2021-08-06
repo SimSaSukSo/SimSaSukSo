@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
         cameraButton.layer.shadowOpacity = 0.2
         cameraButton.layer.shadowRadius = 0.8
         
-        downloadImage(imageView: userProfileImageView)
+        //downloadImage(imageView: userProfileImageView)
         
     }
     
@@ -154,7 +154,7 @@ extension ProfileViewController {
                 ref.downloadURL { (downUrl, error) in
                     let input = ProfileImageRequest(profileUrl: downUrl!.absoluteString)
                     self.dataManager.profileImage(input, delegate: self)
-                    print("성공")
+                    print(downUrl!)
                 }
             }
         }
@@ -163,7 +163,7 @@ extension ProfileViewController {
     
     // Firebase 다운로드
     func downloadImage(imageView: UIImageView) {
-        storage.reference(forURL: "gs://simsasukso.appspot.com/프로필 사진").downloadURL { (url, error) in
+        storage.reference(forURL: "gs://simsasukso.appspot.com/프로필").downloadURL { (url, error) in
             let data = NSData(contentsOf: url!)
             let image = UIImage(data: data! as Data)
             imageView.image = image
