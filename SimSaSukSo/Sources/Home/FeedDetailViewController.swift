@@ -13,6 +13,7 @@ class FeedDetailViewController: UIViewController {
     
     var hashTags = [HashTags]()
     var feedImages = [FeedImage]()
+    var userInfo: UserInfo?
     
     var feedComments = [FeedCommentResult]()
             
@@ -414,7 +415,7 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - API
 extension FeedDetailViewController {
     func feedView(result: FeedResult) {
-        print(result)
+        userNicknameLabel.text! = result.userInfo!.nickname
         likeNumberLabel.text! = String(result.feedLike!.likeNum ?? 0)
         reliabilityLabel.text! = String(result.feedInfo!.reliability ?? 0)
         correctionDegreeLabel.text! = String(result.correction!.correctionDegree ?? 0)
@@ -428,6 +429,14 @@ extension FeedDetailViewController {
         dateLabel.text! = start  + "~" + end
         prosLabel.text! = result.prosAndCons?.pros?.description ?? "꺠끗함"
         consLabel.text! = result.prosAndCons?.cons?.description ?? "더러움"
+        
+        // 이미지 URL 가져오기
+        let urlString = result.userInfo?.avatarUrl
+        if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url = URL(string: urlstring),
+           let data = try? Data(contentsOf: url) {
+            userProfileImageView.image = UIImage(data: data)
+        }
         
         hashTags = result.hashTags!
         tagCollectionView.reloadData()

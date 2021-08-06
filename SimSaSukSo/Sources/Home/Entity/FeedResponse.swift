@@ -13,6 +13,7 @@ struct FeedResponse: Decodable {
 }
 
 struct FeedResult: Decodable {
+    var userInfo: UserInfo?
     var feedImage: [FeedImage]?
     var feedLike: FeedLike?
     var correction: Correction?
@@ -21,6 +22,12 @@ struct FeedResult: Decodable {
     var feedInfo: FeedInfo?
     var hashTags: [HashTags]?
     var lodgingInfo: LodgingInfo?
+}
+
+struct UserInfo: Decodable {
+    var userIndex: Int
+    var nickname: String
+    var avatarUrl: String
 }
 
 struct FeedImage: Decodable {
