@@ -117,5 +117,21 @@ class FavoriteDataManager {
                 }
             }
     }
+    
+    //피드 찜 목록 조회
+    func favoriteList(delegate: FeedFavoriteAlertViewController) {
+        let url = "\(Constant.BASE_URL)api/lists"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: FavoriteResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.favoriteLists(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
 
 }

@@ -229,15 +229,20 @@ class FeedDetailViewController: UIViewController {
                 presentAlert(title: "찜 목록을 먼저 생성하세요")
                 bookmarkButton.isSelected = false
             }else{
-                let input = FavoriteCheckRequest(savedListIndex: indexList.first!, feedIndex: feedIndex)
-                bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
-                dataManager.favoriteCheck(input, delegate: self)
+                let favoriteVC = self.storyboard?.instantiateViewController(identifier: "FeedFavoriteAlertViewController") as! FeedFavoriteAlertViewController
+                
+                favoriteVC.feedIndex = self.feedIndex
+                self.present(favoriteVC, animated: false, completion: nil)
+
             }
             
         } else {
+            let favoriteVC = self.storyboard?.instantiateViewController(identifier: "FeedFavoriteAlertViewController")
+            
+            self.present(favoriteVC!, animated: false, completion: nil)
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
-            let input = FavoriteCheckRequest(savedListIndex: indexList.first!, feedIndex: feedIndex)
-            dataManager.favoriteCheck(input, delegate: self)
+//            let input = FavoriteCheckRequest(savedListIndex: indexList.first!, feedIndex: feedIndex)
+//            dataManager.favoriteCheck(input, delegate: self)
         }
     
     }
@@ -471,9 +476,7 @@ extension FeedDetailViewController {
            print("저장됨")
         }
     
-    func favoriteCheck(_ result: FavoriteCheckResponse) { // 찜
-        self.presentAlert(title: result.message)
-    }
+    
     
     func likeCheck(_ result: FeedLikeResponse) { // 좋아요
 //        let stringLikenum = likeNumberLabel.text!
