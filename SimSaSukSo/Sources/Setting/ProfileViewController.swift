@@ -9,6 +9,7 @@ import UIKit
 import MobileCoreServices
 import FirebaseStorage
 import FirebaseAuth
+import KakaoSDKUser
 
 class ProfileViewController: UIViewController {
     
@@ -24,6 +25,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var userProfileImageView: UIImageView!
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var userNicknameLabel: UILabel!
+    @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var userEmailLabel: UILabel!
     
 
@@ -33,6 +35,7 @@ class ProfileViewController: UIViewController {
         imagePicker.delegate = self
         
         userProfileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
+        profileImageView.layer.cornerRadius = userProfileImageView.frame.size.height/2
         
         cameraButton.layer.cornerRadius = cameraButton.frame.size.height/2
         cameraButton.layer.shadowColor = UIColor.lightGray.cgColor
@@ -42,6 +45,9 @@ class ProfileViewController: UIViewController {
         
         //downloadImage(imageView: userProfileImageView)
         
+        dataManager.userInfo(delegate: self)
+        kakaoUser()
+    
     }
     
     @IBAction func backButtonAction(_ sender: UIButton) {
@@ -133,6 +139,26 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
         self.dismiss(animated: true, completion: nil)
     }
     
+    func kakaoUser() {
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("me() success.")
+
+                //do something
+                if let url = URL(string: (user?.kakaoAccount?.profile?.profileImageUrl?.absoluteString)!) {
+                    self.profileImageView.kf.setImage(with: url)
+                } else {
+                    self.profileImageView.image = UIImage(named: "defaultImage")
+                }
+
+            }
+        }
+    }
+    
+    
 }
 //MARK: - Firebase
 extension ProfileViewController {
@@ -161,20 +187,23 @@ extension ProfileViewController {
 
     }
     
-    // Firebase 다운로드
-    func downloadImage(imageView: UIImageView) {
-        storage.reference(forURL: "gs://simsasukso.appspot.com/프로필").downloadURL { (url, error) in
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data)
-            imageView.image = image
-        }
-    }
 }
 //MARK: - API
 extension ProfileViewController {
     func profileImage(_ reuslt: ProfileImageResponse) {
         self.presentAlert(title: "프로필 사진 변경 완료")
         dismiss(animated: false, completion: nil)
+    }
+    
+    func userInfo(result: UserResponse) {
+        userNicknameLabel.text = result.result?.nickname
+        userEmailLabel.text = result.result?.email
+        
+        if let url = URL(string: result.result!.avatarUrl) {
+            self.userProfileImageView.kf.setImage(with: url)
+        } else {
+            self.userProfileImageView.image = UIImage(named: "defaultImage")
+        }
     }
     
     func failedToRequest(message: String) {
