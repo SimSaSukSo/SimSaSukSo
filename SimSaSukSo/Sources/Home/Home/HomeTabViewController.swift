@@ -151,15 +151,15 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
     //MARK:- holplace
         if collectionView == sliderCollectionView{
         let slidercell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for: indexPath) as! SliderCollectionViewCell
-
           
             slidercell.sliderLabelTitle.text = hotPlace[indexPath.row].name
-            let urlString = hotPlace[indexPath.row].source
-            if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                slidercell.sliderImageView.image = UIImage(data: data)
+            
+            if let url = URL(string: hotPlace[indexPath.row].source) {
+                slidercell.sliderImageView.kf.setImage(with: url)
+            } else {
+                slidercell.sliderImageView.image = UIImage(named: "defaultImage")
             }
+        
             slidercell.sliderPageLabel.text = "\(indexPath.row + 1)"
             cell = slidercell
             
@@ -172,12 +172,13 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
             }else{
                 searchscell.BestSearchesRankImageView.image = UIImage(named: "best5_gray" )
             }
-            let urlString = regionPlace[indexPath.row].source
-            if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                searchscell.BestSearchesImageView.image = UIImage(data: data)
+            
+            if let url = URL(string: regionPlace[indexPath.row].source) {
+                searchscell.BestSearchesImageView.kf.setImage(with: url)
+            } else {
+                searchscell.BestSearchesImageView.image = UIImage(named: "defaultImage")
             }
+            
             searchscell.BestSearchesNameLabel.text = regionPlace[indexPath.row].name
           
             cell = searchscell
@@ -188,12 +189,12 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
             
             trendcell.trendPlaceName.text = trendPlace[indexPath.row].name
             
-            let urlString = trendPlace[indexPath.row].source
-            if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                trendcell.trendImageView.image = UIImage(data: data)
+            if let url = URL(string: trendPlace[indexPath.row].source) {
+                trendcell.trendImageView.kf.setImage(with: url)
+            } else {
+                trendcell.trendImageView.image = UIImage(named: "defaultImage")
             }
+            
             cell = trendcell
             
     //MARK:- likePlaces
@@ -208,16 +209,12 @@ extension HomeTabViewController : UICollectionViewDelegate,UICollectionViewDataS
             
             likescell.BestLikesLabel.text = likePlace[indexPath.row].name
             
-            let urlString = likePlace[indexPath.row].source
-            if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                likescell.BestLikesImageView.image = UIImage(data: data)
+            if let url = URL(string: likePlace[indexPath.row].source) {
+                likescell.BestLikesImageView.kf.setImage(with: url)
+            } else {
+                likescell.BestLikesImageView.image = UIImage(named: "defaultImage")
             }
-            
-            
-            
-            
+
             cell = likescell
             cell.tag = likePlace[indexPath.row].feedIndex
             
@@ -298,18 +295,14 @@ extension HomeTabViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let believecell = tableView.dequeueReusableCell(withIdentifier: "BestBelievesTableViewCell") as! BestBelievesTableViewCell
        
-        
-        
         believecell.BestBelievesNameLabel.text = believePlace[indexPath.row].name
         
-        
-        let urlString = believePlace[indexPath.row].source
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            believecell.BestBelievesImageView.image = UIImage(data: data)
+        if let url = URL(string: believePlace[indexPath.row].source) {
+            believecell.BestBelievesImageView.kf.setImage(with: url)
+        } else {
+            believecell.BestBelievesImageView.image = UIImage(named: "defaultImage")
         }
-        
+    
         believecell.cellDelegate = self
         
         // Pass the data to colletionview inside the tableviewcell

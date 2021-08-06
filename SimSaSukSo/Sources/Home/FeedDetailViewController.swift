@@ -303,12 +303,10 @@ extension FeedDetailViewController: UICollectionViewDelegate, UICollectionViewDa
             
             let feedImage = feedImages[indexPath.row]
             
-            // 이미지 URL 가져오기
-            let urlString = feedImage.source
-            if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-               let url = URL(string: urlstring),
-               let data = try? Data(contentsOf: url) {
-                cell.imageView.image = UIImage(data: data)
+            if let url = URL(string: feedImage.source!) {
+                cell.imageView.kf.setImage(with: url)
+            } else {
+                cell.imageView.image = UIImage(named: "defaultImage")
             }
 
             return cell
@@ -388,12 +386,10 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.likeNumberLabel.text = "좋아요 " + String(feedComment.likeNum)
         cell.userNameLabel.text = feedComment.nickname
        
-        // 이미지 URL 가져오기
-        let urlString = feedComment.avatarUrl
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.userImageView.image = UIImage(data: data)
+        if let url = URL(string: feedComment.avatarUrl) {
+            cell.userImageView.kf.setImage(with: url)
+        } else {
+            cell.userImageView.image = UIImage(named: "defaultImage")
         }
         
         tableView.rowHeight = UITableView.automaticDimension
@@ -415,7 +411,7 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - API
 extension FeedDetailViewController {
     func feedView(result: FeedResult) {
-        userNicknameLabel.text! = result.userInfo!.nickname
+        userNicknameLabel.text! = String(result.userInfo!.nickname ?? "")
         likeNumberLabel.text! = String(result.feedLike!.likeNum ?? 0)
         reliabilityLabel.text! = String(result.feedInfo!.reliability ?? 0)
         correctionDegreeLabel.text! = String(result.correction!.correctionDegree ?? 0)
@@ -430,12 +426,10 @@ extension FeedDetailViewController {
         prosLabel.text! = result.prosAndCons?.pros?.description ?? "꺠끗함"
         consLabel.text! = result.prosAndCons?.cons?.description ?? "더러움"
         
-        // 이미지 URL 가져오기
-        let urlString = result.userInfo?.avatarUrl
-        if let urlstring = urlString!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            userProfileImageView.image = UIImage(data: data)
+        if let url = URL(string: result.userInfo!.avatarUrl) {
+            userProfileImageView.kf.setImage(with: url)
+        } else {
+            userProfileImageView.image = UIImage(named: "defaultImage")
         }
         
         hashTags = result.hashTags!
@@ -505,7 +499,7 @@ extension FeedDetailViewController {
     }
     
     func commentDefaultValue(){
-        let defaultComment : FeedCommentResponse = FeedCommentResponse(isSuccess: true, code: 1000, message: "성공", result: Optional([SimSaSukSo.FeedCommentResult(commentIndex: 1, userIndex: 2, nickname: "희동", avatarUrl: "https://avatars.githubusercontent.com/u/59307414?v=4", content: "여기 저도 가봤는데 좋았어요", createdAt: "2021-07-16T19:32:26.000Z", updatedAt: "2021-07-16T19:32:26.000Z", likeNum: 0), SimSaSukSo.FeedCommentResult(commentIndex: 9, userIndex: 16, nickname: "hello12", avatarUrl: "http://k.kakaocdn.net/dn/bcBBrM/btq5OT2aZzC/NI1C3kETk7YFJ4KS0cfaQ0/img_640x640.jpg", content: "우와 숙소 너무 좋아보여요", createdAt: "2021-07-16T19:36:12.000Z", updatedAt: "2021-07-16T19:36:42.000Z", likeNum: 0), SimSaSukSo.FeedCommentResult(commentIndex: 10, userIndex: 17, nickname: "hello33", avatarUrl: "http://k.kakaocdn.net/dn/bcBBrM/btq5OT2aZzC/NI1C3kETk7YFJ4KS0cfaQ0/img_640x640.jpg", content: "좋은 곳 갔다오셨네요!", createdAt: "2021-07-16T19:36:12.000Z", updatedAt: "2021-07-16T19:36:42.000Z", likeNum: 0)]))
+        let defaultComment : FeedCommentResponse = FeedCommentResponse(isSuccess: true, code: 1000, message: "성공", result: Optional([SimSaSukSo.FeedCommentResult(commentIndex: 1, userIndex: 2, nickname: "희동", avatarUrl: "https://avatars.githubusercontent.com/u/59307414?v=4", content: "첫번째 댓글을 작성해 주세요", createdAt: "2021-07-16T19:32:26.000Z", updatedAt: "2021-07-16T19:32:26.000Z", likeNum: 0)]))
         
         feedComments = defaultComment.result!
         commentNumberLabel.text = String(feedComments.count)

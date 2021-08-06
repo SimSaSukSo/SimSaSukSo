@@ -101,12 +101,10 @@ extension BestTabViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.nameLabel.text = "\(bestHashTag.keyword)"
     
-        // 이미지 URL 가져오기
-        let urlString = bestHashTag.source
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.tagImageView.image = UIImage(data: data)
+        if let url = URL(string: bestHashTag.source) {
+            cell.tagImageView.kf.setImage(with: url)
+        } else {
+            cell.tagImageView.image = UIImage(named: "defaultImage")
         }
         
         return cell
