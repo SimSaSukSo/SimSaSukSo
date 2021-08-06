@@ -44,13 +44,48 @@ class UploadViewController : UIViewController {
         // MAKR: - 특정 타입(PHAssetMediaType) 미디어만 가져오는 메소드
         self.allMedia = PHAsset.fetchAssets(with: .image, options: nil)
         
-        self.photoCollectionView.reloadData()
+        requestPhotosPermission()
+        //self.photoCollectionView.reloadData()
         self.thumbnailSize = CGSize(width: 1024 * self.scale, height: 1024 * self.scale)
         
         photoImageViewHeight.constant = photoImageView.frame.size.width
         photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
         
     }
+    
+    private func requestPhotosPermission() {
+            let photoAuthorizationStatusStatus = PHPhotoLibrary.authorizationStatus()
+            
+            switch photoAuthorizationStatusStatus {
+            case .authorized:
+                print("Photo Authorization status is authorized.")
+                self.photoCollectionView.reloadData()
+                
+            case .denied:
+                print("Photo Authorization status is denied.")
+                
+            case .notDetermined:
+                print("Photo Authorization status is not determined.")
+                PHPhotoLibrary.requestAuthorization() {
+                    (status) in
+                    switch status {
+                    case .authorized:
+                        print("User permiited.")
+                        self.photoCollectionView.reloadData()
+                    case .denied:
+                        print("User denied.")
+                        break
+                    default:
+                        break
+                    }
+                }
+                
+            case .restricted:
+                print("Photo Authorization status is restricted.")
+            default:
+                break
+            }
+        }
   
     //MARK: - Function
     
