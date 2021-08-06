@@ -346,6 +346,7 @@ PODS:
   - KakaoSDKUser (2.4.0):
     - KakaoSDKAuth (= 2.4.0)
     - KakaoSDKCommon (= 2.4.0)
+  - Kingfisher (6.2.1)
   - leveldb-library (1.22.1)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
@@ -365,6 +366,7 @@ DEPENDENCIES:
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
+  - Kingfisher (~> 6.0)
   - SnapKit
 
 SPEC REPOS:
@@ -390,6 +392,7 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
+    - Kingfisher
     - leveldb-library
     - nanopb
     - PromisesObjC
@@ -417,11 +420,12 @@ SPEC CHECKSUMS:
   KakaoSDKAuth: f0e4c40f76bb5ba9e975ea2cb205279fefa29986
   KakaoSDKCommon: 0e27a4819da0e5d29eec661c12e63b990c34a6f9
   KakaoSDKUser: f68503fc60dd2a8bf0fd5ad37192db9e542af5dd
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 08c7690e52c7ada1a9d58c81310932eff60d9dba
+PODFILE CHECKSUM: 0e27b4825c687716358e1c9b30b1e5180dc82f0d
 
 COCOAPODS: 1.10.1
