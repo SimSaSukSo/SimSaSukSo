@@ -59,7 +59,6 @@ class FeedFavoriteAlertViewController: UIViewController {
         
         FeedDataManager().favoriteCheck(input, delegate: self)
         
-        
     }
     
     
