@@ -11,6 +11,8 @@ class FeedCommentTableViewCell: UITableViewCell {
     
     lazy var dataManager = FeedDataManager()
     
+    var commentIndex = 0
+    
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
@@ -34,10 +36,10 @@ class FeedCommentTableViewCell: UITableViewCell {
         heartButton.isSelected = !heartButton.isSelected
         if heartButton.isSelected {
             heartButton.setImage(UIImage(named: "comment_heart_fill"), for: .selected)
-            dataManager.commentLikeCheck(delegate: self, url: "\(Constant.BASE_URL)api/feeds/3/like")
+            dataManager.commentLikeCheck(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(commentIndex)/like")
         } else {
             heartButton.setImage(UIImage(named: "comment_heart"), for: .normal)
-            dataManager.commentdislikeCheck(delegate: self, url: "\(Constant.BASE_URL)api/feeds/3/dislike")
+            dataManager.commentdislikeCheck(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(commentIndex)/dislike")
         }
         
         
