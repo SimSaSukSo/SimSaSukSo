@@ -28,6 +28,7 @@ class BestFeedsViewController: UIViewController {
         bestFeedsCollectionView.delegate = self
         
         dataManager.bestFeeds(page: self.page, delegate: self)
+        print("best feeds")
     }
     
 
