@@ -39,4 +39,20 @@ class SettingDataManager {
                 }
             }
     }
+    
+    // 유저 정보
+    func userInfo(delegate: ProfileViewController) {
+        let url = "\(Constant.BASE_URL)api/users"
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: KeyCenter.header)
+            .validate()
+            .responseDecodable(of: UserResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    delegate.userInfo(result: response)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                }
+            }
+    }
 }

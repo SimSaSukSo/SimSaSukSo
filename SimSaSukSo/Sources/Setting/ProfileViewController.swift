@@ -45,6 +45,7 @@ class ProfileViewController: UIViewController {
         
         //downloadImage(imageView: userProfileImageView)
         
+        dataManager.userInfo(delegate: self)
         kakaoUser()
     
     }
@@ -147,8 +148,6 @@ extension ProfileViewController: UINavigationControllerDelegate, UIImagePickerCo
                 print("me() success.")
 
                 //do something
-                _ = user?.kakaoAccount?.email
-                self.userEmailLabel.text = user?.kakaoAccount?.email
                 if let url = URL(string: (user?.kakaoAccount?.profile?.profileImageUrl?.absoluteString)!) {
                     self.profileImageView.kf.setImage(with: url)
                 } else {
@@ -188,20 +187,23 @@ extension ProfileViewController {
 
     }
     
-    // Firebase 다운로드
-    func downloadImage(imageView: UIImageView) {
-        storage.reference(forURL: "gs://simsasukso.appspot.com/프로필").downloadURL { (url, error) in
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data)
-            imageView.image = image
-        }
-    }
 }
 //MARK: - API
 extension ProfileViewController {
     func profileImage(_ reuslt: ProfileImageResponse) {
         self.presentAlert(title: "프로필 사진 변경 완료")
         dismiss(animated: false, completion: nil)
+    }
+    
+    func userInfo(result: UserResponse) {
+        userNicknameLabel.text = result.result?.nickname
+        userEmailLabel.text = result.result?.email
+        
+        if let url = URL(string: result.result!.avatarUrl) {
+            self.userProfileImageView.kf.setImage(with: url)
+        } else {
+            self.userProfileImageView.image = UIImage(named: "defaultImage")
+        }
     }
     
     func failedToRequest(message: String) {
