@@ -396,10 +396,18 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         let feedComment = feedComments[indexPath.row]
         
+        cell.commentIndex = feedComment.commentIndex
         cell.userImageView.layer.cornerRadius = userProfileImageView.frame.height/2
         cell.commentLabel.text = feedComment.content
         cell.likeNumberLabel.text = "좋아요 " + String(feedComment.likeNum)
         cell.userNameLabel.text = feedComment.nickname
+        
+        // 좋아요
+        if feedComment.likeNum == 1 { // Yes
+            cell.heartButton.setImage(UIImage(named: "heart_fill"), for: .normal)
+        } else {
+            cell.heartButton.setImage(UIImage(named: "heart"), for: .normal)
+        }
        
         if let url = URL(string: feedComment.avatarUrl) {
             cell.userImageView.kf.setImage(with: url)
@@ -503,7 +511,6 @@ extension FeedDetailViewController {
     
     func dislikeCheck(_ result: FeedDislikeResponse) { // 좋아요 취소
 
-       // self.presentAlert(title: "좋아요 취소")
         dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
     }
     
@@ -562,18 +569,10 @@ extension FeedDetailViewController {
         
 
     }
-    
-    func commentLikeCheck(result: CommentLikeResponse) {
-        self.presentAlert(title: "좋아요")
-    }
-    
-    func commentDislikeCheck(result: CommentDislikeResponse) {
-        self.presentAlert(title: "좋아요 취소")
-    }
+
     
 
     //찜 조회
-        
     func favoriteLists(result: FavoriteResponse) {
         favoriteLists = result.result!
         print(favoriteLists)
