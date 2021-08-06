@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BestOneFeedViewController: UIViewController {
     
     lazy var dataManager = BestDataManager()
     
     static var bestOneFeeds: [BestFeeds] = []
-    
     
     var fetchingMore = false
     var page : Int = 1
@@ -27,7 +27,7 @@ class BestOneFeedViewController: UIViewController {
         bestOneFeedCollectionView.dataSource = self
 
         dataManager.bestOneFeed(page: self.page, delegate: self)
-        print("베스트 onefeeed")
+       
     }
     
 }
@@ -35,7 +35,6 @@ class BestOneFeedViewController: UIViewController {
 //MARK: - CollectionView
 extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("count :\(BestOneFeedViewController.bestOneFeeds.count)")
         return BestOneFeedViewController.bestOneFeeds.count
     }
     
@@ -66,25 +65,19 @@ extension BestOneFeedViewController: UICollectionViewDelegate, UICollectionViewD
         cell.degreeLabel.text = "\(bestOneFeed.degree)"
         
         // 이미지 URL 가져오기
-        let urlString = bestOneFeed.source
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlstring),
-           let data = try? Data(contentsOf: url) {
-            cell.imageView.image = UIImage(data: data)
-        }
+//        let urlString = bestOneFeed.source
+//        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+//           let url = URL(string: urlstring),
+//           let data = try? Data(contentsOf: url) {
+//            cell.imageView.image = UIImage(data: data)
+//        }
+        
+        guard let url = URL(string: bestOneFeed.source) else { return UICollectionViewCell()}
+        cell.imageView.kf.setImage(with: url)
         
         cell.tag = bestOneFeed.feedIndex
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-  //      let feedVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedDetailViewController")
-//        self.navigationController?.pushViewController(feedVC!, animated: true)
-//        feedVC?.modalPresentationStyle = .fullScreen
-//        self.present(feedVC!, animated: true, completion: nil)
-        
     }
     
     // Feed Index 전달
