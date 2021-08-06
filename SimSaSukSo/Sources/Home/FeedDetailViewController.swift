@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol bookmarkDelegate: class {
+    func toFilledButton()
+    func toVacantButton()
+}
+
 class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
@@ -227,22 +232,27 @@ class FeedDetailViewController: UIViewController {
             
             if indexlist == []{
                 presentAlert(title: "찜 목록을 먼저 생성하세요")
+                
                 bookmarkButton.isSelected = false
             }else{
                 let favoriteVC = self.storyboard?.instantiateViewController(identifier: "FeedFavoriteAlertViewController") as! FeedFavoriteAlertViewController
                 
                 favoriteVC.feedIndex = self.feedIndex
+                favoriteVC.delegate = self
                 self.present(favoriteVC, animated: false, completion: nil)
 
             }
             
         } else {
-            let favoriteVC = self.storyboard?.instantiateViewController(identifier: "FeedFavoriteAlertViewController")
+            let favoriteVC = self.storyboard?.instantiateViewController(identifier: "FeedFavoriteAlertViewController") as! FeedFavoriteAlertViewController
             
-            self.present(favoriteVC!, animated: false, completion: nil)
+           
+            favoriteVC.feedIndex = self.feedIndex
+            favoriteVC.delegate = self
+            self.present(favoriteVC, animated: false, completion: nil)
+            
             bookmarkButton.setImage(UIImage(named: "bookmark"), for: .normal)
-//            let input = FavoriteCheckRequest(savedListIndex: indexList.first!, feedIndex: feedIndex)
-//            dataManager.favoriteCheck(input, delegate: self)
+
         }
     
     }
@@ -577,3 +587,21 @@ extension FeedDetailViewController {
     }
       
 }
+
+//MARK: - Delegate
+
+extension FeedDetailViewController : bookmarkDelegate{
+    func toVacantButton() {
+        bookmarkButton.setImage(UIImage(named: "bookmark"), for: .selected)
+    }
+    
+    func toFilledButton() {
+        bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
+    }
+    
+    
+    
+   
+    
+}
+
