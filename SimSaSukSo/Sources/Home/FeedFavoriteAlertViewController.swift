@@ -58,7 +58,6 @@ class FeedFavoriteAlertViewController: UIViewController {
 //            bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
             FeedDataManager().favoriteCheck(input, delegate: self)
         
-        
     }
     
     
