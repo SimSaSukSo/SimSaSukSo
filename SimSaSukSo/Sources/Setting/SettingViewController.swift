@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import KakaoSDKAuth
+import KakaoSDKUser
+import KakaoSDKCommon
 
 class SettingViewController : UIViewController {
     
@@ -77,6 +80,16 @@ class SettingViewController : UIViewController {
 extension SettingViewController {
     func userDelete(result: UserDeleteResponse) {
         let splashStoryboard = UIStoryboard.init(name: "SplashStoryboard", bundle: nil)
+        
+        UserApi.shared.unlink {(error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("unlink() success.")
+            }
+        }
+        
         
         let splashVC = splashStoryboard.instantiateViewController(identifier: "SplashViewController") as! SplashViewController
         

@@ -78,11 +78,9 @@ class NicknameViewController : BaseViewController{
         
         print(nicknameTextfield.text!)
         KeyCenter.LOGIN_TOKEN = jwt!
+        print(KeyCenter.LOGIN_TOKEN)
         showIndicator()
         nicknameDataManager().nickname(nickname: nicknameTextfield.text!, viewcontroller: self)
-        
-        
-        
         
     }
     
@@ -140,6 +138,7 @@ extension NicknameViewController: UITextFieldDelegate {
         
         print(nicknameTextfield.text!)
         KeyCenter.LOGIN_TOKEN = jwt!
+        print(KeyCenter.LOGIN_TOKEN)
         showIndicator()
         nicknameDataManager().nickname(nickname: nicknameTextfield.text!, viewcontroller: self)
         print("여기서만 되면돼")
