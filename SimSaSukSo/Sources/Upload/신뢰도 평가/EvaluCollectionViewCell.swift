@@ -35,7 +35,7 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         imageCollectionViewFlowLayout.scrollDirection = .horizontal
         
         dataManager.evaluView(delegate: self, url: "https://prod.enudgu.shop/api/feedbacks?type=1&lodging=3")
-       
+        print(evaluImages)
     }
     
     
@@ -115,11 +115,12 @@ extension EvaluCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
         
         let evaluImage = evaluImages[indexPath.row]
         
-        if let url = URL(string: evaluImage.source) {
-            cell.imageView.kf.setImage(with: url)
-        } else {
-            cell.imageView.image = UIImage(named: "defaultImage")
-        }
+        
+//        if let url = URL(string: evaluImage.source) {
+//            cell.imageView.kf.setImage(with: url)
+//        } else {
+//            cell.imageView.image = UIImage(named: "defaultImage")
+//        }
         
         return cell
     }
@@ -142,10 +143,13 @@ extension EvaluCollectionViewCell: UICollectionViewDelegateFlowLayout {
 extension EvaluCollectionViewCell {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
-        for i in 0...evaluResults.count-1 {
-            let evaluResult = evaluResults[i]
-            evaluImages = evaluResult.sources!
-        }
+        evaluImages = (result.result?[0].sources)!
+        
+//        for i in 0...evaluResults.count-1 {
+//            let evaluResult = evaluResults[i]
+//            evaluImages = evaluResult.sources!
+//        }
+        print(evaluImages)
         print(evaluResults.count)
         print(evaluImages.count)
         imageCollectionView.reloadData()
