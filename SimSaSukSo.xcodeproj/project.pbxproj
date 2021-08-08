@@ -142,6 +142,7 @@
 		A74AB1AF26AD32CF0038A1C1 /* AirEndDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AB1AE26AD32CF0038A1C1 /* AirEndDatePicker.swift */; };
 		A74AFCA326A1B3200047E9C2 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */; };
 		A757E29826BD4C0D00AAA417 /* FeedFavoriteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E29726BD4C0D00AAA417 /* FeedFavoriteAlertViewController.swift */; };
+		A757E29E26BFCAA300AAA417 /* CommentDeleteAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757E29D26BFCAA300AAA417 /* CommentDeleteAlertViewController.swift */; };
 		A758350E26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */; };
 		A75835122694856200527E1A /* UploadGeneralTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */; };
 		A75835162695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */; };
@@ -346,6 +347,7 @@
 		A74AFCA226A1B3200047E9C2 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		A75154A326B2DD7200C87035 /* SimSaSukSo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimSaSukSo.entitlements; sourceTree = "<group>"; };
 		A757E29726BD4C0D00AAA417 /* FeedFavoriteAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFavoriteAlertViewController.swift; sourceTree = "<group>"; };
+		A757E29D26BFCAA300AAA417 /* CommentDeleteAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteAlertViewController.swift; sourceTree = "<group>"; };
 		A758350D26945CA200527E1A /* UploadGeneralAddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralAddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835112694856200527E1A /* UploadGeneralTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadGeneralTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A75835152695946400527E1A /* CollectionViewLeftAlignFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLeftAlignFlowLayout.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 				A5A6F56926AEF68700201A32 /* FeedImageCollectionViewCell.swift */,
 				A58833AE268C75E20046E313 /* FeedTagCollectionViewCell.swift */,
 				A58833B4268C7D220046E313 /* FeedCommentTableViewCell.swift */,
+				A757E29D26BFCAA300AAA417 /* CommentDeleteAlertViewController.swift */,
 				A59DDBC82686021E008D4AF9 /* Home */,
 				A59DDBC6268601F9008D4AF9 /* Best */,
 				A59DDBC726860212008D4AF9 /* New */,
@@ -1254,6 +1257,7 @@
 				A711E035267B5EA1006A1F0B /* FavoritesViewController.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KeyCenter.swift in Sources */,
 				A55C464226A60099008B4A5C /* EditAlertViewController.swift in Sources */,
+				A757E29E26BFCAA300AAA417 /* CommentDeleteAlertViewController.swift in Sources */,
 				A74AB0F326A2998B0038A1C1 /* UploadAirbnbFourthStepViewController.swift in Sources */,
 				A55675CD26972471004103AA /* NewDataManager.swift in Sources */,
 				A55C463926A60044008B4A5C /* MyFeedResponse.swift in Sources */,
