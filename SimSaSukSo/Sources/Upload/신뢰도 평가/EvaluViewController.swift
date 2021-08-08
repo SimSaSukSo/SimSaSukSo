@@ -16,6 +16,10 @@ class EvaluViewController: UIViewController {
     var type = 1 // 1: 일반숙소 2: 에어비앤비
     var lodgingIndex = 3 // 숙소 인덱스
     
+    var feedbacks = EvaluFeedback(feedIndex: 0, degree: 0)
+    var input: EvaluFeedbackRequest = EvaluFeedbackRequest(feedbacks: [])
+    
+    
     @IBOutlet var evaluCollectionView: UICollectionView!
     @IBOutlet var evaluCollectionViewHeight: NSLayoutConstraint!
     
@@ -27,15 +31,22 @@ class EvaluViewController: UIViewController {
         
         evaluCollectionViewHeight.constant = 192 * 10
         
-        dataManager.evaluView(delegate: self, url: "https://dev.enudgu.shop/api/feedbacks?type=1&lodging=3")
+        dataManager.evaluView(type: type, lodgingIndex: lodgingIndex, delegate: self)
+        
         
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
+        
+        feedbacks.degree = 5
+        feedbacks.feedIndex = 3
+
+        dataManager.evaluFeedback(input, delegate: self)
         
         let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "EvaluAlertViewController")
 
         self.present(alertVC!, animated: false, completion: nil)
     }
+
     
 }
 
@@ -88,6 +99,10 @@ extension EvaluViewController {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
         evaluCollectionView.reloadData()
+    }
+    
+    func evaluFeedback(_ result: EvaluFeedbackResponse) {
+        self.presentAlert(title: "평가 성공")
     }
     func failedToRequest(message: String) {
         self.presentAlert(title: message)

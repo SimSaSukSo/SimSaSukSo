@@ -48,6 +48,9 @@
 		A550395426BD7A9D0066C4F7 /* CommentDislikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550395326BD7A9D0066C4F7 /* CommentDislikeResponse.swift */; };
 		A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */; };
 		A550A4FD26A6D62D007D02E4 /* FavoriteDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */; };
+		A551E07F26BFFA110086A9AE /* StarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A551E07E26BFFA110086A9AE /* StarSlider.swift */; };
+		A551E08226C002040086A9AE /* EvaluFeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A551E08126C002040086A9AE /* EvaluFeedbackResponse.swift */; };
+		A551E08526C002840086A9AE /* EvaluFeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A551E08426C002840086A9AE /* EvaluFeedbackRequest.swift */; };
 		A55362C426AD5B4A0087C28D /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55362C326AD5B4A0087C28D /* FeedResponse.swift */; };
 		A55362C826AD619F0087C28D /* FeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55362C726AD619F0087C28D /* FeedDataManager.swift */; };
 		A55362CC26AD70810087C28D /* FeedCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55362CB26AD70810087C28D /* FeedCommentResponse.swift */; };
@@ -251,6 +254,9 @@
 		A550395326BD7A9D0066C4F7 /* CommentDislikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDislikeResponse.swift; sourceTree = "<group>"; };
 		A550A4F826A6BCAE007D02E4 /* FavoriteDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailResponse.swift; sourceTree = "<group>"; };
 		A550A4FC26A6D62D007D02E4 /* FavoriteDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDeleteResponse.swift; sourceTree = "<group>"; };
+		A551E07E26BFFA110086A9AE /* StarSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarSlider.swift; sourceTree = "<group>"; };
+		A551E08126C002040086A9AE /* EvaluFeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluFeedbackResponse.swift; sourceTree = "<group>"; };
+		A551E08426C002840086A9AE /* EvaluFeedbackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluFeedbackRequest.swift; sourceTree = "<group>"; };
 		A55362C326AD5B4A0087C28D /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		A55362C726AD619F0087C28D /* FeedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManager.swift; sourceTree = "<group>"; };
 		A55362CB26AD70810087C28D /* FeedCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentResponse.swift; sourceTree = "<group>"; };
@@ -481,6 +487,7 @@
 				A54BDAB2268E1AA00070BFEF /* EvaluCollectionViewCell.swift */,
 				A54BDAB5268E1D720070BFEF /* EvaluImageCollectionViewCell.swift */,
 				A54DB90C269354FD00EA26DF /* EvaluAlertViewController.swift */,
+				A551E07E26BFFA110086A9AE /* StarSlider.swift */,
 			);
 			name = "신뢰도 평가";
 			path = "신뢰도 평가";
@@ -536,6 +543,8 @@
 			isa = PBXGroup;
 			children = (
 				A55362CF26AD9AAA0087C28D /* EvaluResponse.swift */,
+				A551E08126C002040086A9AE /* EvaluFeedbackResponse.swift */,
+				A551E08426C002840086A9AE /* EvaluFeedbackRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1295,6 +1304,7 @@
 				A74AB17826A84DC40038A1C1 /* UploadGeneralInput.swift in Sources */,
 				A7A0665E269E0C55009A1397 /* SelectRegionViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
+				A551E08226C002040086A9AE /* EvaluFeedbackResponse.swift in Sources */,
 				A54E95B626B421CF005B6F18 /* SearchAllTableViewController.swift in Sources */,
 				A55675DF26975427004103AA /* NewFeedsCollectionViewCell.swift in Sources */,
 				A75EAEAA2693680700B34597 /* UploadGeneralFourthStepViewController.swift in Sources */,
@@ -1324,6 +1334,7 @@
 				A54E95FA26B42A45005B6F18 /* AllTableViewCell.swift in Sources */,
 				A550395126BD77AC0066C4F7 /* CommentLikeResponse.swift in Sources */,
 				A550A4F926A6BCAE007D02E4 /* FavoriteDetailResponse.swift in Sources */,
+				A551E08526C002840086A9AE /* EvaluFeedbackRequest.swift in Sources */,
 				BD8BD76A25E4B58C00346266 /* SplashViewController.swift in Sources */,
 				A55368EE26A08CB3002E232E /* SearchCollectionViewLeftAlignFlowLayout.swift in Sources */,
 				A58833AB268C53360046E313 /* FeedDetailViewController.swift in Sources */,
@@ -1337,6 +1348,7 @@
 				A54D8D6026B59FB30037B883 /* SearchLodgingsResponse.swift in Sources */,
 				A75835192695D2D800527E1A /* UploadGeneralAddAdvantageCollectionViewCell.swift in Sources */,
 				A56796292685D68E00CAB9F6 /* ProfileViewController.swift in Sources */,
+				A551E07F26BFFA110086A9AE /* StarSlider.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
 				A74AB1A926AD24B00038A1C1 /* UploadAirbnbResponse.swift in Sources */,
 				A54D8D6E26B5BB410037B883 /* ProfileImageRequest.swift in Sources */,

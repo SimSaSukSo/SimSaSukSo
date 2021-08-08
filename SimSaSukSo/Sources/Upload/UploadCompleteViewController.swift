@@ -17,10 +17,6 @@ class UploadCompleteViewController: UIViewController {
     
     @IBAction func completeButtonAction(_ sender: UIButton) {
         
-        let mainStoryboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
-        let mainVC = mainStoryboard.instantiateViewController(identifier: "TabBarController")
-        
-        self.present(mainVC, animated: false, completion: nil)
     }
     
 

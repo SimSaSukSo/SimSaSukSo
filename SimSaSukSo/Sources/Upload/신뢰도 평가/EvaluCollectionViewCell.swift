@@ -19,12 +19,6 @@ class EvaluCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageCollectionView: UICollectionView!
     
-    @IBOutlet var oneStarButton: UIButton!
-    @IBOutlet var twoStarButton: UIButton!
-    @IBOutlet var threeStarButton: UIButton!
-    @IBOutlet var fourStarButton: UIButton!
-    @IBOutlet var fiveStarButton: UIButton!
-    
     
     func setupViews() {
         imageCollectionView.delegate = self
@@ -34,72 +28,31 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         imageCollectionView.collectionViewLayout = imageCollectionViewFlowLayout
         imageCollectionViewFlowLayout.scrollDirection = .horizontal
         
-        dataManager.evaluView(delegate: self, url: "https://prod.enudgu.shop/api/feedbacks?type=1&lodging=3")
+        let evaluStoryboard = UIStoryboard.init(name: "UploadStoryboard", bundle: nil)
+        let evaluVC = evaluStoryboard.instantiateViewController(identifier: "EvaluViewController") as! EvaluViewController
+        
+        dataManager.evaluView(type: evaluVC.type, lodgingIndex: evaluVC.lodgingIndex, delegate: self)
+        
+    }
+    
+    @IBAction func evaluSlider(_ sender: UISlider) {
+        let roundValue = round(sender.value)
+        
+        for index in 0 ... 5 { // 이미지 Tag
+            
+            if let starImage = contentView.viewWithTag(index) as? UIImageView {
+                if index <= Int(roundValue) {
+                    starImage.image = UIImage(named: "evalu_Star_Fill")
+                } else {
+                    starImage.image = UIImage(named: "evalu_Star")
+                }
+            }
+        }
+        
        
     }
+
     
-    
-    @IBAction func oneStarButtonAction(_ sender: UIButton) {
-        oneStarButton.isSelected = !oneStarButton.isSelected
-        if oneStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func twoStarButtonAction(_ sender: UIButton) {
-        twoStarButton.isSelected = !twoStarButton.isSelected
-        if twoStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func threeStarButtonAction(_ sender: UIButton) {
-        threeStarButton.isSelected = !threeStarButton.isSelected
-        if threeStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func fourStarButtonAction(_ sender: UIButton) {
-        fourStarButton.isSelected = !fourStarButton.isSelected
-        if fourStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func fiveStarButtonAction(_ sender: UIButton) {
-        fiveStarButton.isSelected = !fiveStarButton.isSelected
-        if fiveStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            fiveStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            fiveStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
     
 }
 
@@ -114,6 +67,7 @@ extension EvaluCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "evaluImageCollectionViewCell", for: indexPath) as! EvaluImageCollectionViewCell
         
         let evaluImage = evaluImages[indexPath.row]
+        
         
         if let url = URL(string: evaluImage.source) {
             cell.imageView.kf.setImage(with: url)
@@ -142,12 +96,12 @@ extension EvaluCollectionViewCell: UICollectionViewDelegateFlowLayout {
 extension EvaluCollectionViewCell {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
+        
         for i in 0...evaluResults.count-1 {
             let evaluResult = evaluResults[i]
             evaluImages = evaluResult.sources!
         }
-        print(evaluResults.count)
-        print(evaluImages.count)
+        
         imageCollectionView.reloadData()
         
     }
