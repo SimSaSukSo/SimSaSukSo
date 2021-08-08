@@ -9,12 +9,15 @@ import UIKit
 
 class EvaluViewController: UIViewController {
     
-    
     lazy var dataManager = EvaluDataManager()
     var evaluResults: [EvaluResult] = []
     
     var type = 1 // 1: 일반숙소 2: 에어비앤비
     var lodgingIndex = 3 // 숙소 인덱스
+    
+    var feedbacks = EvaluFeedback(feedIndex: 0, degree: 0)
+    var input: EvaluFeedbackRequest = EvaluFeedbackRequest(feedbacks: [])
+    
     
     @IBOutlet var evaluCollectionView: UICollectionView!
     @IBOutlet var evaluCollectionViewHeight: NSLayoutConstraint!
@@ -29,8 +32,14 @@ class EvaluViewController: UIViewController {
         
         dataManager.evaluView(type: type, lodgingIndex: lodgingIndex, delegate: self)
         
+        
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
+        
+        feedbacks.degree = 5
+        feedbacks.feedIndex = 3
+
+        dataManager.evaluFeedback(input, delegate: self)
         
         let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "EvaluAlertViewController")
 
@@ -92,7 +101,7 @@ extension EvaluViewController {
     }
     
     func evaluFeedback(_ result: EvaluFeedbackResponse) {
-        
+        self.presentAlert(title: "평가 성공")
     }
     func failedToRequest(message: String) {
         self.presentAlert(title: message)
