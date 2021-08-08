@@ -165,12 +165,12 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-tV-uQw">
-                                                <rect key="frame" x="184" y="36" width="46" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xef-oo-giX">
+                                                <rect key="frame" x="244" y="36" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>
-                                                    <segue destination="Npq-Nl-Ghd" kind="modal" id="2Jm-y1-tBN"/>
+                                                    <segue destination="Npq-Nl-Ghd" kind="modal" id="aal-7t-44D"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -536,6 +536,7 @@
                                 <state key="normal" image="down"/>
                                 <connections>
                                     <action selector="completeButtonAction:" destination="rd5-eP-jeC" eventType="touchUpInside" id="tP1-LO-vNe"/>
+                                    <segue destination="Npq-Nl-Ghd" kind="modal" id="z4J-Xi-fmf"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadImage" translatesAutoresizingMaskIntoConstraints="NO" id="srC-td-LIi">
@@ -598,21 +599,20 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="3kv-gl-c3w">
-                                                                    <rect key="frame" x="0.0" y="16" width="24" height="24"/>
-                                                                    <color key="backgroundColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                                    <rect key="frame" x="16" y="16" width="24" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="24" id="sf7-sy-dDV"/>
                                                                         <constraint firstAttribute="height" constant="24" id="zRb-Gf-ryL"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="simsa123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mC-n1-zt1">
-                                                                    <rect key="frame" x="28" y="16" width="74" height="24"/>
+                                                                    <rect key="frame" x="44" y="16" width="74" height="24"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="7.9699999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-ep-WhW">
-                                                                    <rect key="frame" x="0.0" y="163" width="132" height="19"/>
+                                                                    <rect key="frame" x="16" y="163" width="132" height="19"/>
                                                                     <subviews>
                                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBR-9B-0R4">
                                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="19"/>
@@ -670,7 +670,7 @@
                                                                     </constraints>
                                                                 </stackView>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-Lv-kcM">
-                                                                    <rect key="frame" x="0.0" y="48" width="391" height="104.5"/>
+                                                                    <rect key="frame" x="16" y="48" width="375" height="104.5"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tam-mm-tbn">
                                                                         <size key="itemSize" width="116" height="68"/>
@@ -710,13 +710,13 @@
                                                                 <constraint firstItem="3kv-gl-c3w" firstAttribute="top" secondItem="jTW-t1-Mhh" secondAttribute="top" constant="16" id="1M1-Id-Hq2"/>
                                                                 <constraint firstItem="dkU-ep-WhW" firstAttribute="top" secondItem="tdT-Lv-kcM" secondAttribute="bottom" constant="10.44" id="1a7-6I-rwR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="tdT-Lv-kcM" secondAttribute="trailing" id="2er-cx-RRu"/>
+                                                                <constraint firstItem="dkU-ep-WhW" firstAttribute="leading" secondItem="tdT-Lv-kcM" secondAttribute="leading" id="Ccn-zv-e8A"/>
                                                                 <constraint firstItem="tdT-Lv-kcM" firstAttribute="top" secondItem="3kv-gl-c3w" secondAttribute="bottom" constant="8" id="E6Z-JQ-E4H"/>
                                                                 <constraint firstItem="5mC-n1-zt1" firstAttribute="centerY" secondItem="3kv-gl-c3w" secondAttribute="centerY" id="HHr-UY-CmD"/>
-                                                                <constraint firstItem="3kv-gl-c3w" firstAttribute="leading" secondItem="jTW-t1-Mhh" secondAttribute="leading" id="JxQ-a7-P5R"/>
-                                                                <constraint firstItem="dkU-ep-WhW" firstAttribute="leading" secondItem="jTW-t1-Mhh" secondAttribute="leading" id="S3N-Xc-8mv"/>
-                                                                <constraint firstItem="tdT-Lv-kcM" firstAttribute="leading" secondItem="jTW-t1-Mhh" secondAttribute="leading" id="o72-kI-qVQ"/>
+                                                                <constraint firstItem="tdT-Lv-kcM" firstAttribute="leading" secondItem="jTW-t1-Mhh" secondAttribute="leading" constant="16" id="o72-kI-qVQ"/>
                                                                 <constraint firstItem="5mC-n1-zt1" firstAttribute="leading" secondItem="3kv-gl-c3w" secondAttribute="trailing" constant="4" id="u9R-2g-OKA"/>
                                                                 <constraint firstAttribute="bottom" secondItem="dkU-ep-WhW" secondAttribute="bottom" constant="10" id="uQz-vP-mf3"/>
+                                                                <constraint firstItem="3kv-gl-c3w" firstAttribute="leading" secondItem="tdT-Lv-kcM" secondAttribute="leading" id="xmF-uN-EGz"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="391" height="192"/>
@@ -1846,7 +1846,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="sDK-kv-jd7" customClass="DesignableSlider" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="-2" y="52.5" width="386" height="31"/>
+                                                        <rect key="frame" x="-2" y="52.5" width="386" height="22"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1857,13 +1857,13 @@
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCn-Xq-Qxo">
-                                                        <rect key="frame" x="0.0" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-Kf-MrD">
-                                                        <rect key="frame" x="375.5" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="375.5" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -3053,7 +3053,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="WGU-LD-AiW" customClass="DesignableSlider" customModule="SimSaSukSo" customModuleProvider="target">
-                                                        <rect key="frame" x="-2" y="52.5" width="386" height="31"/>
+                                                        <rect key="frame" x="-2" y="52.5" width="386" height="22"/>
                                                         <color key="minimumTrackTintColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="maximumTrackTintColor" red="0.81960784310000001" green="0.83529411760000005" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -3064,13 +3064,13 @@
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-O9-yIu">
-                                                        <rect key="frame" x="0.0" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="0.0" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KH-4U-s74">
-                                                        <rect key="frame" x="375.5" y="78.5" width="6.5" height="16.5"/>
+                                                        <rect key="frame" x="375.5" y="69.5" width="6.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="11"/>
                                                         <color key="textColor" red="0.0" green="0.84313725490000002" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -5855,12 +5855,15 @@
     </scenes>
     <designables>
         <designable name="WGU-LD-AiW">
-            <size key="intrinsicContentSize" width="-1" height="30"/>
+            <size key="intrinsicContentSize" width="-1" height="21"/>
         </designable>
         <designable name="sDK-kv-jd7">
-            <size key="intrinsicContentSize" width="-1" height="30"/>
+            <size key="intrinsicContentSize" width="-1" height="21"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="aal-7t-44D"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_left" width="14" height="14"/>
         <image name="arrow_right" width="14" height="14"/>
