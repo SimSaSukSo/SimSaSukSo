@@ -9,6 +9,7 @@ import UIKit
 
 class EvaluViewController: UIViewController {
     
+    
     lazy var dataManager = EvaluDataManager()
     var evaluResults: [EvaluResult] = []
     
@@ -20,7 +21,7 @@ class EvaluViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         evaluCollectionView.delegate = self
         evaluCollectionView.dataSource = self
         

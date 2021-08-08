@@ -66,6 +66,30 @@ class FeedDataManager {
                 }
         }
     
+    //피드 댓글 삭제
+    func deleteComment(feedIndex : Int, commentIndex : Int, delegate: FeedDetailViewController) {
+            
+            let body = ["commentIndex" : commentIndex]
+            AF.request("\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", method: .delete, parameters: body, encoding: JSONEncoding.default, headers: KeyCenter.header)
+                .validate()
+                .responseDecodable(of: WriteFeedCommentResponse.self) { response in
+                    switch response.result {
+                    case .success(let response):
+                        if response.isSuccess == true{
+                            print(response.message)
+                            delegate.deleteFeedComment(result: response)
+                        }else{
+                            delegate.failedToRequest(message: response.message)
+                        }
+                       
+                        
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                    }
+                }
+        }
+    
     // 피드 찜하기-해제
     func favoriteCheck(_ parameters: FavoriteCheckRequest, delegate: FeedFavoriteAlertViewController) {
         AF.request("\(Constant.BASE_URL)api/saved-feeds", method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: KeyCenter.header)

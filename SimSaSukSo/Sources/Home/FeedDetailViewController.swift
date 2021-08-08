@@ -12,6 +12,10 @@ protocol bookmarkDelegate: class {
     func toVacantButton()
 }
 
+protocol commentDeleteDelegate : class{
+    func commentDeleteDelegate()
+    
+}
 class FeedDetailViewController: UIViewController {
     
     lazy var dataManager = FeedDataManager()
@@ -24,10 +28,13 @@ class FeedDetailViewController: UIViewController {
             
     var feedIndex = 1
     var saveComment = ""
-    
+    var cellTag = 0
+    var commentIndex = 0
     var favoriteLists: [FavoriteResult] = []
     
     var indexList : [Int] = []
+    
+
     
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!
@@ -138,6 +145,10 @@ class FeedDetailViewController: UIViewController {
     @IBAction func tabGesture(_ sender: Any) {
         view.endEditing(true)
 
+    }
+    
+    func deleteAction(_sender : UIButton){
+        
     }
     //MARK: - Function
     
@@ -415,6 +426,10 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.userImageView.image = UIImage(named: "defaultImage")
         }
         
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(ButtonDeleteAction(sender:)), for: .touchUpInside)
+
+       
         tableView.rowHeight = UITableView.automaticDimension
         commentTableView.estimatedRowHeight = 171
         
@@ -427,6 +442,21 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    @objc func ButtonDeleteAction(sender : UIButton) {
+        
+        self.commentIndex = feedComments[sender.tag].commentIndex
+        self.cellTag = sender.tag
+        
+        let commentDeleteAlert = self.storyboard?.instantiateViewController(withIdentifier: "CommentDeleteAlertViewController") as! CommentDeleteAlertViewController
+        commentDeleteAlert.delegate = self
+        self.present(commentDeleteAlert, animated: false, completion: nil)
+        
+        
+        
+    
+
     }
     
 }
@@ -494,7 +524,11 @@ extension FeedDetailViewController {
            print("저장됨")
         }
     
-    
+    func deleteFeedComment(result : WriteFeedCommentResponse){
+        
+        feedComments.remove(at: self.cellTag)
+        commentTableView.reloadData()
+    }
     
     func likeCheck(_ result: FeedLikeResponse) { // 좋아요
 //        let stringLikenum = likeNumberLabel.text!
@@ -597,7 +631,9 @@ extension FeedDetailViewController {
 
 //MARK: - Delegate
 
-extension FeedDetailViewController : bookmarkDelegate{
+extension FeedDetailViewController : bookmarkDelegate,commentDeleteDelegate{
+    
+    
     func toVacantButton() {
         bookmarkButton.setImage(UIImage(named: "bookmark"), for: .selected)
     }
@@ -606,9 +642,11 @@ extension FeedDetailViewController : bookmarkDelegate{
         bookmarkButton.setImage(UIImage(named: "bookmark_Fill"), for: .selected)
     }
     
+    func commentDeleteDelegate() {
+        FeedDataManager().deleteComment(feedIndex: feedIndex, commentIndex: self.commentIndex, delegate: self)
+        
+    }
     
-    
-   
     
 }
 
