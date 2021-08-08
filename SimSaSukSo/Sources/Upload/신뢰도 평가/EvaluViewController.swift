@@ -27,7 +27,7 @@ class EvaluViewController: UIViewController {
         
         evaluCollectionViewHeight.constant = 192 * 10
         
-        dataManager.evaluView(delegate: self, url: "https://dev.enudgu.shop/api/feedbacks?type=1&lodging=3")
+        dataManager.evaluView(type: type, lodgingIndex: lodgingIndex, delegate: self)
         
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
@@ -89,6 +89,10 @@ extension EvaluViewController {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
         evaluCollectionView.reloadData()
+    }
+    
+    func evaluFeedback(_ result: EvaluFeedbackResponse) {
+        
     }
     func failedToRequest(message: String) {
         self.presentAlert(title: message)

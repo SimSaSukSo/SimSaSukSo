@@ -28,8 +28,11 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         imageCollectionView.collectionViewLayout = imageCollectionViewFlowLayout
         imageCollectionViewFlowLayout.scrollDirection = .horizontal
         
-        dataManager.evaluView(delegate: self, url: "https://prod.enudgu.shop/api/feedbacks?type=1&lodging=3")
-        print(evaluImages)
+        let evaluStoryboard = UIStoryboard.init(name: "UploadStoryboard", bundle: nil)
+        let evaluVC = evaluStoryboard.instantiateViewController(identifier: "EvaluViewController") as! EvaluViewController
+        
+        dataManager.evaluView(type: evaluVC.type, lodgingIndex: evaluVC.lodgingIndex, delegate: self)
+        
     }
     
     @IBAction func evaluSlider(_ sender: UISlider) {
