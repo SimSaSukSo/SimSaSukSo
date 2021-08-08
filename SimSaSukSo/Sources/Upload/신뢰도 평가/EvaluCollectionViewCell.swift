@@ -116,11 +116,11 @@ extension EvaluCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
         let evaluImage = evaluImages[indexPath.row]
         
         
-//        if let url = URL(string: evaluImage.source) {
-//            cell.imageView.kf.setImage(with: url)
-//        } else {
-//            cell.imageView.image = UIImage(named: "defaultImage")
-//        }
+        if let url = URL(string: evaluImage.source) {
+            cell.imageView.kf.setImage(with: url)
+        } else {
+            cell.imageView.image = UIImage(named: "defaultImage")
+        }
         
         return cell
     }
@@ -143,12 +143,12 @@ extension EvaluCollectionViewCell: UICollectionViewDelegateFlowLayout {
 extension EvaluCollectionViewCell {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
-        evaluImages = (result.result?[0].sources)!
+        //evaluImages = (result.result?[0].sources)!
         
-//        for i in 0...evaluResults.count-1 {
-//            let evaluResult = evaluResults[i]
-//            evaluImages = evaluResult.sources!
-//        }
+        for i in 0...evaluResults.count-1 {
+            let evaluResult = evaluResults[i]
+            evaluImages = evaluResult.sources!
+        }
         print(evaluImages)
         print(evaluResults.count)
         print(evaluImages.count)
