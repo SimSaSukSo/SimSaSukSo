@@ -11,8 +11,8 @@ class EvaluCollectionViewCell: UICollectionViewCell {
     
     lazy var dataManager = EvaluDataManager()
     
-    var evaluImages = [EvaluSources]()
-    var evaluResults = [EvaluResult]()
+    var evaluImages: [EvaluSources] = []
+    var evaluResults: [EvaluResult] = []
     
     @IBOutlet var userImageView: UIImageView!
     @IBOutlet var userIdLabel: UILabel!
@@ -34,8 +34,8 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         imageCollectionView.collectionViewLayout = imageCollectionViewFlowLayout
         imageCollectionViewFlowLayout.scrollDirection = .horizontal
         
-        dataManager.evaluView(delegate: self, url: "https://dev.enudgu.shop/api/feedbacks?type=1&lodging=3")
-        
+        dataManager.evaluView(delegate: self, url: "https://prod.enudgu.shop/api/feedbacks?type=1&lodging=3")
+       
     }
     
     
@@ -63,7 +63,7 @@ class EvaluCollectionViewCell: UICollectionViewCell {
             oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
             twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
             threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            print("th선")
+            
         } else {
             oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
             twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
@@ -113,15 +113,14 @@ extension EvaluCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "evaluImageCollectionViewCell", for: indexPath) as! EvaluImageCollectionViewCell
         
-        let evaluResult = evaluResults[indexPath.row]
-        let evaluImage = evaluResult.sources![indexPath.row]
-         //이미지 URL 가져오기
-        let urlString = evaluImage.source
-        if let urlstring = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let url = URL(string: urlString),
-           let data = try? Data(contentsOf: url) {
-            cell.imageView.image = UIImage(data: data)
+        let evaluImage = evaluImages[indexPath.row]
+        
+        if let url = URL(string: evaluImage.source) {
+            cell.imageView.kf.setImage(with: url)
+        } else {
+            cell.imageView.image = UIImage(named: "defaultImage")
         }
+        
         return cell
     }
 
@@ -143,11 +142,18 @@ extension EvaluCollectionViewCell: UICollectionViewDelegateFlowLayout {
 extension EvaluCollectionViewCell {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
+        for i in 0...evaluResults.count-1 {
+            let evaluResult = evaluResults[i]
+            evaluImages = evaluResult.sources!
+        }
+        print(evaluResults.count)
+        print(evaluImages.count)
         imageCollectionView.reloadData()
         
     }
     func evaluImageView(result: EvaluResult) {
         evaluImages = result.sources!
+        
     }
     
     func failedToRequest(message: String) {
