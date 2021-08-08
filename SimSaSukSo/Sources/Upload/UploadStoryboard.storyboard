@@ -576,10 +576,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNJ-GM-67s">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="811.5"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="srk-5E-mfj">
-                                                <rect key="frame" x="16" y="74" width="398" height="744"/>
+                                                <rect key="frame" x="16" y="67.5" width="398" height="744"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="744" id="LQn-89-eL0"/>
@@ -605,8 +605,8 @@
                                                                         <constraint firstAttribute="height" constant="24" id="zRb-Gf-ryL"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="simsa123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mC-n1-zt1">
-                                                                    <rect key="frame" x="44" y="16" width="74" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mC-n1-zt1">
+                                                                    <rect key="frame" x="44" y="18.5" width="33.5" height="19"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -614,56 +614,36 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="7.9699999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-ep-WhW">
                                                                     <rect key="frame" x="16" y="163" width="132" height="19"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBR-9B-0R4">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalu_Star" translatesAutoresizingMaskIntoConstraints="NO" id="zCH-Se-kky">
                                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="19"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="PCK-Hl-PPD"/>
+                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="04K-rq-5OM"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="evalu_Star"/>
-                                                                            <connections>
-                                                                                <action selector="oneStarButtonAction:" destination="eDT-VX-U9m" eventType="touchUpInside" id="sQB-R3-7VN"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5No-Vv-65X">
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalu_Star" translatesAutoresizingMaskIntoConstraints="NO" id="zbk-jI-bI7">
                                                                             <rect key="frame" x="28" y="0.0" width="20" height="19"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="j9M-S9-JV0"/>
+                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="eDC-Tm-zDM"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="evalu_Star"/>
-                                                                            <connections>
-                                                                                <action selector="twoStarButtonAction:" destination="eDT-VX-U9m" eventType="touchUpInside" id="XSb-2u-bWS"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGI-TV-D59">
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalu_Star" translatesAutoresizingMaskIntoConstraints="NO" id="UHf-UO-nRm">
                                                                             <rect key="frame" x="56" y="0.0" width="20" height="19"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="Rd1-9b-zbI"/>
+                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="QY2-MD-r4w"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="evalu_Star"/>
-                                                                            <connections>
-                                                                                <action selector="threeStarButtonAction:" destination="eDT-VX-U9m" eventType="touchUpInside" id="r7X-ZN-Neq"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tg-qJ-lFB">
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalu_Star" translatesAutoresizingMaskIntoConstraints="NO" id="aPE-uz-ddX">
                                                                             <rect key="frame" x="84" y="0.0" width="20" height="19"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="OTU-OS-FpV"/>
+                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="WBs-Xn-52k"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="evalu_Star"/>
-                                                                            <connections>
-                                                                                <action selector="fourStarButtonAction:" destination="eDT-VX-U9m" eventType="touchUpInside" id="hOL-ZK-PNq"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkQ-g2-8zg">
+                                                                        </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evalu_Star" translatesAutoresizingMaskIntoConstraints="NO" id="V15-Zd-Qde">
                                                                             <rect key="frame" x="112" y="0.0" width="20" height="19"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="DxB-LT-G6e"/>
+                                                                                <constraint firstAttribute="width" constant="20.030000000000001" id="v8C-Pp-M6g"/>
                                                                             </constraints>
-                                                                            <state key="normal" image="evalu_Star"/>
-                                                                            <connections>
-                                                                                <action selector="fiveStarButtonAction:" destination="eDT-VX-U9m" eventType="touchUpInside" id="slG-zY-2Kn"/>
-                                                                            </connections>
-                                                                        </button>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="19.129999999999999" id="ref-rA-RrV"/>
@@ -705,14 +685,29 @@
                                                                         </collectionViewCell>
                                                                     </cells>
                                                                 </collectionView>
+                                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="G7D-c9-P8w">
+                                                                    <rect key="frame" x="14" y="162.5" width="136" height="31"/>
+                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="132" id="0EV-kL-a4L"/>
+                                                                    </constraints>
+                                                                    <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <connections>
+                                                                        <action selector="evaluSlider:" destination="eDT-VX-U9m" eventType="valueChanged" id="x4N-gn-FpA"/>
+                                                                    </connections>
+                                                                </slider>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="3kv-gl-c3w" firstAttribute="top" secondItem="jTW-t1-Mhh" secondAttribute="top" constant="16" id="1M1-Id-Hq2"/>
                                                                 <constraint firstItem="dkU-ep-WhW" firstAttribute="top" secondItem="tdT-Lv-kcM" secondAttribute="bottom" constant="10.44" id="1a7-6I-rwR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="tdT-Lv-kcM" secondAttribute="trailing" id="2er-cx-RRu"/>
+                                                                <constraint firstItem="G7D-c9-P8w" firstAttribute="leading" secondItem="jTW-t1-Mhh" secondAttribute="leading" constant="16" id="4f2-Rp-GIK"/>
                                                                 <constraint firstItem="dkU-ep-WhW" firstAttribute="leading" secondItem="tdT-Lv-kcM" secondAttribute="leading" id="Ccn-zv-e8A"/>
                                                                 <constraint firstItem="tdT-Lv-kcM" firstAttribute="top" secondItem="3kv-gl-c3w" secondAttribute="bottom" constant="8" id="E6Z-JQ-E4H"/>
                                                                 <constraint firstItem="5mC-n1-zt1" firstAttribute="centerY" secondItem="3kv-gl-c3w" secondAttribute="centerY" id="HHr-UY-CmD"/>
+                                                                <constraint firstItem="G7D-c9-P8w" firstAttribute="top" secondItem="tdT-Lv-kcM" secondAttribute="bottom" constant="10.199999999999999" id="Mnk-iX-4PB"/>
                                                                 <constraint firstItem="tdT-Lv-kcM" firstAttribute="leading" secondItem="jTW-t1-Mhh" secondAttribute="leading" constant="16" id="o72-kI-qVQ"/>
                                                                 <constraint firstItem="5mC-n1-zt1" firstAttribute="leading" secondItem="3kv-gl-c3w" secondAttribute="trailing" constant="4" id="u9R-2g-OKA"/>
                                                                 <constraint firstAttribute="bottom" secondItem="dkU-ep-WhW" secondAttribute="bottom" constant="10" id="uQz-vP-mf3"/>
@@ -721,12 +716,7 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="391" height="192"/>
                                                         <connections>
-                                                            <outlet property="fiveStarButton" destination="wkQ-g2-8zg" id="MeB-X3-zeK"/>
-                                                            <outlet property="fourStarButton" destination="7tg-qJ-lFB" id="ihg-Oh-8IN"/>
                                                             <outlet property="imageCollectionView" destination="tdT-Lv-kcM" id="ehv-7Z-vop"/>
-                                                            <outlet property="oneStarButton" destination="eBR-9B-0R4" id="gO7-aF-DrU"/>
-                                                            <outlet property="threeStarButton" destination="bGI-TV-D59" id="5sR-Tb-PCC"/>
-                                                            <outlet property="twoStarButton" destination="5No-Vv-65X" id="Nk0-Lg-hbe"/>
                                                             <outlet property="userIdLabel" destination="5mC-n1-zt1" id="du3-DI-nGb"/>
                                                             <outlet property="userImageView" destination="3kv-gl-c3w" id="ynl-c6-KCo"/>
                                                         </connections>
@@ -734,13 +724,13 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신뢰도 평가하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jng-C5-lEZ">
-                                                <rect key="frame" x="16" y="44" width="134.5" height="30"/>
+                                                <rect key="frame" x="16" y="44" width="127" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvi-2e-1iM">
-                                                <rect key="frame" x="380" y="53" width="12" height="12"/>
+                                                <rect key="frame" x="380" y="50" width="12" height="12"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="ykI-qC-Cc8"/>
                                                     <constraint firstAttribute="width" constant="12" id="zLv-gW-ak2"/>
@@ -1895,33 +1885,33 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heE-f5-vR7">
-                                                        <rect key="frame" x="187" y="38" width="8" height="21"/>
+                                                        <rect key="frame" x="187" y="37" width="8" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 시작일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uks-a0-g2J">
-                                                        <rect key="frame" x="0.0" y="37" width="175" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="175" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXZ-f5-6y2">
-                                                        <rect key="frame" x="0.0" y="63.5" width="175" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="175" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="pDm-3P-4Ux"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-xp-P5S">
-                                                        <rect key="frame" x="207" y="63.5" width="175" height="1"/>
+                                                        <rect key="frame" x="207" y="62" width="175" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="vSV-of-7ne"/>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 마지막일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0Q-jA-RYh">
-                                                        <rect key="frame" x="207" y="37" width="175" height="22.5"/>
+                                                        <rect key="frame" x="207" y="37" width="175" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1958,13 +1948,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4iU-r4-Owt">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37E-d7-BWO">
-                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="XpS-sj-2l5"/>
@@ -1994,13 +1984,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tF2-bK-gp0">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIZ-Ju-mc0">
-                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="LdY-xh-qUZ"/>
@@ -2030,13 +2020,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-Rz-lQu">
-                                                        <rect key="frame" x="0.0" y="37" width="366" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="366" height="21"/>
                                                         <color key="textColor" red="0.65098039220000004" green="0.69019607839999997" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-5g-pp5">
-                                                        <rect key="frame" x="0.0" y="63.5" width="366" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="366" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="l8K-zh-OCw"/>
@@ -3102,33 +3092,33 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfJ-aL-JZd">
-                                                        <rect key="frame" x="187" y="38" width="8" height="21"/>
+                                                        <rect key="frame" x="187" y="37" width="8" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" red="0.43529411759999997" green="0.47058823529999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 시작일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XIM-3E-cab">
-                                                        <rect key="frame" x="0.0" y="37" width="175" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="175" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vg-gq-h8a">
-                                                        <rect key="frame" x="0.0" y="63.5" width="175" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="175" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="q90-Mg-3BO"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTM-tq-aui">
-                                                        <rect key="frame" x="207" y="63.5" width="175" height="1"/>
+                                                        <rect key="frame" x="207" y="62" width="175" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="iqj-S0-HKd"/>
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙박 마지막일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mtf-7g-P5n">
-                                                        <rect key="frame" x="207" y="37" width="175" height="22.5"/>
+                                                        <rect key="frame" x="207" y="37" width="175" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3165,13 +3155,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가격을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5r-O5-m3I">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7j-LE-SM8">
-                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="tAQ-Sg-Yoo"/>
@@ -3201,12 +3191,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 위치를 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BkU-fY-mR7">
-                                                        <rect key="frame" x="0.0" y="37" width="382" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="21"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkl-zq-Z6y">
-                                                        <rect key="frame" x="0.0" y="63.5" width="382" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="382" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="RPz-WS-xoP"/>
@@ -3236,13 +3226,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="숙소 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-vV-cza">
-                                                        <rect key="frame" x="0.0" y="37" width="366" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="37" width="366" height="21"/>
                                                         <color key="textColor" red="0.65098039215686276" green="0.69019607843137254" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snm-7f-FhH">
-                                                        <rect key="frame" x="0.0" y="63.5" width="366" height="1"/>
+                                                        <rect key="frame" x="0.0" y="62" width="366" height="1"/>
                                                         <color key="backgroundColor" red="0.90588235289999997" green="0.91372549020000005" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="U8R-cC-qSZ"/>

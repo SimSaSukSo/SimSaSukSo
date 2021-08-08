@@ -19,12 +19,6 @@ class EvaluCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageCollectionView: UICollectionView!
     
-    @IBOutlet var oneStarButton: UIButton!
-    @IBOutlet var twoStarButton: UIButton!
-    @IBOutlet var threeStarButton: UIButton!
-    @IBOutlet var fourStarButton: UIButton!
-    @IBOutlet var fiveStarButton: UIButton!
-    
     
     func setupViews() {
         imageCollectionView.delegate = self
@@ -38,68 +32,24 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         print(evaluImages)
     }
     
-    
-    @IBAction func oneStarButtonAction(_ sender: UIButton) {
-        oneStarButton.isSelected = !oneStarButton.isSelected
-        if oneStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func twoStarButtonAction(_ sender: UIButton) {
-        twoStarButton.isSelected = !twoStarButton.isSelected
-        if twoStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func threeStarButtonAction(_ sender: UIButton) {
-        threeStarButton.isSelected = !threeStarButton.isSelected
-        if threeStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
+    @IBAction func evaluSlider(_ sender: UISlider) {
+        let roundValue = round(sender.value)
+        
+        for index in 0 ... 5 { // 이미지 Tag
             
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
+            if let starImage = contentView.viewWithTag(index) as? UIImageView {
+                if index <= Int(roundValue) {
+                    starImage.image = UIImage(named: "evalu_Star_Fill")
+                } else {
+                    starImage.image = UIImage(named: "evalu_Star")
+                }
+            }
         }
+        
+       
     }
-    @IBAction func fourStarButtonAction(_ sender: UIButton) {
-        fourStarButton.isSelected = !fourStarButton.isSelected
-        if fourStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
-    @IBAction func fiveStarButtonAction(_ sender: UIButton) {
-        fiveStarButton.isSelected = !fiveStarButton.isSelected
-        if fiveStarButton.isSelected {
-            oneStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-            fiveStarButton.setImage(UIImage(named: "evalu_Star_Fill"), for: .normal)
-        } else {
-            oneStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            twoStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            threeStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            fourStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-            fiveStarButton.setImage(UIImage(named: "evalu_Star"), for: .normal)
-        }
-    }
+
+    
     
 }
 
@@ -143,15 +93,12 @@ extension EvaluCollectionViewCell: UICollectionViewDelegateFlowLayout {
 extension EvaluCollectionViewCell {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
-        //evaluImages = (result.result?[0].sources)!
         
         for i in 0...evaluResults.count-1 {
             let evaluResult = evaluResults[i]
             evaluImages = evaluResult.sources!
         }
-        print(evaluImages)
-        print(evaluResults.count)
-        print(evaluImages.count)
+        
         imageCollectionView.reloadData()
         
     }
