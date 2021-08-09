@@ -9,14 +9,13 @@ import UIKit
 
 class EvaluViewController: UIViewController {
     
-    
     lazy var dataManager = EvaluDataManager()
     var evaluResults: [EvaluResult] = []
     
     var type = 1 // 1: 일반숙소 2: 에어비앤비
     var lodgingIndex = 3 // 숙소 인덱스
     
-    var feedbacks = EvaluFeedback(feedIndex: 0, degree: 0)
+    var feedbacks = [EvaluFeedback(feedIndex: 0, degree: 0)]
     var input: EvaluFeedbackRequest = EvaluFeedbackRequest(feedbacks: [])
     
     
@@ -37,10 +36,12 @@ class EvaluViewController: UIViewController {
     }
     @IBAction func closeButtonAction(_ sender: UIButton) {
         
-        feedbacks.degree = 5
-        feedbacks.feedIndex = 3
-
+       
+        input.feedbacks?.append(EvaluFeedback(feedIndex: 3, degree: 5))
+        print(input)
+        
         dataManager.evaluFeedback(input, delegate: self)
+   
         
         let alertVC = self.storyboard?.instantiateViewController(withIdentifier: "EvaluAlertViewController")
 
