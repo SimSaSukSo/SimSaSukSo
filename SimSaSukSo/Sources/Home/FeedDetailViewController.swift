@@ -30,11 +30,15 @@ class FeedDetailViewController: UIViewController {
     var saveComment = ""
     var cellTag = 0
     var commentIndex = 0
+    
+    var editIndex = 0
+   var isWrite = true
+    
     var favoriteLists: [FavoriteResult] = []
     
     var indexList : [Int] = []
     
-
+    
     
     @IBOutlet var feedDetailView: UIView!
     @IBOutlet var feedDetailScrollView: UIScrollView!
@@ -83,6 +87,7 @@ class FeedDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isWrite = true
         dataManager.feedView(delegate: self, url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)")
         dataManager.feedComment(url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
         FavoriteDataManager().favoriteList(delegate: self)
@@ -119,7 +124,7 @@ class FeedDetailViewController: UIViewController {
         
         setKeyboardObserver()
 
-        print(feedIndex)
+        print("feedIndex : \(feedIndex)")
     }
     
     
@@ -143,7 +148,17 @@ class FeedDetailViewController: UIViewController {
     }
     
     @IBAction func tabGesture(_ sender: Any) {
+        print("touched")
+        if isWrite == false{
+            presentAlert(title: "댓글 수정이 취소되었습니다.")
+            isWrite = true
+            print(isWrite)
+            self.commentWriteTextField.text = ""
+        }
+        
         view.endEditing(true)
+        print(isWrite)
+        
 
     }
     
@@ -281,10 +296,22 @@ class FeedDetailViewController: UIViewController {
     }
     
     @IBAction func commentWriteButtonAction(_ sender: UIButton) {
-        print("게시")
-        saveComment = commentWriteTextField.text ?? "좋아보여요!"
-        print(saveComment)
-        dataManager.writeFeedComment(text: saveComment, url:  "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
+        
+        if isWrite == true{
+            print(isWrite)
+            print("게시")
+            saveComment = commentWriteTextField.text ?? "좋아보여요!"
+            print(saveComment)
+            dataManager.writeFeedComment(text: saveComment, url:  "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
+        }else{
+            print("수정")
+            print(isWrite)
+            var input = EditCommentRequest(content: commentWriteTextField.text!, commentIndex: editIndex)
+            dataManager.editComment(feedIndex: feedIndex, editCommentInput: input, delegate: self)
+            isWrite = true
+            print(isWrite)
+        }
+        
        
 
     }
@@ -428,6 +455,9 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.deleteButton.tag = indexPath.row
         cell.deleteButton.addTarget(self, action: #selector(ButtonDeleteAction(sender:)), for: .touchUpInside)
+        
+        cell.editButton.tag = indexPath.row
+        cell.editButton.addTarget(self, action: #selector(EditButtonAction(sender:)), for: .touchUpInside)
 
        
         tableView.rowHeight = UITableView.automaticDimension
@@ -453,11 +483,19 @@ extension FeedDetailViewController: UITableViewDelegate, UITableViewDataSource {
         commentDeleteAlert.delegate = self
         self.present(commentDeleteAlert, animated: false, completion: nil)
         
-        
-        
-    
-
     }
+    
+    @objc func EditButtonAction(sender : UIButton){
+        
+        isWrite = false
+        print(isWrite)
+        commentWriteTextField.text = feedComments[sender.tag].content
+        editIndex = feedComments[sender.tag].commentIndex
+        
+        
+    }
+    
+    
     
 }
 
@@ -522,6 +560,13 @@ extension FeedDetailViewController {
         dataManager.feedComment(url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
         commentWriteTextField.text = ""
            print("저장됨")
+        }
+    
+    func editFeedComment(result : WriteFeedCommentResponse){
+        dataManager.feedComment(url: "\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", delegate: self)
+        commentWriteTextField.text = ""
+           print("수정 저장됨")
+       
         }
     
     func deleteFeedComment(result : WriteFeedCommentResponse){
