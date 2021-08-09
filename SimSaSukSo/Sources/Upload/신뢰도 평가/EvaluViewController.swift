@@ -12,12 +12,12 @@ class EvaluViewController: UIViewController {
     lazy var dataManager = EvaluDataManager()
     var evaluResults: [EvaluResult] = []
     
-    var type = 1 // 1: 일반숙소 2: 에어비앤비
+    var type = 2 // 1: 일반숙소 2: 에어비앤비
     var lodgingIndex = 3 // 숙소 인덱스
     
     var feedbacks = [EvaluFeedback(feedIndex: 0, degree: 0)]
     var input: EvaluFeedbackRequest = EvaluFeedbackRequest(feedbacks: [])
-    
+    var feedIndex = 0
     
     @IBOutlet var evaluCollectionView: UICollectionView!
     @IBOutlet var evaluCollectionViewHeight: NSLayoutConstraint!
@@ -37,9 +37,8 @@ class EvaluViewController: UIViewController {
     @IBAction func closeButtonAction(_ sender: UIButton) {
         
        
-        input.feedbacks?.append(EvaluFeedback(feedIndex: 3, degree: 5))
+        input.feedbacks?.append(EvaluFeedback(feedIndex: feedIndex, degree: 5))
         print(input)
-        
         dataManager.evaluFeedback(input, delegate: self)
    
         
@@ -99,6 +98,9 @@ extension EvaluViewController: UICollectionViewDelegateFlowLayout {
 extension EvaluViewController {
     func evaluView(result: EvaluResponse) {
         evaluResults = result.result!
+        for i in 0...evaluResults.count-1 {
+            feedIndex = (result.result?[i].feedIndex)!
+        }
         evaluCollectionView.reloadData()
     }
     
