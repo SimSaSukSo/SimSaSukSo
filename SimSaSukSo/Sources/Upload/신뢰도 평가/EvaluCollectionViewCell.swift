@@ -19,6 +19,8 @@ class EvaluCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageCollectionView: UICollectionView!
     
+    @IBOutlet var evaluSlider: StarSlider!
+    
     
     func setupViews() {
         imageCollectionView.delegate = self
@@ -35,7 +37,7 @@ class EvaluCollectionViewCell: UICollectionViewCell {
         
     }
     
-    @IBAction func evaluSlider(_ sender: UISlider) {
+    @IBAction func evaluSliderAction(_ sender: UISlider) {
         let roundValue = round(sender.value)
         
         for index in 0 ... 5 { // 이미지 Tag
@@ -49,9 +51,20 @@ class EvaluCollectionViewCell: UICollectionViewCell {
             }
         }
         
-       
+        let evaluStoryboard = UIStoryboard.init(name: "UploadStoryboard", bundle: nil)
+        let evaluVC = evaluStoryboard.instantiateViewController(identifier: "EvaluViewController") as! EvaluViewController
+        
+        if sender.isContinuous {
+            evaluVC.degree = Int(roundValue)
+        }
+        
+        print(roundValue)
+        print(evaluVC.degree)
     }
-
+    
+   
+    
+    
     
     
 }

@@ -13,11 +13,12 @@ class EvaluViewController: UIViewController {
     var evaluResults: [EvaluResult] = []
     
     var type = 2 // 1: 일반숙소 2: 에어비앤비
-    var lodgingIndex = 3 // 숙소 인덱스
+    var lodgingIndex = 4 // 숙소 인덱스
     
     var feedbacks = [EvaluFeedback(feedIndex: 0, degree: 0)]
     var input: EvaluFeedbackRequest = EvaluFeedbackRequest(feedbacks: [])
     var feedIndex = 0
+    var degree = 0
     
     @IBOutlet var evaluCollectionView: UICollectionView!
     @IBOutlet var evaluCollectionViewHeight: NSLayoutConstraint!
@@ -37,7 +38,7 @@ class EvaluViewController: UIViewController {
     @IBAction func closeButtonAction(_ sender: UIButton) {
         
        
-        input.feedbacks?.append(EvaluFeedback(feedIndex: feedIndex, degree: 5))
+        input.feedbacks?.append(EvaluFeedback(feedIndex: feedIndex, degree: degree))
         print(input)
         dataManager.evaluFeedback(input, delegate: self)
    
