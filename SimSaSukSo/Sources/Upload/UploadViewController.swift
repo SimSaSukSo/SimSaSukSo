@@ -8,16 +8,20 @@
 import Foundation
 import UIKit
 import Photos
+import PhotosUI
 import FirebaseStorage
 import FirebaseAuth
 
-class UploadViewController : UIViewController {
+class UploadViewController : UIViewController,PHPhotoLibraryChangeObserver {
    
     let storage = Storage.storage()
     
-    var allMedia: PHFetchResult<PHAsset>?
-    let scale = UIScreen.main.scale
-    var thumbnailSize = CGSize.zero
+    var fetchResult = PHFetchResult<PHAsset>()
+    var canAccessImages: [UIImage] = []
+    var thumbnailSize: CGSize {
+        let scale = UIScreen.main.scale
+        return CGSize(width: (UIScreen.main.bounds.width / 3) * scale, height: 100 * scale)
+    }
     
     static var uploadPhotos = [UIImage]()
     static var photoArray = [Int]()
@@ -34,58 +38,21 @@ class UploadViewController : UIViewController {
     override func viewDidLoad() {
        super.viewDidLoad()
         
+        // 여기서 호출하게 되면 앱 삭제 후 처음 실행시 Add버튼을 누르지 않아도 사진 접근 권한 alert이 뜨게 된다.
+        PHPhotoLibrary.shared().register(self)
+        
+        
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
         
-        
-        // MAKR: - 모든 미디어 가져오는 메소드
-        //self.allMedia = PHAsset.fetchAssets(with: nil)
-        
-        // MAKR: - 특정 타입(PHAssetMediaType) 미디어만 가져오는 메소드
-        self.allMedia = PHAsset.fetchAssets(with: .image, options: nil)
-        
-        requestPhotosPermission()
-        //self.photoCollectionView.reloadData()
-        self.thumbnailSize = CGSize(width: 1024 * self.scale, height: 1024 * self.scale)
+        photoCollectionView.reloadData()
         
         photoImageViewHeight.constant = photoImageView.frame.size.width
-        photoCollectionViewHeight.constant = CGFloat(91 * (allMedia!.count/4) + 100)
+     
         
     }
     
-    private func requestPhotosPermission() {
-            let photoAuthorizationStatusStatus = PHPhotoLibrary.authorizationStatus()
-            
-            switch photoAuthorizationStatusStatus {
-            case .authorized:
-                print("Photo Authorization status is authorized.")
-                self.photoCollectionView.reloadData()
-                
-            case .denied:
-                print("Photo Authorization status is denied.")
-                
-            case .notDetermined:
-                print("Photo Authorization status is not determined.")
-                PHPhotoLibrary.requestAuthorization() {
-                    (status) in
-                    switch status {
-                    case .authorized:
-                        print("User permiited.")
-                        self.photoCollectionView.reloadData()
-                    case .denied:
-                        print("User denied.")
-                        break
-                    default:
-                        break
-                    }
-                }
-                
-            case .restricted:
-                print("Photo Authorization status is restricted.")
-            default:
-                break
-            }
-        }
+    
   
     //MARK: - Function
     
@@ -123,6 +90,50 @@ class UploadViewController : UIViewController {
     }
     
     @IBAction func photosButtonAction(_ sender: UIButton) {
+        self.requestPHPhotoLibraryAuthorization {
+            self.getCanAccessImages()
+        }
+    }
+    
+    func requestPHPhotoLibraryAuthorization(completion: @escaping () -> Void) {
+        if #available(iOS 14, *) {
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
+                switch status {
+                case .limited:
+                    PHPhotoLibrary.shared().register(self)
+                    completion()
+                default:
+                    break
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    
+    
+    func getCanAccessImages() {
+        self.canAccessImages = []
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+
+        let fetchOptions = PHFetchOptions()
+        self.fetchResult = PHAsset.fetchAssets(with: fetchOptions)
+        self.fetchResult.enumerateObjects { (asset, _, _) in
+            PHImageManager().requestImage(for: asset, targetSize: self.thumbnailSize, contentMode: .aspectFill, options: requestOptions) { (image, info) in
+                guard let image = image else { return }
+                self.canAccessImages.append(image)
+                DispatchQueue.main.async {
+                    self.photoCollectionView.insertItems(at: [IndexPath(item: self.canAccessImages.count - 1, section: 0)])
+                }
+            }
+        }
+    }
+    
+    // MARK: - PHPhotoLibraryChangeObserver
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        self.getCanAccessImages()
     }
    
 }
@@ -131,20 +142,20 @@ class UploadViewController : UIViewController {
 extension UploadViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.allMedia?.count ?? 0
+        return self.canAccessImages.count
+      
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
         
-        let asset = self.allMedia?[indexPath.item]
-        LocalImageManager.shared.requestIamge(with: asset, thumbnailSize: self.thumbnailSize) { (image) in
-            cell.configure(with: image)
-        }
+       
         
         if indexPath.row == 0 {
             photoImageView.image = cell.photoCellImageView.image
         }
+        
+        cell.photoCellImageView.image = self.canAccessImages[indexPath.item]
         
         cell.blackView.isHidden = true
         cell.numberLabel.isHidden = true
@@ -209,28 +220,4 @@ extension UploadViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
-//MARK: - LocalImageManager
-final class LocalImageManager {
-    
-    static var shared = LocalImageManager()
-    
-    fileprivate let imageManager = PHImageManager()
-    
-    var representedAssetIdentifier: String?
-    
-    func requestIamge(with asset: PHAsset?, thumbnailSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        guard let asset = asset else {
-            completion(nil)
-            return
-        }
-        self.representedAssetIdentifier = asset.localIdentifier
-        self.imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil, resultHandler: { image, info in
-            // UIKit may have recycled this cell by the handler's activation time.
-            //  print(info?["PHImageResultIsDegradedKey"])
-            // Set the cell's thumbnail image only if it's still showing the same asset.
-            if self.representedAssetIdentifier == asset.localIdentifier {
-                completion(image)
-            }
-        })
-    }
-}
+

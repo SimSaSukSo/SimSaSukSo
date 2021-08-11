@@ -20,6 +20,7 @@ class FeedCommentTableViewCell: UITableViewCell {
     @IBOutlet var likeNumberLabel: UILabel!
     @IBOutlet var heartButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
 
     override func awakeFromNib() {

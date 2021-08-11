@@ -66,6 +66,27 @@ class FeedDataManager {
                 }
         }
     
+    //피드 댓글 수정
+    func editComment(feedIndex : Int, editCommentInput : EditCommentRequest , delegate: FeedDetailViewController) {
+        AF.request("\(Constant.BASE_URL)api/feeds/\(feedIndex)/comments", method: .put, parameters: editCommentInput, headers: KeyCenter.header)
+                .validate()
+                .responseDecodable(of: WriteFeedCommentResponse.self) { response in
+                    switch response.result {
+                    case .success(let response):
+                        if response.isSuccess == true{
+                            print(response.message)
+                            delegate.editFeedComment(result: response)
+                        }else{
+                            delegate.failedToRequest(message: response.message)
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        delegate.failedToRequest(message: "서버와의 연결이 원활하지 않습니다")
+                    }
+                }
+        }
+    
+    
     //피드 댓글 삭제
     func deleteComment(feedIndex : Int, commentIndex : Int, delegate: FeedDetailViewController) {
             
