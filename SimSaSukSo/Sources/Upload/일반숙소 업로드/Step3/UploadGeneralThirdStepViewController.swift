@@ -130,10 +130,7 @@ extension UploadGeneralThirdStepViewController : UICollectionViewDelegate,UIColl
         return uploadAircell
     }
     
-    
-    
-    
-    
+
 }
 
 extension UploadGeneralThirdStepViewController : StartateDelegate,EndDateDelegate{
